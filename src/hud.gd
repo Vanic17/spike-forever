@@ -11,6 +11,7 @@ const RED := Color("ef795d")
 var primary := "SPAZIO"
 var alternate := "Q"
 var dump_button := "E"
+var wall_labels := "Z sinistra / B destra"
 
 func _ready() -> void: mouse_filter = Control.MOUSE_FILTER_IGNORE
 func _process(_dt: float) -> void: queue_redraw()
@@ -38,6 +39,7 @@ func _draw() -> void:
 	primary = "X / CROCE" if ps else ("A" if pad >= 0 else "SPAZIO")
 	alternate = "QUADRATO" if ps else ("X" if pad >= 0 else "Q")
 	dump_button = "CERCHIO" if ps else ("B" if pad >= 0 else "E")
+	wall_labels="L2 sinistra / R2 destra" if ps else ("LT sinistra / RT destra" if pad>=0 else "Z sinistra / B destra")
 	if not game.started:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.015,0.025,0.045,0.45))
 		text(Vector2(75, h * 0.38), "SPIKE", 76)
@@ -87,7 +89,7 @@ func _draw() -> void:
 			dump_button + " · colpo di seconda",
 			"Battuta / attacco: tieni e rilascia",
 			"LS / WASD / frecce: mira e direzioni",
-			"Muro: LS muove il centrale; L2 sinistra / R2 destra",
+			"Muro: LS muove il centrale; "+wall_labels,
 			"Ricezione: premi vicino all'arrivo della palla",
 			"F3 animazioni   F5 difficoltà   R nuova partita"]
 		for i in lines.size(): text(Vector2(45, 184 + i * 27), lines[i], 13, MUTED)
@@ -136,5 +138,5 @@ func draw_contact(cx: float, y: float) -> void:
 			return
 		var count: int=game.blocking_players(0).size()
 		text(Vector2(cx - 229, y + 21), "LS · centrale / muro a %d" % count, 15)
-		text(Vector2(cx - 229, y + 40), "L2 / LT: sinistra   R2 / RT: destra   (Z / B)", 12, MUTED)
+		text(Vector2(cx - 229, y + 40), wall_labels, 12, MUTED)
 		text(Vector2(cx - 229, y + 53), primary + " · salta" + ("   /   SALTO ESEGUITO" if game.block_commanded else ""), 13, MUTED)

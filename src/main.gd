@@ -260,6 +260,12 @@ func setup_inputs() -> void:
 		var event := InputEventKey.new()
 		event.physical_keycode = pair[1]
 		InputMap.action_add_event(pair[0], event)
+		var axis:=InputEventJoypadMotion.new()
+		axis.device=-1
+		axis.axis=JOY_AXIS_LEFT_X if pair[0] in ["left","right"] else JOY_AXIS_LEFT_Y
+		axis.axis_value=-1.0 if pair[0] in ["left","up"] else 1.0
+		InputMap.action_set_deadzone(pair[0],0.22)
+		if not InputMap.action_has_event(pair[0],axis): InputMap.action_add_event(pair[0],axis)
 	for binding in [["block_left",KEY_Z,JOY_AXIS_TRIGGER_LEFT],["block_right",KEY_B,JOY_AXIS_TRIGGER_RIGHT]]:
 		InputMap.add_action(binding[0],0.20)
 		var key:=InputEventKey.new()
@@ -928,7 +934,7 @@ func set_ball() -> void:
 	players[hitter].target = players[hitter].stance_for_contact(hitter_action, target)
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
-	var approach_time := approach_distance / 5.4 + 0.26
+	var approach_time := maxf(approach_distance / 5.4 + 0.26,preload("res://src/approach_planner.gd").seconds(players[hitter],players[hitter].target,Reference.run_speed()*1.10))
 	var flight := maxf(Reference.set_seconds(destination,fast_set,q,ball_pos.distance_to(target),out_of_system<0),approach_time)
 	if fast_set and flight > 1.1:
 		# A rushed but unreachable quick is converted before launch, never rerouted

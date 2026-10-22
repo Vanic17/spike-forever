@@ -13,6 +13,13 @@ var overlay: Control
 var dialog: PanelContainer
 var version_label: Label
 var brush: FontFile
+var installed_version:=""
+var startup_scan:=false
+var pending_release: Dictionary={}
+var update_prompt: ConfirmationDialog
+var prompt_previous_pause:=false
+var installing_from_prompt:=false
+var prompt_waiting:=false
 
 func _ready() -> void:
 	layer=20
@@ -41,23 +48,78 @@ func _ready() -> void:
 	updates.pressed.connect(show_updates)
 	version_label=Label.new()
 	var version=JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version
+	installed_version=str(version)
 	version_label.text="v"+str(version)
 	version_label.modulate=Color(0.85,0.86,0.9,0.7)
 	panel.add_child(version_label)
 	build_updates(str(version))
+	update_prompt=ConfirmationDialog.new()
+	update_prompt.title="Aggiornamento disponibile"
+	update_prompt.ok_button_text="AGGIORNA"
+	update_prompt.cancel_button_text="NON ORA"
+	update_prompt.exclusive=true
+	add_child(update_prompt)
+	update_prompt.confirmed.connect(accept_update)
+	update_prompt.canceled.connect(defer_update)
 	client.changed.connect(func(message):
 		status.text=message
 		play.disabled=client.downloading
 		back.disabled=client.downloading
 		install_button.disabled=client.busy or history.get_selected_items().is_empty())
+	client.changed.connect(func(_message):
+		if startup_scan and not client.busy and not client.downloading: startup_scan=false
+		if installing_from_prompt and not client.busy and not client.downloading:
+			installing_from_prompt=false
+			game.paused=prompt_previous_pause
+			if game.started: overlay.hide())
 	client.versions_loaded.connect(func(versions):
 		items=versions
 		history.clear()
 		for entry in versions: history.add_item(str(entry.get("tag_name",""))+" — "+str(entry.get("name","")))
-		if not versions.is_empty(): history.select(0); install_button.disabled=false)
+		if not versions.is_empty(): history.select(0); install_button.disabled=false
+		on_versions_ready(versions))
 	panel.resized.connect(layout)
 	layout()
 	play.grab_focus()
+	# Headless verification uses deterministic fake responses instead of DNS.
+	if DisplayServer.get_name()!="headless": call_deferred("check_startup_updates")
+
+func check_startup_updates() -> void:
+	startup_scan=true
+	client.check()
+
+func on_versions_ready(versions: Array) -> void:
+	if not startup_scan: return
+	startup_scan=false
+	pending_release=client.newer_release(versions,installed_version)
+	if pending_release.is_empty(): return
+	prompt_waiting=true
+	maybe_prompt_update()
+
+func maybe_prompt_update() -> void:
+	if not prompt_waiting or update_prompt.visible: return
+	# A slow network response must not steal a held charge or a live rally.
+	if game.started and game.phase!="POINT" and not (game.phase=="SERVE" and not game.charging and not game.toss_active): return
+	prompt_waiting=false
+	prompt_previous_pause=game.paused
+	game.paused=true
+	update_prompt.dialog_text="È disponibile Spike Forever "+String(pending_release.tag_name)+".\nVersione installata: "+installed_version+".\n\nVuoi scaricare e installare l'aggiornamento?\nIl gioco si riavvierà dopo l'installazione."
+	update_prompt.popup_centered(Vector2i(620,230))
+	update_prompt.get_ok_button().grab_focus()
+
+func accept_update() -> void:
+	if pending_release.is_empty(): return
+	update_prompt.hide()
+	installing_from_prompt=true
+	overlay.show()
+	client.install(pending_release)
+
+func defer_update() -> void:
+	update_prompt.hide()
+	game.paused=prompt_previous_pause
+	pending_release={}
+	prompt_waiting=false
+	if not game.started: play.grab_focus()
 
 func setup_controller_navigation() -> void:
 	# UI bindings are explicit: runtime Godot does not necessarily load the
@@ -197,10 +259,14 @@ func close_updates() -> void:
 	updates.grab_focus()
 
 func _process(_dt: float) -> void:
-	if panel: panel.visible=not game.started
+	if panel: panel.visible=not game.started or installing_from_prompt
+	maybe_prompt_update()
 
 func _input(event: InputEvent) -> void:
 	if client==null: return
+	if update_prompt!=null and update_prompt.visible:
+		if event.is_action_pressed("start"): get_viewport().set_input_as_handled()
+		return
 	if client.downloading:
 		get_viewport().set_input_as_handled()
 	elif overlay!=null and overlay.visible and event.is_action_pressed("ui_cancel"):

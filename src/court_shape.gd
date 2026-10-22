@@ -85,7 +85,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 	# Reserve the entire setter approach, not only the final hand-contact spot.
 	# A support player already at his own destination otherwise never yielded,
 	# leaving the setter stopped against the body guard while his arms played.
-	if actor>=0 and game.phase in ["SET","CPU_SET"]:
+	if actor>=0 and game.phase in ["SET","CPU_SET","ATTACK","CPU_ATTACK"]:
 		var route: Vector3=result[actor]-setter_route_origin
 		route.y=0
 		# At the contact spot, endpoint separation is sufficient. Treating a
@@ -96,7 +96,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var normal:=Vector3(forward.z,0,-forward.x)
 			for i in range(game.possession*6,game.possession*6+6):
 				if i==actor: continue
+				if game.phase in ["ATTACK","CPU_ATTACK"] and i!=game.setter: continue
 				if floor_bodies.has(i): continue # A prone passer cannot sidestep out of the setter's way.
+				var jumping=game.get("middle_decoy")
+				if jumping!=null and jumping.holds(i): continue
 				var start: Vector3=game.players[i].position
 				var nearest:=Geometry3D.get_closest_point_to_segment(start,setter_route_origin,result[actor])
 				if not setter_yields.has(i) and start.distance_to(nearest)<1.28:
@@ -111,6 +114,14 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					result[i]=free
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
+	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_hitter>=0:
+		var hitter: int=game.planned_hitter
+		var direction=game.get("planned_direction")
+		var contact:=RallyAI.attack_contact(game,int(direction) if direction!=null else game.destination,hitter,game.flight_target)
+		var ready: Vector3=game.players[hitter].stance_for_contact("attack",contact)
+		# A quick recipient already in his takeoff lane must not first retreat
+		# to the full high-ball opening, then be declared late for the quick.
+		if game.players[hitter].position.distance_to(ready)<1.5 and not setter_yields.has(hitter): result[hitter]=ready
 	route_specialist_pins(game,result,actor,blockers)
 	var order: Array[int] = []
 	if actor>=0: order.append(actor)
@@ -175,6 +186,9 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					# behind the passer could push the setter into his back and
 					# leave a perfect reception to an emergency middle setter.
 					var passer_x: float=game.players[actor].position.x
+					# Leave on the side the setter actually occupies. Choosing by
+					# his eventual destination sent him THROUGH the right passer.
+					if absf(start.x-passer_x)>0.2: lateral=signf(start.x-passer_x)
 					waypoint.x=maxf(passer_x,anchor.x)+1.45 if lateral>0 else minf(passer_x,anchor.x)-1.45
 					waypoint.z=start.z
 				waypoint.x=clampf(waypoint.x,-5.45,5.45)

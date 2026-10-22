@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.21.0:** controllo aggiornamenti all'avvio con conferma, correzione della rincorsa in zona 4 dopo il primo punto avversario e verifica dei comandi Xbox. [Dettagli, comandi e test](docs/REVISION_21.md).
+
 **Versione 0.20.0:** schermata iniziale illustrata con Gioca e Aggiornamenti, sei formazioni 5–1 dalla specifica fornita, verifica dei piedi al servizio, corsie di attacco e muro coerenti con i ruoli e copertura dinamica. [Dettagli e test](docs/REVISION_20.md) · [Scarica l'ultima release Windows](https://github.com/Vanic17/spike-forever/releases/latest).
 
 ![Menu iniziale](docs/menu-v20.png)

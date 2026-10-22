@@ -10,6 +10,28 @@ var selected: Dictionary = {}
 var page := 1
 var package_path := ""
 
+static func compare_versions(candidate: String, installed: String) -> int:
+	var a:=candidate.trim_prefix("v").split(".")
+	var b:=installed.trim_prefix("v").split(".")
+	if a.size()!=3 or b.size()!=3: return -1
+	for part in a+b:
+		if not part.is_valid_int() or int(part)<0: return -1
+	for i in 3:
+		if int(a[i])!=int(b[i]): return 1 if int(a[i])>int(b[i]) else -1
+	return 0
+
+static func newer_release(versions: Array, installed: String) -> Dictionary:
+	var newest: Dictionary={}
+	for release in versions:
+		if release.get("draft",false) or release.get("prerelease",false): continue
+		var tag: String=release.get("tag_name","")
+		if compare_versions(tag,installed)<=0: continue
+		var asset:=package_asset(release)
+		if not String(asset.get("digest","")).begins_with("sha256:") or String(asset.get("digest","")).length()!=71: continue
+		if not String(asset.get("browser_download_url","")).begins_with("https://github.com/"+REPOSITORY+"/releases/download/"): continue
+		if newest.is_empty() or compare_versions(tag,newest.tag_name)>0: newest=release
+	return newest
+
 func _ready() -> void:
 	http=HTTPRequest.new()
 	http.timeout=30
