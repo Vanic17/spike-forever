@@ -18,14 +18,10 @@ func _initialize() -> void:
 			for i in 6:
 				var original: Array = raw[rotation*7+posmod(source_ids[i]+rotation,6)].position
 				var expected := Vector3(-float(original[2]),0,-float(original[0]))
-				if serving and Tactics.front(i,rotation):
-					var role: String=Tactics.ROLES[i]
-					var base: Array=source.positions.locBase[4 if role.begins_with("MB") else (3 if role.begins_with("OH") else 5)].position
-					expected=Vector3(-float(base[2]),0,-float(base[0]))
 				var human := Tactics.serve_position(i,0,rotation,serving)
 				var cpu := Tactics.serve_position(i+6,1,rotation,serving)
-				assert(human.distance_to(expected)<0.00005,"Formation differs from the actual extracted Unity transform")
-				assert(cpu.distance_to(-expected)<0.00005)
+				assert(Reference.formation(i,rotation,serving).distance_to(expected)<0.00005,"Historical reference data must remain intact")
+				assert(cpu.distance_to(-human)<0.00005,"Live spec formations must mirror correctly")
 				signature += str(human)
 				if Tactics.slot(i,rotation)==3:
 					servers += 1

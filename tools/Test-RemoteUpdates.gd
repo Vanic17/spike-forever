@@ -2,31 +2,39 @@ extends SceneTree
 
 var client
 var finished := false
+var expected_hash := ""
+var expected_tag := ""
+var published_hash := ""
 
 func _initialize() -> void:
 	call_deferred("run")
 
 func run() -> void:
+	expected_tag="v"+str(JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version)
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--expected-hash="): expected_hash=arg.trim_prefix("--expected-hash=").to_lower()
 	client=load("res://src/update_client.gd").new()
 	root.add_child(client)
 	client.versions_loaded.connect(verify_versions)
 	client.changed.connect(func(message): print("REMOTE UPDATE STATUS: ",message))
 	client.check()
-	await create_timer(45.0).timeout
-	if not finished:
-		push_error("Remote update discovery timed out or failed")
-		quit(1)
+	create_timer(45.0).timeout.connect(func():
+		if not finished:
+			push_error("Remote update discovery timed out or failed")
+			quit(1))
 
 func verify_versions(versions: Array) -> void:
 	for entry in versions:
-		if entry.get("tag_name","")!="v0.19.0": continue
+		if entry.get("tag_name","")!=expected_tag: continue
 		var asset=client.package_asset(entry)
-		if asset.get("digest","")!="sha256:8fdafce1a024923679636117ada39ec044fdf0c42df9dd45d8d45db27dafc934":
+		published_hash=String(asset.get("digest","")).trim_prefix("sha256:")
+		if published_hash.length()!=64 or (not expected_hash.is_empty() and published_hash!=expected_hash):
 			push_error("Published asset checksum differs from validated Windows package")
 			quit(1)
 			return
 		finished=true
-		print("REMOTE UPDATES PASS: live unauthenticated discovery / v0.19.0 / verified GitHub asset digest / ",versions.size()," release(s)")
+		if expected_tag=="v0.20.0": assert(versions.any(func(old): return old.get("tag_name","")=="v0.19.0"),"Previous release must remain selectable")
+		print("REMOTE UPDATES PASS: live unauthenticated discovery / ",expected_tag," / verified GitHub asset digest / ",versions.size()," release(s)")
 		if "--download-package" in OS.get_cmdline_user_args():
 			client.http.request_completed.disconnect(client.completed)
 			DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir().path_join("updates"))
@@ -46,11 +54,11 @@ func verify_versions(versions: Array) -> void:
 
 func verify_download(result: int, code: int, _headers: PackedStringArray, _body: PackedByteArray) -> void:
 	var path: String=client.http.download_file
-	if result!=HTTPRequest.RESULT_SUCCESS or code!=200 or FileAccess.get_sha256(path)!="8fdafce1a024923679636117ada39ec044fdf0c42df9dd45d8d45db27dafc934":
+	if result!=HTTPRequest.RESULT_SUCCESS or code!=200 or FileAccess.get_sha256(path)!=published_hash:
 		push_error("Live Windows package download or checksum verification failed")
 		quit(1)
 		return
-	FileAccess.open("res://docs/v19-remote-download-path.txt",FileAccess.WRITE).store_string(path)
+	FileAccess.open("res://docs/remote-download-path.txt",FileAccess.WRITE).store_string(path)
 	print("REMOTE PACKAGE PASS: unauthenticated HTTPRequest download / GitHub redirect / SHA-256 verified")
 	client.queue_free()
 	call_deferred("quit")

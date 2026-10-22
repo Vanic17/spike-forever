@@ -1,5 +1,9 @@
 # Spike Forever
 
+**Versione 0.20.0:** schermata iniziale illustrata con Gioca e Aggiornamenti, sei formazioni 5–1 dalla specifica fornita, verifica dei piedi al servizio, corsie di attacco e muro coerenti con i ruoli e copertura dinamica. [Dettagli e test](docs/REVISION_20.md) · [Scarica l'ultima release Windows](https://github.com/Vanic17/spike-forever/releases/latest).
+
+![Menu iniziale](docs/menu-v20.png)
+
 **Versione 0.19.0:** ruoli S/OH/MB/OPP/L al posto dei numeri, preparazione specialistica alla nostra battuta e assegnazioni laterali di muro stabili durante la costruzione avversaria. Menu iniziale con Gioca e Aggiornamenti, ricerca delle versioni e installazione verificata. [Ruoli e sei rotazioni](docs/ROLES_ROTATIONS_19.md) · [Pubblicazione e aggiornamenti](docs/UPDATES_19.md). [Scarica la release Windows v0.19.0](https://github.com/Vanic17/spike-forever/releases/tag/v0.19.0). La cronologia delle patch inizia da questa versione.
 
 Per giocare da uno ZIP release: estrarre tutto e aprire `Spike Forever.exe`. Da un clone dei sorgenti: eseguire prima `powershell -ExecutionPolicy Bypass -File tools/Bootstrap-Engine.ps1` per scaricare il runtime Godot verificato.

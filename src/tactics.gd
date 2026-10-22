@@ -1,19 +1,21 @@
 extends RefCounted
 ## Stable 5-1 roster. Rotation slot and tactical role are separate concepts.
 const Reference = preload("res://src/reference_style.gd")
-const ROLES := ["OH1", "MB1", "OPP", "OH2", "MB2", "S"]
-const INITIAL_SLOTS := [2, 1, 0, 5, 4, 3]
-const ZONES := [4, 3, 2, 1, 6, 5]
+const Rotation=preload("res://src/rotation_model.gd")
+const ServeLayout=preload("res://src/serve_layout.gd")
+const ROLES=Rotation.ROLES
+const INITIAL_SLOTS=Rotation.INITIAL_SLOTS
+const ZONES=Rotation.ZONES
 const BODY_SPACE := 0.78
 const BLOCK_SPACE := 0.90
 ## Positions only: none of the reference's input, ball flight or animations.
 static var positioning: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/gameplay/killer_aces_positioning.json"))
 
 static func slot(index: int, rotation: int) -> int:
-	return posmod(INITIAL_SLOTS[index % 6] + rotation, 6)
+	return Rotation.slot(index,rotation)
 
 static func front(index: int, rotation: int) -> bool:
-	return slot(index, rotation) < 3
+	return Rotation.front(index,rotation)
 
 static func world(team: int, x: float, depth: float) -> Vector3:
 	var side := 1.0 if team == 0 else -1.0
@@ -25,16 +27,18 @@ static func server(team: int, rotation: int) -> int:
 	return team * 6 + 5
 
 static func libero(index: int, rotation: int, serving: bool) -> bool:
-	return ROLES[index % 6].begins_with("MB") and not front(index, rotation) and not (serving and slot(index, rotation) == 3)
+	return Rotation.libero(index,rotation,serving)
 
 static func role(index: int, rotation: int, serving: bool) -> String:
 	return "L" if libero(index, rotation, serving) else ROLES[index % 6]
 
 static func serve_position(index: int, team: int, rotation: int, serving: bool = true) -> Vector3:
-	# 2025–2028: the serving team's front row can prepare its specialist
-	# blocking lanes before contact. Rotation eligibility and server stay fixed.
-	if serving and front(index,rotation): return home(index,team,rotation,true,false)
-	var p := Reference.formation(index, rotation, serving)
+	# Receiving overlap constrains only the ready layout. The serving side
+	# starts in its defensive roles, except the actual Z1 server outside court.
+	if serving:
+		if slot(index,rotation)==3: return world(team,2.8,11.9)
+		return home(index,team,rotation,true,false)
+	var p:=ServeLayout.receive(index,rotation)
 	return world(team, p.x, p.z)
 
 static func setter_position(team: int) -> Vector3:
@@ -59,16 +63,11 @@ static func first_ball(game) -> bool:
 	# needed and later transition plays return to the usual specialist lanes.
 	return game.incoming_kind == "serve" and game.possession != game.server
 
-static func attack_wing(index: int, rotation: int, service_reception: bool = false) -> float:
+static func attack_wing(index: int, rotation: int, _service_reception: bool = false) -> float:
 	if not front(index, rotation): return 0.0
 	var r: String = ROLES[index % 6]
 	if not r.begins_with("OH") and r != "OPP": return 0.0
-	var wing := -1.0 if r.begins_with("OH") else 1.0
-	# In P1 the front outside receives in zone 2 while the opposite starts in
-	# zone 4. Keep those first-ball lanes rather than making both cross the
-	# setter's corridor after the pass. Their roles and rotation never change.
-	if service_reception and posmod(rotation, 6) == 0: wing = -wing
-	return wing
+	return -1.0 if r.begins_with("OH") else 1.0
 
 static func attacker(team: int, rotation: int, direction: int, exclude: int, service_reception: bool = false) -> int:
 	for i in range(team * 6, team * 6 + 6):

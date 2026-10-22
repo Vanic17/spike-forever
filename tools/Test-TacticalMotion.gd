@@ -122,7 +122,7 @@ func check_role_targets() -> int:
 						var home := Tactics.home(number,team,rotation,team==game.server,true)
 						assert(point.distance_to(home)<0.5,"Supporting receivers retain separate defensive lanes")
 					if team==possession and stage=="ATTACK":
-						if not front and role!="S": assert(is_equal_approx(absf(point.z),4.26),"Back-row coverage retains the source 4.26m row")
-						if front and role!="S": assert(is_equal_approx(absf(point.z),2.0),"Front-row coverage retains the source 2m row")
+						if not front and role!="S": assert(absf(point.z)>4.5,"Back-row coverage retains its deep responsibilities")
+						if front and role!="S": assert(absf(point.z)<4.0,"Front-row coverage stays in the near ring")
 					count+=1
 	return count

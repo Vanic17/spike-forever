@@ -9,6 +9,20 @@ func run() -> void:
 	for child in game.get_children():
 		if child.get_script()==load("res://src/start_menu.gd"): menu=child
 	assert(menu!=null and not game.started and menu.panel.visible)
+	assert(not menu.overlay.visible and menu.play.has_focus())
+	menu.panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	for size in [Vector2(1280,720),Vector2(1920,1080),Vector2(2560,1080),Vector2(1024,768)]:
+		menu.panel.size=size
+		menu.layout()
+		assert(menu.play.position.x>=0 and menu.updates.position.x+menu.updates.size.x<=size.x)
+		assert(menu.play.position.y+menu.play.size.y<=size.y)
+		assert(menu.play.position.x+menu.play.size.x<menu.updates.position.x)
+	menu.client.busy=true # Test modal focus without making a network request.
+	menu.show_updates()
+	assert(menu.overlay.visible and menu.back.has_focus() and menu.play.focus_mode==Control.FOCUS_NONE)
+	menu.close_updates()
+	assert(not menu.overlay.visible and menu.updates.has_focus())
+	menu.client.busy=false
 	var client=menu.client
 	var good={"tag_name":"v0.19.0","name":"First patch","draft":false,"prerelease":false,"assets":[{"name":"SpikeForever-Windows.zip","browser_download_url":"https://github.com/Vanic17/spike-forever/releases/download/v0.19.0/SpikeForever-Windows.zip","digest":"sha256:"+"a".repeat(64)}]}
 	var old=good.duplicate(true)
@@ -29,6 +43,22 @@ func run() -> void:
 	for button in buttons:
 		if button.text=="GIOCA": button.pressed.emit(); played=true
 	assert(played and game.started and not menu.panel.visible)
+	game.started=false
+	menu.panel.show()
+	menu.play.grab_focus()
+	await process_frame
+	var press:=InputEventJoypadButton.new()
+	press.button_index=JOY_BUTTON_A
+	press.pressed=true
+	assert(press.is_action_pressed("ui_accept"),"Controller Cross/A must be mapped to UI accept")
+	root.push_input(press,true)
+	await process_frame
+	var release:=InputEventJoypadButton.new()
+	release.button_index=JOY_BUTTON_A
+	release.pressed=false
+	root.push_input(release,true)
+	await process_frame
+	assert(game.started,"Controller accept must activate the focused Play button")
 	print("MENU UPDATES PASS: play offline / latest and previous versions / draft exclusion / invalid package refusal / network failure preserves play")
 	game.free()
 	quit()

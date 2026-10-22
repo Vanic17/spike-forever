@@ -4,10 +4,10 @@ $root=Split-Path $PSScriptRoot
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
-foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANIMATION_18.md')){
+foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANIMATION_18.md','REVISION_20.md','SPECIFICA_ROTazioni_5-1.md')){
  if(Test-Path (Join-Path $root ('docs/'+$name))){$files+='docs/'+$name}
 }
-foreach($folder in @('src','licenses','assets/active','assets/art','assets/arena_source','assets/mesh_source','assets/audio','assets/gameplay')){
+foreach($folder in @('src','licenses','assets/ui','assets/active','assets/art','assets/arena_source','assets/mesh_source','assets/audio','assets/gameplay')){
  foreach($file in Get-ChildItem -LiteralPath (Join-Path $root $folder) -File -Recurse){
   if($file.Extension -in @('.import','.uid') -or $file.Name -eq 'native_stage1.res'){continue}
   $files+=$file.FullName.Substring($root.Length+1).Replace('\','/')

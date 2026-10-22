@@ -151,18 +151,24 @@ static func opening(game, index: int, team: int) -> Vector3:
 	return base
 
 static func coverage(game, index: int, team: int) -> Vector3:
-	var p: Dictionary = Tactics.positioning
 	var side := 1.0 if team==0 else -1.0
 	var front := Tactics.front(index,game.rotations[team])
 	var role := _role(game,index,team)
 	var base := defensive_base(game,index,team)
-	if role=="S" and index==game.setter: return Tactics.setter_position(team)
-	if not front: return Tactics.world(team,base.x*side,float(p.cover_back_depth))
+	var hit_x:=clampf(game.flight_target.x*side,-4.4,4.4)
+	var depth:=clampf(absf(game.flight_target.z),0.8,1.8)
+	var inward:=-signf(hit_x) if absf(hit_x)>0.2 else 1.0
+	# Two coverage rings follow the actual attacker, rather than resetting all
+	# six athletes to the same 2m/4.26m rows for every set direction.
+	if role=="S": return Tactics.world(team,clampf(hit_x+inward*2.1,-3.8,3.8),depth+1.3)
+	if not front:
+		var x:=base.x*side*0.65+hit_x*0.25
+		var back_depth:=5.8 if role=="OPP" else (6.2 if role.begins_with("OH") else 4.8)
+		return Tactics.world(team,clampf(x,-3.9,3.9),back_depth+0.18*depth)
 	if role.begins_with("MB"):
-		return Tactics.world(team,signf(game.flight_target.x*side)*float(p.cover_middle_width),float(p.cover_front_depth))
+		return Tactics.world(team,clampf(hit_x+inward*1.2,-3.5,3.5),depth+1.1)
 	var wing := Tactics.attack_wing(index,game.rotations[team],Tactics.first_ball(game))
-	if is_zero_approx(wing): wing=1.0 # A front-row setter covering an emergency backup set retains his right lane.
-	return Tactics.world(team,wing*float(p.cover_pin_width),float(p.cover_front_depth))
+	return Tactics.world(team,clampf(hit_x*0.35+wing*2.0,-3.8,3.8),depth+2.1)
 
 static func defensive_read(game, index: int, team: int) -> Vector3:
 	var p: Dictionary = Tactics.positioning

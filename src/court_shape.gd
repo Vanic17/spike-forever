@@ -9,6 +9,8 @@ var target_corrections := 0
 var setter_yields: Dictionary = {}
 var setter_route_origin:=Vector3.ZERO
 var recovery_bypass: Dictionary = {}
+var pin_routes: Dictionary={}
+var pin_team:=-1
 
 func reset() -> void:
 	cue = ""
@@ -16,6 +18,8 @@ func reset() -> void:
 	lane_sides.clear()
 	setter_yields.clear()
 	recovery_bypass.clear()
+	pin_routes.clear()
+	pin_team=-1
 
 func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers: Array) -> Array[Vector3]:
 	var result: Array[Vector3] = nominal.duplicate()
@@ -107,10 +111,13 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					result[i]=free
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
+	route_specialist_pins(game,result,actor,blockers)
 	var order: Array[int] = []
 	if actor>=0: order.append(actor)
 	for i in blockers:
 		if not i in order: order.append(i)
+	var decoy_plan=game.get("middle_decoy")
+	if decoy_plan!=null and decoy_plan.index>=0 and not decoy_plan.index in order: order.append(decoy_plan.index)
 	if game.planned_hitter>=0 and game.phase in ["SET","CPU_SET"] and not game.planned_hitter in order: order.append(game.planned_hitter)
 	for i in 12:
 		if not i in order: order.append(i)
@@ -195,6 +202,36 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		if i in blockers or floor_bodies.has(i): continue
 		result[i] = route_around_recovery(game,i,result[i],floor_bodies)
 	return result
+
+func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: Array) -> void:
+	if game.possession!=pin_team:
+		pin_routes.clear()
+		pin_team=game.possession
+	if game.phase not in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"]:
+		pin_routes.clear()
+		return
+	var team: int=game.possession
+	var side:=1.0 if team==0 else -1.0
+	for i in range(team*6,team*6+6):
+		if i==actor or i in blockers: continue
+		var wing:=Tactics.attack_wing(i,game.rotations[team])
+		if is_zero_approx(wing): continue
+		var start: Vector3=game.players[i].position
+		if not pin_routes.has(i) and start.x*side*wing< -0.6:
+			# OH crosses behind the passers; OPP uses the shallower 4.4m lane.
+			# Neither cuts through the setter/first-tempo takeoff corridor.
+			pin_routes[i]={"stage":0,"x":start.x,"depth":maxf(start.z*side,6.0 if wing<0 else 4.4)}
+		if not pin_routes.has(i): continue
+		var route: Dictionary=pin_routes[i]
+		if route.stage==0:
+			if absf(start.z*side-float(route.depth))<0.22: route.stage=1
+			else:
+				result[i]=Vector3(route.x,0,side*route.depth)
+				continue
+		if route.stage==1:
+			if absf(start.x-result[i].x)<0.25: route.stage=2
+			else: result[i].z=side*route.depth
+		if route.stage==2: pin_routes.erase(i)
 
 func recovering_bodies(game) -> Dictionary:
 	var result: Dictionary = {}

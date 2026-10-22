@@ -42,6 +42,11 @@ foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Direct
  Copy-Item -LiteralPath $baseline.FullName -Destination (Join-Path $stage 'docs') -Recurse
 }
 Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Copy-Item -Destination (Join-Path $stage 'docs')
+if(Test-Path (Join-Path $root 'docs/menu-v20.png')){Copy-Item (Join-Path $root 'docs/menu-v20.png') (Join-Path $stage 'docs')}
+Copy-Item -LiteralPath (Join-Path $root 'docs/original-animation-hashes.json') -Destination (Join-Path $stage 'docs')
+$fixtures=Join-Path $stage 'docs/reference-killer-aces'
+New-Item -ItemType Directory -Force $fixtures | Out-Null
+foreach($name in @('reference-profile.json','manager-settings.json')){Copy-Item -LiteralPath (Join-Path $root ('docs/reference-killer-aces/'+$name)) -Destination $fixtures}
 [IO.File]::WriteAllText((Join-Path $stage '.gitignore'), ".godot/`n.runtime/`n.updates/`ndist/`nupdate-result.json`ntools/godot/`ntools/git/`ntools/github/`ndocs/*-test.log`n")
 Native $git @('-C',$stage,'init','--initial-branch=main')
 Native $git @('-C',$stage,'config','user.name','Vanic17')

@@ -1,0 +1,2161 @@
+{
+  "unity_version": "6000.3.10f1",
+  "assembly_sha256": "902dba68884bcf97cd29baabc5184c069aaaa96a7a01a57097e5b51388ecace4",
+  "positions": {
+    "lines": [
+      {
+        "name": "line_out",
+        "position": [
+          9.01,
+          0.0,
+          4.48
+        ]
+      },
+      {
+        "name": "court_out",
+        "position": [
+          17.5,
+          0.0,
+          7.5
+        ]
+      },
+      {
+        "name": "net_top",
+        "position": [
+          0.0,
+          2.53,
+          4.5
+        ]
+      },
+      {
+        "name": "tape_bot",
+        "position": [
+          0.0,
+          2.43,
+          4.5
+        ]
+      }
+    ],
+    "locBench": [
+      {
+        "name": "B1",
+        "position": [
+          -10.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "B2",
+        "position": [
+          -12.5,
+          0.0,
+          -7.5
+        ]
+      },
+      {
+        "name": "B3",
+        "position": [
+          -14.0,
+          0.0,
+          -7.5
+        ]
+      },
+      {
+        "name": "B4",
+        "position": [
+          -15.5,
+          0.0,
+          -7.5
+        ]
+      },
+      {
+        "name": "B5",
+        "position": [
+          -17.0,
+          0.0,
+          -7.5
+        ]
+      },
+      {
+        "name": "B6",
+        "position": [
+          -18.5,
+          0.0,
+          -7.5
+        ]
+      },
+      {
+        "name": "B7",
+        "position": [
+          -18.5,
+          0.0,
+          -6.0
+        ]
+      },
+      {
+        "name": "B8",
+        "position": [
+          -19.99,
+          0.0,
+          -7.65
+        ]
+      },
+      {
+        "name": "B9",
+        "position": [
+          -19.889999,
+          0.0,
+          -6.26
+        ]
+      },
+      {
+        "name": "B10",
+        "position": [
+          -18.92,
+          0.0,
+          -4.75
+        ]
+      },
+      {
+        "name": "B11",
+        "position": [
+          -20.030001,
+          0.0,
+          -4.97
+        ]
+      },
+      {
+        "name": "B12",
+        "position": [
+          -21.25,
+          0.0,
+          -7.9
+        ]
+      },
+      {
+        "name": "B13",
+        "position": [
+          -21.09,
+          0.0,
+          -6.47
+        ]
+      },
+      {
+        "name": "B14",
+        "position": [
+          -21.15,
+          0.0,
+          -5.14
+        ]
+      },
+      {
+        "name": "C",
+        "position": [
+          -4.0,
+          0.0,
+          -6.5
+        ]
+      }
+    ],
+    "locActions": [
+      {
+        "name": "loc_serve_0",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "loc_serve_1",
+        "position": [
+          10.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "loc_set_0",
+        "position": [
+          -0.5,
+          0.0,
+          -1.5
+        ]
+      },
+      {
+        "name": "loc_set_1",
+        "position": [
+          0.5,
+          0.0,
+          1.5
+        ]
+      },
+      {
+        "name": "loc_ball_res",
+        "position": [
+          0.0,
+          0.0,
+          -5.0
+        ]
+      },
+      {
+        "name": "loc_ref_0",
+        "position": [
+          0.0,
+          1.316,
+          6.296
+        ]
+      },
+      {
+        "name": "loc_ref_1",
+        "position": [
+          0.0,
+          0.0,
+          -6.0
+        ]
+      }
+    ],
+    "locBase": [
+      {
+        "name": "S",
+        "position": [
+          -4.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -4.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -0.5,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -0.5,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.25,
+          0.0,
+          -7.0
+        ]
+      }
+    ],
+    "locServe": [
+      {
+        "name": "S",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -4.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -7.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -1.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -1.5,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -4.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -4.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -0.5,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -1.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -5.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -4.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -0.5,
+          -1e-06,
+          -4e-06
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -1.0,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -0.5,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -4.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -7.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -1.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -2.5,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -4.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -4.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -0.5,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -2.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -10.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -5.0,
+          0.0,
+          0.5
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -4.0,
+          0.0,
+          1.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -0.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -1.0,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -0.5,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      }
+    ],
+    "locReceive": [
+      {
+        "name": "S",
+        "position": [
+          -6.5,
+          0.0,
+          -3.5
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -6.0,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -1.5,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -1.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -5.5,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -6.0,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -1.0,
+          0.0,
+          -1.5
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -5.5,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -0.5,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -3.0,
+          0.0,
+          -3.5
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -2.5,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -1.0,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -5.5,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -1.0,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -8.5,
+          0.0,
+          -3.5
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -1.0,
+          0.0,
+          4.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -2.0,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -5.5,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -6.0,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -8.5,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -5.5,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -0.5,
+          0.0,
+          -2.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -1.5,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      },
+      {
+        "name": "L",
+        "position": [
+          -6.0,
+          0.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "H2",
+        "position": [
+          -6.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "OP",
+        "position": [
+          -8.5,
+          0.0,
+          1.5
+        ]
+      },
+      {
+        "name": "M2",
+        "position": [
+          -1.0,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "H1",
+        "position": [
+          -5.5,
+          0.0,
+          2.5
+        ]
+      },
+      {
+        "name": "S",
+        "position": [
+          -0.5,
+          0.0,
+          -2.0
+        ]
+      },
+      {
+        "name": "M1",
+        "position": [
+          -6.0,
+          0.0,
+          -7.0
+        ]
+      }
+    ],
+    "locCelly": [
+      {
+        "name": "celly_group",
+        "position": [
+          -4.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "loc_celly",
+        "position": [
+          -5.373001,
+          0.0,
+          -0.264
+        ]
+      },
+      {
+        "name": "loc_celly_1",
+        "position": [
+          -5.425,
+          0.0,
+          -0.74
+        ]
+      },
+      {
+        "name": "loc_celly_2",
+        "position": [
+          -4.871,
+          0.0,
+          -0.927
+        ]
+      },
+      {
+        "name": "loc_celly_3",
+        "position": [
+          -4.866,
+          0.0,
+          0.934
+        ]
+      },
+      {
+        "name": "loc_celly_4",
+        "position": [
+          -5.291,
+          0.0,
+          0.625
+        ]
+      },
+      {
+        "name": "loc_celly_5",
+        "position": [
+          -5.721,
+          0.0,
+          0.277
+        ]
+      }
+    ],
+    "locCellyHero": [
+      {
+        "name": "loc_celly_serve",
+        "position": [
+          -10.0,
+          0.0,
+          -2.0
+        ]
+      },
+      {
+        "name": "loc_celly_spike",
+        "position": [
+          -2.5,
+          0.0,
+          1.26
+        ]
+      },
+      {
+        "name": "loc_celly_block",
+        "position": [
+          -1.5,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "name": "loc_celly_error",
+        "position": [
+          -3.2,
+          0.0,
+          -2.52
+        ]
+      },
+      {
+        "name": "loc_celly_spike_1",
+        "position": [
+          -1.59,
+          0.0,
+          0.46
+        ]
+      },
+      {
+        "name": "loc_celly_spike_2",
+        "position": [
+          -3.34,
+          0.0,
+          0.52
+        ]
+      },
+      {
+        "name": "loc_celly_block_1",
+        "position": [
+          -0.86,
+          0.0,
+          1.06
+        ]
+      },
+      {
+        "name": "loc_celly_block_2",
+        "position": [
+          -1.12,
+          0.0,
+          -2.26
+        ]
+      }
+    ],
+    "locCineIntro": [
+      {
+        "name": "loc_intro_sideline",
+        "position": [
+          9.26,
+          0.0,
+          -4.0
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_1",
+        "position": [
+          9.26,
+          0.0,
+          -3.25
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_2",
+        "position": [
+          9.26,
+          0.0,
+          -2.5
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_3",
+        "position": [
+          9.26,
+          0.0,
+          -1.75
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_4",
+        "position": [
+          9.26,
+          0.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_5",
+        "position": [
+          9.26,
+          0.0,
+          -0.25
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_6",
+        "position": [
+          9.26,
+          0.0,
+          0.5
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_7",
+        "position": [
+          9.26,
+          0.0,
+          1.25
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_8",
+        "position": [
+          9.26,
+          0.0,
+          2.0
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_9",
+        "position": [
+          9.26,
+          0.0,
+          2.75
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_10",
+        "position": [
+          9.26,
+          0.0,
+          3.5
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_11",
+        "position": [
+          9.26,
+          0.0,
+          4.25
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_12",
+        "position": [
+          9.26,
+          0.0,
+          5.0
+        ]
+      },
+      {
+        "name": "loc_intro_sideline_13",
+        "position": [
+          9.26,
+          0.0,
+          -4.75
+        ]
+      }
+    ]
+  },
+  "prefabs": {
+    "ball": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 839
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 16777216,
+        "m_PathID": 20669530112
+      },
+      "m_Name": "",
+      "dead": 0,
+      "state": 0,
+      "statePrevious": 0,
+      "statePoint": 0,
+      "isOverhand": 0,
+      "isOverShoulder": 0,
+      "quality": 0.0,
+      "kind": 0,
+      "kindInit": 0,
+      "altSet": 0,
+      "finisher": 0,
+      "offspeed": 0,
+      "punch": 0,
+      "stuff": 0,
+      "tape": 0,
+      "hitCount": 0,
+      "hitTarget": 0,
+      "lastTouchID": 0,
+      "lastTouchIDPrev": 0,
+      "lastTouchType": 0,
+      "lastTouchTypePrev": 0,
+      "lastTouchSpike": 0,
+      "lastTouchSet": 0,
+      "lastTouchDig": 0,
+      "sfxQueue": "",
+      "posStart": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posFinish": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posLand": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posLast": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posMax": 3.0,
+      "posSpeed": 1.0,
+      "posTime": 0.0,
+      "posAng": 0.0,
+      "posOOB": 0.0,
+      "posPwr": 0.0,
+      "posVel": 0.0,
+      "posFloat": 0.0,
+      "posHigh1": 0.0,
+      "posHigh2": 0.0,
+      "posCrossNet": 0,
+      "posOverpass": 0,
+      "posDigHigh": 0.0,
+      "posTape": 0.0,
+      "posImpact": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        }
+      ],
+      "curveFlight": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.5,
+            "value": 0.5,
+            "inSlope": 0.6996976137161255,
+            "outSlope": 0.6996976137161255,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.11543440818786621
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 1.0,
+            "outSlope": 1.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "fullPhysics": 0,
+      "bounces": 0,
+      "bounceVelocity": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "bounceFactor": 0.8999999761581421,
+      "bounceDampen": 0.0,
+      "bounceDist": 0.0,
+      "suckStart": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "suckTime": 0.0,
+      "suckSpeed": 8.0,
+      "suckSpeedMin": 5.260000228881836,
+      "suckSpeedSet": 6.300000190734863,
+      "suckSpeedMax": 8.0,
+      "curveSuction": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 2.0,
+            "outSlope": 2.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "spdServe": 1.600000023841858,
+      "spdReceive": 0.6000000238418579,
+      "spdSet": 0.800000011920929,
+      "spdSpike": 3.0,
+      "spdBlock": 2.5199999809265137,
+      "spdTip": 1.0,
+      "spdOffspeedSpike": 1.8600000143051147,
+      "spin": 0.0,
+      "spinMax": 3000.0,
+      "spinTot": 0.0,
+      "maxServe": 3.0,
+      "maxReceive": 6.0,
+      "maxSet": 5.0,
+      "maxSpike": 0.20000000298023224,
+      "maxBounce": 0.0,
+      "maxBlock": 0.20000000298023224,
+      "maxTip": 6.0,
+      "attackDelay": 0.0,
+      "timingAdjust": 0.0,
+      "forceMax": 200.0,
+      "trailTarg": 0.0,
+      "trailMax": 0.05999999865889549,
+      "trail": {
+        "m_FileID": 0,
+        "m_PathID": 1307
+      },
+      "art": {
+        "m_FileID": 0,
+        "m_PathID": 647
+      },
+      "par": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "rb": {
+        "m_FileID": 0,
+        "m_PathID": 1152
+      },
+      "col": {
+        "m_FileID": 0,
+        "m_PathID": 1308
+      },
+      "sfxSpeed": {
+        "m_FileID": 0,
+        "m_PathID": 1302
+      },
+      "mg": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "dbgPwr": -1.0,
+      "dbgAng": -1.0,
+      "dbgPosSpeed": 1.0,
+      "dbgServeTapeFail": 0,
+      "dbgServeTapeOver": 0,
+      "dbgServeNetFail": 0
+    },
+    "player": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 659
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 16777216,
+        "m_PathID": 2868903936
+      },
+      "m_Name": "",
+      "id": 0,
+      "pid": 0,
+      "tm": 0,
+      "court": 0,
+      "job": 0,
+      "bench": 0,
+      "cine": 0,
+      "rid": 0,
+      "ridInit": 0,
+      "ridCurrent": 0,
+      "infoName": "",
+      "stateMove": 0,
+      "posMove": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posDest": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posStop": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posAim": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posInit": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posIntercept": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posDefRead": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "jumpStart": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "jumpEnd": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "jumpSpeed": 1.0,
+      "jumpTime": 0.0,
+      "jumpTimeMin": 0.0,
+      "jumpMax": 0.0,
+      "jumpMaxSpike": 1.0800000429153442,
+      "jumpMaxSpikeExtra": 1.0,
+      "jumpMaxBlock": 0.699999988079071,
+      "jumpWarp": 0.0,
+      "jumpCurve": {
+        "m_Curve": [
+          {
+            "time": 0.3630000054836273,
+            "value": 0.0,
+            "inSlope": 3.9749398231506348,
+            "outSlope": 3.9749398231506348,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.21163783967494965
+          },
+          {
+            "time": 0.4092593789100647,
+            "value": 0.5927480459213257,
+            "inSlope": 8.465217590332031,
+            "outSlope": 8.465217590332031,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.13031761348247528
+          },
+          {
+            "time": 0.5,
+            "value": 1.0,
+            "inSlope": 1.1138697862625122,
+            "outSlope": 1.1138697862625122,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.699999988079071,
+            "value": 1.0099999904632568,
+            "inSlope": -0.9585209488868713,
+            "outSlope": -0.9585209488868713,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.8399999737739563,
+            "value": 0.7300000190734863,
+            "inSlope": -3.152036666870117,
+            "outSlope": -3.152036666870117,
+            "weightedMode": 0,
+            "inWeight": 0.179062157869339,
+            "outWeight": 0.14850826561450958
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -3.6899919509887695,
+            "outSlope": -3.6899919509887695,
+            "weightedMode": 0,
+            "inWeight": 0.14458481967449188,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveSpike": {
+        "m_Curve": [
+          {
+            "time": 0.3630000054836273,
+            "value": 0.0,
+            "inSlope": 3.9749398231506348,
+            "outSlope": 3.9749398231506348,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.21163783967494965
+          },
+          {
+            "time": 0.4092593789100647,
+            "value": 0.5927480459213257,
+            "inSlope": 8.465217590332031,
+            "outSlope": 8.465217590332031,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.13031761348247528
+          },
+          {
+            "time": 0.5,
+            "value": 1.0,
+            "inSlope": 1.1138697862625122,
+            "outSlope": 1.1138697862625122,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.7699999809265137,
+            "value": 1.0099999904632568,
+            "inSlope": -0.9585209488868713,
+            "outSlope": -0.9585209488868713,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.8999999761581421,
+            "value": 0.699999988079071,
+            "inSlope": -4.060139179229736,
+            "outSlope": -4.060139179229736,
+            "weightedMode": 0,
+            "inWeight": 0.17772088944911957,
+            "outWeight": 0.14850826561450958
+          },
+          {
+            "time": 1.0,
+            "value": 0.0020751953125,
+            "inSlope": -10.199966430664062,
+            "outSlope": -10.199966430664062,
+            "weightedMode": 0,
+            "inWeight": 0.10740575939416885,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveNormal_b": {
+        "m_Curve": [
+          {
+            "time": 0.3630000054836273,
+            "value": 0.0,
+            "inSlope": 3.9749398231506348,
+            "outSlope": 3.9749398231506348,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.21163783967494965
+          },
+          {
+            "time": 0.4092593789100647,
+            "value": 0.5927480459213257,
+            "inSlope": 8.465217590332031,
+            "outSlope": 8.465217590332031,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.13031761348247528
+          },
+          {
+            "time": 0.5,
+            "value": 1.0,
+            "inSlope": 1.1138697862625122,
+            "outSlope": 1.1138697862625122,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.8399999737739563,
+            "value": 0.7300000190734863,
+            "inSlope": -2.0620169639587402,
+            "outSlope": -2.0620169639587402,
+            "weightedMode": 0,
+            "inWeight": 0.09494630247354507,
+            "outWeight": 0.14850826561450958
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -6.245644569396973,
+            "outSlope": -6.245644569396973,
+            "weightedMode": 0,
+            "inWeight": 0.07850075513124466,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveSlide": {
+        "m_Curve": [
+          {
+            "time": 0.3199999928474426,
+            "value": 0.0,
+            "inSlope": 0.5257554650306702,
+            "outSlope": 0.5257554650306702,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.5000787973403931
+          },
+          {
+            "time": 0.43321534991264343,
+            "value": 0.31779932975769043,
+            "inSlope": 6.253651142120361,
+            "outSlope": 6.253651142120361,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.07627695053815842
+          },
+          {
+            "time": 0.6499999761581421,
+            "value": 0.800000011920929,
+            "inSlope": 0.08228687196969986,
+            "outSlope": 0.08228687196969986,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -5.527944564819336,
+            "outSlope": -5.527944564819336,
+            "weightedMode": 0,
+            "inWeight": 0.11440541595220566,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveBlock": {
+        "m_Curve": [
+          {
+            "time": 0.20000000298023224,
+            "value": 0.0,
+            "inSlope": 14.760960578918457,
+            "outSlope": 14.760960578918457,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.062256600707769394
+          },
+          {
+            "time": 0.30000001192092896,
+            "value": 0.8999999761581421,
+            "inSlope": 1.1337720155715942,
+            "outSlope": 1.1337720155715942,
+            "weightedMode": 0,
+            "inWeight": 0.24837879836559296,
+            "outWeight": 0.09260702133178711
+          },
+          {
+            "time": 0.800000011920929,
+            "value": 0.800000011920929,
+            "inSlope": -1.1783007383346558,
+            "outSlope": -1.1783007383346558,
+            "weightedMode": 0,
+            "inWeight": 0.11284053325653076,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -4.134028911590576,
+            "outSlope": -4.134028911590576,
+            "weightedMode": 0,
+            "inWeight": 0.07349789142608643,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveQuick": {
+        "m_Curve": [
+          {
+            "time": 0.3199999928474426,
+            "value": 0.0,
+            "inSlope": 8.863473892211914,
+            "outSlope": 8.863473892211914,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.12127009779214859
+          },
+          {
+            "time": 0.3799999952316284,
+            "value": 0.6299999952316284,
+            "inSlope": 10.28983211517334,
+            "outSlope": 10.28983211517334,
+            "weightedMode": 0,
+            "inWeight": 0.14742860198020935,
+            "outWeight": 0.23449966311454773
+          },
+          {
+            "time": 0.44999998807907104,
+            "value": 1.0,
+            "inSlope": 0.025865307077765465,
+            "outSlope": 0.025865307077765465,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.18616977334022522
+          },
+          {
+            "time": 0.8492782115936279,
+            "value": 0.6127879023551941,
+            "inSlope": -3.0418450832366943,
+            "outSlope": -3.0418450832366943,
+            "weightedMode": 0,
+            "inWeight": 0.09260869026184082,
+            "outWeight": 0.14850826561450958
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": -5.888456344604492,
+            "outSlope": -5.888456344604492,
+            "weightedMode": 0,
+            "inWeight": 0.06270118057727814,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveDive": {
+        "m_Curve": [
+          {
+            "time": 0.10000000149011612,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.4000000059604645,
+            "value": 0.5,
+            "inSlope": 1.2715567350387573,
+            "outSlope": 1.2715567350387573,
+            "weightedMode": 0,
+            "inWeight": 0.35149163007736206,
+            "outWeight": 0.07003892958164215
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 0.2335512340068817,
+            "outSlope": 0.2335512340068817,
+            "weightedMode": 0,
+            "inWeight": 0.09533076733350754,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "jumpCurveGlide": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 10.0,
+            "outSlope": 10.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.10000000149011612,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.06685594469308853
+          },
+          {
+            "time": 0.28999999165534973,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "glideDir": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "glideTime": 0.0,
+      "glideSpeed": 0.0,
+      "glideDist": 0.0,
+      "spdMove": 3.0,
+      "spdMoveTime": 0.0,
+      "spdMoveTarg": 0.0,
+      "spdMoveBoost": 0.0,
+      "spdAcceleration": 0.0,
+      "fatiguePlay": 0.0,
+      "fatigueGame": 0.0,
+      "spdCurve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 1.0,
+            "value": 1.5199999809265137,
+            "inSlope": 1.554316759109497,
+            "outSlope": 1.554316759109497,
+            "weightedMode": 0,
+            "inWeight": 0.04153865575790405,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "lx": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "lxSpeed": 0.0,
+      "locBase": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "locServe": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "locRec": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "locApproach": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "lookHead": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "stateAnim": 0,
+      "stateAction": 0,
+      "stateSeq": 0,
+      "stateBlock": 0,
+      "stateDefense": 0,
+      "stateRead": 0,
+      "stateFake": 0,
+      "stateCelly": 0,
+      "statePass": 0,
+      "stateMarker": 0,
+      "stateOffspeed": 0,
+      "stateOverhandRec": 0,
+      "setTarg": 0,
+      "setTargKind": 0,
+      "setOverhand": 0,
+      "setCount": 0,
+      "chooseBlockTime": 0.0,
+      "timerAction": 0.0,
+      "timerThink": 0.0,
+      "timerNotTarg": 0.0,
+      "passAcc": 0.0,
+      "passDest": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "hitAcc": 0.0,
+      "hitPwr": 0.0,
+      "hitDest": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "blockPwr": 0.0,
+      "blockGuess": 0.0,
+      "blockCommit": 0.0,
+      "blockAnim": 0.0,
+      "rtngHeight": 0.0,
+      "rtngServeType": 0.0,
+      "posCelly": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posCellyStart": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "posCellyLook": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "cellyID": 0.0,
+      "cellyMood": 0.0,
+      "canFaceBlend": 1,
+      "isFaceBlend": 0,
+      "faceBlendTarg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "isCon": 0,
+      "conID": 0,
+      "timerCon": 0.0,
+      "conPressed": 0.0,
+      "conPressedAlt": 0,
+      "conDir": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "conTiming": 0,
+      "conTimingLate": 0,
+      "conTimingRaw": 0.0,
+      "conTimingReceive": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.4000000059604645,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 0.6499999761581421,
+            "value": 1.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.3333333432674408
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "conTimingServe": {
+        "m_Curve": [
+          {
+            "time": 0.6000000238418579,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0
+          },
+          {
+            "time": 0.9599999785423279,
+            "value": 1.0,
+            "inSlope": 1.5488197803497314,
+            "outSlope": 1.5488197803497314,
+            "weightedMode": 0,
+            "inWeight": 0.06468848139047623,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "conTimingBlock": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 1.0,
+            "inSlope": -0.02270667627453804,
+            "outSlope": -0.02270667627453804,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.0933852419257164
+          },
+          {
+            "time": 1.0,
+            "value": 0.0,
+            "inSlope": 0.0,
+            "outSlope": 0.0,
+            "weightedMode": 0,
+            "inWeight": 0.3333333432674408,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "animLayerCurrent": 0.0,
+      "animLayerTarg": 0.0,
+      "flashCon": 0,
+      "flash": 0.0,
+      "anim": {
+        "m_FileID": 0,
+        "m_PathID": 1305
+      },
+      "ren": {
+        "m_FileID": 0,
+        "m_PathID": 1316
+      },
+      "loc": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 934
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 902
+        }
+      ],
+      "rec": {
+        "m_FileID": 0,
+        "m_PathID": 687
+      },
+      "mg": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "bl": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "dbgDoing": "",
+      "dbgConpress": 0.800000011920929,
+      "dbgSwingTiming": -1.0
+    }
+  }
+}

@@ -12,10 +12,9 @@ func run() -> void:
 	var source: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://docs/reference-killer-aces/reference-profile.json"))
 	var settings: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://docs/reference-killer-aces/manager-settings.json"))
 	assert(int(settings.modeGender)==0,"The inspected scene must be the male reference")
-	var player_code := FileAccess.get_file_as_string("res://docs/reference-killer-aces/decompiled/player.cs")
-	assert(player_code.contains("mg.trackSetterFront[tm] == 1 && mg.modeGender == 1"))
-	assert(player_code.contains("mg.trackSetterFront[tm] == 1 && mg.modeGender == 0 && num == 2"))
-	assert(player_code.contains("setTargKind = -3;") and player_code.contains("setTargKind = -1;"))
+	# Historical scene metadata is sufficient for provenance. Gameplay tests
+	# exercise men's opposite/pipe/first-tempo lanes below, without requiring
+	# the reference game's decompiled source in a clone of Spike Forever.
 	var source_ids := [5,4,3,2,1,0]
 	for serving in [true,false]:
 		var raw: Array = source.positions.locServe if serving else source.positions.locReceive
@@ -23,10 +22,7 @@ func run() -> void:
 			for team in 2:
 				for number in 6:
 					var original: Array = raw[rotation*7+posmod(source_ids[number]+rotation,6)].position
-					if serving and Tactics.front(number,rotation):
-						var role: String=Tactics.ROLES[number]
-						original=source.positions.locBase[4 if role.begins_with("MB") else (3 if role.begins_with("OH") else 5)].position
-					assert_near(Tactics.serve_position(team*6+number,team,rotation,serving),from_unity(original,team),"Original serve/receive transform")
+					assert_near(Tactics.Reference.formation(number,rotation,serving)*(1 if team==0 else -1),from_unity(original,team),"Historical reference is retained; live layouts follow the supplied 5-1 specification")
 	for rotation in 6:
 		for team in 2:
 			var setter := team*6+5
@@ -97,17 +93,12 @@ func check_offence(game: Dictionary, team: int, rotation: int) -> void:
 			game.flight_left=0.9
 		game.flight_target=Tactics.world(team,-3.4,1.05)+Vector3(0,3.3,0)
 		var cover: Vector3 = RallyAI.coverage(game,number,team)
-		if number==game.setter:
-			assert_near(cover,Tactics.world(team,1.5,0.5),"The active setter retains the original setter lane after release")
-		else:
-			assert(is_equal_approx(absf(cover.z),2.0 if front else 4.26),"Source short/deep coverage rows must retain their depths")
-			var cover_width := 3.0
-			if not front:
-				if role=="L" or role.begins_with("MB"): cover_width=-3.0
-				elif role.begins_with("OH"): cover_width=0.0
-			elif role.begins_with("MB"): cover_width=-0.52
-			elif role.begins_with("OH"): cover_width=-3.0
-			assert_near(cover,Tactics.world(team,cover_width,2.0 if front else 4.26),"Original role coverage width")
+		assert(cover.is_finite() and absf(cover.x)<=4.4 and absf(cover.z)<8.0)
+		if role!="S": assert(absf(cover.z)<4.0 if front else absf(cover.z)>4.5,"Coverage keeps near and deep responsibilities")
+		game.flight_target.x*=-1
+		var opposite_cover:=RallyAI.coverage(game,number,team)
+		assert(cover.distance_to(opposite_cover)>1.0,"Coverage must follow the attacked pin rather than a fixed grid")
+		game.flight_target.x*=-1
 		covers.append(cover)
 		checks+=1
 		game.phase="ATTACK" if team==0 else "CPU_ATTACK"

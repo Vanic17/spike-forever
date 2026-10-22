@@ -1,0 +1,1977 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 12919
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 16777216,
+    "m_PathID": 12197036032
+  },
+  "m_Name": "",
+  "stateGame": 0,
+  "timerGame": 0.0,
+  "stateSub": 0,
+  "timerSub": 0.0,
+  "timerTutorial": 0.0,
+  "timerCrowd": 0.0,
+  "advanceSub": 0,
+  "fadeSub": 0.0,
+  "stateVariant": 0,
+  "stateVariantMax": 0,
+  "statePause": 0,
+  "timeScale": 0.0,
+  "timeScaleTarg": 0.0,
+  "timeScaleSpd": 0.0,
+  "timeScaleLast": 0.0,
+  "curveTimeScale": {
+    "m_Curve": [
+      {
+        "time": 0.0,
+        "value": 0.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.0
+      },
+      {
+        "time": 1.0,
+        "value": 1.0,
+        "inSlope": 2.0,
+        "outSlope": 2.0,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.0
+      }
+    ],
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "curveTimeScaleTutorial": {
+    "m_Curve": [
+      {
+        "time": 0.0,
+        "value": 0.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.07263293862342834
+      },
+      {
+        "time": 1.0,
+        "value": 1.0,
+        "inSlope": 0.604674220085144,
+        "outSlope": 0.604674220085144,
+        "weightedMode": 0,
+        "inWeight": 0.09468227624893188,
+        "outWeight": 0.0
+      }
+    ],
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "gmSet": 0,
+  "gmPoss": 0,
+  "gmScore": [
+    0,
+    0
+  ],
+  "gmWins": [
+    0,
+    0
+  ],
+  "gmLastPoint": 0,
+  "gmServeClock": 0.0,
+  "trackHit": 0,
+  "trackTouch": 0,
+  "trackTouchTeam": 0,
+  "trackReceiver": 0,
+  "trackAttacker": 0,
+  "trackSetter": 0,
+  "trackSide": 0,
+  "trackSideSwitch": 0,
+  "trackServer": 0,
+  "trackMiddleHitter": 0,
+  "trackBlocker": 0,
+  "trackCelly": 0,
+  "trackFreeball": 0,
+  "trackOverpass": 0,
+  "trackInSystem": 0,
+  "trackPoint": 0,
+  "trackPointInit": 0,
+  "trackInOut": 0,
+  "trackInOutInit": 0,
+  "trackCallInOut": 0,
+  "trackChallenge": 0,
+  "trackCourtSide": [],
+  "trackRotation": [],
+  "trackSwitch": [],
+  "trackSetterFront": [
+    0,
+    0
+  ],
+  "trackTargs0": [],
+  "trackTargs1": [],
+  "shout": "",
+  "shoutStart": 0.0,
+  "shoutID": 0,
+  "modeGame": 0,
+  "modeVariant": 0,
+  "modeGender": 0,
+  "rulePlayerTot": 14,
+  "ruleScoreMax": 25,
+  "ruleWinsMax": 0,
+  "ruleRotation": -1,
+  "ruleServing": -1,
+  "optionAutoReceive": 0,
+  "optionAutoSet": 0,
+  "optionAutoSpike": 0,
+  "optionAutoBlock": 0,
+  "optionAutoServe": 0,
+  "optionChallenge": 0,
+  "stratOffense": [],
+  "statPlayed": [],
+  "statPoint": [],
+  "statKill": [],
+  "statKillAttempt": [],
+  "statBlock": [],
+  "statBlockAttempt": [],
+  "statReceive": [],
+  "statReceiveAttempt": [],
+  "statAce": [],
+  "statAceAttempt": [],
+  "statDig": [],
+  "statAssist": [],
+  "statErrorKill": [],
+  "statErrorAce": [],
+  "statErrorBlock": [],
+  "statErrorReceive": [],
+  "statDump": [],
+  "statDumpAttempt": [],
+  "tmpStatPoint": 0,
+  "tmpStatKill": 0,
+  "tmpStatBlock": 0,
+  "tmpStatReceive": 0,
+  "tmpStatAce": 0,
+  "tmpStatDig": 0,
+  "tmpStatAssist": 0,
+  "tmpStatErrorHit": 0,
+  "tmpStatErrorAce": 0,
+  "tmpStatErrorBlock": 0,
+  "tmpStatErrorReceive": 0,
+  "tmpStatDump": 0,
+  "cellyStat": 0,
+  "tutorialStepStarted": 0,
+  "tutorialAIDead": 0,
+  "tutorialAutoPlay": 0,
+  "tutorialScrimmage": 0,
+  "tutorialKeepGoing": 0,
+  "tutorialNoDefense": 0,
+  "tutorialDialogSpeaking": 0,
+  "tutorialStep": 0,
+  "tutorialStepJump": 0,
+  "tutorialStepMax": 9,
+  "tutorialCount": 0,
+  "tutorialCountTotal": 0,
+  "tutorialCountMax": 0,
+  "tutorialDialog": 0,
+  "tutorialDialogMax": 0,
+  "tutorialScore": 0,
+  "tutorialScoreResult": 0,
+  "tutorialServeDest": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "tutorialSpikeDest": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "tutorialPassDest": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "tutorialTarg": -1,
+  "tutorialPassAccuracy": 0.0,
+  "tutorialServePower": -1.0,
+  "tutorialServeAccuracy": -1.0,
+  "tutorialEasyServe": 0,
+  "tutorialSpikePower": -1.0,
+  "tutorialSpikeAccuracy": -1.0,
+  "tutorialBlockPower": 0.0,
+  "tutorialTiming": -1,
+  "tutorialAccuracy": 0.0,
+  "tutorialAnim": -1,
+  "tutorialBench": [],
+  "tutorialTarget": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 162558
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163007
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163016
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163008
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163004
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163003
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163013
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163010
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163012
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163014
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163015
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163011
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163005
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163009
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 163006
+    }
+  ],
+  "tutorialAdvance": 0,
+  "tutorialObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 32
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 17328
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 166
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1064
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 606
+    }
+  ],
+  "vfxImpact": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 158649
+    }
+  ],
+  "lines": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 76764
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76699
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76844
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76900
+    }
+  ],
+  "cams": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 152495
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152506
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152503
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152516
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152515
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152501
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152490
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152496
+    }
+  ],
+  "camPhoto": {
+    "m_FileID": 0,
+    "m_PathID": 152502
+  },
+  "camHighlight": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 161640
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 162993
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 162996
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 162571
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 162569
+    }
+  ],
+  "camCineIntro": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 152505
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152513
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152514
+    }
+  ],
+  "camServing": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 152508
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152510
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152507
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152509
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152512
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152511
+    }
+  ],
+  "camPlanar": {
+    "m_FileID": 0,
+    "m_PathID": 161199
+  },
+  "photo": {
+    "m_FileID": 0,
+    "m_PathID": 162570
+  },
+  "camActive": 0,
+  "camPosInit": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "camPosTrack": {
+    "x": -2.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "camLimits": {
+    "x": 6.0,
+    "y": 8.5,
+    "z": 19.0
+  },
+  "camLook": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "camLookInit": {
+    "x": 0.0,
+    "y": 2.0,
+    "z": 0.0
+  },
+  "camLookLimits": {
+    "x": 2.0,
+    "y": 3.0,
+    "z": 0.0
+  },
+  "camLookAhead": 0.0,
+  "camLookAheadMulti": 1.0,
+  "camLookHigh": 4.0,
+  "camLookSmooth": 1.2599999904632568,
+  "camBias": 0.20000000298023224,
+  "camSmooth": 0.3799999952316284,
+  "camShake": 0.0,
+  "camShakePower": 0.0,
+  "camShakeMulti": 1.2599999904632568,
+  "camZoom": 49.0,
+  "camZoomServe": 52.0,
+  "camZoomPlay": 46.0,
+  "camZoomPlayWide": 63.0,
+  "camZoomSet": 32.0,
+  "camZoomPoint": 63.0,
+  "camZoomAction": 32.0,
+  "camZoomChase": 36.0,
+  "camZoomSpd": 1.0,
+  "timerActionZoom": 0.0,
+  "camServeID": [],
+  "camCellyID": -1,
+  "camCellyDir": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "camTargID": 0,
+  "camReverseX": 0,
+  "curveShake": {
+    "m_Curve": [
+      {
+        "time": 0.0,
+        "value": 1.0,
+        "inSlope": -15.963754653930664,
+        "outSlope": -15.963754653930664,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.059270717203617096
+      },
+      {
+        "time": 0.05000000074505806,
+        "value": -1.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.10000000149011612,
+        "value": 0.75,
+        "inSlope": 5.126315593719482,
+        "outSlope": 5.126315593719482,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.20000000298023224,
+        "value": -0.5,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.3499999940395355,
+        "value": 0.5,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.5059038996696472,
+        "value": -0.3045462965965271,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.7021050453186035,
+        "value": 0.19542786478996277,
+        "inSlope": 1.7384535074234009,
+        "outSlope": 1.7384535074234009,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 0.872746467590332,
+        "value": -0.12406089901924133,
+        "inSlope": -1.403584361076355,
+        "outSlope": -1.403584361076355,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.3333333432674408
+      },
+      {
+        "time": 1.0,
+        "value": 0.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.3333333432674408,
+        "outWeight": 0.0
+      }
+    ],
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "isChallenge": 0,
+  "camChallenge": {
+    "m_FileID": 0,
+    "m_PathID": 152492
+  },
+  "timerChallenge": 0.0,
+  "coachChallengeGuess": 0.0,
+  "curveChallengeCam": {
+    "m_Curve": [
+      {
+        "time": 0.0,
+        "value": 0.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.0
+      },
+      {
+        "time": 1.0,
+        "value": 1.0,
+        "inSlope": 0.0,
+        "outSlope": 0.0,
+        "weightedMode": 0,
+        "inWeight": 0.0,
+        "outWeight": 0.0
+      }
+    ],
+    "m_PreInfinity": 2,
+    "m_PostInfinity": 2,
+    "m_RotationOrder": 4
+  },
+  "objChallenge": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 1059
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 305
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 355
+    }
+  ],
+  "isFinisher": 0,
+  "camFinisher": {
+    "m_FileID": 0,
+    "m_PathID": 152504
+  },
+  "locBench": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 110692
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 138421
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 142325
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 127987
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104039
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131992
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131986
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131989
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131988
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131993
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131994
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131987
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131991
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 131990
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 128790
+    }
+  ],
+  "locActions": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 76808
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76880
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76980
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 77052
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76822
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76857
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76713
+    }
+  ],
+  "locBase": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 104037
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85003
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84989
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118891
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91945
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116849
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101559
+    }
+  ],
+  "locServe": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 149116
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 150892
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 152040
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 140373
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 106704
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 113145
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 109969
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118887
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104031
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85006
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84983
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116851
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91950
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101555
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91952
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118894
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104036
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101564
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84990
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116844
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84997
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116846
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85002
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118889
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104028
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101565
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84981
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91948
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84991
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116847
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84996
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118893
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104035
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101566
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91946
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101563
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84984
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116853
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91954
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118885
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104033
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85005
+    }
+  ],
+  "locReceive": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 104034
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84999
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84987
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116850
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91947
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118890
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101557
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118896
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104032
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85007
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84985
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116855
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91951
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101561
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84998
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118888
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104030
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101562
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84986
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116854
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91955
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116848
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85004
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118892
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104027
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101556
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84982
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91949
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84992
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116852
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85000
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118886
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104038
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101558
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91944
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 85001
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 84988
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 116845
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 91953
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 118895
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 104029
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 101560
+    }
+  ],
+  "locCelly": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 77025
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76769
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76703
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76677
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 77034
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76907
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76789
+    }
+  ],
+  "locCellyHero": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 76724
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 77054
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76901
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76804
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76958
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76903
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76845
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76745
+    }
+  ],
+  "locCineIntro": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 76771
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76943
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76971
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76874
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76966
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 77042
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76680
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76814
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76741
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76951
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76723
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76895
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76701
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 76834
+    }
+  ],
+  "pl": [],
+  "plSetter": [],
+  "plCelly": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "plCelly1": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "plCelly2": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "lineup": [],
+  "bl": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "coa": [],
+  "refs": [],
+  "knocks": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 161624
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161616
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161621
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161633
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161632
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161638
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161618
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161637
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161623
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161628
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161615
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161630
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161627
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161625
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161629
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161614
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161634
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161631
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161622
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161617
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161619
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161620
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161626
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161636
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 161635
+    }
+  ],
+  "marker": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 668
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 7
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1015
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1094
+    }
+  ],
+  "optionCrowdDensity": 0,
+  "crowdReactTimer": 0.0,
+  "crowdServingTimer": 0.0,
+  "crowdDetailTimer": 0.0,
+  "crowdSeq": 0,
+  "grpCrowd": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 899
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 54
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 709
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 938
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 819
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 115
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 419
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1115
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1072
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 850
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 755
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 753
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1086
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1011
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 619
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 409
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 544
+    }
+  ],
+  "crowd": {
+    "m_FileID": 0,
+    "m_PathID": 160777
+  },
+  "colorSkin": [
+    {
+      "r": 0.7843137979507446,
+      "g": 0.6901960968971252,
+      "b": 0.615686297416687,
+      "a": 1.0
+    },
+    {
+      "r": 0.8313726186752319,
+      "g": 0.6980392336845398,
+      "b": 0.5803921818733215,
+      "a": 1.0
+    },
+    {
+      "r": 0.7725490927696228,
+      "g": 0.6470588445663452,
+      "b": 0.49803924560546875,
+      "a": 1.0
+    },
+    {
+      "r": 0.6901960968971252,
+      "g": 0.5607843399047852,
+      "b": 0.4117647409439087,
+      "a": 1.0
+    },
+    {
+      "r": 0.6235294342041016,
+      "g": 0.4862745404243469,
+      "b": 0.3686274588108063,
+      "a": 1.0
+    },
+    {
+      "r": 0.5490196347236633,
+      "g": 0.4235294461250305,
+      "b": 0.3137255012989044,
+      "a": 1.0
+    },
+    {
+      "r": 0.4235294461250305,
+      "g": 0.32549020648002625,
+      "b": 0.24313727021217346,
+      "a": 1.0
+    }
+  ],
+  "colorMouth": [
+    {
+      "r": 0.7529412508010864,
+      "g": 0.5215686559677124,
+      "b": 0.4941176772117615,
+      "a": 1.0
+    },
+    {
+      "r": 0.7529412508010864,
+      "g": 0.5215686559677124,
+      "b": 0.4941176772117615,
+      "a": 1.0
+    },
+    {
+      "r": 0.6980392336845398,
+      "g": 0.4941176772117615,
+      "b": 0.4392157196998596,
+      "a": 1.0
+    },
+    {
+      "r": 0.5843137502670288,
+      "g": 0.4117647409439087,
+      "b": 0.3333333432674408,
+      "a": 1.0
+    },
+    {
+      "r": 0.5098039507865906,
+      "g": 0.38431376218795776,
+      "b": 0.3450980484485626,
+      "a": 1.0
+    },
+    {
+      "r": 0.4705882668495178,
+      "g": 0.32549020648002625,
+      "b": 0.3137255012989044,
+      "a": 1.0
+    },
+    {
+      "r": 0.34117648005485535,
+      "g": 0.22745099663734436,
+      "b": 0.20784315466880798,
+      "a": 1.0
+    }
+  ],
+  "colorHair": [
+    {
+      "r": 0.4941176474094391,
+      "g": 0.4941176474094391,
+      "b": 0.4941176474094391,
+      "a": 1.0
+    },
+    {
+      "r": 0.7358490228652954,
+      "g": 0.48429161310195923,
+      "b": 0.21867211163043976,
+      "a": 1.0
+    },
+    {
+      "r": 0.6235294342041016,
+      "g": 0.5215686559677124,
+      "b": 0.2666666805744171,
+      "a": 1.0
+    },
+    {
+      "r": 0.4901961088180542,
+      "g": 0.4078431725502014,
+      "b": 0.20000001788139343,
+      "a": 1.0
+    },
+    {
+      "r": 0.43529415130615234,
+      "g": 0.3137255012989044,
+      "b": 0.13333334028720856,
+      "a": 1.0
+    },
+    {
+      "r": 0.2823529541492462,
+      "g": 0.19607844948768616,
+      "b": 0.06666667014360428,
+      "a": 1.0
+    },
+    {
+      "r": 0.12156863510608673,
+      "g": 0.08627451211214066,
+      "b": 0.02352941408753395,
+      "a": 1.0
+    },
+    {
+      "r": 0.8588235974311829,
+      "g": 0.7490196228027344,
+      "b": 0.4745098352432251,
+      "a": 1.0
+    },
+    {
+      "r": 0.5176470875740051,
+      "g": 0.019607843831181526,
+      "b": 0.0,
+      "a": 1.0
+    }
+  ],
+  "colorEyes": [
+    {
+      "r": 0.0,
+      "g": 0.7372549176216125,
+      "b": 1.0,
+      "a": 1.0
+    },
+    {
+      "r": 0.0,
+      "g": 1.0,
+      "b": 0.3944356441497803,
+      "a": 1.0
+    },
+    {
+      "r": 0.6792452931404114,
+      "g": 0.5804650187492371,
+      "b": 0.3684585392475128,
+      "a": 1.0
+    },
+    {
+      "r": 0.4901960790157318,
+      "g": 0.3764705955982208,
+      "b": 0.1882352977991104,
+      "a": 1.0
+    }
+  ],
+  "colorGear": [
+    {
+      "r": 0.9333333373069763,
+      "g": 0.9333333373069763,
+      "b": 0.9333333373069763,
+      "a": 1.0
+    },
+    {
+      "r": 0.14901961386203766,
+      "g": 0.14901961386203766,
+      "b": 0.14901961386203766,
+      "a": 1.0
+    },
+    {
+      "r": 0.33725491166114807,
+      "g": 0.33725491166114807,
+      "b": 0.33725491166114807,
+      "a": 1.0
+    },
+    {
+      "r": 0.4941176772117615,
+      "g": 0.4941176772117615,
+      "b": 0.4941176772117615,
+      "a": 1.0
+    },
+    {
+      "r": 0.729411780834198,
+      "g": 0.729411780834198,
+      "b": 0.729411780834198,
+      "a": 1.0
+    },
+    {
+      "r": 0.9333333373069763,
+      "g": 0.8117647171020508,
+      "b": 0.08235294371843338,
+      "a": 1.0
+    },
+    {
+      "r": 0.02352941408753395,
+      "g": 0.2666666805744171,
+      "b": 0.7372549176216125,
+      "a": 1.0
+    },
+    {
+      "r": 0.7843137383460999,
+      "g": 0.10980392247438431,
+      "b": 0.10196078568696976,
+      "a": 1.0
+    },
+    {
+      "r": 0.10196078568696976,
+      "g": 0.10196078568696976,
+      "b": 0.10196078568696976,
+      "a": 1.0
+    }
+  ],
+  "con": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 162554
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 162555
+    }
+  ],
+  "gobPlayer": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 659
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 696
+    }
+  ],
+  "gobPlayerHair": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 656
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 655
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 653
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 658
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 652
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 654
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 657
+    }
+  ],
+  "gobPlayerHairWomen": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 688
+    }
+  ],
+  "gobBall": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 839
+    }
+  ],
+  "gobCoach": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 843
+    }
+  ],
+  "gobRefs": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 672
+    }
+  ],
+  "mats": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 33
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 34
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 33
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 34
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 15
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 16
+    }
+  ],
+  "matsPlanar": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 39
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 45
+    }
+  ],
+  "planarRT": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 543
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 542
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 544
+    }
+  ],
+  "postVol": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 296
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1122
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 338
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 87
+    }
+  ],
+  "grpLighting": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 1043
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 181
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1090
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1045
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 549
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 142
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 420
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 49
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 555
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 73
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 754
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 883
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 846
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 272
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 321
+    }
+  ],
+  "grpIntro": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 952
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 249
+    }
+  ],
+  "mh": {
+    "m_FileID": 0,
+    "m_PathID": 161109
+  },
+  "ms": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "mrt": {
+    "m_FileID": 0,
+    "m_PathID": 160883
+  },
+  "sfx": {
+    "m_FileID": 0,
+    "m_PathID": 162945
+  },
+  "mset": {
+    "m_FileID": 0,
+    "m_PathID": 160813
+  },
+  "net": {
+    "m_FileID": 0,
+    "m_PathID": 162559
+  },
+  "req": [
+    {
+      "m_FileID": 3,
+      "m_PathID": 99
+    }
+  ],
+  "optionSkipPointCelly": 0,
+  "optionSkipCineIntro": 0,
+  "optionSkipChallenge": 1,
+  "dbgBalls": 0,
+  "dbgObj": [
+    {
+      "m_FileID": 2,
+      "m_PathID": 626
+    },
+    {
+      "m_FileID": 2,
+      "m_PathID": 627
+    }
+  ],
+  "dbgBallA": [],
+  "dbgBallB": [],
+  "dbgPlayer2": 0,
+  "dbgTargServe": 0,
+  "dbgTargPass": 0,
+  "dbgTargSpike": 0,
+  "dbgTargBlock": 0,
+  "dbgTarg": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 190
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 364
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 168
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 538
+    }
+  ],
+  "dbgFinishers": 1,
+  "dbgAllowPhotoMode": 0,
+  "dbgCamCelly": -1,
+  "dbgCamServing": -1,
+  "dbgForcePoss": -1,
+  "dbgForceSpectate": 0,
+  "dbgAlwaysSpikeKill": 0,
+  "dbgAIBlockSkill": 0.0,
+  "dbgBlockRadiusMulti": -1.0,
+  "dbgAlwaysStuffBlock": 0,
+  "dbgNoStuffBlock": 0,
+  "dbgSmashBlockOnly": 0,
+  "dbgReceiveServeBad": 0,
+  "dbgShankServe": 0,
+  "dbgPunchServe": 0,
+  "dbgShankSpike": 0,
+  "dbgPunchSpike": 0,
+  "dbgSpikeTimingAdj": 0.0,
+  "dbgShankHardMulti": -1.0,
+  "dbgOverpassMulti": -1.0,
+  "dbgPassPerfect": 0,
+  "dbgPassPerfectPlOnly": 0,
+  "dbgServePerfect": 0,
+  "dbgServeHigh": 0,
+  "dbgSetOutside": 0,
+  "dbgSetPin": 0,
+  "dbgSetMiddle": 0,
+  "dbgSetOpp": 0,
+  "dbgSetPipe": 0,
+  "dbgSpikePerfect": 0,
+  "dbgLandOnLine": -1,
+  "dbgAlwaysAce": 0,
+  "dbgHideHUD": 0,
+  "dbgForceDormaCelly": 0
+}

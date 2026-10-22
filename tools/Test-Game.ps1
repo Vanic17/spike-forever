@@ -80,7 +80,7 @@ foreach($check in @(@('Positioning','POSITIONING PASS'),@('MotionContinuity','MO
  }
  Write-Output ('PASS '+$name+' / '+$marker)
 }
-foreach($check in @(@('RoleMatrix','ROLE MATRIX PASS'),@('MenuUpdates','MENU UPDATES PASS'))){
+foreach($check in @(@('RoleMatrix','ROLE MATRIX PASS'),@('MenuUpdates','MENU UPDATES PASS'),@('RotationSpec','ROTATION SPEC PASS'))){
  $extraLog=Join-Path $root ('docs\'+$check[0]+'-test.log')
  $ErrorActionPreference='Continue'
  & $engine --headless --path $root --script (Join-Path $root ('tools\Test-'+$check[0]+'.gd')) --quit-after 180 *> $extraLog
@@ -93,6 +93,6 @@ foreach($check in @(@('RoleMatrix','ROLE MATRIX PASS'),@('MenuUpdates','MENU UPD
  Write-Output ('PASS '+$check[0]+' / '+$check[1])
 }
 & (Join-Path $PSScriptRoot 'Check-PositionScope.ps1')
-& (Join-Path $PSScriptRoot 'Check-Revision19Scope.ps1')
+& (Join-Path $PSScriptRoot 'Check-Revision20Scope.ps1')
 & (Join-Path $PSScriptRoot 'Test-UpdateInstaller.ps1')
 exit 0

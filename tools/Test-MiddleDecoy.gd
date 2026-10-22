@@ -56,6 +56,8 @@ func run() -> void:
 						var right: int=p.clips.idle.names.find("RightToeBase")
 						peak=maxf(peak,minf(p.last_pose[left].origin.y,p.last_pose[right].origin.y))
 				assert(game.middle_decoy.events.size()==before+1,"Every good non-middle set needs exactly one middle decoy")
+				if absf(game.middle_decoy.events[-1].apex_at-setter_contact)>=0.35:
+					print("DECOY ARRIVAL DIAGNOSTIC team=",team," R=",rotation+1," direction=",direction," apex=",game.middle_decoy.events[-1].apex_at-setter_contact," origin=",game.middle_decoy.motion_origin)
 				assert(absf(game.middle_decoy.events[-1].apex_at-setter_contact)<0.35,"The decoy must threaten a first tempo near the set, not jump late with the wing")
 				assert(peak>0.20,"The middle must actually leave the floor for the quick decoy")
 				assert(runup_seen)

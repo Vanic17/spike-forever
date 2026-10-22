@@ -14,6 +14,7 @@ const Reference = preload("res://src/reference_style.gd")
 const RallyAI = preload("res://src/rally_ai.gd")
 const CourtShape = preload("res://src/court_shape.gd")
 const MiddleDecoy = preload("res://src/middle_decoy.gd")
+var rotation_context=preload("res://src/rotation_context.gd").new()
 const G := 9.81
 var clips: Dictionary = {}
 var models: Dictionary = {}
@@ -190,6 +191,10 @@ func _ready() -> void:
 	add_child(canvas)
 	canvas.add_child(hud)
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var rotation_overlay=preload("res://src/rotation_overlay.gd").new()
+	rotation_overlay.game=self
+	canvas.add_child(rotation_overlay)
+	rotation_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	synth = AudioStreamPlayer.new()
 	add_child(synth)
 	match_audio = MatchAudio.new()
@@ -466,6 +471,7 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	rotation_context.reset()
 	defensive_lanes.reset()
 	manual_wall.reset()
 	rally_serial += 1
@@ -501,6 +507,7 @@ func reset_rally() -> void:
 		p.foot_planted = [false, false]
 		p.set_libero(Tactics.libero(i, rotations[int(i / 6)], int(i / 6) == server))
 		p.play("idle", 1, true)
+		p.tick(0,false,false)
 	selected = server_index(0)
 	var serving = players[server_index(server)]
 	# The source stadium's first platform begins at depth 12.6 m. Keep both
@@ -696,6 +703,8 @@ func validate_contact(index: int, action: String) -> bool:
 	return true
 
 func serve_ball(team: int, power: float) -> void:
+	var layout: Dictionary=rotation_context.capture(self,team)
+	log_rally_event("service_foot_snapshot",layout)
 	last_touch = team
 	possession = 1 - team
 	var s := 1.0 if possession == 0 else -1.0
@@ -710,6 +719,9 @@ func serve_ball(team: int, power: float) -> void:
 	target.z += rng.randf_range(-dispersion, dispersion)
 	if not validate_contact(server_index(team), "float" if serve_type == 0 else "power"):
 		award(1 - team, "SERVIZIO · CONTATTO MANCATO")
+		return
+	if not layout.legal:
+		award(team,"FALLO DI POSIZIONE IN RICEZIONE")
 		return
 	toss_active = false
 	last_power = power
@@ -1437,17 +1449,6 @@ func move_players(dt: float) -> void:
 		elif i in blockers: nominal.append(blocking_target(i,team))
 		elif phase=="SERVE":
 			var ready: Vector3=Tactics.serve_position(i,team,rotations[team],team==server) if i!=server_index(server) else players[i].position
-			if team!=server and i%6==5 and not Tactics.front(i,rotations[team]):
-				# Stage the back-row setter behind his corresponding front-row
-				# teammate during the service preparation, retaining lateral order.
-				# Starting the entire penetration from the baseline after contact
-				# unnecessarily converted even perfect passes into emergency sets.
-				var front_depth:=0.5
-				for front in range(team*6,team*6+6):
-					if Tactics.slot(front,rotations[team])==5-Tactics.slot(i,rotations[team]):
-						front_depth=absf(players[front].position.z)
-				var depth:=maxf(front_depth+0.45,absf(ready.z)-2.2*smoothstep(0.20,1.20,phase_time))
-				ready.z=(1.0 if team==0 else -1.0)*depth
 			nominal.append(ready)
 		elif phase=="POINT" and point_formation.size()==12: nominal.append(point_formation[i])
 		elif phase=="LOOSE": nominal.append(players[i].target)

@@ -18,7 +18,9 @@ func update(game) -> void:
 			if not Tactics.front(i,game.rotations[team]): continue
 			if Tactics.ROLES[i%6].begins_with("MB"): middle=i
 			else: pins.append(i)
-		pins.sort_custom(func(a,b): return game.players[a].position.x<game.players[b].position.x)
+		# The specification fixes OH to Z4 and OPP/front S to Z2. Their
+		# temporary crossing positions cannot reassign specialist responsibilities.
+		pins.sort_custom(func(a,b): return Tactics.home(a,team,game.rotations[team],team==game.server,false).x<Tactics.home(b,team,game.rotations[team],team==game.server,false).x)
 		if pins.size()==2 and middle>=0: rows[team]=[pins[0],middle,pins[1]]
 func line(game, team: int) -> Array[int]:
 	update(game)

@@ -15,7 +15,8 @@ foreach($property in $oldSources.PSObject.Properties){
 foreach($property in $newSources.PSObject.Properties){
  $active=Join-Path $root ('assets\active\'+$property.Name+'.psa')
  $original=Join-Path $root ('assets\spike\Game\CharactersV1\Animations\'+$property.Value)
- if((Get-FileHash -LiteralPath $active).Hash -ne (Get-FileHash -LiteralPath $original).Hash){throw ('Animation differs from its declared original: '+$property.Name)}
+ $expected=if(Test-Path -LiteralPath $original){(Get-FileHash -LiteralPath $original).Hash}else{(Get-Content -Raw (Join-Path $root 'docs/original-animation-hashes.json') | ConvertFrom-Json).($property.Name)}
+ if(!$expected -or (Get-FileHash -LiteralPath $active).Hash -ne $expected){throw ('Animation differs from its declared original: '+$property.Name)}
 }
 if((Get-FileHash -LiteralPath (Join-Path $root 'assets\gameplay\killer_aces_reference.json')).Hash -ne (Get-FileHash -LiteralPath (Join-Path $baseline 'killer_aces_reference.json')).Hash){throw 'The old reference tuning changed'}
 $checked+=2

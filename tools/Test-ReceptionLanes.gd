@@ -39,10 +39,8 @@ func _initialize() -> void:
 					expect(signf(opening.x)==signf(contact.x),"Opening and attack contact must use the same pin")
 				if not Tactics.front(hitter,rotation): expect(absf(contact.z)>3.0,"Back-row hitters retain legal takeoff lanes")
 				if rotation==0 and direction in [0,2]:
-					var ready:=Tactics.serve_position(hitter,team,rotation,false)
-					expect(absf(ready.x-contact.x)<1.1,"P1 pin hitters must not cross the whole court after reception")
-					var expected:=team*6+(2 if direction==0 else 0)
-					expect(hitter==expected,"P1: opposite offers zone 4, receiving outside offers zone 2")
+					var expected:=team*6+(0 if direction==0 else 2)
+					expect(hitter==expected,"R1 follows the supplied spec: OH offers zone 4, OPP offers zone 2")
 			game.incoming_kind="spike"
 			expect(not Tactics.first_ball(game),"Transition plays return to the standard specialist lanes")
 			var outside:=Tactics.attacker(team,rotation,0,game.setter,false)
