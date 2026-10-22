@@ -1,6 +1,6 @@
 # Spike Forever
 
-**Versione 0.19.0:** ruoli S/OH/MB/OPP/L al posto dei numeri, preparazione specialistica alla nostra battuta e assegnazioni laterali di muro stabili durante la costruzione avversaria. Menu iniziale con Gioca e Aggiornamenti, ricerca delle versioni e installazione verificata. [Ruoli e sei rotazioni](docs/ROLES_ROTATIONS_19.md) · [Pubblicazione e aggiornamenti](docs/UPDATES_19.md). La prima release remota dipende dalla pubblicazione della repository.
+**Versione 0.19.0:** ruoli S/OH/MB/OPP/L al posto dei numeri, preparazione specialistica alla nostra battuta e assegnazioni laterali di muro stabili durante la costruzione avversaria. Menu iniziale con Gioca e Aggiornamenti, ricerca delle versioni e installazione verificata. [Ruoli e sei rotazioni](docs/ROLES_ROTATIONS_19.md) · [Pubblicazione e aggiornamenti](docs/UPDATES_19.md). [Scarica la release Windows v0.19.0](https://github.com/Vanic17/spike-forever/releases/tag/v0.19.0). La cronologia delle patch inizia da questa versione.
 
 Per giocare da uno ZIP release: estrarre tutto e aprire `Spike Forever.exe`. Da un clone dei sorgenti: eseguire prima `powershell -ExecutionPolicy Bypass -File tools/Bootstrap-Engine.ps1` per scaricare il runtime Godot verificato.
 

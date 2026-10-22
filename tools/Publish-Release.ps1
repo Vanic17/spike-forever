@@ -1,9 +1,11 @@
 param([string]$Repository='Vanic17/spike-forever',[string]$Package='')
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
-$env:GH_CONFIG_DIR=Join-Path $root 'tools/github/config'
 $gh=Join-Path $root 'tools/github/bin/gh.exe'
 $git=Join-Path $root 'tools/git/cmd/git.exe'
+if(Test-Path -LiteralPath $gh){$env:GH_CONFIG_DIR=Join-Path $root 'tools/github/config'}
+else{$gh=(Get-Command gh -ErrorAction Stop).Source}
+if(!(Test-Path -LiteralPath $git)){$git=(Get-Command git -ErrorAction Stop).Source}
 $env:PATH=(Split-Path $gh)+';'+$env:PATH
 function Native([string]$Executable,[string[]]$Arguments,[switch]$AllowFailure){
  $ErrorActionPreference='Continue'

@@ -1,6 +1,6 @@
 # Aggiornamenti e pubblicazione
 
-Versione iniziale della cronologia: **0.19.0**. Repository prevista: `Vanic17/spike-forever`. Non si inventano release delle revisioni precedenti.
+Versione iniziale della cronologia: **0.19.0**. Repository pubblicata: `Vanic17/spike-forever`. Non si inventano release delle revisioni precedenti.
 
 Il menu mostra Gioca e Aggiornamenti. Gioca funziona offline; la ricerca usa la API pubblica GitHub Releases, con paginazione, escludendo bozze e prerelease. Ogni release deve contenere `SpikeForever-Windows.zip`. La lista permette di scegliere la più recente o una precedente: entrambe vengono installate con lo stesso percorso verificato. Una versione installata viene letta dal suo `version.json`.
 
@@ -17,4 +17,4 @@ Limite: il rollback copre errori gestiti dall'installatore, non un'interruzione 
 
 La prima pubblicazione richiede autorizzazione GitHub CLI. Il connettore di questa sessione riconosce Vanic17 ma non espone la creazione di repository o l'upload delle release; le sue credenziali non vengono estratte. Il programma deve riportare chiaramente quando la repository/release non esiste ancora. La pubblicazione non è considerata completata finché la release remota non è verificata.
 
-Test locali: menu offline, cronologia con più versioni, esclusione bozze, gestione 404, rifiuto URL non autorizzati; installazione verificata, conservazione comandi, rifiuto ZIP traversal e file con checksum errato. La prova su release remota resta dipendente dalla prima pubblicazione.
+Test locali: menu offline, cronologia con più versioni, esclusione bozze, gestione 404, rifiuto URL non autorizzati; installazione verificata, conservazione comandi, rifiuto ZIP traversal e file con checksum errato. Ricerca anonima e digest SHA-256 della release v0.19.0 verificati usando il client Godot contro la API GitHub pubblica.
