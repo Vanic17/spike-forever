@@ -1,0 +1,11 @@
+Diffuse=T_Misc_PlasticTileB_Base
+Normal=T_Misc_PlasticTileB_Normal
+Other[0]=T_Misc_PlasticTileB_Mix
+Other[1]=T_Master_RedMask
+Other[2]=Capsules1
+Other[3]=Capsules2
+Other[4]=T_Master_Checker_Albedo
+Other[5]=T_Master_Checker_Mask
+Other[6]=T_Ground_Taraflex_Normal
+Other[7]=T_Ground_Taraflex_NormalV3
+Other[8]=T_Ground_Grunge_Roughness

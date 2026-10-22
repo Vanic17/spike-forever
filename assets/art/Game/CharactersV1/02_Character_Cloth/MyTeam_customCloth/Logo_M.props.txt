@@ -1,0 +1,121 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[6] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Detail_GenericFabric_03_Base.T_Detail_GenericFabric_03_Base'
+    ReferencedTextures[1] = Texture2D'/Game/CharactersV1/04_Detail_Maps/T_Detail_GenericFabric_02_Normal.T_Detail_GenericFabric_02_Normal'
+    ReferencedTextures[2] = Texture2D'/Game/UI/img/Logos/Equipe/Cat_Back.Cat_Back'
+    ReferencedTextures[3] = Texture2D'/Game/UI/img/Logos/Equipe/Cat_LineArt.Cat_LineArt'
+    ReferencedTextures[4] = Texture2D'/Game/UI/img/Logos/Equipe/Cat_NotTinted.Cat_NotTinted'
+    ReferencedTextures[5] = Texture2D'/Game/UI/img/Logos/Equipe/Cat_Outline.Cat_Outline'
+}
+Expressions[26] =
+{
+    Expressions[2] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[3] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_2'
+    Expressions[4] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionVectorParameter_0'
+    Expressions[5] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionVectorParameter_1'
+    Expressions[6] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionVectorParameter_2'
+    Expressions[7] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[8] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_1'
+    Expressions[11] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_4'
+    Expressions[16] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionScalarParameter_7'
+    Expressions[19] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionScalarParameter_0'
+    Expressions[21] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionTextureSampleParameter2D_5'
+    Expressions[23] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Logo_M.MaterialExpressionScalarParameter_1'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Masked (1)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[6] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/04_Detail_Maps/T_Detail_GenericFabric_02_Normal.T_Detail_GenericFabric_02_Normal'
+        Name = None
+        Group = None
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'/Game/UI/img/Logos/Equipe/Cat_Outline.Cat_Outline'
+        Name = IMG_Outline
+        Group = LogoCreator
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'/Game/UI/img/Logos/Equipe/Cat_LineArt.Cat_LineArt'
+        Name = IMG_LineArt
+        Group = LogoCreator
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'/Game/UI/img/Logos/Equipe/Cat_Back.Cat_Back'
+        Name = IMG_Back
+        Group = LogoCreator
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'/Game/UI/img/Logos/Equipe/Cat_NotTinted.Cat_NotTinted'
+        Name = IMG_NotTinted
+        Group = LogoCreator
+    }
+    CollectedTextureParameters[5] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Detail_GenericFabric_03_Base.T_Detail_GenericFabric_03_Base'
+        Name = None
+        Group = None
+    }
+}
+CollectedScalarParameters[3] =
+{
+    CollectedScalarParameters[0] = { Value=4, Name=Scale_microtexture, Group=None }
+    CollectedScalarParameters[1] = { Value=4, Name=Scale_microtexture_1, Group=None }
+    CollectedScalarParameters[2] = { Value=1, Name=Opacity, Group=LogoCreator }
+}
+CollectedVectorParameters[3] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.104616, G=0.104616, B=0.104616, A=1 }
+        Name = Color_LineArt
+        Group = LogoCreator
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=0.672443, G=0.371237, B=0.012286, A=1 }
+        Name = Color_Back
+        Group = LogoCreator
+    }
+    CollectedVectorParameters[2] =
+    {
+        Value = { R=0.351723, G=0.895833, B=0.051324, A=1 }
+        Name = Color_Outline
+        Group = LogoCreator
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

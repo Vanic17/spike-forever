@@ -1,0 +1,4 @@
+Diffuse=T_MaskMix
+Normal=T_Master_Normal256
+Other[0]=T_Master_BlueColor
+Other[1]=T_Master_BlueMask

@@ -1,0 +1,9 @@
+Diffuse=T_Furn_VolleyNet_BaseColor
+Normal=T_Furn_VolleyNet_Normal
+Emissive=T_Master_BlackMask
+Other[0]=T_Furn_VolleyNetPole_Mask
+Other[1]=T_Furn_VolleyNet_Mix
+Other[2]=T_MaskMix
+Other[3]=T_Master_BlueColor
+Other[4]=T_Master_BlueMask
+Other[5]=T_Master_Normal256

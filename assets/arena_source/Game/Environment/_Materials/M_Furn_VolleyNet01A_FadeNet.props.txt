@@ -1,0 +1,76 @@
+Parent = Material3'/Game/Environment/_Materials/MAS_Net.MAS_Net'
+ScalarParameterValues[2] =
+{
+    ScalarParameterValues[0] =
+    {
+        ParameterInfo = { Name=Roughness }
+        ParameterValue = 0.9
+        ParameterName = None
+    }
+    ScalarParameterValues[1] =
+    {
+        ParameterInfo = { Name=RefractionDepthBias }
+        ParameterValue = 0
+        ParameterName = None
+    }
+}
+TextureParameterValues[5] =
+{
+    TextureParameterValues[0] =
+    {
+        ParameterInfo = { Name=Albedo }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Furn_VolleyNet_BaseColor.T_Furn_VolleyNet_BaseColor'
+        ParameterName = None
+    }
+    TextureParameterValues[1] =
+    {
+        ParameterInfo = { Name=Emissive }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Master_BlackMask.T_Master_BlackMask'
+        ParameterName = None
+    }
+    TextureParameterValues[2] =
+    {
+        ParameterInfo = { Name=Mask RGBA }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Furn_VolleyNetPole_Mask.T_Furn_VolleyNetPole_Mask'
+        ParameterName = None
+    }
+    TextureParameterValues[3] =
+    {
+        ParameterInfo = { Name=Mix }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Furn_VolleyNet_Mix.T_Furn_VolleyNet_Mix'
+        ParameterName = None
+    }
+    TextureParameterValues[4] =
+    {
+        ParameterInfo = { Name=Normal }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Furn_VolleyNet_Normal.T_Furn_VolleyNet_Normal'
+        ParameterName = None
+    }
+}
+VectorParameterValues[0] = {}
+BasePropertyOverrides =
+{
+    bOverride_BlendMode = true
+    BlendMode = BLEND_Translucent (2)
+    bOverride_TwoSided = true
+    TwoSided = true
+    bOverride_OpacityMaskClipValue = false
+    OpacityMaskClipValue = 0
+}
+StaticParameters =
+{
+    StaticSwitchParameters[0] = {}
+    StaticComponentMaskParameters[0] = {}
+    TerrainLayerWeightParameters[0] = {}
+    MaterialLayersParameters[0] = {}
+}
+RuntimeVirtualTextureParameterValues[0] = {}
+FontParameterValues[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

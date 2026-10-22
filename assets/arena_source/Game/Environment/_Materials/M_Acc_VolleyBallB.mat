@@ -1,0 +1,8 @@
+Diffuse=T_Acc_VolleyBallB_BaseColor
+Normal=T_Acc_VolleyBallB_Normal
+Emissive=T_Master_BlackColor
+Other[0]=T_Acc_VolleyBallB_Mask
+Other[1]=T_Acc_VolleyBallB_Mix
+Other[2]=T_Master_BlueColor
+Other[3]=T_Master_BlueMask
+Other[4]=T_Master_Checker_Normal

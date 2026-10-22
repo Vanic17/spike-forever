@@ -1,0 +1,8 @@
+Diffuse=T_Furn_PublicChairC_BaseColor
+Normal=T_Furn_PublicChairC_Normal
+Emissive=T_Master_BlackColor
+Other[0]=T_Master_RedMask
+Other[1]=T_Furn_PublicChairC_Mix
+Other[2]=T_Master_BlueColor
+Other[3]=T_Master_BlueMask
+Other[4]=T_Master_Checker_Normal

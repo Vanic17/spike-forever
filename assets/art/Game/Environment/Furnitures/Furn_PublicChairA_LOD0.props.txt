@@ -1,0 +1,98 @@
+Materials[7] =
+{
+    Materials[0] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[1] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[2] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[3] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[4] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[5] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+    Materials[6] = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+}
+SourceModels[0] = {}
+StaticMaterials[7] =
+{
+    StaticMaterials[0] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 136.686, 160.186, 136.448, 0 }
+        }
+    }
+    StaticMaterials[1] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 136.002, 157.041, 132.778, 0 }
+        }
+    }
+    StaticMaterials[2] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 132.984, 157.256, 129.8, 0 }
+        }
+    }
+    StaticMaterials[3] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 132.278, 153.26, 122.342, 0 }
+        }
+    }
+    StaticMaterials[4] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 130.747, 152.036, 119.916, 0 }
+        }
+    }
+    StaticMaterials[5] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 132.405, 148.815, 120.995, 0 }
+        }
+    }
+    StaticMaterials[6] =
+    {
+        MaterialInterface = MaterialInstanceConstant'/Game/Environment/_Materials/M_Furn_PublicChairC.M_Furn_PublicChairC'
+        MaterialSlotName = M_Furn_PublicChairs
+        UVChannelData =
+        {
+            bInitialized = true
+            bOverrideDensities = false
+            LocalUVDensities[4] = { 134.295, 151.617, 102.911, 0 }
+        }
+    }
+}
+Sockets[0] = {}
+ExtendedBounds =
+{
+    Origin = { X=0, Y=26.0693, Z=40.3346 }
+    BoxExtent = { X=21.8634, Y=26.0693, Z=32.3423 }
+    SphereRadius = 42.3706
+}

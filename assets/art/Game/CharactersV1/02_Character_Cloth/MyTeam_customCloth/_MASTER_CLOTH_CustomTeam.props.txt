@@ -1,0 +1,255 @@
+TwoSided = true
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[7] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/CharactersV1/01_Character_BodyParts/T_Char_EmptyTex_Black.T_Char_EmptyTex_Black'
+    ReferencedTextures[1] = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Outfit01-Mask01.Outfit01-Mask01'
+    ReferencedTextures[2] = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Outfit01-Mask02.Outfit01-Mask02'
+    ReferencedTextures[3] = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Char_Cloth_FRA_Number_Mask_Custom01.T_Char_Cloth_FRA_Number_Mask_Custom01'
+    ReferencedTextures[4] = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Char_Cloth_MyTeam_Normal.T_Char_Cloth_MyTeam_Normal'
+    ReferencedTextures[5] = Texture2D'/Game/CharactersV1/02_Character_Cloth/T_Char_Cloth_FRA_Numbers_Base.T_Char_Cloth_FRA_Numbers_Base'
+    ReferencedTextures[6] = Texture2D'/Game/CharactersV1/02_Character_Cloth/T_Char_Cloth_FRA_Roughness.T_Char_Cloth_FRA_Roughness'
+}
+Expressions[100] =
+{
+    Expressions[3] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_5'
+    Expressions[10] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_1'
+    Expressions[15] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_2'
+    Expressions[21] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_5'
+    Expressions[32] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_3'
+    Expressions[35] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_31'
+    Expressions[36] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_1'
+    Expressions[37] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[38] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_7'
+    Expressions[39] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_8'
+    Expressions[40] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_9'
+    Expressions[41] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_10'
+    Expressions[42] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_17'
+    Expressions[43] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_10'
+    Expressions[44] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[45] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_11'
+    Expressions[46] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_12'
+    Expressions[48] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_32'
+    Expressions[52] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_11'
+    Expressions[54] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_12'
+    Expressions[61] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_4'
+    Expressions[62] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_18'
+    Expressions[64] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_6'
+    Expressions[69] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_2'
+    Expressions[72] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_5'
+    Expressions[75] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_13'
+    Expressions[79] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_13'
+    Expressions[81] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_14'
+    Expressions[84] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_14'
+    Expressions[89] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_4'
+    Expressions[91] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_0'
+    Expressions[92] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_7'
+    Expressions[93] = MaterialExpressionVectorParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionVectorParameter_8'
+    Expressions[96] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_6'
+    Expressions[97] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionTextureSampleParameter2D_7'
+    Expressions[98] = MaterialExpressionScalarParameter'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/_MASTER_CLOTH_CustomTeam.MaterialExpressionScalarParameter_0'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[9] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Char_Cloth_MyTeam_Normal.T_Char_Cloth_MyTeam_Normal'
+        Name = Cloth Normal
+        Group = None
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/T_Char_Cloth_FRA_Roughness.T_Char_Cloth_FRA_Roughness'
+        Name = Cloth Roughness
+        Group = None
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/T_Char_EmptyTex_Black.T_Char_EmptyTex_Black'
+        Name = Player Names Texture
+        Group = None
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/T_Char_Cloth_FRA_Numbers_Base.T_Char_Cloth_FRA_Numbers_Base'
+        Name = Numbers Torso Texture
+        Group = None
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/T_Char_Cloth_FRA_Numbers_Base.T_Char_Cloth_FRA_Numbers_Base'
+        Name = Numbers Back Texture
+        Group = None
+    }
+    CollectedTextureParameters[5] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/T_Char_Cloth_FRA_Number_Mask_Custom01.T_Char_Cloth_FRA_Number_Mask_Custom01'
+        Name = Numbers/Names Masks
+        Group = None
+    }
+    CollectedTextureParameters[6] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/T_Char_EmptyTex_Black.T_Char_EmptyTex_Black'
+        Name = Numbers Short Texture
+        Group = None
+    }
+    CollectedTextureParameters[7] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Outfit01-Mask01.Outfit01-Mask01'
+        Name = MASK01
+        Group = None
+    }
+    CollectedTextureParameters[8] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/02_Character_Cloth/MyTeam_customCloth/Outfit01-Mask02.Outfit01-Mask02'
+        Name = MASK02
+        Group = None
+    }
+}
+CollectedScalarParameters[12] =
+{
+    CollectedScalarParameters[0] = { Value=4, Name=Numbers Scale Short, Group=None }
+    CollectedScalarParameters[1] = { Value=1.4, Name=Numbers Scale Torso, Group=None }
+    CollectedScalarParameters[2] = { Value=1.3, Name=Numbers Scale Back, Group=None }
+    CollectedScalarParameters[3] =
+    {
+        Value = 1.63552
+        Name = Player Name Scale
+        Group = None
+    }
+    CollectedScalarParameters[4] = { Value=0.4, Name=Numbers Roughness, Group=None }
+    CollectedScalarParameters[5] = { Value=0.8, Name=Numbers Metallic, Group=None }
+    CollectedScalarParameters[6] = { Value=1, Name=Number Border Short, Group=None }
+    CollectedScalarParameters[7] = { Value=1, Name=Number Border Front, Group=None }
+    CollectedScalarParameters[8] = { Value=1, Name=Number Border Back, Group=None }
+    CollectedScalarParameters[9] = { Value=1, Name=Player Name Border, Group=None }
+    CollectedScalarParameters[10] =
+    {
+        Value = 0.3
+        Name = SelfShadow Simulation
+        Group = None
+    }
+    CollectedScalarParameters[11] = { Value=0.8, Name=Numbers Metallic 2, Group=None }
+}
+CollectedVectorParameters[15] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.105659, G=0.213542, B=0.118011, A=0 }
+        Name = Numbers Pan Short
+        Group = None
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=0.425998, G=0.786458, B=0.626864, A=0 }
+        Name = Numbers Pan Torso
+        Group = None
+    }
+    CollectedVectorParameters[2] =
+    {
+        Value = { R=0.598958, G=0.352512, B=0.387769, A=0 }
+        Name = Player Name Pan
+        Group = None
+    }
+    CollectedVectorParameters[3] =
+    {
+        Value = { R=0.509706, G=0.848958, B=0.300673, A=0 }
+        Name = Numbers Pan Back
+        Group = None
+    }
+    CollectedVectorParameters[4] =
+    {
+        Value = { R=0.845, G=0.845, B=0.845, A=1 }
+        Name = Front Number Color_1
+        Group = None
+    }
+    CollectedVectorParameters[5] =
+    {
+        Value = { R=0, G=0, B=0, A=1 }
+        Name = Front Number Color_2
+        Group = None
+    }
+    CollectedVectorParameters[6] =
+    {
+        Value = { R=0.845, G=0.845, B=0.845, A=1 }
+        Name = Back Number Color_1
+        Group = None
+    }
+    CollectedVectorParameters[7] =
+    {
+        Value = { R=0, G=0, B=0, A=1 }
+        Name = Back Number Color_2
+        Group = None
+    }
+    CollectedVectorParameters[8] =
+    {
+        Value = { R=0.845, G=0.845, B=0.845, A=1 }
+        Name = Short Number Color_1
+        Group = None
+    }
+    CollectedVectorParameters[9] =
+    {
+        Value = { R=0, G=0, B=0, A=1 }
+        Name = Short Number Color_2
+        Group = None
+    }
+    CollectedVectorParameters[10] =
+    {
+        Value = { R=0.845, G=0.845, B=0.845, A=1 }
+        Name = Player Name Color_1
+        Group = None
+    }
+    CollectedVectorParameters[11] =
+    {
+        Value = { R=0, G=0, B=0, A=1 }
+        Name = Player Name Color_2
+        Group = None
+    }
+    CollectedVectorParameters[12] =
+    {
+        Value = { R=1, G=0, B=0, A=1 }
+        Name = Color_2
+        Group = None
+    }
+    CollectedVectorParameters[13] =
+    {
+        Value = { R=0.008732, G=0.036458, B=0.036096, A=1 }
+        Name = Base_Colr
+        Group = None
+    }
+    CollectedVectorParameters[14] =
+    {
+        Value = { R=0, G=1, B=0, A=1 }
+        Name = Color_3
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

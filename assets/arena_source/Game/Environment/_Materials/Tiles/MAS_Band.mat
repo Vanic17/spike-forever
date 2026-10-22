@@ -1,0 +1,7 @@
+Diffuse=T_Master_Checker_Albedo
+Normal=T_Ground_Taraflex_Normal
+Other[0]=Capsules1
+Other[1]=Capsules2
+Other[2]=T_Master_Checker_Mask
+Other[3]=T_Ground_Taraflex_NormalV3
+Other[4]=T_Ground_Grunge_Roughness

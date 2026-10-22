@@ -1,0 +1,104 @@
+Parent = Material3'/Game/Environment/_Materials/Tiles/MAS_Band.MAS_Band'
+ScalarParameterValues[1] =
+{
+    ScalarParameterValues[0] =
+    {
+        ParameterInfo = { Name=RefractionDepthBias }
+        ParameterValue = 0
+        ParameterName = None
+    }
+}
+TextureParameterValues[4] =
+{
+    TextureParameterValues[0] =
+    {
+        ParameterInfo = { Name=Normal }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Tiles/M_Misc_PlasticTileB/T_Misc_PlasticTileB_Normal.T_Misc_PlasticTileB_Normal'
+        ParameterName = None
+    }
+    TextureParameterValues[1] =
+    {
+        ParameterInfo = { Name=Mix }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Tiles/M_Misc_PlasticTileB/T_Misc_PlasticTileB_Mix.T_Misc_PlasticTileB_Mix'
+        ParameterName = None
+    }
+    TextureParameterValues[2] =
+    {
+        ParameterInfo = { Name=Albedo }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Tiles/M_Misc_PlasticTileB/T_Misc_PlasticTileB_Base.T_Misc_PlasticTileB_Base'
+        ParameterName = None
+    }
+    TextureParameterValues[3] =
+    {
+        ParameterInfo = { Name=Mask }
+        ParameterValue = Texture2D'/Game/Environment/_Materials/Textures/T_Master_RedMask.T_Master_RedMask'
+        ParameterName = None
+    }
+}
+VectorParameterValues[1] =
+{
+    VectorParameterValues[0] =
+    {
+        ParameterInfo = { Name=Mask Red }
+        ParameterValue = { R=1, G=0.916535, B=0.805, A=1 }
+        ParameterName = None
+    }
+}
+BasePropertyOverrides =
+{
+    bOverride_BlendMode = false
+    BlendMode = BLEND_Opaque (0)
+    bOverride_TwoSided = false
+    TwoSided = false
+    bOverride_OpacityMaskClipValue = false
+    OpacityMaskClipValue = 0
+}
+StaticParameters =
+{
+    StaticSwitchParameters[0] = {}
+    StaticComponentMaskParameters[0] = {}
+    TerrainLayerWeightParameters[0] = {}
+    MaterialLayersParameters[0] = {}
+}
+RuntimeVirtualTextureParameterValues[0] = {}
+FontParameterValues[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[5] =
+{
+    TextureStreamingData[0] =
+    {
+        SamplingScale = 1
+        UVChannelIndex = 0
+        TextureName = T_Ground_Taraflex_NormalV3
+    }
+    TextureStreamingData[1] =
+    {
+        SamplingScale = 5
+        UVChannelIndex = 0
+        TextureName = T_Master_RedMask
+    }
+    TextureStreamingData[2] =
+    {
+        SamplingScale = 5
+        UVChannelIndex = 0
+        TextureName = T_Misc_PlasticTileB_Base
+    }
+    TextureStreamingData[3] =
+    {
+        SamplingScale = 1
+        UVChannelIndex = 0
+        TextureName = T_Misc_PlasticTileB_Mix
+    }
+    TextureStreamingData[4] =
+    {
+        SamplingScale = 5
+        UVChannelIndex = 0
+        TextureName = T_Misc_PlasticTileB_Normal
+    }
+}

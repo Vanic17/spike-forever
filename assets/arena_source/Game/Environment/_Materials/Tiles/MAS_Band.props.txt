@@ -1,0 +1,195 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[7] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/Environment/_Materials/CapsuleShadows/Capsules1.Capsules1'
+    ReferencedTextures[1] = Texture2D'/Game/Environment/_Materials/CapsuleShadows/Capsules2.Capsules2'
+    ReferencedTextures[2] = Texture2D'/Game/Environment/_Materials/Textures/T_Master_Checker_Albedo.T_Master_Checker_Albedo'
+    ReferencedTextures[3] = Texture2D'/Game/Environment/_Materials/Textures/T_Master_Checker_Mask.T_Master_Checker_Mask'
+    ReferencedTextures[4] = Texture2D'/Game/Environment/_Materials/Tiles/M_Ground_Taraflex/T_Ground_Taraflex_Normal.T_Ground_Taraflex_Normal'
+    ReferencedTextures[5] = Texture2D'/Game/Environment/_Materials/Tiles/M_Ground_Taraflex/T_Ground_Taraflex_NormalV3.T_Ground_Taraflex_NormalV3'
+    ReferencedTextures[6] = Texture2D'/Game/Environment/_Materials/Tiles/Textures/T_Ground_Grunge_Roughness.T_Ground_Grunge_Roughness'
+}
+Expressions[59] =
+{
+    Expressions[1] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_10'
+    Expressions[9] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_3'
+    Expressions[10] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_8'
+    Expressions[11] = MaterialExpressionTextureSampleParameter2D'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionTextureSampleParameter2D_2'
+    Expressions[15] = MaterialExpressionTextureSampleParameter2D'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionTextureSampleParameter2D_25'
+    Expressions[17] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_5'
+    Expressions[18] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_7'
+    Expressions[22] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_0'
+    Expressions[23] = MaterialExpressionTextureSampleParameter2D'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[24] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_12'
+    Expressions[27] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_1'
+    Expressions[31] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_2'
+    Expressions[32] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_4'
+    Expressions[33] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_6'
+    Expressions[36] = MaterialExpressionVectorParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionVectorParameter_0'
+    Expressions[37] = MaterialExpressionVectorParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionVectorParameter_1'
+    Expressions[38] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_9'
+    Expressions[40] = MaterialExpressionTextureSampleParameter2D'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionTextureSampleParameter2D_7'
+    Expressions[46] = MaterialExpressionVectorParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionVectorParameter_2'
+    Expressions[47] = MaterialExpressionVectorParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionVectorParameter_4'
+    Expressions[48] = MaterialExpressionVectorParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionVectorParameter_5'
+    Expressions[49] = MaterialExpressionTextureSampleParameter2D'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[51] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_11'
+    Expressions[52] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_13'
+    Expressions[54] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_14'
+    Expressions[55] = MaterialExpressionScalarParameter'/Game/Environment/_Materials/Tiles/MAS_Band.MaterialExpressionScalarParameter_15'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[5] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'/Game/Environment/_Materials/Tiles/Textures/T_Ground_Grunge_Roughness.T_Ground_Grunge_Roughness'
+        Name = Mix
+        Group = Roughness
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'/Game/Environment/_Materials/Tiles/M_Ground_Taraflex/T_Ground_Taraflex_Normal.T_Ground_Taraflex_Normal'
+        Name = Normal
+        Group = Normal
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'/Game/Environment/_Materials/Tiles/M_Ground_Taraflex/T_Ground_Taraflex_NormalV3.T_Ground_Taraflex_NormalV3'
+        Name = Normal 2
+        Group = None
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'/Game/Environment/_Materials/Textures/T_Master_Checker_Albedo.T_Master_Checker_Albedo'
+        Name = Albedo
+        Group = None
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'/Game/Environment/_Materials/Textures/T_Master_Checker_Mask.T_Master_Checker_Mask'
+        Name = Mask
+        Group = None
+    }
+}
+CollectedScalarParameters[16] =
+{
+    CollectedScalarParameters[0] = { Value=0, Name=Metallic, Group=None }
+    CollectedScalarParameters[1] = { Value=0, Name=Specular min, Group=None }
+    CollectedScalarParameters[2] =
+    {
+        Value = 0.8
+        Name = Grunge Roughness Intensity
+        Group = Roughness
+    }
+    CollectedScalarParameters[3] =
+    {
+        Value = 0.2
+        Name = Grunge Roughness Intensity 2
+        Group = Roughness
+    }
+    CollectedScalarParameters[4] = { Value=0.2, Name=Specular max, Group=None }
+    CollectedScalarParameters[5] = { Value=1, Name=Normal blend, Group=None }
+    CollectedScalarParameters[6] = { Value=5, Name=Tile UV, Group=None }
+    CollectedScalarParameters[7] =
+    {
+        Value = 1
+        Name = Tile Grunge Roughness
+        Group = Roughness
+    }
+    CollectedScalarParameters[8] =
+    {
+        Value = 2.85714
+        Name = SoftShadowing
+        Group = CaspuleShadow
+    }
+    CollectedScalarParameters[9] =
+    {
+        Value = 4.76191
+        Name = InvisibleShadowRatio
+        Group = CaspuleShadow
+    }
+    CollectedScalarParameters[10] =
+    {
+        Value = 0.285715
+        Name = InvisibleShadowPow
+        Group = CaspuleShadow
+    }
+    CollectedScalarParameters[11] =
+    {
+        Value = 0.2
+        Name = ShadowIntensity
+        Group = CaspuleShadow
+    }
+    CollectedScalarParameters[12] = { Value=1, Name=Reflexion Switch, Group=None }
+    CollectedScalarParameters[13] =
+    {
+        Value = 1
+        Name = Reflexion Fresnel Intensity
+        Group = None
+    }
+    CollectedScalarParameters[14] = { Value=0.0008, Name=limit1, Group=None }
+    CollectedScalarParameters[15] = { Value=0.000999, Name=limit2, Group=None }
+}
+CollectedVectorParameters[5] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0, G=-10, B=20, A=0 }
+        Name = LightCapsule1
+        Group = CaspuleShadow
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=10, G=0, B=20, A=0 }
+        Name = LightCapsule2
+        Group = CaspuleShadow
+    }
+    CollectedVectorParameters[2] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = Mask Green
+        Group = None
+    }
+    CollectedVectorParameters[3] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = Mask Blue
+        Group = None
+    }
+    CollectedVectorParameters[4] =
+    {
+        Value = { R=1, G=1, B=1, A=1 }
+        Name = Mask Red
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

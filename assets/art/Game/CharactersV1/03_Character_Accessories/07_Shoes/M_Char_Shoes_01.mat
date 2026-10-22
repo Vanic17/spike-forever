@@ -1,0 +1,7 @@
+Diffuse=T_Char_EmptyTex_Black
+Normal=SK_Char_Shoe_M_01_Normal
+Other[0]=T_Char_Shoes_M_01_AORM
+Other[1]=T_Char_Shoes_M_01_RGBA_Mask
+Other[2]=T_Char_Kneepads_M_01_AORM
+Other[3]=T_Char_Kneepads_M_01_MaskRGBA
+Other[4]=T_Char_Kneepads_M_01_Normal

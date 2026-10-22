@@ -1,0 +1,64 @@
+Parent = Material3'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Head.SkinMaster_Head'
+ScalarParameterValues[1] =
+{
+    ScalarParameterValues[0] =
+    {
+        ParameterInfo = { Name=RefractionDepthBias }
+        ParameterValue = 0
+        ParameterName = None
+    }
+}
+TextureParameterValues[4] =
+{
+    TextureParameterValues[0] =
+    {
+        ParameterInfo = { Name=BaseColorAlphaRoughness }
+        ParameterValue = Texture2D'/Game/CharactersV1/01_Character_BodyParts/01_Heads/T_Char_Head_Caucasian_M_02_Base.T_Char_Head_Caucasian_M_02_Base'
+        ParameterName = None
+    }
+    TextureParameterValues[1] =
+    {
+        ParameterInfo = { Name=NormalMap }
+        ParameterValue = Texture2D'/Game/CharactersV1/01_Character_BodyParts/01_Heads/T_Char_Head_Caucasian_M_02_Normal.T_Char_Head_Caucasian_M_02_Normal'
+        ParameterName = None
+    }
+    TextureParameterValues[2] =
+    {
+        ParameterInfo = { Name=Opacity }
+        ParameterValue = Texture2D'/Game/CharactersV1/01_Character_BodyParts/01_Heads/T_Char_Head_Caucasian_M_02_SSS.T_Char_Head_Caucasian_M_02_SSS'
+        ParameterName = None
+    }
+    TextureParameterValues[3] =
+    {
+        ParameterInfo = { Name=Roughness }
+        ParameterValue = Texture2D'/Game/CharactersV1/01_Character_BodyParts/01_Heads/T_Char_Head_Caucasian_M_02_Rough.T_Char_Head_Caucasian_M_02_Rough'
+        ParameterName = None
+    }
+}
+VectorParameterValues[0] = {}
+BasePropertyOverrides =
+{
+    bOverride_BlendMode = false
+    BlendMode = BLEND_Opaque (0)
+    bOverride_TwoSided = false
+    TwoSided = false
+    bOverride_OpacityMaskClipValue = false
+    OpacityMaskClipValue = 0
+}
+StaticParameters =
+{
+    StaticSwitchParameters[0] = {}
+    StaticComponentMaskParameters[0] = {}
+    TerrainLayerWeightParameters[0] = {}
+    MaterialLayersParameters[0] = {}
+}
+RuntimeVirtualTextureParameterValues[0] = {}
+FontParameterValues[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

@@ -1,0 +1,9 @@
+.godot/
+.runtime/
+.updates/
+dist/
+update-result.json
+tools/godot/
+tools/git/
+tools/github/
+docs/*-test.log

@@ -1,0 +1,116 @@
+Skeleton = Skeleton'/Game/CharactersV1/00_Character_Skeleton/SK_Char_M_Skeleton.SK_Char_M_Skeleton'
+bHasVertexColors = false
+LODInfo[2] =
+{
+    LODInfo[0] =
+    {
+        DisplayFactor = 0
+        LODHysteresis = 0.02
+        LODMaterialMap[0] = {}
+        bEnableShadowCasting[0] = {}
+        BonesToRemove[0] = {}
+        BonesToPrioritize[0] = {}
+        SourceImportFilename = ""
+    }
+    LODInfo[1] =
+    {
+        DisplayFactor = 0
+        LODHysteresis = 0.02
+        LODMaterialMap[1] = { 1 }
+        bEnableShadowCasting[0] = {}
+        BonesToRemove[80] =
+        {
+            BonesToRemove[0] = { BoneName=DwnLips_Center }
+            BonesToRemove[1] = { BoneName=DwnOuterLips_L }
+            BonesToRemove[2] = { BoneName=DwnOuterLips_R }
+            BonesToRemove[3] = { BoneName=DwnInnerLips_L }
+            BonesToRemove[4] = { BoneName=DwnInnerLips_R }
+            BonesToRemove[5] = { BoneName=Tongue_01 }
+            BonesToRemove[6] = { BoneName=Tongue_02 }
+            BonesToRemove[7] = { BoneName=Tongue_03 }
+            BonesToRemove[8] = { BoneName=Jaw_002 }
+            BonesToRemove[9] = { BoneName=Jaw_L_010 }
+            BonesToRemove[10] = { BoneName=Jaw_R_010 }
+            BonesToRemove[11] = { BoneName=Jaw_L_011 }
+            BonesToRemove[12] = { BoneName=Jaw_R_011 }
+            BonesToRemove[13] = { BoneName=Nostril_L }
+            BonesToRemove[14] = { BoneName=Nostril_R }
+            BonesToRemove[15] = { BoneName=UpOuterLips_L }
+            BonesToRemove[16] = { BoneName=UpOuterLips_R }
+            BonesToRemove[17] = { BoneName=Commissure_L }
+            BonesToRemove[18] = { BoneName=Commissure_R }
+            BonesToRemove[19] = { BoneName=UpLips_Center }
+            BonesToRemove[20] = { BoneName=UpInnerLips_R }
+            BonesToRemove[21] = { BoneName=UpInnerLips_L }
+            BonesToRemove[22] = { BoneName=CheekBone_L }
+            BonesToRemove[23] = { BoneName=CheekBone_R }
+            BonesToRemove[24] = { BoneName=Cheek_L }
+            BonesToRemove[25] = { BoneName=Cheek_R }
+            BonesToRemove[26] = { BoneName=EyeBrowMid_L }
+            BonesToRemove[27] = { BoneName=EyeBrowMid_R }
+            BonesToRemove[28] = { BoneName=EyeBrowInner_L }
+            BonesToRemove[29] = { BoneName=EyeBrowInner_R }
+            BonesToRemove[30] = { BoneName=EyeBrowOuter_L }
+            BonesToRemove[31] = { BoneName=EyeBrowOuter_R }
+            BonesToRemove[32] = { BoneName=Head_End }
+            BonesToRemove[33] = { BoneName=Nostril_R-1 }
+            BonesToRemove[34] = { BoneName=Jaw_L_001 }
+            BonesToRemove[35] = { BoneName=Jaw_R_001 }
+            BonesToRemove[36] = { BoneName=Jaw_L_002 }
+            BonesToRemove[37] = { BoneName=Jaw_R_002 }
+            BonesToRemove[38] = { BoneName=Jaw_L_003 }
+            BonesToRemove[39] = { BoneName=Jaw_R_003 }
+            BonesToRemove[40] = { BoneName=Jaw_001 }
+            BonesToRemove[41] = { BoneName=Jaw_L_004 }
+            BonesToRemove[42] = { BoneName=Jaw_R_004 }
+            BonesToRemove[43] = { BoneName=Jaw_L_005 }
+            BonesToRemove[44] = { BoneName=Jaw_R_005 }
+            BonesToRemove[45] = { BoneName=Jaw_L_006 }
+            BonesToRemove[46] = { BoneName=Jaw_R_006 }
+            BonesToRemove[47] = { BoneName=Jaw_L_007 }
+            BonesToRemove[48] = { BoneName=Jaw_R_007 }
+            BonesToRemove[49] = { BoneName=Jaw_L_008 }
+            BonesToRemove[50] = { BoneName=Jaw_R_008 }
+            BonesToRemove[51] = { BoneName=Jaw_L_009 }
+            BonesToRemove[52] = { BoneName=Jaw_R_009 }
+            BonesToRemove[53] = { BoneName=RightHandIndex3 }
+            BonesToRemove[54] = { BoneName=RightHandMiddle3 }
+            BonesToRemove[55] = { BoneName=RightHandRing3 }
+            BonesToRemove[56] = { BoneName=RightHandPinky3 }
+            BonesToRemove[57] = { BoneName=LeftProp_Foot }
+            BonesToRemove[58] = { BoneName=RightProp_Foot }
+            BonesToRemove[59] = { BoneName=LeftHandThumb3 }
+            BonesToRemove[60] = { BoneName=RightHandThumb3 }
+            BonesToRemove[61] = { BoneName=LeftEye }
+            BonesToRemove[62] = { BoneName=RightEye }
+            BonesToRemove[63] = { BoneName=EyeLidUp_L }
+            BonesToRemove[64] = { BoneName=EyeLidUp_R }
+            BonesToRemove[65] = { BoneName=EyeLidDwn_L }
+            BonesToRemove[66] = { BoneName=EyeLidDwn_R }
+            BonesToRemove[67] = { BoneName=LeftHandIndex3 }
+            BonesToRemove[68] = { BoneName=LeftHandMiddle3 }
+            BonesToRemove[69] = { BoneName=LeftHandRing3 }
+            BonesToRemove[70] = { BoneName=LeftHandPinky3 }
+            BonesToRemove[71] = { BoneName=LeftHandThumb3 }
+            BonesToRemove[72] = { BoneName=LeftForeArmMuscle }
+            BonesToRemove[73] = { BoneName=LeftArmMuscle }
+            BonesToRemove[74] = { BoneName=RightForeArmMuscle }
+            BonesToRemove[75] = { BoneName=RightArmMuscle }
+            BonesToRemove[76] = { BoneName=LeftLegMuscle }
+            BonesToRemove[77] = { BoneName=LeftUpLegMuscle }
+            BonesToRemove[78] = { BoneName=RightLegMuscle }
+            BonesToRemove[79] = { BoneName=RightUpLegMuscle }
+        }
+        BonesToPrioritize[0] = {}
+        SourceImportFilename = "../../../../../ProVolley/GFX_Sources/CharactersV1.0/01_Character_BodyParts/01_Heads/SK_Char_Head_Caucasian_M_02.FBX"
+    }
+}
+MorphTargets[0] = {}
+Sockets[0] = {}
+SamplingInfo =
+{
+    Regions[0] = {}
+    BuiltData = { WholeMeshBuiltData[0]={}, RegionBuiltData[0]={} }
+}
+SkinWeightProfiles[0] = {}
+NumVertexColorChannels = 0

@@ -1,0 +1,170 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[1] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Sweat_M_01_Mask.T_Char_Body_Sweat_M_01_Mask'
+}
+Expressions[57] =
+{
+    Expressions[4] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_6'
+    Expressions[7] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionVectorParameter_0'
+    Expressions[9] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionVectorParameter_1'
+    Expressions[11] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_1'
+    Expressions[15] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_2'
+    Expressions[18] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_2'
+    Expressions[19] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_3'
+    Expressions[20] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionVectorParameter_2'
+    Expressions[21] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_7'
+    Expressions[24] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_3'
+    Expressions[26] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_4'
+    Expressions[28] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_8'
+    Expressions[29] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionVectorParameter_3'
+    Expressions[31] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[32] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_5'
+    Expressions[34] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_9'
+    Expressions[37] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_10'
+    Expressions[38] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_11'
+    Expressions[39] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_12'
+    Expressions[40] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_13'
+    Expressions[41] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_14'
+    Expressions[43] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_15'
+    Expressions[51] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_0'
+    Expressions[52] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionVectorParameter_4'
+    Expressions[53] = MaterialExpressionTextureSample'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSample_0'
+    Expressions[55] = MaterialExpressionTextureSampleParameter2D'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionTextureSampleParameter2D_1'
+    Expressions[56] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/SkinMaster_Body.MaterialExpressionScalarParameter_4'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[7] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Generic_M_01_ROMM.T_Char_Body_Generic_M_01_ROMM'
+        Name = Roughness-Occlusion_SweatMask_MusclesMask
+        Group = None
+    }
+    CollectedTextureParameters[1] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/T_Char_EmptyTex_Black.T_Char_EmptyTex_Black'
+        Name = Tape Mask
+        Group = None
+    }
+    CollectedTextureParameters[2] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/T_Char_EmptyTex_Black.T_Char_EmptyTex_Black'
+        Name = Tatto Mask
+        Group = None
+    }
+    CollectedTextureParameters[3] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Caucasian_M_01_Base.T_Char_Body_Caucasian_M_01_Base'
+        Name = Base Color
+        Group = None
+    }
+    CollectedTextureParameters[4] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Generic_M_Normal.T_Char_Body_Generic_M_Normal'
+        Name = NormalMap_1
+        Group = None
+    }
+    CollectedTextureParameters[5] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Sweat_M_01_Normal.T_Char_Body_Sweat_M_01_Normal'
+        Name = Sweat Normal_1
+        Group = None
+    }
+    CollectedTextureParameters[6] =
+    {
+        Texture = Texture2D'/Game/CharactersV1/01_Character_BodyParts/02_Bodies/T_Char_Body_Generic_M_01_Muscles_Normal.T_Char_Body_Generic_M_01_Muscles_Normal'
+        Name = None
+        Group = None
+    }
+}
+CollectedScalarParameters[14] =
+{
+    CollectedScalarParameters[0] = { Value=1, Name=Tape Roughness, Group=None }
+    CollectedScalarParameters[1] = { Value=8, Name=Tape Thickness, Group=None }
+    CollectedScalarParameters[2] =
+    {
+        Value = 1
+        Name = Tape Detail Diff Intensity
+        Group = None
+    }
+    CollectedScalarParameters[3] =
+    {
+        Value = 0.7
+        Name = Tape Detail Normal Intensity
+        Group = None
+    }
+    CollectedScalarParameters[4] = { Value=1, Name=ColorPow, Group=None }
+    CollectedScalarParameters[5] = { Value=1.5, Name=Roughness Value, Group=None }
+    CollectedScalarParameters[6] = { Value=1, Name=Sweat Drops Alpha, Group=None }
+    CollectedScalarParameters[7] = { Value=0, Name=Sweat Drops Roughness, Group=None }
+    CollectedScalarParameters[8] = { Value=25, Name=MicroTexScale, Group=None }
+    CollectedScalarParameters[9] = { Value=0.6, Name=MicroTex Rougness, Group=None }
+    CollectedScalarParameters[10] = { Value=0.4, Name=Muscle_parameter, Group=None }
+    CollectedScalarParameters[11] = { Value=0.35, Name=Microtex Intensity, Group=None }
+    CollectedScalarParameters[12] = { Value=1.4, Name=Fresnel_Spread, Group=None }
+    CollectedScalarParameters[13] = { Value=0.2, Name=Fresnel_Power, Group=None }
+}
+CollectedVectorParameters[5] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=0.018725, G=0.033875, B=0.035, A=1 }
+        Name = Tatoo Color
+        Group = None
+    }
+    CollectedVectorParameters[1] =
+    {
+        Value = { R=1, G=0.155926, B=0.351533, A=1 }
+        Name = Tape Color 2
+        Group = None
+    }
+    CollectedVectorParameters[2] =
+    {
+        Value = { R=0.000304, G=0.450786, B=0.658375, A=1 }
+        Name = Tape Color 1
+        Group = None
+    }
+    CollectedVectorParameters[3] =
+    {
+        Value = { R=1, G=1, B=1, A=0 }
+        Name = BaseColorMul
+        Group = None
+    }
+    CollectedVectorParameters[4] =
+    {
+        Value = { R=0.1875, G=0.157042, B=0.128906, A=0 }
+        Name = BaseColorMul_1
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}
