@@ -79,7 +79,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			if game.phase in ["ATTACK","CPU_ATTACK"] and team!=game.possession and Tactics.front(i,game.rotations[team]):
 				# The front-row player outside the chosen wall drops into tip
 				# coverage, instead of crowding a third body into the net lane.
-				result[i].z=(1.0 if team==0 else -1.0)*2.7
+				# Human pins wait at the net even when not joined to the middle;
+				# releasing a trigger must not send that pin into floor coverage
+				# while the opponent is still approaching the same antenna.
+				result[i].z=(1.0 if team==0 else -1.0)*(0.68 if team==0 and game.phase=="CPU_ATTACK" and game.get("demo")==false else 2.7)
 			if Tactics.role(i,game.rotations[team],team==game.server)=="L" and team==game.possession and game.phase in ["SET","CPU_SET"]:
 				result[i] = Tactics.world(team,-2.6,6.25)
 	# Reserve the entire setter approach, not only the final hand-contact spot.

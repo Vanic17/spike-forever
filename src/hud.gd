@@ -40,6 +40,7 @@ func _draw() -> void:
 	alternate = "QUADRATO" if ps else ("X" if pad >= 0 else "Q")
 	dump_button = "CERCHIO" if ps else ("B" if pad >= 0 else "E")
 	wall_labels="L2 sinistra / R2 destra" if ps else ("LT sinistra / RT destra" if pad>=0 else "Z sinistra / B destra")
+	if game.camera_mode==2: wall_labels=wall_labels.replace("sinistra","alto").replace("destra","basso")
 	if not game.started:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.015,0.025,0.045,0.45))
 		text(Vector2(75, h * 0.38), "SPIKE", 76)
@@ -80,7 +81,9 @@ func _draw() -> void:
 	elif game.phase in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.human_wall() or game.phase == "SERVE" and game.server == 0:
 		draw_contact(w * 0.5, h - 92)
 	text(Vector2(31, h - 22), "LS / WASD / Frecce · mira e direzioni", 12, MUTED)
-	text(Vector2(w - 300, h - 22), "F1 aiuto   F2 demo   C camera   Esc pausa", 12, MUTED)
+	text(Vector2(w - 420, h - 22), "F1 aiuto   F2 demo   C / Triangolo / Y camera   Esc pausa", 12, MUTED)
+	if game.camera_mode==2:
+		text(Vector2(w-420,h-42),"TV: su Z4 / destra centro / giu Z2 / sinistra pipe",12,GOLD)
 	if game.debug_visible:
 		panel(Rect2(30, 157, 435, 242))
 		var lines := [

@@ -62,6 +62,12 @@ func route(game,index: int,destination: Vector3) -> Vector3:
 	var middle: Vector3=game.players[row[1]].position
 	var left:=index==row[0]
 	var wrong_side:=p.x>middle.x-0.75 if left else p.x<middle.x+0.75
+	# Once role order has been established, close along the net. Cached
+	# crossing lanes must not drag an already ordered pin backwards again.
+	var clear: bool=Geometry3D.get_closest_point_to_segment(middle,p,destination).distance_to(middle)>=1.02
+	if not wrong_side and clear:
+		routes.erase(index)
+		return destination
 	if not routes.has(index) and wrong_side and absf(p.x-destination.x)>1.0:
 		# Rotation stacks may put the opposite on the left of the middle.
 		# Establish role order BEFORE closing: two different rear corridors

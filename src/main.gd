@@ -288,13 +288,19 @@ func build_arena() -> void:
 
 func set_camera() -> void:
 	camera.projection = Camera3D.PROJECTION_PERSPECTIVE
-	camera.fov = 48 if camera_mode == 0 else 50
-	camera.position = Vector3(0, 9.8, 18.4) if camera_mode == 0 else Vector3(0, 11.5, 23.0)
-	camera_focus = Vector3(0, 0.7, -0.5)
+	camera.fov = 48 if camera_mode == 0 else (40 if camera_mode==2 else 50)
+	camera.position = preload("res://src/view_controls.gd").origin(camera_mode)
+	camera_focus = Vector3(0,0.7,0) if camera_mode==2 else Vector3(0, 0.7, -0.5)
 	camera.look_at(camera_focus)
 
 func update_camera(dt: float) -> void:
-	var origin := Vector3(0, 9.8, 18.4) if camera_mode == 0 else Vector3(0, 11.5, 23.0)
+	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
+	if camera_mode==2:
+		var tv_focus:=Vector3(0,0.7+maxf(0,ball_pos.y-3.2)*0.04,clampf(ball_pos.z*0.06,-0.45,0.45))
+		camera_focus=camera_focus.lerp(tv_focus,1.0-exp(-2.5*dt))
+		camera.position=camera.position.lerp(origin,1.0-exp(-1.6*dt))
+		camera.look_at(camera_focus)
+		return
 	var focus := Vector3(clampf(ball_pos.x * 0.11, -0.5, 0.5), 0.7 + maxf(0, ball_pos.y - 3.2) * 0.04, -0.5)
 	if phase == "SERVE" and server == 0:
 		origin = Vector3(0, 11.2, 25.0 + maxf(0, players[server_index(0)].position.z - 10.0) * 0.8)
@@ -321,7 +327,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else: reset_rally()
 			KEY_F5: difficulty = (difficulty + 1) % 3
 			KEY_C:
-				camera_mode = 1 - camera_mode
+				camera_mode = (camera_mode + 1) % 3
 				set_camera()
 			KEY_R:
 				scores = [0, 0]
@@ -341,6 +347,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			started = true
 		else:
 			paused = not paused
+	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y and event.pressed and started:
+		camera_mode=(camera_mode+1)%3
+		set_camera()
 	if not started or paused or gallery:
 		return
 	if event.is_action_pressed("action") or event.is_action_pressed("alternate") or event.is_action_pressed("dump"):
@@ -379,7 +388,7 @@ func stick(_right: bool = false) -> Vector2:
 	return result.limit_length()
 
 func read_controls(dt: float = 1.0/120.0) -> void:
-	var direction := stick()
+	var direction := preload("res://src/view_controls.gd").court_direction(stick(),camera_mode)
 	if human_wall(): manual_wall.read(self,direction,dt)
 	if direction.length() > 0.3:
 		var angle := roundf(direction.angle() / (PI / 4)) * PI / 4
@@ -755,7 +764,7 @@ func serve_aim_target(team: int, direction: Vector2) -> Vector3:
 	# Stick up sends the ball deeper, down shorter; target is court-relative,
 	# never an angle added to the server's current lateral position.
 	var side:=1.0 if team==1 else -1.0
-	return Vector3(clampf(direction.x,-1,1)*3.4,contact_height("receive"),side*(5.7-clampf(direction.y,-1,1)*1.8))
+	return Vector3(clampf(direction.x,-1,1)*3.4,contact_height("receive"),side*(5.85-clampf(direction.y,-1,1)*1.65))
 
 func fault_flight(target: Vector3, seconds: float) -> void:
 	# A bad charge produces a real trajectory. The point is awarded on contact
@@ -806,7 +815,9 @@ func receive_ball() -> void:
 		return
 	var dispersion := (1-q)*lerpf(2.6,6.0,clampf(inverse_lerp(0.65,0.1,q),0,1))
 	var target := Vector3(rng.randf_range(-dispersion,dispersion),contact_height("set"),side*(1.5+rng.randf_range(0,dispersion)))
+	target=preload("res://src/setter_access.gd").clear_target(self,target)
 	var seconds := Reference.receive_seconds(q,q<0.5)
+	seconds=preload("res://src/setter_access.gd").pass_seconds(self,target,seconds)
 	setter = choose_setter(possession,target,seconds)
 	players[setter].setting_yaw = -PI/2 if possession==0 else PI/2
 	out_of_system = RallyAI.system_quality(target,Tactics.ROLES[setter%6]=="S")
@@ -1429,6 +1440,11 @@ func request_block_jump(index: int, contact_in: float) -> bool:
 	p.prepare_contact("block", contact_in)
 	return true
 
+func block_pose_locked(index: int) -> bool:
+	var player=players[index]
+	# The grounded follow-through must not keep the root locked after landing.
+	return block_jumps.get(index,-1)==wall_attack_id() and player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
+
 func move_players(dt: float) -> void:
 	defensive_lanes.update(self)
 	middle_decoy.update(self)
@@ -1522,7 +1538,7 @@ func move_players(dt: float) -> void:
 				if request_block_jump(i, flight_left + 0.08):
 					if block_time < 0: block_time = clock_time
 					block_quality = 0.85
-			if block_jumps.get(i, -1) == wall_attack_id() and p.clip_name == "block" and not p.looping:
+			if block_pose_locked(i):
 				p.target = p.steering_target
 		# Each athlete perceives the same cue on an individual schedule. Direct
 		# contact assistance remains immediate; support and reading are staggered.
@@ -1558,7 +1574,7 @@ func move_players(dt: float) -> void:
 		desired *= p.recovery_speed_scale()
 		if middle_decoy.holds(i): desired=Vector3.ZERO
 		if clock_time < scramble_ready[i]: desired = Vector3.ZERO
-		if block_jumps.get(i, -1) == wall_attack_id() and p.clip_name == "block" and not p.looping: desired = Vector3.ZERO
+		if block_pose_locked(i): desired = Vector3.ZERO
 		var wanted_accel: Vector3 = ((desired.limit_length(max_speed) - p.velocity) / (0.055 if urgent else p.intent.response_time())).limit_length(28.0 if urgent else 9.5 + p.intent.individuality * 3.5)
 		p.acceleration = wanted_accel if i == action_actor or (human_wall() and i in blockers) else p.acceleration.move_toward(wanted_accel, (150.0 if urgent else 50.0 + p.intent.individuality * 35.0) * dt)
 		# Limit the requested speed, not existing momentum. A player changing
@@ -1612,7 +1628,7 @@ func move_players(dt: float) -> void:
 		# only passers and floor defenders stay in the low defensive posture.
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers
 		p.locomotion(p.velocity.length(), dt)
-		if block_jumps.get(i,-1)==wall_attack_id() and p.clip_name=="block" and not p.looping:
+		if block_pose_locked(i):
 			p.reach_action = "block"
 			p.reach_target = Vector3(p.contact_world("block").x,3.08,side*0.035)
 			p.reach_weight = 1.0

@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.23.0:** palleggiatore libero dopo l'atterraggio del muro, arrivi al secondo tocco meglio pianificati, laterali vicini alla rete, camera TV con direzioni adattate e piccolo incremento della battuta. **C / Triangolo / Y** cambia camera. [Dettagli e comandi TV](docs/REVISION_23.md).
+
 **Versione 0.22.0:** pannello aggiornamenti ripristinato, primo attacco R1 sulle corsie occupate, spazio per il palleggiatore sulle ricezioni vicine, battuta più rapida con carica oltre il 100% effettiva e mira continua con levetta sinistra. [Dettagli e verifiche](docs/REVISION_22.md).
 
 **Versione 0.21.0:** controllo aggiornamenti all'avvio con conferma, correzione della rincorsa in zona 4 dopo il primo punto avversario e verifica dei comandi Xbox. [Dettagli, comandi e test](docs/REVISION_21.md).
@@ -47,6 +49,7 @@ Gioco Windows 3D di pallavolo indoor 6 contro 6, contro la CPU, con controller P
 | Muro a tre, tenendo premuti entrambi | L2 + R2 | LT + RT | Z + B |
 | Salto a muro | Croce / X | A | Spazio |
 | Inizio / pausa | Options | Start | Invio / Esc |
+| Camera dietro / distante / TV | Triangolo | Y | C |
 
 Croce PlayStation corrisponde ad **A Xbox**. Quadrato PlayStation corrisponde a **X Xbox**. Le assegnazioni dei pulsanti sono modificabili in `controls.cfg`. Lo stick sinistro controlla le scelte di gioco e lo spostamento del muro; negli altri colpi posizionamento e spostamenti degli atleti sono automatici. L'interfaccia adatta i nomi al controller riconosciuto; F1 apre l'aiuto.
 
