@@ -4,6 +4,7 @@ $root=Split-Path $PSScriptRoot
 $env:GH_CONFIG_DIR=Join-Path $root 'tools/github/config'
 $gh=Join-Path $root 'tools/github/bin/gh.exe'
 $git=Join-Path $root 'tools/git/cmd/git.exe'
+$env:PATH=(Split-Path $gh)+';'+$env:PATH
 function Native([string]$Executable,[string[]]$Arguments,[switch]$AllowFailure){
  $ErrorActionPreference='Continue'
  & $Executable @Arguments
@@ -38,12 +39,13 @@ foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File){
 foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Directory -Filter 'baseline*'){
  Copy-Item -LiteralPath $baseline.FullName -Destination (Join-Path $stage 'docs') -Recurse
 }
+Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Copy-Item -Destination (Join-Path $stage 'docs')
 [IO.File]::WriteAllText((Join-Path $stage '.gitignore'), ".godot/`n.runtime/`n.updates/`ndist/`nupdate-result.json`ntools/godot/`ntools/git/`ntools/github/`ndocs/*-test.log`n")
 Native $git @('-C',$stage,'init','--initial-branch=main')
 Native $git @('-C',$stage,'config','user.name','Vanic17')
 Native $git @('-C',$stage,'config','user.email','264198889+Vanic17@users.noreply.github.com')
 Native $git @('-C',$stage,'remote','add','origin',('https://github.com/'+$Repository+'.git'))
-$helper='credential.helper=!"'+$gh.Replace('\','/')+'" auth git-credential'
+$helper='credential.helper=!gh auth git-credential'
 Native $git @('-C',$stage,'-c',$helper,'fetch','origin','main') -AllowFailure
 if($script:LastNativeExit -eq 0){Native $git @('-C',$stage,'reset','--mixed','origin/main')}
 Native $git @('-C',$stage,'add','--all')
