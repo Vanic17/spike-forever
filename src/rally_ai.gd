@@ -136,6 +136,7 @@ static func opening(game, index: int, team: int) -> Vector3:
 		if local_x>0: return Tactics.world(team,1.0,float(p.court_depth)-3.0)
 		return Tactics.world(team,-1.0,float(p.court_depth)-2.0)
 	if front and role.begins_with("MB"):
+		if setting and game.fast_set and game.get("planned_hitter")==index: commit=1.0
 		if game.out_of_system<1: return Tactics.world(team,signf(setter_x)*0.26,1.0)
 		var away := -1.0 if setter_x>=-0.2 else 1.0
 		var off_net := clampf(inverse_lerp(0.5,3.0,absf(setter_point.z)),0,1)

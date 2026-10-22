@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.25.0:** spazio e contatto del palleggiatore corretti nelle ricezioni ravvicinate, nuovi ritmi distinti per centro/bande/pipe, battuta più rapida e barra in 0,70 s. [Dettagli e verifiche](docs/REVISION_25.md).
+
 **Versione 0.24.0:** corsie coerenti per tutto lo scambio e alzate dietro al destinatario sul lato giusto; 15 animazioni aggiuntive (5 ricezioni, 5 alzate, 5 schiacciate); attacchi fortissimi circa 5% più veloci. [Dettagli e test](docs/REVISION_24.md) · [Nuove animazioni](docs/ANIMATION_24.md).
 
 **Versione 0.23.0:** palleggiatore libero dopo l'atterraggio del muro, arrivi al secondo tocco meglio pianificati, laterali vicini alla rete, camera TV con direzioni adattate e piccolo incremento della battuta. **C / Triangolo / Y** cambia camera. [Dettagli e comandi TV](docs/REVISION_23.md).

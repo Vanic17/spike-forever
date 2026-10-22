@@ -93,7 +93,7 @@ foreach($check in @(@('RoleMatrix','ROLE MATRIX PASS'),@('MenuUpdates','MENU UPD
  Write-Output ('PASS '+$check[0]+' / '+$check[1])
 }
 & (Join-Path $PSScriptRoot 'Check-PositionScope.ps1')
-foreach($check in @(@('SetterCrowd','SETTER CROWD PASS'),@('TVCamera','TV CAMERA PASS'),@('NetPins','NET PINS PASS'),@('RallyPins','RALLY PINS PASS'),@('ExpandedAnimations','EXPANDED ANIMATIONS PASS'),@('StrongSpikes','STRONG SPIKES PASS'))){
+foreach($check in @(@('SetterCrowd','SETTER CROWD PASS'),@('TVCamera','TV CAMERA PASS'),@('NetPins','NET PINS PASS'),@('RallyPins','RALLY PINS PASS'),@('ExpandedAnimations','EXPANDED ANIMATIONS PASS'),@('StrongSpikes','STRONG SPIKES PASS'),@('SetReliability','SET RELIABILITY PASS'))){
  $log=Join-Path $root ('docs/'+$check[0]+'-test.log')
  $ErrorActionPreference='Continue'
  & $engine --headless --path $root --script (Join-Path $root ('tools/Test-'+$check[0]+'.gd')) --quit-after 180 *> $log
@@ -102,6 +102,6 @@ foreach($check in @(@('SetterCrowd','SETTER CROWD PASS'),@('TVCamera','TV CAMERA
  if($code -ne 0 -or (Select-String -Path $log -Pattern 'SCRIPT ERROR|Parse Error|Assertion failed') -or !(Select-String -Path $log -SimpleMatch $check[1])){Get-Content $log -Tail 15; throw ('Revision23 regression failed: '+$check[0])}
  Write-Output ('PASS '+$check[0]+' / '+$check[1])
 }
-& (Join-Path $PSScriptRoot 'Check-Revision24Scope.ps1')
+& (Join-Path $PSScriptRoot 'Check-Revision25Scope.ps1')
 & (Join-Path $PSScriptRoot 'Test-UpdateInstaller.ps1')
 exit 0

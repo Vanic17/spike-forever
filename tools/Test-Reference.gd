@@ -40,13 +40,13 @@ func _initialize() -> void:
 			if Tactics.front(i,rotation): front += 1
 			if Tactics.libero(i,rotation,false): libero += 1
 		assert(front==3 and libero==1)
-	assert(is_equal_approx(Reference.serve_seconds(1,false),0.79))
-	assert(is_equal_approx(Reference.serve_seconds(1,true),0.96))
-	assert(is_equal_approx(Reference.serve_seconds(0,false),1.09))
+	assert(is_equal_approx(Reference.serve_seconds(1,false),0.76))
+	assert(is_equal_approx(Reference.serve_seconds(1,true),0.92))
+	assert(is_equal_approx(Reference.serve_seconds(0,false),1.06))
 	var quick := Reference.set_seconds(1,true,1,3,false)
 	var normal := Reference.set_seconds(0,false,1,6,false)
 	var emergency := Reference.set_seconds(0,false,0.3,8,true)
-	assert(is_equal_approx(quick,0.62) and is_equal_approx(normal,1.02))
+	assert(is_equal_approx(quick,0.42) and is_equal_approx(normal,1.02))
 	assert(is_equal_approx(emergency,1.895))
 	assert(is_equal_approx(Reference.receive_seconds(1),1.05))
 	assert(is_equal_approx(Reference.receive_seconds(0),1.50))

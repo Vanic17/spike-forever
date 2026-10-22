@@ -18,8 +18,13 @@ static func pass_seconds(game, point: Vector3, ordinary: float) -> float:
 
 static func clear_target(game, point: Vector3) -> Vector3:
 	var bodies: Dictionary=game.court_shape.recovering_bodies(game)
-	if bodies.is_empty(): return point
 	var team: int=game.possession
+	# Standing passers and landing blockers also occupy the contact footprint.
+	# Reserve a free endpoint before launch, rather than asking the setter to
+	# finish inside them and hoping their support movement clears in time.
+	for index in range(team*6,team*6+6):
+		if index==team*6+5 or bodies.has(index): continue
+		bodies[index]=game.compute_footprint_points(index)
 	var player=game.players[team*6+5]
 	var yaw: float=-PI/2 if team==0 else PI/2
 	var offset: Vector3=Basis(Vector3.UP,yaw)*player.contact_local("set")

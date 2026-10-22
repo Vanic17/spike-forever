@@ -432,7 +432,11 @@ func press_action(button: String = "action") -> void:
 		setter_dump = button == "dump"
 		plan_attack(set_dir, button == "alternate")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
-		var contact := BallFlight.intercept(ball_pos, ball_vel, flight_spin, contact_height(setter_action), flight_gravity)
+		# Normal and quick are choices of delivery, not a new interception
+		# deadline. Only a genuinely different contact (dump/bump) changes height.
+		var height: float=players[setter].contact_local(setter_action).y
+		if setter_action in ["set","fast_set"]: height=flight_target.y
+		var contact := BallFlight.intercept(ball_pos, ball_vel, flight_spin, height, flight_gravity)
 		if not contact.is_empty():
 			flight_target = contact.point
 			flight_left = maxf(0.001, contact.seconds)
@@ -769,7 +773,7 @@ func serve_aim_target(team: int, direction: Vector2) -> Vector3:
 	# Stick up sends the ball deeper, down shorter; target is court-relative,
 	# never an angle added to the server's current lateral position.
 	var side:=1.0 if team==1 else -1.0
-	return Vector3(clampf(direction.x,-1,1)*3.4,contact_height("receive"),side*(5.85-clampf(direction.y,-1,1)*1.65))
+	return Vector3(clampf(direction.x,-1,1)*3.4,contact_height("receive"),side*(6.0-clampf(direction.y,-1,1)*1.5))
 
 func fault_flight(target: Vector3, seconds: float) -> void:
 	# A bad charge produces a real trajectory. The point is awarded on contact
@@ -840,6 +844,14 @@ func receive_ball() -> void:
 	else:
 		if demo: set_dir = int(clock_time) % 4
 		plan_attack(set_dir,int(clock_time)%3==0 if demo else false)
+	# Finalize the first pass against the selected performance before any
+	# movement tick. The generic set height can differ from the actual hands.
+	var actual_action: String="dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
+	var actual_target: Vector3=flight_target
+	actual_target.y=players[setter].contact_local(actual_action).y
+	flight_target=actual_target
+	ball_vel=BallFlight.velocity_to(ball_pos,actual_target,flight_left,flight_spin,flight_gravity)
+	players[setter].target=players[setter].stance_for_contact(actual_action,actual_target)
 
 func queue_recovery(anticipate: bool = false) -> bool:
 	var action := "dive" if anticipate else "recovery"
@@ -2360,7 +2372,7 @@ func test_manual_reception() -> void:
 			else:
 				assert(phase == "SET" or (mode=="early" and phase=="LOOSE") or (mode=="late" and phase in ["CPU_RECEIVE","CPU_ATTACK"]), "Manual Cross reception must physically return the ball at every frame rate")
 				if mode == "perfect":
-					assert(pass_quality > 0.97 and absf(flight_target.x) < 0.08 and absf(flight_target.z - 1.5) < 0.08, "Perfect reception must target central zone 3")
+					assert(pass_quality > 0.97 and absf(flight_target.x) <= 1.51 and flight_target.z >= 0.65 and flight_target.z <= 3.01, "Perfect reception must target central zone 3")
 				if mode == "late":
 					assert(contact_log.back().action == "recovery")
 	ball_pos = Vector3(5.5, contact_height("receive"), 9)
