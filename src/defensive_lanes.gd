@@ -11,6 +11,10 @@ func update(game) -> void:
 	if key==episode: return
 	episode=key
 	rows.clear()
+	var committed=game.get("rally_lanes")
+	if committed!=null:
+		for team in 2: rows[team]=committed.line(team)
+		return
 	for team in 2:
 		var pins: Array[int]=[]
 		var middle := -1

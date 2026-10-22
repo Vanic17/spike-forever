@@ -1,0 +1,62 @@
+﻿{
+    "attack_angle_left":  {
+                              "source":  "SPIKE/SPK_Line_45L_After_RunLRL.psa",
+                              "sha256":  "5e37e1c16ad6ce48ec1d61343398fcef8850b3540144e1228030827c45982d83"
+                          },
+    "attack_angle_right":  {
+                               "source":  "SPIKE/SPK_Line_45R_After_RunLRL.psa",
+                               "sha256":  "ca3547418334b0bc0770e017e35adbb9e64037f64c1b6d7d13cd62e88411e87e"
+                           },
+    "attack_pin_left":  {
+                            "source":  "SPIKE/SPK_OutsideLeft_After_RunLRL_45L.psa",
+                            "sha256":  "d5b0819551fe5622c33b281c7fa783fbe58d3f4b92bf9c079a4936ecd2757899"
+                        },
+    "attack_pin_right":  {
+                             "source":  "SPIKE/SPK_OutsideRight_After_RunLRL_45R.psa",
+                             "sha256":  "f158eaa981c581695af8599f0f16f950524f978ca9d972ddd51a972b5f3d401a"
+                         },
+    "attack_turn":  {
+                        "source":  "SPIKE/SPK_Line_90R_After_RunLRL.psa",
+                        "sha256":  "2291a00e3fda1e4e7186d1fc7ec767b7c65b1bd0a8312c6c933ba9de184dbe43"
+                    },
+    "receive_left_step":  {
+                              "source":  "PASS/PASS_2H_LeftCenter_Distance1_FromHalfSquat_NoRecoil.psa",
+                              "sha256":  "10d8300dfa062663853b107bc9a4050516c914123bd337d7abe8ba3d928e902f"
+                          },
+    "receive_low":  {
+                        "source":  "PASS/PASS_2H_FrontDown_Distance0_FromHalfSquat_NoRecoil.psa",
+                        "sha256":  "8b4f2d7173783ba8d04ff9b686d329c0fd570fe209a8a59878866551c1f3da16"
+                    },
+    "receive_right_step":  {
+                               "source":  "PASS/PASS_2H_RightCenter_Distance1_FromHalfSquat_NoRecoil.psa",
+                               "sha256":  "25cdeddfb7d5a0858bad34042d2769cb9d9915ba2e45b883b83506125add2f2b"
+                           },
+    "receive_squat":  {
+                          "source":  "PASS/PASS_2H_FrontCenter_Distance0_FromSquat_NoRecoil.psa",
+                          "sha256":  "f2b75ab6de205db13f27baae85fea07e4b5ca5b6d0ba1114f3907f0b7462c816"
+                      },
+    "receive_step":  {
+                         "source":  "PASS/PASS_2H_FrontCenter_Distance1_FromHalfSquat_NoRecoil.psa",
+                         "sha256":  "932bdb6a025511ed6b62d90205952a8ad40e1dcbf8bd0d36cc6e55beae28e34a"
+                     },
+    "set_left_back":  {
+                          "source":  "SET/SET_Jumped_L_Long_Back_slow.psa",
+                          "sha256":  "66746199da9696e98d9401993fb4f81ed6c8a5edc00b9853ebb5e9033053b7be"
+                      },
+    "set_left_front":  {
+                           "source":  "SET/SET_Jumped_L_Long_Front_slow.psa",
+                           "sha256":  "5d29ad725bc08d3328f070df7ec3bb2298058720f4bf0f0f0e898c73d64cfb44"
+                       },
+    "set_running_front":  {
+                              "source":  "SET/SET_RunJump_LRL_FrontRight_Long_Front_slow.psa",
+                              "sha256":  "b795261a5b9e2f751ba446ccf2a142c3c953fa38dc99c92f716ebb9075caee39"
+                          },
+    "set_short_back":  {
+                           "source":  "SET/SET_Jumped_R_Short_Back_slow.psa",
+                           "sha256":  "3ecbe5923532e46ca2be0cc63898cfede7e68906043bdb3d8bd37d3306c9352c"
+                       },
+    "set_short_front":  {
+                            "source":  "SET/SET_Jumped_R_Short_Front_slow.psa",
+                            "sha256":  "4d3fe16539b6e9a3bf754f6748616ac0bc373a7e9ff81242e6a3187b9d7aa0d0"
+                        }
+}

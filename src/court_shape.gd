@@ -51,7 +51,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var readiness := smoothstep(0.025+individual*0.04,0.20+individual*0.10,game.phase_time)
 			var preparation := Tactics.world(team,0.0,2.6)
 			if not role.begins_with("MB"):
-				var wing := Tactics.attack_wing(i,game.rotations[team],Tactics.first_ball(game))
+				var wing := Tactics.wing_for(game,i)
 				preparation = Tactics.world(team,wing*4.65,3.2)
 			result[i] = result[i].lerp(preparation,readiness)
 	# Read the already observed incoming flight, without guessing its next
@@ -237,7 +237,7 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 	var side:=1.0 if team==0 else -1.0
 	for i in range(team*6,team*6+6):
 		if i==actor or i in blockers: continue
-		var wing:=Tactics.attack_wing(i,game.rotations[team],Tactics.first_ball(game))
+		var wing:=Tactics.wing_for(game,i)
 		if is_zero_approx(wing): continue
 		var start: Vector3=game.players[i].position
 		if not pin_routes.has(i) and start.x*side*wing< -0.6:

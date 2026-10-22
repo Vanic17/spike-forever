@@ -43,6 +43,9 @@ foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Direct
 }
 Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Copy-Item -Destination (Join-Path $stage 'docs')
 if(Test-Path (Join-Path $root 'docs/menu-v20.png')){Copy-Item (Join-Path $root 'docs/menu-v20.png') (Join-Path $stage 'docs')}
+foreach($report in @('v24-expanded-animations.json','strong-spikes-report.json','native-animation-report.json','animation-performance-v23-before-newclips.json','animation-performance-v24-native.json','animation-performance-v24-psa.json','v24-new-animation-performances.png')){
+ if(Test-Path (Join-Path $root ('docs/'+$report))){Copy-Item (Join-Path $root ('docs/'+$report)) (Join-Path $stage 'docs')}
+}
 Copy-Item -LiteralPath (Join-Path $root 'docs/original-animation-hashes.json') -Destination (Join-Path $stage 'docs')
 $fixtures=Join-Path $stage 'docs/reference-killer-aces'
 New-Item -ItemType Directory -Force $fixtures | Out-Null

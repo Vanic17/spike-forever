@@ -59,9 +59,20 @@ static func home(index: int, team: int, rotation: int, serving: bool, attack: bo
 
 static func first_ball(game) -> bool:
 	# The serve kind persists throughout reception, set and the first attack.
-	# It changes when that attack crosses the net, so no extra rally state is
-	# needed and later transition plays return to the usual specialist lanes.
+	# This describes the shot only. Live pin responsibilities are committed
+	# separately in rally_lanes and do not change when this becomes false.
 	return game.incoming_kind == "serve" and game.possession != game.server
+
+static func wing_for(game, index: int) -> float:
+	var team:=int(index/6)
+	var lanes=game.get("rally_lanes")
+	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
+	return attack_wing(index,game.rotations[team],mirrored)
+
+static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
+	var lanes=game.get("rally_lanes")
+	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
+	return attacker(team,game.rotations[team],direction,exclude,mirrored)
 
 static func attack_wing(index: int, rotation: int, service_reception: bool = false) -> float:
 	if not front(index, rotation): return 0.0

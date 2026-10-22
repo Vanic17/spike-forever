@@ -1,0 +1,2604 @@
+{
+  "baseline_direct_points": 46,
+  "cases": [
+    {
+      "after": {
+        "contact_window_seconds": 0.320027039687734,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340004882103383,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320422173281132,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34043276307299,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320871100994324,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340918826703311,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32126167782191,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341341847075902,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321650562637472,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341761581314711,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321982497930947,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342116542566101,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322368127583823,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34252894654336,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322752265550415,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342939421840264,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-3.4, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320012252891112,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339988968202466,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320407643950967,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340417061506115,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320856790575402,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34090343490465,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321247555485382,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341326584234361,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321636590817317,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341746734831455,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321968654610022,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342101909536546,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322354482407944,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34251442815104,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322738709631933,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342925077832873,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-2.55, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319993103120244,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339968604712971,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320389070415513,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340397405949953,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320838835227525,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340884427630575,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321230153449827,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341308042475561,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321619555616957,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341728840677506,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321951952854867,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342084373704266,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322338178359589,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342497243443928,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322722693652786,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342908119944182,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(-1.7, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319970078982686,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339944244065115,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320367000033242,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340373871739243,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320817640803244,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340861835493549,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321209590085447,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341286251194081,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321599706782962,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341708064196336,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321932563083922,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342063949687271,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322319293295121,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342477314254226,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322704330171938,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342888848682227,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(-0.85, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319943648168566,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339916406402619,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320341736036161,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340347155883362,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320793413084954,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340836320246344,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321186342428286,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341261669918813,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321577175857854,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341684464382738,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321910631450404,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342040997828964,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322298016812065,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342455017016669,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322683626227936,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342867174645223,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.0, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319914356064661,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "before": {
+        "contact_window_seconds": 0.339885562966645,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320313552016131,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340317703955238,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320766572625399,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340807974140984,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321160505811832,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341234359312047,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321552262772257,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.34165833494444,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321886491924546,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342015774091183,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322274519638907,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342430578470442,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322660845264123,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342843348558551,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(0.85, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319882780830221,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "before": {
+        "contact_window_seconds": 0.339852407479893,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320283160596225,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340285719752803,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320737421615673,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340777319064348,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321132440441855,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341204778937698,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32152517286206,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341629806615167,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321860005095614,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.34198832188836,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322249040886835,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342404039799624,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322636099615061,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342817565317484,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(1.7, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319849390996239,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.339817300598093,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320250774567463,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340251757235439,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32070644027291,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340744788008724,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321102447582447,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341173267259755,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32149616815463,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341599291812006,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321831927162224,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341958988623866,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322221711895366,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342375611289436,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322609602211238,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342790019814119,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(2.55, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319814462119536,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.339780704847014,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32021704784051,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340216280627665,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320673827603991,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.34071048579546,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321070858350761,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341140083488175,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32146555141427,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341567034924986,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321802080015102,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341927999466977,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322192781762718,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.3423455322375,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322581509485654,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342760786265991,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 60,
+      "target": "(3.4, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320027039687734,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340004882103383,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320422173281132,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34043276307299,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320871100994324,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340918826703311,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32126167782191,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341341847075902,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321650562637472,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341761581314711,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321982497930947,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342116542566101,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322368127583823,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34252894654336,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322752265550415,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342939421840264,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-3.4, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320012252891112,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339988968202466,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320407643950967,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340417061506115,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320856790575402,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34090343490465,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321247555485382,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341326584234361,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321636590817317,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341746734831455,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321968654610022,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342101909536546,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322354482407944,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.34251442815104,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322738709631933,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342925077832873,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-2.55, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319993103120244,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339968604712971,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320389070415513,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340397405949953,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320838835227525,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340884427630575,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321230153449827,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341308042475561,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321619555616957,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341728840677506,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321951952854867,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342084373704266,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322338178359589,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342497243443928,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322722693652786,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342908119944182,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(-1.7, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319970078982686,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339944244065115,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320367000033242,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340373871739243,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320817640803244,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340861835493549,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321209590085447,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341286251194081,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321599706782962,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341708064196336,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321932563083922,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.342063949687271,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322319293295121,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342477314254226,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322704330171938,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342888848682227,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(-0.85, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319943648168566,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.339916406402619,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320341736036161,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340347155883362,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320793413084954,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340836320246344,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321186342428286,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341261669918813,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321577175857854,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341684464382738,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321910631450404,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342040997828964,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322298016812065,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342455017016669,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322683626227936,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342867174645223,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.0, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319914356064661,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "before": {
+        "contact_window_seconds": 0.339885562966645,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320313552016131,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340317703955238,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320766572625399,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.340807974140984,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321160505811832,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "before": {
+        "contact_window_seconds": 0.341234359312047,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 11
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321552262772257,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.34165833494444,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321886491924546,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342015774091183,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322274519638907,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342430578470442,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322660845264123,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342843348558551,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(0.85, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319882780830221,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "before": {
+        "contact_window_seconds": 0.339852407479893,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 7
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320283160596225,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340285719752803,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320737421615673,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340777319064348,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321132440441855,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341204778937698,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32152517286206,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341629806615167,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321860005095614,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.34198832188836,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322249040886835,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342404039799624,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322636099615061,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342817565317484,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(1.7, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319849390996239,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.339817300598093,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320250774567463,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340251757235439,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32070644027291,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340744788008724,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321102447582447,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341173267259755,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32149616815463,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341599291812006,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321831927162224,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341958988623866,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322221711895366,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342375611289436,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322609602211238,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342790019814119,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(2.55, 0.105, -8.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.319814462119536,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.339780704847014,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -3.5)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32021704784051,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.340216280627665,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -4.2)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.320673827603991,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.34071048579546,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -5.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321070858350761,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341140083488175,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -5.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.32146555141427,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341567034924986,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -6.4)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.321802080015102,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.341927999466977,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -7.0)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322192781762718,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "before": {
+        "contact_window_seconds": 0.3423455322375,
+        "dug": false,
+        "phase": "POINT",
+        "point": true,
+        "receiver": 10
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -7.7)"
+    },
+    {
+      "after": {
+        "contact_window_seconds": 0.322581509485654,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "before": {
+        "contact_window_seconds": 0.342760786265991,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
+        "receiver": 9
+      },
+      "fps": 120,
+      "target": "(3.4, 0.105, -8.4)"
+    }
+  ],
+  "dig_time_seconds_after": 0.321960272467356,
+  "dig_time_seconds_before": 0.342097004653602,
+  "floor_flight_seconds_after": 0.456,
+  "floor_flight_seconds_before": 0.48,
+  "horizontal_launch_speed_ratio": 1.05244632739955,
+  "new_direct_points": 49,
+  "paired_real_defense_cases": 144
+}

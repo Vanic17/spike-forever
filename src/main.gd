@@ -14,7 +14,10 @@ const Reference = preload("res://src/reference_style.gd")
 const RallyAI = preload("res://src/rally_ai.gd")
 const CourtShape = preload("res://src/court_shape.gd")
 const MiddleDecoy = preload("res://src/middle_decoy.gd")
+const AnimationVariety = preload("res://src/animation_variety.gd")
 var rotation_context=preload("res://src/rotation_context.gd").new()
+var rally_lanes=preload("res://src/rally_lanes.gd").new()
+var planned_visual_key:=""
 const G := 9.81
 var clips: Dictionary = {}
 var models: Dictionary = {}
@@ -158,7 +161,7 @@ var support_travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 func _ready() -> void:
 	rng.seed = 194260
 	setup_inputs()
-	for name in ["idle", "relaxed", "ready", "block_ready", "walk", "backwalk", "backpedal", "run", "run_right", "shuffle_left", "shuffle_right", "cross_left", "cross_right", "receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "block", "float", "power", "serve_idle", "attack_line", "attack_left", "set_back", "fast_set_back", "receive_follow", "receive_left_up", "receive_right_up", "dive_short", "attack_decoy"]:
+	for name in preload("res://src/psa_animation_library.gd").CLIPS:
 		if "--fallback-test" in OS.get_cmdline_user_args(): continue
 		var clip = PSA.new()
 		if clip.load_file("res://assets/active/" + name + ".psa"):
@@ -486,6 +489,8 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	rally_lanes.reset(rotations,server)
+	planned_visual_key=""
 	rotation_context.reset()
 	defensive_lanes.reset()
 	manual_wall.reset()
@@ -872,7 +877,7 @@ func choose_cpu_play() -> void:
 	var choice := 0
 	var best_score := -INF
 	for direction in 4:
-		var candidate := Tactics.attacker(possession, rotations[possession], direction, setter, Tactics.first_ball(self))
+		var candidate := Tactics.attacker_for(self,possession,direction,setter)
 		if candidate < 0: continue
 		var point := RallyAI.attack_contact(self,direction,candidate,flight_target)
 		var x: float = point.x
@@ -894,27 +899,30 @@ func plan_attack(direction: int, quick: bool) -> void:
 	planned_direction = direction
 	planned_fast = quick and pass_quality >= 0.45 and out_of_system == 1
 	fast_set = planned_fast
-	planned_hitter = Tactics.attacker(possession, rotations[possession], planned_direction, setter, Tactics.first_ball(self))
+	planned_hitter = Tactics.attacker_for(self,possession,planned_direction,setter)
 	if planned_hitter < 0:
 		for alternative in [0, 2, 1, 3]:
-			var candidate := Tactics.attacker(possession, rotations[possession], alternative, setter, Tactics.first_ball(self))
+			var candidate := Tactics.attacker_for(self,possession,alternative,setter)
 			if candidate >= 0:
 				planned_direction = alternative
 				planned_hitter = candidate
 				planned_fast = false
 				fast_set = false
 				break
-	if planned_hitter>=0:
-		players[planned_hitter].select_variant("attack","attack_left" if planned_direction==0 else ("attack_line" if planned_direction in [1,3] else "attack"))
-	players[setter].select_variant("set","set_back" if planned_direction==2 else "set")
-	players[setter].select_variant("fast_set","fast_set_back" if planned_direction==2 else "fast_set")
+	# Choose a performance once for this play. Re-reading the setter's speed
+	# every frame used to change contact offsets again during final braking.
+	var visual_key:=str([shot_serial,setter,planned_hitter,planned_direction,planned_fast])
+	if visual_key!=planned_visual_key:
+		planned_visual_key=visual_key
+		if planned_hitter>=0:
+			players[planned_hitter].select_variant("attack",AnimationVariety.attack(planned_direction,pass_quality,shot_serial))
+		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
+		players[setter].select_variant("fast_set","fast_set_back" if planned_direction==2 else "fast_set")
 
 func select_receive_pose(index: int, point: Vector3) -> void:
 	var player=players[index]
 	var local: Vector3 = Basis(Vector3.UP,PI if index<6 else 0).inverse()*(point-player.position)
-	var variant := "receive_follow" if shot_serial%3==0 else "receive"
-	if local.x< -0.65: variant="receive_right_up"
-	elif local.x>0.65: variant="receive_left_up"
+	var variant := AnimationVariety.receive(local,player.velocity.length(),incoming_kind,shot_serial)
 	player.select_variant("receive",variant)
 
 func set_ball() -> void:
@@ -1835,7 +1843,7 @@ func demo_input() -> void:
 			block_quality = 0.9
 
 func run_tests() -> void:
-	assert(clips.size() == 33, "Every selected source animation must load")
+	assert(clips.size() == preload("res://src/psa_animation_library.gd").CLIPS.size(), "Every selected source animation must load")
 	var button := InputEventJoypadButton.new()
 	button.device = 9
 	button.button_index = JOY_BUTTON_A
@@ -1876,20 +1884,21 @@ func run_tests() -> void:
 	for direction in 4:
 		var normal_time := 0.0
 		for quick in [false, true]:
+			for player in players: player.play("idle",1,true)
 			touches = [0, 0]
 			rotations = [0, 0]
 			possession = 0
 			phase = "SET"
 			setter = 5
 			ball_pos = Vector3(0, contact_height("fast_set" if quick else "set"), 1.5)
-			players[setter].position = players[setter].stance_for_contact("fast_set" if quick else "set", ball_pos)
-			players[setter].rotation.y = PI
 			armed = true
 			input_quality = 1.0
 			pass_quality = 1.0
 			fast_set = quick
 			set_dir = direction
 			plan_attack(direction, quick)
+			players[setter].rotation.y = players[setter].setting_yaw
+			players[setter].position = players[setter].stance_for_contact("fast_set" if quick else "set", ball_pos)
 			var landing := RallyAI.attack_contact(self,direction,planned_hitter,ball_pos)
 			landing.y = contact_height("attack")
 			players[planned_hitter].position = players[planned_hitter].stance_for_contact("attack", landing)
@@ -2022,6 +2031,7 @@ func test_planned_attacks_and_jump_lifecycle() -> void:
 				reset_rally()
 				possession = team
 				setter = team * 6 + 5
+				players[setter].play("idle",1,true)
 				phase = "SET" if team == 0 else "CPU_SET"
 				fast_set = false
 				pass_quality = 1
@@ -2029,12 +2039,13 @@ func test_planned_attacks_and_jump_lifecycle() -> void:
 				input_quality = 1
 				ball_pos = Tactics.world(team, 1.15, 1.5)
 				ball_pos.y = contact_height("set")
-				players[setter].position = players[setter].stance_for_contact("set", ball_pos)
 				plan_attack(direction, false)
+				players[setter].rotation.y = players[setter].setting_yaw
+				players[setter].position = players[setter].stance_for_contact("set", ball_pos)
 				var committed := planned_hitter
 				set_ball()
 				assert(hitter == committed and destination == direction)
-				assert(hitter == Tactics.attacker(team, rotation, direction, setter, Tactics.first_ball(self)))
+				assert(hitter == Tactics.attacker_for(self,team,direction,setter))
 				assert(not Tactics.libero(hitter, rotation, team == server))
 				assert(absf(flight_target.x - RallyAI.attack_contact(self,direction,hitter,ball_pos).x) < 0.81)
 				if not Tactics.front(hitter, rotation): assert(absf(flight_target.z) > 3.0)

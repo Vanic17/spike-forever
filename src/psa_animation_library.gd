@@ -1,7 +1,7 @@
 extends RefCounted
 ## Immutable native clips. No gameplay events, node motion or scale tracks.
 ## The gameplay clock and procedural jump arc remain owned by Avatar.
-const CLIPS := ["idle", "ready", "relaxed", "block_ready", "walk", "backwalk", "backpedal", "run", "run_right", "shuffle_left", "shuffle_right", "cross_left", "cross_right", "receive", "receive_follow", "receive_left_up", "receive_right_up", "set", "fast_set", "set_back", "fast_set_back", "attack", "attack_line", "attack_left", "attack_decoy", "block", "float", "power", "serve_idle", "dump", "recovery", "dive", "dive_short"]
+const CLIPS := ["idle", "ready", "relaxed", "block_ready", "walk", "backwalk", "backpedal", "run", "run_right", "shuffle_left", "shuffle_right", "cross_left", "cross_right", "receive", "receive_follow", "receive_left_up", "receive_right_up", "set", "fast_set", "set_back", "fast_set_back", "attack", "attack_line", "attack_left", "attack_decoy", "block", "float", "power", "serve_idle", "dump", "recovery", "dive", "dive_short", "receive_low", "receive_squat", "receive_step", "receive_left_step", "receive_right_step", "set_short_front", "set_short_back", "set_left_front", "set_left_back", "set_running_front", "attack_angle_left", "attack_angle_right", "attack_turn", "attack_pin_left", "attack_pin_right"]
 const FORMAT_VERSION := 2
 const LIBRARY_PATH := "res://assets/active/native_all.res"
 static var cached: AnimationLibrary
@@ -49,7 +49,7 @@ static func build(bank: Dictionary, sampler: Callable) -> AnimationLibrary:
 	var bank_signature := signature(bank)
 	if cached != null and cached_signature == bank_signature: return cached
 	# The converter tool writes this resource once. Loading immutable clips is
-	# substantially cheaper than rebuilding all 33 libraries at match start.
+	# substantially cheaper than rebuilding all native clips at match start.
 	if ResourceLoader.exists(LIBRARY_PATH):
 		var saved = ResourceLoader.load(LIBRARY_PATH, "AnimationLibrary")
 		if saved is AnimationLibrary and saved.get_meta("psa_signature", "") == bank_signature:

@@ -108,4 +108,4 @@ static func prepare_case(game, team: int) -> Dictionary:
 	game.launch(point,seconds)
 	game.plan_attack(0,false)
 	game.armed=true
-	return {"stance":stance,"point":point,"seconds":seconds}
+	return {"stance":setter.stance_for_contact("set",point),"point":point,"seconds":seconds}

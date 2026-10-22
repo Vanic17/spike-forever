@@ -1,0 +1,12 @@
+{
+	"cpu_mean_ms": 10.9830027855153,
+	"cpu_p50_ms": 10.894,
+	"cpu_p95_ms": 14.623,
+	"display": "headless",
+	"evaluation_rigs": 12,
+	"frame_p50_ms": 11.27,
+	"frame_p95_ms": 15.304,
+	"frames": 359,
+	"mode": "native",
+	"native_enabled": true
+}

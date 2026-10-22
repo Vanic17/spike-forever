@@ -50,7 +50,7 @@ func _initialize() -> void:
 	assert(is_equal_approx(emergency,1.895))
 	assert(is_equal_approx(Reference.receive_seconds(1),1.05))
 	assert(is_equal_approx(Reference.receive_seconds(0),1.50))
-	assert(is_equal_approx(Reference.attack_seconds(1,0.5,false,false),0.48))
+	assert(is_equal_approx(Reference.attack_seconds(1,0.5,false,false),0.456))
 	assert(is_equal_approx(Reference.attack_seconds(0,0.5,true,true),0.72))
 	assert(is_equal_approx(Reference.arc_gravity(0.62,4.5),9.81))
 	assert(Flight.acceleration(Vector3(2,3,-4),Vector3(1,2,3),70).distance_to(PreviousFlight.acceleration(Vector3(2,3,-4),Vector3(1,2,3)))<0.000001)

@@ -25,8 +25,12 @@ static func serve_seconds(power: float, floating: bool) -> float:
 static func set_seconds(_direction: int, quick: bool, quality: float, _distance: float, _emergency: bool) -> float:
 	return 0.62 if quick else 1.02 + (1.0 - quality) * 1.25
 
-static func attack_seconds(power: float, _angle: float, _back_row: bool, _soft: bool) -> float:
-	return 0.72 - power * 0.24
+static func attack_seconds(power: float, _angle: float, _back_row: bool, soft: bool) -> float:
+	# Retain the existing response through controlled/medium attacks. Only a
+	# well-charged hard hit gets the extra pace, with a continuous onset rather
+	# than a threshold jump. At full power: .480 -> .456 s (+5.3% floor speed).
+	var hard_hit := 0.0 if soft else smoothstep(0.75, 1.0, power)
+	return 0.72 - power * 0.24 - hard_hit * 0.024
 
 static func attack_arc(_back_row: bool, _soft: bool) -> float:
 	return 0.0

@@ -84,7 +84,12 @@ static func _destination(game, index: int) -> Vector3:
 	return destination if destination is Vector3 else game.players[index].position
 
 static func defensive_base(game, index: int, team: int) -> Vector3:
-	return Tactics.home(index,team,game.rotations[team],team==game.server,false)
+	var point:=Tactics.home(index,team,game.rotations[team],team==game.server,false)
+	var wing:=Tactics.wing_for(game,index)
+	# A new dig is still the same rally. Its first read must not briefly
+	# reverse a pin toward the old specialist side before opening begins.
+	if not is_zero_approx(wing): point.x=absf(point.x)*wing*(1 if team==0 else -1)
+	return point
 
 static func attack_contact(game, direction: int, attacker: int, set_contact: Vector3) -> Vector3:
 	# Change only the spatial lane. Main retains its contact height, quality
@@ -139,7 +144,7 @@ static func opening(game, index: int, team: int) -> Vector3:
 		# modeGender==1 slide towards the right antenna is deliberately absent.
 		return Tactics.world(team,clampf(setter_x+away*spacing,-3.0,3.0),lerpf(float(p.middle_wait_depth),float(p.middle_commit_depth),commit))
 	if front:
-		var wing := Tactics.attack_wing(index,rotation,Tactics.first_ball(game))
+		var wing := Tactics.wing_for(game,index)
 		var width := float(p.wing_quick_width) if game.fast_set and wing<0 else float(p.wing_width)
 		return Tactics.world(team,wing*width,float(p.wing_depth))
 	if role.begins_with("OH"):
@@ -167,7 +172,7 @@ static func coverage(game, index: int, team: int) -> Vector3:
 		return Tactics.world(team,clampf(x,-3.9,3.9),back_depth+0.18*depth)
 	if role.begins_with("MB"):
 		return Tactics.world(team,clampf(hit_x+inward*1.2,-3.5,3.5),depth+1.1)
-	var wing := Tactics.attack_wing(index,game.rotations[team],Tactics.first_ball(game))
+	var wing := Tactics.wing_for(game,index)
 	return Tactics.world(team,clampf(hit_x*0.35+wing*2.0,-3.8,3.8),depth+2.1)
 
 static func defensive_read(game, index: int, team: int) -> Vector3:
