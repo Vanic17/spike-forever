@@ -91,18 +91,24 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		# At the contact spot, endpoint separation is sufficient. Treating a
 		# small pose/setting-yaw correction as a new penetration unnecessarily
 		# sent the middle out of his first-tempo preparation lane.
-		if route.length()>0.65:
-			var forward:=route.normalized()
+		if route.length()>0.65 or game.phase in ["SET","CPU_SET"]:
+			# A short pass at the setter's feet still needs a free contact
+			# footprint. The old length gate skipped the passer in this case.
+			var forward:=route.normalized() if route.length()>0.65 else Vector3(0,0,1 if game.possession==0 else -1)
 			var normal:=Vector3(forward.z,0,-forward.x)
 			for i in range(game.possession*6,game.possession*6+6):
 				if i==actor: continue
 				if game.phase in ["ATTACK","CPU_ATTACK"] and i!=game.setter: continue
 				if floor_bodies.has(i): continue # A prone passer cannot sidestep out of the setter's way.
+				# For a stationary setter reserve only an existing obstruction.
+				# Re-scanning every frame would pull a middle preparing his quick
+				# out of a lane that the team target separation already keeps clear.
+				if route.length()<=0.65 and not fresh and not setter_yields.has(i): continue
 				var jumping=game.get("middle_decoy")
 				if jumping!=null and jumping.holds(i): continue
 				var start: Vector3=game.players[i].position
 				var nearest:=Geometry3D.get_closest_point_to_segment(start,setter_route_origin,result[actor])
-				if not setter_yields.has(i) and start.distance_to(nearest)<1.28:
+				if not setter_yields.has(i) and start.distance_to(nearest)<(1.28 if route.length()>0.65 else 1.04):
 					var offset: float=(start-nearest).dot(normal)
 					if absf(offset)<0.08: offset=(result[i]-nearest).dot(normal)
 					if absf(offset)<0.08: offset=-1.0 if i%2==0 else 1.0
@@ -228,7 +234,7 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 	var side:=1.0 if team==0 else -1.0
 	for i in range(team*6,team*6+6):
 		if i==actor or i in blockers: continue
-		var wing:=Tactics.attack_wing(i,game.rotations[team])
+		var wing:=Tactics.attack_wing(i,game.rotations[team],Tactics.first_ball(game))
 		if is_zero_approx(wing): continue
 		var start: Vector3=game.players[i].position
 		if not pin_routes.has(i) and start.x*side*wing< -0.6:

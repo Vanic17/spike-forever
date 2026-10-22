@@ -10,7 +10,7 @@ var play: Button
 var updates: Button
 var back: Button
 var overlay: Control
-var dialog: PanelContainer
+var dialog: Panel
 var version_label: Label
 var brush: FontFile
 var installed_version:=""
@@ -180,7 +180,10 @@ func build_updates(version: String) -> void:
 	shade.color=Color(0.01,0.015,0.025,0.80)
 	overlay.add_child(shade)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	dialog=PanelContainer.new()
+	# A hidden PanelContainer can retain the enormous height first computed
+	# by wrapped labels at zero width. Keep the modal bounds independent of
+	# its contents, then let the inner container lay out inside those bounds.
+	dialog=Panel.new()
 	var style:=StyleBoxFlat.new()
 	style.bg_color=Color("10151eee")
 	style.border_color=Color("b99555")
@@ -191,6 +194,7 @@ func build_updates(version: String) -> void:
 	var margin:=MarginContainer.new()
 	for side in ["left","top","right","bottom"]: margin.add_theme_constant_override("margin_"+side,25)
 	dialog.add_child(margin)
+	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var column:=VBoxContainer.new()
 	column.add_theme_constant_override("separation",14)
 	margin.add_child(column)
@@ -246,6 +250,7 @@ func layout() -> void:
 
 func show_updates() -> void:
 	overlay.show()
+	layout()
 	play.focus_mode=Control.FOCUS_NONE
 	updates.focus_mode=Control.FOCUS_NONE
 	back.grab_focus()

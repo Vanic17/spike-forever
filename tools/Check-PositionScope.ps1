@@ -2,7 +2,9 @@ $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 $baseline=Join-Path $root 'docs\baseline-v10'
 $checked=0
-foreach($name in @('controls.cfg','timing.gd','ball_flight.gd','reference_style.gd','arena.gd','match_audio.gd')){
+# Revision 22 explicitly changes only serve charge and serve flight duration;
+# the revision-specific guard checks the rest of those two modules separately.
+foreach($name in @('controls.cfg','ball_flight.gd','arena.gd','match_audio.gd')){
  $current=if($name.EndsWith('.cfg')){Join-Path $root $name}else{Join-Path $root ('src\'+$name)}
  if((Get-FileHash -LiteralPath $current).Hash -ne (Get-FileHash -LiteralPath (Join-Path $baseline $name)).Hash){throw ('Revision 11 changed a protected gameplay/appearance source: '+$name)}
  $checked++

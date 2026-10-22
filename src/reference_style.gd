@@ -17,7 +17,10 @@ static func receive_seconds(quality: float, _emergency: bool = false) -> float:
 	return 1.05 + (1.0 - quality) * 0.45
 
 static func serve_seconds(power: float, floating: bool) -> float:
-	return (1.12 if floating else 0.90) + (1.0 - clampf(power, 0, 1)) * 0.30
+	# Full charge is faster; beyond it the actual horizontal speed continues
+	# to increase in proportion to charge (110% => 1.10 times full speed).
+	var full_seconds:=1.00 if floating else 0.82
+	return (full_seconds+(1.0-maxf(power,0))*0.30) if power<=1 else full_seconds/power
 
 static func set_seconds(_direction: int, quick: bool, quality: float, _distance: float, _emergency: bool) -> float:
 	return 0.62 if quick else 1.02 + (1.0 - quality) * 1.25

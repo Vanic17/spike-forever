@@ -63,11 +63,16 @@ static func first_ball(game) -> bool:
 	# needed and later transition plays return to the usual specialist lanes.
 	return game.incoming_kind == "serve" and game.possession != game.server
 
-static func attack_wing(index: int, rotation: int, _service_reception: bool = false) -> float:
+static func attack_wing(index: int, rotation: int, service_reception: bool = false) -> float:
 	if not front(index, rotation): return 0.0
 	var r: String = ROLES[index % 6]
 	if not r.begins_with("OH") and r != "OPP": return 0.0
-	return -1.0 if r.begins_with("OH") else 1.0
+	var wing := -1.0 if r.begins_with("OH") else 1.0
+	# R1 receives with OH1 on the right and OPP already on the left.
+	# Play the first ball on these pins; do not cross both behind the passer
+	# before the first set. Identities and rotation slots remain unchanged.
+	if service_reception and posmod(rotation,6)==0: wing=-wing
+	return wing
 
 static func attacker(team: int, rotation: int, direction: int, exclude: int, service_reception: bool = false) -> int:
 	for i in range(team * 6, team * 6 + 6):

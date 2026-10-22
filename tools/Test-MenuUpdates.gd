@@ -20,6 +20,15 @@ func run() -> void:
 	menu.client.busy=true # Test modal focus without making a network request.
 	menu.show_updates()
 	assert(menu.overlay.visible and menu.back.has_focus() and menu.play.focus_mode==Control.FOCUS_NONE)
+	# Wait for deferred container sorting: the old zero-width wrap inflated
+	# the dialog to 3351px and put both header and buttons off screen.
+	for size in [Vector2(1280,720),Vector2(1920,1080),Vector2(2560,1080),Vector2(1024,768)]:
+		menu.panel.size=size
+		menu.layout()
+		for frame in 5: await process_frame
+		assert(menu.dialog.size.y<=minf(620,size.y-40))
+		for control in [menu.status,menu.history,menu.install_button,menu.back]:
+			assert(menu.dialog.get_global_rect().encloses(control.get_global_rect()),"Every update control must stay inside the visible modal after container layout")
 	menu.close_updates()
 	assert(not menu.overlay.visible and menu.updates.has_focus())
 	menu.client.busy=false

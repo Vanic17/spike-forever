@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.22.0:** pannello aggiornamenti ripristinato, primo attacco R1 sulle corsie occupate, spazio per il palleggiatore sulle ricezioni vicine, battuta più rapida con carica oltre il 100% effettiva e mira continua con levetta sinistra. [Dettagli e verifiche](docs/REVISION_22.md).
+
 **Versione 0.21.0:** controllo aggiornamenti all'avvio con conferma, correzione della rincorsa in zona 4 dopo il primo punto avversario e verifica dei comandi Xbox. [Dettagli, comandi e test](docs/REVISION_21.md).
 
 **Versione 0.20.0:** schermata iniziale illustrata con Gioca e Aggiornamenti, sei formazioni 5–1 dalla specifica fornita, verifica dei piedi al servizio, corsie di attacco e muro coerenti con i ruoli e copertura dinamica. [Dettagli e test](docs/REVISION_20.md) · [Scarica l'ultima release Windows](https://github.com/Vanic17/spike-forever/releases/latest).
@@ -37,7 +39,7 @@ Gioco Windows 3D di pallavolo indoor 6 contro 6, contro la CPU, con controller P
 | Alzata veloce | Quadrato | X | Q |
 | Colpo di seconda | Cerchio | B | E |
 | Schiacciata | Tieni e rilascia Croce / X | Tieni e rilascia A | Tieni e rilascia Spazio |
-| Mira battuta / attacco, 8 direzioni | Stick sinistro | Stick sinistro | WASD / Frecce |
+| Mira battuta continua / attacco a 8 direzioni | Stick sinistro | Stick sinistro | WASD / Frecce |
 | Direzione alzata, 4 direzioni | Stick sinistro | Stick sinistro | WASD / Frecce |
 | Spostamento continuo del centrale e del muro | Stick sinistro | Stick sinistro | A / D oppure Frecce |
 | Aggiungi il muratore a sinistra, tenendo premuto | L2 | LT | Z |

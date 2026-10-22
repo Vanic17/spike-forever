@@ -383,7 +383,7 @@ func read_controls(dt: float = 1.0/120.0) -> void:
 	if human_wall(): manual_wall.read(self,direction,dt)
 	if direction.length() > 0.3:
 		var angle := roundf(direction.angle() / (PI / 4)) * PI / 4
-		aim = Vector2.from_angle(angle)
+		aim = direction.limit_length() if phase=="SERVE" else Vector2.from_angle(angle)
 		if absf(direction.x) > absf(direction.y):
 			set_dir = 0 if direction.x < 0 else 2
 		else:
@@ -714,7 +714,7 @@ func serve_ball(team: int, power: float) -> void:
 	last_touch = team
 	possession = 1 - team
 	var s := 1.0 if possession == 0 else -1.0
-	var target := Vector3(clampf(aim.x * 2.8, -3.8, 3.8), 1.05, s * (5.2 + aim.y * 1.5))
+	var target := serve_aim_target(team,aim)
 	target.y = contact_height("receive")
 	if team == 1:
 		target.x = rng.randf_range(-3.3, 3.3)
@@ -731,24 +731,31 @@ func serve_ball(team: int, power: float) -> void:
 		return
 	toss_active = false
 	last_power = power
-	incoming_power = minf(power,1.0)
+	incoming_power = power
 	incoming_kind = "serve"
 	last_serve_fault = ""
 	if power > 1.0 and rng.randf() < Timing.serve_risk(power):
 		last_serve_fault = "NET" if rng.randf() < 0.5 else "OUT"
 		if last_serve_fault == "NET":
-			fault_flight(Vector3(target.x, 1.5, -0.2 if team == 0 else 0.2), 0.66)
+			fault_flight(Vector3(target.x, 1.5, -0.2 if team == 0 else 0.2), 0.58/power)
 		else:
-			fault_flight(Vector3(target.x, 0.105, s * (11.0 + minf(power - 1, 2) * 4)), 1.0)
+			fault_flight(Vector3(target.x, 0.105, s * (11.0 + minf(power - 1, 2) * 4)), 0.90/power)
 		return
 	receiver = choose_receiver(possession, target, true)
 	select_receive_pose(receiver,target)
 	players[receiver].target = players[receiver].stance_for_contact("receive", target)
 	selected = receiver if possession == 0 else 1
 	set_phase("RECEIVE" if possession == 0 else "CPU_RECEIVE")
-	var seconds := Reference.serve_seconds(clampf(power,0,1),serve_type==0)
+	var seconds := Reference.serve_seconds(power,serve_type==0)
 	launch(target,seconds)
 	log_rally_event("float_serve" if serve_type==0 else "power_serve",{"seconds":seconds,"power":power})
+
+func serve_aim_target(team: int, direction: Vector2) -> Vector3:
+	# Screen-left/right stay world-left/right from every service position.
+	# Stick up sends the ball deeper, down shorter; target is court-relative,
+	# never an angle added to the server's current lateral position.
+	var side:=1.0 if team==1 else -1.0
+	return Vector3(clampf(direction.x,-1,1)*3.4,contact_height("receive"),side*(5.7-clampf(direction.y,-1,1)*1.8))
 
 func fault_flight(target: Vector3, seconds: float) -> void:
 	# A bad charge produces a real trajectory. The point is awarded on contact
