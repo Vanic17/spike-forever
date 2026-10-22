@@ -46,11 +46,11 @@ Native $git @('-C',$stage,'config','user.name','Vanic17')
 Native $git @('-C',$stage,'config','user.email','264198889+Vanic17@users.noreply.github.com')
 Native $git @('-C',$stage,'remote','add','origin',('https://github.com/'+$Repository+'.git'))
 $helper='credential.helper=!gh auth git-credential'
-Native $git @('-C',$stage,'-c',$helper,'fetch','origin','main') -AllowFailure
+Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'fetch','origin','main') -AllowFailure
 if($script:LastNativeExit -eq 0){Native $git @('-C',$stage,'reset','--mixed','origin/main')}
 Native $git @('-C',$stage,'add','--all')
 Native $git @('-C',$stage,'commit','-m',('Spike Forever '+$tag))
-Native $git @('-C',$stage,'-c',$helper,'push','origin','main')
+Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'push','origin','main')
 Native $gh @('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag),'--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)
