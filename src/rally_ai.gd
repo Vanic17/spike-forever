@@ -201,6 +201,7 @@ static func defensive_read(game, index: int, team: int) -> Vector3:
 			var lanes=game.get("defensive_lanes")
 			var wing: float=lanes.wing(game,index,team) if lanes!=null else (-1.0 if role.begins_with("OH") else 1.0)
 			point.x = side*pin_width*wing
+			if attacking and absf(hit_x)>1.5 and wing*hit_x<0: point.z=side*3.15
 		return point
 	# The source chooses each floor read once for the current set, rather than
 	# adding a fresh random offset each frame. Stable per-player samples retain

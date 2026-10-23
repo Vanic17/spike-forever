@@ -64,6 +64,9 @@ func target(game,index: int) -> Vector3:
 func waiting(game,index: int) -> Vector3:
 	var row:=line(game)
 	var x: float=minf(-3.4,game.block_helper_x-1.35) if index==row[0] else maxf(3.4,game.block_helper_x+1.35)
+	if game.phase=="CPU_ATTACK" and absf(game.flight_target.x)>1.5:
+		var far_pin: int=row[0] if game.flight_target.x>0 else row[2]
+		if index==far_pin and not index in members(game): return Vector3(-3.0 if index==row[0] else 3.0,0,3.15)
 	return Vector3(clampf(x,-5.4,5.4),0,0.68)
 
 func route(game,index: int,destination: Vector3) -> Vector3:

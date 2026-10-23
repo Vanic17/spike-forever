@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.34.0:** rischio progressivo oltre il 100% per attacchi e pallonetti, servizio più incisivo, ricezione con tolleranza intermedia e laterale lontano in copertura sui tre metri. [Dettagli](docs/RELEASE_NOTES_34.md).
+
 **Versione 0.33.0:** ricezione più permissiva, battute più tese senza cambiare la barra, attacchi d'emergenza dopo bagher, recuperi bassi e pallonetto con carica e mira come l'attacco. [Dettagli](docs/RELEASE_NOTES_33.md).
 
 **Versione 0.32.0:** Conferma raggiungibile con controller nella formazione prematch; selettore della rotazione iniziale R1–R6 per entrambe le squadre con schema aggiornato e applicazione in partita. [Dettagli](docs/RELEASE_NOTES_32.md).

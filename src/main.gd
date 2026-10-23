@@ -453,7 +453,7 @@ func press_action(button: String = "action") -> void:
 		var remaining := receive_deadline - clock_time
 		receive_offset=remaining
 		if remaining < -Timing.LATE_RECEIVE_SECONDS: return
-		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.65),timing.quality(remaining,difficulty_scale())) if remaining >= 0 else timing.quality(remaining, difficulty_scale())
+		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.825),timing.quality(remaining,difficulty_scale())) if remaining >= 0 else timing.quality(remaining, difficulty_scale())
 		if remaining < 0:
 			var recovery := BallFlight.intercept(ball_pos, ball_vel, flight_spin, contact_height("recovery"), flight_gravity)
 			if recovery.is_empty() or recovery.seconds > 0.18 or recovery.seconds < 0: return
@@ -818,7 +818,7 @@ func serve_ball(team: int, power: float) -> void:
 	winner_team=team if Timing.winning_power(power) else -1
 	# Every power band uses the same legal floor trajectory. Gold changes
 	# the defensive outcome, never the flight model or its speed profile.
-	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z),4.5,8.2)
+	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.6 if serve_type==0 else 1.1),4.5,8.6)
 	# Calibrate the full-power arc once, then retain the charge curve on
 	# either side of gold. A clearance minimum must not flatten all powers.
 	var full_seconds:=Reference.serve_seconds(1.0,serve_type==0)
@@ -1157,7 +1157,7 @@ func attack_ball() -> void:
 	target+=Vector3(rng.randf_range(-0.18,0.18),0,rng.randf_range(-0.22,0.22))
 	target.x=clampf(target.x,-4.25,4.25); target.z=s*clampf(absf(target.z),2.8,8.8)
 	winner_team=attacker if Timing.winning_power(requested_power) and hitter_action=="attack" else -1
-	if requested_power > 1.00001:
+	if requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip):
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
 		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/requested_power)
 		return
@@ -1172,6 +1172,7 @@ func attack_ball() -> void:
 		incoming_kind="soft"; incoming_power=lerpf(0.12,0.65,power)
 		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.70)*(1.35-0.35*power)
 	if hitter_action == "receive": seconds = 1.4
+	elif requested_power>1.0: seconds/=requested_power
 	send_to_court(attacker,target,seconds)
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
 
@@ -1627,7 +1628,7 @@ func move_players(dt: float) -> void:
 			nominal.append(ready)
 		elif phase=="POINT" and point_formation.size()==12: nominal.append(point_formation[i])
 		elif phase=="LOOSE": nominal.append(players[i].target)
-		elif human_wall() and i<6 and Tactics.front(i,rotations[0]) and phase!="CPU_ATTACK": nominal.append(waiting_wall_target(i))
+		elif human_wall() and i<6 and Tactics.front(i,rotations[0]): nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
 	if phase in ["SET","CPU_SET"] and action_actor>=0:
@@ -1773,7 +1774,7 @@ func move_players(dt: float) -> void:
 		p.rotation.y += clampf(turn * (8.0 if urgent else 5.0 + p.intent.individuality * 2.0), -turn_speed, turn_speed) * dt
 		p.look_target = Vector3(0, 1.7, side * 3.3) if phase == "POINT" else ball_pos
 		p.ready_stance = (team == possession and phase in ["RECEIVE", "CPU_RECEIVE"] and (zone >= 3 or i == receiver)) or (team != possession and phase in ["ATTACK", "CPU_ATTACK"])
-		p.block_ready_stance = team != possession and zone < 3 and phase in ["RECEIVE", "CPU_RECEIVE", "SET", "CPU_SET", "ATTACK", "CPU_ATTACK"]
+		p.block_ready_stance = team != possession and zone < 3 and absf(p.target.z)<2.0 and phase in ["RECEIVE", "CPU_RECEIVE", "SET", "CPU_SET", "ATTACK", "CPU_ATTACK"]
 		if phase == "SERVE": p.ready_stance = team != server and zone >= 3
 		# Wings waiting to approach and setters waiting to penetrate stand tall;
 		# only passers and floor defenders stay in the low defensive posture.
