@@ -5,12 +5,12 @@ const ATTACK_CHARGE_SECONDS := 0.55
 
 static func winning_power(power: float) -> bool:
 	return power>=0.97-0.000001 and power<=1.000001
-const LATE_RECEIVE_SECONDS := 0.10
+const LATE_RECEIVE_SECONDS := 0.14
 func quality(remaining: float, difficulty: float = 1.0) -> float:
-	var window := 0.52 * difficulty
+	var window := 0.72 * difficulty
 	if remaining < 0:
-		return clampf(0.80 * (1.0 + remaining / LATE_RECEIVE_SECONDS), 0, 0.80)
-	return clampf(1.0 - maxf(0, remaining - 0.025 * difficulty) / window, 0, 1)
+		return clampf(0.88 * (1.0 + remaining / LATE_RECEIVE_SECONDS), 0, 0.88)
+	return clampf(1.0 - maxf(0, remaining - 0.055 * difficulty) / window, 0, 1)
 
 static func precision(charge: float) -> float:
 	# 90% power -> 80% accuracy; 100% power -> 70% accuracy.

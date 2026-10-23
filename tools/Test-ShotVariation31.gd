@@ -21,6 +21,7 @@ func run() -> void:
 	game.reset_rally(); game.phase="ATTACK"; game.possession=0; game.hitter=0; game.armed=false
 	game.ball_pos=Vector3(-3,4,1.3); game.ball_vel=Vector3(0,-1,0); game.flight_spin=Vector3.ZERO
 	game.send_test_button(JOY_BUTTON_X)
+	game.release_action()
 	assert(game.attack_tip and game.armed and game.players[0].variant_names.attack.begins_with("attack_tip_"))
 	for direction in [0,1,2]:
 		game.server=1; game.reset_rally(); game.possession=0; game.setter=5; game.receiver=4
@@ -33,6 +34,7 @@ func run() -> void:
 		if direction==2:
 			while game.flight_left>0.08: game.step(1.0/120)
 		game.armed=false; game.press_action("alternate")
+		game.charge_start=game.clock_time-game.Timing.ATTACK_CHARGE_SECONDS*0.7; game.release_action()
 		var before: int=game.test_contacts
 		for frame in 300:
 			if game.phase!="ATTACK": break

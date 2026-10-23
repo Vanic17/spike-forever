@@ -428,7 +428,8 @@ func read_controls(dt: float = 1.0/120.0) -> void:
 
 func press_action(button: String = "action") -> void:
 	if phase=="ATTACK" and hitter_action=="attack" and button=="alternate" and not armed:
-		attack_tip=true; charging=false; charge=0.10; armed=true; input_quality=1.0
+		if charging: return
+		attack_tip=true; charging=true; charge_button="alternate"; charge_start=clock_time; charge=0; input_quality=1.0
 		players[hitter].select_variant("attack",preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial))
 		hitter_action="attack"
 		var intercept:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,players[hitter].contact_local("attack").y,flight_gravity)
@@ -452,7 +453,7 @@ func press_action(button: String = "action") -> void:
 		var remaining := receive_deadline - clock_time
 		receive_offset=remaining
 		if remaining < -Timing.LATE_RECEIVE_SECONDS: return
-		input_quality = minf(Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),timing.quality(remaining,difficulty_scale())) if remaining >= 0 else timing.quality(remaining, difficulty_scale())
+		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.65),timing.quality(remaining,difficulty_scale())) if remaining >= 0 else timing.quality(remaining, difficulty_scale())
 		if remaining < 0:
 			var recovery := BallFlight.intercept(ball_pos, ball_vel, flight_spin, contact_height("recovery"), flight_gravity)
 			if recovery.is_empty() or recovery.seconds > 0.18 or recovery.seconds < 0: return
@@ -821,7 +822,7 @@ func serve_ball(team: int, power: float) -> void:
 	# Calibrate the full-power arc once, then retain the charge curve on
 	# either side of gold. A clearance minimum must not flatten all powers.
 	var full_seconds:=Reference.serve_seconds(1.0,serve_type==0)
-	seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,full_seconds)*seconds/full_seconds
+	seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,full_seconds,2.60 if serve_type==0 else 2.54)*seconds/full_seconds
 	launch(target,seconds)
 	var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
 	if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
@@ -865,7 +866,12 @@ func receive_ball() -> void:
 		miss_contact()
 		return
 	var q := RallyAI.reception_quality(self,input_quality)
-	if possession==0 and receive_offset>0.65:
+	if incoming_kind=="shank" and touches[possession]==1:
+		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
+		players[setter].select_variant("receive",action)
+		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
+		set_ball(); return
+	if possession==0 and receive_offset>0.90:
 		pass_quality=q; register_touch(receiver)
 		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,-rng.randf_range(1.0,4.0))
 		incoming_kind="overpass"; incoming_power=0.18
@@ -883,9 +889,14 @@ func receive_ball() -> void:
 	log_rally_event("dig" if incoming_kind=="spike" else "reception",{"quality":q,"receiver":receiver,"incoming":incoming_kind,"recovery":late_receive})
 	var side := 1.0 if possession == 0 else -1.0
 	if q < 0.08:
+		if touches[possession]==1 and rng.randf()<0.60:
+			preload("res://src/scramble_recovery.gd").start(self,receiver)
+			return
 		fault_flight(Vector3(ball_pos.x+signf(rng.randf_range(-1,1))*rng.randf_range(4,7),0.105,side*rng.randf_range(10,13)),0.9)
 		log_rally_event("shank")
 		return
+	if q<0.38 and touches[possession]==1 and incoming_kind=="spike" and rng.randf()<0.25:
+		preload("res://src/scramble_recovery.gd").start(self,receiver); return
 	if q < 0.50 and incoming_power > 0.68 and incoming_kind in ["serve","spike"] and rng.randf() < (0.50-q)*incoming_power*0.75:
 		var attacker := possession
 		incoming_kind = "overpass"
@@ -1044,7 +1055,7 @@ func set_ball() -> void:
 		miss_contact()
 		return
 	var target := RallyAI.attack_contact(self,destination,hitter,set_origin)
-	hitter_action = "receive" if out_of_system < 0 and (q < 0.36 or absf(ball_pos.z)>6.5 or absf(ball_pos.x)>5.0) else "attack"
+	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
 	if hitter_action == "receive": target.z = s*4.6
 	target.x += rng.randf_range(-1, 1) * (1 - q) * 0.8
 	target.y = contact_height(hitter_action)
@@ -1127,6 +1138,7 @@ func attack_ball() -> void:
 	last_touch = attacker
 	var requested_power := charge if attacker == 0 else rng.randf_range(0.55, 0.97)
 	var power := clampf(requested_power, 0, 1)
+	if out_of_system<0: power*=0.72
 	var precision := Timing.precision(power)
 	last_power = requested_power
 	last_precision = precision
@@ -1157,9 +1169,8 @@ func attack_ball() -> void:
 	var full_seconds:=Reference.attack_seconds(1.0,angle,back_row,false)
 	seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,full_seconds)*seconds/full_seconds
 	if attack_tip:
-		winner_team=-1; incoming_kind="soft"; incoming_power=0.15
-		target=Vector3(clampf(aim.x*2.8+rng.randf_range(-0.25,0.25),-3.8,3.8),0.105,s*rng.randf_range(1.5,3.0))
-		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.85)
+		incoming_kind="soft"; incoming_power=lerpf(0.12,0.65,power)
+		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.70)*(1.35-0.35*power)
 	if hitter_action == "receive": seconds = 1.4
 	send_to_court(attacker,target,seconds)
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})

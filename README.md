@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.33.0:** ricezione più permissiva, battute più tese senza cambiare la barra, attacchi d'emergenza dopo bagher, recuperi bassi e pallonetto con carica e mira come l'attacco. [Dettagli](docs/RELEASE_NOTES_33.md).
+
 **Versione 0.32.0:** Conferma raggiungibile con controller nella formazione prematch; selettore della rotazione iniziale R1–R6 per entrambe le squadre con schema aggiornato e applicazione in partita. [Dettagli](docs/RELEASE_NOTES_32.md).
 
 **Versione 0.31.0:** annunci con la squadra scelta, traiettorie comuni alla fascia d'oro, ace e tocchi a muro variati, ricezione con feedback anticipo/ritardo, rete deformabile e sette animazioni di pallonetto. In attacco: **Quadrato su PlayStation / X su Xbox / Q sulla tastiera**, mira con LS. [Dettagli e verifiche](docs/RELEASE_NOTES_31.md).

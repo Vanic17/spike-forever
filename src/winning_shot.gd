@@ -1,9 +1,9 @@
 extends RefCounted
 ## Winning precision band: keep a real legal flight and a visible failed save.
-static func flight_seconds(game, landing: Vector3, requested: float) -> float:
+static func flight_seconds(game, landing: Vector3, requested: float, clearance: float=2.70) -> float:
 	var fraction: float=absf(game.ball_pos.z)/maxf(0.01,absf(game.ball_pos.z)+absf(landing.z))
 	var linear_height: float=lerpf(game.ball_pos.y,landing.y,fraction)
-	var required: float=maxf(0,2.70-linear_height)
+	var required: float=maxf(0,clearance-linear_height)
 	return maxf(requested,sqrt(2.0*required/maxf(0.01,game.flight_gravity*fraction*(1-fraction))))
 
 static func failed_save(game) -> void:
