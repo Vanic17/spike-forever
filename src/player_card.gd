@@ -19,7 +19,6 @@ func _draw() -> void:
 	draw_circle(Vector2(size.x/2,145),35,Color("26374b"))
 	draw_arc(Vector2(size.x/2,145),35,-PI/2,TAU-PI/2,64,gold,2,true)
 	caption(Vector2(size.x/2,155),str(int(ratings.get("generale",0))),30,gold)
-	caption(Vector2(size.x/2,188),"GENERALE",11,muted)
 	var radius=minf(102,(size.x-130)/2)
 	var centre=Vector2(size.x/2,340)
 	for ring in range(1,5):

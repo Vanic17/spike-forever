@@ -22,10 +22,24 @@ var keyboard: ConfirmationDialog
 var keyboard_text: LineEdit
 var keyboard_target: LineEdit
 var lineup_open:=false
+var editing_details:=false
+
+func enter_details() -> void:
+	if lineup_open or not is_instance_valid(fields): return
+	editing_details=true
+	for control in fields.find_children("*","Control",true,false):
+		if control is LineEdit or control is OptionButton or control is Button or control is SpinBox: control.focus_mode=Control.FOCUS_ALL
+	inputs.name.grab_focus()
+	editor_scroll.ensure_control_visible(inputs.name)
 var settings_format: OptionButton
 var settings_points: OptionButton
 
 func go_back() -> void:
+	if editing_details and (keyboard==null or not keyboard.visible):
+		editing_details=false
+		for control in fields.find_children("*","Control",true,false):
+			if control is LineEdit or control is OptionButton or control is Button or control is SpinBox: control.focus_mode=Control.FOCUS_CLICK
+		player_pick.grab_focus(); return
 	if formation_dialog!=null and formation_dialog.visible:
 		formation_dialog.hide()
 		if is_instance_valid(formation_return): formation_return.grab_focus()
@@ -91,6 +105,11 @@ func _input(event: InputEvent) -> void:
 	if not game.started and event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_RIGHT_STICK:
 		next_track(); get_viewport().set_input_as_handled(); return
 	if not visible: return
+	if is_instance_valid(player_pick) and player_pick.is_visible_in_tree() and not lineup_open and player_pick.has_focus():
+		if event.is_action_pressed("ui_accept"):
+			enter_details(); get_viewport().set_input_as_handled(); return
+		if event.is_action_pressed("ui_right"):
+			get_viewport().set_input_as_handled(); return
 	if formation_dialog!=null and formation_dialog.visible:
 		if event.is_action_pressed("ui_cancel"): go_back(); get_viewport().set_input_as_handled()
 		return
@@ -160,6 +179,7 @@ func picker(parent: Node,options: Array) -> OptionButton:
 	var p=OptionButton.new(); for option in options: p.add_item(str(option))
 	parent.add_child(p); return p
 func editor() -> void:
+	editing_details=false
 	lineup_open=false
 	clear("MODIFICA  /  SUPERLEGA 2026–27")
 	label(body,"Il tuo roster personale • salvato su questo PC • conservato dopo gli aggiornamenti")
@@ -183,6 +203,7 @@ func roster() -> void:
 	player_pick.select(0); edit_player(0)
 
 func edit_lineup() -> void:
+	editing_details=false
 	lineup_open=true
 	player_card.hide()
 	for child in fields.get_children(): fields.remove_child(child); child.queue_free()
@@ -211,6 +232,7 @@ func edit_lineup() -> void:
 		var error=db.save_lineup(team,ids)
 		message.text="Formazione salvata: verrà usata nella prossima partita." if error==OK else "Formazione non salvata: scegli sette giocatori distinti, con i ruoli corretti.")
 func edit_player(index: int) -> void:
+	editing_details=false
 	lineup_open=false
 	player_card.show()
 	editor_scroll.scroll_vertical=0
@@ -238,6 +260,8 @@ func edit_player(index: int) -> void:
 		var skill: String=key
 		value.value_changed.connect(func(v): player_card.ratings[skill]=int(v); player_card.queue_redraw())
 	button(fields,"SALVA MODIFICHE",save_player)
+	for control in fields.find_children("*","Control",true,false):
+		if control is LineEdit or control is OptionButton or control is Button or control is SpinBox: control.focus_mode=Control.FOCUS_CLICK
 func save_player() -> void:
 	if inputs.name.text.strip_edges().is_empty(): message.text="Inserisci un nome."; return
 	current.name=inputs.name.text.strip_edges(); current.jersey_number=int(inputs.number.value); current.role=inputs.role.get_item_text(inputs.role.selected)

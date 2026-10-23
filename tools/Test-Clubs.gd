@@ -19,6 +19,11 @@ func run() -> void:
 		for i in 6: assert(squad[i].role==clubs.db.ROLES[i])
 	clubs.editor(); await process_frame
 	assert(clubs.inputs.name.text!="")
+	clubs.player_pick.grab_focus()
+	var enter=InputEventAction.new(); enter.action="ui_accept"; enter.pressed=true; clubs._input(enter)
+	assert(clubs.editing_details and clubs.inputs.name.has_focus())
+	clubs.go_back(); assert(not clubs.editing_details and clubs.player_pick.has_focus())
+	clubs.enter_details()
 	clubs.inputs.name.grab_focus()
 	for step in 14:
 		assert(clubs.focus_editor_step(false))
