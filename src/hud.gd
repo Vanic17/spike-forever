@@ -116,16 +116,17 @@ func draw_contact(cx: float, y: float) -> void:
 		draw_rect(Rect2(cx - 228, y + 9, 456, 14), Color("425063"))
 		draw_rect(Rect2(cx - 228, y + 9, 364 * fill, 14), GREEN)
 		draw_line(Vector2(cx + 136, y + 5), Vector2(cx + 136, y + 27), WHITE, 2)
+		draw_rect(Rect2(cx-228+364*0.97,y+6,364*0.03,20),GOLD,false,2)
 		if power > 1:
 			draw_rect(Rect2(cx + 136, y + 9, minf(1, (power - 1) / 0.4) * 92, 14), RED)
 		if serve:
 			var hint := primary + " · salto   " + alternate + " · float"
 			if game.charging or game.toss_active: hint = ("JUMP FLOAT" if game.serve_type == 0 else "JUMP POWER") + " · tieni e rilascia"
 			text(Vector2(cx - 229, y + 44), hint, 13)
-			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else "LS: mira · verde = potenza valida", 11, RED if power > 1 else MUTED)
+			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "LS: mira · fascia oro 97–100% vincente"), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 		else:
 			text(Vector2(cx - 229, y + 44), primary + " · tieni e rilascia   /   LS · 8 direzioni", 13)
-			text(Vector2(cx - 229, y + 64), "SOVRACCARICO · FUORI" if power > 1 else "Precisione %d%% · più carica, meno precisione" % roundi(game.Timing.precision(power) * 100), 11, RED if power > 1 else MUTED)
+			text(Vector2(cx - 229, y + 64), "SOVRACCARICO · FUORI" if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "Precisione %d%% · fascia oro 97–100% vincente" % roundi(game.Timing.precision(power) * 100)), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 	elif game.phase == "RECEIVE":
 		text(Vector2(cx - 229, y + 24), primary + " · premi quando arriva la palla", 15)
 		text(Vector2(cx - 229, y + 53), ("CONFERMATA · %d%%" % roundi(game.input_quality * 100)) if game.armed else "Mira automatica in zona 3 · piccolo margine per il recupero tardivo", 12, GREEN if game.armed else MUTED)

@@ -52,6 +52,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var individual := float(posmod((i%6+1)*5+team*3,11))/10.0
 			var readiness := smoothstep(0.025+individual*0.04,0.20+individual*0.10,game.phase_time)
 			var preparation := Tactics.world(team,0.0,2.6)
+			if role.begins_with("MB"): preparation=Tactics.world(team,0.0,1.95)
 			if not role.begins_with("MB"):
 				var wing := Tactics.wing_for(game,i)
 				preparation = Tactics.world(team,wing*4.65,3.2)
@@ -136,7 +137,8 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var point:=RallyAI.attack_contact(game,game.planned_direction,runner,game.flight_target)
 			point.y=game.contact_height("attack")
 			var stance: Vector3=game.players[runner].stance_for_contact("attack",point)
-			result[runner]=stance+Vector3(0,0,0.65 if game.possession==0 else -0.65)
+			var run_depth:=0.20 if game.planned_direction==1 and game.fast_set else 0.65
+			result[runner]=stance+Vector3(0,0,run_depth if game.possession==0 else -run_depth)
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
 	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_hitter>=0:

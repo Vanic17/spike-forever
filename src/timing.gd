@@ -1,7 +1,10 @@
 extends RefCounted
 ## Physical arrival accuracy only. No periodic cursor or repeated perfect windows.
-const SERVE_CHARGE_SECONDS := 0.62
-const ATTACK_CHARGE_SECONDS := 0.62
+const SERVE_CHARGE_SECONDS := 0.46
+const ATTACK_CHARGE_SECONDS := 0.55
+
+static func winning_power(power: float) -> bool:
+	return power>=0.97-0.000001 and power<=1.000001
 const LATE_RECEIVE_SECONDS := 0.10
 func quality(remaining: float, difficulty: float = 1.0) -> float:
 	var window := 0.52 * difficulty

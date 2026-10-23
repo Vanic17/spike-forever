@@ -34,6 +34,14 @@ func members(game) -> Array[int]:
 	return result
 
 func read(game, direction: Vector2, dt: float) -> void:
+	if not jumped.is_empty():
+		var airborne:=false
+		for index in jumped:
+			var player=game.players[index]
+			if player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end: airborne=true
+		if not airborne:
+			for index in jumped: game.block_jumps.erase(index)
+			jumped.clear(); game.block_commanded=false
 	# Release the previous attack's selection after every jumper has landed.
 	if not jumped.is_empty() and not game.block_commanded:
 		jumped.clear()

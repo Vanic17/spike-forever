@@ -19,6 +19,9 @@ var rotation_context=preload("res://src/rotation_context.gd").new()
 var rally_lanes=preload("res://src/rally_lanes.gd").new()
 var contact_navigation=preload("res://src/contact_navigation.gd").new()
 var next_second_touch_read:=0.0
+var attack_buffer_start:=-1.0
+var attack_buffer_power:=-1.0
+var winner_team:=-1
 var planned_visual_key:=""
 const G := 9.81
 var clips: Dictionary = {}
@@ -368,6 +371,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		press_action("alternate")
 	if event.is_action_pressed("dump"):
 		press_action("dump")
+	if phase=="SET" and attack_buffer_start>=0 and event.is_action_released("action"):
+		attack_buffer_power=maxf(0,(clock_time-attack_buffer_start)/Timing.ATTACK_CHARGE_SECONDS)
 	if event.is_action_released(charge_button):
 		release_action()
 
@@ -410,6 +415,9 @@ func read_controls(dt: float = 1.0/120.0) -> void:
 		plan_attack(set_dir, fast_set)
 
 func press_action(button: String = "action") -> void:
+	if phase=="SET" and armed and button=="action":
+		attack_buffer_start=clock_time; attack_buffer_power=-1.0
+		return
 	if phase == "SERVE" and server == 0 and not charging and not toss_active and button != "dump":
 		serve_type = 0 if button == "alternate" else 1
 		charge_button = button
@@ -462,6 +470,8 @@ func press_action(button: String = "action") -> void:
 			manual_wall.jumped.clear()
 
 func release_action() -> void:
+	if phase=="SET" and attack_buffer_start>=0:
+		attack_buffer_power=maxf(0,(clock_time-attack_buffer_start)/Timing.ATTACK_CHARGE_SECONDS)
 	if not charging: return
 	charge = current_charge()
 	charging = false
@@ -502,6 +512,7 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	attack_buffer_start=-1.0; attack_buffer_power=-1.0; winner_team=-1
 	contact_navigation.reset()
 	next_second_touch_read=0.0
 	rally_lanes.reset(rotations,server)
@@ -776,7 +787,14 @@ func serve_ball(team: int, power: float) -> void:
 	selected = receiver if possession == 0 else 1
 	set_phase("RECEIVE" if possession == 0 else "CPU_RECEIVE")
 	var seconds := Reference.serve_seconds(power,serve_type==0)
+	winner_team=team if Timing.winning_power(power) else -1
+	if winner_team>=0:
+		target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*7.8
+		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,seconds)
 	launch(target,seconds)
+	if winner_team>=0:
+		var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
+		if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
 	log_rally_event("float_serve" if serve_type==0 else "power_serve",{"seconds":seconds,"power":power})
 
 func serve_aim_target(team: int, direction: Vector2) -> Vector3:
@@ -799,6 +817,10 @@ func reachable(index: int, point: Vector3, reach: float = 1.4) -> bool:
 	return Vector2(players[index].position.x - point.x, players[index].position.z - point.z).length() < reach
 
 func receive_ball() -> void:
+	if winner_team>=0:
+		preload("res://src/winning_shot.gd").failed_save(self)
+		return
+	attack_buffer_start=-1.0; attack_buffer_power=-1.0
 	if possession == 0 and not armed:
 		miss_contact()
 		return
@@ -993,6 +1015,10 @@ func set_ball() -> void:
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
 	var approach_time := maxf(approach_distance / 5.4 + 0.26,preload("res://src/approach_planner.gd").seconds(players[hitter],players[hitter].target,Reference.run_speed()*1.10))
+	if destination==1 and fast_set and approach_distance<0.65:
+		# A middle already planted in his quick lane does not need a second
+		# generic .38s plant after preparing during reception and the first pass.
+		approach_time=maxf(0.30,approach_time-0.30)
 	var flight := maxf(Reference.set_seconds(destination,fast_set,q,ball_pos.distance_to(target),out_of_system<0),approach_time)
 	if fast_set and flight > 1.1:
 		# A rushed but unreachable quick is converted before launch, never rerouted
@@ -1015,6 +1041,10 @@ func set_ball() -> void:
 		block_commanded = false
 		block_jumps.clear()
 	set_phase("ATTACK" if possession == 0 else "CPU_ATTACK")
+	if possession==0 and attack_buffer_start>=0 and clock_time-attack_buffer_start<1.5:
+		if attack_buffer_power>=0: armed=true; charge=attack_buffer_power; input_quality=1.0
+		else: charging=true; charge_button="action"; charge_start=attack_buffer_start
+	attack_buffer_start=-1.0; attack_buffer_power=-1.0
 	launch(target, flight)
 	if not early_wall and not (possession==1 and not demo):
 		block_rosters.clear()
@@ -1075,6 +1105,9 @@ func attack_ball() -> void:
 		soft = choice.soft
 		power = choice.power
 	target += Vector3(rng.randf_range(-spread, spread), 0, rng.randf_range(-spread, spread))
+	winner_team=attacker if Timing.winning_power(requested_power) and hitter_action=="attack" else -1
+	if winner_team>=0:
+		target.x=clampf(target.x,-3.9,3.9); target.z=s*maxf(5.5,minf(8.0,absf(target.z)))
 	if requested_power > 1.00001:
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
 		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/requested_power)
@@ -1084,6 +1117,7 @@ func attack_ball() -> void:
 	var back_row := not Tactics.front(hitter,rotations[attacker])
 	var angle := clampf((9.0-absf(target.z))/8.0,0,1)
 	var seconds := Reference.attack_seconds(power,angle,back_row,soft)
+	if winner_team>=0: seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,seconds)
 	if hitter_action == "receive": seconds = 1.4
 	send_to_court(attacker,target,seconds)
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
@@ -1363,6 +1397,14 @@ func try_block() -> void:
 			near = true
 			strength = maxf(strength,clampf(1.0-gap/0.24,0.18,1.0))
 	if good_jump and near:
+		if winner_team>=0:
+			var side:=1.0 if defender==0 else -1.0
+			var landing:=Vector3(clampf(ball_pos.x,-3.9,3.9),0.105,side*2.0)
+			ball_vel=BallFlight.velocity_to(ball_pos,landing,0.26,flight_spin,flight_gravity)
+			last_touch=defender; phase="LOOSE"; flight_left=100
+			log_rally_event("winning_shot_block_break",{"defender":defender})
+			if match_audio: match_audio.contact("block",ball_pos,0.9)
+			return
 		if true:
 			var normal := Vector3(block_hand * 0.22 if defender == 0 else 0.0, 0.12, -1.0 if defender == 0 else 1.0).normalized()
 			var incoming := ball_vel
@@ -1474,7 +1516,7 @@ func request_block_jump(index: int, contact_in: float) -> bool:
 	var jump_id := wall_attack_id() if index<6 else attack_serial
 	if block_jumps.get(index, -1) == jump_id: return false
 	var p = players[index]
-	if p.clip_name == "block" and not p.looping and p.clips.has("block") and p.animation_time < p.clips.block.contact_time + 0.58: return false
+	if p.clip_name == "block" and not p.looping and p.clips.has("block") and p.animation_time < p.clips.block.recovery_end: return false
 	block_jumps[index] = jump_id
 	block_jump_log.append({"attack_id":jump_id, "player":index, "time":clock_time, "contact_in":contact_in})
 	p.target = p.position
