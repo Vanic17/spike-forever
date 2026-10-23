@@ -129,7 +129,7 @@ func draw_contact(cx: float, y: float) -> void:
 			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "LS: mira · fascia oro 97–100% vincente"), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 		else:
 			text(Vector2(cx - 229, y + 44), primary + " attacco / " + alternate + " pallonetto · tieni e rilascia", 13)
-			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%"%roundi(game.Timing.attack_risk(power,game.attack_tip)*100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "Precisione %d%% · fascia oro 97–100% vincente" % roundi(game.Timing.precision(power) * 100)), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
+			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%"%roundi(game.Timing.attack_risk(power,game.attack_tip)*100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "Precisione %d%% · fascia oro 97–100%% vincente" % roundi(game.Timing.precision(power) * 100)), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 	elif game.phase == "RECEIVE":
 		text(Vector2(cx - 229, y + 24), primary + " · premi quando arriva la palla", 15)
 		text(Vector2(cx - 229, y + 53), ("CONFERMATA · %d%%" % roundi(game.input_quality * 100)) if game.armed else "Mira automatica in zona 3 · piccolo margine per il recupero tardivo", 12, GREEN if game.armed else MUTED)

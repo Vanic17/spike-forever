@@ -39,8 +39,9 @@ func run() -> void:
 						game.move_players(1.0/60)
 						for player in game.players: player.tick(1.0/60,false,false)
 						for pin in [row[0],row[2]]:
-							assert(game.players[pin].position.z<0.96,"An ordered pin must stay near the net while the opponent sets or attacks")
+							if phase=="CPU_ATTACK" and not pin in game.manual_wall.members(game): continue
+							assert(game.players[pin].position.z<0.96,"Actual wall members stay at the net; free front players cover short balls")
 					cases+=1
-	print("NET PINS PASS: ",cases," rotation/phase/membership cases / selected and unselected wings / no retreat from ordered net lanes")
+	print("NET PINS PASS: ",cases," rotation/phase/membership cases / actual wall members held near net / free front defenders allowed to cover short")
 	game.free()
 	quit()

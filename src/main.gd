@@ -153,6 +153,7 @@ var middle_decoy=MiddleDecoy.new()
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
 var defensive_lanes=preload("res://src/defensive_lanes.gd").new()
+var defensive_coverage=preload("res://src/defensive_coverage.gd").new()
 var traffic_footprints: Array = []
 var play_log: Array[Dictionary] = []
 var flight_spin := Vector3.ZERO
@@ -545,6 +546,7 @@ func reset_rally() -> void:
 	planned_visual_key=""
 	rotation_context.reset()
 	defensive_lanes.reset()
+	defensive_coverage.reset()
 	manual_wall.reset()
 	rally_serial += 1
 	test_rallies = 0
@@ -1630,7 +1632,23 @@ func move_players(dt: float) -> void:
 		elif phase=="LOOSE": nominal.append(players[i].target)
 		elif human_wall() and i<6 and Tactics.front(i,rotations[0]): nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
+	if phase in ["ATTACK","CPU_ATTACK"]:
+		var floor_plan: Dictionary=defensive_coverage.plan(self,1-possession,flight_target,blockers)
+		for index in floor_plan:
+			if index!=action_actor and not index in blockers: nominal[index]=floor_plan[index]
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	# Keep the floor defence through the incoming spike, rather than opening
+	# all non-passers for attack while the ball has only just left the hitter.
+	if phase in ["RECEIVE","CPU_RECEIVE"] and incoming_kind in ["spike","soft"] and defensive_coverage.defending_team==possession and defensive_coverage.attack_id==attack_serial:
+		for index in defensive_coverage.targets:
+			if index==action_actor or index in blockers: continue
+			var cover: Vector3=defensive_coverage.targets[index]
+			var receiver_stance: Vector3=players[action_actor].stance_for_contact(action,flight_target)
+			if cover.distance_to(receiver_stance)<1.4:
+				var away:=cover-receiver_stance
+				if away.length()<0.01: away=Vector3.RIGHT if index%2==0 else Vector3.LEFT
+				cover=receiver_stance+away.normalized()*1.4
+			team_targets[index]=cover
 	if phase in ["SET","CPU_SET"] and action_actor>=0:
 		team_targets[action_actor]=contact_navigation.route(self,action_actor,nominal[action_actor])
 	if middle_decoy.index>=0 and not middle_decoy.jumped: middle_decoy.target=team_targets[middle_decoy.index]
@@ -1665,6 +1683,7 @@ func move_players(dt: float) -> void:
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
 		var preparing_decoy: bool=i==middle_decoy.index
 		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
+		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
 		if preparing_setter: assignment="approach"
 		if i != action_actor and court_shape.bypass.has(i): assignment = "yield"

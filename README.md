@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.36.0:** copertura difensiva condivisa tra laterale libero, libero e seconda linea; corto sui tre metri, diagonale, zona intermedia e parallela assegnati in base a rotazione, attacco e muro effettivo. [Dettagli e verifiche](docs/RELEASE_NOTES_36.md).
+
 **Versione 0.34.0:** rischio progressivo oltre il 100% per attacchi e pallonetti, servizio più incisivo, ricezione con tolleranza intermedia e laterale lontano in copertura sui tre metri. [Dettagli](docs/RELEASE_NOTES_34.md).
 
 **Versione 0.33.0:** ricezione più permissiva, battute più tese senza cambiare la barra, attacchi d'emergenza dopo bagher, recuperi bassi e pallonetto con carica e mira come l'attacco. [Dettagli](docs/RELEASE_NOTES_33.md).
