@@ -16,6 +16,35 @@ var editor_scroll: ScrollContainer
 var keyboard: ConfirmationDialog
 var keyboard_text: LineEdit
 var keyboard_target: LineEdit
+var lineup_open:=false
+var settings_format: OptionButton
+var settings_points: OptionButton
+
+func go_back() -> void:
+	if keyboard!=null and keyboard.visible:
+		keyboard.hide()
+		if is_instance_valid(keyboard_target): keyboard_target.grab_focus()
+	elif lineup_open:
+		lineup_open=false; edit_player(player_pick.get_selected_items()[0])
+	else:
+		hide(); host.play.grab_focus()
+
+func focus_editor_step(backwards: bool) -> bool:
+	if not is_instance_valid(fields): return false
+	var owner=get_viewport().gui_get_focus_owner()
+	if owner==null or not fields.is_ancestor_of(owner): return false
+	if owner is OptionButton and owner.get_popup().visible: return false
+	var controls: Array[Control]=[]
+	for child in fields.get_children():
+		if child is LineEdit or child is SpinBox or child is OptionButton or child is Button: controls.append(child)
+	var index=controls.find(owner)
+	if index<0 and owner.get_parent() is SpinBox: index=controls.find(owner.get_parent())
+	if index<0: return false
+	index=clampi(index+(-1 if backwards else 1),0,controls.size()-1)
+	if controls[index] is SpinBox: controls[index].get_line_edit().grab_focus()
+	else: controls[index].grab_focus()
+	editor_scroll.call_deferred("ensure_control_visible",controls[index])
+	return true
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var theme_new=Theme.new()
@@ -47,7 +76,17 @@ func _process(_dt: float) -> void:
 			if absf(axis)>0.25: editor_scroll.scroll_vertical+=roundi(axis*650*_dt)
 
 func _input(event: InputEvent) -> void:
-	if not visible or not event is InputEventJoypadButton or not event.pressed: return
+	if not visible: return
+	if event.is_action_pressed("ui_cancel"):
+		var owner=get_viewport().gui_get_focus_owner()
+		if owner is OptionButton and owner.get_popup().visible:
+			owner.get_popup().hide(); get_viewport().set_input_as_handled(); return
+		go_back(); get_viewport().set_input_as_handled(); return
+	if keyboard==null or not keyboard.visible:
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_up"):
+			if focus_editor_step(event.is_action_pressed("ui_up")):
+				get_viewport().set_input_as_handled(); return
+	if not event is InputEventJoypadButton or not event.pressed: return
 	if keyboard!=null and keyboard.visible: return
 	var focused=get_viewport().gui_get_focus_owner()
 	if focused!=null and event.button_index in [JOY_BUTTON_DPAD_UP,JOY_BUTTON_DPAD_DOWN] and (focused is LineEdit or focused is SpinBox):
@@ -93,7 +132,7 @@ func clear(title: String) -> void:
 	for child in body.get_children(): body.remove_child(child); child.queue_free()
 	var top=HBoxContainer.new(); body.add_child(top)
 	var heading=Label.new(); heading.text=title; heading.add_theme_font_size_override("font_size",36); heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL; top.add_child(heading)
-	button(top,"TORNA AL MENU",func(): hide(); host.play.grab_focus())
+	button(top,"INDIETRO · B / CERCHIO",go_back)
 	show()
 	if top.get_child_count()>1: top.get_child(1).grab_focus()
 func button(parent: Node,text: String,callback: Callable) -> Button:
@@ -104,6 +143,7 @@ func picker(parent: Node,options: Array) -> OptionButton:
 	var p=OptionButton.new(); for option in options: p.add_item(str(option))
 	parent.add_child(p); return p
 func editor() -> void:
+	lineup_open=false
 	clear("MODIFICA  /  SUPERLEGA 2026–27")
 	label(body,"Il tuo roster personale • salvato su questo PC • conservato dopo gli aggiornamenti")
 	var toolbar=HBoxContainer.new(); body.add_child(toolbar)
@@ -111,7 +151,7 @@ func editor() -> void:
 	button(toolbar,"FORMAZIONE INIZIALE",edit_lineup)
 	var columns=HBoxContainer.new(); columns.size_flags_vertical=Control.SIZE_EXPAND_FILL; columns.add_theme_constant_override("separation",28); body.add_child(columns)
 	player_pick=ItemList.new(); player_pick.custom_minimum_size.x=265; player_pick.add_theme_font_size_override("font_size",16); columns.add_child(player_pick)
-	player_card=preload("res://src/player_card.gd").new(); player_card.custom_minimum_size=Vector2(355,530); columns.add_child(player_card)
+	player_card=preload("res://src/player_card.gd").new(); player_card.custom_minimum_size=Vector2(355,350); columns.add_child(player_card)
 	var scroll=ScrollContainer.new(); scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL; columns.add_child(scroll)
 	editor_scroll=scroll
 	fields=VBoxContainer.new(); fields.size_flags_horizontal=Control.SIZE_EXPAND_FILL; fields.add_theme_constant_override("separation",12); scroll.add_child(fields)
@@ -126,6 +166,7 @@ func roster() -> void:
 	player_pick.select(0); edit_player(0)
 
 func edit_lineup() -> void:
+	lineup_open=true
 	player_card.hide()
 	for child in fields.get_children(): fields.remove_child(child); child.queue_free()
 	var team: Dictionary=db.teams[team_pick.selected]
@@ -153,6 +194,7 @@ func edit_lineup() -> void:
 		var error=db.save_lineup(team,ids)
 		message.text="Formazione salvata: verrà usata nella prossima partita." if error==OK else "Formazione non salvata: scegli sette giocatori distinti, con i ruoli corretti.")
 func edit_player(index: int) -> void:
+	lineup_open=false
 	player_card.show()
 	editor_scroll.scroll_vertical=0
 	for child in fields.get_children(): fields.remove_child(child); child.queue_free()
@@ -187,6 +229,7 @@ func save_player() -> void:
 	message.text="Salvato in locale ✓" if db.save(current)==OK else "Salvataggio non riuscito: riprova."
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])
 func match_setup() -> void:
+	lineup_open=false
 	clear("GIOCA  /  PREPARA LA PARTITA")
 	var scroll=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; body.add_child(scroll)
 	var content=VBoxContainer.new(); content.size_flags_horizontal=Control.SIZE_EXPAND_FILL; content.add_theme_constant_override("separation",12); scroll.add_child(content)
@@ -206,9 +249,12 @@ func match_setup() -> void:
 			swatch.color=Color(t.uniform_colors["home" if kit_pick.selected==0 else "away"].primary_hex_approx)
 		p.item_selected.connect(refresh); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)
-	label(content,"FORMATO PARTITA"); var format=picker(content,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2)
+	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)
+	var format_box=VBoxContainer.new(); format_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(format_box)
+	label(format_box,"FORMATO PARTITA"); var format=picker(format_box,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2); settings_format=format
 	label(body,"PUNTI PER SET · vantaggio di due punti; set decisivo sempre a 15")
-	var points=picker(content,["25","15"])
+	var points_box=VBoxContainer.new(); points_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(points_box)
+	label(points_box,"PUNTI PER SET"); var points=picker(points_box,["25","15"]); settings_points=points
 	var error=Label.new(); body.add_child(error)
 	button(body,"SCENDI IN CAMPO",func():
 		for side in 2:

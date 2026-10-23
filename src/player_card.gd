@@ -10,6 +10,7 @@ func caption(at: Vector2, text: String, font_size: int, color: Color) -> void:
 func _draw() -> void:
 	var gold=Color("e9c677"); var muted=Color("9daec3")
 	draw_style_box(get_theme_stylebox("panel","PanelContainer"),Rect2(Vector2.ZERO,size))
+	draw_set_transform(Vector2.ZERO,0,Vector2(1,minf(1,size.y/530.0)))
 	caption(Vector2(size.x/2,32),"PLAYER PROFILE",13,gold)
 	var name: String=str(player.get("name",""))
 	caption(Vector2(size.x/2,65),name,20,Color.WHITE)

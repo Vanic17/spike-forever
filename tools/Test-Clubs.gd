@@ -14,8 +14,18 @@ func run() -> void:
 		for i in 6: assert(squad[i].role==clubs.db.ROLES[i])
 	clubs.editor(); await process_frame
 	assert(clubs.inputs.name.text!="")
+	clubs.inputs.name.grab_focus()
+	for step in 14:
+		assert(clubs.focus_editor_step(false))
+	await process_frame
+	await process_frame
+	assert(get_root().gui_get_focus_owner() is Button,"Controller must reach Save past appearance and every rating")
+	assert(clubs.editor_scroll.scroll_vertical>0,"Focused editor field must scroll into view")
+	clubs.edit_lineup(); clubs.go_back(); assert(not clubs.lineup_open and clubs.visible)
 	clubs.match_setup(); await process_frame
 	await process_frame
+	assert(clubs.settings_format.get_global_rect().end.y<=root.get_visible_rect().end.y,"Match format must stay on screen")
+	assert(clubs.settings_points.get_global_rect().end.y<=root.get_visible_rect().end.y,"Match points must stay on screen")
 	var start=clubs.body.get_child(clubs.body.get_child_count()-1); start.pressed.emit()
 	await process_frame
 	assert(game.started and not clubs.visible and not clubs.music.playing)

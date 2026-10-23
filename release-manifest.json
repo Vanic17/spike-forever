@@ -1,8 +1,8 @@
 {
-    "version":  "0.27.0",
+    "version":  "0.27.1",
     "files":  {
                   "project.godot":  "8240c0a06921c34970fac44f146c8e147a924b6fa91835bd478a6d4ab1cfa1b6",
-                  "version.json":  "a7619df4beec20b4e6a84cccfa104f4a0325c91e2d15071ca70807421fe34d12",
+                  "version.json":  "d0df1bf5aee89ff90d5c338164f579025a4a8df7add54f352b5537cb34be236d",
                   "README.md":  "c24994b12ef71e4362cd5033e7270b74efbd2bc60ba07ef034a6203a4dee1c5f",
                   "controls.cfg":  "45c89c8cadf15397d045c4fb399ee0fe7dec52c9bc1e23f5f70a405aab4256a6",
                   "Avvia Spike Forever.cmd":  "b03e1cd604f80082f87190f6f19abe02a656e0964921090c2a478b5d74e993ef",
@@ -32,7 +32,7 @@
                   "src/avatar.gd":  "c123764e9a06e38fe258c27f656cdb90ac21f9e273db666fa07c5f23c731cc9a",
                   "src/ball_contact.gd":  "511bfeed1fe8b8089376b23089ec4b086f5e99a34dd0d6397f262c7f5c6ded8d",
                   "src/ball_flight.gd":  "b64de66437ed8d242679fe3e718e724c32dc874e2eb55f522e8a63f9ace986dd",
-                  "src/club_menu.gd":  "f061d547c161afd65f12d02f72045dc268e5e03403f35a78c605c5eed8674da6",
+                  "src/club_menu.gd":  "fc4df200249efa748a8cad40bed75ca96d4c084f2e3cc8023f2f81ceba5e91a1",
                   "src/court_shape.gd":  "f11485a65502c9e4d0c951ce9ce5e5b1cdc5b706ae5835de9bcb4227f1d935db",
                   "src/crowd.gd":  "eac43dc12b6082868c5366309765abf84d5131d626dc7d6b4f6fdb75b3ce3664",
                   "src/defensive_lanes.gd":  "86b48f9be71a67f99d0ca7b34b284c6ae16a49ddec7d703d6566056e96ffaf00",
@@ -45,7 +45,7 @@
                   "src/match_audio.gd":  "8febed40fe03834e6dd7b3f1d6759112ee33bb4f9960d91219a60a689162b1e5",
                   "src/middle_decoy.gd":  "ed74788d6e0f5e4adac3d849e2f44c8c3df44c383990060ba26c2d6b6a92296d",
                   "src/movement_intent.gd":  "912ba2dcd51d7f045c7214e7cbcacb5174154621fd80bf97d39c68b2c69bd10e",
-                  "src/player_card.gd":  "cb4d0fabac14a2a23fe15128d9920d25977c77b038cb77af387cc7dfef97671f",
+                  "src/player_card.gd":  "383529a10b7f19709acc64178ad3203ca5937c4dde70c3d008154053598f5006",
                   "src/pose_animation_tree.gd":  "41608fdc3990b19cef67621a808e00fa8e5f4c63c06d23f48d2d1182cce08bcd",
                   "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
                   "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2",
