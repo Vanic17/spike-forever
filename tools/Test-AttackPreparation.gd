@@ -15,6 +15,9 @@ func run() -> void:
 				game.ball_pos=game.players[game.receiver].contact_world("receive")
 				game.set_phase("RECEIVE" if team==0 else "CPU_RECEIVE"); game.armed=true; game.input_quality=1; game.incoming_kind="spike"; game.incoming_power=0.3
 				game.receive_ball(); game.set_dir=direction; game.plan_attack(direction,false)
+				# This fixture explicitly chooses a third-touch attack. CPU reception
+				# may have independently selected a second-touch dump beforehand.
+				game.setter_dump=false
 				var runner: int=game.planned_hitter
 				if runner<0: continue
 				var side:=1 if team==0 else -1

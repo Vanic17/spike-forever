@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.31.0:** annunci con la squadra scelta, traiettorie comuni alla fascia d'oro, ace e tocchi a muro variati, ricezione con feedback anticipo/ritardo, rete deformabile e sette animazioni di pallonetto. In attacco: **Quadrato su PlayStation / X su Xbox / Q sulla tastiera**, mira con LS. [Dettagli e verifiche](docs/RELEASE_NOTES_31.md).
+
 **Versione 0.30.0:** selezione dorata corretta nel menu principale, formazioni e sostituzioni prematch su schema del campo, nove brani in coda casuale continua e skip R3. [Dettagli](docs/RELEASE_NOTES_30.md).
 
 **Versione 0.29.0:** comando di attacco anticipato memorizzato durante la fine dell'alzata, muro nuovamente controllabile e ripetibile dopo l'atterraggio, centrale preparato prima per la veloce. Battuta più rapida, barra battuta 0,46 s e attacco 0,55 s. Fascia vincente 97–100% dopo contatto valido, con traiettoria reale e tentativi di difesa falliti. [Dettagli](docs/RELEASE_NOTES_29.md).

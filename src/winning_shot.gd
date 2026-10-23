@@ -13,8 +13,10 @@ static func failed_save(game) -> void:
 	if touched:
 		# The hard ball breaks the platform: visible touch, then floor nearby.
 		var side:=1.0 if game.possession==0 else -1.0
-		var landing:=Vector3(clampf(game.ball_pos.x+0.65,-4.0,4.0),0.105,side*clampf(absf(game.ball_pos.z)+0.8,1.2,8.6))
-		game.ball_vel=game.BallFlight.velocity_to(game.ball_pos,landing,0.25,game.flight_spin,game.flight_gravity)
+		var mishit: int=game.rng.randi_range(0,2)
+		var lateral: float=game.rng.randf_range(0.35,1.8)*(-1 if game.rng.randf()<0.5 else 1)
+		var landing:=Vector3(clampf(game.ball_pos.x+lateral,-4.25,4.25),0.105,side*clampf(absf(game.ball_pos.z)+game.rng.randf_range(-1.0,1.8),1.0,8.6))
+		game.ball_vel=game.BallFlight.velocity_to(game.ball_pos,landing,[0.19,0.34,0.48][mishit],game.flight_spin,game.flight_gravity)
 		game.last_touch=game.possession
 	else:
 		if not game.dive_motions.has(game.receiver): player.play(action,1.15,false)

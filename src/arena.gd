@@ -5,6 +5,7 @@ var ball: MeshInstance3D
 var shadow: MeshInstance3D
 var marker: MeshInstance3D
 var camera: Camera3D
+var dynamic_net
 var crowd_positions: Array[Vector3] = []
 
 func solid(color: Color, roughness: float = 0.7) -> StandardMaterial3D:
@@ -100,12 +101,15 @@ func _ready() -> void:
 					m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 					m.alpha_scissor_threshold = 0.45
 					m.cull_mode = BaseMaterial3D.CULL_DISABLED
+					m.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
+					m.albedo_color=Color(1,1,1,0)
 				else:
 					m = Assets.material("T_Furn_VolleyNetPad01A_BaseColor.png", "T_Furn_VolleyNetPad01A_Normal.png", Color("315ca8"))
 				part.set_surface_override_material(surface, m)
 	else:
 		for x in [-5.2, 5.2]: box(Vector3(x, 1.35, 0), Vector3(0.15, 2.7, 0.15), white)
 		box(Vector3(0, 2.43, 0), Vector3(10.4, 0.075, 0.03), white)
+	dynamic_net=preload("res://src/net_dynamics.gd").new(); add_child(dynamic_net)
 	build_seating()
 	build_crowd()
 	build_branding()

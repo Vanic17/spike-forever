@@ -7,6 +7,7 @@ $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike 
 $files+=@('docs/REVISION_28.md','docs/RELEASE_NOTES_28.md')
 $files+='docs/RELEASE_NOTES_29.md'
 $files+='docs/RELEASE_NOTES_30.md'
+$files+='docs/RELEASE_NOTES_31.md'
 foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANIMATION_18.md','REVISION_20.md','REVISION_21.md','REVISION_22.md','REVISION_23.md','REVISION_24.md','REVISION_25.md','REVISION_26.md','REVISION_26_1.md','ANIMATION_24.md','ANIMATION_26.md','v26-rotation-audit.md','STRONG_SPIKES_V24.md','SPECIFICA_ROTazioni_5-1.md')){
  if(Test-Path (Join-Path $root ('docs/'+$name))){$files+='docs/'+$name}
 }

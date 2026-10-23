@@ -30,6 +30,8 @@ func panel(rect: Rect2, color: Color = INK) -> void:
 
 func _draw() -> void:
 	if game == null: return
+	if game.started and game.receive_feedback_left>0:
+		centered(size.y-215,game.receive_feedback,15,GOLD)
 	var w := size.x
 	var h := size.y
 	var pad: int = game.pad()
@@ -76,7 +78,8 @@ func _draw() -> void:
 		centered(105, game.feedback, 19, GOLD)
 	if game.phase == "POINT":
 		panel(Rect2(w * 0.5 - 218, h * 0.46 - 41, 436, 84))
-		centered(h * 0.46 - 3, game.feedback, 29)
+		var point_px:=clampi(int(29*414/maxf(414,font.get_string_size(game.feedback,HORIZONTAL_ALIGNMENT_LEFT,-1,29).x)),14,29)
+		centered(h * 0.46 - 3, game.feedback, point_px)
 		centered(h * 0.46 + 25, game.point_reason, 14, MUTED)
 	elif game.phase in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.human_wall() or game.phase == "SERVE" and game.server == 0:
 		draw_contact(w * 0.5, h - 92)
@@ -88,7 +91,7 @@ func _draw() -> void:
 		panel(Rect2(30, 157, 435, 242))
 		var lines := [
 			primary + " · ricezione / alzata / attacco / muro",
-			alternate + " · servizio float / alzata veloce",
+			alternate + " · float / veloce / pallonetto",
 			dump_button + " · colpo di seconda",
 			"Battuta / attacco: tieni e rilascia",
 			"LS / WASD / frecce: mira e direzioni",
@@ -125,7 +128,7 @@ func draw_contact(cx: float, y: float) -> void:
 			text(Vector2(cx - 229, y + 44), hint, 13)
 			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "LS: mira · fascia oro 97–100% vincente"), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 		else:
-			text(Vector2(cx - 229, y + 44), primary + " · tieni e rilascia   /   LS · 8 direzioni", 13)
+			text(Vector2(cx - 229, y + 44), primary + " · potenza   " + alternate + " · pallonetto   LS · mira", 13)
 			text(Vector2(cx - 229, y + 64), "SOVRACCARICO · FUORI" if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "Precisione %d%% · fascia oro 97–100% vincente" % roundi(game.Timing.precision(power) * 100)), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 	elif game.phase == "RECEIVE":
 		text(Vector2(cx - 229, y + 24), primary + " · premi quando arriva la palla", 15)
