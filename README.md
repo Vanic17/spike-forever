@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.30.0:** selezione dorata corretta nel menu principale, formazioni e sostituzioni prematch su schema del campo, nove brani in coda casuale continua e skip R3. [Dettagli](docs/RELEASE_NOTES_30.md).
+
 **Versione 0.29.0:** comando di attacco anticipato memorizzato durante la fine dell'alzata, muro nuovamente controllabile e ripetibile dopo l'atterraggio, centrale preparato prima per la veloce. Battuta più rapida, barra battuta 0,46 s e attacco 0,55 s. Fascia vincente 97–100% dopo contatto valido, con traiettoria reale e tentativi di difesa falliti. [Dettagli](docs/RELEASE_NOTES_29.md).
 
 **Versione 0.28.0:** percorsi del secondo tocco calcolati sugli ingombri reali di tutti i compagni, previsione dei tuffi, precedenza al palleggiatore e bagher di emergenza sulla stessa traiettoria quando il palleggio alto non è più raggiungibile. [Cause, correzioni e verifiche](docs/REVISION_28.md).

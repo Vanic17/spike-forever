@@ -10,6 +10,10 @@ var current: Dictionary={}
 var inputs: Dictionary={}
 var music:=AudioStreamPlayer.new()
 var last_track:=-1
+var music_queue: Array=[]
+var match_rosters: Array=[[],[]]
+var formation_dialog: ConfirmationDialog
+var formation_return: Control
 var message: Label
 var player_card
 var editor_scroll: ScrollContainer
@@ -21,6 +25,10 @@ var settings_format: OptionButton
 var settings_points: OptionButton
 
 func go_back() -> void:
+	if formation_dialog!=null and formation_dialog.visible:
+		formation_dialog.hide()
+		if is_instance_valid(formation_return): formation_return.grab_focus()
+		return
 	if keyboard!=null and keyboard.visible:
 		keyboard.hide()
 		if is_instance_valid(keyboard_target): keyboard_target.grab_focus()
@@ -65,7 +73,10 @@ func _ready() -> void:
 		if visible and is_instance_valid(editor_scroll) and control!=null and editor_scroll.is_ancestor_of(control): editor_scroll.ensure_control_visible(control))
 	hide()
 func next_track() -> void:
-	var choices=[0,1,2,3]; choices.erase(last_track); last_track=choices.pick_random()
+	if music_queue.is_empty():
+		music_queue=range(9); music_queue.shuffle()
+		if music_queue[0]==last_track: music_queue.reverse()
+	last_track=music_queue.pop_front()
 	music.stream=AudioStreamMP3.load_from_file("res://assets/audio/menu/track%d.mp3"%last_track); music.play()
 func _process(_dt: float) -> void:
 	if game.started: music.stop()
@@ -76,7 +87,12 @@ func _process(_dt: float) -> void:
 			if absf(axis)>0.25: editor_scroll.scroll_vertical+=roundi(axis*650*_dt)
 
 func _input(event: InputEvent) -> void:
+	if not game.started and event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_RIGHT_STICK:
+		next_track(); get_viewport().set_input_as_handled(); return
 	if not visible: return
+	if formation_dialog!=null and formation_dialog.visible:
+		if event.is_action_pressed("ui_cancel"): go_back(); get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("ui_cancel"):
 		var owner=get_viewport().gui_get_focus_owner()
 		if owner is OptionButton and owner.get_popup().visible:
@@ -229,6 +245,7 @@ func save_player() -> void:
 	message.text="Salvato in locale ✓" if db.save(current)==OK else "Salvataggio non riuscito: riprova."
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])
 func match_setup() -> void:
+	match_rosters=[[],[]]
 	lineup_open=false
 	clear("GIOCA  /  PREPARA LA PARTITA")
 	var scroll=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; body.add_child(scroll)
@@ -242,12 +259,12 @@ func match_setup() -> void:
 		var p=picker(card,db.teams.map(func(t): return t.name)); p.select(side); picks.append(p)
 		label(card,"DIVISA"); var kit_pick=picker(card,["Casa","Trasferta"]); kits.append(kit_pick)
 		var swatch=ColorRect.new(); swatch.custom_minimum_size.y=12; card.add_child(swatch)
-		var roster_label=Label.new(); roster_label.add_theme_font_size_override("font_size",17); card.add_child(roster_label)
+		var team_side: int=side
+		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],card.get_child(card.get_child_count()-1)))
 		var refresh=func(_index):
-			var t=db.teams[p.selected]; var names=PackedStringArray(); for player in db.lineup(t): names.append("%s  ·  %s"%[player.role,player.name])
-			roster_label.text="\n".join(names)
+			var t=db.teams[p.selected]
 			swatch.color=Color(t.uniform_colors["home" if kit_pick.selected==0 else "away"].primary_hex_approx)
-		p.item_selected.connect(refresh); refresh.call(0)
+		p.item_selected.connect(func(index): match_rosters[team_side]=[]; refresh.call(index)); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)
 	var format_box=VBoxContainer.new(); format_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(format_box)
@@ -262,6 +279,47 @@ func match_setup() -> void:
 		game.match_best_of=[1,3,5][format.selected]; game.match_points=[25,15][points.selected]
 		for side in 2:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
-			var squad=db.lineup(t)
+			var squad: Array=match_rosters[side] if not match_rosters[side].is_empty() else db.lineup(t)
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],t.uniform_colors["home" if kits[side].selected==0 else "away"],t.uniform_colors.libero)
 		game.scores=[0,0]; game.sets=[0,0]; game.rotations=[0,0]; game.server=0; game.paused=false; game.reset_rally(); game.started=true; hide(); music.stop())
+
+func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:
+	formation_return=return_to
+	if formation_dialog!=null: formation_dialog.queue_free()
+	formation_dialog=ConfirmationDialog.new(); formation_dialog.title="FORMAZIONE / "+team.name; formation_dialog.ok_button_text="CONFERMA"; formation_dialog.cancel_button_text="ANNULLA"; add_child(formation_dialog)
+	var column=VBoxContainer.new(); column.add_theme_constant_override("separation",16); formation_dialog.add_child(column)
+	label(column,"RETE — prima linea · seleziona una casella per scegliere un sostituto dello stesso ruolo")
+	label(column,"Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita")
+	var court=PanelContainer.new(); column.add_child(court)
+	var surface=StyleBoxFlat.new(); surface.bg_color=Color("174451"); surface.border_color=Color("d5e7e7"); surface.set_border_width_all(2)
+	for edge in ["left","right","top","bottom"]: surface.set("content_margin_"+edge,12)
+	court.add_theme_stylebox_override("panel",surface)
+	var grid=GridContainer.new(); grid.columns=3; grid.add_theme_constant_override("h_separation",12); grid.add_theme_constant_override("v_separation",18); court.add_child(grid)
+	var squad: Array=match_rosters[side].duplicate() if not match_rosters[side].is_empty() else db.lineup(team)
+	if squad.size()!=7: label(column,"Roster incompleto: completa i ruoli nel menu Modifica."); formation_dialog.popup_centered(); return
+	var controls: Dictionary={}; var options: Dictionary={}
+	var slots=[2,1,0,3,4,5,6]
+	var abbreviations=["OH1","MB1","OPP","OH2","MB2","S","L"]
+	for slot in slots:
+		var index: int=slot
+		var cell=VBoxContainer.new(); cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL; grid.add_child(cell)
+		label(cell,abbreviations[index]+(" · LIBERO" if index==6 else " · ZONA "+str([2,3,4,5,6,1][index])))
+		var candidates: Array=team.roster.filter(func(player): return player.role==(db.ROLES+["libero"])[index]); options[index]=candidates
+		var labels: Array=candidates.map(func(player): return "%s · %s · %s · GEN %d"%[str(int(player.jersey_number)) if player.get("jersey_number")!=null else "?",abbreviations[index],player.name,int(player.ratings.get("generale",0))])
+		var pick=picker(cell,labels); pick.add_theme_font_size_override("font_size",13); pick.fit_to_longest_item=false; pick.clip_text=true; pick.custom_minimum_size=Vector2(320,48); controls[index]=pick
+		for j in candidates.size():
+			if candidates[j].id==squad[index].id: pick.select(j)
+		pick.item_selected.connect(func(selected):
+			var old: Dictionary=squad[index]; var chosen: Dictionary=options[index][selected]
+			for other in 7:
+				if other==index or squad[other].id!=chosen.id: continue
+				squad[other]=old
+				for j in options[other].size():
+					if options[other][j].id==old.id: controls[other].select(j)
+			squad[index]=chosen)
+	label(column,"A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: annulla · R3: brano successivo")
+	formation_dialog.confirmed.connect(func(): match_rosters[side]=squad.duplicate(); formation_return.grab_focus())
+	formation_dialog.canceled.connect(func(): formation_return.grab_focus())
+	formation_dialog.window_input.connect(func(event):
+		if event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_RIGHT_STICK: next_track())
+	formation_dialog.popup_centered(Vector2i(1100,540)); controls[2].grab_focus()

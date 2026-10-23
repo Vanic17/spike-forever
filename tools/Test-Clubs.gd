@@ -8,6 +8,11 @@ func run() -> void:
 		if node.get_script()!=null and node.get_script().resource_path.ends_with("start_menu.gd"): menu=node
 	assert(menu!=null)
 	var clubs=menu.clubs
+	menu.play.grab_focus()
+	var play_active=menu.play.get_theme_stylebox("normal")
+	var updates_dark=menu.updates.get_theme_stylebox("normal")
+	menu.updates.grab_focus()
+	assert(menu.play.get_theme_stylebox("normal")!=play_active and menu.updates.get_theme_stylebox("normal")!=updates_dark,"Gold selection must follow controller focus")
 	assert(clubs.db.teams.size()==12)
 	for team in clubs.db.teams:
 		var squad=clubs.db.lineup(team); assert(squad.size()==7,team.name)
@@ -26,10 +31,29 @@ func run() -> void:
 	await process_frame
 	assert(clubs.settings_format.get_global_rect().end.y<=root.get_visible_rect().end.y,"Match format must stay on screen")
 	assert(clubs.settings_points.get_global_rect().end.y<=root.get_visible_rect().end.y,"Match points must stay on screen")
+	clubs.show_match_formation(0,clubs.db.teams[0],menu.play)
+	await process_frame
+	var options=clubs.formation_dialog.find_children("*","OptionButton",true,false)
+	assert(options.size()==7)
+	var original: String=clubs.db.lineup(clubs.db.teams[0])[2].id
+	if options[0].item_count>1:
+		var next: int=(options[0].selected+1)%options[0].item_count
+		options[0].select(next); options[0].item_selected.emit(next)
+		clubs.formation_dialog.confirmed.emit()
+		assert(clubs.match_rosters[0][2].id!=original,"Prematch substitution must reach the actual squad")
+	clubs.formation_dialog.hide()
+	clubs.music_queue.clear(); clubs.last_track=-1
+	var played: Array=[]
+	for i in 9:
+		clubs.next_track(); assert(not clubs.last_track in played); played.append(clubs.last_track)
+	var previous: int=clubs.last_track
+	var skip=InputEventJoypadButton.new(); skip.button_index=JOY_BUTTON_RIGHT_STICK; skip.pressed=true; clubs._input(skip)
+	assert(clubs.last_track!=previous and clubs.music.playing,"R3 must skip continuously across shuffled queues")
 	var start=clubs.body.get_child(clubs.body.get_child_count()-1); start.pressed.emit()
 	await process_frame
 	assert(game.started and not clubs.visible and not clubs.music.playing)
 	assert(not game.players[0].roster_identity.is_empty())
+	if not clubs.match_rosters[0].is_empty(): assert(game.players[2].roster_identity.id==clubs.match_rosters[0][2].id)
 	for p in game.players:
 		assert(p.jersey_number.text.is_valid_int() or p.jersey_number.text=="?")
 	game.match_best_of=3; game.match_points=25; game.sets=[1,1]; game.scores=[14,14]; game.phase="SERVE"; game.award(0,"TEST")

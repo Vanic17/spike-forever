@@ -162,7 +162,7 @@ func hero_button(text: String, gold: bool) -> Button:
 	button.add_theme_constant_override("shadow_offset_x",2)
 	button.add_theme_constant_override("shadow_offset_y",3)
 	var image:=Image.new()
-	image.load_svg_from_string(FileAccess.get_file_as_string("res://assets/ui/button_gold.svg" if gold else "res://assets/ui/button_dark.svg"))
+	image.load_svg_from_string(FileAccess.get_file_as_string("res://assets/ui/button_dark.svg"))
 	var slab:=StyleBoxTexture.new()
 	slab.texture=ImageTexture.create_from_image(image)
 	for side in [SIDE_LEFT,SIDE_RIGHT,SIDE_TOP,SIDE_BOTTOM]: slab.set_texture_margin(side,12)
@@ -182,6 +182,14 @@ func hero_button(text: String, gold: bool) -> Button:
 	focus.shadow_color=Color(1,0.65,0.2,0.65)
 	focus.shadow_size=0
 	button.add_theme_stylebox_override("focus",focus)
+	var gold_image:=Image.new(); gold_image.load_svg_from_string(FileAccess.get_file_as_string("res://assets/ui/button_gold.svg"))
+	var active:=slab.duplicate(); active.texture=ImageTexture.create_from_image(gold_image)
+	button.add_theme_stylebox_override("hover",active)
+	button.add_theme_stylebox_override("hover_pressed",active)
+	button.add_theme_stylebox_override("focus",StyleBoxEmpty.new())
+	button.focus_entered.connect(func(): button.add_theme_stylebox_override("normal",active))
+	button.focus_exited.connect(func(): button.add_theme_stylebox_override("normal",slab))
+	button.mouse_entered.connect(func(): button.grab_focus())
 	panel.add_child(button)
 	return button
 
