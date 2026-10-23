@@ -1,0 +1,1 @@
+Corretta la camminata che faceva sembrare che i giocatori cadessero da soli durante gli aggiustamenti. La fonte difettosa è esclusa dalla selezione per tutti i 12 atleti; conservate le altre animazioni e i tuffi effettivi. Aggiunta verifica dell'intero ciclo delle animazioni senza palla. Comandi, timing, fisica, rotazioni e velocità degli atleti invariati.

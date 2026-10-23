@@ -93,7 +93,7 @@ foreach($check in @(@('RoleMatrix','ROLE MATRIX PASS'),@('MenuUpdates','MENU UPD
  Write-Output ('PASS '+$check[0]+' / '+$check[1])
 }
 & (Join-Path $PSScriptRoot 'Check-PositionScope.ps1')
-foreach($check in @(@('SetterCrowd','SETTER CROWD PASS'),@('TVCamera','TV CAMERA PASS'),@('NetPins','NET PINS PASS'),@('RallyPins','RALLY PINS PASS'),@('ExpandedAnimations','EXPANDED ANIMATIONS PASS'),@('StrongSpikes','STRONG SPIKES PASS'),@('SetReliability','SET RELIABILITY PASS'),@('RotationCoverage','ROTATION COVERAGE PASS'),@('AnimationCatalog26','ANIMATION CATALOG26 PASS'))){
+foreach($check in @(@('SetterCrowd','SETTER CROWD PASS'),@('TVCamera','TV CAMERA PASS'),@('NetPins','NET PINS PASS'),@('RallyPins','RALLY PINS PASS'),@('ExpandedAnimations','EXPANDED ANIMATIONS PASS'),@('StrongSpikes','STRONG SPIKES PASS'),@('SetReliability','SET RELIABILITY PASS'),@('RotationCoverage','ROTATION COVERAGE PASS'),@('AnimationCatalog26','ANIMATION CATALOG26 PASS'),@('Standing27','STANDING27 PASS'))){
  $log=Join-Path $root ('docs/'+$check[0]+'-test.log')
  $ErrorActionPreference='Continue'
  & $engine --headless --path $root --script (Join-Path $root ('tools/Test-'+$check[0]+'.gd')) --quit-after 180 *> $log

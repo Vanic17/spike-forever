@@ -62,7 +62,7 @@ func run() -> void:
 	for name in Expansion.CLIPS:
 		var family: String=Expansion.FAMILIES[name]
 		counts[family]=counts.get(family,0)+1
-		check(selected.has(name),"Catalog performance is unreachable: "+name)
+		check(not selected.has(name) if name=="walk_v26_01" else selected.has(name),"Catalog selection/quarantine differs: "+name)
 		check(Converter.CLIPS.has(name) and game.clips.has(name),"Catalog missing native/runtime clip: "+name)
 		var hash_value:=digest("res://assets/active/"+name+".psa")
 		check(not seen_hashes.has(hash_value),"Duplicate PSA source: "+name)

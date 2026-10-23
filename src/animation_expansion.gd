@@ -410,7 +410,7 @@ static func stance_or_gait(action: String, team: int, jersey: int) -> String:
 	var pool: Array=[action]
 	if action=="run": pool.append("run_right")
 	for name in GROUPS.get(action,[]):
-		if not str(name).begins_with("wall_"): pool.append(name)
+		if not str(name).begins_with("wall_") and name!="walk_v26_01": pool.append(name)
 	return pick(pool,index)
 
 static func paired_quick(normal: String) -> String:

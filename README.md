@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.26.1:** esclusa una variante di camminata che faceva piegare i giocatori fino a terra; verificati i cicli di attesa e movimento. [Correzione e test](docs/REVISION_26_1.md).
+
 **Versione 0.26.0:** ricezione R2/R5 con libero sulla corsia centrale, copertura verificata in tutte le sei rotazioni e 79 animazioni aggiuntive, 127 totali. [Dettagli e verifiche](docs/REVISION_26.md).
 
 **Versione 0.25.0:** spazio e contatto del palleggiatore corretti nelle ricezioni ravvicinate, nuovi ritmi distinti per centro/bande/pipe, battuta più rapida e barra in 0,70 s. [Dettagli e verifiche](docs/REVISION_25.md).
