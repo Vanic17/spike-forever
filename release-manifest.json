@@ -1,8 +1,8 @@
 {
-    "version":  "0.29.0",
+    "version":  "0.29.1",
     "files":  {
                   "project.godot":  "8240c0a06921c34970fac44f146c8e147a924b6fa91835bd478a6d4ab1cfa1b6",
-                  "version.json":  "0f618c1bffc132838790a5d3cbe3fa5242418a06be8febfc3e18bba2413ae8e5",
+                  "version.json":  "1b06a6cee6ac6c249c5cb5c948b4cd398b6584191b347b5559b8f1b84a410f6b",
                   "README.md":  "239a49e5a2a1a3ca3649e144b7a7ca3e3e7df76aaf4abee82a879b10c65dc3c2",
                   "controls.cfg":  "45c89c8cadf15397d045c4fb399ee0fe7dec52c9bc1e23f5f70a405aab4256a6",
                   "Avvia Spike Forever.cmd":  "b03e1cd604f80082f87190f6f19abe02a656e0964921090c2a478b5d74e993ef",
@@ -63,10 +63,10 @@
                   "src/serve_layout.gd":  "cbfe997cc2b40953b81bb70ccf4f50820abb83539d5e6b28b5ef7cda48391569",
                   "src/setter_access.gd":  "c9ec05ddf3e13d5674b81f1f789bc90e40712347cfeb16cd299c4ace6d690cbe",
                   "src/source_assets.gd":  "e6aa59d8f83d1524f684aa91c91f0530b65967de1dc86d23a69ad054418e8f50",
-                  "src/start_menu.gd":  "6079f339cfda34cbaffcd97f91e16ca263ec650f5b1676feddc22f37cf30540d",
+                  "src/start_menu.gd":  "0b28725a4ecb2a112de8de42529d06f62159271b68742d065c09ac351d00a273",
                   "src/tactics.gd":  "f5ae8cb2e9ce2a558a2f570f08b11e6b59cab529d8974c0cd15dc7d70bde8ba2",
                   "src/timing.gd":  "64efa5e4f97a18c5403d56424b1093bb10b0165aff89dbf3cfb4a4f1b40553ab",
-                  "src/update_client.gd":  "6446934b54090377527ae333c6a59f6317ece6553c4fb42d5a967588457ab737",
+                  "src/update_client.gd":  "fb7ce5c1e13bb584693a38fe14ad97d09361343ba174ef7f3d79d87150d43e2b",
                   "src/view_controls.gd":  "8d94eaae28ec63db6ac300c9bb00dfb7cdffdb3772673aefb66e2b224984f372",
                   "src/winning_shot.gd":  "41c9192942a98c084bdb120c360b8f786f60c1e37137cd5d0eaba210fb876433",
                   "licenses/Godot-COPYRIGHT.txt":  "28d59554c5599136688c59bad62cce4a0c1aa667d966f0acec9b07b481d882ac",

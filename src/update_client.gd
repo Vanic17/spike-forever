@@ -1,6 +1,7 @@
 extends Node
 signal changed(message: String)
 signal versions_loaded(items: Array)
+signal download_progress(received: int, total: int)
 const REPOSITORY := "Vanic17/spike-forever"
 var http: HTTPRequest
 var releases: Array = []
@@ -9,6 +10,17 @@ var downloading := false
 var selected: Dictionary = {}
 var page := 1
 var package_path := ""
+var progress_elapsed:=0.0
+
+func _process(dt: float) -> void:
+	if not downloading or http==null: return
+	progress_elapsed+=dt
+	if progress_elapsed<0.10: return
+	progress_elapsed=0.0
+	var received:=http.get_downloaded_bytes()
+	var total:=http.get_body_size()
+	if total<=0: total=int(selected.get("size",0))
+	download_progress.emit(received,total)
 
 static func compare_versions(candidate: String, installed: String) -> int:
 	var a:=candidate.trim_prefix("v").split(".")
@@ -76,6 +88,7 @@ func install(release: Dictionary) -> void:
 	http.timeout=300
 	busy=true
 	downloading=true
+	download_progress.emit(0,int(selected.get("size",0)))
 	changed.emit("Download in corso. La versione attuale resta disponibile fino alla verifica.")
 	var error:=http.request(url,["User-Agent: Spike-Forever-Updater"])
 	if error!=OK: fail("Download non avviato: "+error_string(error))

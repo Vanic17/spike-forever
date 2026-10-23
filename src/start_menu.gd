@@ -8,6 +8,8 @@ var client
 var install_button: Button
 var play: Button
 var updates: Button
+var download_bar: ProgressBar
+var download_label: Label
 var edit: Button
 var clubs
 var back: Button
@@ -60,6 +62,10 @@ func _ready() -> void:
 	version_label.modulate=Color(0.85,0.86,0.9,0.7)
 	panel.add_child(version_label)
 	build_updates(str(version))
+	client.download_progress.connect(func(received,total):
+		download_bar.show(); download_label.show()
+		download_bar.value=clampf(float(received)/total*100.0,0,100) if total>0 else 0
+		download_label.text="%d%% · %.1f / %.1f MB"%[int(download_bar.value),received/1048576.0,total/1048576.0] if total>0 else "%.1f MB scaricati · dimensione in attesa"%[received/1048576.0])
 	update_prompt=ConfirmationDialog.new()
 	update_prompt.title="Aggiornamento disponibile"
 	update_prompt.ok_button_text="AGGIORNA"
@@ -221,6 +227,11 @@ func build_updates(version: String) -> void:
 		var result=JSON.parse_string(FileAccess.get_file_as_string("res://update-result.json"))
 		if result is Dictionary: status.text=str(result.get("message",status.text))
 	column.add_child(status)
+	download_bar=ProgressBar.new(); download_bar.custom_minimum_size.y=24; download_bar.show_percentage=false; column.add_child(download_bar); download_bar.hide()
+	var fill=StyleBoxFlat.new(); fill.bg_color=Color("d4ad5c"); fill.set_corner_radius_all(5); download_bar.add_theme_stylebox_override("fill",fill)
+	download_label=Label.new(); column.add_child(download_label); download_label.hide()
+	client.changed.connect(func(_message):
+		if not client.downloading: download_bar.hide(); download_label.hide())
 	history=ItemList.new()
 	history.custom_minimum_size.y=110
 	history.size_flags_vertical=Control.SIZE_EXPAND_FILL
