@@ -42,7 +42,7 @@ func run() -> void:
 	g.destination=0
 	g.rotations=[0,0]; g.server=1; g.reset_rally(); g.possession=1; g.phase="CPU_ATTACK"; g.hitter=6; g.hitter_action="attack"
 	g.flight_target=Vector3(3.4,3.3,-1); g.flight_left=0.8
-	var row: Array=g.manual_wall.line(g); g.manual_wall.right_joined=true
+	var row: Array=g.manual_wall.line(g); g.manual_wall.right_joined=true; g.phase_time=0.3
 	g.move_players(1.0/120)
 	var off: int=row[0]
 	print("LIVE COVER row=",row," blockers=",g.blocking_players(0)," planned=",g.defensive_coverage.targets," actual=",g.players[off].target," demo=",g.demo)

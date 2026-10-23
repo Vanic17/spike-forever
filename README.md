@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.37.0:** camera TV obliqua come il riferimento, difesa CPU più varia e leggermente meno precisa, battute più rapide e arretramento difensivo lievemente ritardato. [Dettagli](docs/RELEASE_NOTES_37.md).
+
 **Versione 0.36.0:** copertura difensiva condivisa tra laterale libero, libero e seconda linea; corto sui tre metri, diagonale, zona intermedia e parallela assegnati in base a rotazione, attacco e muro effettivo. [Dettagli e verifiche](docs/RELEASE_NOTES_36.md).
 
 **Versione 0.34.0:** rischio progressivo oltre il 100% per attacchi e pallonetti, servizio più incisivo, ricezione con tolleranza intermedia e laterale lontano in copertura sui tre metri. [Dettagli](docs/RELEASE_NOTES_34.md).

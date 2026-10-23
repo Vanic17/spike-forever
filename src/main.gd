@@ -153,6 +153,7 @@ var middle_decoy=MiddleDecoy.new()
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
 var defensive_lanes=preload("res://src/defensive_lanes.gd").new()
+var cpu_defense=preload("res://src/cpu_defense.gd").new()
 var defensive_coverage=preload("res://src/defensive_coverage.gd").new()
 var traffic_footprints: Array = []
 var play_log: Array[Dictionary] = []
@@ -321,6 +322,7 @@ func update_camera(dt: float) -> void:
 	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
 	if camera_mode==2:
 		var tv_focus:=Vector3(0,0.7+maxf(0,ball_pos.y-3.2)*0.04,clampf(ball_pos.z*0.06,-0.45,0.45))
+		if phase=="SERVE": tv_focus.z=clampf(ball_pos.z*0.15,-1.2,1.2)
 		camera_focus=camera_focus.lerp(tv_focus,1.0-exp(-2.5*dt))
 		camera.position=camera.position.lerp(origin,1.0-exp(-1.6*dt))
 		camera.look_at(camera_focus)
@@ -538,6 +540,7 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	cpu_defense.reset()
 	attack_tip=false
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0; winner_team=-1
 	contact_navigation.reset()
@@ -820,7 +823,7 @@ func serve_ball(team: int, power: float) -> void:
 	winner_team=team if Timing.winning_power(power) else -1
 	# Every power band uses the same legal floor trajectory. Gold changes
 	# the defensive outcome, never the flight model or its speed profile.
-	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.6 if serve_type==0 else 1.1),4.5,8.6)
+	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.85 if serve_type==0 else 1.4),4.5,8.8)
 	# Calibrate the full-power arc once, then retain the charge curve on
 	# either side of gold. A clearance minimum must not flatten all powers.
 	var full_seconds:=Reference.serve_seconds(1.0,serve_type==0)
@@ -828,6 +831,7 @@ func serve_ball(team: int, power: float) -> void:
 	launch(target,seconds)
 	var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
 	if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
+	cpu_defense.prepare(self)
 	log_rally_event("float_serve" if serve_type==0 else "power_serve",{"seconds":seconds,"power":power})
 
 func serve_aim_target(team: int, direction: Vector2) -> Vector3:
@@ -854,6 +858,8 @@ func receive_ball() -> void:
 		preload("res://src/winning_shot.gd").failed_save(self)
 		return
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0
+	if possession==1 and cpu_defense.frozen and incoming_kind in ["serve","spike","soft"]:
+		log_rally_event("cpu_hesitation"); miss_contact(); return
 	if possession == 0 and not armed:
 		miss_contact()
 		return
@@ -868,6 +874,7 @@ func receive_ball() -> void:
 		miss_contact()
 		return
 	var q := RallyAI.reception_quality(self,input_quality)
+	if possession==1 and incoming_kind in ["serve","spike","soft"]: q=cpu_defense.quality(q,incoming_power)
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
 		players[setter].select_variant("receive",action)
@@ -881,6 +888,9 @@ func receive_ball() -> void:
 	pass_quality = q
 	register_touch(receiver)
 	if phase=="POINT": return
+	if possession==1 and cpu_defense.outcome=="overpass" and incoming_kind in ["serve","spike","soft"]:
+		var over:=Vector3(rng.randf_range(-2.8,2.8),0.105,rng.randf_range(1.2,4.5))
+		incoming_kind="overpass"; incoming_power=0.18; send_to_court(1,over,1.8); log_rally_event("cpu_overpass"); return
 	if possession==1 and block_time<clock_time-0.6:
 		# A new opposing construction must not inherit an earlier block latch.
 		block_commanded=false
@@ -1204,6 +1214,7 @@ func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 		if phase == "RECEIVE": receive_deadline = clock_time + flight_left
 	receiver = choose_receiver(possession, flight_target)
 	select_receive_pose(receiver,flight_target)
+	cpu_defense.prepare(self)
 	players[receiver].target = players[receiver].stance_for_contact("receive", flight_target)
 	selected = receiver if possession == 0 else selected
 	marker.position = Vector3(landing.x, 0.04, landing.z)
@@ -1271,7 +1282,7 @@ func award(team: int, reason: String) -> void:
 	if server != team: rotations[team] = posmod(rotations[team] + 1, 6)
 	server = team
 	point_reason = reason
-	notice("PUNTO " + team_names[team], 2.0)
+	notice(team_names[team], 2.0)
 	var target_points:=15 if match_best_of>1 and sets[0]+sets[1]==match_best_of-1 else match_points
 	if scores[team] >= target_points and scores[team] - scores[1 - team] >= 2:
 		sets[team] += 1
@@ -1361,7 +1372,7 @@ func step(dt: float) -> void:
 			ball_pos = serving.current_hand(true) + Vector3(0, 0.11, 0)
 		if server == 1 and phase_time > 0.65 and not toss_active:
 			serve_type = rng.randi_range(0, 1)
-			serve_power = 0.75
+			serve_power = rng.randf_range(0.55,1.08)
 			begin_serve_toss()
 	elif phase == "POINT":
 		step_dead_ball(dt)
@@ -1637,6 +1648,11 @@ func move_players(dt: float) -> void:
 		for index in floor_plan:
 			if index!=action_actor and not index in blockers: nominal[index]=floor_plan[index]
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	if phase in ["ATTACK","CPU_ATTACK"] and phase_time<0.22:
+		for index in defensive_coverage.targets:
+			if defensive_coverage.assignments.get(index,"")=="short" and not index in blockers:
+				var side:=1.0 if index<6 else -1.0
+				team_targets[index].z=side*lerpf(0.68,3.05,smoothstep(0.10,0.22,phase_time))
 	# Keep the floor defence through the incoming spike, rather than opening
 	# all non-passers for attack while the ball has only just left the hitter.
 	if phase in ["RECEIVE","CPU_RECEIVE"] and incoming_kind in ["spike","soft"] and defensive_coverage.defending_team==possession and defensive_coverage.attack_id==attack_serial:
