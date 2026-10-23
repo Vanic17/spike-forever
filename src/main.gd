@@ -1306,7 +1306,6 @@ func award(team: int, reason: String) -> void:
 	if server != team: rotations[team] = posmod(rotations[team] + 1, 6)
 	server = team
 	point_reason = reason
-	notice(team_names[team], 2.0)
 	var target_points:=15 if match_best_of>1 and sets[0]+sets[1]==match_best_of-1 else match_points
 	if scores[team] >= target_points and scores[team] - scores[1 - team] >= 2:
 		sets[team] += 1
@@ -1330,8 +1329,8 @@ func award(team: int, reason: String) -> void:
 	test_points += 1
 	test_rallies = 0
 	if match_audio:
-		match_audio.contact("cheer", Vector3(0, 2, -15), 0.6)
-	if is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
+		match_audio.point_event(team==0)
+	if team==0 and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
 
 func _physics_process(dt: float) -> void:
 	if self_test:

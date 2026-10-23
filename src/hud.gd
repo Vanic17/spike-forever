@@ -28,6 +28,11 @@ func panel(rect: Rect2, color: Color = INK) -> void:
 	style.set_corner_radius_all(3)
 	draw_style_box(style, rect)
 
+func point_result_visible() -> bool:
+	# An ordinary rally only updates the scoreboard. Keep an announcement for
+	# the separate set/match result, without covering every point with a panel.
+	return game != null and game.phase == "POINT" and (game.point_reason.begins_with("SET ") or game.point_reason.begins_with("VITTORIA "))
+
 func _draw() -> void:
 	if game == null: return
 	if game.started and game.receive_feedback_left>0:
@@ -76,11 +81,11 @@ func _draw() -> void:
 		return
 	if game.feedback_left > 0 and game.phase != "POINT":
 		centered(105, game.feedback, 19, GOLD)
-	if game.phase == "POINT":
+	if point_result_visible():
 		panel(Rect2(w * 0.5 - 218, h * 0.46 - 41, 436, 84))
-		var point_px:=clampi(int(29*414/maxf(414,font.get_string_size(game.feedback,HORIZONTAL_ALIGNMENT_LEFT,-1,29).x)),14,29)
-		centered(h * 0.46 - 3, game.feedback, point_px)
-		centered(h * 0.46 + 25, game.point_reason, 14, MUTED)
+		var result_text: String=game.point_reason
+		var point_px:=clampi(int(29*414/maxf(414,font.get_string_size(result_text,HORIZONTAL_ALIGNMENT_LEFT,-1,29).x)),14,29)
+		centered(h * 0.46 + 7, result_text, point_px)
 	elif game.phase in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.human_wall() or game.phase == "SERVE" and game.server == 0:
 		draw_contact(w * 0.5, h - 92)
 	text(Vector2(31, h - 22), "LS / WASD / Frecce · mira e direzioni", 12, MUTED)

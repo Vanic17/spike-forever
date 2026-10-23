@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.39.0:** atmosfera sonora continua con nuovi sottofondi e ritmi più lunghi, dissolvenze e fischio arbitrale registrato. Esultanze del pubblico solo ai punti della squadra di casa, applausi occasionali anche durante il gioco, nessun riquadro dopo i punti ordinari e colori del campo più scuri. **L3 / LS** mantiene il mute globale. [Dettagli e verifiche](docs/RELEASE_NOTES_39.md).
+
 **Versione 0.38.0:** corridoio del palleggiatore preservato anche cambiando attaccante, attacco automatico al 100% sulle ricezioni avversarie che passano di là, campo crema/blu con marchi CREDEM originali e banner sponsor animati. Pubblico rivisto, 54 varianti sonore da palazzetto e **L3 / LS** per disattivare o riattivare tutto l'audio. [Dettagli e verifiche](docs/RELEASE_NOTES_38.md).
 
 **Versione 0.37.0:** camera TV obliqua come il riferimento, difesa CPU più varia e leggermente meno precisa, battute più rapide e arretramento difensivo lievemente ritardato. [Dettagli](docs/RELEASE_NOTES_37.md).

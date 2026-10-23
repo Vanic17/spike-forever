@@ -1,0 +1,1569 @@
+{
+  "schema": 1,
+  "description": "Long-form dry stereo arena phrases: user recordings plus authored rhythmic/air synthesis, wide fades. Runtime Arena bus adds the room response.",
+  "source_analysis": {
+    "applause 2": {
+      "source": "applause 2.mp4",
+      "source_sha256": "9f1ed0b6a22327e3f68c77eef904bafde5330c9c6c1b408204a3ca620ca32527",
+      "duration": 37.76
+    },
+    "applause 3": {
+      "source": "applause 3.mp4",
+      "source_sha256": "5c929dc6f44ea74b01e139c71fbd80eee9e77f819e284da574cb8fa106724020",
+      "duration": 30.122666666666667
+    },
+    "crowd": {
+      "source": "crowd.mp4",
+      "source_sha256": "93e95f54a661e2b92241e4f016b64b1d15d60f68895a28d897c87a87684f733f",
+      "duration": 8.64
+    },
+    "crowd 2": {
+      "source": "crowd 2.mp4",
+      "source_sha256": "196cb1bb574bd1b117612df9fb9d9f40be9434a4f7d85e536e1c50fa65a4812d",
+      "duration": 16.810666666666666
+    },
+    "drums": {
+      "source": "drums.mp4",
+      "source_sha256": "529a46672be88ec5ebae33ae8c7044e54f1672bf03509b0a26291a2baf229675",
+      "duration": 23.637333333333334
+    },
+    "in between": {
+      "source": "in between.mp4",
+      "source_sha256": "22d3522c766b5e9f1f3ef241f972c44e6eac3fbb4e0f8f100ce03cce37030020",
+      "duration": 12.053333333333333
+    },
+    "whislte": {
+      "source": "whislte.mp4",
+      "source_sha256": "36fe9db4a1acb184614f01e4f4144280758baa1478ddcc30ca9ee408f7016edd",
+      "duration": 10.517333333333333
+    }
+  },
+  "variants": [
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 5.995,
+          "length_seconds": 1.35,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.019,
+          "length_seconds": 3.289,
+          "at_seconds": 3.414
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.118,
+          "length_seconds": 2.86,
+          "at_seconds": 7.129
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.146,
+          "length_seconds": 1.35,
+          "at_seconds": 10.843
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.361,
+          "length_seconds": 3.138,
+          "at_seconds": 14.557
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.427,
+          "length_seconds": 2.75,
+          "at_seconds": 18.271
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.147,
+          "length_seconds": 1.35,
+          "at_seconds": 21.986
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39000
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_00.ogg",
+      "duration": 26.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.19,
+      "true_peak_dbtp": -9.25,
+      "rms_dbfs": -32.52,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "6616707c01e49bfc03bd25055406e6f823325a709f4817d1006d26a52ccbd165",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.786,
+          "length_seconds": 3.121,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.911,
+          "length_seconds": 3.095,
+          "at_seconds": 3.843
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.108,
+          "length_seconds": 1.35,
+          "at_seconds": 7.986
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.335,
+          "length_seconds": 2.994,
+          "at_seconds": 12.129
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.383,
+          "length_seconds": 2.942,
+          "at_seconds": 16.271
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.082,
+          "length_seconds": 1.35,
+          "at_seconds": 20.414
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.369,
+          "length_seconds": 3.035,
+          "at_seconds": 24.557
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39001
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_01.ogg",
+      "duration": 29.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.18,
+      "true_peak_dbtp": -8.35,
+      "rms_dbfs": -32.49,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "23dd03ba0f7ca1ed2eff2e03e7acec87511f691ea67c01ed870409cc01a2d349",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.717,
+          "length_seconds": 2.823,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.015,
+          "length_seconds": 1.35,
+          "at_seconds": 4.271
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.231,
+          "length_seconds": 3.115,
+          "at_seconds": 8.843
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.237,
+          "length_seconds": 2.974,
+          "at_seconds": 13.414
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.298,
+          "length_seconds": 1.35,
+          "at_seconds": 17.986
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.313,
+          "length_seconds": 3.206,
+          "at_seconds": 22.557
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.575,
+          "length_seconds": 3.125,
+          "at_seconds": 27.129
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39002
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_02.ogg",
+      "duration": 32.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.18,
+      "true_peak_dbtp": -10.85,
+      "rms_dbfs": -32.39,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "6528e5cd69a7ae7a601536a3549d280ff388f3b0a6716af723e2c12bf5c6bd08",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 5.981,
+          "length_seconds": 1.35,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.894,
+          "length_seconds": 2.762,
+          "at_seconds": 3.129
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.623,
+          "length_seconds": 2.796,
+          "at_seconds": 6.557
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.229,
+          "length_seconds": 1.35,
+          "at_seconds": 9.986
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.105,
+          "length_seconds": 3.159,
+          "at_seconds": 13.414
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.733,
+          "length_seconds": 2.994,
+          "at_seconds": 16.843
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 5.902,
+          "length_seconds": 1.35,
+          "at_seconds": 20.271
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39003
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_03.ogg",
+      "duration": 24.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.22,
+      "true_peak_dbtp": -10.16,
+      "rms_dbfs": -32.54,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "163358bee31d80a802c8553a91ab12ce7844d079878dd4787ad4ba9cd72f0761",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.024,
+          "length_seconds": 3.026,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.016,
+          "length_seconds": 3.064,
+          "at_seconds": 3.7
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.286,
+          "length_seconds": 1.35,
+          "at_seconds": 7.7
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.801,
+          "length_seconds": 3.088,
+          "at_seconds": 11.7
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.821,
+          "length_seconds": 3.16,
+          "at_seconds": 15.7
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.28,
+          "length_seconds": 1.35,
+          "at_seconds": 19.7
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.328,
+          "length_seconds": 2.774,
+          "at_seconds": 23.7
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39004
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_04.ogg",
+      "duration": 28.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.2,
+      "true_peak_dbtp": -10.06,
+      "rms_dbfs": -32.51,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "2ca576dd1d86762a67db26f5250ab3d6ed06198cb6a591f65412b8f6b22565b3",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.789,
+          "length_seconds": 3.295,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.022,
+          "length_seconds": 1.35,
+          "at_seconds": 4.129
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.415,
+          "length_seconds": 3.075,
+          "at_seconds": 8.557
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.691,
+          "length_seconds": 3.286,
+          "at_seconds": 12.986
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.027,
+          "length_seconds": 1.35,
+          "at_seconds": 17.414
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.303,
+          "length_seconds": 3.152,
+          "at_seconds": 21.843
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.561,
+          "length_seconds": 3.274,
+          "at_seconds": 26.271
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39005
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_05.ogg",
+      "duration": 31.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.19,
+      "true_peak_dbtp": -8.45,
+      "rms_dbfs": -32.49,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "99a3239c5f3018872b5b9ffc548fd39ce2eed5ee4414e6a7154c3dc76fa6809a",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.018,
+          "length_seconds": 1.35,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.047,
+          "length_seconds": 2.957,
+          "at_seconds": 3.557
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.077,
+          "length_seconds": 3.197,
+          "at_seconds": 7.414
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.12,
+          "length_seconds": 1.35,
+          "at_seconds": 11.271
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.881,
+          "length_seconds": 3.106,
+          "at_seconds": 15.129
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 12.194,
+          "length_seconds": 2.793,
+          "at_seconds": 18.986
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.201,
+          "length_seconds": 1.35,
+          "at_seconds": 22.843
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39006
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_06.ogg",
+      "duration": 27.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.2,
+      "true_peak_dbtp": -10.83,
+      "rms_dbfs": -32.36,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "88a2b77f593217d675be23db68a316b180ec374bc0595a74204b15a0eb746402",
+      "prefer_loop": false
+    },
+    {
+      "group": "ambient_bed",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 12.054,
+          "length_seconds": 2.812,
+          "at_seconds": -0.3
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.761,
+          "length_seconds": 3.126,
+          "at_seconds": 3.986
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.237,
+          "length_seconds": 1.35,
+          "at_seconds": 8.271
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.447,
+          "length_seconds": 2.848,
+          "at_seconds": 12.557
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.801,
+          "length_seconds": 2.914,
+          "at_seconds": 16.843
+        },
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 6.209,
+          "length_seconds": 1.35,
+          "at_seconds": 21.129
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 11.837,
+          "length_seconds": 3.116,
+          "at_seconds": 25.414
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "two independent low-passed voiced-noise air layers, asynchronous overlapping quiet crowd tails",
+        "seed": 39007
+      },
+      "fade_in_seconds": 1.8,
+      "fade_out_seconds": 3.2,
+      "file": "ambient_bed_07.ogg",
+      "duration": 30.0,
+      "normalization_target_lufs": -29,
+      "integrated_lufs": -29.23,
+      "true_peak_dbtp": -9.55,
+      "rms_dbfs": -32.43,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "8caae986843288c190cf8c104891b42861c150b6956cb2a17d62adff06ef2e3b",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 4.8,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 10.0,
+          "length_seconds": 4.1,
+          "at_seconds": 7.733
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 13,
+          "length_seconds": 4.1,
+          "at_seconds": 15.167
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39400,
+        "bpm": 96,
+        "bars": 10,
+        "clap_pattern_beats": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_00.ogg",
+      "duration": 27.3,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.21,
+      "true_peak_dbtp": -4.32,
+      "rms_dbfs": -28.93,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "a47f0c107031a3a497edefdbc714703b38b86cfcb196e4e8619dd0c11342488d",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 10.0,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 13,
+          "length_seconds": 4.1,
+          "at_seconds": 7.548
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 29.5,
+          "length_seconds": 4.1,
+          "at_seconds": 14.796
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39401,
+        "bpm": 108,
+        "bars": 11,
+        "clap_pattern_beats": [
+          0,
+          1.5,
+          2,
+          3.5
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_01.ogg",
+      "duration": 26.744,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.23,
+      "true_peak_dbtp": -7.26,
+      "rms_dbfs": -29.43,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "d77d981610337a52efdd2a71af0446192b431c9d9867585279f0825677709f4d",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 13,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 29.5,
+          "length_seconds": 4.1,
+          "at_seconds": 7.676
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 6.3,
+          "length_seconds": 4.1,
+          "at_seconds": 15.052
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39402,
+        "bpm": 116,
+        "bars": 12,
+        "clap_pattern_beats": [
+          0.5,
+          1.5,
+          2.5,
+          3.5
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_02.ogg",
+      "duration": 27.128,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.19,
+      "true_peak_dbtp": -6.41,
+      "rms_dbfs": -29.81,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "fadfebf63a360551074bb96e6ccd339c0257adb3a5017c4eead18d55a38a67f4",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 29.5,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 6.3,
+          "length_seconds": 4.1,
+          "at_seconds": 8.491
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 8.4,
+          "length_seconds": 4.1,
+          "at_seconds": 16.682
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39403,
+        "bpm": 88,
+        "bars": 10,
+        "clap_pattern_beats": [
+          0,
+          0.5,
+          2,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_03.ogg",
+      "duration": 29.573,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.17,
+      "true_peak_dbtp": -5.9,
+      "rms_dbfs": -29.65,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "ec630958e688f8f33771e10867cc40226db4d6e443179df31c1a5607236a321e",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 6.3,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 8.4,
+          "length_seconds": 4.1,
+          "at_seconds": 7.862
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 22.2,
+          "length_seconds": 4.1,
+          "at_seconds": 15.423
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39404,
+        "bpm": 104,
+        "bars": 11,
+        "clap_pattern_beats": [
+          0,
+          0.75,
+          1.5,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_04.ogg",
+      "duration": 27.685,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.22,
+      "true_peak_dbtp": -6.63,
+      "rms_dbfs": -29.0,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "97b5930d3ed946361f8bc10ac291a189222455f211219ea278443159c074ae86",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 8.4,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 22.2,
+          "length_seconds": 4.1,
+          "at_seconds": 7.971
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 22.3,
+          "length_seconds": 4.1,
+          "at_seconds": 15.643
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39405,
+        "bpm": 112,
+        "bars": 12,
+        "clap_pattern_beats": [
+          0,
+          2
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_05.ogg",
+      "duration": 28.014,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.14,
+      "true_peak_dbtp": -6.08,
+      "rms_dbfs": -29.4,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "fae9ae1e95130403d1358536d3b0496acd53e1c3411a0c7c1cdcd3d2e1a0dec6",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 22.2,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 22.3,
+          "length_seconds": 4.1,
+          "at_seconds": 7.4
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 4.2,
+          "length_seconds": 4.1,
+          "at_seconds": 14.5
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39406,
+        "bpm": 100,
+        "bars": 10,
+        "clap_pattern_beats": [
+          0,
+          1,
+          2.5,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_06.ogg",
+      "duration": 26.3,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.11,
+      "true_peak_dbtp": -7.23,
+      "rms_dbfs": -30.45,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "35586da7e83c47ce37e4b26ed171dee7e6ceacf5d30357a27aa5e0eecb5b6d58",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 22.3,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 4.2,
+          "length_seconds": 4.1,
+          "at_seconds": 6.733
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 10.2,
+          "length_seconds": 4.1,
+          "at_seconds": 13.167
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39407,
+        "bpm": 120,
+        "bars": 11,
+        "clap_pattern_beats": [
+          0.5,
+          2,
+          3.5
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_07.ogg",
+      "duration": 24.3,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.1,
+      "true_peak_dbtp": -5.16,
+      "rms_dbfs": -29.39,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "b0c8fb615b69edd18b59d7be59f93960bae339772c43720eba4cf95b788b4170",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 4.2,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 10.2,
+          "length_seconds": 4.1,
+          "at_seconds": 9.835
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 18.2,
+          "length_seconds": 4.1,
+          "at_seconds": 19.37
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39408,
+        "bpm": 92,
+        "bars": 12,
+        "clap_pattern_beats": [
+          0,
+          0.5,
+          1,
+          2,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_08.ogg",
+      "duration": 33.604,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.17,
+      "true_peak_dbtp": -6.62,
+      "rms_dbfs": -29.33,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "3ad15933c752bad84dfbc3f1172f182451544bb62b69ec1e801b0a1391e98f48",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 10.2,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 18.2,
+          "length_seconds": 4.1,
+          "at_seconds": 6.673
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 17.2,
+          "length_seconds": 4.1,
+          "at_seconds": 13.045
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39409,
+        "bpm": 110,
+        "bars": 10,
+        "clap_pattern_beats": [
+          0,
+          1.5,
+          3
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_09.ogg",
+      "duration": 24.118,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.34,
+      "true_peak_dbtp": -6.04,
+      "rms_dbfs": -29.41,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "43e4d9748ebab454fb9ff1ce69931cca80c677f904ecd64412e5990fee3b724b",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 18.2,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 17.2,
+          "length_seconds": 4.1,
+          "at_seconds": 8.027
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 4.8,
+          "length_seconds": 4.1,
+          "at_seconds": 15.755
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39410,
+        "bpm": 102,
+        "bars": 11,
+        "clap_pattern_beats": [
+          1,
+          2,
+          3.5
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_10.ogg",
+      "duration": 28.182,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.23,
+      "true_peak_dbtp": -6.4,
+      "rms_dbfs": -30.28,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "164c3cef94c0335ff8b01b9ac8523891518384c521ffcbc2899190fbd68c6c09",
+      "prefer_loop": false
+    },
+    {
+      "group": "rhythm_long",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 17.2,
+          "length_seconds": 4.1,
+          "at_seconds": 0.3
+        },
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 4.8,
+          "length_seconds": 4.1,
+          "at_seconds": 7.536
+        },
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 10.0,
+          "length_seconds": 4.1,
+          "at_seconds": 14.771
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "authored humanized multi-person noise claps, two resonant skin-drum voices, unique accent/rest/call-response arrangement",
+        "seed": 39411,
+        "bpm": 118,
+        "bars": 12,
+        "clap_pattern_beats": [
+          0,
+          1,
+          2,
+          2.75,
+          3.5
+        ]
+      },
+      "fade_in_seconds": 1.0,
+      "fade_out_seconds": 2.7,
+      "file": "rhythm_long_11.ogg",
+      "duration": 26.707,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.13,
+      "true_peak_dbtp": -6.89,
+      "rms_dbfs": -29.38,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "80c9f5e6319adaa0f88b4e76af73210a84048707c5aea24cc20bb27c2414acc1",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 4.45,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.17,
+          "length_seconds": 3.6,
+          "at_seconds": 4.755
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39700
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_00.ogg",
+      "duration": 11.0,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.29,
+      "true_peak_dbtp": -6.16,
+      "rms_dbfs": -28.08,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "5b42bb21824a87c81d59cce991d2b174d18fd76c0cf6501a2a029fbab923300a",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.89,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 6.61,
+          "length_seconds": 3.6,
+          "at_seconds": 5.73
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39701
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_01.ogg",
+      "duration": 12.5,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.33,
+      "true_peak_dbtp": -6.32,
+      "rms_dbfs": -28.07,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "250a9dcca440efaf008fb5a580aa1a619cc38e8f187e2d53184dcff7f8264d8a",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 7.33,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 4.45,
+          "length_seconds": 3.6,
+          "at_seconds": 6.705
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39702
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_02.ogg",
+      "duration": 14.0,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.23,
+      "true_peak_dbtp": -6.47,
+      "rms_dbfs": -28.31,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "60522baef64e834128f13b3a0449e804f152e090821b46aa0315f6c396f68a63",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.17,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.89,
+          "length_seconds": 3.6,
+          "at_seconds": 4.43
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39703
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_03.ogg",
+      "duration": 10.5,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.47,
+      "true_peak_dbtp": -6.09,
+      "rms_dbfs": -28.03,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "338dfd65ac5f13d09823704290c272fdde32acd2ca5b27543c8d658fcd9ae516",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 6.61,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 7.33,
+          "length_seconds": 3.6,
+          "at_seconds": 6.38
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39704
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_04.ogg",
+      "duration": 13.5,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.46,
+      "true_peak_dbtp": -6.71,
+      "rms_dbfs": -28.28,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "ed0c790bb86a02e59460002bd77a6a02ca576fed24381baa933ef9461b3d2a8d",
+      "prefer_loop": false
+    },
+    {
+      "group": "interlude_long",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 4.45,
+          "length_seconds": 3.6,
+          "at_seconds": 0.4
+        },
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.17,
+          "length_seconds": 3.6,
+          "at_seconds": 7.355
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "source motif call and delayed response plus independently arranged clap/skin-drum rests",
+        "seed": 39705
+      },
+      "fade_in_seconds": 0.6,
+      "fade_out_seconds": 2.2,
+      "file": "interlude_long_05.ogg",
+      "duration": 15.0,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.35,
+      "true_peak_dbtp": -5.12,
+      "rms_dbfs": -28.19,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -180.0,
+      "sha256": "5d6425c0a992991130f38ea76fcd265a16fced2e2138974d234dca51cb9428de",
+      "prefer_loop": false
+    },
+    {
+      "group": "whistle_real",
+      "sources": [
+        {
+          "file": "whislte.mp4",
+          "offset_seconds": 6.97,
+          "length_seconds": 1.52,
+          "speed": 1
+        }
+      ],
+      "authored_synthesis": {
+        "type": "recorded_gesture_edit",
+        "note": "four natural trim/speed edits of one real blow; no synthesized whistle"
+      },
+      "fade_in_seconds": 0.018,
+      "fade_out_seconds": 0.2,
+      "file": "whistle_real_00.ogg",
+      "duration": 1.7,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.08,
+      "true_peak_dbtp": -4.76,
+      "rms_dbfs": -27.73,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -48.05,
+      "sha256": "a26723cb672d28aaf2a65e3660f6d2c5e36919a3d7f2b704822e8ef5a16a2c72",
+      "prefer_loop": false
+    },
+    {
+      "group": "whistle_real",
+      "sources": [
+        {
+          "file": "whislte.mp4",
+          "offset_seconds": 7.04,
+          "length_seconds": 1.2,
+          "speed": 1.025
+        }
+      ],
+      "authored_synthesis": {
+        "type": "recorded_gesture_edit",
+        "note": "four natural trim/speed edits of one real blow; no synthesized whistle"
+      },
+      "fade_in_seconds": 0.018,
+      "fade_out_seconds": 0.2,
+      "file": "whistle_real_01.ogg",
+      "duration": 1.351,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.05,
+      "true_peak_dbtp": -6.74,
+      "rms_dbfs": -27.28,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -40.07,
+      "sha256": "388b00d0e013715de84e650158fed2dc8580c6060d119704f37fff6fb21893de",
+      "prefer_loop": false
+    },
+    {
+      "group": "whistle_real",
+      "sources": [
+        {
+          "file": "whislte.mp4",
+          "offset_seconds": 6.98,
+          "length_seconds": 1.48,
+          "speed": 0.98
+        }
+      ],
+      "authored_synthesis": {
+        "type": "recorded_gesture_edit",
+        "note": "four natural trim/speed edits of one real blow; no synthesized whistle"
+      },
+      "fade_in_seconds": 0.018,
+      "fade_out_seconds": 0.2,
+      "file": "whistle_real_02.ogg",
+      "duration": 1.69,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.09,
+      "true_peak_dbtp": -5.83,
+      "rms_dbfs": -27.62,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -47.08,
+      "sha256": "8079fb436fc6343701487c8caa603a3924b0c4d8abb1ddf0cd4345f4abaefb7d",
+      "prefer_loop": false
+    },
+    {
+      "group": "whistle_real",
+      "sources": [
+        {
+          "file": "whislte.mp4",
+          "offset_seconds": 7.1,
+          "length_seconds": 1.27,
+          "speed": 1.01
+        }
+      ],
+      "authored_synthesis": {
+        "type": "recorded_gesture_edit",
+        "note": "four natural trim/speed edits of one real blow; no synthesized whistle"
+      },
+      "fade_in_seconds": 0.018,
+      "fade_out_seconds": 0.2,
+      "file": "whistle_real_03.ogg",
+      "duration": 1.437,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.05,
+      "true_peak_dbtp": -6.07,
+      "rms_dbfs": -27.29,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -37.28,
+      "sha256": "d4554a72899b9d5f9c2e8abb29349a68584a84fe07e70452e1c98ec1b5ce6e7d",
+      "prefer_loop": false
+    },
+    {
+      "group": "crowd_long",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 4.45,
+          "length_seconds": 3.25
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.0,
+          "length_seconds": 4.3,
+          "at_seconds": 2.0
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "recorded home cheer overlapping quieter hall tail with declining authored applause and low air texture",
+        "seed": 39900
+      },
+      "fade_in_seconds": 0.12,
+      "fade_out_seconds": 2.6,
+      "file": "crowd_long_00.ogg",
+      "duration": 7.5,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -24.24,
+      "true_peak_dbtp": -9.48,
+      "rms_dbfs": -28.98,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -99.31,
+      "sha256": "ab9638b2afd9f4dd659231f1cca45ec653ee1d25be6a08caec4bb490f03a6917",
+      "prefer_loop": false
+    },
+    {
+      "group": "crowd_long",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 4.78,
+          "length_seconds": 2.7
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.2,
+          "length_seconds": 4.3,
+          "at_seconds": 2.0
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "recorded home cheer overlapping quieter hall tail with declining authored applause and low air texture",
+        "seed": 39901
+      },
+      "fade_in_seconds": 0.12,
+      "fade_out_seconds": 2.6,
+      "file": "crowd_long_01.ogg",
+      "duration": 8.0,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.73,
+      "true_peak_dbtp": -10.76,
+      "rms_dbfs": -28.12,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -101.51,
+      "sha256": "d285ab3c64a1635eefc0ceaf8dfe5ecbf8130342a6c995b133c5e92164983392",
+      "prefer_loop": false
+    },
+    {
+      "group": "crowd_long",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 4.7,
+          "length_seconds": 3.25
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.4,
+          "length_seconds": 4.3,
+          "at_seconds": 2.0
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "recorded home cheer overlapping quieter hall tail with declining authored applause and low air texture",
+        "seed": 39902
+      },
+      "fade_in_seconds": 0.12,
+      "fade_out_seconds": 2.6,
+      "file": "crowd_long_02.ogg",
+      "duration": 6.5,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -24.87,
+      "true_peak_dbtp": -9.18,
+      "rms_dbfs": -29.15,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -102.59,
+      "sha256": "aaf4178bd7a6235853b7007c3e48754ea7939adcd21c68044288701516bdf110",
+      "prefer_loop": false
+    },
+    {
+      "group": "crowd_long",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 4.9,
+          "length_seconds": 2.7
+        },
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 9.6,
+          "length_seconds": 4.3,
+          "at_seconds": 2.0
+        }
+      ],
+      "authored_synthesis": {
+        "algorithm": "recorded home cheer overlapping quieter hall tail with declining authored applause and low air texture",
+        "seed": 39903
+      },
+      "fade_in_seconds": 0.12,
+      "fade_out_seconds": 2.6,
+      "file": "crowd_long_03.ogg",
+      "duration": 7.0,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.97,
+      "true_peak_dbtp": -10.82,
+      "rms_dbfs": -27.86,
+      "last_50ms_rms_dbfs": -180.0,
+      "first_50ms_rms_dbfs": -99.2,
+      "sha256": "1a0af5d7ce1614ad050b505f54a8f8b77717a9ffe4d38829f219e83835effb0e",
+      "prefer_loop": false
+    }
+  ],
+  "count": 34,
+  "groups": {
+    "ambient_bed": 8,
+    "crowd_long": 4,
+    "interlude_long": 6,
+    "rhythm_long": 12,
+    "whistle_real": 4
+  },
+  "whistle_analysis": {
+    "unrelated_leadin_seconds": [
+      0,
+      3.2
+    ],
+    "silence_seconds": [
+      3.2,
+      6.25
+    ],
+    "excluded_click_seconds": [
+      6.55,
+      6.85
+    ],
+    "usable_blow_seconds": [
+      6.97,
+      8.49
+    ],
+    "independent_recorded_gestures": 1
+  }
+}

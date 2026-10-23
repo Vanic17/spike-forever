@@ -94,13 +94,15 @@ void fragment(){
 			node.material_override = shell_material
 			node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	box(Vector3(0, -0.16, 0), Vector3(85, 0.25, 90), solid(Color("1b2530")))
-	var free_zone := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("0085bd"), 0.38)
+	# Broadcast reference: muted wood/beige and a deeper blue free zone.
+	# Adjust the surface pigments, retaining the lighting on players and logos.
+	var free_zone := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("07518f"), 0.38)
 	free_zone.uv1_scale = Vector3(8, 8, 8)
 	box(Vector3(0, -0.014, 0), Vector3(20.5, 0.03, 29), free_zone)
-	var court := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("e3bd94"), 0.37)
+	var court := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("b09a79"), 0.37)
 	court.uv1_scale = Vector3(5, 8, 5)
 	box(Vector3(0, 0.008, 0), Vector3(9, 0.015, 18), court)
-	var attack_zone:=Assets.material("", "T_Ground_Taraflex_Normal.png", Color("e2c785"),0.37)
+	var attack_zone:=Assets.material("", "T_Ground_Taraflex_Normal.png", Color("b19f77"),0.37)
 	attack_zone.uv1_scale=Vector3(5,3,5)
 	box(Vector3(0,0.017,0),Vector3(9,0.004,6),attack_zone)
 	var white := solid(Color("efeee6"), 0.45)

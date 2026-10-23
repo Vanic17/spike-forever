@@ -35,7 +35,7 @@ func run() -> void:
 	audio.update_match_state(true, "RECEIVE")
 	await create_timer(0.45).timeout
 	audio.contact("bounce", Vector3(-2, 0.1, 6), 0.9)
-	audio.contact("cheer", Vector3.ZERO)
+	audio.point_event(true)
 	audio.update_match_state(true, "POINT")
 	await create_timer(3.0).timeout
 	audio.update_match_state(false, "POINT")

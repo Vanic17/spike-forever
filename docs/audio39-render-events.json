@@ -1,0 +1,425 @@
+{
+	"duration": 35.4800907029478,
+	"event_counts": {
+		"ambient_bed": 2,
+		"attack": 4,
+		"away_point": 1,
+		"bounce": 1,
+		"crowd": 2,
+		"crowd_long": 2,
+		"fade": 18,
+		"home_celebration": 2,
+		"horn": 2,
+		"receive": 4,
+		"referee": 3,
+		"rhythm_continues": 2,
+		"rhythm_long": 1,
+		"rhythm_pause": 1,
+		"serve": 3,
+		"set": 4,
+		"sneaker": 1,
+		"step": 1,
+		"whistle_real": 3
+	},
+	"events": [
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "",
+			"time": 0.0
+		},
+		{
+			"event": "ambient_bed",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "",
+			"time": 0.0
+		},
+		{
+			"event": "fade",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 6.30343799999993
+		},
+		{
+			"event": "rhythm_long",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 6.30343799999993
+		},
+		{
+			"event": "rhythm_pause",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 6.30343799999993
+		},
+		{
+			"event": "fade",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 8.8000139999999
+		},
+		{
+			"event": "rhythm_continues",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 8.8000139999999
+		},
+		{
+			"event": "serve",
+			"group": "serve",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 8.8000139999999
+		},
+		{
+			"event": "step",
+			"group": "step",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 9.40686199999984
+		},
+		{
+			"event": "sneaker",
+			"group": "sneaker",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 9.40686199999984
+		},
+		{
+			"event": "receive",
+			"group": "receive",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 9.40686199999984
+		},
+		{
+			"event": "set",
+			"group": "set",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 10.4136779999997
+		},
+		{
+			"event": "attack",
+			"group": "attack",
+			"home_point": false,
+			"phase": "CPU_SET",
+			"time": 11.0687979999997
+		},
+		{
+			"event": "bounce",
+			"group": "bounce",
+			"home_point": false,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "whistle_real",
+			"group": "whistle_real",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "referee",
+			"group": "",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "fade",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "crowd_long",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "crowd",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "home_celebration",
+			"group": "",
+			"home_point": true,
+			"phase": "RECEIVE",
+			"time": 11.5722059999996
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 11.5791019999996
+		},
+		{
+			"event": "fade",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 12.3169739999996
+		},
+		{
+			"event": "horn",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 12.3169739999996
+		},
+		{
+			"event": "fade",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 13.1238059999995
+		},
+		{
+			"event": "fade",
+			"group": "rhythm_long",
+			"home_point": true,
+			"phase": "SERVE",
+			"time": 16.3856139999993
+		},
+		{
+			"event": "rhythm_continues",
+			"group": "rhythm_long",
+			"home_point": true,
+			"phase": "SERVE",
+			"time": 16.3856139999993
+		},
+		{
+			"event": "serve",
+			"group": "serve",
+			"home_point": true,
+			"phase": "SERVE",
+			"time": 16.3856139999993
+		},
+		{
+			"event": "receive",
+			"group": "receive",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 16.9924619999994
+		},
+		{
+			"event": "fade",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 17.6475819999995
+		},
+		{
+			"event": "set",
+			"group": "set",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 17.7992939999995
+		},
+		{
+			"event": "attack",
+			"group": "attack",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 18.4544139999996
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 18.5440619999996
+		},
+		{
+			"event": "whistle_real",
+			"group": "whistle_real",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 18.9066650303027
+		},
+		{
+			"event": "referee",
+			"group": "",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 18.9066650303027
+		},
+		{
+			"event": "fade",
+			"group": "rhythm_long",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 18.9066650303027
+		},
+		{
+			"event": "away_point",
+			"group": "",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 18.9066650303027
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "POINT",
+			"time": 20.9024939999999
+		},
+		{
+			"event": "ambient_bed",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "POINT",
+			"time": 20.9024939999999
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "POINT",
+			"time": 20.9024939999999
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": false,
+			"phase": "POINT",
+			"time": 21.005934
+		},
+		{
+			"event": "serve",
+			"group": "serve",
+			"home_point": false,
+			"phase": "SERVE",
+			"time": 25.2124940000007
+		},
+		{
+			"event": "receive",
+			"group": "receive",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 25.9158860000008
+		},
+		{
+			"event": "set",
+			"group": "set",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 27.0192460000009
+		},
+		{
+			"event": "attack",
+			"group": "attack",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 27.7226380000011
+		},
+		{
+			"event": "receive",
+			"group": "receive",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 28.7294540000012
+		},
+		{
+			"event": "set",
+			"group": "set",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 29.5362860000014
+		},
+		{
+			"event": "attack",
+			"group": "attack",
+			"home_point": false,
+			"phase": "CPU_RECEIVE",
+			"time": 30.3431180000015
+		},
+		{
+			"event": "whistle_real",
+			"group": "whistle_real",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "referee",
+			"group": "",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "fade",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "crowd_long",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "crowd",
+			"group": "crowd_long",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "home_celebration",
+			"group": "",
+			"home_point": true,
+			"phase": "CPU_RECEIVE",
+			"time": 30.8497588484864
+		},
+		{
+			"event": "fade",
+			"group": "ambient_bed",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 30.8565770303046
+		},
+		{
+			"event": "fade",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 31.5430220000016
+		},
+		{
+			"event": "horn",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 31.5430220000016
+		},
+		{
+			"event": "fade",
+			"group": "horn",
+			"home_point": true,
+			"phase": "POINT",
+			"time": 32.3567500000016
+		}
+	]
+}

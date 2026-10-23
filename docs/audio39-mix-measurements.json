@@ -1,0 +1,87 @@
+{
+  "source": "arena39-mix-preview.wav",
+  "sample_rate": 44100,
+  "channels": 2,
+  "windows": {
+    "stable_neutral_bed": {
+      "start": 3.6,
+      "end": 6.0,
+      "integrated_lufs": -30.89,
+      "true_peak_dbtp": -18.36,
+      "minimum_100ms_rms_dbfs": -39.916,
+      "maximum_100ms_rms_dbfs": -31.729,
+      "largest_adjacent_100ms_rms_drop_db": 1.634,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "motif_fades_in": {
+      "start": 6.4,
+      "end": 8.4,
+      "integrated_lufs": -26.76,
+      "true_peak_dbtp": -11.6,
+      "minimum_100ms_rms_dbfs": -43.741,
+      "maximum_100ms_rms_dbfs": -26.373,
+      "largest_adjacent_100ms_rms_drop_db": 2.701,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "service_continuity": {
+      "start": 8.6,
+      "end": 10.8,
+      "integrated_lufs": -24.71,
+      "true_peak_dbtp": -7.36,
+      "minimum_100ms_rms_dbfs": -33.429,
+      "maximum_100ms_rms_dbfs": -18.122,
+      "largest_adjacent_100ms_rms_drop_db": 4.39,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "home_point": {
+      "start": 11.8,
+      "end": 14.8,
+      "integrated_lufs": -20.06,
+      "true_peak_dbtp": -7.94,
+      "minimum_100ms_rms_dbfs": -29.977,
+      "maximum_100ms_rms_dbfs": -19.652,
+      "largest_adjacent_100ms_rms_drop_db": 2.356,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "away_point": {
+      "start": 18.9,
+      "end": 20.6,
+      "integrated_lufs": -24.66,
+      "true_peak_dbtp": -9.34,
+      "minimum_100ms_rms_dbfs": -34.566,
+      "maximum_100ms_rms_dbfs": -23.246,
+      "largest_adjacent_100ms_rms_drop_db": 1.6,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "ambient_crossfade": {
+      "start": 20.8,
+      "end": 24.6,
+      "integrated_lufs": -34.1,
+      "true_peak_dbtp": -19.45,
+      "minimum_100ms_rms_dbfs": -39.254,
+      "maximum_100ms_rms_dbfs": -30.755,
+      "largest_adjacent_100ms_rms_drop_db": 1.957,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "new_neutral_bed": {
+      "start": 24.1,
+      "end": 25.0,
+      "integrated_lufs": -32.02,
+      "true_peak_dbtp": -20.32,
+      "minimum_100ms_rms_dbfs": -36.305,
+      "maximum_100ms_rms_dbfs": -31.653,
+      "largest_adjacent_100ms_rms_drop_db": 0.805,
+      "near_silent_100ms_blocks_below_minus_60db": 0
+    },
+    "whole_recording": {
+      "start": 0.0,
+      "end": 35.48009,
+      "integrated_lufs": -24.05,
+      "true_peak_dbtp": -5.23,
+      "minimum_100ms_rms_dbfs": -180.0,
+      "maximum_100ms_rms_dbfs": -18.122,
+      "largest_adjacent_100ms_rms_drop_db": 6.591,
+      "near_silent_100ms_blocks_below_minus_60db": 5
+    }
+  }
+}
