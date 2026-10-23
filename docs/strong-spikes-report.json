@@ -1,5 +1,5 @@
 {
-  "baseline_direct_points": 46,
+  "baseline_direct_points": 32,
   "cases": [
     {
       "after": {
@@ -490,16 +490,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321209590085447,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341286251194081,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 60,
@@ -634,16 +634,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321186342428286,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341261669918813,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 60,
@@ -652,16 +652,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321577175857854,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341684464382738,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 60,
@@ -940,16 +940,16 @@
     {
       "after": {
         "contact_window_seconds": 0.32152517286206,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341629806615167,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 60,
@@ -1066,16 +1066,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321102447582447,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341173267259755,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 60,
@@ -1084,16 +1084,16 @@
     {
       "after": {
         "contact_window_seconds": 0.32149616815463,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341599291812006,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 60,
@@ -1102,16 +1102,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321831927162224,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341958988623866,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 60,
@@ -1228,9 +1228,9 @@
     {
       "after": {
         "contact_window_seconds": 0.32146555141427,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
@@ -1786,16 +1786,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321209590085447,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341286251194081,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 120,
@@ -1930,16 +1930,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321186342428286,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341261669918813,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 120,
@@ -1948,16 +1948,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321577175857854,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "before": {
         "contact_window_seconds": 0.341684464382738,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 11
       },
       "fps": 120,
@@ -2236,16 +2236,16 @@
     {
       "after": {
         "contact_window_seconds": 0.32152517286206,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341629806615167,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 120,
@@ -2362,16 +2362,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321102447582447,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341173267259755,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 120,
@@ -2380,16 +2380,16 @@
     {
       "after": {
         "contact_window_seconds": 0.32149616815463,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341599291812006,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 120,
@@ -2398,16 +2398,16 @@
     {
       "after": {
         "contact_window_seconds": 0.321831927162224,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
         "contact_window_seconds": 0.341958988623866,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "fps": 120,
@@ -2524,9 +2524,9 @@
     {
       "after": {
         "contact_window_seconds": 0.32146555141427,
-        "dug": false,
-        "phase": "POINT",
-        "point": true,
+        "dug": true,
+        "phase": "CPU_SET",
+        "point": false,
         "receiver": 10
       },
       "before": {
@@ -2599,6 +2599,6 @@
   "floor_flight_seconds_after": 0.456,
   "floor_flight_seconds_before": 0.48,
   "horizontal_launch_speed_ratio": 1.05244632739955,
-  "new_direct_points": 49,
+  "new_direct_points": 33,
   "paired_real_defense_cases": 144
 }

@@ -108,6 +108,7 @@ func load_file(path: String) -> bool:
 	return true
 
 func detect_contact(action: String) -> void:
+	action = preload("res://src/animation_expansion.gd").FAMILIES.get(action,action)
 	for family in ["fast_set","receive","attack","dive","set"]:
 		if action.begins_with(family+"_"):
 			action=family

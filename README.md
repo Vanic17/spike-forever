@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.26.0:** ricezione R2/R5 con libero sulla corsia centrale, copertura verificata in tutte le sei rotazioni e 79 animazioni aggiuntive, 127 totali. [Dettagli e verifiche](docs/REVISION_26.md).
+
 **Versione 0.25.0:** spazio e contatto del palleggiatore corretti nelle ricezioni ravvicinate, nuovi ritmi distinti per centro/bande/pipe, battuta più rapida e barra in 0,70 s. [Dettagli e verifiche](docs/REVISION_25.md).
 
 **Versione 0.24.0:** corsie coerenti per tutto lo scambio e alzate dietro al destinatario sul lato giusto; 15 animazioni aggiuntive (5 ricezioni, 5 alzate, 5 schiacciate); attacchi fortissimi circa 5% più veloci. [Dettagli e test](docs/REVISION_24.md) · [Nuove animazioni](docs/ANIMATION_24.md).

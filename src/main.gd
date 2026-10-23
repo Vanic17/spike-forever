@@ -520,6 +520,7 @@ func reset_rally() -> void:
 		var p = players[i]
 		p.motion_lock = 0
 		p.setting_yaw = PI if i<6 else 0.0
+		p.play("idle", 1, true)
 		for action in ["receive","set","fast_set","attack","dive"]: p.select_variant(action)
 		var base: Vector3 = Tactics.serve_position(i, int(i / 6), rotations[int(i / 6)], int(i / 6) == server)
 		p.position = base
@@ -530,7 +531,6 @@ func reset_rally() -> void:
 		p.steering_ready = false
 		p.foot_planted = [false, false]
 		p.set_libero(Tactics.libero(i, rotations[int(i / 6)], int(i / 6) == server))
-		p.play("idle", 1, true)
 		p.tick(0,false,false)
 	selected = server_index(0)
 	var serving = players[server_index(server)]
@@ -858,7 +858,7 @@ func queue_recovery(anticipate: bool = false) -> bool:
 	var recovery := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height(action),flight_gravity)
 	if recovery.is_empty() or recovery.seconds <= 0.005 or recovery.seconds > (0.45 if anticipate else 0.18): return false
 	var player = players[receiver]
-	player.select_variant("dive","dive_short" if incoming_kind in ["soft","tip","net"] else "dive")
+	player.select_variant("dive",AnimationVariety.diving(player.global_basis.inverse()*(recovery.point-player.position),incoming_kind,shot_serial))
 	var toward: Vector3 = recovery.point-player.position
 	player.dive_yaw = atan2(toward.x,toward.z)-atan2(player.contact_local("dive").x,player.contact_local("dive").z)
 	# A forward dive cannot rotate an upright body through a half-turn in the
@@ -923,13 +923,13 @@ func plan_attack(direction: int, quick: bool) -> void:
 				break
 	# Choose a performance once for this play. Re-reading the setter's speed
 	# every frame used to change contact offsets again during final braking.
-	var visual_key:=str([shot_serial,setter,planned_hitter,planned_direction,planned_fast])
+	var visual_key:=str([shot_serial,setter,planned_hitter,planned_direction])
 	if visual_key!=planned_visual_key:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
 			players[planned_hitter].select_variant("attack",AnimationVariety.attack(planned_direction,pass_quality,shot_serial))
 		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
-		players[setter].select_variant("fast_set","fast_set_back" if planned_direction==2 else "fast_set")
+		players[setter].select_variant("fast_set",AnimationVariety.fast_setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial,players[setter].variant_names.get("set","set")))
 
 func select_receive_pose(index: int, point: Vector3) -> void:
 	var player=players[index]
@@ -1452,6 +1452,7 @@ func request_block_jump(index: int, contact_in: float) -> bool:
 	block_jump_log.append({"attack_id":jump_id, "player":index, "time":clock_time, "contact_in":contact_in})
 	p.target = p.position
 	p.steering_target = p.position
+	p.select_variant("block",AnimationVariety.blocking(p.global_basis.inverse()*p.velocity,index,attack_serial))
 	p.velocity = Vector3.ZERO
 	p.acceleration = Vector3.ZERO
 	p.reach_action = "block"

@@ -32,7 +32,7 @@ New-Item -ItemType Directory -Force $stage | Out-Null
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 [IO.Compression.ZipFile]::ExtractToDirectory($package,$stage)
 Remove-Item -LiteralPath (Join-Path $stage 'tools/godot/Godot_v4.5.1-stable_win64.exe')
-foreach($name in @('Build-Release.ps1','Publish-Release.ps1','Bootstrap-Engine.ps1')){Copy-Item (Join-Path $root ('tools/'+$name)) (Join-Path $stage ('tools/'+$name))}
+foreach($name in @('Build-Release.ps1','Publish-Release.ps1','Bootstrap-Engine.ps1','Convert-PsaAnimations.gd','Pack-NativeLibrary.gd')){Copy-Item (Join-Path $root ('tools/'+$name)) (Join-Path $stage ('tools/'+$name))}
 foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File){
  if($file.Name -like 'Test-*' -or $file.Name -like 'Check-*'){
   Copy-Item -LiteralPath $file.FullName -Destination (Join-Path $stage ('tools/'+$file.Name))
@@ -43,7 +43,7 @@ foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Direct
 }
 Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Copy-Item -Destination (Join-Path $stage 'docs')
 if(Test-Path (Join-Path $root 'docs/menu-v20.png')){Copy-Item (Join-Path $root 'docs/menu-v20.png') (Join-Path $stage 'docs')}
-foreach($report in @('v24-expanded-animations.json','strong-spikes-report.json','native-animation-report.json','animation-performance-v23-before-newclips.json','animation-performance-v24-native.json','animation-performance-v24-psa.json','v24-new-animation-performances.png')){
+foreach($report in @('v24-expanded-animations.json','strong-spikes-report.json','native-animation-report.json','animation-performance-v23-before-newclips.json','animation-performance-v24-native.json','animation-performance-v24-psa.json','v24-new-animation-performances.png','v26-rotation-coverage.json','v26-animation-accepted.json','v26-animation-catalog-report.json','animation-performance-v25-before-expansion.json','animation-performance-v25-psa-before-expansion.json','animation-performance-v26-native.json','animation-performance-v26-psa.json')){
  if(Test-Path (Join-Path $root ('docs/'+$report))){Copy-Item (Join-Path $root ('docs/'+$report)) (Join-Path $stage 'docs')}
 }
 Copy-Item -LiteralPath (Join-Path $root 'docs/original-animation-hashes.json') -Destination (Join-Path $stage 'docs')

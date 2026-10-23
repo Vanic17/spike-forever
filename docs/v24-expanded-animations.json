@@ -1,6 +1,6 @@
 {
   "checks": 96122,
-  "clip_total": 48,
+  "clip_total": 127,
   "counts": {
     "attack": 5,
     "receive": 5,
@@ -9,7 +9,7 @@
   "maximum_gap_m": 0.129153817892075,
   "maximum_limb_error_m": 0.0000117719173431396,
   "maximum_native_error_m": 0.00000127568216612417,
-  "maximum_transition_pop_m": 0.00000169533450389281,
+  "maximum_transition_pop_m": 0.00000146638330988935,
   "performances": {
     "attack_angle_left": {
       "contact_offset_m": "(-0.074701, 3.245727, 0.067475)",

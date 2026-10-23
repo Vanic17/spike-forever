@@ -55,7 +55,8 @@ func test_visual_plan_latch(game) -> void:
 		check(setter.contact_local("set").is_equal_approx(contact_offset), "Same play moved the scheduled setting hand offset")
 	game.plan_attack(2, false)
 	check(setter.variant_names.get("set", "set") != set_variant, "New direction did not select a compatible back-set performance")
-	check(setter.variant_names.get("fast_set", "fast_set") == "fast_set_back", "New direction retained a front fast-set performance")
+	var source_map: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/active/sources.json"))
+	check(str(source_map[setter.variant_names.get("fast_set", "fast_set")]).ends_with("_Back_quick.psa"), "New direction retained a front fast-set performance")
 	var back_variant: String = setter.variant_names.get("set", "set")
 	game.shot_serial += 1
 	setter.velocity = Vector3(2.8, 0, 0)

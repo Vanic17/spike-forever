@@ -1,0 +1,29 @@
+{
+  "checks": 322316,
+  "contacts": 624,
+  "counts": {
+    "attack": 3,
+    "backpedal": 1,
+    "backwalk": 1,
+    "block": 6,
+    "block_ready": 1,
+    "cross_left": 1,
+    "cross_right": 1,
+    "dive": 6,
+    "fast_set": 11,
+    "ready": 7,
+    "receive": 20,
+    "relaxed": 6,
+    "run": 4,
+    "set": 6,
+    "shuffle_left": 2,
+    "shuffle_right": 2,
+    "walk": 1
+  },
+  "maximum_gap_m": 0.17346616089344,
+  "maximum_limb_error_m": 0.0000319182872772217,
+  "maximum_native_error_m": 0.00000151053973240778,
+  "maximum_transition_pop_m": 0.0000026411021281092,
+  "new_clips": 79,
+  "total_clips": 127
+}

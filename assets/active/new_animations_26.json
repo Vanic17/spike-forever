@@ -1,0 +1,1029 @@
+{
+    "attack_v26_01":  {
+                          "contact":  [
+                                          0.0502582229673862,
+                                          3.13344764709473,
+                                          0.0685108304023743
+                                      ],
+                          "contact_s":  0.494791686327922,
+                          "duration_s":  3.13368068007684,
+                          "family":  "attack",
+                          "motion_hash":  "2400337904",
+                          "sha256":  "306d2fb2de2656fc52ecee8b4749074e671608306fa63e97ddbca67d5f1a7c71",
+                          "source":  "SPIKE/SPK_Line_90L_After_RunLRL.psa"
+                      },
+    "attack_v26_02":  {
+                          "contact":  [
+                                          -0.225251570343971,
+                                          3.25482058525085,
+                                          -0.0511498376727104
+                                      ],
+                          "contact_s":  0.6562499569729,
+                          "duration_s":  2.06718736446463,
+                          "family":  "attack",
+                          "motion_hash":  "2788062964",
+                          "sha256":  "e1835ec60273187cac27634765b02900b2a799b17978a32420f3b37fbc9b5334",
+                          "source":  "SPIKE/SPK_OutsideLeft_After_RunLRL_45R.psa"
+                      },
+    "attack_v26_03":  {
+                          "contact":  [
+                                          0.15913999080658,
+                                          3.39216136932373,
+                                          -0.122968129813671
+                                      ],
+                          "contact_s":  0.626373613244914,
+                          "duration_s":  2.96703290484433,
+                          "family":  "attack",
+                          "motion_hash":  "3323583423",
+                          "sha256":  "652e92c14d98e580534691dedffe10994b148f578e6337999bb21d72a9232342",
+                          "source":  "SPIKE/SPK_OutsideRight_After_RunLRL_45L.psa"
+                      },
+    "backpedal_v26_01":  {
+                             "contact":  [
+                                             0.0,
+                                             0.0,
+                                             0.0
+                                         ],
+                             "contact_s":  0.2109375,
+                             "duration_s":  0.46875,
+                             "family":  "backpedal",
+                             "motion_hash":  "968443440",
+                             "sha256":  "1ecb4ec1e97e92968e602acdc418074e88388ce58899356313895922ac4866d9",
+                             "source":  "MOVE/STD_Move_BackRun_R_S2.psa"
+                         },
+    "backwalk_v26_01":  {
+                            "contact":  [
+                                            0.0,
+                                            0.0,
+                                            0.0
+                                        ],
+                            "contact_s":  0.472727304603992,
+                            "duration_s":  1.0505051213422,
+                            "family":  "backwalk",
+                            "motion_hash":  "3298463918",
+                            "sha256":  "b9574e1d6d723f1bf766e4c06ca4d072e95e019cc36dd4257fbe187944b50cce",
+                            "source":  "MOVE/STD_Move_BackWalk_R_S2.psa"
+                        },
+    "block_ready_v26_01":  {
+                               "contact":  [
+                                               0.0,
+                                               0.0,
+                                               0.0
+                                           ],
+                               "contact_s":  1.54514284965809,
+                               "duration_s":  3.43365077701798,
+                               "family":  "block_ready",
+                               "motion_hash":  "1265319878",
+                               "sha256":  "4051812dc46d71657c933811e691a3ff1d8e088e662e079a9822eb22a2b705e9",
+                               "source":  "BLOCK/BLK_upArm_HS_idle.psa"
+                           },
+    "block_v26_01":  {
+                         "contact":  [
+                                         0.165256530046463,
+                                         2.94879055023193,
+                                         0.355332106351852
+                                     ],
+                         "contact_s":  1.09000003087015,
+                         "duration_s":  3.60030313226807,
+                         "family":  "block",
+                         "motion_hash":  "2000594708",
+                         "sha256":  "e2a36fd0460cd97420e314d357c27b58cd622ada82696a618d0bf1acc4d185be",
+                         "source":  "BLOCK/BLK_FromStepL_Front.psa"
+                     },
+    "block_v26_02":  {
+                         "contact":  [
+                                         -0.0109860496595502,
+                                         3.03208494186401,
+                                         0.67204749584198
+                                     ],
+                         "contact_s":  1.22201831441006,
+                         "duration_s":  3.56697237719692,
+                         "family":  "block",
+                         "motion_hash":  "3457457684",
+                         "sha256":  "6429b97feb4934ada1ba004cac9805705ab5821c699b683f17caa3945d151e43",
+                         "source":  "BLOCK/BLK_FromStepR_Front.psa"
+                     },
+    "block_v26_03":  {
+                         "contact":  [
+                                         0.280804514884949,
+                                         3.32226800918579,
+                                         0.446585237979889
+                                     ],
+                         "contact_s":  0.65843621399177,
+                         "duration_s":  2.63374485596708,
+                         "family":  "block",
+                         "motion_hash":  "3972504186",
+                         "sha256":  "96b3fe026d1466a8617b3d30db51adefa2ca868c740c30226320d087cc8bd287",
+                         "source":  "BLOCK/BLK_Static_45L_midArm_HS.psa"
+                     },
+    "block_v26_05":  {
+                         "contact":  [
+                                         -0.0254921372979879,
+                                         3.39128255844116,
+                                         0.371301025152206
+                                     ],
+                         "contact_s":  0.628995448854851,
+                         "duration_s":  2.38356170092365,
+                         "family":  "block",
+                         "motion_hash":  "2553676502",
+                         "sha256":  "7de0ed93c1c22fe9a15452fbe3b417871c8989e5cddf39e4fd71c3386e9d1554",
+                         "source":  "BLOCK/BLK_Static_45R_midArm_HS.psa"
+                     },
+    "block_v26_06":  {
+                         "contact":  [
+                                         -0.0224060006439686,
+                                         3.38426995277405,
+                                         0.400193333625793
+                                     ],
+                         "contact_s":  0.662100472478791,
+                         "duration_s":  2.38356170092365,
+                         "family":  "block",
+                         "motion_hash":  "1090966254",
+                         "sha256":  "c3d182b557947c8ce4ffe973fe53504dd9c882afbce2e705e784bb7917986d49",
+                         "source":  "BLOCK/BLK_Static_45R_upArm_HS.psa"
+                     },
+    "block_v26_07":  {
+                         "contact":  [
+                                         0.0746225118637085,
+                                         3.27863454818726,
+                                         0.531185448169708
+                                     ],
+                         "contact_s":  0.595890425230912,
+                         "duration_s":  2.38356170092365,
+                         "family":  "block",
+                         "motion_hash":  "4081467524",
+                         "sha256":  "e88189218f19d40070ec2649095c3b7df6386e734f93f49033eecda76f0031a0",
+                         "source":  "BLOCK/BLK_Static_Front_upArm_HS.psa"
+                     },
+    "cross_left_v26_01":  {
+                              "contact":  [
+                                              0.0,
+                                              0.0,
+                                              0.0
+                                          ],
+                              "contact_s":  0.255208328826192,
+                              "duration_s":  0.56712961961376,
+                              "family":  "cross_left",
+                              "motion_hash":  "1948212984",
+                              "sha256":  "21b5ce192d8f054d4d0f7fb750931148e4fec4a5a437ac4316f5c7dc8613270b",
+                              "source":  "MOVE/STD_Move_Crossing_LOOP_90L_D2.psa"
+                          },
+    "cross_right_v26_01":  {
+                               "contact":  [
+                                               0.0,
+                                               0.0,
+                                               0.0
+                                           ],
+                               "contact_s":  0.255208328826192,
+                               "duration_s":  0.56712961961376,
+                               "family":  "cross_right",
+                               "motion_hash":  "1904419987",
+                               "sha256":  "ee5f49d0315272522de397e56a0d55f7336f57c9956917e2c840d810293f2d21",
+                               "source":  "MOVE/STD_Move_Crossing_LOOP_90R_D2.psa"
+                           },
+    "dive_v26_01":  {
+                        "contact":  [
+                                        0.081893764436245,
+                                        0.6097212433815,
+                                        1.05077266693115
+                                    ],
+                        "contact_s":  0.530402915765312,
+                        "duration_s":  2.98351640117988,
+                        "family":  "dive",
+                        "motion_hash":  "227116105",
+                        "sha256":  "40897e8cd60f8c3a9f6b6075cd3455d92548b9cf51dc2be6d192ffedcb2b90e3",
+                        "source":  "PASS/PASS_1H_Dig_Front_RHand_FromSquat_V2.psa"
+                    },
+    "dive_v26_02":  {
+                        "contact":  [
+                                        0.141889899969101,
+                                        0.483255416154861,
+                                        0.64507257938385
+                                    ],
+                        "contact_s":  1.12396694214876,
+                        "duration_s":  3.96694214876033,
+                        "family":  "dive",
+                        "motion_hash":  "1460726089",
+                        "sha256":  "02d1ebc2b034c49cd9a305f325cbb5c006c8fb773ab15e891ad5c3a7aa82b399",
+                        "source":  "PASS/PASS_1H_Dig_Left_Rhand_FromHalfSquat_V2.psa"
+                    },
+    "dive_v26_03":  {
+                        "contact":  [
+                                        0.141553550958633,
+                                        0.484580755233765,
+                                        0.641463339328766
+                                    ],
+                        "contact_s":  1.12396694214876,
+                        "duration_s":  3.96694214876033,
+                        "family":  "dive",
+                        "motion_hash":  "2877910334",
+                        "sha256":  "8d46af1668276a184374d134e946b4d2fb33a89f798ed462c889736c6a8bfb7e",
+                        "source":  "PASS/PASS_1H_Dig_Left_Rhand_FromSquat_V2.psa"
+                    },
+    "dive_v26_04":  {
+                        "contact":  [
+                                        -0.763550996780396,
+                                        0.477858245372772,
+                                        0.545742869377136
+                                    ],
+                        "contact_s":  0.792727295178291,
+                        "duration_s":  3.60030313226807,
+                        "family":  "dive",
+                        "motion_hash":  "2335674083",
+                        "sha256":  "91a7534574f58a9a2ababd0d4ab653b5d424d808ba71a52692e9abbecf98f713",
+                        "source":  "PASS/PASS_1H_Dig_Right_Rhand_FromHalfSquat_V2.psa"
+                    },
+    "dive_v26_05":  {
+                        "contact":  [
+                                        -0.763680458068848,
+                                        0.477958142757416,
+                                        0.604883372783661
+                                    ],
+                        "contact_s":  0.792727295178291,
+                        "duration_s":  3.60030313226807,
+                        "family":  "dive",
+                        "motion_hash":  "3268745450",
+                        "sha256":  "0195432981ec47e1945d84e6ad1f7edf2b5067c4ab0b554ff198ccce3b61c0b8",
+                        "source":  "PASS/PASS_1H_Dig_Right_Rhand_FromSquat_V2.psa"
+                    },
+    "dive_v26_06":  {
+                        "contact":  [
+                                        -0.0933827757835388,
+                                        0.707279205322266,
+                                        1.12629175186157
+                                    ],
+                        "contact_s":  0.496987954662438,
+                        "duration_s":  2.71686748548799,
+                        "family":  "dive",
+                        "motion_hash":  "780009210",
+                        "sha256":  "8fb381433ec25c2f940ae8bebd87ea2bb8c132647d962b82512279d95f3b14c8",
+                        "source":  "PASS/PASS_2H_Dig_Front_RHand_FromSquat.psa"
+                    },
+    "fast_set_v26_01":  {
+                            "contact":  [
+                                            -0.091059222817421,
+                                            2.69376564025879,
+                                            0.0533650554716587
+                                        ],
+                            "contact_s":  1.1260683118178,
+                            "duration_s":  2.55021352970503,
+                            "family":  "fast_set",
+                            "motion_hash":  "1674959783",
+                            "sha256":  "7ad81d17beb7eb082dd7dfff23b25e4fcd36503815281691bda37effcf570aa4",
+                            "source":  "SET/SET_Jumped_L_Long_Back_quick.psa"
+                        },
+    "fast_set_v26_02":  {
+                            "contact":  [
+                                            -0.100143723189831,
+                                            2.54950213432312,
+                                            0.366085737943649
+                                        ],
+                            "contact_s":  1.12783172043164,
+                            "duration_s":  3.38349516129491,
+                            "family":  "fast_set",
+                            "motion_hash":  "2256708948",
+                            "sha256":  "b5e2cdd2f36da355463339caef70bbf59364bf4eef94789824956e8c7d9e3350",
+                            "source":  "SET/SET_Jumped_L_Long_Front_quick.psa"
+                        },
+    "fast_set_v26_03":  {
+                            "contact":  [
+                                            -0.103204384446144,
+                                            2.65310573577881,
+                                            0.310894995927811
+                                        ],
+                            "contact_s":  0.823045267489712,
+                            "duration_s":  2.63374485596708,
+                            "family":  "fast_set",
+                            "motion_hash":  "329697108",
+                            "sha256":  "1b81f122c8bab7d9b619e3691a016ab6f06e08dddec8ac62f048115b12002e65",
+                            "source":  "SET/SET_Jumped_L_Short_Back_quick.psa"
+                        },
+    "fast_set_v26_04":  {
+                            "contact":  [
+                                            -0.114350333809853,
+                                            2.51516342163086,
+                                            0.457240343093872
+                                        ],
+                            "contact_s":  1.15918796804774,
+                            "duration_s":  2.55021352970503,
+                            "family":  "fast_set",
+                            "motion_hash":  "1289357835",
+                            "sha256":  "25de854ac399a418d4b68e76dbde529f9858c1dcd6ec83392afa0fc1f1198567",
+                            "source":  "SET/SET_Jumped_L_Short_Front_quick.psa"
+                        },
+    "fast_set_v26_05":  {
+                            "contact":  [
+                                            0.0722853317856789,
+                                            2.68333601951599,
+                                            -0.023743124678731
+                                        ],
+                            "contact_s":  1.15918796804774,
+                            "duration_s":  2.55021352970503,
+                            "family":  "fast_set",
+                            "motion_hash":  "3015846425",
+                            "sha256":  "baf1058214c0f0ba190531d3ed0f4bec21cc6e0febf2882f0ffed31f3ffabfcf",
+                            "source":  "SET/SET_Jumped_R_Long_Back_quick.psa"
+                        },
+    "fast_set_v26_06":  {
+                            "contact":  [
+                                            0.0859143882989883,
+                                            2.54406046867371,
+                                            0.336296737194061
+                                        ],
+                            "contact_s":  1.06148867805331,
+                            "duration_s":  3.38349516129491,
+                            "family":  "fast_set",
+                            "motion_hash":  "668176371",
+                            "sha256":  "40dd9b50c8bd2d2af367bdaf4f5f51f561e84b23653c4ffa20d8f2810cbde3b3",
+                            "source":  "SET/SET_Jumped_R_Long_Front_quick.psa"
+                        },
+    "fast_set_v26_07":  {
+                            "contact":  [
+                                            0.118934012949467,
+                                            2.758056640625,
+                                            -0.117606312036514
+                                        ],
+                            "contact_s":  1.01973685490127,
+                            "duration_s":  2.46710529411599,
+                            "family":  "fast_set",
+                            "motion_hash":  "685449263",
+                            "sha256":  "071472edf4488d334cc2654cd159ce0a655d3890fbc4c40aa0fe5691aa9436f5",
+                            "source":  "SET/SET_RunJump_LRL_FrontRight_Long_Back_quick.psa"
+                        },
+    "fast_set_v26_08":  {
+                            "contact":  [
+                                            0.0839163661003113,
+                                            2.43509030342102,
+                                            0.285459518432617
+                                        ],
+                            "contact_s":  0.822368431371995,
+                            "duration_s":  2.46710529411599,
+                            "family":  "fast_set",
+                            "motion_hash":  "2035425643",
+                            "sha256":  "4fcf8321cd9ae59e244401dc2d64963d06ce101eeda04324d5cad91ee7313d0f",
+                            "source":  "SET/SET_RunJump_LRL_FrontRight_Long_Front_quick.psa"
+                        },
+    "fast_set_v26_09":  {
+                            "contact":  [
+                                            0.031043391674757,
+                                            2.66396117210388,
+                                            0.177147969603539
+                                        ],
+                            "contact_s":  0.993589686898062,
+                            "duration_s":  2.55021352970503,
+                            "family":  "fast_set",
+                            "motion_hash":  "2958226169",
+                            "sha256":  "1d435555d5ec3c9fd116ec756b1ab46b1d2c2ddbb1352b7abccb130df827e9c9",
+                            "source":  "SET/SET_RunJump_LRL_FrontRight_Short_Back_quick.psa"
+                        },
+    "fast_set_v26_10":  {
+                            "contact":  [
+                                            0.0114362211897969,
+                                            2.62714505195618,
+                                            0.348184555768967
+                                        ],
+                            "contact_s":  0.893835637846368,
+                            "duration_s":  2.38356170092365,
+                            "family":  "fast_set",
+                            "motion_hash":  "3395447071",
+                            "sha256":  "4e0d356b43bfec0332df0dc1a0507a15fb1b238d43c426be4dbc51b767fb5b60",
+                            "source":  "SET/SET_RunJump_LRL_FrontRight_Short_Front_quick.psa"
+                        },
+    "fast_set_v26_11":  {
+                            "contact":  [
+                                            0.0387528762221336,
+                                            2.64875435829163,
+                                            0.328938543796539
+                                        ],
+                            "contact_s":  0.827850886542326,
+                            "duration_s":  2.48355265962698,
+                            "family":  "fast_set",
+                            "motion_hash":  "2025492753",
+                            "sha256":  "796e330b65f5fe470b0781b2730475cfdf53e675c8586b5c8df576b5738344da",
+                            "source":  "SET/SET_RunJump_LRL_FrontRight_VeryLong_Front_quick.psa"
+                        },
+    "ready_v26_01":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  1.26754381252148,
+                         "duration_s":  2.81676402782552,
+                         "family":  "ready",
+                         "motion_hash":  "914412785",
+                         "sha256":  "9f7b87c13b2e2d4794316615aaf218380d4acca398d147bcc0ef5018f0ed8c12",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_HSR_Loop_HSR_02.psa"
+                     },
+    "ready_v26_02":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  0.862265693437338,
+                         "duration_s":  1.91614598541631,
+                         "family":  "ready",
+                         "motion_hash":  "2344187837",
+                         "sha256":  "c759365537f551b4cf0405d47294bce9517020123b4eabc88817ca9ceaf8501a",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_HS_Loop_HS_01.psa"
+                     },
+    "ready_v26_03":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  2.55008710467181,
+                         "duration_s":  5.66686023260402,
+                         "family":  "ready",
+                         "motion_hash":  "984498175",
+                         "sha256":  "0cfc050b78f9589123f52b94f8f8856f6e6246bc7088a85c6bd3e9399527b8e1",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_HS_Loop_HS_02.psa"
+                     },
+    "ready_v26_04":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  2.55008710467181,
+                         "duration_s":  5.66686023260402,
+                         "family":  "ready",
+                         "motion_hash":  "2918668680",
+                         "sha256":  "6e7b0bc9a2b5fc04860821ce7408837c764dc76afbcd1757016d6edebce77bf5",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_HS_Loop_HS_04.psa"
+                     },
+    "ready_v26_05":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  1.11019738235219,
+                         "duration_s":  2.46710529411599,
+                         "family":  "ready",
+                         "motion_hash":  "4101506522",
+                         "sha256":  "7c3294e5043ed1cb3c4476872bc050f5d01c09738e724596c3c30644dd21f62d",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_S_Loop_S_01.psa"
+                     },
+    "ready_v26_06":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  2.55008710467181,
+                         "duration_s":  5.66686023260402,
+                         "family":  "ready",
+                         "motion_hash":  "2326851543",
+                         "sha256":  "d5e816d6c71e80bb173eae537efc1591ef82c6f6e5cd44f24e2361f0a5c076b9",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_S_Loop_S_02.psa"
+                     },
+    "ready_v26_07":  {
+                         "contact":  [
+                                         0.0,
+                                         0.0,
+                                         0.0
+                                     ],
+                         "contact_s":  2.55008710467181,
+                         "duration_s":  5.66686023260402,
+                         "family":  "ready",
+                         "motion_hash":  "1435500918",
+                         "sha256":  "2b3b6a4bdd3c1c7bd1ad0df1be957849cf552e2bc571ba90ab0bb4c0cf0b73d1",
+                         "source":  "WAIT_OPP_SERVE/WS_Idle_S_Loop_S_03.psa"
+                     },
+    "receive_v26_01":  {
+                           "contact":  [
+                                           -0.0194881279021502,
+                                           1.18206906318665,
+                                           0.676982879638672
+                                       ],
+                           "contact_s":  0.689999969918389,
+                           "duration_s":  2.26714275830328,
+                           "family":  "receive",
+                           "motion_hash":  "1640724714",
+                           "sha256":  "fb3bd72a4916290c35e44a9bf58a0a5e54c70afd9f846446bd5d53253c7b95ba",
+                           "source":  "PASS/PASS_2H_FrontCenter_Distance0_FromSquat_Recoil.psa"
+                       },
+    "receive_v26_02":  {
+                           "contact":  [
+                                           -0.075278751552105,
+                                           1.36159420013428,
+                                           0.815304517745972
+                                       ],
+                           "contact_s":  1.25854693673755,
+                           "duration_s":  2.55021352970503,
+                           "family":  "receive",
+                           "motion_hash":  "2290613062",
+                           "sha256":  "2f13373bde6b7ec3132d748c878b24bae8c48cf3375947bc0074d9d293b79973",
+                           "source":  "PASS/PASS_2H_FrontCenter_Distance1_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_03":  {
+                           "contact":  [
+                                           -0.12436506152153,
+                                           1.05251848697662,
+                                           0.757741928100586
+                                       ],
+                           "contact_s":  0.863615036234294,
+                           "duration_s":  4.68345077342444,
+                           "family":  "receive",
+                           "motion_hash":  "2534875319",
+                           "sha256":  "992313eee17f3708053c8ebf4f05bda73825ed5b6ec42a179e8cc11e8c2fb848",
+                           "source":  "PASS/PASS_2H_FrontDown_Distance0_FromHalfSquat_Recoil.psa"
+                       },
+    "receive_v26_04":  {
+                           "contact":  [
+                                           0.00877075642347336,
+                                           1.00387728214264,
+                                           0.916484296321869
+                                       ],
+                           "contact_s":  0.926153871971899,
+                           "duration_s":  2.11692313593577,
+                           "family":  "receive",
+                           "motion_hash":  "1719699189",
+                           "sha256":  "f54a9f717c95edceab29c9284f639db17ff86dc4af1cc5b5fe8644daaa27fc8d",
+                           "source":  "PASS/PASS_2H_FrontDown_Distance0_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_05":  {
+                           "contact":  [
+                                           -0.123696833848953,
+                                           1.05224204063416,
+                                           0.821686267852783
+                                       ],
+                           "contact_s":  0.863615036234294,
+                           "duration_s":  4.68345077342444,
+                           "family":  "receive",
+                           "motion_hash":  "51850826",
+                           "sha256":  "8d7493c509a56eef18aeffbb72168c5edf2bb6c05493a8b1ef01c2ba6300b29f",
+                           "source":  "PASS/PASS_2H_FrontDown_Distance0_FromSquat_Recoil.psa"
+                       },
+    "receive_v26_06":  {
+                           "contact":  [
+                                           0.153564274311066,
+                                           1.10534179210663,
+                                           0.926618218421936
+                                       ],
+                           "contact_s":  1.2926136316942,
+                           "duration_s":  2.88352271685628,
+                           "family":  "receive",
+                           "motion_hash":  "981782577",
+                           "sha256":  "30f278900bd49f024b9deef257b42f176f9cc303315b14f1bc5eee985faabba0",
+                           "source":  "PASS/PASS_2H_FrontDown_Distance1_FromHalfSquat_NoRecoil.psa"
+                       },
+    "receive_v26_07":  {
+                           "contact":  [
+                                           0.152454107999802,
+                                           1.10732448101044,
+                                           0.920068800449371
+                                       ],
+                           "contact_s":  1.2926136316942,
+                           "duration_s":  2.88352271685628,
+                           "family":  "receive",
+                           "motion_hash":  "102158025",
+                           "sha256":  "4ede9b5381f19c2bfcddd771933d0d3f0d4b53eb093bb5590156782e4f4064dd",
+                           "source":  "PASS/PASS_2H_FrontDown_Distance1_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_08":  {
+                           "contact":  [
+                                           0.0864981859922409,
+                                           1.3192640542984,
+                                           0.451338291168213
+                                       ],
+                           "contact_s":  0.4311666500819,
+                           "duration_s":  3.28349987370062,
+                           "family":  "receive",
+                           "motion_hash":  "4201228427",
+                           "sha256":  "4ce226560d392792d8a4bf7a97de7b863a4b635c85bc80c8cb83e8a66df40d10",
+                           "source":  "PASS/PASS_2H_FrontUp_Distance0_FromHalfSquat_NoRecoil.psa"
+                       },
+    "receive_v26_09":  {
+                           "contact":  [
+                                           -0.0259467549622059,
+                                           1.15093898773193,
+                                           0.76663476228714
+                                       ],
+                           "contact_s":  0.690909081781441,
+                           "duration_s":  2.5004328673995,
+                           "family":  "receive",
+                           "motion_hash":  "2488873979",
+                           "sha256":  "40f5ee2be475f0cc3b00bc1592979bc5358fb1ae06e1f416aaefafa82c1007b9",
+                           "source":  "PASS/PASS_2H_FrontUp_Distance0_FromHalfSquat_Recoil.psa"
+                       },
+    "receive_v26_10":  {
+                           "contact":  [
+                                           -0.0303468480706215,
+                                           1.15112090110779,
+                                           0.739447593688965
+                                       ],
+                           "contact_s":  0.690909081781441,
+                           "duration_s":  2.5004328673995,
+                           "family":  "receive",
+                           "motion_hash":  "441142615",
+                           "sha256":  "060b19ec32c8e491f4300c61c08872d4f67b4dfc9eabfcf97a05219e9cb21865",
+                           "source":  "PASS/PASS_2H_FrontUp_Distance0_FromSquat_Recoil.psa"
+                       },
+    "receive_v26_11":  {
+                           "contact":  [
+                                           0.242731139063835,
+                                           1.14880466461182,
+                                           0.672504663467407
+                                       ],
+                           "contact_s":  0.595890425230912,
+                           "duration_s":  2.38356170092365,
+                           "family":  "receive",
+                           "motion_hash":  "2013209203",
+                           "sha256":  "d73d46d71d5e1cb1bbe253bb8df02164a1d6dcc927625b4ad89cd02fd4d47cfb",
+                           "source":  "PASS/PASS_2H_FrontUp_Distance1_FromHalfSquat_NoRecoil.psa"
+                       },
+    "receive_v26_12":  {
+                           "contact":  [
+                                           0.241797536611557,
+                                           1.1513774394989,
+                                           0.665770590305328
+                                       ],
+                           "contact_s":  0.595890425230912,
+                           "duration_s":  2.38356170092365,
+                           "family":  "receive",
+                           "motion_hash":  "908678837",
+                           "sha256":  "cf9acd59c2cc306e0176cef4a0e8ae9da31cdb71487fa444b25054a1c4b904ba",
+                           "source":  "PASS/PASS_2H_FrontUp_Distance1_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_13":  {
+                           "contact":  [
+                                           0.509545803070068,
+                                           1.00041282176971,
+                                           0.540102005004883
+                                       ],
+                           "contact_s":  1.25728394351187,
+                           "duration_s":  4.43358022185763,
+                           "family":  "receive",
+                           "motion_hash":  "2434266280",
+                           "sha256":  "cf51e315fcd3441ae927aa31b178c4c72bf2e31aa2b5e2bd693b239f3a87b4bc",
+                           "source":  "PASS/PASS_2H_LeftCenter_Distance1_FromHalfSquat_Recoil.psa"
+                       },
+    "receive_v26_14":  {
+                           "contact":  [
+                                           -0.430002391338348,
+                                           1.08788740634918,
+                                           0.793360114097595
+                                       ],
+                           "contact_s":  1.15867582683788,
+                           "duration_s":  2.38356170092365,
+                           "family":  "receive",
+                           "motion_hash":  "3453144922",
+                           "sha256":  "81d368a56a655664d464bbc760e26338291b6a7683d226afaf1a2509efe923f1",
+                           "source":  "PASS/PASS_2H_LeftCenter_Distance1_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_15":  {
+                           "contact":  [
+                                           0.509545803070068,
+                                           1.00041282176971,
+                                           0.540102005004883
+                                       ],
+                           "contact_s":  1.25728394351187,
+                           "duration_s":  4.43358022185763,
+                           "family":  "receive",
+                           "motion_hash":  "4105544148",
+                           "sha256":  "5a925fb6206ed758909328a4420f6ec00922add28bc1e05ac6bb9386edbe1032",
+                           "source":  "PASS/PASS_2H_LeftCenter_Distance1_FromSquat_Recoil.psa"
+                       },
+    "receive_v26_16":  {
+                           "contact":  [
+                                           -0.537911534309387,
+                                           1.36757719516754,
+                                           0.587495923042297
+                                       ],
+                           "contact_s":  1.31343289564596,
+                           "duration_s":  2.16716427781583,
+                           "family":  "receive",
+                           "motion_hash":  "145532572",
+                           "sha256":  "21e05369fa111c67af659a30b3efa62e649a4374d0b1c80b61125246d2d4aacc",
+                           "source":  "PASS/PASS_2H_LeftCenter_Distance1_FromSquat_Run_L.psa"
+                       },
+    "receive_v26_17":  {
+                           "contact":  [
+                                           0.729368686676025,
+                                           1.17772996425629,
+                                           0.590924322605133
+                                       ],
+                           "contact_s":  1.34426229508197,
+                           "duration_s":  1.9672131147541,
+                           "family":  "receive",
+                           "motion_hash":  "3505830451",
+                           "sha256":  "2153c310ad18e2b80524c6105acf4c4c8e8ef2e02676ab366d8427e2a356bf33",
+                           "source":  "PASS/PASS_2H_LeftDown_Distance1_FromSquat_Run_L.psa"
+                       },
+    "receive_v26_18":  {
+                           "contact":  [
+                                           0.00808736681938171,
+                                           1.13446831703186,
+                                           0.852305293083191
+                                       ],
+                           "contact_s":  0.19642857477373,
+                           "duration_s":  0.883928586481786,
+                           "family":  "receive",
+                           "motion_hash":  "1077574547",
+                           "sha256":  "1358c9b45ec3207dfcf0483fb66c0ea849399c4e317024d14580be8b2b8486f1",
+                           "source":  "PASS/PASS_2H_Reflex_FrontCenter_Distance0_S.psa"
+                       },
+    "receive_v26_19":  {
+                           "contact":  [
+                                           -0.404616266489029,
+                                           1.10190510749817,
+                                           0.796131253242493
+                                       ],
+                           "contact_s":  1.19104481002594,
+                           "duration_s":  2.18358215171422,
+                           "family":  "receive",
+                           "motion_hash":  "1013086765",
+                           "sha256":  "7df6881b980310002bd9669540024c4e374b5d9bf5e59b35458d9d8acd0b359f",
+                           "source":  "PASS/PASS_2H_RightCenter_Distance1_FromSquat_NoRecoil.psa"
+                       },
+    "receive_v26_20":  {
+                           "contact":  [
+                                           0.0725523680448532,
+                                           1.11356461048126,
+                                           0.496948719024658
+                                       ],
+                           "contact_s":  1.48880601253242,
+                           "duration_s":  2.18358215171422,
+                           "family":  "receive",
+                           "motion_hash":  "3363395998",
+                           "sha256":  "72dcdd9ff5472040c4c6a6688302af7131e1f0f4a54014be9335e3ad59777df0",
+                           "source":  "PASS/PASS_2H_leftUp_Distance1_FromHalfSquat_NoRecoil.psa"
+                       },
+    "relaxed_v26_01":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  1.4851484587585,
+                           "duration_s":  3.30032990835222,
+                           "family":  "relaxed",
+                           "motion_hash":  "1711525804",
+                           "sha256":  "9945a4f18bb1e202774b71c3384d290fc8cec9c2cf91963141945d458e67bb2f",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_02.psa"
+                       },
+    "relaxed_v26_02":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  1.08020275838712,
+                           "duration_s":  2.40045057419359,
+                           "family":  "relaxed",
+                           "motion_hash":  "3023612392",
+                           "sha256":  "d14bbc7747a1d859802e7470dce69a9734ebb3cf35383d9b6203db53a16e359a",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_03.psa"
+                       },
+    "relaxed_v26_03":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  1.83012098181725,
+                           "duration_s":  4.06693551514945,
+                           "family":  "relaxed",
+                           "motion_hash":  "855022182",
+                           "sha256":  "30fb6bc47f083e0bcc5c5adc6f5c2172457d0f6b609b75e887006cbfb0aab2c6",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_04.psa"
+                       },
+    "relaxed_v26_04":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  4.05005547082166,
+                           "duration_s":  9.00012326849259,
+                           "family":  "relaxed",
+                           "motion_hash":  "714193669",
+                           "sha256":  "f45edb2b48d7181b51ee5290443d9b7149078994d013dd0deea7d87d180b9d56",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_05.psa"
+                       },
+    "relaxed_v26_05":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  7.85250727150404,
+                           "duration_s":  17.4500161588979,
+                           "family":  "relaxed",
+                           "motion_hash":  "2975106459",
+                           "sha256":  "5f3ecff54e0f7e5eba79a320ef10a5b0449058d186124b066562c8e20ef1ed9c",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_06.psa"
+                       },
+    "relaxed_v26_06":  {
+                           "contact":  [
+                                           0.0,
+                                           0.0,
+                                           0.0
+                                       ],
+                           "contact_s":  7.07545589724072,
+                           "duration_s":  15.7232353272016,
+                           "family":  "relaxed",
+                           "motion_hash":  "2296261323",
+                           "sha256":  "f6ba1643fa651e10f7c73594ea3818cd44918886a9e2f8c31cee9eaebfb42ff5",
+                           "source":  "WAIT_OPP_SERVE/WS_Idle_U_Loop_U_07.psa"
+                       },
+    "run_v26_01":  {
+                       "contact":  [
+                                       0.0,
+                                       0.0,
+                                       0.0
+                                   ],
+                       "contact_s":  0.360576914259668,
+                       "duration_s":  0.801282031688151,
+                       "family":  "run",
+                       "motion_hash":  "1580112790",
+                       "sha256":  "8dc3fbc4e68a16e53ba3506bf33eb8d70380b5afc4f3702011d6d43687a863ca",
+                       "source":  "MOVE/STD_Move_Run_L_S1.psa"
+                   },
+    "run_v26_02":  {
+                       "contact":  [
+                                       0.0,
+                                       0.0,
+                                       0.0
+                                   ],
+                       "contact_s":  0.247916662288301,
+                       "duration_s":  0.550925916196224,
+                       "family":  "run",
+                       "motion_hash":  "2697693336",
+                       "sha256":  "deac0910e686351f264d8ea624314f005e6cf6259526abb42b34cb3cd91611f5",
+                       "source":  "MOVE/STD_Move_Run_L_S3.psa"
+                   },
+    "run_v26_03":  {
+                       "contact":  [
+                                       0.0,
+                                       0.0,
+                                       0.0
+                                   ],
+                       "contact_s":  0.360576914259668,
+                       "duration_s":  0.801282031688151,
+                       "family":  "run",
+                       "motion_hash":  "2893128742",
+                       "sha256":  "32e7f3ed9a543e95ffb8763f4dad694b50cf4b68919a1fda1ab4cb854c8aaa30",
+                       "source":  "MOVE/STD_Move_Run_R_S1.psa"
+                   },
+    "run_v26_04":  {
+                       "contact":  [
+                                       0.0,
+                                       0.0,
+                                       0.0
+                                   ],
+                       "contact_s":  0.247916662288301,
+                       "duration_s":  0.550925916196224,
+                       "family":  "run",
+                       "motion_hash":  "1361874893",
+                       "sha256":  "79dc6e2d0a71eb9db5041b368fe6fa3b8e0d0ceb192045daa9093ab5108aa005",
+                       "source":  "MOVE/STD_Move_Run_R_S3.psa"
+                   },
+    "set_v26_01":  {
+                       "contact":  [
+                                       -0.0876781195402145,
+                                       2.60903239250183,
+                                       0.314314663410187
+                                   ],
+                       "contact_s":  0.823045267489712,
+                       "duration_s":  2.63374485596708,
+                       "family":  "set",
+                       "motion_hash":  "2258258060",
+                       "sha256":  "0bf2031b05bf3ea4d6468a39dcfc0a932877c79fb377f74f431a833a6c6196d9",
+                       "source":  "SET/SET_Jumped_L_Short_Back_slow.psa"
+                   },
+    "set_v26_02":  {
+                       "contact":  [
+                                       -0.134612128138542,
+                                       2.49576115608215,
+                                       0.356125026941299
+                                   ],
+                       "contact_s":  1.1522633744856,
+                       "duration_s":  2.63374485596708,
+                       "family":  "set",
+                       "motion_hash":  "327628216",
+                       "sha256":  "69f0a2a4e2e479d27dad70a8bbe1cf360e1eb9288375e70ae5a2d12a585af77e",
+                       "source":  "SET/SET_Jumped_L_Short_Front_slow.psa"
+                   },
+    "set_v26_03":  {
+                       "contact":  [
+                                       0.143012478947639,
+                                       2.72625589370728,
+                                       -0.123454973101616
+                                   ],
+                       "contact_s":  1.01973685490127,
+                       "duration_s":  2.46710529411599,
+                       "family":  "set",
+                       "motion_hash":  "233426187",
+                       "sha256":  "edfbb0ba2067bacc04a918dc3cf5142998bba5f93ea3170fd25b2a48e3b77dc5",
+                       "source":  "SET/SET_RunJump_LRL_FrontRight_Long_Back_slow.psa"
+                   },
+    "set_v26_04":  {
+                       "contact":  [
+                                       0.0167092401534319,
+                                       2.60928964614868,
+                                       0.182086393237114
+                                   ],
+                       "contact_s":  0.993589686898062,
+                       "duration_s":  2.55021352970503,
+                       "family":  "set",
+                       "motion_hash":  "1154078092",
+                       "sha256":  "ae168bb7378d4c6424b7e2bd55f890ac10f4c926933a98e44183e59cf1b8908c",
+                       "source":  "SET/SET_RunJump_LRL_FrontRight_Short_Back_slow.psa"
+                   },
+    "set_v26_05":  {
+                       "contact":  [
+                                       0.0417685210704803,
+                                       2.52312922477722,
+                                       0.347726434469223
+                                   ],
+                       "contact_s":  0.893835637846368,
+                       "duration_s":  2.38356170092365,
+                       "family":  "set",
+                       "motion_hash":  "101968188",
+                       "sha256":  "7f933563cf237b65f16a12b14864cbb8bb007e6e0ca68c4d14260743e4fc1121",
+                       "source":  "SET/SET_RunJump_LRL_FrontRight_Short_Front_slow.psa"
+                   },
+    "set_v26_06":  {
+                       "contact":  [
+                                       0.0539795719087124,
+                                       2.62428784370422,
+                                       0.280905663967133
+                                   ],
+                       "contact_s":  0.827850886542326,
+                       "duration_s":  2.48355265962698,
+                       "family":  "set",
+                       "motion_hash":  "3758119271",
+                       "sha256":  "00b67208c9b61e703bfecac8a18c23c3a6feecbd08a7df50f051f0693fb4ef4c",
+                       "source":  "SET/SET_RunJump_LRL_FrontRight_VeryLong_Front_slow.psa"
+                   },
+    "shuffle_left_v26_01":  {
+                                "contact":  [
+                                                0.0,
+                                                0.0,
+                                                0.0
+                                            ],
+                                "contact_s":  0.151250003205405,
+                                "duration_s":  0.336111118234234,
+                                "family":  "shuffle_left",
+                                "motion_hash":  "3539571391",
+                                "sha256":  "214cabb945f4b228577b567585ab521121d615f7d6a35c6ce606b571f86c0351",
+                                "source":  "MOVE/STD_Move_Sidesteps_L_D2.psa"
+                            },
+    "shuffle_right_v26_01":  {
+                                 "contact":  [
+                                                 0.0,
+                                                 0.0,
+                                                 0.0
+                                             ],
+                                 "contact_s":  0.151250003205405,
+                                 "duration_s":  0.336111118234234,
+                                 "family":  "shuffle_right",
+                                 "motion_hash":  "3912633038",
+                                 "sha256":  "f57f3e0f8fe91ec6d6f88b4963ee734da2c3211247ac9453d172ccda8c33574f",
+                                 "source":  "MOVE/STD_Move_Sidesteps_R_D2.psa"
+                             },
+    "walk_v26_01":  {
+                        "contact":  [
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                        "contact_s":  0.502608680832464,
+                        "duration_s":  1.1169081796277,
+                        "family":  "walk",
+                        "motion_hash":  "718415534",
+                        "sha256":  "d0a8d981e1fc58a6e1fe39dc810b303c740cd643c1b0a092caa86b2821cd5c1b",
+                        "source":  "MOVE/STD_Move_Walk_R_S2.psa"
+                    },
+    "wall_shuffle_left":  {
+                              "contact":  [
+                                              0.0,
+                                              0.0,
+                                              0.0
+                                          ],
+                              "contact_s":  0.247916662288301,
+                              "duration_s":  0.550925916196224,
+                              "family":  "shuffle_left",
+                              "motion_hash":  "258348931",
+                              "sha256":  "7a323a22e52d3afee2989d8b3128bcfe253a9f3ee81d1cbe874cb67361eb6d8b",
+                              "source":  "BLOCK/BLK_Step_Left_Loop_D0_upArm.psa"
+                          },
+    "wall_shuffle_right":  {
+                               "contact":  [
+                                               0.0,
+                                               0.0,
+                                               0.0
+                                           ],
+                               "contact_s":  0.247916662288301,
+                               "duration_s":  0.550925916196224,
+                               "family":  "shuffle_right",
+                               "motion_hash":  "4239949424",
+                               "sha256":  "fefc9d97333d1d97f9f6d93b4243ee585deeb0c753e9b9ca2ae48f3da1c373a4",
+                               "source":  "BLOCK/BLK_Step_Right_Loop_D0_upArm.psa"
+                           }
+}

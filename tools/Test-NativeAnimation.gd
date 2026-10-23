@@ -191,7 +191,7 @@ func run() -> void:
 	check(not rejected.initialized, "Incompatible hierarchy should preserve the PSA fallback")
 	rejected.free()
 	var library_path := Converter.LIBRARY_PATH
-	check(ResourceSaver.save(native.pose_tree.library, library_path) == OK, "AnimationLibrary export failed")
+	check(ResourceSaver.save(native.pose_tree.library, library_path, ResourceSaver.FLAG_COMPRESS) == OK, "AnimationLibrary export failed")
 	var reloaded = ResourceLoader.load(library_path, "AnimationLibrary", ResourceLoader.CACHE_MODE_IGNORE)
 	check(reloaded is AnimationLibrary and reloaded.get_animation_list().size() == Converter.CLIPS.size(), "AnimationLibrary round trip failed")
 	var report := {"checks": checks, "sampling_position_m": maximum_position_error, "sampling_angle_rad": maximum_angle_error, "blend_position_m": maximum_blend_error, "final_position_m": maximum_final_error, "toggle_position_m": maximum_toggle_error, "foot_anchor_drift_m": maximum_foot_drift, "original_foot_anchor_drift_m": original_foot_drift, "native_cpu_us": native_microseconds, "psa_cpu_us": original_microseconds}

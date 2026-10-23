@@ -1,5 +1,6 @@
 extends Node3D
 ## Source animations, normalized root travel, skinning and bounded two-bone contact IK.
+const AnimationExpansion = preload("res://src/animation_expansion.gd")
 const PSK = preload("res://src/psk.gd")
 const Assets = preload("res://src/source_assets.gd")
 const MovementIntent = preload("res://src/movement_intent.gd")
@@ -89,6 +90,11 @@ const BLEND_TIME := 0.20
 func setup(bank: Dictionary, side: int, jersey: int, models: Dictionary = {}) -> void:
 	source_clips = bank
 	clips = bank.duplicate()
+	for action in ["idle","ready","relaxed","block_ready","run","walk","backwalk","backpedal","shuffle_left","shuffle_right","cross_left","cross_right"]:
+		var variant := AnimationExpansion.stance_or_gait(action,side,jersey)
+		if source_clips.has(variant):
+			clips[action]=source_clips[variant]
+			variant_names[action]=variant
 	model_bank = models
 	team = side
 	setting_yaw = PI if team==0 else 0.0
@@ -366,6 +372,7 @@ func choose_gait(speed: float, previous: String) -> String:
 		if speed > (2.35 if previous.begins_with("cross_") else 3.0) and clips.has(crossing): action=crossing
 	elif local_velocity.z<(-0.10 if previous in ["backwalk","backpedal"] else -0.30) and clips.has("backpedal"):
 		action="backwalk" if walking and clips.has("backwalk") else "backpedal"
+	if block_ready_stance and action in ["shuffle_left","shuffle_right"] and clips.has("wall_"+action): return "wall_"+action
 	return action
 
 func update_travel_gait(speed: float, dt: float) -> void:
@@ -472,7 +479,7 @@ func ensure_native_tree() -> void:
 	pose_tree = PoseTree.new()
 	pose_tree.name = "NativePoseEvaluation"
 	add_child(pose_tree)
-	pose_tree.setup(source_clips, Callable(self, "psa_normalized_pose"))
+	pose_tree.setup(source_clips, func(name: String,time: float,loop: bool): return psa_normalized_pose("source:"+name,time,loop))
 
 func apply_pose(_dt: float) -> void:
 	if not skeleton or not clips.has(clip_name): return
