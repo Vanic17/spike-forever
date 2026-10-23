@@ -6,6 +6,10 @@ var shadow: MeshInstance3D
 var marker: MeshInstance3D
 var camera: Camera3D
 var dynamic_net
+var sponsors
+var crowd_materials: Array[ShaderMaterial] = []
+var crowd_excitement := 0.0
+var crowd_instance_count := 0
 var crowd_positions: Array[Vector3] = []
 
 func solid(color: Color, roughness: float = 0.7) -> StandardMaterial3D:
@@ -37,9 +41,9 @@ func _ready() -> void:
 	env.background_color = Color("101722")
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	env.ambient_light_color = Color("d8e3ee")
-	env.ambient_light_energy = 0.38
+	env.ambient_light_energy = 0.43
 	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
-	env.tonemap_exposure = 0.9
+	env.tonemap_exposure = 1.0
 	env.ssao_enabled = true
 	env.ssao_radius = 0.7
 	env.ssao_intensity = 1.1
@@ -47,7 +51,7 @@ func _ready() -> void:
 	env.glow_intensity = 0.35
 	env.fog_enabled = true
 	env.fog_light_color = Color("28364a")
-	env.fog_density = 0.003
+	env.fog_density = 0.0018
 	world.environment = env
 	add_child(world)
 	var light := DirectionalLight3D.new()
@@ -74,19 +78,39 @@ func _ready() -> void:
 		stadium.scale = Vector3.ONE * 0.55
 		stadium.position.y = -0.15
 		add_child(stadium)
+		# The imported arena has its own lower tiers at a different scale.
+		# Those intersected our spectator rows, cutting through heads and LEDs.
+		# Keep its upper shell and replace only the occupied lower bowl.
+		var shell_shader:=Shader.new()
+		shell_shader.code="""shader_type spatial;
+varying vec3 world_position;
+void vertex(){ world_position=(MODEL_MATRIX*vec4(VERTEX,1.0)).xyz; }
+void fragment(){
+	if(abs(world_position.x)<22.5 && abs(world_position.z)<28.0 && world_position.y<6.6) discard;
+	ALBEDO=vec3(0.116,0.150,0.198); ROUGHNESS=0.85;
+}"""
+		var shell_material:=ShaderMaterial.new(); shell_material.shader=shell_shader
 		for node in descendants(stadium):
-			node.material_override = solid(Color("303b4b"), 0.85)
+			node.material_override = shell_material
 			node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	box(Vector3(0, -0.16, 0), Vector3(85, 0.25, 90), solid(Color("1b2530")))
-	var free_zone := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("215e68"), 0.42)
+	var free_zone := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("0085bd"), 0.38)
 	free_zone.uv1_scale = Vector3(8, 8, 8)
-	box(Vector3(0, -0.014, 0), Vector3(19, 0.03, 28), free_zone)
-	var court := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("bb6a4b"), 0.40)
+	box(Vector3(0, -0.014, 0), Vector3(20.5, 0.03, 29), free_zone)
+	var court := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("e3bd94"), 0.37)
 	court.uv1_scale = Vector3(5, 8, 5)
 	box(Vector3(0, 0.008, 0), Vector3(9, 0.015, 18), court)
+	var attack_zone:=Assets.material("", "T_Ground_Taraflex_Normal.png", Color("e2c785"),0.37)
+	attack_zone.uv1_scale=Vector3(5,3,5)
+	box(Vector3(0,0.017,0),Vector3(9,0.004,6),attack_zone)
 	var white := solid(Color("efeee6"), 0.45)
 	for x in [-4.5, 4.5]: box(Vector3(x, 0.022, 0), Vector3(0.05, 0.006, 18.05), white)
 	for z in [-9, -3, 0, 3, 9]: box(Vector3(0, 0.023, z), Vector3(9.04, 0.006, 0.05), white)
+	# Regulation attack-line extensions leave the free zone visually readable.
+	for side in [-1,1]:
+		for z in [-3,3]:
+			for dash in 5:
+				box(Vector3(side*(4.8+dash*0.35),0.022,z),Vector3(0.15,0.005,0.05),white)
 	var net := Assets.scene("SM_Furn_VolleyNet01A.gltf")
 	if net:
 		net.rotation.y = PI / 2
@@ -104,7 +128,7 @@ func _ready() -> void:
 					m.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
 					m.albedo_color=Color(1,1,1,0)
 				else:
-					m = Assets.material("T_Furn_VolleyNetPad01A_BaseColor.png", "T_Furn_VolleyNetPad01A_Normal.png", Color("315ca8"))
+					m = Assets.material("T_Furn_VolleyNetPad01A_BaseColor.png", "T_Furn_VolleyNetPad01A_Normal.png", Color("285d43"))
 				part.set_surface_override_material(surface, m)
 	else:
 		for x in [-5.2, 5.2]: box(Vector3(x, 1.35, 0), Vector3(0.15, 2.7, 0.15), white)
@@ -168,8 +192,10 @@ func build_seating() -> void:
 	if seat_scene:
 		var meshes := descendants(seat_scene)
 		if not meshes.is_empty(): seat_mesh = meshes[0].mesh
-	var concrete := solid(Color("58616a"), 0.92)
-	var seat_material := Assets.material("T_Furn_PublicChairC_BaseColor.png", "T_Furn_PublicChairC_Normal.png", Color("476a94"))
+	var concrete := solid(Color("505968"), 0.92)
+	var seat_material := Assets.material("T_Furn_PublicChairC_BaseColor.png", "T_Furn_PublicChairC_Normal.png", Color("6b849a"))
+	var stair_material:=solid(Color("9ba3aa"),0.88)
+	var rail_material:=solid(Color("b3b9b9"),0.28)
 	for side in [-1, 1]:
 		var seating := MultiMeshInstance3D.new()
 		var instances := MultiMesh.new()
@@ -185,21 +211,35 @@ func build_seating() -> void:
 			for column in 58:
 				var index := row * 58 + column
 				var position := Vector3(side * (11.7 + row * 0.9), row * 0.48 + 0.35, (column - 28.5) * 0.62)
-				instances.set_instance_transform(index, Transform3D(Basis(Vector3.UP, -side * PI / 2), position))
+				var aisle:=column%15<2
+				instances.set_instance_transform(index, Transform3D(Basis(Vector3.UP, -side * PI / 2).scaled(Vector3.ONE*(0.0 if aisle else 1.0)), position))
 				instances.set_instance_color(index, Color("b2b9c2") if column % 13 < 2 else Color.WHITE)
-				if (column + row * 3) % 13 != 0: crowd_positions.append(position)
+				if not aisle and (column + row * 3) % 17 != 0: crowd_positions.append(position)
+			for aisle in 4:
+				var z: float=(aisle*15-28.0)*0.62
+				box(Vector3(side*(11.7+row*0.9),row*0.48+0.31,z),Vector3(0.94,0.04,1.12),stair_material)
+		# Low rail separates spectators from the LED ring.
+		box(Vector3(side*11.05,1.0,0),Vector3(0.045,0.045,36),rail_material)
+		for z in [-17,-11,-5,1,7,13,17]:
+			box(Vector3(side*11.05,0.64,z),Vector3(0.045,0.75,0.045),rail_material)
 	if seat_scene: seat_scene.free()
 	# Far-end tier stays visible from the requested end-line camera.
+	var end_seats:=MultiMeshInstance3D.new()
+	var end_instances:=MultiMesh.new()
+	end_instances.transform_format=MultiMesh.TRANSFORM_3D
+	end_instances.mesh=seat_mesh if seat_mesh else SphereMesh.new()
+	end_instances.instance_count=9*43
+	end_seats.multimesh=end_instances; end_seats.material_override=seat_material
+	add_child(end_seats)
 	for row in 9:
 		box(Vector3(0, row * 0.52, -18.5 - row * 0.9), Vector3(24 + row * 1.5, 0.48, 0.92), concrete)
 		for column in 43:
 			if not seat_mesh: continue
-			var chair := MeshInstance3D.new()
-			chair.mesh = seat_mesh
-			chair.material_override = seat_material
-			chair.position = Vector3((column - 21) * 0.62, row * 0.52 + 0.25, -18.5 - row * 0.9)
-			add_child(chair)
-			if (column + row) % 11 != 0: crowd_positions.append(chair.position)
+			var position:=Vector3((column-21)*0.62,row*0.52+0.25,-18.5-row*0.9)
+			var aisle:=column in [10,11,31,32]
+			end_instances.set_instance_transform(row*43+column,Transform3D(Basis.IDENTITY.scaled(Vector3.ONE*(0.0 if aisle else 1.0)),position))
+			if not aisle and (column+row)%17!=0: crowd_positions.append(position)
+		for x in [-6.5,6.5]: box(Vector3(x,row*0.52+0.25,-18.5-row*0.9),Vector3(1.15,0.035,0.95),stair_material)
 
 func build_crowd() -> void:
 	if build_source_crowd(): return
@@ -246,15 +286,51 @@ func build_crowd() -> void:
 
 func build_source_crowd() -> bool:
 	var shader := Shader.new()
-	shader.code = "shader_type spatial; render_mode cull_disabled; uniform sampler2D diffuse_map : source_color, filter_linear_mipmap_anisotropic; void vertex(){ VERTEX.x += sin(TIME*0.8 + INSTANCE_CUSTOM.x*6.283)*0.018*smoothstep(0.5,1.4,VERTEX.y); } void fragment(){ ALBEDO=texture(diffuse_map,UV).rgb*COLOR.rgb; ROUGHNESS=0.85; }"
-	for variant in 3:
-		var mesh := Crowd.create(variant)
-		if mesh == null: return false
+	shader.code = """shader_type spatial;
+render_mode cull_disabled;
+uniform sampler2D diffuse_map : source_color, filter_linear_mipmap_anisotropic;
+uniform float clothing=0.0;
+uniform float excitement=0.0;
+varying vec4 person;
+void vertex(){
+	person=INSTANCE_CUSTOM;
+	float phase=person.x*6.283;
+	float upper=smoothstep(0.35,1.4,VERTEX.y);
+	float sway=sin(TIME*(0.55+person.y*0.65)+phase);
+	VERTEX.x+=sway*0.021*upper;
+	VERTEX.z+=cos(TIME*0.7+phase)*0.012*upper;
+	float hands=smoothstep(0.28,0.55,abs(VERTEX.x))*smoothstep(0.5,1.0,VERTEX.y);
+	VERTEX.x+=sin(TIME*(3.1+person.y)+phase)*hands*(0.012+excitement*0.025);
+	VERTEX.y+=max(0.0,sin(TIME*(3.0+person.y)+phase))*upper*excitement*0.055;
+}
+void fragment(){
+	vec3 tex=texture(diffuse_map,UV).rgb;
+	float lightness=dot(tex,vec3(0.299,0.587,0.114));
+	vec3 shirt=COLOR.rgb*(0.45+lightness*0.65);
+	vec3 skin=tex*mix(vec3(0.72,0.60,0.51),vec3(1.0),person.z);
+	ALBEDO=mix(skin,shirt,clothing);
+	ROUGHNESS=0.88;
+}"""
+	var palette: Array[Color]=[Color("e5ddcc"),Color("dbc34a"),Color("1c4a85"),Color("daebeb"),Color("ab2f36"),Color("2f765b"),Color("777a81"),Color("e9a251"),Color("383e51"),Color("c2d2df")]
+	const VARIANTS:=8
+	var groups: Array=[]
+	for variant in VARIANTS: groups.append([])
+	for i in crowd_positions.size():
+		var distribution:=fposmod(sin(float(i)*7.141)*5317.13,1.0)
+		var gender:=4 if fposmod(sin(float(i)*3.51)*1531.1,1.0)>.5 else 0
+		var pose:=0 if distribution<0.43 else (1 if distribution<0.77 else (2 if distribution<0.93 else 3))
+		groups[gender+pose].append(i)
+	for variant in VARIANTS:
+		var source_mesh := Crowd.create(variant)
+		if source_mesh == null: return false
+		var mesh: ArrayMesh=source_mesh.duplicate()
 		for surface in mesh.get_surface_count():
 			var original: StandardMaterial3D = mesh.surface_get_material(surface)
 			var material := ShaderMaterial.new()
 			material.shader = shader
 			material.set_shader_parameter("diffuse_map", original.albedo_texture)
+			material.set_shader_parameter("clothing",0.0 if surface==0 else 1.0)
+			crowd_materials.append(material)
 			mesh.surface_set_material(surface, material)
 		var node := MultiMeshInstance3D.new()
 		var instances := MultiMesh.new()
@@ -262,40 +338,56 @@ func build_source_crowd() -> bool:
 		instances.use_colors = true
 		instances.use_custom_data = true
 		instances.mesh = mesh
-		instances.instance_count = int(ceil(float(crowd_positions.size() - variant) / 3.0))
+		instances.instance_count = groups[variant].size()
 		var instance := 0
-		for i in range(variant, crowd_positions.size(), 3):
+		for spectator in groups[variant]:
+			var i: int=spectator
 			var p: Vector3 = crowd_positions[i]
 			var angle := 0.0 if p.z < -18 else (-PI / 2 if p.x > 0 else PI / 2)
-			var orientation := Basis(Vector3.UP, angle)
-			instances.set_instance_transform(instance, Transform3D(orientation, p + orientation * Vector3(0, 0, 0.09)))
-			instances.set_instance_color(instance, Color.WHITE * (0.83 + float(i % 7) * 0.035))
-			instances.set_instance_custom_data(instance, Color(float(i % 71) / 71,0,0,1))
+			var phase:=fposmod(sin(float(i)*19.17)*1453.71,1.0)
+			var diversity:=fposmod(sin(float(i)*4.731)*7531.21,1.0)
+			var orientation := Basis(Vector3.UP, angle+(phase-0.5)*0.21)
+			var size:=Vector3(0.91+diversity*0.15,0.92+phase*0.16,0.94+diversity*0.12)
+			instances.set_instance_transform(instance, Transform3D(orientation.scaled(size), p + orientation * Vector3(0, 0, 0.09)))
+			instances.set_instance_color(instance,palette[mini(palette.size()-1,int(diversity*palette.size()))])
+			instances.set_instance_custom_data(instance,Color(phase,diversity,0.45+phase*0.55,1))
 			instance += 1
+		crowd_instance_count+=instance
 		node.multimesh = instances
 		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		add_child(node)
 	return true
 
 func build_branding() -> void:
-	var board := solid(Color("082136"), 0.45)
+	var board := solid(Color("0d1723"), 0.45)
 	var illuminated := solid(Color("b8def4"))
 	illuminated.emission_enabled = true
 	illuminated.emission = Color("3984a9")
 	illuminated.emission_energy_multiplier = 0.65
-	for x in [-9.2, 9.2]:
-		box(Vector3(x, 0.38, 0), Vector3(0.12, 0.75, 25), board)
-	for z in [-14.4, 14.4]:
-		box(Vector3(0, 0.4, z), Vector3(19, 0.8, 0.14), board)
-		for x in [-6.2, 0, 6.2]:
-			var label := Label3D.new()
-			label.text = "SPIKE FOREVER"
-			label.font_size = 64
-			label.pixel_size = 0.006
-			label.position = Vector3(x, 0.52, z + (0.09 if z < 0 else -0.09))
-			label.rotation.y = 0 if z < 0 else PI
-			label.modulate = Color("d8e8ef")
-			add_child(label)
+	for x in [-9.37, 9.37]:
+		box(Vector3(x, 0.57, 0), Vector3(0.12, 1.0, 24), board)
+	for z in [-14.57,14.57]:
+		box(Vector3(0,0.57,z),Vector3(18.3,1.0,0.12),board)
+	sponsors=preload("res://src/sponsor_displays.gd").new()
+	add_child(sponsors)
 	for x in [-6.5, 6.5]:
 		for z in [-8, 0, 8]:
 			box(Vector3(x, 12.5, z), Vector3(1.8, 0.05, 0.18), illuminated)
+	# A real scorers' table and team benches fill the former empty sidelines.
+	for side in [-1,1]:
+		box(Vector3(-7.4,0.42,side*6.6),Vector3(0.65,0.11,4.5),solid(Color("244b6c"),0.58))
+		box(Vector3(-7.72,0.82,side*6.6),Vector3(0.08,0.65,4.5),solid(Color("244b6c"),0.58))
+		for z_offset in [-1.8,0.0,1.8]:
+			box(Vector3(-7.4,0.21,side*6.6+z_offset),Vector3(0.48,0.42,0.06),board)
+	box(Vector3(-7.8,0.55,0),Vector3(0.85,1.1,4.3),board)
+	box(Vector3(-7.8,1.12,0),Vector3(1.05,0.06,4.4),solid(Color("909ba7"),0.38))
+	for z in [-1.2,0.0,1.2]:
+		box(Vector3(-7.45,1.38,z),Vector3(0.06,0.43,0.52),board)
+
+func crowd_react() -> void:
+	crowd_excitement=1.0
+
+func _process(dt: float) -> void:
+	if crowd_excitement<=0.0: return
+	crowd_excitement=maxf(0.0,crowd_excitement-dt*0.30)
+	for material in crowd_materials: material.set_shader_parameter("excitement",crowd_excitement)

@@ -88,7 +88,7 @@ func _draw() -> void:
 	if game.camera_mode==2:
 		text(Vector2(w-420,h-42),"TV: su Z4 / destra centro / giu Z2 / sinistra pipe",12,GOLD)
 	if game.debug_visible:
-		panel(Rect2(30, 157, 435, 242))
+		panel(Rect2(30, 157, 435, 269))
 		var lines := [
 			primary + " · ricezione / alzata / attacco / muro",
 			alternate + " · float / veloce / pallonetto",
@@ -97,7 +97,8 @@ func _draw() -> void:
 			"LS / WASD / frecce: mira e direzioni",
 			"Muro: LS muove il centrale; "+wall_labels,
 			"Ricezione: premi vicino all'arrivo della palla",
-			"F3 animazioni   F5 difficoltà   R nuova partita"]
+			"F3 animazioni   F5 difficoltà   R nuova partita",
+			"L3 / LS / M · attiva o disattiva tutto l'audio"]
 		for i in lines.size(): text(Vector2(45, 184 + i * 27), lines[i], 13, MUTED)
 	if game.paused:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.01,0.02,0.04,0.62))

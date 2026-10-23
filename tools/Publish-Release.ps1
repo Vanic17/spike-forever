@@ -32,7 +32,7 @@ New-Item -ItemType Directory -Force $stage | Out-Null
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 [IO.Compression.ZipFile]::ExtractToDirectory($package,$stage)
 Remove-Item -LiteralPath (Join-Path $stage 'tools/godot/Godot_v4.5.1-stable_win64.exe')
-foreach($name in @('Build-Release.ps1','Publish-Release.ps1','Bootstrap-Engine.ps1','Convert-PsaAnimations.gd','Pack-NativeLibrary.gd','Capture-Shot31.gd','Capture-Coverage36.gd','Capture-TV37.gd')){Copy-Item (Join-Path $root ('tools/'+$name)) (Join-Path $stage ('tools/'+$name))}
+foreach($name in @('Build-Release.ps1','Publish-Release.ps1','Bootstrap-Engine.ps1','Convert-PsaAnimations.gd','Pack-NativeLibrary.gd','Capture-Shot31.gd','Capture-Coverage36.gd','Capture-TV37.gd','Capture-Arena38.gd','Build-ArenaAudio38.py','Render-ArenaAudio38.gd')){Copy-Item (Join-Path $root ('tools/'+$name)) (Join-Path $stage ('tools/'+$name))}
 foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File){
  if($file.Name -like 'Test-*' -or $file.Name -like 'Check-*'){
   Copy-Item -LiteralPath $file.FullName -Destination (Join-Path $stage ('tools/'+$file.Name))
@@ -48,7 +48,7 @@ foreach($report in @('v24-expanded-animations.json','strong-spikes-report.json',
 }
 Copy-Item -LiteralPath (Join-Path $root 'docs/original-animation-hashes.json') -Destination (Join-Path $stage 'docs')
 $fixtures=Join-Path $stage 'docs/reference-killer-aces'
-foreach($report in @('contact-traffic28-report.json','recovery-traffic-report.json','contact28-preview-0-contact.png','contact28-preview-1-contact.png','shot31-preview.png','coverage36-preview.png','tv37-preview.png')){
+foreach($report in @('contact-traffic28-report.json','recovery-traffic-report.json','contact28-preview-0-contact.png','contact28-preview-1-contact.png','shot31-preview.png','coverage36-preview.png','tv37-preview.png','arena38-tv-preview.png','arena38-endline-preview.png','arena38-mix-waveform.png','arena38-mix-preview.wav')){
  if(Test-Path (Join-Path $root ('docs/'+$report))){Copy-Item (Join-Path $root ('docs/'+$report)) (Join-Path $stage 'docs')}
 }
 New-Item -ItemType Directory -Force $fixtures | Out-Null

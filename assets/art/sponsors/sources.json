@@ -1,0 +1,17 @@
+{
+  "page": "https://www.legavolley.it/sponsor/",
+  "retrieved": "2026-10-23",
+  "usage": "Original sponsor images. Runtime regions remove white margins only. Logos preserve their original aspect ratio and colours.",
+  "files": {
+    "credem-original.png": "https://www.legavolley.it/wp-content/uploads/2018/06/Credem7-1417x2126.png",
+    "delmonte-original.jpg": "https://www.legavolley.it/wp-content/uploads/2018/06/DEL-MONTE-LOGO-PMS.jpg",
+    "mikasa-original.jpg": "https://www.legavolley.it/wp-content/uploads/2018/06/mikasa-1.jpg",
+    "adrenalina-original.png": "https://www.legavolley.it/wp-content/uploads/2024/12/Screenshot-2024-12-11-151910.png"
+  },
+  "sha256": {
+    "credem-original.png": "9443a368a15250912e117e3bd7aa96da3a55751083642d37953cb53ac1b406bc",
+    "delmonte-original.jpg": "fea20284461cad3b23c162f5ffc41ad84412c85f191502ed5ae48f1b00e02abc",
+    "mikasa-original.jpg": "a9ccc09795edbb1e29f262670b5533df369a3e730e217ebc05bd497d1314b7e6",
+    "adrenalina-original.png": "838fa47532d3399f776f64a1ccb499c4149dae1d20f2220538489f88a0128d36"
+  }
+}

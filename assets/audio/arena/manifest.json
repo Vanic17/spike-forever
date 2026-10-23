@@ -1,0 +1,1674 @@
+{
+  "schema": 1,
+  "description": "Derived user recordings, 44.1kHz stereo Vorbis, dry sources plus Arena runtime room reverb",
+  "source_analysis": {
+    "applause 2": {
+      "duration": 37.76,
+      "active_start": 4.47,
+      "active_end": 36.88,
+      "sample_peak_dbfs": -16.13,
+      "rms_dbfs": -37.11,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -36.8,
+        -35.57,
+        -38.07,
+        -36.38,
+        -34.99,
+        -37.46,
+        -35.28,
+        -37.72,
+        -38.05,
+        -35.09,
+        -37.14,
+        -35.43,
+        -37.44,
+        -35.03,
+        -37.58,
+        -36.36,
+        -36.88,
+        -35.69,
+        -36.21,
+        -35.14,
+        -37.33,
+        -34.7,
+        -36.09,
+        -34.55,
+        -34.09,
+        -35.25,
+        -33.94,
+        -40.65,
+        -49.24,
+        -50.6,
+        -51.98,
+        -52.04,
+        -53.93,
+        -38.24,
+        -35.41,
+        -38.18,
+        -36.78,
+        -38.47,
+        -35.98,
+        -37.76,
+        -36.74,
+        -37.49,
+        -35.89,
+        -38.7,
+        -36.65,
+        -36.31,
+        -36.51,
+        -34.89,
+        -35.54,
+        -35.84,
+        -34.95,
+        -37.02,
+        -34.9,
+        -37.23,
+        -35.15,
+        -35.25,
+        -37.02,
+        -34.55,
+        -35.87,
+        -34.66,
+        -35.59,
+        -34.99,
+        -35.42,
+        -35.73,
+        -42.72,
+        -180.0,
+        -180.0
+      ],
+      "source": "applause 2.mp4",
+      "source_sha256": "9f1ed0b6a22327e3f68c77eef904bafde5330c9c6c1b408204a3ca620ca32527"
+    },
+    "applause 3": {
+      "duration": 30.1227,
+      "active_start": 6.13,
+      "active_end": 29.31,
+      "sample_peak_dbfs": -18.78,
+      "rms_dbfs": -38.01,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -41.66,
+        -35.1,
+        -39.54,
+        -39.82,
+        -41.96,
+        -39.81,
+        -35.06,
+        -35.01,
+        -36.77,
+        -38.71,
+        -38.46,
+        -37.66,
+        -33.34,
+        -35.75,
+        -38.82,
+        -38.88,
+        -39.77,
+        -35.17,
+        -37.18,
+        -43.56,
+        -45.24,
+        -59.13,
+        -51.49,
+        -37.78,
+        -34.63,
+        -36.54,
+        -35.46,
+        -34.59,
+        -37.14,
+        -34.09,
+        -36.99,
+        -36.92,
+        -36.17,
+        -36.37,
+        -35.64,
+        -36.55,
+        -34.95,
+        -36.52,
+        -35.66,
+        -36.17,
+        -35.84,
+        -36.25,
+        -35.85,
+        -34.79,
+        -36.06,
+        -41.08,
+        -49.7,
+        -180.0,
+        -180.0
+      ],
+      "source": "applause 3.mp4",
+      "source_sha256": "5c929dc6f44ea74b01e139c71fbd80eee9e77f819e284da574cb8fa106724020"
+    },
+    "crowd 2": {
+      "duration": 16.8107,
+      "active_start": 4.31,
+      "active_end": 15.85,
+      "sample_peak_dbfs": -13.97,
+      "rms_dbfs": -35.31,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -54.92,
+        -51.67,
+        -40.04,
+        -29.96,
+        -25.95,
+        -28.67,
+        -31.9,
+        -33.55,
+        -34.0,
+        -34.26,
+        -34.93,
+        -35.02,
+        -33.8,
+        -35.08,
+        -36.05,
+        -36.81,
+        -37.48,
+        -38.79,
+        -39.38,
+        -40.68,
+        -40.83,
+        -38.04,
+        -35.03,
+        -38.35,
+        -180.0,
+        -180.0
+      ],
+      "source": "crowd 2.mp4",
+      "source_sha256": "196cb1bb574bd1b117612df9fb9d9f40be9434a4f7d85e536e1c50fa65a4812d"
+    },
+    "crowd": {
+      "duration": 8.64,
+      "active_start": 4.74,
+      "active_end": 7.77,
+      "sample_peak_dbfs": -1.4,
+      "rms_dbfs": -19.59,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -24.85,
+        -13.15,
+        -12.51,
+        -12.65,
+        -16.09,
+        -25.11,
+        -35.91,
+        -180.0,
+        -180.0
+      ],
+      "source": "crowd.mp4",
+      "source_sha256": "93e95f54a661e2b92241e4f016b64b1d15d60f68895a28d897c87a87684f733f"
+    },
+    "drums": {
+      "duration": 23.6373,
+      "active_start": 3.94,
+      "active_end": 22.62,
+      "sample_peak_dbfs": -16.57,
+      "rms_dbfs": -37.03,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -54.31,
+        -36.67,
+        -32.83,
+        -35.93,
+        -39.29,
+        -34.98,
+        -34.54,
+        -38.18,
+        -37.09,
+        -34.31,
+        -36.87,
+        -37.13,
+        -33.67,
+        -35.61,
+        -38.23,
+        -33.89,
+        -31.73,
+        -32.79,
+        -32.16,
+        -33.05,
+        -35.97,
+        -33.17,
+        -33.7,
+        -34.81,
+        -36.56,
+        -37.35,
+        -37.65,
+        -38.12,
+        -39.52,
+        -40.3,
+        -40.68,
+        -41.4,
+        -41.39,
+        -42.31,
+        -42.76,
+        -43.77,
+        -44.53,
+        -43.85,
+        -52.35,
+        -180.0,
+        -180.0
+      ],
+      "source": "drums.mp4",
+      "source_sha256": "529a46672be88ec5ebae33ae8c7044e54f1672bf03509b0a26291a2baf229675"
+    },
+    "horn": {
+      "duration": 36.864,
+      "active_start": 5.78,
+      "active_end": 36.864,
+      "sample_peak_dbfs": -16.62,
+      "rms_dbfs": -38.13,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -40.1,
+        -37.13,
+        -37.5,
+        -38.1,
+        -36.81,
+        -35.35,
+        -35.03,
+        -32.62,
+        -37.31,
+        -42.15,
+        -46.89,
+        -41.38,
+        -40.03,
+        -41.2,
+        -41.19,
+        -42.24,
+        -38.25,
+        -39.95,
+        -39.04,
+        -39.94,
+        -38.13,
+        -38.42,
+        -38.32,
+        -38.93,
+        -39.53,
+        -36.45,
+        -38.77,
+        -38.16,
+        -38.63,
+        -38.58,
+        -38.47,
+        -37.67,
+        -37.67,
+        -37.76,
+        -37.95,
+        -37.82,
+        -38.65,
+        -38.5,
+        -38.99,
+        -38.63,
+        -36.66,
+        -36.3,
+        -37.3,
+        -37.4,
+        -37.5,
+        -36.52,
+        -37.55,
+        -36.66,
+        -37.56,
+        -36.71,
+        -36.94,
+        -36.39,
+        -36.1,
+        -35.96,
+        -36.14,
+        -36.01,
+        -35.5,
+        -36.25,
+        -36.44,
+        -35.42,
+        -35.46,
+        -35.02,
+        -36.35
+      ],
+      "source": "horn.mp4",
+      "source_sha256": "0aea6acf9be50c1bac9eee12f8bf0aa885e5d82cf77a73521bd886503b10ebeb"
+    },
+    "in between": {
+      "duration": 12.0533,
+      "active_start": 4.29,
+      "active_end": 12.053,
+      "sample_peak_dbfs": -18.09,
+      "rms_dbfs": -36.49,
+      "rms_half_second_dbfs": [
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -44.48,
+        -34.55,
+        -34.65,
+        -38.98,
+        -36.14,
+        -34.43,
+        -37.53,
+        -35.7,
+        -33.85,
+        -36.62,
+        -38.35,
+        -32.79,
+        -31.88,
+        -33.05,
+        -31.93,
+        -33.88,
+        -39.73
+      ],
+      "source": "in between.mp4",
+      "source_sha256": "22d3522c766b5e9f1f3ef241f972c44e6eac3fbb4e0f8f100ce03cce37030020"
+    },
+    "sneakers": {
+      "duration": 9.3867,
+      "active_start": 0.0,
+      "active_end": 9.387,
+      "sample_peak_dbfs": -7.5,
+      "rms_dbfs": -36.66,
+      "rms_half_second_dbfs": [
+        -35.74,
+        -42.24,
+        -39.99,
+        -28.97,
+        -39.35,
+        -180.0,
+        -180.0,
+        -180.0,
+        -180.0,
+        -44.75,
+        -37.17,
+        -37.06,
+        -38.89,
+        -36.61,
+        -40.43,
+        -36.24,
+        -40.91,
+        -40.79,
+        -29.03
+      ],
+      "source": "sneakers.mp4",
+      "source_sha256": "572b1d18d6e05048b5a74dd3ef1d60ebf9b9574a01344b01c7294a239c18a609"
+    }
+  },
+  "variants": [
+    {
+      "file": "applause_00.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 4.65,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.39,
+      "true_peak_dbtp": -2.87,
+      "equalizer": "",
+      "sha256": "ac50ad761ca12fb82fdb453822aae9f6cef75c2361b07965498df62edce4afba",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.0,
+      "sample_peak_dbfs": -4.59,
+      "rms_dbfs": -24.56
+    },
+    {
+      "file": "applause_01.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 6.25,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.43,
+      "true_peak_dbtp": -3.67,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "28d866798e352d4f341bd7d6a403e63ae1c1ec60a89566042af2f6db6c0673be",
+      "duration": 6.2807,
+      "active_start": 0.0,
+      "active_end": 6.12,
+      "sample_peak_dbfs": -5.71,
+      "rms_dbfs": -23.62
+    },
+    {
+      "file": "applause_02.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 10.0,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.025,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.29,
+      "true_peak_dbtp": -3.51,
+      "equalizer": "",
+      "sha256": "055353d9b17f4c2b99a7d3281887a7e49a9d1f18f25f33adf966a1d8e24e2982",
+      "duration": 6.0681,
+      "active_start": 0.0,
+      "active_end": 5.83,
+      "sample_peak_dbfs": -5.48,
+      "rms_dbfs": -24.6
+    },
+    {
+      "file": "applause_03.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 9.7,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.23,
+      "true_peak_dbtp": -3.52,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "6b1877569902d11133aadfee50decc19cac261a15ad93d09e39faa29f5c49e7e",
+      "duration": 6.374,
+      "active_start": 0.0,
+      "active_end": 6.13,
+      "sample_peak_dbfs": -5.57,
+      "rms_dbfs": -23.11
+    },
+    {
+      "file": "applause_04.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 22.1,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.015,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.62,
+      "true_peak_dbtp": -2.68,
+      "equalizer": "",
+      "sha256": "52cf26af6afe9510feac6e281097e35655dbe457290f0a9f5722b05ec5c80114",
+      "duration": 6.1229,
+      "active_start": 0.0,
+      "active_end": 5.86,
+      "sample_peak_dbfs": -5.31,
+      "rms_dbfs": -25.04
+    },
+    {
+      "file": "applause_05.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 18.0,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.04,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.53,
+      "true_peak_dbtp": -3.18,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "89ec2b3a456ae488559996bb3d6de4c1e0de8869942667ae7ec2c7dd12aff3ad",
+      "duration": 5.9764,
+      "active_start": 0.0,
+      "active_end": 5.77,
+      "sample_peak_dbfs": -6.79,
+      "rms_dbfs": -24.56
+    },
+    {
+      "file": "applause_06.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 29.5,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.25,
+      "true_peak_dbtp": -3.0,
+      "equalizer": "",
+      "sha256": "e830cde54a11ed8f5a0904d4daed30cf6cb9039085c15f0e53ef875b409ae515",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.02,
+      "sample_peak_dbfs": -6.49,
+      "rms_dbfs": -24.2
+    },
+    {
+      "file": "applause_07.ogg",
+      "group": "applause",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 22.4,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -20,
+      "integrated_lufs": -20.34,
+      "true_peak_dbtp": -2.6,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "e7ed29dc5fde5c30e4c2182cce976839c6586d7f5a9b763fddd4532792bbd4ea",
+      "duration": 6.2817,
+      "active_start": 0.0,
+      "active_end": 6.09,
+      "sample_peak_dbfs": -6.64,
+      "rms_dbfs": -24.36
+    },
+    {
+      "file": "drums_00.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 4.1,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.41,
+      "true_peak_dbtp": -3.15,
+      "equalizer": "",
+      "sha256": "db76f09ff7635d8e177f7fa97543f097deb981428f45a0dd324ea82c3ce55874",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.02,
+      "sample_peak_dbfs": -7.19,
+      "rms_dbfs": -24.16
+    },
+    {
+      "file": "drums_01.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 5.5,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.35,
+      "true_peak_dbtp": -3.02,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "eeca53a1718d0243e3ccb2d33607c4352fe5fc3d2af5d9b1b7da3db5b33188df",
+      "duration": 6.2842,
+      "active_start": 0.0,
+      "active_end": 6.1,
+      "sample_peak_dbfs": -8.6,
+      "rms_dbfs": -24.18
+    },
+    {
+      "file": "drums_02.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 7.2,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.025,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.3,
+      "true_peak_dbtp": -3.97,
+      "equalizer": "",
+      "sha256": "18ff1d1b034d5986331c808f5e133c2484b68a1c8486b4c6480604f8cf81be5e",
+      "duration": 6.0672,
+      "active_start": 0.0,
+      "active_end": 5.87,
+      "sample_peak_dbfs": -10.07,
+      "rms_dbfs": -25.4
+    },
+    {
+      "file": "drums_03.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 8.8,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.26,
+      "true_peak_dbtp": -4.9,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "4f57b5fe308d74954a1daf9e6f6ef712bf5105f765d37161a1b2cd89ca4e004b",
+      "duration": 6.3671,
+      "active_start": 0.0,
+      "active_end": 6.2,
+      "sample_peak_dbfs": -10.35,
+      "rms_dbfs": -25.12
+    },
+    {
+      "file": "drums_04.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 10.3,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.015,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.26,
+      "true_peak_dbtp": -3.39,
+      "equalizer": "",
+      "sha256": "cb50640cd4bc748178b5c9ab3e110482576dc720cd68f5edd29573679f50ce04",
+      "duration": 6.1277,
+      "active_start": 0.0,
+      "active_end": 5.84,
+      "sample_peak_dbfs": -6.59,
+      "rms_dbfs": -25.3
+    },
+    {
+      "file": "drums_05.ogg",
+      "group": "drums",
+      "sources": [
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 11.7,
+          "length_seconds": 6.0
+        }
+      ],
+      "tempo": 1.04,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.62,
+      "true_peak_dbtp": -3.43,
+      "equalizer": "equalizer=f=180:t=q:w=0.7:g=1.2",
+      "sha256": "730815191ddbc63111f9d0aab19d6ee0bd5363c1e3ff1f16adb01bb1e7005af5",
+      "duration": 5.9852,
+      "active_start": 0.0,
+      "active_end": 5.76,
+      "sample_peak_dbfs": -6.62,
+      "rms_dbfs": -25.47
+    },
+    {
+      "file": "crowd_00.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 4.8348,
+          "length_seconds": 2.4846
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.06,
+      "true_peak_dbtp": -11.87,
+      "equalizer": "",
+      "sha256": "45e555b380fcfcd4f777ccbc728d5dec8929dfd19efa4f56cd6a4f0813a5065b",
+      "duration": 2.6846,
+      "active_start": 0.0,
+      "active_end": 2.44,
+      "sample_peak_dbfs": -13.41,
+      "rms_dbfs": -26.27
+    },
+    {
+      "file": "crowd_01.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 4.6746,
+          "length_seconds": 3.8
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.33,
+      "true_peak_dbtp": -7.86,
+      "equalizer": "",
+      "sha256": "28e8db88215842ccadb776c2768304091cd173cfb0146c3167530b0d42ed9282",
+      "duration": 4.0464,
+      "active_start": 0.17,
+      "active_end": 3.86,
+      "sample_peak_dbfs": -12.88,
+      "rms_dbfs": -28.95
+    },
+    {
+      "file": "crowd_02.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 4.9337,
+          "length_seconds": 2.4846
+        }
+      ],
+      "tempo": 1.025,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.04,
+      "true_peak_dbtp": -11.69,
+      "equalizer": "",
+      "sha256": "f9cd4715c7167026ebb8a9da54e447138d6f7e46537a1a3044497ce0b485f5fc",
+      "duration": 2.643,
+      "active_start": 0.0,
+      "active_end": 2.37,
+      "sample_peak_dbfs": -13.25,
+      "rms_dbfs": -26.3
+    },
+    {
+      "file": "crowd_03.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 6.5721,
+          "length_seconds": 3.8
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.38,
+      "true_peak_dbtp": -4.1,
+      "equalizer": "",
+      "sha256": "94440eb64130dc8dd57ab551aafd2bc884e065ba873511d073f92861eaa1860a",
+      "duration": 4.1016,
+      "active_start": 0.0,
+      "active_end": 3.93,
+      "sample_peak_dbfs": -10.99,
+      "rms_dbfs": -27.68
+    },
+    {
+      "file": "crowd_04.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 5.0325,
+          "length_seconds": 2.4846
+        }
+      ],
+      "tempo": 1.015,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.04,
+      "true_peak_dbtp": -11.76,
+      "equalizer": "",
+      "sha256": "2026619a6e56e250cb9ddfc37e7399b20e9ea1777c680745a954c8a49e74da09",
+      "duration": 2.6638,
+      "active_start": 0.0,
+      "active_end": 2.4,
+      "sample_peak_dbfs": -13.48,
+      "rms_dbfs": -26.4
+    },
+    {
+      "file": "crowd_05.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 8.4696,
+          "length_seconds": 3.8
+        }
+      ],
+      "tempo": 1.04,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.7,
+      "true_peak_dbtp": -3.34,
+      "equalizer": "",
+      "sha256": "4033905388122cf0b8736efd0165dd003b26479e495af5108d1a437f28cda847",
+      "duration": 3.8704,
+      "active_start": 0.0,
+      "active_end": 3.62,
+      "sample_peak_dbfs": -8.82,
+      "rms_dbfs": -28.65
+    },
+    {
+      "file": "crowd_06.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd.mp4",
+          "offset_seconds": 5.1314,
+          "length_seconds": 2.4846
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.26,
+      "true_peak_dbtp": -11.73,
+      "equalizer": "",
+      "sha256": "c3691ae2cd89e9446ab0c5906862a6b266dc99ea0048ac4baf746fda658c99b4",
+      "duration": 2.6846,
+      "active_start": 0.0,
+      "active_end": 2.4,
+      "sample_peak_dbfs": -13.19,
+      "rms_dbfs": -26.61
+    },
+    {
+      "file": "crowd_07.ogg",
+      "group": "crowd",
+      "sources": [
+        {
+          "file": "crowd 2.mp4",
+          "offset_seconds": 10.3671,
+          "length_seconds": 3.8
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.29,
+      "true_peak_dbtp": -4.57,
+      "equalizer": "",
+      "sha256": "0536156f8a3c39fcf8597458c139f1bcfda52a69c417f9b46c6a4c6a498664fe",
+      "duration": 4.0442,
+      "active_start": 0.0,
+      "active_end": 3.85,
+      "sample_peak_dbfs": -6.29,
+      "rms_dbfs": -27.82
+    },
+    {
+      "file": "interlude_00.ogg",
+      "group": "interlude",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 4.4605,
+          "length_seconds": 5.2
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -22,
+      "integrated_lufs": -22.49,
+      "true_peak_dbtp": -3.57,
+      "equalizer": "",
+      "sha256": "c57f3b21ce372deaeccbded352dad8701e06d737343f0b7d0c33a4313b4002c4",
+      "duration": 5.4,
+      "active_start": 0.0,
+      "active_end": 5.22,
+      "sample_peak_dbfs": -8.37,
+      "rms_dbfs": -25.21
+    },
+    {
+      "file": "interlude_01.ogg",
+      "group": "interlude",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.0637,
+          "length_seconds": 5.2
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -22,
+      "integrated_lufs": -22.51,
+      "true_peak_dbtp": -4.17,
+      "equalizer": "",
+      "sha256": "5a49eb95835897e82b047bccc569db566345c0366e0c1dd1582a2ed3b18f878b",
+      "duration": 5.4713,
+      "active_start": 0.0,
+      "active_end": 5.3,
+      "sample_peak_dbfs": -8.8,
+      "rms_dbfs": -25.74
+    },
+    {
+      "file": "interlude_02.ogg",
+      "group": "interlude",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 5.667,
+          "length_seconds": 5.2
+        }
+      ],
+      "tempo": 1.025,
+      "normalization_target_lufs": -22,
+      "integrated_lufs": -22.43,
+      "true_peak_dbtp": -4.82,
+      "equalizer": "",
+      "sha256": "f07307bd999ab4bfb352745557f7249bb2ccb4dfd227c0a12593893988789437",
+      "duration": 5.2828,
+      "active_start": 0.0,
+      "active_end": 5.09,
+      "sample_peak_dbfs": -9.26,
+      "rms_dbfs": -26.26
+    },
+    {
+      "file": "interlude_03.ogg",
+      "group": "interlude",
+      "sources": [
+        {
+          "file": "in between.mp4",
+          "offset_seconds": 6.2702,
+          "length_seconds": 5.2
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -22,
+      "integrated_lufs": -22.32,
+      "true_peak_dbtp": -6.03,
+      "equalizer": "",
+      "sha256": "6dfbf63812ace59085e7aacb7bd8024b1b43b38d75698c17647a39249363d2d0",
+      "duration": 5.5558,
+      "active_start": 0.0,
+      "active_end": 5.38,
+      "sample_peak_dbfs": -11.0,
+      "rms_dbfs": -26.29
+    },
+    {
+      "file": "horn_00.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 6.6,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 1.0,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -24.22,
+      "true_peak_dbtp": -4.68,
+      "equalizer": "",
+      "sha256": "c7af9f230c1c0d07ddb9ebed748058ebab989ee36797301a93c620f9ee5064bc",
+      "duration": 1.7,
+      "active_start": 0.0,
+      "active_end": 1.52,
+      "sample_peak_dbfs": -10.66,
+      "rms_dbfs": -28.33
+    },
+    {
+      "file": "horn_01.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 8.1,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 0.985,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.01,
+      "true_peak_dbtp": -10.4,
+      "equalizer": "",
+      "sha256": "67bef196454474cb160cee33499d4b082e0701755cf8c6da1f8f0dd958e1f917",
+      "duration": 1.7118,
+      "active_start": 0.0,
+      "active_end": 1.52,
+      "sample_peak_dbfs": -10.72,
+      "rms_dbfs": -27.29
+    },
+    {
+      "file": "horn_02.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 14.9,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 1.025,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.84,
+      "true_peak_dbtp": -10.08,
+      "equalizer": "",
+      "sha256": "ba021a994a8bf686a1ef84ba45bc3879115cb6917206b246e28b869262317245",
+      "duration": 1.678,
+      "active_start": 0.0,
+      "active_end": 1.47,
+      "sample_peak_dbfs": -13.76,
+      "rms_dbfs": -28.72
+    },
+    {
+      "file": "horn_03.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 21.1,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.76,
+      "true_peak_dbtp": -5.69,
+      "equalizer": "",
+      "sha256": "b3e1a8d23a056071722b84e3ae63c95829719983f3c10105659e20d4e04b3d3c",
+      "duration": 1.7325,
+      "active_start": 0.0,
+      "active_end": 1.55,
+      "sample_peak_dbfs": -9.67,
+      "rms_dbfs": -29.8
+    },
+    {
+      "file": "horn_04.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 28.2,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 1.015,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.41,
+      "true_peak_dbtp": -5.41,
+      "equalizer": "",
+      "sha256": "a6604c47640fad856599fad90cb02c94a12d2911d8a4e54e0ef7a47fb8d5a37b",
+      "duration": 1.689,
+      "active_start": 0.0,
+      "active_end": 1.48,
+      "sample_peak_dbfs": -10.54,
+      "rms_dbfs": -29.26
+    },
+    {
+      "file": "horn_05.ogg",
+      "group": "horn",
+      "sources": [
+        {
+          "file": "horn.mp4",
+          "offset_seconds": 34.7,
+          "length_seconds": 1.5
+        }
+      ],
+      "tempo": 1.04,
+      "normalization_target_lufs": -23,
+      "integrated_lufs": -23.51,
+      "true_peak_dbtp": -7.28,
+      "equalizer": "",
+      "sha256": "2d4ebc851335daa000d620f945703afdf25665de76c3fb17d54b4487ca4cba78",
+      "duration": 1.6532,
+      "active_start": 0.0,
+      "active_end": 1.45,
+      "sample_peak_dbfs": -11.92,
+      "rms_dbfs": -28.6
+    },
+    {
+      "file": "sneaker_00.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 0.07,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.52,
+      "true_peak_dbtp": -10.18,
+      "equalizer": "",
+      "sha256": "b1b70c00d2ed180caadd390b662877d25b1a44bccdf089d34bfaf620c7be5551",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.44,
+      "sample_peak_dbfs": -11.14,
+      "rms_dbfs": -29.31
+    },
+    {
+      "file": "sneaker_01.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 0.99,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.58,
+      "true_peak_dbtp": -13.42,
+      "equalizer": "",
+      "sha256": "f8d33e3f0d4edfa8602d59b9dca624b54b254d7dc97d1209ce1ce102d88f3bdf",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.46,
+      "sample_peak_dbfs": -14.38,
+      "rms_dbfs": -29.82
+    },
+    {
+      "file": "sneaker_02.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 1.48,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1.035,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.34,
+      "true_peak_dbtp": -5.38,
+      "equalizer": "",
+      "sha256": "a4a218f464fc14dd0f48b420b74530300e6f9848397ee6110242a372049f280c",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.43,
+      "sample_peak_dbfs": -6.33,
+      "rms_dbfs": -29.24
+    },
+    {
+      "file": "sneaker_03.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 1.92,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.16,
+      "true_peak_dbtp": -13.14,
+      "equalizer": "",
+      "sha256": "f72b97b0ee9de2e475979084bdd76b9848598baff076dd504fab0ca8b125b192",
+      "duration": 0.5958,
+      "active_start": 0.0,
+      "active_end": 0.31,
+      "sample_peak_dbfs": -14.09,
+      "rms_dbfs": -29.16
+    },
+    {
+      "file": "sneaker_04.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 4.81,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.73,
+      "true_peak_dbtp": -10.69,
+      "equalizer": "",
+      "sha256": "cb36b5975d2b2ee2a0557c0c91734eb347d1cb9be8621a3e033c2e71b1585f72",
+      "duration": 0.6149,
+      "active_start": 0.0,
+      "active_end": 0.46,
+      "sample_peak_dbfs": -12.24,
+      "rms_dbfs": -30.23
+    },
+    {
+      "file": "sneaker_05.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 5.28,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1.035,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -26.39,
+      "true_peak_dbtp": -11.72,
+      "equalizer": "",
+      "sha256": "78ee9be2e2414258b5af756d169f6eb36a5ee2d9e5a91fa1a63066eff1fa44c6",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.44,
+      "sample_peak_dbfs": -12.68,
+      "rms_dbfs": -30.34
+    },
+    {
+      "file": "sneaker_06.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 5.84,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.31,
+      "true_peak_dbtp": -8.99,
+      "equalizer": "",
+      "sha256": "5b8c2ad0d8950cb27463a940442a29731339ecda9d3b577acb0de9848f6c4be0",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.44,
+      "sample_peak_dbfs": -11.25,
+      "rms_dbfs": -29.6
+    },
+    {
+      "file": "sneaker_07.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 6.62,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.43,
+      "true_peak_dbtp": -13.62,
+      "equalizer": "",
+      "sha256": "7d1e91f1cacf2e362b7398fd2d87a0fac5152ec1eab6705f6f0e044ebd0bd571",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.45,
+      "sample_peak_dbfs": -14.61,
+      "rms_dbfs": -30.4
+    },
+    {
+      "file": "sneaker_08.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 7.08,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1.035,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.42,
+      "true_peak_dbtp": -12.31,
+      "equalizer": "",
+      "sha256": "275b3533ba61b522e1da6056f7efb03229e33c99d40b4d81e21b4187d0d07e09",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.43,
+      "sample_peak_dbfs": -13.83,
+      "rms_dbfs": -29.05
+    },
+    {
+      "file": "sneaker_09.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 7.59,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.23,
+      "true_peak_dbtp": -5.29,
+      "equalizer": "",
+      "sha256": "5c0375fef5b80143b47f983e7b2a3db01bfb3d195e31637c4a1761757e80b2c5",
+      "duration": 0.6429,
+      "active_start": 0.0,
+      "active_end": 0.44,
+      "sample_peak_dbfs": -7.18,
+      "rms_dbfs": -29.4
+    },
+    {
+      "file": "sneaker_10.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 8.06,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 0.97,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.31,
+      "true_peak_dbtp": -12.63,
+      "equalizer": "",
+      "sha256": "f6d88c13984e06471a0a2c1817a4e5d944fdb89b7b0ca4ada739c68505a9c148",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.46,
+      "sample_peak_dbfs": -14.82,
+      "rms_dbfs": -28.6
+    },
+    {
+      "file": "sneaker_11.ogg",
+      "group": "sneaker",
+      "sources": [
+        {
+          "file": "sneakers.mp4",
+          "offset_seconds": 8.95,
+          "length_seconds": 0.42
+        }
+      ],
+      "tempo": 1.035,
+      "normalization_target_lufs": -25,
+      "integrated_lufs": -25.98,
+      "true_peak_dbtp": -6.23,
+      "equalizer": "",
+      "sha256": "d8e10305382f1b13bda67369cb49927e981764e8c29914dd05b9b829c68aadf1",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.43,
+      "sample_peak_dbfs": -6.83,
+      "rms_dbfs": -31.07
+    },
+    {
+      "file": "rhythm_00.ogg",
+      "group": "rhythm",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 4.65,
+          "length_seconds": 6
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 4.1,
+          "length_seconds": 6,
+          "gain": 0.18
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.37,
+      "true_peak_dbtp": -2.75,
+      "equalizer": "",
+      "sha256": "49fc579a7ffe84cc4fe87cd85248186a5a645b6a59ce989e6a520270e6f480d2",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.0,
+      "sample_peak_dbfs": -5.43,
+      "rms_dbfs": -25.54
+    },
+    {
+      "file": "rhythm_01.ogg",
+      "group": "rhythm",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 6.25,
+          "length_seconds": 6
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 6.0,
+          "length_seconds": 6,
+          "gain": 0.18
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.51,
+      "true_peak_dbtp": -5.05,
+      "equalizer": "",
+      "sha256": "a0564f439a8395f6a43e8761d0989124fb520c83ecec5bf1317f94432896b289",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.02,
+      "sample_peak_dbfs": -7.36,
+      "rms_dbfs": -24.79
+    },
+    {
+      "file": "rhythm_02.ogg",
+      "group": "rhythm",
+      "sources": [
+        {
+          "file": "applause 2.mp4",
+          "offset_seconds": 22.1,
+          "length_seconds": 6
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 8.0,
+          "length_seconds": 6,
+          "gain": 0.18
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.53,
+      "true_peak_dbtp": -2.73,
+      "equalizer": "",
+      "sha256": "eccd1e92c2c02d25a3b5757ec37f6a8e7fe8028c47b6ad629b5061a0c189fca7",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.03,
+      "sample_peak_dbfs": -6.61,
+      "rms_dbfs": -25.95
+    },
+    {
+      "file": "rhythm_03.ogg",
+      "group": "rhythm",
+      "sources": [
+        {
+          "file": "applause 3.mp4",
+          "offset_seconds": 22.4,
+          "length_seconds": 6
+        },
+        {
+          "file": "drums.mp4",
+          "offset_seconds": 10.0,
+          "length_seconds": 6,
+          "gain": 0.18
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -21,
+      "integrated_lufs": -21.4,
+      "true_peak_dbtp": -3.35,
+      "equalizer": "",
+      "sha256": "a1b97d475791deefa67ad9a2eab52f6ada4cd160c839bcdf1a6fd6bbc315beb5",
+      "duration": 6.2,
+      "active_start": 0.0,
+      "active_end": 6.02,
+      "sample_peak_dbfs": -7.48,
+      "rms_dbfs": -25.57
+    },
+    {
+      "file": "whistle_00.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8070
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.16,
+      "true_peak_dbtp": -20.78,
+      "equalizer": "",
+      "sha256": "053f9bb5d36e8845577cb875f485eb0aae9592698dc7fcb8f39413cd5961fa48",
+      "duration": 0.6171,
+      "active_start": 0.0,
+      "active_end": 0.43,
+      "sample_peak_dbfs": -21.01,
+      "rms_dbfs": -30.81
+    },
+    {
+      "file": "whistle_01.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8071
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.21,
+      "true_peak_dbtp": -21.4,
+      "equalizer": "",
+      "sha256": "fc30406f025fe8497eb3892661804106727221a78c5805d1daf87c93c0c3e0dd",
+      "duration": 0.7706,
+      "active_start": 0.0,
+      "active_end": 0.55,
+      "sample_peak_dbfs": -21.69,
+      "rms_dbfs": -31.32
+    },
+    {
+      "file": "whistle_02.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8072
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.27,
+      "true_peak_dbtp": -21.32,
+      "equalizer": "",
+      "sha256": "b10e2c6140cd993ba6f54e8c628d80e152d33e79eef046132cb575dd674e01db",
+      "duration": 0.8471,
+      "active_start": 0.0,
+      "active_end": 0.65,
+      "sample_peak_dbfs": -21.7,
+      "rms_dbfs": -31.21
+    },
+    {
+      "file": "whistle_03.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8073
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.33,
+      "true_peak_dbtp": -21.72,
+      "equalizer": "",
+      "sha256": "8342b6cede6d1d04cf2185f5f70534d84e7f14fdae4b334c6edaf3b03f4d8862",
+      "duration": 0.9271,
+      "active_start": 0.0,
+      "active_end": 0.73,
+      "sample_peak_dbfs": -22.13,
+      "rms_dbfs": -31.12
+    },
+    {
+      "file": "whistle_04.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8074
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.24,
+      "true_peak_dbtp": -21.28,
+      "equalizer": "",
+      "sha256": "a1f9ae436ee3dd691591776d89ecfab59d79db858cdebb3a88bb1af7687b8d6c",
+      "duration": 0.6771,
+      "active_start": 0.0,
+      "active_end": 0.49,
+      "sample_peak_dbfs": -21.65,
+      "rms_dbfs": -31.45
+    },
+    {
+      "file": "whistle_05.ogg",
+      "group": "whistle",
+      "sources": [
+        {
+          "type": "authored_synthesis",
+          "algorithm": "two breath-modulated partials, beating/air noise",
+          "seed": 8075
+        }
+      ],
+      "tempo": 1,
+      "normalization_target_lufs": -24,
+      "integrated_lufs": -24.41,
+      "true_peak_dbtp": -21.57,
+      "equalizer": "",
+      "sha256": "efaca9b6f3a3572fc816ded493f54cc80565e4580f3b94541557f612ed5c6b27",
+      "duration": 1.0463,
+      "active_start": 0.0,
+      "active_end": 0.84,
+      "sample_peak_dbfs": -21.92,
+      "rms_dbfs": -31.29
+    }
+  ],
+  "count": 54,
+  "groups": {
+    "applause": 8,
+    "crowd": 8,
+    "drums": 6,
+    "horn": 6,
+    "interlude": 4,
+    "rhythm": 4,
+    "sneaker": 12,
+    "whistle": 6
+  }
+}

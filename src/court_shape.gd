@@ -8,6 +8,7 @@ var lane_sides: Dictionary = {}
 var target_corrections := 0
 var setter_yields: Dictionary = {}
 var setter_route_origin:=Vector3.ZERO
+var setter_cue:=""
 var recovery_bypass: Dictionary = {}
 var pin_routes: Dictionary={}
 var pin_team:=-1
@@ -18,6 +19,7 @@ func reset() -> void:
 	bypass.clear()
 	lane_sides.clear()
 	setter_yields.clear()
+	setter_cue=""
 	recovery_bypass.clear()
 	pin_routes.clear()
 	pin_team=-1
@@ -29,15 +31,21 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		reset()
 		return result
 	var floor_bodies := recovering_bodies(game)
+	# The hitter can change while the SAME first pass is airborne. Such a
+	# choice refreshes attack preparation, but cannot cancel the setter's
+	# reserved approach and send a cleared teammate straight back into it.
+	var next_setter_cue: String=game.phase+":"+str(game.shot_serial)+":"+str(actor)+":"+action
+	if next_setter_cue!=setter_cue:
+		setter_cue=next_setter_cue
+		setter_yields.clear()
+		if actor>=0: setter_route_origin=game.players[actor].position
 	var key: String = game.phase+":"+str(game.shot_serial)+":"+str(actor)+":"+action+":"+str(game.planned_hitter if game.phase in ["SET","CPU_SET"] else -1)+":"+str(floor_bodies.keys())
 	var fresh := key != cue
 	if fresh:
 		cue = key
 		bypass.clear()
 		lane_sides.clear()
-		setter_yields.clear()
 		recovery_bypass.clear()
-		if actor>=0: setter_route_origin=game.players[actor].position
 	# After a dig, front-row players must already be leaving their blocking
 	# bases. Sending them to the net until SET caused the late mass retreat.
 	if game.phase in ["RECEIVE","CPU_RECEIVE"]:
@@ -122,10 +130,15 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					var free: Vector3=setter_yields[i]
 					free.x=clampf(free.x,-5.4,5.4)
 					free.z=(1 if game.possession==0 else -1)*clampf(absf(free.z),0.5,9.8)
-					# Yield ends once the real approach is clear. It is not a
-					# replacement destination for the remainder of the pass.
+					# Clearing the current body is insufficient: the ordinary
+					# opening may immediately cross the same reserved approach.
+					# Release only when the next support route also clears it.
+					# Otherwise the player accelerates back into the setter's
+					# endpoint and can require half a second to reverse again.
 					var remaining_nearest:=Geometry3D.get_closest_point_to_segment(start,game.players[actor].position,result[actor])
-					if start.distance_to(remaining_nearest)>=1.30:
+					var next_route:=Geometry3D.get_closest_points_between_segments(start,result[i],game.players[actor].position,result[actor])
+					var route_clear: bool=next_route[0].distance_to(next_route[1])>=1.30
+					if start.distance_to(remaining_nearest)>=1.30 and route_clear:
 						setter_yields.erase(i)
 					else: result[i]=free
 	# Once selected, prepare the actual takeoff lane, not the generic wide
@@ -149,6 +162,8 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		# to the full high-ball opening, then be declared late for the quick.
 		if game.players[hitter].position.distance_to(ready)<1.5 and not setter_yields.has(hitter): result[hitter]=ready
 	route_specialist_pins(game,result,actor,blockers)
+	if actor>=0 and game.phase in ["SET","CPU_SET"]:
+		reserve_next_support_routes(game,result,actor,floor_bodies)
 	var order: Array[int] = []
 	if actor>=0: order.append(actor)
 	for i in blockers:
@@ -243,6 +258,42 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		if i in blockers or floor_bodies.has(i): continue
 		result[i] = route_around_recovery(game,i,result[i],floor_bodies)
 	return result
+
+func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor_bodies: Dictionary) -> void:
+	# Specialist crossings and attack openings are resolved above. Read their
+	# NEXT route now, before a body enters the reserved setting footprint.
+	# Looking only at current positions reacts after the setter's endpoint is
+	# already blocked, particularly when the libero crosses behind the middle.
+	var start: Vector3=game.players[actor].position
+	var goal: Vector3=result[actor]
+	var forward: Vector3=goal-setter_route_origin
+	forward.y=0
+	if forward.length()<0.15: forward=Vector3(0,0,1 if actor<6 else -1)
+	forward=forward.normalized()
+	var normal:=Vector3(forward.z,0,-forward.x)
+	for index in range(int(actor/6)*6,int(actor/6)*6+6):
+		if index==actor or floor_bodies.has(index): continue
+		var decoy=game.get("middle_decoy")
+		if decoy!=null and decoy.holds(index): continue
+		if setter_yields.has(index):
+			result[index]=setter_yields[index]
+			continue
+		var origin: Vector3=game.players[index].position
+		var crossing:=Geometry3D.get_closest_points_between_segments(origin,result[index],start,goal)
+		if crossing[0].distance_to(crossing[1])>=1.30: continue
+		# Distant support movement that would reach the crossing only after the
+		# second touch can finish its ordinary preparation without yielding.
+		var travel_to_crossing: float=origin.distance_to(crossing[0])
+		if travel_to_crossing>maxf(0.25,game.flight_left*4.0): continue
+		var nearest:=Geometry3D.get_closest_point_to_segment(origin,start,goal)
+		var offset: float=(origin-nearest).dot(normal)
+		if absf(offset)<0.08: offset=(result[index]-nearest).dot(normal)
+		if absf(offset)<0.08: offset=-1 if index%2==0 else 1
+		var destination:=nearest+normal*signf(offset)*1.45
+		destination.x=clampf(destination.x,-5.4,5.4)
+		destination.z=(1 if actor<6 else -1)*clampf(absf(destination.z),0.5,9.8)
+		setter_yields[index]=destination
+		result[index]=destination
 
 func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: Array) -> void:
 	if game.possession!=pin_team:

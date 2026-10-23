@@ -23,10 +23,12 @@ var attack_buffer_start:=-1.0
 var attack_buffer_power:=-1.0
 var winner_team:=-1
 var attack_tip:=false
+var overpass_attack_team:=-1
 var receive_offset:=0.0
 var receive_feedback:=""
 var receive_feedback_left:=0.0
 var dynamic_net
+var arena_visuals: Node3D
 var serve_fault_sequence:=0
 var planned_visual_key:=""
 const G := 9.81
@@ -177,6 +179,9 @@ var support_travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 func _ready() -> void:
 	rng.seed = 194260
 	setup_inputs()
+	var audio_controls=preload("res://src/global_audio.gd").new()
+	audio_controls.game=self
+	add_child(audio_controls)
 	for name in preload("res://src/psa_animation_library.gd").CLIPS:
 		if "--fallback-test" in OS.get_cmdline_user_args(): continue
 		var clip = PSA.new()
@@ -303,6 +308,7 @@ func setup_inputs() -> void:
 
 func build_arena() -> void:
 	var arena = Arena.new()
+	arena_visuals=arena
 	add_child(arena)
 	dynamic_net=arena.dynamic_net
 	ball = arena.ball
@@ -541,6 +547,7 @@ func set_phase(value: String) -> void:
 
 func reset_rally() -> void:
 	cpu_defense.reset()
+	overpass_attack_team=-1
 	attack_tip=false
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0; winner_team=-1
 	contact_navigation.reset()
@@ -1039,6 +1046,7 @@ func select_receive_pose(index: int, point: Vector3) -> void:
 	player.select_variant("receive",variant)
 
 func set_ball() -> void:
+	overpass_attack_team=-1
 	attack_tip=false
 	if setter_dump:
 		dump_ball()
@@ -1148,7 +1156,8 @@ func attack_ball() -> void:
 	if phase=="POINT": return
 	players[hitter].prepare_contact(hitter_action, 0)
 	last_touch = attacker
-	var requested_power := charge if attacker == 0 else rng.randf_range(0.55, 0.97)
+	var automatic_overpass:=overpass_attack_team==attacker
+	var requested_power := 1.0 if automatic_overpass else (charge if attacker == 0 else rng.randf_range(0.55, 0.97))
 	var power := clampf(requested_power, 0, 1)
 	if out_of_system<0: power*=0.72
 	var precision := Timing.precision(power)
@@ -1165,6 +1174,13 @@ func attack_ball() -> void:
 		target = choice.target
 		soft = choice.soft
 		power = choice.power
+	if automatic_overpass:
+		# A reachable overpass is a committed first-touch kill. Keep the
+		# authored contact, normal full-power trajectory and physical scoring.
+		soft=false
+		power=1.0
+		attack_tip=false
+		target.z=s*maxf(5.0,absf(target.z))
 	target += Vector3(rng.randf_range(-minf(spread,0.8),minf(spread,0.8)),0,rng.randf_range(-minf(spread,0.65),minf(spread,0.65)))
 	target+=Vector3(rng.randf_range(-0.18,0.18),0,rng.randf_range(-0.22,0.22))
 	target.x=clampf(target.x,-4.25,4.25); target.z=s*clampf(absf(target.z),2.8,8.8)
@@ -1186,6 +1202,8 @@ func attack_ball() -> void:
 	if hitter_action == "receive": seconds = 1.4
 	elif requested_power>1.0: seconds/=requested_power
 	send_to_court(attacker,target,seconds)
+	if automatic_overpass: log_rally_event("overpass_kill",{"hitter":hitter,"power":requested_power,"seconds":seconds})
+	overpass_attack_team=-1
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
 
 func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
@@ -1239,6 +1257,12 @@ func prepare_overpass_attack() -> bool:
 	hitter = best
 	hitter_action = "attack"
 	set_phase("ATTACK" if possession==0 else "CPU_ATTACK")
+	overpass_attack_team=possession
+	attack_tip=false
+	out_of_system=1
+	armed=true
+	input_quality=1.0
+	charge=1.0
 	flight_target = contact.point
 	flight_left = contact.seconds
 	attack_serial += 1
@@ -1307,6 +1331,7 @@ func award(team: int, reason: String) -> void:
 	test_rallies = 0
 	if match_audio:
 		match_audio.contact("cheer", Vector3(0, 2, -15), 0.6)
+	if is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
 
 func _physics_process(dt: float) -> void:
 	if self_test:
@@ -1315,6 +1340,7 @@ func _physics_process(dt: float) -> void:
 		step(dt)
 
 func _process(_dt: float) -> void:
+	if match_audio and match_audio.has_method("update_match_state"): match_audio.update_match_state(started,phase,paused and phase!="POINT")
 	if camera and not self_test: update_camera(_dt)
 	if "--preview" in OS.get_cmdline_user_args() and clock_time > 5.5:
 		get_viewport().get_texture().get_image().save_png("res://docs/preview.png")
@@ -1830,7 +1856,7 @@ func move_players(dt: float) -> void:
 		p.hand_adjust = block_hand if team == 0 and clock_time - block_time < 0.7 else 0
 		traffic_footprints[i] = compute_footprint_points(i)
 		if p.velocity.length() > 1.8 and p.step_cooldown <= 0 and not self_test:
-			if match_audio: match_audio.contact("step", p.position, 0.35)
+			if match_audio: match_audio.movement(p.position, p.velocity.length(), p.velocity.x)
 			p.step_cooldown = 0.32 + float(i % 3) * 0.025
 	middle_decoy.try_jump(self)
 	for team in 2:
