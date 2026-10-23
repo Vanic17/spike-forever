@@ -8,6 +8,8 @@ var client
 var install_button: Button
 var play: Button
 var updates: Button
+var edit: Button
+var clubs
 var back: Button
 var overlay: Control
 var dialog: Panel
@@ -44,7 +46,12 @@ func _ready() -> void:
 	play.focus_neighbor_bottom=play.get_path_to(updates)
 	updates.focus_neighbor_left=updates.get_path_to(play)
 	updates.focus_neighbor_top=updates.get_path_to(play)
-	play.pressed.connect(func(): game.started=true; panel.hide())
+	clubs=preload("res://src/club_menu.gd").new(); clubs.game=game; clubs.host=self; add_child(clubs)
+	edit=hero_button("MODIFICA",false)
+	updates.focus_neighbor_right=updates.get_path_to(edit)
+	edit.focus_neighbor_left=edit.get_path_to(updates)
+	edit.pressed.connect(clubs.editor)
+	play.pressed.connect(clubs.match_setup)
 	updates.pressed.connect(show_updates)
 	version_label=Label.new()
 	var version=JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version
@@ -238,8 +245,11 @@ func layout() -> void:
 	var size:=panel.size
 	var scale:=minf(size.x/1672.0,size.y/941.0)
 	var origin: Vector2=(size-Vector2(1672,941)*scale)*0.5
-	play.position=origin+Vector2(436,786)*scale
-	updates.position=origin+Vector2(850,786)*scale
+	play.position=origin+Vector2(231,786)*scale
+	updates.position=origin+Vector2(641,786)*scale
+	edit.position=origin+Vector2(1051,786)*scale
+	edit.size=Vector2(390,86)*scale
+	edit.add_theme_font_size_override("font_size",maxi(14,int(30*scale)))
 	play.size=Vector2(390,86)*scale
 	updates.size=Vector2(390,86)*scale
 	play.add_theme_font_size_override("font_size",maxi(18,int(48*scale)))
@@ -269,6 +279,10 @@ func _process(_dt: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if client==null: return
+	if not game.started and event.is_action_pressed("start"):
+		if not clubs.visible: clubs.match_setup()
+		get_viewport().set_input_as_handled()
+		return
 	if update_prompt!=null and update_prompt.visible:
 		if event.is_action_pressed("start"): get_viewport().set_input_as_handled()
 		return

@@ -1,7 +1,7 @@
 extends RefCounted
 ## Physical arrival accuracy only. No periodic cursor or repeated perfect windows.
-const SERVE_CHARGE_SECONDS := 0.70
-const ATTACK_CHARGE_SECONDS := 0.75
+const SERVE_CHARGE_SECONDS := 0.62
+const ATTACK_CHARGE_SECONDS := 0.62
 const LATE_RECEIVE_SECONDS := 0.10
 func quality(remaining: float, difficulty: float = 1.0) -> float:
 	var window := 0.52 * difficulty

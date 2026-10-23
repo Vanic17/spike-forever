@@ -34,6 +34,9 @@ func members(game) -> Array[int]:
 	return result
 
 func read(game, direction: Vector2, dt: float) -> void:
+	# Release the previous attack's selection after every jumper has landed.
+	if not jumped.is_empty() and not game.block_commanded:
+		jumped.clear()
 	if jumped.is_empty():
 		left_joined=Input.get_action_strength("block_left")>0.35
 		right_joined=Input.get_action_strength("block_right")>0.35

@@ -19,7 +19,7 @@ static func receive_seconds(quality: float, _emergency: bool = false) -> float:
 static func serve_seconds(power: float, floating: bool) -> float:
 	# Full charge is faster; beyond it the actual horizontal speed continues
 	# to increase in proportion to charge (110% => 1.10 times full speed).
-	var full_seconds:=0.92 if floating else 0.76
+	var full_seconds:=0.86 if floating else 0.70
 	return (full_seconds+(1.0-maxf(power,0))*0.30) if power<=1 else full_seconds/power
 
 static func set_seconds(direction: int, quick: bool, quality: float, _distance: float, emergency: bool) -> float:
@@ -35,7 +35,7 @@ static func attack_seconds(power: float, _angle: float, _back_row: bool, soft: b
 	# well-charged hard hit gets the extra pace, with a continuous onset rather
 	# than a threshold jump. At full power: .480 -> .456 s (+5.3% floor speed).
 	var hard_hit := 0.0 if soft else smoothstep(0.75, 1.0, power)
-	return 0.72 - power * 0.24 - hard_hit * 0.024
+	return (0.72 - power * 0.24 - hard_hit * 0.024) / (1.0 + 0.10 * power)
 
 static func attack_arc(_back_row: bool, _soft: bool) -> float:
 	return 0.0

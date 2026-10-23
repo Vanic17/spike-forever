@@ -102,6 +102,13 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 		1:
 			var setter_x := set_contact.x*side
 			var away := -1.0 if setter_x>=-0.2 else 1.0
+			# Use the middle's existing side of the setter rather than requiring
+			# a late crossover through his contact footprint.
+			var approach_side: float=game.players[attacker].position.x*side-setter_x
+			if absf(approach_side)>0.5: away=signf(approach_side)
+			var lane_key:=str(game.shot_serial)+":"+str(attacker)
+			if not game.court_shape.middle_sides.has(lane_key): game.court_shape.middle_sides[lane_key]=away
+			away=game.court_shape.middle_sides[lane_key]
 			var off_net := clampf(inverse_lerp(0.5,3.0,absf(set_contact.z)),0,1)
 			var spacing := lerpf(float(Tactics.positioning.middle_offset_near),float(Tactics.positioning.middle_offset_far),off_net)
 			width = clampf(setter_x+away*spacing,-3.0,3.0)
@@ -138,12 +145,11 @@ static func opening(game, index: int, team: int) -> Vector3:
 	if front and role.begins_with("MB"):
 		if setting and game.fast_set and game.get("planned_hitter")==index: commit=1.0
 		if game.out_of_system<1: return Tactics.world(team,signf(setter_x)*0.26,1.0)
-		var away := -1.0 if setter_x>=-0.2 else 1.0
-		var off_net := clampf(inverse_lerp(0.5,3.0,absf(setter_point.z)),0,1)
-		var spacing := lerpf(float(p.middle_offset_near),float(p.middle_offset_far),off_net)
 		# Men's first tempo remains beside/in front of the setter. The source
 		# modeGender==1 slide towards the right antenna is deliberately absent.
-		return Tactics.world(team,clampf(setter_x+away*spacing,-3.0,3.0),lerpf(float(p.middle_wait_depth),float(p.middle_commit_depth),commit))
+		var contact=attack_contact(game,1,index,setter_point)
+		contact.z=side*lerpf(float(p.middle_wait_depth),float(p.middle_commit_depth),commit)
+		return contact
 	if front:
 		var wing := Tactics.wing_for(game,index)
 		var width := float(p.wing_quick_width) if game.fast_set and wing<0 else float(p.wing_width)

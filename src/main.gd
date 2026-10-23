@@ -35,6 +35,9 @@ var clock_time := 0.0
 var server := 0
 var possession := 0
 var scores := [0, 0]
+var team_names := ["AURORA","EMBER"]
+var match_best_of:=5
+var match_points:=25
 var sets := [0, 0]
 var rotations := [0, 0]
 var touches := [0, 0]
@@ -347,7 +350,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					show_clip()
 	if event.is_action_pressed("start"):
 		if not started:
-			started = true
+			return
 		else:
 			paused = not paused
 	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y and event.pressed and started:
@@ -448,9 +451,13 @@ func press_action(button: String = "action") -> void:
 		block_time = clock_time
 		block_quality = 1.0
 		if human_wall(): manual_wall.jumped=manual_wall.members(self)
+		var accepted_jump:=false
 		for blocker in blocking_players(0):
 			if can_jump_block(blocker, 0):
-				request_block_jump(blocker, 0.22)
+				accepted_jump=request_block_jump(blocker, 0.22) or accepted_jump
+		if not accepted_jump:
+			block_commanded=false
+			manual_wall.jumped.clear()
 
 func release_action() -> void:
 	if not charging: return
@@ -805,6 +812,11 @@ func receive_ball() -> void:
 	pass_quality = q
 	register_touch(receiver)
 	if phase=="POINT": return
+	if possession==1 and block_time<clock_time-0.6:
+		# A new opposing construction must not inherit an earlier block latch.
+		block_commanded=false
+		manual_wall.jumped.clear()
+		block_jumps.clear()
 	players[receiver].prepare_contact(action,0)
 	if action in ["dive","recovery"]: players[receiver].motion_lock = players[receiver].contact_recovery_remaining()
 	log_rally_event("dig" if incoming_kind=="spike" else "reception",{"quality":q,"receiver":receiver,"incoming":incoming_kind,"recovery":late_receive})
@@ -1057,7 +1069,7 @@ func attack_ball() -> void:
 	target += Vector3(rng.randf_range(-spread, spread), 0, rng.randf_range(-spread, spread))
 	if requested_power > 1.00001:
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
-		fault_flight(target, 0.62)
+		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/requested_power)
 		return
 	incoming_kind = "free" if hitter_action=="receive" else ("soft" if soft else "spike")
 	incoming_power = power
@@ -1069,6 +1081,10 @@ func attack_ball() -> void:
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
 
 func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
+	if attacker==0:
+		manual_wall.reset()
+		block_commanded=false
+		block_jumps.clear()
 	# The net's geometry also checks the resulting ballistic arc, including pipe attacks.
 	possession = 1 - attacker
 	touches[possession] = 0
@@ -1158,11 +1174,12 @@ func award(team: int, reason: String) -> void:
 	server = team
 	point_reason = reason
 	notice("PUNTO " + ("AURORA" if team == 0 else "EMBER"), 2.0)
-	if scores[team] >= 25 and scores[team] - scores[1 - team] >= 2:
+	var target_points:=15 if match_best_of>1 and sets[0]+sets[1]==match_best_of-1 else match_points
+	if scores[team] >= target_points and scores[team] - scores[1 - team] >= 2:
 		sets[team] += 1
 		scores = [0, 0]
 		point_reason = "SET " + ("AURORA" if team == 0 else "EMBER")
-		if sets[team] >= 3:
+		if sets[team] >= int(match_best_of/2)+1:
 			point_reason = "VITTORIA " + ("AURORA" if team == 0 else "EMBER") + " · R PER NUOVA PARTITA"
 			paused = true
 	set_phase("POINT")

@@ -11,6 +11,7 @@ var setter_route_origin:=Vector3.ZERO
 var recovery_bypass: Dictionary = {}
 var pin_routes: Dictionary={}
 var pin_team:=-1
+var middle_sides: Dictionary={}
 
 func reset() -> void:
 	cue = ""
@@ -20,6 +21,7 @@ func reset() -> void:
 	recovery_bypass.clear()
 	pin_routes.clear()
 	pin_team=-1
+	middle_sides.clear()
 
 func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers: Array) -> Array[Vector3]:
 	var result: Array[Vector3] = nominal.duplicate()
@@ -120,7 +122,21 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					var free: Vector3=setter_yields[i]
 					free.x=clampf(free.x,-5.4,5.4)
 					free.z=(1 if game.possession==0 else -1)*clampf(absf(free.z),0.5,9.8)
-					result[i]=free
+					# Yield ends once the real approach is clear. It is not a
+					# replacement destination for the remainder of the pass.
+					var remaining_nearest:=Geometry3D.get_closest_point_to_segment(start,game.players[actor].position,result[actor])
+					if start.distance_to(remaining_nearest)>=1.30:
+						setter_yields.erase(i)
+					else: result[i]=free
+	# Once selected, prepare the actual takeoff lane, not the generic wide
+	# opening. This also avoids opening farther as the set is released.
+	if game.phase in ["SET","CPU_SET"] and game.planned_hitter>=0:
+		var runner: int=game.planned_hitter
+		if not setter_yields.has(runner):
+			var point:=RallyAI.attack_contact(game,game.planned_direction,runner,game.flight_target)
+			point.y=game.contact_height("attack")
+			var stance: Vector3=game.players[runner].stance_for_contact("attack",point)
+			result[runner]=stance+Vector3(0,0,0.65 if game.possession==0 else -0.65)
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
 	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_hitter>=0:
@@ -170,6 +186,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		if i==actor or i in blockers: continue
 		if floor_bodies.has(i): continue
 		if setter_yields.has(i): continue
+		if game.phase in ["SET","CPU_SET"] and i==game.planned_hitter: continue
 		var decoy=game.get("middle_decoy")
 		if decoy!=null and decoy.index==i:
 			# Its first-tempo lane has already been separated from the setter's
@@ -277,9 +294,15 @@ func clear_recovery_route(start: Vector3, destination: Vector3, points: Array, c
 func route_around_recovery(game, index: int, destination: Vector3, bodies: Dictionary) -> Vector3:
 	var start: Vector3=game.players[index].position
 	var team:=int(index/6)
+	# A route belongs to one live body, never to a former recovery obstacle.
+	if recovery_bypass.has(index) and not bodies.has(recovery_bypass[index].body):
+		recovery_bypass.erase(index)
+		bypass.erase(index)
 	for body in bodies:
 		if int(body/6)!=team or body==index: continue
 		var points: Array=bodies[body]
+		if recovery_bypass.has(index) and recovery_bypass[index].body!=body:
+			recovery_bypass.erase(index)
 		if clear_recovery_route(start,destination,points,1.005):
 			if recovery_bypass.has(index) and recovery_bypass[index].body==body:
 				recovery_bypass.erase(index)
@@ -297,14 +320,14 @@ func route_around_recovery(game, index: int, destination: Vector3, bodies: Dicti
 			for point in points: span=maxf(span,absf((point-centre).dot(normal)))
 			# Begin the sidestep before the torso, rather than steering directly
 			# at a waypoint abeam of it and clipping the near shoulder on approach.
-			var waypoint:=centre-forward*0.8+normal*side*(span+1.12)
+			var waypoint:=centre-forward*0.8+normal*side*(span+1.30)
 			waypoint.x=clampf(waypoint.x,-6.3,6.3)
 			waypoint.z=(1.0 if team==0 else -1.0)*clampf(absf(waypoint.z),0.5,10.5)
 			recovery_bypass[index]={"body":body,"waypoint":waypoint,"forward":forward,"normal":normal,"side":side,"span":span,"stage":0}
 		var route: Dictionary=recovery_bypass[index]
 		if start.distance_to(route.waypoint)<0.35 and route.stage==0:
 			route.stage=1
-			route.waypoint=points[0]+route.forward*1.1+route.normal*float(route.side)*(float(route.span)+1.12)
+			route.waypoint=points[0]+route.forward*1.1+route.normal*float(route.side)*(float(route.span)+1.30)
 		bypass[index]=route.waypoint
 		# Round the second corner as soon as the contact corridor becomes
 		# visible. Running all the way to a square corner leaves too much lateral

@@ -32,6 +32,11 @@ var visual_root: Node3D
 var animation_bones: Array[int] = []
 var indicator: MeshInstance3D
 var jersey_number: Label3D
+var roster_identity: Dictionary={}
+var libero_identity: Dictionary={}
+var kit_identity: Dictionary={}
+var libero_kit: Dictionary={}
+var body_parts: Dictionary={}
 var last_pose: Array[Transform3D] = []
 var blend_pose: Array[Transform3D] = []
 var blend_left := 0.0
@@ -163,6 +168,7 @@ func setup_meshes() -> void:
 		m.cull_mode = BaseMaterial3D.CULL_DISABLED
 		if part == "cloth": cloth_material = m
 		node.material_override = m
+		body_parts[part]=node
 		node.extra_cull_margin = 3
 	jersey_number = Label3D.new()
 	jersey_number.text = ["OH1","MB1","OPP","OH2","MB2","S"][number-1]
@@ -175,6 +181,9 @@ func setup_meshes() -> void:
 
 func set_libero(value: bool) -> void:
 	libero_active = value
+	if not roster_identity.is_empty():
+		apply_identity()
+		return
 	if cloth_material:
 		cloth_material.albedo_texture = Assets.texture("T_Char_Cloth_FRA_Base_Away.png" if (team == 0) == value else "T_Char_Cloth_FRA_Base_Home.png")
 	if jersey_number:
@@ -183,6 +192,33 @@ func set_libero(value: bool) -> void:
 
 func role_label() -> String:
 	return "L" if libero_active else ["OH1","MB1","OPP","OH2","MB2","S"][number-1]
+
+func set_roster_identity(player: Dictionary,libero: Dictionary,kit: Dictionary,contrast: Dictionary) -> void:
+	roster_identity=player; libero_identity=libero; kit_identity=kit; libero_kit=contrast
+	apply_identity()
+
+func apply_identity() -> void:
+	var person: Dictionary=libero_identity if libero_active else roster_identity
+	var kit: Dictionary=libero_kit if libero_active else kit_identity
+	var primary=Color(kit.get("primary_hex_approx","#17458A"))
+	if libero_active and primary.is_equal_approx(Color(kit_identity.get("primary_hex_approx","#17458A"))): primary=Color(kit_identity.get("secondary_hex_approx","#F5F5F5"))
+	if cloth_material:
+		cloth_material=cloth_material.duplicate(); cloth_material.albedo_texture=null; cloth_material.albedo_color=primary
+		body_parts.cloth.material_override=cloth_material
+	if jersey_number:
+		jersey_number.text=str(int(person.jersey_number)) if person.get("jersey_number")!=null else "?"
+		jersey_number.modulate=Color.WHITE if primary.get_luminance()<0.45 else Color("14243a")
+	var appearance: Dictionary=person.get("appearance",{})
+	for part in ["body","head","hair"]:
+		if not body_parts.has(part): continue
+		var node=body_parts[part]
+		var material: StandardMaterial3D=node.material_override.duplicate()
+		if part=="hair":
+			node.visible=appearance.get("hair_length")!="pelato"
+			material.albedo_color={"nero":Color("171310"),"marrone":Color("573623"),"biondo":Color("c5a15e")}.get(appearance.get("hair_color"),Color("211b18"))
+			node.scale=Vector3(1,1.18,1.12) if appearance.get("hair_length")=="lunghi" else Vector3.ONE
+		else: material.albedo_color=Color("604331") if appearance.get("skin_tone")=="nero" else Color.WHITE
+		node.material_override=material
 
 func play(action: String, speed: float = 1.0, loop: bool = false) -> void:
 	if not clips.has(action): return
