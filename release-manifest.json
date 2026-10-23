@@ -1,8 +1,8 @@
 {
-    "version":  "0.34.0",
+    "version":  "0.34.1",
     "files":  {
                   "project.godot":  "8240c0a06921c34970fac44f146c8e147a924b6fa91835bd478a6d4ab1cfa1b6",
-                  "version.json":  "8644ea4e05dada39f59ae3500aea627f9179ffa907d790aaaf20dcb0c264f6f7",
+                  "version.json":  "0f6e6047f3b623640abafb1b955a18a20ae5ec845ba5c2480d889406864eb997",
                   "README.md":  "0646ed3fe3127bc810012f27c5141154af6fc9dd28f7142f103c6f42ef2adaf8",
                   "controls.cfg":  "45c89c8cadf15397d045c4fb399ee0fe7dec52c9bc1e23f5f70a405aab4256a6",
                   "Avvia Spike Forever.cmd":  "b03e1cd604f80082f87190f6f19abe02a656e0964921090c2a478b5d74e993ef",
@@ -15,7 +15,7 @@
                   "docs/RELEASE_NOTES_31.md":  "3cdfa3192f6d5b731eb155230cca0910bfa2af3f421322d88357f143c3f910d2",
                   "docs/RELEASE_NOTES_32.md":  "cab87f65d3892309cce1a14ade6c2818a7f6dc6f99d83cc41dfc0e9b4eb34d1f",
                   "docs/RELEASE_NOTES_33.md":  "8b2900f1683bc2fb3f72af545ab3d0d147648c0efc8b31ffd06a508f22f73ec6",
-                  "docs/RELEASE_NOTES_34.md":  "153381d855c025ea8dcdba8f4b677d5674114b7fb45b5f1276dc6b33a2917cb5",
+                  "docs/RELEASE_NOTES_34.md":  "6a50ad9f95282599dfc3c889ccaa0cd48545417ce7d0a3b5f659802884972b85",
                   "docs/ROLES_ROTATIONS_19.md":  "88ad8a4c0f966b16117b04d82949a89b11434e1f8fec1806c4b9ff33b4568bf1",
                   "docs/UPDATES_19.md":  "c7e3fef1084e2c6d585f9e5e3127a6051e1246f18e50ed02f1c9064eac0bdb8d",
                   "docs/REVISION_18.md":  "2dc011417c4451c2b3641bae5609b6d99d5a3143e6373da0895869fbb1276cc0",
@@ -45,7 +45,7 @@
                   "src/court_shape.gd":  "ef1fa14d802e34db9a6688c94a49e1edac827ca6ad9068fc775a37433074dad7",
                   "src/crowd.gd":  "eac43dc12b6082868c5366309765abf84d5131d626dc7d6b4f6fdb75b3ce3664",
                   "src/defensive_lanes.gd":  "86b48f9be71a67f99d0ca7b34b284c6ae16a49ddec7d703d6566056e96ffaf00",
-                  "src/hud.gd":  "5203222c76ca22dc00168f2394619633600ffe123b4cd78baecd36cdd2f7887f",
+                  "src/hud.gd":  "86302ac355dddbdf3d786f066001261a82c9d7bf02ce81991696bd6007f84ed3",
                   "src/Launcher.cs":  "9e4303f825bac94c75b2ab5ce06a66dbed98777ddaf4fe2bf1649a3af6e9f557",
                   "src/league.gd":  "450f47ac4ac2c57a48b7c089c72a42cc1f1854458cc33c72d1b4843b6fc2ab4c",
                   "src/main.gd":  "0d19b4156328a564317f47965c82d570fb7cfd2b7c615163e1f68bd7b3b64f56",
