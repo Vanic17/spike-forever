@@ -254,6 +254,8 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 	var side:=1.0 if team==0 else -1.0
 	for i in range(team*6,team*6+6):
 		if i==actor or i in blockers: continue
+		# Contact priority beats the specialist's opening/crossing assignment.
+		if setter_yields.has(i): continue
 		var wing:=Tactics.wing_for(game,i)
 		if is_zero_approx(wing): continue
 		var start: Vector3=game.players[i].position

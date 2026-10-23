@@ -17,6 +17,8 @@ const MiddleDecoy = preload("res://src/middle_decoy.gd")
 const AnimationVariety = preload("res://src/animation_variety.gd")
 var rotation_context=preload("res://src/rotation_context.gd").new()
 var rally_lanes=preload("res://src/rally_lanes.gd").new()
+var contact_navigation=preload("res://src/contact_navigation.gd").new()
+var next_second_touch_read:=0.0
 var planned_visual_key:=""
 const G := 9.81
 var clips: Dictionary = {}
@@ -500,6 +502,8 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	contact_navigation.reset()
+	next_second_touch_read=0.0
 	rally_lanes.reset(rotations,server)
 	planned_visual_key=""
 	rotation_context.reset()
@@ -861,6 +865,10 @@ func receive_ball() -> void:
 	var actual_action: String="dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
 	var actual_target: Vector3=flight_target
 	actual_target.y=players[setter].contact_local(actual_action).y
+	# Reserve the feet of the selected athlete AND selected performance,
+	# not the generic setter pose used before the recipient was chosen.
+	actual_target=preload("res://src/setter_access.gd").clear_target(self,actual_target,setter,actual_action)
+	flight_left=maxf(flight_left,preload("res://src/setter_access.gd").pass_seconds(self,actual_target,seconds,setter,actual_action))
 	flight_target=actual_target
 	ball_vel=BallFlight.velocity_to(ball_pos,actual_target,flight_left,flight_spin,flight_gravity)
 	players[setter].target=players[setter].stance_for_contact(actual_action,actual_target)
@@ -1235,6 +1243,8 @@ func step(dt: float) -> void:
 	read_controls(dt)
 	if demo:
 		demo_input()
+	if phase in ["SET","CPU_SET"] and (possession==1 or armed):
+		preload("res://src/setter_access.gd").try_low_contact(self)
 	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and flight_left>0.001 and flight_left<0.42 and (possession==1 or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
 		if players[receiver].position.distance_to(stance)>flight_left*Reference.run_speed()+0.12: queue_recovery(true)
@@ -1522,6 +1532,8 @@ func move_players(dt: float) -> void:
 		elif human_wall() and i<6 and Tactics.front(i,rotations[0]) and phase!="CPU_ATTACK": nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	if phase in ["SET","CPU_SET"] and action_actor>=0:
+		team_targets[action_actor]=contact_navigation.route(self,action_actor,nominal[action_actor])
 	if middle_decoy.index>=0 and not middle_decoy.jumped: middle_decoy.target=team_targets[middle_decoy.index]
 	for i in 12:
 		var p = players[i]
@@ -1553,7 +1565,7 @@ func move_players(dt: float) -> void:
 		var preparing_hitter := phase in ["SET", "CPU_SET"] and i == planned_hitter
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
 		var preparing_decoy: bool=i==middle_decoy.index
-		var urgent := i == action_actor or i in blockers or preparing_hitter or preparing_decoy or preparing_setter
+		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
 		if preparing_setter: assignment="approach"
 		if i != action_actor and court_shape.bypass.has(i): assignment = "yield"
@@ -1587,18 +1599,21 @@ func move_players(dt: float) -> void:
 		if i == action_actor and action=="dive": max_speed = 7.2
 		var arrival_speed := movement.length() * 2.5
 		var arrival_distance := movement.length()
-		if i == action_actor and court_shape.recovery_bypass.has(i):
+		if i == action_actor and (court_shape.recovery_bypass.has(i) or phase in ["SET","CPU_SET"]):
 			# The corner is a passing point, not the ball-contact destination.
 			# Pace against the whole remaining route, retaining the same deadline.
 			arrival_distance += p.steering_target.distance_to(p.stance_for_contact(action,flight_target))
 		if urgent: arrival_speed = arrival_distance / maxf(0.055, flight_left - 0.12)
 		if preparing_hitter: arrival_speed = movement.length() * 3.5
+		if court_shape.setter_yields.has(i): arrival_speed=maxf(arrival_speed,movement.length()*4.5)
 		if preparing_decoy: arrival_speed=movement.length()*4.5
 		if human_wall() and i in blockers: arrival_speed=movement.length()*4.5
 		if urgent and action!="dive": arrival_speed = minf(arrival_speed, sqrt(2.0 * 22.0 * arrival_distance) * 0.72)
 		var desired := movement.normalized() * minf(max_speed, arrival_speed)
 		if movement.length() < (0.045 if urgent else p.intent.settle_distance()): desired = Vector3.ZERO
-		desired = avoid_teammates(i, desired, movement, max_speed)
+		# The contact route already clears every body; a second social-force
+		# sidestep would steer it back into the very obstacles it avoided.
+		if i!=action_actor or phase not in ["SET","CPU_SET"]: desired = avoid_teammates(i, desired, movement, max_speed)
 		# Mild separation prevents two athletes occupying the same contact space.
 		if i != action_actor:
 			for j in range(team * 6, team * 6 + 6):

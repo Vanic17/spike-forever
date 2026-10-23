@@ -48,6 +48,9 @@ foreach($report in @('v24-expanded-animations.json','strong-spikes-report.json',
 }
 Copy-Item -LiteralPath (Join-Path $root 'docs/original-animation-hashes.json') -Destination (Join-Path $stage 'docs')
 $fixtures=Join-Path $stage 'docs/reference-killer-aces'
+foreach($report in @('contact-traffic28-report.json','recovery-traffic-report.json','contact28-preview-0-contact.png','contact28-preview-1-contact.png')){
+ if(Test-Path (Join-Path $root ('docs/'+$report))){Copy-Item (Join-Path $root ('docs/'+$report)) (Join-Path $stage 'docs')}
+}
 New-Item -ItemType Directory -Force $fixtures | Out-Null
 foreach($name in @('reference-profile.json','manager-settings.json')){Copy-Item -LiteralPath (Join-Path $root ('docs/reference-killer-aces/'+$name)) -Destination $fixtures}
 [IO.File]::WriteAllText((Join-Path $stage '.gitignore'), ".godot/`n.runtime/`n.updates/`ndist/`nupdate-result.json`ntools/godot/`ntools/git/`ntools/github/`ndocs/*-test.log`n")

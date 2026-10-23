@@ -47,13 +47,13 @@ func run() -> void:
 				game.ball_pos=game.Tactics.world(team,1.5,1.9)+Vector3.UP*1.3
 				var ordinary: float=game.Reference.receive_seconds(game.pass_quality)
 				var seconds: float=load("res://src/setter_access.gd").pass_seconds(game,point,ordinary)
-				assert(seconds<=ordinary+0.301)
+				assert(seconds<=ordinary+0.851,"A planned first pass may budget a bounded physical detour before launch")
 				game.launch(point,seconds)
 				game.plan_attack(0,false)
 				game.armed=true
 				var before: int=game.test_contacts
 				var trace: Array=[]
-				for frame in fps*2:
+				for frame in ceili((seconds+0.8)*fps):
 					if game.phase not in ["SET","CPU_SET"]: break
 					game.step(1.0/fps)
 					if frame%(fps/10)==0: trace.append([setter.position,setter.target,setter.velocity,passer.position])
@@ -78,7 +78,7 @@ func run() -> void:
 		game.launch(target,seconds)
 		game.armed=true
 		var before: int=game.test_contacts
-		for frame in 240:
+		for frame in ceili((seconds+0.8)*120):
 			if game.phase not in ["SET","CPU_SET"]: break
 			game.step(1.0/120)
 		assert(game.test_contacts==before+1,"The cleared pass must produce a real set, without displacing the recovering body")

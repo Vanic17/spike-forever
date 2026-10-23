@@ -1,5 +1,9 @@
 # Spike Forever
 
+**Versione 0.28.0:** percorsi del secondo tocco calcolati sugli ingombri reali di tutti i compagni, previsione dei tuffi, precedenza al palleggiatore e bagher di emergenza sulla stessa traiettoria quando il palleggio alto non è più raggiungibile. [Cause, correzioni e verifiche](docs/REVISION_28.md).
+
+**Versioni 0.27.0–0.27.1:** database SuperLega v1.5, editor locale e formazioni iniziali, schede con radar delle abilità, scelta squadra/divisa/formato partita e musica nei menu. Navigazione controller e impostazioni partita sempre visibili. [Salvataggi locali](docs/CLUBS_LOCAL.md).
+
 **Versione 0.26.1:** esclusa una variante di camminata che faceva piegare i giocatori fino a terra; verificati i cicli di attesa e movimento. [Correzione e test](docs/REVISION_26_1.md).
 
 **Versione 0.26.0:** ricezione R2/R5 con libero sulla corsia centrale, copertura verificata in tutte le sei rotazioni e 79 animazioni aggiuntive, 127 totali. [Dettagli e verifiche](docs/REVISION_26.md).

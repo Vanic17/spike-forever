@@ -37,6 +37,7 @@ var libero_identity: Dictionary={}
 var kit_identity: Dictionary={}
 var libero_kit: Dictionary={}
 var body_parts: Dictionary={}
+var yield_turn:=0.0
 var last_pose: Array[Transform3D] = []
 var blend_pose: Array[Transform3D] = []
 var blend_left := 0.0
@@ -568,6 +569,14 @@ func apply_pose(_dt: float) -> void:
 			var steps := travel_pose()
 			normalized = layer_legs(normalized, steps, leg_weight, clip.parents, clip.names)
 	if _dt > 0:
+		# A short shoulder turn accompanies a teammate's clearing sidestep.
+		# Keep the source support feet and all contact poses authoritative.
+		var local_travel: Vector3=global_basis.inverse()*velocity
+		var turn_goal:=clampf(local_travel.x*0.10,-0.28,0.28) if intent.task=="yield" and looping else 0.0
+		yield_turn=lerpf(yield_turn,turn_goal,1.0-exp(-_dt*10.0))
+		if looping and absf(yield_turn)>0.001:
+			var chest: int=clip.names.find("Spine1")
+			if chest>=0: rotate_subtree(normalized,chest,Basis(Vector3.UP,yield_turn),clip.parents)
 		if looping:
 			var hip: int = clip.names.find("Hips")
 			if hip >= 0: rotate_subtree(normalized, hip, Basis(Vector3.FORWARD, body_lean.x) * Basis(Vector3.RIGHT, body_lean.y), clip.parents)
