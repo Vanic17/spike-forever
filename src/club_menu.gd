@@ -12,6 +12,7 @@ var music:=AudioStreamPlayer.new()
 var last_track:=-1
 var music_queue: Array=[]
 var match_rosters: Array=[[],[]]
+var match_rotations: Array=[0,0]
 var formation_dialog: ConfirmationDialog
 var formation_return: Control
 var message: Label
@@ -246,6 +247,7 @@ func save_player() -> void:
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])
 func match_setup() -> void:
 	match_rosters=[[],[]]
+	match_rotations=[0,0]
 	lineup_open=false
 	clear("GIOCA  /  PREPARA LA PARTITA")
 	var scroll=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; body.add_child(scroll)
@@ -281,7 +283,7 @@ func match_setup() -> void:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
 			var squad: Array=match_rosters[side] if not match_rosters[side].is_empty() else db.lineup(t)
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],t.uniform_colors["home" if kits[side].selected==0 else "away"],t.uniform_colors.libero)
-		game.scores=[0,0]; game.sets=[0,0]; game.rotations=[0,0]; game.server=0; game.paused=false; game.reset_rally(); game.started=true; hide(); music.stop())
+		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.reset_rally(); game.started=true; hide(); music.stop())
 
 func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:
 	formation_return=return_to
@@ -290,6 +292,8 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 	var column=VBoxContainer.new(); column.add_theme_constant_override("separation",16); formation_dialog.add_child(column)
 	label(column,"RETE — prima linea · seleziona una casella per scegliere un sostituto dello stesso ruolo")
 	label(column,"Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita")
+	label(column,"ROTAZIONE INIZIALE")
+	var rotation_pick=picker(column,["R1","R2","R3","R4","R5","R6"]); rotation_pick.select(match_rotations[side])
 	var court=PanelContainer.new(); column.add_child(court)
 	var surface=StyleBoxFlat.new(); surface.bg_color=Color("174451"); surface.border_color=Color("d5e7e7"); surface.set_border_width_all(2)
 	for edge in ["left","right","top","bottom"]: surface.set("content_margin_"+edge,12)
@@ -298,12 +302,13 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 	var squad: Array=match_rosters[side].duplicate() if not match_rosters[side].is_empty() else db.lineup(team)
 	if squad.size()!=7: label(column,"Roster incompleto: completa i ruoli nel menu Modifica."); formation_dialog.popup_centered(); return
 	var controls: Dictionary={}; var options: Dictionary={}
+	var zone_labels: Dictionary={}
 	var slots=[2,1,0,3,4,5,6]
 	var abbreviations=["OH1","MB1","OPP","OH2","MB2","S","L"]
 	for slot in slots:
 		var index: int=slot
 		var cell=VBoxContainer.new(); cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL; grid.add_child(cell)
-		label(cell,abbreviations[index]+(" · LIBERO" if index==6 else " · ZONA "+str([2,3,4,5,6,1][index])))
+		var zone_label=Label.new(); cell.add_child(zone_label); zone_labels[index]=zone_label
 		var candidates: Array=team.roster.filter(func(player): return player.role==(db.ROLES+["libero"])[index]); options[index]=candidates
 		var labels: Array=candidates.map(func(player): return "%s · %s · %s · GEN %d"%[str(int(player.jersey_number)) if player.get("jersey_number")!=null else "?",abbreviations[index],player.name,int(player.ratings.get("generale",0))])
 		var pick=picker(cell,labels); pick.add_theme_font_size_override("font_size",13); pick.fit_to_longest_item=false; pick.clip_text=true; pick.custom_minimum_size=Vector2(320,48); controls[index]=pick
@@ -317,9 +322,29 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 				for j in options[other].size():
 					if options[other][j].id==old.id: controls[other].select(j)
 			squad[index]=chosen)
-	label(column,"A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: annulla · R3: brano successivo")
-	formation_dialog.confirmed.connect(func(): match_rosters[side]=squad.duplicate(); formation_return.grab_focus())
+	var refresh_rotation=func(_value):
+		var ordered: Array=[]
+		for zone_slot in [0,1,2,5,4,3]:
+			for index in 6:
+				if game.Tactics.slot(index,rotation_pick.selected)==zone_slot: ordered.append(index)
+		ordered.append(6)
+		for order in ordered.size():
+			var index: int=ordered[order]; grid.move_child(controls[index].get_parent(),order)
+			zone_labels[index].text=abbreviations[index]+(" · LIBERO" if index==6 else " · ZONA "+str(game.Tactics.Rotation.ZONES[game.Tactics.slot(index,rotation_pick.selected)]))
+		for order in ordered.size():
+			var control: Control=controls[ordered[order]]
+			var above: Control=rotation_pick if order<3 else controls[ordered[order-3]]
+			var below: Control=controls[ordered[order+3]] if order+3<ordered.size() else formation_dialog.get_ok_button()
+			control.focus_neighbor_top=control.get_path_to(above); control.focus_neighbor_bottom=control.get_path_to(below)
+			control.focus_next=control.get_path_to(controls[ordered[order+1]] if order+1<ordered.size() else formation_dialog.get_ok_button())
+		rotation_pick.focus_neighbor_bottom=rotation_pick.get_path_to(controls[ordered[0]])
+		var ok=formation_dialog.get_ok_button(); var cancel=formation_dialog.get_cancel_button()
+		ok.focus_neighbor_top=ok.get_path_to(controls[6]); ok.focus_neighbor_right=ok.get_path_to(cancel)
+		cancel.focus_neighbor_top=cancel.get_path_to(controls[6]); cancel.focus_neighbor_left=cancel.get_path_to(ok)
+	rotation_pick.item_selected.connect(refresh_rotation); refresh_rotation.call(0)
+	label(column,"A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: annulla")
+	formation_dialog.confirmed.connect(func(): match_rosters[side]=squad.duplicate(); match_rotations[side]=rotation_pick.selected; formation_return.grab_focus())
 	formation_dialog.canceled.connect(func(): formation_return.grab_focus())
 	formation_dialog.window_input.connect(func(event):
 		if event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_RIGHT_STICK: next_track())
-	formation_dialog.popup_centered(Vector2i(1100,540)); controls[2].grab_focus()
+	formation_dialog.popup_centered(Vector2i(1100,620)); rotation_pick.grab_focus()

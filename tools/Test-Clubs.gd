@@ -34,7 +34,25 @@ func run() -> void:
 	clubs.show_match_formation(0,clubs.db.teams[0],menu.play)
 	await process_frame
 	var options=clubs.formation_dialog.find_children("*","OptionButton",true,false)
-	assert(options.size()==7)
+	assert(options.size()==8)
+	var rotation_pick=options.pop_front()
+	for rotation in 6:
+		rotation_pick.select(rotation); rotation_pick.item_selected.emit(rotation)
+		for pick in options:
+			assert(not pick.focus_neighbor_bottom.is_empty())
+		var cursor: Control=rotation_pick
+		for step in 5:
+			if cursor==clubs.formation_dialog.get_ok_button(): break
+			cursor=cursor.get_node(cursor.focus_neighbor_bottom)
+		assert(cursor==clubs.formation_dialog.get_ok_button(),"Every rotation must have a downward path to Confirm")
+	rotation_pick.select(3); rotation_pick.item_selected.emit(3)
+	clubs.formation_dialog.confirmed.emit()
+	assert(clubs.match_rotations[0]==3)
+	options[-1].grab_focus()
+	var down=InputEventJoypadButton.new(); down.button_index=JOY_BUTTON_DPAD_DOWN; down.pressed=true
+	clubs.formation_dialog.push_input(down)
+	await process_frame
+	assert(clubs.formation_dialog.gui_get_focus_owner()==clubs.formation_dialog.get_ok_button(),"Controller down from libero must actually focus Confirm")
 	var original: String=clubs.db.lineup(clubs.db.teams[0])[2].id
 	if options[0].item_count>1:
 		var next: int=(options[0].selected+1)%options[0].item_count
@@ -52,6 +70,7 @@ func run() -> void:
 	var start=clubs.body.get_child(clubs.body.get_child_count()-1); start.pressed.emit()
 	await process_frame
 	assert(game.started and not clubs.visible and not clubs.music.playing)
+	assert(game.rotations==[3,0],"Confirmed initial rotation must be applied to the match")
 	assert(not game.players[0].roster_identity.is_empty())
 	if not clubs.match_rosters[0].is_empty(): assert(game.players[2].roster_identity.id==clubs.match_rosters[0][2].id)
 	for p in game.players:
