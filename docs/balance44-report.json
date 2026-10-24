@@ -1,0 +1,16 @@
+{
+  "alternating_block_counts": [
+    0,
+    2
+  ],
+  "cpu_hard_power_min": 0.820001602172852,
+  "cpu_overpasses": 54,
+  "ordinary_power_range": [
+    0.82,
+    0.965
+  ],
+  "pressure": 0.9,
+  "samples": 2000,
+  "seed": 44001,
+  "soft_choices": 26
+}

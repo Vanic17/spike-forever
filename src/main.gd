@@ -923,7 +923,7 @@ func receive_ball() -> void:
 		players[setter].select_variant("receive",action)
 		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
 		set_ball(); return
-	if possession==0 and receive_offset>0.90:
+	if possession==0 and receive_offset>0.90 and rng.randf()<0.30:
 		pass_quality=q; register_touch(receiver)
 		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,-rng.randf_range(1.0,4.0))
 		incoming_kind="overpass"; incoming_power=0.18
@@ -952,7 +952,7 @@ func receive_ball() -> void:
 		return
 	if q<0.38 and touches[possession]==1 and incoming_kind=="spike" and rng.randf()<0.25:
 		preload("res://src/scramble_recovery.gd").start(self,receiver); return
-	if q < 0.50 and incoming_power > 0.68 and incoming_kind in ["serve","spike"] and rng.randf() < (0.50-q)*incoming_power*0.75:
+	if q < 0.50 and incoming_power > 0.68 and incoming_kind in ["serve","spike"] and rng.randf() < (0.50-q)*incoming_power*0.22:
 		var attacker := possession
 		incoming_kind = "overpass"
 		incoming_power = 0.18
@@ -1077,6 +1077,11 @@ func plan_attack(direction: int, quick: bool) -> void:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
+			if not Tactics.front(planned_hitter,rotations[possession]) and pass_quality>=0.66:
+				# Back-row D/pipe use a forward L-R-L source. The outside-pin
+				# clips contain a large lateral reach which put an opposite's
+				# feet beyond the sideline before his hands reached the set.
+				variant="attack_line"
 			variant = preload("res://src/motion_prototypes.gd").attack_variant(variant,planned_direction,pass_quality)
 			players[planned_hitter].select_variant("attack",variant)
 		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
@@ -1139,7 +1144,7 @@ func set_ball() -> void:
 		if not self_test: notice("ALTA DI SICUREZZA", 0.8)
 	block_count = Timing.blockers(false, fast_set, q, destination == 3)
 	if possession == 0:
-		var cpu_correct := rng.randf() < 0.52
+		var cpu_correct := rng.randf() < 0.65
 		block_count = Timing.blockers(cpu_correct, fast_set, q, destination == 3)
 	var early_wall := possession==1 and block_commanded and phase=="CPU_SET"
 	if not early_wall:
@@ -1198,9 +1203,10 @@ func attack_ball() -> void:
 	register_touch(hitter)
 	if phase=="POINT": return
 	players[hitter].prepare_contact(hitter_action, 0)
+	attack_run.finish(self,hitter)
 	last_touch = attacker
 	var automatic_overpass:=overpass_attack_team==attacker
-	var requested_power := 1.0 if automatic_overpass else (charge if attacker == 0 else rng.randf_range(0.55, 0.97))
+	var requested_power := 1.0 if automatic_overpass else (charge if attacker == 0 else RallyAI.cpu_attack_power(self))
 	var power := clampf(requested_power, 0, 1)
 	if out_of_system<0: power*=0.72
 	var precision := Timing.precision(power)
@@ -1464,6 +1470,8 @@ func step(dt: float) -> void:
 		ball_pos = state[0]
 		ball_vel = state[1]
 		flight_left -= dt
+		if phase in ["RECEIVE","CPU_RECEIVE"] and not block_checked and test_rallies>1 and incoming_kind in ["spike","soft","dump"] and minf(absf(old.z),absf(ball_pos.z))<1.35:
+			try_block(old,dt)
 		if old.z * ball_pos.z < 0:
 			var fraction := absf(old.z) / maxf(absf(old.z - ball_pos.z), 0.001)
 			var net_y := lerpf(old.y, ball_pos.y, fraction)
@@ -1482,8 +1490,6 @@ func step(dt: float) -> void:
 					marker.visible = false
 				else: resume_deflection("net")
 				if match_audio: match_audio.contact("block", ball_pos, 0.35)
-			elif not block_checked and test_rallies > 1:
-				try_block()
 		if phase != "POINT" and ball_pos.y <= 0.105:
 			var inside := absf(ball_pos.x) <= 4.605 and absf(ball_pos.z) <= 9.105
 			var floor_team := 0 if ball_pos.z > 0 else 1
@@ -1522,32 +1528,43 @@ func step_dead_ball(dt: float) -> void:
 		ball_vel.z *= exp(-0.06 * h)
 		flight_spin *= exp(-0.20 * h)
 
-func try_block() -> void:
-	block_checked = true
+func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 	var defender := 1 - last_touch
 	var good_jump := clock_time - block_time > 0.08 and clock_time - block_time < 0.85
+	if not good_jump: return
+	if not is_finite(previous.x): previous=ball_pos
 	var near := false
 	var strength := 0.0
 	var contact_side:=0.0
+	var contact_point:=ball_pos
 	for i in blocking_players(defender):
 		var player = players[i]
 		if player.clip_name != "block": continue
 		player.apply_pose(0)
 		var left: Vector3 = player.current_hand(true)
 		var right: Vector3 = player.current_hand(false)
-		var nearest_point := Geometry3D.get_closest_point_to_segment(ball_pos, left, right)
-		var gap := nearest_point.distance_to(ball_pos)
+		var pair:=Geometry3D.get_closest_points_between_segments(previous,ball_pos,left,right)
+		var nearest_point: Vector3=pair[1]
+		var hit: Vector3=pair[0]
+		var gap := nearest_point.distance_to(hit)
 		for arm in ["Left","Right"]:
 			var hand: Vector3 = player.current_joint(arm+"Hand")
 			var elbow: Vector3 = player.current_joint(arm+"ForeArm")
-			var forearm := Geometry3D.get_closest_point_to_segment(ball_pos,hand,elbow)
-			if forearm.y>2.53: gap = minf(gap,forearm.distance_to(ball_pos))
+			var arm_pair:=Geometry3D.get_closest_points_between_segments(previous,ball_pos,hand,elbow)
+			if arm_pair[1].y>2.53 and arm_pair[0].distance_to(arm_pair[1])<gap:
+				gap=arm_pair[0].distance_to(arm_pair[1]); hit=arm_pair[0]
 		if "--trace-block" in OS.get_cmdline_user_args(): print("BLOCK a=",attack_serial," dt=",clock_time-block_time," ball=",ball_pos," player=",i," root=",player.position," left=",left," right=",right," elbow=",player.current_joint("RightForeArm")," gap=",gap)
 		if gap < 0.20:
 			near = true
-			if strength<clampf(1.0-gap/0.24,0.18,1.0): contact_side=clampf((ball_pos.x-nearest_point.x)*5.0,-0.65,0.65)
+			if strength<clampf(1.0-gap/0.24,0.18,1.0):
+				var span: Vector3=right-left
+				contact_side=clampf((hit.x-(left.x+right.x)*0.5)/maxf(0.15,absf(span.x)*0.5),-1.25,1.25)
+				contact_point=hit
 			strength = maxf(strength,clampf(1.0-gap/0.24,0.18,1.0))
 	if good_jump and near:
+		block_checked=true
+		var tail: float=seconds*(1.0-clampf(previous.distance_to(contact_point)/maxf(0.00001,previous.distance_to(ball_pos)),0,1))
+		ball_pos=contact_point
 		if winner_team>=0:
 			var side:=1.0 if defender==0 else -1.0
 			var landing:=Vector3(clampf(ball_pos.x,-3.9,3.9),0.105,side*2.0)
@@ -1555,20 +1572,26 @@ func try_block() -> void:
 			last_touch=defender; phase="LOOSE"; flight_left=100
 			log_rally_event("winning_shot_block_break",{"defender":defender})
 			if match_audio: match_audio.contact("block",ball_pos,0.9)
+			advance_block_tail(tail)
 			return
 		if true:
-			var normal := Vector3(contact_side+(block_hand*0.22 if defender==0 else 0.0),lerpf(0.03,0.22,1.0-strength),-1.0 if defender == 0 else 1.0).normalized()
+			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22)
 			var incoming := ball_vel
-			var closing := ball_vel.dot(normal)
-			if closing < 0: ball_vel -= normal * closing * (0.45 + strength * (0.75 + block_quality * 0.20))
-			ball_vel *= 0.82
-			ball_vel.y += (1-strength)*1.8
-			flight_spin = flight_spin * 0.45 + normal.cross(incoming) * 0.35
+			ball_vel=response.velocity
+			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
-			resume_deflection("block" if strength>0.55 else "tip")
-			log_rally_event("stuff_block" if strength>0.55 else "block_touch",{"strength":strength,"blocking_team":defender})
-			notice("MURO! · TOCCO A RETE", 1.0)
+			resume_deflection("block")
+			log_rally_event(response.kind,{"strength":strength,"seal":response.seal,"edge":contact_side,"blocking_team":defender})
+			notice("MONSTER BLOCK" if response.kind=="stuff_block" else ("TOCCO DI MANI" if response.kind=="block_tool" else "MURO · PALLA GIOCABILE"), 1.0)
 			if match_audio: match_audio.contact("block", ball_pos, 0.85)
+			advance_block_tail(tail)
+
+func advance_block_tail(seconds: float) -> void:
+	if seconds<=0: return
+	var state:=BallFlight.advance(ball_pos,ball_vel,flight_spin,seconds,flight_gravity)
+	ball_pos=state[0]; ball_vel=state[1]
+	flight_left-=seconds
+	if phase=="RECEIVE": receive_deadline-=seconds
 
 func resume_deflection(kind: String) -> void:
 	# Continue from current position and velocity; both a stuffed block and a
@@ -1715,6 +1738,7 @@ func move_players(dt: float) -> void:
 	for i in 12:
 		var team := int(i/6)
 		if i==action_actor: nominal.append(players[i].stance_for_contact(action,flight_target))
+		elif attack_run.landing(i,clock_time): nominal.append(attack_run.landings[i].target)
 		elif i==middle_decoy.index: nominal.append(middle_decoy.target)
 		elif i in blockers: nominal.append(blocking_target(i,team))
 		elif phase=="SERVE":
@@ -1783,11 +1807,13 @@ func move_players(dt: float) -> void:
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
 		var preparing_middle: bool=preparing_front and Tactics.role(i,rotations[team],team==server).begins_with("MB")
 		var preparing_decoy: bool=i==middle_decoy.index
-		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
+		var landing_active: bool=i!=action_actor and not i in blockers and attack_run.landing(i,clock_time)
+		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or landing_active or court_shape.setter_yields.has(i)
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
 		if preparing_setter: assignment="approach"
 		if preparing_front: assignment="approach"
+		if landing_active: assignment="approach"
 		if i != action_actor and court_shape.bypass.has(i): assignment = "yield"
 		if i != action_actor and court_shape.setter_yields.has(i): assignment = "yield"
 		if preparing_decoy: assignment="approach"
@@ -1832,6 +1858,7 @@ func move_players(dt: float) -> void:
 			arrival_speed=arrival_distance/maxf(0.055,flight_left-0.12)
 		if preparing_hitter: arrival_speed = movement.length() * 3.5
 		if preparing_front: arrival_speed=movement.length()*3.5
+		if landing_active: arrival_speed=movement.length()*3.5
 		if preparing_middle: arrival_speed=movement.length()*4.1
 		if preparing_setter:
 			# Do not accelerate penetration through the middle's first-tempo
@@ -1918,6 +1945,7 @@ func move_players(dt: float) -> void:
 			var running_weight := smoothstep(2.25,3.6,p.velocity.length())*smoothstep(0.55,1.45,movement.length())
 			facing = lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),running_weight)
 			if clock_time < p.intent.react_at: facing = p.rotation.y
+		if attack_run.landing(i,clock_time) and i!=action_actor: facing=PI if team==0 else 0.0
 		var turn := wrapf(facing - p.rotation.y, -PI, PI)
 		var turn_speed: float = (15.0 if action=="dive" else 7.0) if urgent else 3.1 + p.intent.individuality * 0.8
 		p.rotation.y += clampf(turn * (8.0 if urgent else 5.0 + p.intent.individuality * 2.0), -turn_speed, turn_speed) * dt
@@ -1930,6 +1958,18 @@ func move_players(dt: float) -> void:
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers
 		p.post_point=phase=="POINT"
 		p.locomotion(p.velocity.length(), dt)
+		if preparing_hitter and planned_direction==1 and pass_quality>=0.70 and out_of_system==1:
+			# Show the first-tempo approach while the setter is still waiting
+			# for the pass, using the existing contact clock and source L-R-L.
+			var first_point: Vector3=RallyAI.attack_contact(self,1,i,flight_target)
+			first_point.y=p.contact_local("attack").y
+			var first_stance: Vector3=p.stance_for_contact("attack",first_point)
+			var gap: float=p.position.distance_to(first_stance)
+			var first_arrival:=maxf(gap/5.4+0.26,preload("res://src/approach_planner.gd").seconds(p,first_stance,Reference.run_speed()*1.10))
+			if planned_fast and gap<0.65: first_arrival=maxf(0.30,first_arrival-0.30)
+			var first_flight:=maxf(Reference.set_seconds(1,planned_fast,pass_quality,flight_target.distance_to(first_point),false),first_arrival)
+			var first_remaining:=flight_left+first_flight
+			if first_remaining<p.preparation_lead("attack",1.12): p.prepare_contact("attack",first_remaining)
 		if block_pose_locked(i):
 			p.reach_action = "block"
 			p.reach_target = Vector3(p.contact_world("block").x,3.08,side*0.035)

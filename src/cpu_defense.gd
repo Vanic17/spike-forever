@@ -14,7 +14,7 @@ func prepare(game) -> void:
 	if pressure>0.88 and roll<0.035:
 		frozen=true; outcome="hesitation"
 	elif roll<0.045+pressure*0.08: outcome="shank"
-	elif roll<0.09+pressure*0.10: outcome="overpass"
+	elif roll<0.063+pressure*0.088: outcome="overpass"
 	elif roll<0.19+pressure*0.10: outcome="loose"
 	elif roll<0.29+pressure*0.10: outcome="stretched"
 	elif pressure>0.8 and roll>0.93: outcome="reflex"

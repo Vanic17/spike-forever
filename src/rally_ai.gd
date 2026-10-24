@@ -29,9 +29,13 @@ static func system_quality(point: Vector3, setter_is_specialist: bool) -> int:
 static func attack_choice(game, team: int, power: float) -> Dictionary:
 	var best := -INF
 	var result: Dictionary = {}
+	# Select a tactical soft shot once, not three soft candidates competing
+	# against five hard ones on every otherwise clean construction.
+	var soft_chance:=0.24 if game.out_of_system<0 else (0.10 if game.block_count>0 else 0.04)
+	var tactical_soft: bool=game.rng.randf()<soft_chance
 	for sector in 8:
 		var direction := Vector2.from_angle(float(sector)*PI/4)
-		var soft := sector % 3 == 0 and absf(game.ball_pos.z) < 3.5
+		var soft := tactical_soft and sector % 3 == 0 and absf(game.ball_pos.z) < 3.5
 		var x := signf(direction.x)*3.75 if absf(direction.x)>0.3 else 0.0
 		var depth := 2.1 if soft else (7.5 if direction.y < -0.3 else 5.4)
 		var point := Tactics.world(1-team,x,depth)
@@ -52,6 +56,12 @@ static func attack_choice(game, team: int, power: float) -> Dictionary:
 			result = {"target":point,"soft":soft,"sector":sector,"power":minf(power,0.35) if soft else power}
 	game.last_shots[team] = result.sector
 	return result
+
+static func cpu_attack_power(game) -> float:
+	if game.out_of_system<0: return game.rng.randf_range(0.55,0.82)
+	if game.set_quality<0.55: return game.rng.randf_range(0.72,0.92)
+	# Keep ordinary CPU swings below the guaranteed-winning gold band.
+	return game.rng.randf_range(0.82,0.965)
 
 static func target(game, index: int, team: int) -> Vector3:
 	var own: bool = team == game.possession

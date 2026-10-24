@@ -53,11 +53,11 @@ func update(game) -> void:
 		var player_x: float=game.players[index].position.x*(1 if team==0 else -1)
 		# An already positioned middle uses the final two steps. Retreating to
 		# replay the entire source run-up made the fake late and looked confused.
-		source_begin=maxf(0,clip.takeoff_time-0.05) if game.players[index].position.distance_to(apex)<1.65 and player_x<setter_x-0.55 else 0.0
+		source_begin=maxf(0,clip.takeoff_time-0.22) if game.players[index].position.distance_to(apex)<1.85 and player_x<setter_x-0.55 else 0.0
 		var offset: Vector3=direction*(Vector3(clip.contact_offset.x,0,clip.contact_offset.z)+clip.root_motion(clip.contact_time)-clip.root_motion(source_begin))
 		target=Vector3(point.x-offset.x,0,point.z-offset.z)
 	var preparation: float=(game.clips.attack_decoy.contact_time-source_begin)/1.15 if game.clips.has("attack_decoy") else 0.45
-	jump_at=game.clock_time+game.flight_left+0.08-preparation
+	jump_at=game.clock_time+game.flight_left+0.02-preparation
 
 func holds(player: int) -> bool:
 	return index==player and jumped
@@ -71,7 +71,8 @@ func try_jump(game) -> void:
 		index=-1
 		return
 	if game.planned_hitter==index: index=-1; return
-	if game.phase=="SET" and not game.armed and not game.demo: return
+	# The first-tempo threat is read from the pass, not from the user's
+	# eventual confirmation of the set. A feint cannot touch the ball.
 	var player=game.players[index]
 	if player.position.distance_to(target)>0.30: return
 	if player.clip_name=="block" and player.clips.has("block") and not player.looping and player.animation_time<player.clips.block.recovery_end: return

@@ -162,6 +162,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				# Keep the high-ball runway open until the set is released.
 				# Closing to 22cm before release erased the entire visible run-up.
 				result[runner]=preload("res://src/attack_run.gd").opening(game,runner,stance)
+			elif game.planned_direction in [2,3] and not Tactics.front(runner,game.rotations[game.possession]):
+				# D and pipe need a runway too. Closing to 22cm before release
+				# made a back-row swing look like a standing high jump.
+				result[runner]=stance+Vector3(-signf(stance.x)*0.30,0,(1 if game.possession==0 else -1)*(1.10 if game.planned_fast else 1.45))
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
 	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_direction==1 and game.planned_hitter>=0:

@@ -1,0 +1,7 @@
+{
+  "cases": 12,
+  "quality": 0.95,
+  "quick_recipient_prepares_before_set": 8,
+  "safety_high_balls": 4,
+  "unconfirmed_set_feint": true
+}

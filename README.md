@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.44.0:** primo tempo e finta anticipati, corsa e salto in avanzamento anche per pipe e opposto di seconda linea. Muro con contatto continuo sulle mani e risposte diverse tra muro pieno, tocco giocabile e deviazione esterna. Meno ricezioni di la e attacchi CPU ordinari all'82-96,5%. [Dettagli e verifiche](docs/RELEASE_NOTES_44.md).
+
 **Versione 0.43.0:** eliminato il riavvio del bagher dopo un recupero mancato e interrotta la corsa verso il vecchio bersaglio. Centrale preparato prima e palleggiatore piu pronto al secondo tocco, preservando il corridoio del primo tempo. [Dettagli e verifiche](docs/RELEASE_NOTES_43.md).
 
 **Versione 0.42.0:** apertura e rincorsa fisica piu ampia per le palle alte in zona 4 e 2, centrale davanti al palleggiatore e priorita S/L sul secondo tocco. Cache delle gerarchie per ridurre il costo CPU delle pose; pausa con ritorno al menu. [Dettagli e video](docs/RELEASE_NOTES_42.md) · [Prestazioni e verifiche](docs/PERFORMANCE_42.md).

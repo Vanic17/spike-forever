@@ -423,6 +423,9 @@ func choose_gait(speed: float, previous: String) -> String:
 	# squat preparation that has no purpose after the whistle.
 	if post_point: return "walk" if speed<2.6 else "run"
 	var local_velocity := global_basis.inverse() * velocity
+	var approach_run: bool=intent.task=="approach" or (clip_name=="attack" and not looping and animation_time<clips.attack.takeoff_time)
+	if approach_run and speed>1.25 and local_velocity.z>0.15:
+		return "run"
 	var walking := speed < (2.6 if previous in ["walk","backwalk"] else 1.7)
 	var action := "walk" if walking and clips.has("walk") else "run"
 	# Retain lateral footwork through a shallow diagonal correction instead of
@@ -586,6 +589,10 @@ func apply_pose(_dt: float) -> void:
 		var remaining: float = (clip.contact_time - animation_time) / maxf(animation_speed, 0.01)
 		if clip_name=="attack": remaining=attack_clock_seconds(clip.contact_time-animation_time)
 		var fade_start := 0.37 if clip_name == "attack" else 0.16
+		if clip_name=="attack":
+			# Reveal the source L-R-L plant before takeoff, instead of keeping
+			# a generic walking cycle until the player is already airborne.
+			fade_start=maxf(0.37,attack_clock_seconds(maxf(0,clip.contact_time-clip.takeoff_time))+0.045)
 		var leg_weight := smoothstep(fade_start, fade_start + 0.16, remaining)
 		# Resume the support feet through a grounded pass follow-through;
 		# jumping actions keep their original takeoff AND landing intact.
@@ -631,8 +638,8 @@ func apply_pose(_dt: float) -> void:
 	if reach_weight > 0.001 and reach_action in ["receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "float", "power", "block"]:
 		var point := global_transform.affine_inverse() * reach_target
 		if reach_action=="block":
-			solve_arm(normalized,"Left",point+Vector3(0.14,0,0),clip.parents)
-			solve_arm(normalized,"Right",point-Vector3(0.14,0,0),clip.parents)
+			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
+			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
 		elif reach_action in ["receive", "set", "fast_set"]:
 			solve_arm(normalized, "Left", point + Vector3(0.105, -0.07, 0), clip.parents)
 			solve_arm(normalized, "Right", point + Vector3(-0.105, -0.07, 0), clip.parents)
