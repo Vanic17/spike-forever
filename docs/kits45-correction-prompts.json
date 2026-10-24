@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "changes": [
+    {
+      "key": "pallavolo-padova-away-v2",
+      "prompt": "Correct ONLY the sponsor error in the first image, an existing flat WHITE Pallavolo Padova away shirt material reference. The second image is the original actual uniform reference, white shirt worn by player1. The first image INCORRECTLY has an Errea word and double-diamond logo at upper centre chest. REMOVE that Errea word/logo completely; it is not present in the actual shirt. In the same position reproduce the small black Mitsubishi three-diamond symbol seen near the collar in the original white shirt, with small Mitsubishi wordmark. Keep every other part of the first image unchanged: white/light-grey radial wing fabric, black collar, sleeves, Padova crest, PADOVA VOLLEYBALL, sponsor placements, neutral grey background, flat front orientation. No numbers or names. Do not invent any extra manufacturers or sponsors. Output the same full single front garment plate, not a logo closeup.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-away-front.png",
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-away-v2-front.png"
+    },
+    {
+      "key": "pallavolo-padova-home-v2",
+      "prompt": "Targeted accuracy correction of an existing volleyball game shirt reference. Correct the incorrect manufacturer branding ONLY. The cleaned shirt falsely has Macron chevrons at upper center chest and on both shoulders, and a red MITSUBISHI ELECTRIC logo on upper left. Remove all those false Macron chevrons and the red Mitsubishi Electric print, fill removed areas with matching underlying black/white textile. At upper center chest place the SMALL WHITE Mitsubishi three-diamond logo and MITSUBISHI MOTORS wordmark matching the original rightmost black shirt. Keep actual visible adrenalina/BELLIAN/TECNO CRANE/BAAP/Padova crest/PADOVA VOLLEYBALL and radial wing textile. The first image is the edit target. The second is the original actual uniform photo: white shirt player1 and black shirt rightmost player14. No new sponsors. Preserve the entire first image composition, flat garment silhouette, grey background, texture and all unrelated details. NO names or numbers. Output full single front shirt.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-home-front.png",
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-home-v2-front.png"
+    },
+    {
+      "key": "pallavolo-padova-away-v3",
+      "prompt": "Targeted accuracy correction of an existing volleyball game shirt reference. Remove ONLY the two large RED Mitsubishi three-diamond logos on the upper left and right shoulders; these were not present in the original white shirt. Replace these two areas with matching white/light-grey wing textile. Keep the small BLACK Mitsubishi three-diamond logo and wordmark at upper CENTRE chest. Preserve every other sponsor, crest, sleeve pattern, black collar, PADOVA VOLLEYBALL print. The first image is the edit target. The second is the original actual uniform photo: white shirt player1 and black shirt rightmost player14. No new sponsors. Preserve the entire first image composition, flat garment silhouette, grey background, texture and all unrelated details. NO names or numbers. Output full single front shirt.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-away-v2-front.png",
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-away-v3-front.png"
+    }
+  ]
+}

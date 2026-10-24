@@ -109,6 +109,10 @@ def bake(club,source,row,positions,covered):
     variant,bounds,primary,accent,shorts,motif=row
     key=club+'-'+variant
     clean=OUT/(key+'-front.png')
+    revision={'pallavolo-padova-home':'pallavolo-padova-home-v2-front.png','pallavolo-padova-away':'pallavolo-padova-away-v3-front.png'}.get(key)
+    if revision:
+        clean=OUT/revision
+        if not clean.exists(): raise RuntimeError('Missing approved accuracy revision '+str(clean))
     if clean.exists():
         plate=Image.open(clean).convert('RGB'); bounds=(0,0,plate.width,plate.height)
         # Measure the actual garment envelope. Generated plates can include

@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.45.1:** revisione dei marchi delle maglie di Padova, conservando le 32 divise, la stampa dei giocatori e gli abbinamenti del libero introdotti nella v45. [Dettagli](docs/RELEASE_NOTES_45_1.md).
+
 **Versione 0.45.0:** divise delle 12 squadre ricostruite dai riferimenti forniti: 32 varianti casa, trasferta e libero, pantaloncini coordinati, nome e numero stampati sul retro e aggiornati dai dati locali. Libero con divisa opposta quando manca una variante dedicata. [Anteprime, fonti e verifiche](docs/RELEASE_NOTES_45.md).
 
 **Versione 0.44.0:** primo tempo e finta anticipati, corsa e salto in avanzamento anche per pipe e opposto di seconda linea. Muro con contatto continuo sulle mani e risposte diverse tra muro pieno, tocco giocabile e deviazione esterna. Meno ricezioni di la e attacchi CPU ordinari all'82-96,5%. [Dettagli e verifiche](docs/RELEASE_NOTES_44.md).
