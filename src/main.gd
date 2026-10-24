@@ -454,6 +454,12 @@ func press_action(button: String = "action") -> void:
 	if phase=="ATTACK" and hitter_action=="attack" and button=="alternate" and not armed:
 		if charging: return
 		attack_tip=true; charging=true; charge_button="alternate"; charge_start=clock_time; charge=0; input_quality=1.0
+		if destination==1 and middle_decoy.real_started and middle_decoy.index==hitter:
+			# The first tempo is already airborne. A wrist tip must not wait
+			# for a lower contact beyond the net or restart the source jump.
+			players[hitter].wrist_tip_variant=preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial)
+			notice("PALLONETTO · COLPO DI POLSO",0.9)
+			return
 		players[hitter].select_variant("attack",preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial))
 		hitter_action="attack"
 		var intercept:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,players[hitter].contact_local("attack").y,flight_gravity)
@@ -1099,6 +1105,7 @@ func plan_attack(direction: int, quick: bool) -> void:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
+			if planned_direction==1 and out_of_system>=0: variant="attack_v26_01"
 			if planned_direction in [0,2] and not planned_fast and pass_quality>=0.72:
 				# Use the complete original running L-R-L, rather than a short
 				# lateral adjustment as the main high-ball performance.
@@ -1153,6 +1160,7 @@ func set_ball() -> void:
 	if hitter_action == "receive": target.z = s*4.6
 	target.x += rng.randf_range(-1, 1) * (1 - q) * 0.8
 	target.y = contact_height(hitter_action)
+	if destination==1 and hitter_action=="attack": target.y=players[hitter].contact_local("attack").y
 	players[hitter].target = players[hitter].stance_for_contact(hitter_action, target)
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
@@ -1162,6 +1170,9 @@ func set_ball() -> void:
 		# generic .38s plant after preparing during reception and the first pass.
 		approach_time=maxf(0.30,approach_time-0.30)
 	var flight := maxf(Reference.set_seconds(destination,fast_set,q,ball_pos.distance_to(target),out_of_system<0),approach_time)
+	if destination==1 and hitter_action=="attack":
+		var first_tempo: float=middle_decoy.release_seconds(self,hitter,players[hitter].target)
+		if first_tempo>=.12 and first_tempo<=.55: flight=first_tempo
 	if fast_set and flight > 1.1:
 		# A rushed but unreachable quick is converted before launch, never rerouted
 		# to a random nearby player after the ball has left the setter's hands.
@@ -1806,9 +1817,10 @@ func move_players(dt: float) -> void:
 			team_targets[index]=cover
 	if phase in ["SET","CPU_SET"] and action_actor>=0:
 		team_targets[action_actor]=contact_navigation.route(self,action_actor,nominal[action_actor])
-	if middle_decoy.index>=0 and not middle_decoy.jumped and not middle_decoy.real_attack:
-		middle_decoy.target=team_targets[middle_decoy.index]
-		team_targets[middle_decoy.index]=middle_decoy.route(self,middle_decoy.target)
+	if middle_decoy.index>=0 and not middle_decoy.jumped and not middle_decoy.real_attack and phase in ["SET","CPU_SET"]:
+		# A yielding sidestep is not the takeoff lane. Keep the ideal jump
+		# destination separate, otherwise a feint can launch in S's corridor.
+		team_targets[middle_decoy.index]=middle_decoy.route(self,team_targets[middle_decoy.index])
 	for i in 12:
 		var p = players[i]
 		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
@@ -1998,10 +2010,9 @@ func move_players(dt: float) -> void:
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers
 		p.post_point=phase=="POINT"
 		p.locomotion(p.velocity.length(), dt)
-		# The layered grounded load shows preparation during the pass.
-		# The real jump clock starts only once the setter releases the ball;
-		# starting a complete contact clip here could reach recovery early
-		# and brake the middle before his actual approach was finished.
+		# The first-tempo controller below shares one contact clock across
+		# SET and ATTACK, so its takeoff can precede the setter's touch
+		# without restarting the jump or entering recovery before the hit.
 		if block_pose_locked(i):
 			p.reach_action = "block"
 			p.reach_target = Vector3(p.contact_world("block").x,3.08,side*0.035)
@@ -2019,6 +2030,7 @@ func move_players(dt: float) -> void:
 		if p.velocity.length() > 1.8 and p.step_cooldown <= 0 and not self_test:
 			if match_audio: match_audio.movement(p.position, p.velocity.length(), p.velocity.x)
 			p.step_cooldown = 0.32 + float(i % 3) * 0.025
+	middle_decoy.prepare_real(self,dt)
 	middle_decoy.try_jump(self)
 	for team in 2:
 		for a in range(team * 6, team * 6 + 6):

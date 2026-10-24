@@ -17,6 +17,7 @@ var native_pose_pass := false
 var middle_ready:=false
 var middle_load:=0.0
 var middle_load_age:=0.0
+var wrist_tip_variant:=""
 var native_transition_influence := 0.35 if native_animation_enabled else 0.0
 var clips: Dictionary
 var source_clips: Dictionary
@@ -232,6 +233,7 @@ func apply_identity() -> void:
 
 func play(action: String, speed: float = 1.0, loop: bool = false) -> void:
 	if not clips.has(action): return
+	if action!="attack": wrist_tip_variant=""
 	if clip_name == action and looping and loop: return
 	start_blend()
 	clip_name = action
@@ -610,12 +612,20 @@ func apply_pose(_dt: float) -> void:
 			normalized = layer_legs(normalized, steps, leg_weight, clip.parents, clip.names)
 	# A middle threatens the quick even before a high set can start its jump
 	# clip. Layer the original grounded backswing over the travelling feet.
-	if middle_load>0.001 and looping and source_clips.has("attack_decoy"):
-		var loading=source_clips.attack_decoy
-		var load_time: float=minf(maxf(0,loading.takeoff_time-.035),middle_load_age*.75)
-		var ready_pose:=normalized_pose("source:attack_decoy",load_time,false)
-		if pose_tree!=null and pose_tree.initialized:
-			normalized=pose_tree.mix(normalized,ready_pose,middle_load*.85,false,true)
+	if middle_load>0.001 and looping and source_clips.has("attack_v26_01"):
+		# Keep the hands in the genuine low backswing. Sampling until the
+		# old decoy's takeoff held both hands up like a stationary setter.
+		var load_time: float=minf(.075,middle_load_age*.30)
+		var ready_pose:=normalized_pose("source:attack_v26_01",load_time,false)
+		normalized=mix_upper_pose(normalized,ready_pose,middle_load*.85)
+	# A late middle tip changes the wrist, not the jump or the interception
+	# height. Keep the already airborne first-tempo body on its own clock.
+	if clip_name=="attack" and not wrist_tip_variant.is_empty() and source_clips.has(wrist_tip_variant):
+		var wrist=source_clips[wrist_tip_variant]
+		var remaining: float=attack_clock_seconds(maxf(0,clip.contact_time-animation_time))
+		var wrist_time: float=wrist.contact_time-remaining*1.15+maxf(0,animation_time-clip.contact_time)
+		var wrist_pose:=normalized_pose("source:"+wrist_tip_variant,maxf(0,wrist_time),false)
+		normalized=mix_upper_pose(normalized,wrist_pose,.85*(1.0-smoothstep(clip.contact_time+.03,clip.contact_time+.20,animation_time)))
 	# The new performance follows the real contact target before the existing
 	# bounded arm IK. It never moves the actor, legs, ball or action clock.
 	if clip_name == "attack" and native_clip_name(clip_name) == "attack_adaptive41" and reach_action == "attack" and reach_weight > 0.001:
@@ -766,6 +776,21 @@ func layer_legs(base: Array[Transform3D], steps: Array[Transform3D], weight: flo
 			var target := steps[parent].affine_inverse() * steps[i]
 			local = Transform3D(Basis(local.basis.get_rotation_quaternion().slerp(target.basis.get_rotation_quaternion(), weight)), local.origin.lerp(target.origin, weight))
 		result[i] = result[parent] * local if parent >= 0 and parent < i else local
+	return result
+
+func mix_upper_pose(a: Array[Transform3D], b: Array[Transform3D], weight: float) -> Array[Transform3D]:
+	if pose_tree!=null and pose_tree.initialized: return pose_tree.mix(a,b,weight,false,true)
+	# The PSA fallback uses the same local-space Spine mask. Neither path
+	# changes pelvis, feet or the actual jump clock.
+	var result: Array[Transform3D]=[]
+	var upper: Array=subtree_indices[clips.idle.names.find("Spine")]
+	for bone in a.size():
+		var parent: int=clips.idle.parents[bone]
+		var first: Transform3D=a[parent].affine_inverse()*a[bone] if parent>=0 and parent<bone else a[bone]
+		var second: Transform3D=b[parent].affine_inverse()*b[bone] if parent>=0 and parent<bone else b[bone]
+		var local:=first
+		if bone in upper: local=Transform3D(Basis(first.basis.get_rotation_quaternion().slerp(second.basis.get_rotation_quaternion(),weight)),first.origin.lerp(second.origin,weight))
+		result.append(result[parent]*local if parent>=0 and parent<bone else local)
 	return result
 
 func blend_hierarchy(a: Array[Transform3D], b: Array[Transform3D], weight: float, hierarchy: Array[int]) -> Array[Transform3D]:

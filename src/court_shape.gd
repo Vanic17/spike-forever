@@ -62,6 +62,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			if role.begins_with("MB"): readiness=smoothstep(0.015+individual*0.025,0.14+individual*0.06,game.phase_time)
 			var preparation := Tactics.world(team,0.0,2.6)
 			if role.begins_with("MB"): preparation=Tactics.world(team,0.0,1.95)
+			if role.begins_with("MB") and game.middle_decoy.index==i: preparation=game.middle_decoy.target
 			if not role.begins_with("MB"):
 				var wing := Tactics.wing_for(game,i)
 				preparation = Tactics.world(team,wing*4.65,3.2)

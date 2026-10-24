@@ -61,7 +61,9 @@ func run() -> void:
 						failures+=1; print("APPROACH42 FAIL roots=",g.players.map(func(p): return {"p":str(p.position),"target":str(p.target),"v":str(p.velocity),"clip":p.clip_name})," decoy=",g.middle_decoy.index," team=",team," rot=",rotation," dir=",direction," quick=",quick," phase=",g.phase," contacts=",g.test_contacts-before," hitter=",g.hitter," point=",g.flight_target)
 					report.append({"team":team,"rotation":rotation,"direction":direction,"quick":quick,"hitter":runner,"front":g.Tactics.front(runner,rotation),"release_gap":release_gap,"run_metres":run_metres,"max_run_speed":max_run_speed,"middle_fake":g.middle_decoy.events[-1].apex_at-setter_time if g.middle_decoy.events.size()>decoy_count and setter_time>0 else null})
 					cases+=1
-	assert(failures==0,"Reception, set and attack must retain all three real contacts")
+	if failures>0:
+		push_error("Reception, set and attack must retain all three real contacts; failures="+str(failures))
+		g.free(); quit(1); return
 	var pin_cases:=0; var pin_travel:=0.0; var pin_gap:=0.0
 	for row in report:
 		if row.front and row.direction in [0,2] and not row.quick:
