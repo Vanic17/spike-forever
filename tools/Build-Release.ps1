@@ -18,6 +18,15 @@ $files+='docs/RELEASE_NOTES_38.md'
 $files+=@('docs/ARENA_38.md','docs/AUDIO_ARENA38.md')
 $files+=@('docs/RELEASE_NOTES_39.md','docs/AUDIO_ARENA39.md','docs/AUDIO_BANK_39.md')
 $files+='docs/RELEASE_NOTES_40.md'
+$files+=@('docs/RELEASE_NOTES_41.md','docs/ANIMATION_AUDIT_41.md','docs/ANIMATION_PERFORMANCE_41.md')
+$files+=@('docs/ANIMATION_GAMEPLAY_PARITY_41.md','docs/animation41-preview.mp4')
+$files+=@('docs/attack41-integrated-preview.png','docs/dive41-integrated-preview.png')
+foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'animation41-*.json'){
+ $files+='docs/'+$taskReport.Name
+}
+foreach($taskTool in @('Build-Motion41.gd','Test-Motion41.gd','Test-MotionGameplay41.gd','Check-Motion41Scope.ps1','Audit-Animation41.gd','Audit-Dive41.gd','Audit-Attack41.gd','Capture-Animation41.gd','Preview-Motion41.gd','Benchmark-Animation41.gd','Benchmark-AnimationPrototypes41.gd','Benchmark-RenderedMotion41.gd')){
+ $files+='tools/'+$taskTool
+}
 foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANIMATION_18.md','REVISION_20.md','REVISION_21.md','REVISION_22.md','REVISION_23.md','REVISION_24.md','REVISION_25.md','REVISION_26.md','REVISION_26_1.md','ANIMATION_24.md','ANIMATION_26.md','v26-rotation-audit.md','STRONG_SPIKES_V24.md','SPECIFICA_ROTazioni_5-1.md')){
  if(Test-Path (Join-Path $root ('docs/'+$name))){$files+='docs/'+$name}
 }

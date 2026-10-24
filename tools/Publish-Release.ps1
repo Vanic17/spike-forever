@@ -38,6 +38,15 @@ foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File){
   Copy-Item -LiteralPath $file.FullName -Destination (Join-Path $stage ('tools/'+$file.Name))
  }
 }
+foreach($taskTool in @('Build-Motion41.gd','Audit-Animation41.gd','Audit-Dive41.gd','Audit-Attack41.gd','Capture-Animation41.gd','Preview-Motion41.gd','Benchmark-Animation41.gd','Benchmark-AnimationPrototypes41.gd','Benchmark-RenderedMotion41.gd')){
+ Copy-Item -LiteralPath (Join-Path $root ('tools/'+$taskTool)) -Destination (Join-Path $stage ('tools/'+$taskTool))
+}
+foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'animation41-*.json'){
+ Copy-Item -LiteralPath $taskReport.FullName -Destination (Join-Path $stage 'docs')
+}
+foreach($taskImage in @('attack41-integrated-preview.png','dive41-integrated-preview.png','dive41-author-preview.png','animation41-preview.mp4')){
+ Copy-Item -LiteralPath (Join-Path $root ('docs/'+$taskImage)) -Destination (Join-Path $stage 'docs')
+}
 foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Directory -Filter 'baseline*'){
  Copy-Item -LiteralPath $baseline.FullName -Destination (Join-Path $stage 'docs') -Recurse
 }

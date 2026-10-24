@@ -80,6 +80,11 @@ func verify_versions(versions: Array) -> void:
 			var offer=client.newer_release(versions,"0.39.0")
 			assert(not offer.is_empty() and client.compare_versions(offer.tag_name,expected_tag)>=0)
 			print("LIVE STARTUP OFFER PASS: installed 0.39.0 -> ",offer.tag_name)
+		if expected_tag=="v0.41.0":
+			assert(versions.any(func(old): return old.get("tag_name","")=="v0.40.0"),"Previous patch must remain selectable")
+			var offer=client.newer_release(versions,"0.40.0")
+			assert(not offer.is_empty() and client.compare_versions(offer.tag_name,expected_tag)>=0)
+			print("LIVE STARTUP OFFER PASS: installed 0.40.0 -> ",offer.tag_name)
 		print("REMOTE UPDATES PASS: live unauthenticated discovery / ",expected_tag," / verified GitHub asset digest / ",versions.size()," release(s)")
 		if "--download-package" in OS.get_cmdline_user_args():
 			client.http.request_completed.disconnect(client.completed)

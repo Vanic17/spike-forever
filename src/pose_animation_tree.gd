@@ -42,7 +42,7 @@ func setup(bank: Dictionary, sampler: Callable) -> void:
 	player = AnimationPlayer.new()
 	player.name = "Clips"
 	add_child(player)
-	library = Converter.build(bank, sampler)
+	library = preload("res://src/motion_prototypes.gd").with_supplement(Converter.build(bank, sampler), bank)
 	player.add_animation_library("psa", library)
 	var graph := AnimationNodeBlendTree.new()
 	first = AnimationNodeAnimation.new()

@@ -199,6 +199,7 @@ func _ready() -> void:
 		if not clips.has("idle"): clips["idle"] = clips.values()[0]
 		for name in ["run", "receive", "set", "fast_set", "attack", "block", "float", "power", "serve_idle"]:
 			if not clips.has(name): clips[name] = clips.idle
+		preload("res://src/motion_prototypes.gd").register(clips)
 	var body = PSK.new()
 	if not "--fallback-test" in OS.get_cmdline_user_args() and body.load_file("res://assets/active/body.psk"):
 		models["body"] = body
@@ -351,6 +352,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_F6:
 				Avatar.native_animation_enabled = not Avatar.native_animation_enabled
 				notice("ANIMAZIONI: " + ("ANIMATIONTREE" if Avatar.native_animation_enabled else "PSA ORIGINALE"), 2.5)
+			KEY_F7:
+				var prototypes = preload("res://src/motion_prototypes.gd")
+				prototypes.enabled = not prototypes.enabled
+				notice("NUOVI GESTI: " + ("ATTIVI" if prototypes.enabled else "ORIGINALI") + " · DALLA PROSSIMA AZIONE", 2.5)
 			KEY_F3:
 				gallery = not gallery
 				started = true
@@ -966,7 +971,11 @@ func queue_recovery(anticipate: bool = false) -> bool:
 	var recovery := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height(action),flight_gravity)
 	if recovery.is_empty() or recovery.seconds <= 0.005 or recovery.seconds > (0.45 if anticipate else 0.18): return false
 	var player = players[receiver]
-	player.select_variant("dive",AnimationVariety.diving(player.global_basis.inverse()*(recovery.point-player.position),incoming_kind,shot_serial))
+	var local_ball: Vector3 = player.global_basis.inverse() * (recovery.point-player.position)
+	var dive_variant := AnimationVariety.diving(local_ball,incoming_kind,shot_serial)
+	if anticipate:
+		dive_variant = preload("res://src/motion_prototypes.gd").dive_variant(dive_variant,local_ball,ball_vel,recovery.point.y,recovery.seconds)
+	player.select_variant("dive",dive_variant)
 	var toward: Vector3 = recovery.point-player.position
 	player.dive_yaw = atan2(toward.x,toward.z)-atan2(player.contact_local("dive").x,player.contact_local("dive").z)
 	# A forward dive cannot rotate an upright body through a half-turn in the
@@ -1035,7 +1044,9 @@ func plan_attack(direction: int, quick: bool) -> void:
 	if visual_key!=planned_visual_key:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
-			players[planned_hitter].select_variant("attack",AnimationVariety.attack(planned_direction,pass_quality,shot_serial))
+			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
+			variant = preload("res://src/motion_prototypes.gd").attack_variant(variant,planned_direction,pass_quality)
+			players[planned_hitter].select_variant("attack",variant)
 		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
 		players[setter].select_variant("fast_set",AnimationVariety.fast_setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial,players[setter].variant_names.get("set","set")))
 
@@ -2049,7 +2060,8 @@ func demo_input() -> void:
 			block_quality = 0.9
 
 func run_tests() -> void:
-	assert(clips.size() == preload("res://src/psa_animation_library.gd").CLIPS.size(), "Every selected source animation must load")
+	for source_name in preload("res://src/psa_animation_library.gd").CLIPS:
+		assert(clips.has(source_name), "Every original source animation must load")
 	var button := InputEventJoypadButton.new()
 	button.device = 9
 	button.button_index = JOY_BUTTON_A

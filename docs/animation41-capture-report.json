@@ -1,0 +1,166 @@
+{
+  "avatar_final_ik": true,
+  "native_animation_tree": true,
+  "samples": [
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.346590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_line"
+    },
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.506590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_line"
+    },
+    {
+      "action": "attack",
+      "contact": true,
+      "contact_error_m": 0.0000000105367119473954,
+      "time_s": 0.596590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_line"
+    },
+    {
+      "action": "attack",
+      "contact": true,
+      "contact_error_m": 0.0564110316336155,
+      "time_s": 0.596590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_line"
+    },
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.916590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_line"
+    },
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.346590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_adaptive41"
+    },
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.506590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_adaptive41"
+    },
+    {
+      "action": "attack",
+      "contact": true,
+      "contact_error_m": 0.0000000388931731265529,
+      "time_s": 0.596590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_adaptive41"
+    },
+    {
+      "action": "attack",
+      "contact": true,
+      "contact_error_m": 0.0417261645197868,
+      "time_s": 0.596590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_adaptive41"
+    },
+    {
+      "action": "attack",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.916590906935782,
+      "tree_evaluations": 4,
+      "variant": "attack_adaptive41"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.198795181864975,
+      "tree_evaluations": 4,
+      "variant": "dive_v26_06"
+    },
+    {
+      "action": "dive",
+      "contact": true,
+      "contact_error_m": 0.0,
+      "time_s": 0.496987954662438,
+      "tree_evaluations": 4,
+      "variant": "dive_v26_06"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.756987954662438,
+      "tree_evaluations": 4,
+      "variant": "dive_v26_06"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 1.14698795466244,
+      "tree_evaluations": 4,
+      "variant": "dive_v26_06"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 2.07698795466244,
+      "tree_evaluations": 4,
+      "variant": "dive_v26_06"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.198795181864975,
+      "tree_evaluations": 4,
+      "variant": "dive_authored41"
+    },
+    {
+      "action": "dive",
+      "contact": true,
+      "contact_error_m": 0.000000283611797158301,
+      "time_s": 0.496987954662438,
+      "tree_evaluations": 4,
+      "variant": "dive_authored41"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 0.756987954662438,
+      "tree_evaluations": 4,
+      "variant": "dive_authored41"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 1.14698795466244,
+      "tree_evaluations": 4,
+      "variant": "dive_authored41"
+    },
+    {
+      "action": "dive",
+      "contact": false,
+      "contact_error_m": null,
+      "time_s": 2.07698795466244,
+      "tree_evaluations": 4,
+      "variant": "dive_authored41"
+    }
+  ]
+}

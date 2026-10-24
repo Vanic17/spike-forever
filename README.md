@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.41.0:** due prototipi ibridi integrati: tuffo frontale con caduta/rialzata e schiacciata con adattamento limitato a busto e spalla. Risorse AnimationTree supplementari e fallback PSA conservato; **F7** confronta i nuovi gesti con gli originali, **F6** alterna il backend. [Come provarli, file e limiti](docs/RELEASE_NOTES_41.md) · [Misure prima/dopo con 12 giocatori](docs/ANIMATION_PERFORMANCE_41.md).
+
 **Versione 0.40.0:** raggruppamento a fine punto con passi e attesa eretti; pilone sul lato dell'attacco posizionato automaticamente, centrale su LS e salto comune su Croce/A. L2/R2 continuano ad avvicinare i laterali. Rincorse anticipate e preparazione della schiacciata più estesa; CPU più precisa, con sette risposte difensive differenti. [Dettagli e verifiche](docs/RELEASE_NOTES_40.md).
 
 **Versione 0.39.0:** atmosfera sonora continua con nuovi sottofondi e ritmi più lunghi, dissolvenze e fischio arbitrale registrato. Esultanze del pubblico solo ai punti della squadra di casa, applausi occasionali anche durante il gioco, nessun riquadro dopo i punti ordinari e colori del campo più scuri. **L3 / LS** mantiene il mute globale. [Dettagli e verifiche](docs/RELEASE_NOTES_39.md).

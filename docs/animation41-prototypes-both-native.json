@@ -1,0 +1,77 @@
+{
+	"animation_apply_12_players": {
+		"max_ms": 10.103,
+		"mean_ms": 6.36869333333333,
+		"p50_ms": 6.436,
+		"p95_ms": 8.313,
+		"p99_ms": 9.104
+	},
+	"backend": "native",
+	"bones_per_player": 145,
+	"callback_interval_with_probe": {
+		"max_ms": 10.658,
+		"mean_ms": 7.262,
+		"p50_ms": 6.905,
+		"p95_ms": 8.683,
+		"p99_ms": 9.599
+	},
+	"cpu_update_12_players": {
+		"max_ms": 10.251,
+		"mean_ms": 6.41204,
+		"p50_ms": 6.47,
+		"p95_ms": 8.349,
+		"p99_ms": 9.277
+	},
+	"display": "headless",
+	"evaluation_rigs": 12,
+	"headless": true,
+	"label": "prototypes-both-native",
+	"limitations": [
+		"CPU timings only; headless does not measure GPU rendering or visible FPS",
+		"Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+		"Sampling probe is excluded from update timings but included in callback intervals",
+		"Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+	],
+	"memory_after_warmup": {
+		"nodes": 205.0,
+		"objects": 2080.0,
+		"orphan_nodes": 0.0,
+		"peak_static_bytes": 486490679.0,
+		"resources": 143.0,
+		"static_bytes": 486426078.0
+	},
+	"memory_final": {
+		"nodes": 205.0,
+		"objects": 2080.0,
+		"orphan_nodes": 0.0,
+		"peak_static_bytes": 486561019.0,
+		"resources": 143.0,
+		"static_bytes": 486469698.0
+	},
+	"native_cache_hits": 8383,
+	"native_evaluations": 12999,
+	"object_count_delta": 0.0,
+	"players": 12,
+	"resource_count_delta": 0.0,
+	"sample_probe_12_players": {
+		"max_ms": 0.042,
+		"mean_ms": 0.0277600000000001,
+		"p50_ms": 0.027,
+		"p95_ms": 0.031,
+		"p99_ms": 0.038
+	},
+	"samples": 600,
+	"scenario": "fixed-12-avatars-v1",
+	"setup_ms": 3273.043,
+	"simulation_dt": 0.0166666666666667,
+	"source_clips": 129,
+	"source_sha256": {
+		"src/animation_expansion.gd": "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+		"src/avatar.gd": "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+		"src/pose_animation_tree.gd": "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+		"src/psa.gd": "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+		"src/psa_animation_library.gd": "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+	},
+	"static_bytes_delta": 43620.0,
+	"warmup_frames": 90
+}

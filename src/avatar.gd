@@ -5,6 +5,7 @@ const PSK = preload("res://src/psk.gd")
 const Assets = preload("res://src/source_assets.gd")
 const MovementIntent = preload("res://src/movement_intent.gd")
 const PoseTree = preload("res://src/pose_animation_tree.gd")
+const MotionPrototypes = preload("res://src/motion_prototypes.gd")
 # All active clips are validated and preconverted. F6 or --psa-original can
 # still select the original parser; it remains the per-clip failure fallback.
 static var native_animation_enabled := not "--psa-original" in OS.get_cmdline_user_args()
@@ -551,7 +552,7 @@ func apply_pose(_dt: float) -> void:
 	if not skeleton or not clips.has(clip_name): return
 	if native_animation_enabled: ensure_native_tree()
 	if pose_tree != null: pose_tree.begin_pose()
-	native_pose_pass = native_animation_enabled and pose_tree != null and pose_tree.initialized and native_clip_name(clip_name) in PoseTree.Converter.CLIPS
+	native_pose_pass = native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_clip_name(clip_name))
 	# Crossfade the easing profile on A/B switches; never restart an action.
 	native_transition_influence = move_toward(native_transition_influence, 0.35 if native_pose_pass else 0.0, _dt * 2.9)
 	var clip = clips[clip_name]
@@ -598,6 +599,11 @@ func apply_pose(_dt: float) -> void:
 		if leg_weight > 0 and clips.has(travel_animation_name):
 			var steps := travel_pose()
 			normalized = layer_legs(normalized, steps, leg_weight, clip.parents, clip.names)
+	# The new performance follows the real contact target before the existing
+	# bounded arm IK. It never moves the actor, legs, ball or action clock.
+	if clip_name == "attack" and native_clip_name(clip_name) == "attack_adaptive41" and reach_action == "attack" and reach_weight > 0.001:
+		var context_weight := reach_weight * (1.0 - smoothstep(clip.contact_time + 0.04, clip.contact_time + 0.20, animation_time))
+		normalized = MotionPrototypes.Attack.adapt(normalized, clip.names, clip.parents, global_transform.affine_inverse() * reach_target, context_weight)
 	if _dt > 0:
 		# A short shoulder turn accompanies a teammate's clearing sidestep.
 		# Keep the source support feet and all contact poses authoritative.

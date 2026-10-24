@@ -1,0 +1,859 @@
+﻿{
+    "scenario":  "fixed-12-avatars-v1",
+    "benchmark_sha256":  "8ee9e215554ebb71a6b314fb5ebc30c7f3810d49274a65ec0705948de898b394",
+    "prototypes_benchmark_sha256":  "b8ac848c778935e9b856b0ad122ff32378e73cf4c85a4850d99f398d2752bf6c",
+    "verified_runs":  11,
+    "original_native_mean_change_percent":  0.1930902179934940374442397700,
+    "original_psa_mean_change_percent":  0.0128485080788769065774859500,
+    "active_prototypes_native_mean_change_percent":  3.4306767150157435606256129700,
+    "active_prototypes_psa_mean_change_percent":  5.8198342794127633361668320800,
+    "measurements":  {
+                         "before-psa":  {
+                                            "animation_apply_12_players":  {
+                                                                               "max_ms":  10.752,
+                                                                               "mean_ms":  5.35498166666666,
+                                                                               "p50_ms":  5.31,
+                                                                               "p95_ms":  7.71,
+                                                                               "p99_ms":  8.714
+                                                                           },
+                                            "backend":  "psa",
+                                            "bones_per_player":  145,
+                                            "callback_interval_with_probe":  {
+                                                                                 "max_ms":  12.224,
+                                                                                 "mean_ms":  7.27203000000001,
+                                                                                 "p50_ms":  6.902,
+                                                                                 "p95_ms":  8.867,
+                                                                                 "p99_ms":  9.974
+                                                                             },
+                                            "cpu_update_12_players":  {
+                                                                          "max_ms":  10.799,
+                                                                          "mean_ms":  5.40918833333333,
+                                                                          "p50_ms":  5.346,
+                                                                          "p95_ms":  7.737,
+                                                                          "p99_ms":  8.825
+                                                                      },
+                                            "display":  "headless",
+                                            "evaluation_rigs":  0,
+                                            "headless":  true,
+                                            "label":  "before-psa",
+                                            "limitations":  [
+                                                                "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                            ],
+                                            "memory_after_warmup":  {
+                                                                        "nodes":  145.0,
+                                                                        "objects":  1835.0,
+                                                                        "orphan_nodes":  0.0,
+                                                                        "peak_static_bytes":  241179490.0,
+                                                                        "resources":  9.0,
+                                                                        "static_bytes":  241162978.0
+                                                                    },
+                                            "memory_final":  {
+                                                                 "nodes":  145.0,
+                                                                 "objects":  1835.0,
+                                                                 "orphan_nodes":  0.0,
+                                                                 "peak_static_bytes":  241245750.0,
+                                                                 "resources":  9.0,
+                                                                 "static_bytes":  241228662.0
+                                                             },
+                                            "native_cache_hits":  0,
+                                            "native_evaluations":  0,
+                                            "object_count_delta":  0.0,
+                                            "players":  12,
+                                            "resource_count_delta":  0.0,
+                                            "sample_probe_12_players":  {
+                                                                            "max_ms":  1.285,
+                                                                            "mean_ms":  0.996256666666667,
+                                                                            "p50_ms":  0.994,
+                                                                            "p95_ms":  1.034,
+                                                                            "p99_ms":  1.054
+                                                                        },
+                                            "samples":  600,
+                                            "scenario":  "fixed-12-avatars-v1",
+                                            "setup_ms":  2673.272,
+                                            "simulation_dt":  0.0166666666666667,
+                                            "source_clips":  127,
+                                            "source_sha256":  {
+                                                                  "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                  "src/avatar.gd":  "29f3a1aab1b718f0f43b54aa96f0c894e1e805ad39e886a79f2b10916717e5c5",
+                                                                  "src/pose_animation_tree.gd":  "41608fdc3990b19cef67621a808e00fa8e5f4c63c06d23f48d2d1182cce08bcd",
+                                                                  "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                  "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                              },
+                                            "static_bytes_delta":  65684.0,
+                                            "warmup_frames":  90
+                                        },
+                         "before-native-repeat":  {
+                                                      "animation_apply_12_players":  {
+                                                                                         "max_ms":  9.322,
+                                                                                         "mean_ms":  5.549525,
+                                                                                         "p50_ms":  5.505,
+                                                                                         "p95_ms":  8.017,
+                                                                                         "p99_ms":  9.033
+                                                                                     },
+                                                      "backend":  "native",
+                                                      "bones_per_player":  145,
+                                                      "callback_interval_with_probe":  {
+                                                                                           "max_ms":  9.748,
+                                                                                           "mean_ms":  7.08700666666666,
+                                                                                           "p50_ms":  6.901,
+                                                                                           "p95_ms":  8.383,
+                                                                                           "p99_ms":  9.454
+                                                                                       },
+                                                      "cpu_update_12_players":  {
+                                                                                    "max_ms":  9.425,
+                                                                                    "mean_ms":  5.59479,
+                                                                                    "p50_ms":  5.554,
+                                                                                    "p95_ms":  8.045,
+                                                                                    "p99_ms":  9.135
+                                                                                },
+                                                      "display":  "headless",
+                                                      "evaluation_rigs":  12,
+                                                      "headless":  true,
+                                                      "label":  "before-native-repeat",
+                                                      "limitations":  [
+                                                                          "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                          "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                          "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                          "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                      ],
+                                                      "memory_after_warmup":  {
+                                                                                  "nodes":  205.0,
+                                                                                  "objects":  2071.0,
+                                                                                  "orphan_nodes":  0.0,
+                                                                                  "peak_static_bytes":  481966855.0,
+                                                                                  "resources":  137.0,
+                                                                                  "static_bytes":  481902254.0
+                                                                              },
+                                                      "memory_final":  {
+                                                                           "nodes":  205.0,
+                                                                           "objects":  2071.0,
+                                                                           "orphan_nodes":  0.0,
+                                                                           "peak_static_bytes":  482036875.0,
+                                                                           "resources":  137.0,
+                                                                           "static_bytes":  481945586.0
+                                                                       },
+                                                      "native_cache_hits":  8383,
+                                                      "native_evaluations":  12999,
+                                                      "object_count_delta":  0.0,
+                                                      "players":  12,
+                                                      "resource_count_delta":  0.0,
+                                                      "sample_probe_12_players":  {
+                                                                                      "max_ms":  0.049,
+                                                                                      "mean_ms":  0.0269283333333331,
+                                                                                      "p50_ms":  0.027,
+                                                                                      "p95_ms":  0.03,
+                                                                                      "p99_ms":  0.037
+                                                                                  },
+                                                      "samples":  600,
+                                                      "scenario":  "fixed-12-avatars-v1",
+                                                      "setup_ms":  3257.766,
+                                                      "simulation_dt":  0.0166666666666667,
+                                                      "source_clips":  127,
+                                                      "source_sha256":  {
+                                                                            "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                            "src/avatar.gd":  "29f3a1aab1b718f0f43b54aa96f0c894e1e805ad39e886a79f2b10916717e5c5",
+                                                                            "src/pose_animation_tree.gd":  "41608fdc3990b19cef67621a808e00fa8e5f4c63c06d23f48d2d1182cce08bcd",
+                                                                            "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                            "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                        },
+                                                      "static_bytes_delta":  43332.0,
+                                                      "warmup_frames":  90
+                                                  },
+                         "prototypes-attack-native":  {
+                                                          "animation_apply_12_players":  {
+                                                                                             "max_ms":  10.76,
+                                                                                             "mean_ms":  6.37008000000001,
+                                                                                             "p50_ms":  6.428,
+                                                                                             "p95_ms":  8.394,
+                                                                                             "p99_ms":  9.606
+                                                                                         },
+                                                          "backend":  "native",
+                                                          "bones_per_player":  145,
+                                                          "callback_interval_with_probe":  {
+                                                                                               "max_ms":  11.336,
+                                                                                               "mean_ms":  7.26667666666667,
+                                                                                               "p50_ms":  6.905,
+                                                                                               "p95_ms":  8.764,
+                                                                                               "p99_ms":  10.107
+                                                                                           },
+                                                          "cpu_update_12_players":  {
+                                                                                        "max_ms":  10.789,
+                                                                                        "mean_ms":  6.41308833333333,
+                                                                                        "p50_ms":  6.478,
+                                                                                        "p95_ms":  8.426,
+                                                                                        "p99_ms":  9.726
+                                                                                    },
+                                                          "display":  "headless",
+                                                          "evaluation_rigs":  12,
+                                                          "headless":  true,
+                                                          "label":  "prototypes-attack-native",
+                                                          "limitations":  [
+                                                                              "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                              "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                              "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                              "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                          ],
+                                                          "memory_after_warmup":  {
+                                                                                      "nodes":  205.0,
+                                                                                      "objects":  2080.0,
+                                                                                      "orphan_nodes":  0.0,
+                                                                                      "peak_static_bytes":  486490039.0,
+                                                                                      "resources":  143.0,
+                                                                                      "static_bytes":  486425438.0
+                                                                                  },
+                                                          "memory_final":  {
+                                                                               "nodes":  205.0,
+                                                                               "objects":  2080.0,
+                                                                               "orphan_nodes":  0.0,
+                                                                               "peak_static_bytes":  486560059.0,
+                                                                               "resources":  143.0,
+                                                                               "static_bytes":  486469058.0
+                                                                           },
+                                                          "native_cache_hits":  8383,
+                                                          "native_evaluations":  12999,
+                                                          "object_count_delta":  0.0,
+                                                          "players":  12,
+                                                          "resource_count_delta":  0.0,
+                                                          "sample_probe_12_players":  {
+                                                                                          "max_ms":  0.062,
+                                                                                          "mean_ms":  0.0276299999999999,
+                                                                                          "p50_ms":  0.027,
+                                                                                          "p95_ms":  0.03,
+                                                                                          "p99_ms":  0.043
+                                                                                      },
+                                                          "samples":  600,
+                                                          "scenario":  "fixed-12-avatars-v1",
+                                                          "setup_ms":  3292.747,
+                                                          "simulation_dt":  0.0166666666666667,
+                                                          "source_clips":  129,
+                                                          "source_sha256":  {
+                                                                                "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                                "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                                "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                                "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                                "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                            },
+                                                          "static_bytes_delta":  43620.0,
+                                                          "warmup_frames":  90
+                                                      },
+                         "before-native":  {
+                                               "animation_apply_12_players":  {
+                                                                                  "max_ms":  9.283,
+                                                                                  "mean_ms":  5.548775,
+                                                                                  "p50_ms":  5.561,
+                                                                                  "p95_ms":  7.973,
+                                                                                  "p99_ms":  9.009
+                                                                              },
+                                               "backend":  "native",
+                                               "bones_per_player":  145,
+                                               "callback_interval_with_probe":  {
+                                                                                    "max_ms":  9.707,
+                                                                                    "mean_ms":  7.08190333333333,
+                                                                                    "p50_ms":  6.901,
+                                                                                    "p95_ms":  8.327,
+                                                                                    "p99_ms":  9.422
+                                                                                },
+                                               "cpu_update_12_players":  {
+                                                                             "max_ms":  9.388,
+                                                                             "mean_ms":  5.59496666666667,
+                                                                             "p50_ms":  5.606,
+                                                                             "p95_ms":  8.002,
+                                                                             "p99_ms":  9.101
+                                                                         },
+                                               "display":  "headless",
+                                               "evaluation_rigs":  12,
+                                               "headless":  true,
+                                               "label":  "before-native",
+                                               "limitations":  [
+                                                                   "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                   "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                   "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                   "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                               ],
+                                               "memory_after_warmup":  {
+                                                                           "nodes":  205.0,
+                                                                           "objects":  2071.0,
+                                                                           "orphan_nodes":  0.0,
+                                                                           "peak_static_bytes":  481966791.0,
+                                                                           "resources":  137.0,
+                                                                           "static_bytes":  481902190.0
+                                                                       },
+                                               "memory_final":  {
+                                                                    "nodes":  205.0,
+                                                                    "objects":  2071.0,
+                                                                    "orphan_nodes":  0.0,
+                                                                    "peak_static_bytes":  482036811.0,
+                                                                    "resources":  137.0,
+                                                                    "static_bytes":  481945522.0
+                                                                },
+                                               "native_cache_hits":  8383,
+                                               "native_evaluations":  12999,
+                                               "object_count_delta":  0.0,
+                                               "players":  12,
+                                               "resource_count_delta":  0.0,
+                                               "sample_probe_12_players":  {
+                                                                               "max_ms":  0.057,
+                                                                               "mean_ms":  0.0271066666666665,
+                                                                               "p50_ms":  0.027,
+                                                                               "p95_ms":  0.03,
+                                                                               "p99_ms":  0.035
+                                                                           },
+                                               "samples":  600,
+                                               "scenario":  "fixed-12-avatars-v1",
+                                               "setup_ms":  3264.862,
+                                               "simulation_dt":  0.0166666666666667,
+                                               "source_clips":  127,
+                                               "source_sha256":  {
+                                                                     "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                     "src/avatar.gd":  "29f3a1aab1b718f0f43b54aa96f0c894e1e805ad39e886a79f2b10916717e5c5",
+                                                                     "src/pose_animation_tree.gd":  "41608fdc3990b19cef67621a808e00fa8e5f4c63c06d23f48d2d1182cce08bcd",
+                                                                     "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                     "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                 },
+                                               "static_bytes_delta":  43332.0,
+                                               "warmup_frames":  90
+                                           },
+                         "after-native":  {
+                                              "animation_apply_12_players":  {
+                                                                                 "max_ms":  9.375,
+                                                                                 "mean_ms":  5.55973833333333,
+                                                                                 "p50_ms":  5.552,
+                                                                                 "p95_ms":  8.081,
+                                                                                 "p99_ms":  9.049
+                                                                             },
+                                              "backend":  "native",
+                                              "bones_per_player":  145,
+                                              "callback_interval_with_probe":  {
+                                                                                   "max_ms":  9.731,
+                                                                                   "mean_ms":  7.09495833333333,
+                                                                                   "p50_ms":  6.901,
+                                                                                   "p95_ms":  8.432,
+                                                                                   "p99_ms":  9.486
+                                                                               },
+                                              "cpu_update_12_players":  {
+                                                                            "max_ms":  9.404,
+                                                                            "mean_ms":  5.60577,
+                                                                            "p50_ms":  5.588,
+                                                                            "p95_ms":  8.109,
+                                                                            "p99_ms":  9.157
+                                                                        },
+                                              "display":  "headless",
+                                              "evaluation_rigs":  12,
+                                              "headless":  true,
+                                              "label":  "after-native",
+                                              "limitations":  [
+                                                                  "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                  "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                  "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                  "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                              ],
+                                              "memory_after_warmup":  {
+                                                                          "nodes":  205.0,
+                                                                          "objects":  2074.0,
+                                                                          "orphan_nodes":  0.0,
+                                                                          "peak_static_bytes":  482223875.0,
+                                                                          "resources":  140.0,
+                                                                          "static_bytes":  482159274.0
+                                                                      },
+                                              "memory_final":  {
+                                                                   "nodes":  205.0,
+                                                                   "objects":  2074.0,
+                                                                   "orphan_nodes":  0.0,
+                                                                   "peak_static_bytes":  482293895.0,
+                                                                   "resources":  140.0,
+                                                                   "static_bytes":  482202606.0
+                                                               },
+                                              "native_cache_hits":  8383,
+                                              "native_evaluations":  12999,
+                                              "object_count_delta":  0.0,
+                                              "players":  12,
+                                              "resource_count_delta":  0.0,
+                                              "sample_probe_12_players":  {
+                                                                              "max_ms":  0.045,
+                                                                              "mean_ms":  0.0267716666666664,
+                                                                              "p50_ms":  0.026,
+                                                                              "p95_ms":  0.03,
+                                                                              "p99_ms":  0.033
+                                                                          },
+                                              "samples":  600,
+                                              "scenario":  "fixed-12-avatars-v1",
+                                              "setup_ms":  3267.929,
+                                              "simulation_dt":  0.0166666666666667,
+                                              "source_clips":  127,
+                                              "source_sha256":  {
+                                                                    "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                    "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                    "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                    "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                    "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                },
+                                              "static_bytes_delta":  43332.0,
+                                              "warmup_frames":  90
+                                          },
+                         "prototypes-both-native":  {
+                                                        "animation_apply_12_players":  {
+                                                                                           "max_ms":  10.103,
+                                                                                           "mean_ms":  6.36869333333333,
+                                                                                           "p50_ms":  6.436,
+                                                                                           "p95_ms":  8.313,
+                                                                                           "p99_ms":  9.104
+                                                                                       },
+                                                        "backend":  "native",
+                                                        "bones_per_player":  145,
+                                                        "callback_interval_with_probe":  {
+                                                                                             "max_ms":  10.658,
+                                                                                             "mean_ms":  7.262,
+                                                                                             "p50_ms":  6.905,
+                                                                                             "p95_ms":  8.683,
+                                                                                             "p99_ms":  9.599
+                                                                                         },
+                                                        "cpu_update_12_players":  {
+                                                                                      "max_ms":  10.251,
+                                                                                      "mean_ms":  6.41204,
+                                                                                      "p50_ms":  6.47,
+                                                                                      "p95_ms":  8.349,
+                                                                                      "p99_ms":  9.277
+                                                                                  },
+                                                        "display":  "headless",
+                                                        "evaluation_rigs":  12,
+                                                        "headless":  true,
+                                                        "label":  "prototypes-both-native",
+                                                        "limitations":  [
+                                                                            "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                            "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                            "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                            "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                        ],
+                                                        "memory_after_warmup":  {
+                                                                                    "nodes":  205.0,
+                                                                                    "objects":  2080.0,
+                                                                                    "orphan_nodes":  0.0,
+                                                                                    "peak_static_bytes":  486490679.0,
+                                                                                    "resources":  143.0,
+                                                                                    "static_bytes":  486426078.0
+                                                                                },
+                                                        "memory_final":  {
+                                                                             "nodes":  205.0,
+                                                                             "objects":  2080.0,
+                                                                             "orphan_nodes":  0.0,
+                                                                             "peak_static_bytes":  486561019.0,
+                                                                             "resources":  143.0,
+                                                                             "static_bytes":  486469698.0
+                                                                         },
+                                                        "native_cache_hits":  8383,
+                                                        "native_evaluations":  12999,
+                                                        "object_count_delta":  0.0,
+                                                        "players":  12,
+                                                        "resource_count_delta":  0.0,
+                                                        "sample_probe_12_players":  {
+                                                                                        "max_ms":  0.042,
+                                                                                        "mean_ms":  0.0277600000000001,
+                                                                                        "p50_ms":  0.027,
+                                                                                        "p95_ms":  0.031,
+                                                                                        "p99_ms":  0.038
+                                                                                    },
+                                                        "samples":  600,
+                                                        "scenario":  "fixed-12-avatars-v1",
+                                                        "setup_ms":  3273.043,
+                                                        "simulation_dt":  0.0166666666666667,
+                                                        "source_clips":  129,
+                                                        "source_sha256":  {
+                                                                              "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                              "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                              "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                              "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                              "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                          },
+                                                        "static_bytes_delta":  43620.0,
+                                                        "warmup_frames":  90
+                                                    },
+                         "prototypes-dive-native":  {
+                                                        "animation_apply_12_players":  {
+                                                                                           "max_ms":  9.335,
+                                                                                           "mean_ms":  6.12438166666667,
+                                                                                           "p50_ms":  6.13,
+                                                                                           "p95_ms":  8.096,
+                                                                                           "p99_ms":  9.004
+                                                                                       },
+                                                        "backend":  "native",
+                                                        "bones_per_player":  145,
+                                                        "callback_interval_with_probe":  {
+                                                                                             "max_ms":  9.71,
+                                                                                             "mean_ms":  7.13682166666666,
+                                                                                             "p50_ms":  6.901,
+                                                                                             "p95_ms":  8.485,
+                                                                                             "p99_ms":  9.436
+                                                                                         },
+                                                        "cpu_update_12_players":  {
+                                                                                      "max_ms":  9.382,
+                                                                                      "mean_ms":  6.16773833333333,
+                                                                                      "p50_ms":  6.159,
+                                                                                      "p95_ms":  8.124,
+                                                                                      "p99_ms":  9.111
+                                                                                  },
+                                                        "display":  "headless",
+                                                        "evaluation_rigs":  12,
+                                                        "headless":  true,
+                                                        "label":  "prototypes-dive-native",
+                                                        "limitations":  [
+                                                                            "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                            "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                            "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                            "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                        ],
+                                                        "memory_after_warmup":  {
+                                                                                    "nodes":  205.0,
+                                                                                    "objects":  2080.0,
+                                                                                    "orphan_nodes":  0.0,
+                                                                                    "peak_static_bytes":  486489911.0,
+                                                                                    "resources":  143.0,
+                                                                                    "static_bytes":  486425310.0
+                                                                                },
+                                                        "memory_final":  {
+                                                                             "nodes":  205.0,
+                                                                             "objects":  2080.0,
+                                                                             "orphan_nodes":  0.0,
+                                                                             "peak_static_bytes":  486560251.0,
+                                                                             "resources":  143.0,
+                                                                             "static_bytes":  486468642.0
+                                                                         },
+                                                        "native_cache_hits":  8383,
+                                                        "native_evaluations":  12999,
+                                                        "object_count_delta":  0.0,
+                                                        "players":  12,
+                                                        "resource_count_delta":  0.0,
+                                                        "sample_probe_12_players":  {
+                                                                                        "max_ms":  0.06,
+                                                                                        "mean_ms":  0.0270249999999998,
+                                                                                        "p50_ms":  0.026,
+                                                                                        "p95_ms":  0.03,
+                                                                                        "p99_ms":  0.037
+                                                                                    },
+                                                        "samples":  600,
+                                                        "scenario":  "fixed-12-avatars-v1",
+                                                        "setup_ms":  3334.259,
+                                                        "simulation_dt":  0.0166666666666667,
+                                                        "source_clips":  129,
+                                                        "source_sha256":  {
+                                                                              "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                              "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                              "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                              "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                              "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                          },
+                                                        "static_bytes_delta":  43332.0,
+                                                        "warmup_frames":  90
+                                                    },
+                         "after-psa":  {
+                                           "animation_apply_12_players":  {
+                                                                              "max_ms":  9.048,
+                                                                              "mean_ms":  5.356505,
+                                                                              "p50_ms":  5.311,
+                                                                              "p95_ms":  7.781,
+                                                                              "p99_ms":  8.788
+                                                                          },
+                                           "backend":  "psa",
+                                           "bones_per_player":  145,
+                                           "callback_interval_with_probe":  {
+                                                                                "max_ms":  10.357,
+                                                                                "mean_ms":  7.27395333333334,
+                                                                                "p50_ms":  6.902,
+                                                                                "p95_ms":  8.968,
+                                                                                "p99_ms":  10.062
+                                                                            },
+                                           "cpu_update_12_players":  {
+                                                                         "max_ms":  9.224,
+                                                                         "mean_ms":  5.40988333333334,
+                                                                         "p50_ms":  5.338,
+                                                                         "p95_ms":  7.811,
+                                                                         "p99_ms":  8.93
+                                                                     },
+                                           "display":  "headless",
+                                           "evaluation_rigs":  0,
+                                           "headless":  true,
+                                           "label":  "after-psa",
+                                           "limitations":  [
+                                                               "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                               "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                               "Sampling probe is excluded from update timings but included in callback intervals",
+                                                               "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                           ],
+                                           "memory_after_warmup":  {
+                                                                       "nodes":  145.0,
+                                                                       "objects":  1838.0,
+                                                                       "orphan_nodes":  0.0,
+                                                                       "peak_static_bytes":  241436574.0,
+                                                                       "resources":  12.0,
+                                                                       "static_bytes":  241420062.0
+                                                                   },
+                                           "memory_final":  {
+                                                                "nodes":  145.0,
+                                                                "objects":  1838.0,
+                                                                "orphan_nodes":  0.0,
+                                                                "peak_static_bytes":  241502834.0,
+                                                                "resources":  12.0,
+                                                                "static_bytes":  241485746.0
+                                                            },
+                                           "native_cache_hits":  0,
+                                           "native_evaluations":  0,
+                                           "object_count_delta":  0.0,
+                                           "players":  12,
+                                           "resource_count_delta":  0.0,
+                                           "sample_probe_12_players":  {
+                                                                           "max_ms":  1.326,
+                                                                           "mean_ms":  0.99722,
+                                                                           "p50_ms":  0.995,
+                                                                           "p95_ms":  1.033,
+                                                                           "p99_ms":  1.056
+                                                                       },
+                                           "samples":  600,
+                                           "scenario":  "fixed-12-avatars-v1",
+                                           "setup_ms":  2660.728,
+                                           "simulation_dt":  0.0166666666666667,
+                                           "source_clips":  127,
+                                           "source_sha256":  {
+                                                                 "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                 "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                 "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                 "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                 "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                             },
+                                           "static_bytes_delta":  65684.0,
+                                           "warmup_frames":  90
+                                       },
+                         "prototypes-none-psa":  {
+                                                     "animation_apply_12_players":  {
+                                                                                        "max_ms":  9.204,
+                                                                                        "mean_ms":  5.88838,
+                                                                                        "p50_ms":  5.83,
+                                                                                        "p95_ms":  7.738,
+                                                                                        "p99_ms":  8.684
+                                                                                    },
+                                                     "backend":  "psa",
+                                                     "bones_per_player":  145,
+                                                     "callback_interval_with_probe":  {
+                                                                                          "max_ms":  10.606,
+                                                                                          "mean_ms":  7.40608333333334,
+                                                                                          "p50_ms":  7.031,
+                                                                                          "p95_ms":  8.945,
+                                                                                          "p99_ms":  10.005
+                                                                                      },
+                                                     "cpu_update_12_players":  {
+                                                                                   "max_ms":  9.388,
+                                                                                   "mean_ms":  5.93971666666667,
+                                                                                   "p50_ms":  5.867,
+                                                                                   "p95_ms":  7.799,
+                                                                                   "p99_ms":  8.869
+                                                                               },
+                                                     "display":  "headless",
+                                                     "evaluation_rigs":  0,
+                                                     "headless":  true,
+                                                     "label":  "prototypes-none-psa",
+                                                     "limitations":  [
+                                                                         "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                         "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                         "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                         "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                     ],
+                                                     "memory_after_warmup":  {
+                                                                                 "nodes":  145.0,
+                                                                                 "objects":  1841.0,
+                                                                                 "orphan_nodes":  0.0,
+                                                                                 "peak_static_bytes":  243099598.0,
+                                                                                 "resources":  13.0,
+                                                                                 "static_bytes":  243083086.0
+                                                                             },
+                                                     "memory_final":  {
+                                                                          "nodes":  145.0,
+                                                                          "objects":  1841.0,
+                                                                          "orphan_nodes":  0.0,
+                                                                          "peak_static_bytes":  243166002.0,
+                                                                          "resources":  13.0,
+                                                                          "static_bytes":  243148770.0
+                                                                      },
+                                                     "native_cache_hits":  0,
+                                                     "native_evaluations":  0,
+                                                     "object_count_delta":  0.0,
+                                                     "players":  12,
+                                                     "resource_count_delta":  0.0,
+                                                     "sample_probe_12_players":  {
+                                                                                     "max_ms":  1.395,
+                                                                                     "mean_ms":  0.991203333333334,
+                                                                                     "p50_ms":  0.989,
+                                                                                     "p95_ms":  1.024,
+                                                                                     "p99_ms":  1.044
+                                                                                 },
+                                                     "samples":  600,
+                                                     "scenario":  "fixed-12-avatars-v1",
+                                                     "setup_ms":  2707.593,
+                                                     "simulation_dt":  0.0166666666666667,
+                                                     "source_clips":  129,
+                                                     "source_sha256":  {
+                                                                           "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                           "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                           "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                           "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                           "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                       },
+                                                     "static_bytes_delta":  65684.0,
+                                                     "warmup_frames":  90
+                                                 },
+                         "prototypes-none-native":  {
+                                                        "animation_apply_12_players":  {
+                                                                                           "max_ms":  9.382,
+                                                                                           "mean_ms":  6.157495,
+                                                                                           "p50_ms":  6.172,
+                                                                                           "p95_ms":  8.18,
+                                                                                           "p99_ms":  9.209
+                                                                                       },
+                                                        "backend":  "native",
+                                                        "bones_per_player":  145,
+                                                        "callback_interval_with_probe":  {
+                                                                                             "max_ms":  9.818,
+                                                                                             "mean_ms":  7.15899,
+                                                                                             "p50_ms":  6.901,
+                                                                                             "p95_ms":  8.531,
+                                                                                             "p99_ms":  9.562
+                                                                                         },
+                                                        "cpu_update_12_players":  {
+                                                                                      "max_ms":  9.49,
+                                                                                      "mean_ms":  6.19936,
+                                                                                      "p50_ms":  6.216,
+                                                                                      "p95_ms":  8.209,
+                                                                                      "p99_ms":  9.236
+                                                                                  },
+                                                        "display":  "headless",
+                                                        "evaluation_rigs":  12,
+                                                        "headless":  true,
+                                                        "label":  "prototypes-none-native",
+                                                        "limitations":  [
+                                                                            "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                            "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                            "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                            "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                        ],
+                                                        "memory_after_warmup":  {
+                                                                                    "nodes":  205.0,
+                                                                                    "objects":  2080.0,
+                                                                                    "orphan_nodes":  0.0,
+                                                                                    "peak_static_bytes":  486489143.0,
+                                                                                    "resources":  143.0,
+                                                                                    "static_bytes":  486424542.0
+                                                                                },
+                                                        "memory_final":  {
+                                                                             "nodes":  205.0,
+                                                                             "objects":  2080.0,
+                                                                             "orphan_nodes":  0.0,
+                                                                             "peak_static_bytes":  486559163.0,
+                                                                             "resources":  143.0,
+                                                                             "static_bytes":  486467874.0
+                                                                         },
+                                                        "native_cache_hits":  8383,
+                                                        "native_evaluations":  12999,
+                                                        "object_count_delta":  0.0,
+                                                        "players":  12,
+                                                        "resource_count_delta":  0.0,
+                                                        "sample_probe_12_players":  {
+                                                                                        "max_ms":  0.047,
+                                                                                        "mean_ms":  0.0264049999999997,
+                                                                                        "p50_ms":  0.026,
+                                                                                        "p95_ms":  0.029,
+                                                                                        "p99_ms":  0.035
+                                                                                    },
+                                                        "samples":  600,
+                                                        "scenario":  "fixed-12-avatars-v1",
+                                                        "setup_ms":  3342.84,
+                                                        "simulation_dt":  0.0166666666666667,
+                                                        "source_clips":  129,
+                                                        "source_sha256":  {
+                                                                              "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                              "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                              "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                              "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                              "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                          },
+                                                        "static_bytes_delta":  43332.0,
+                                                        "warmup_frames":  90
+                                                    },
+                         "prototypes-both-psa":  {
+                                                     "animation_apply_12_players":  {
+                                                                                        "max_ms":  9.34,
+                                                                                        "mean_ms":  6.23430833333333,
+                                                                                        "p50_ms":  6.278,
+                                                                                        "p95_ms":  8.09,
+                                                                                        "p99_ms":  8.857
+                                                                                    },
+                                                     "backend":  "psa",
+                                                     "bones_per_player":  145,
+                                                     "callback_interval_with_probe":  {
+                                                                                          "max_ms":  10.52,
+                                                                                          "mean_ms":  7.64931666666666,
+                                                                                          "p50_ms":  7.489,
+                                                                                          "p95_ms":  9.297,
+                                                                                          "p99_ms":  10.176
+                                                                                      },
+                                                     "cpu_update_12_players":  {
+                                                                                   "max_ms":  9.366,
+                                                                                   "mean_ms":  6.28539833333333,
+                                                                                   "p50_ms":  6.332,
+                                                                                   "p95_ms":  8.144,
+                                                                                   "p99_ms":  9.037
+                                                                               },
+                                                     "display":  "headless",
+                                                     "evaluation_rigs":  0,
+                                                     "headless":  true,
+                                                     "label":  "prototypes-both-psa",
+                                                     "limitations":  [
+                                                                         "CPU timings only; headless does not measure GPU rendering or visible FPS",
+                                                                         "Godot memory/resource counters are retained-state measurements, not a transient allocation or file-I/O trace",
+                                                                         "Sampling probe is excluded from update timings but included in callback intervals",
+                                                                         "Fixed workload isolates animation and excludes arena, tactical AI and ball simulation"
+                                                                     ],
+                                                     "memory_after_warmup":  {
+                                                                                 "nodes":  145.0,
+                                                                                 "objects":  1841.0,
+                                                                                 "orphan_nodes":  0.0,
+                                                                                 "peak_static_bytes":  243101134.0,
+                                                                                 "resources":  13.0,
+                                                                                 "static_bytes":  243084622.0
+                                                                             },
+                                                     "memory_final":  {
+                                                                          "nodes":  145.0,
+                                                                          "objects":  1841.0,
+                                                                          "orphan_nodes":  0.0,
+                                                                          "peak_static_bytes":  243167858.0,
+                                                                          "resources":  13.0,
+                                                                          "static_bytes":  243150498.0
+                                                                      },
+                                                     "native_cache_hits":  0,
+                                                     "native_evaluations":  0,
+                                                     "object_count_delta":  0.0,
+                                                     "players":  12,
+                                                     "resource_count_delta":  0.0,
+                                                     "sample_probe_12_players":  {
+                                                                                     "max_ms":  1.053,
+                                                                                     "mean_ms":  0.968316666666666,
+                                                                                     "p50_ms":  0.966,
+                                                                                     "p95_ms":  1.0,
+                                                                                     "p99_ms":  1.021
+                                                                                 },
+                                                     "samples":  600,
+                                                     "scenario":  "fixed-12-avatars-v1",
+                                                     "setup_ms":  2659.727,
+                                                     "simulation_dt":  0.0166666666666667,
+                                                     "source_clips":  129,
+                                                     "source_sha256":  {
+                                                                           "src/animation_expansion.gd":  "ca1552db7180357d2460d5a7fcc275e61e02af3a259b25ffcf8c49802e54dbc5",
+                                                                           "src/avatar.gd":  "df785d76ba744920c88f08e048c91646cb4abb7d997d3312f0aaedfbda170259",
+                                                                           "src/pose_animation_tree.gd":  "710e994aa1ac2e7e163ee2421a41496d8f927f47cd2bedb3cf720ae08a355bd7",
+                                                                           "src/psa.gd":  "3f57b025004224281edb7ec6e98453535e6fddf3bf077fa3ed13f37e097f85b0",
+                                                                           "src/psa_animation_library.gd":  "91b6e7b63cb55c9678a148002c759f2be07121c3dc3744e5e3ad7f5fdae99cf2"
+                                                                       },
+                                                     "static_bytes_delta":  65876.0,
+                                                     "warmup_frames":  90
+                                                 }
+                     }
+}
