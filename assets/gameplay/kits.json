@@ -1,0 +1,643 @@
+{
+  "schema": 1,
+  "resolution": 2048,
+  "archive_priority": true,
+  "clubs": {
+    "allianz-milano": {
+      "dedicated_libero": false,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/allianz-milano-home-uv.png",
+          "primary_hex_approx": "#eeeeef",
+          "secondary_hex_approx": "#172239",
+          "shorts_hex": "#f1f1f1",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/allianz milano .png",
+          "front_bounds": [
+            723,
+            118,
+            1095,
+            580
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/allianz-milano-1.jpg",
+          "sha256": "cc5fad6e7b3421b5eb4e4bf49d12c6f1a2fc30b211afefb4ad450842d502066b"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/allianz-milano-away-uv.png",
+          "primary_hex_approx": "#17191d",
+          "secondary_hex_approx": "#1478b4",
+          "shorts_hex": "#111c30",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/allianz milano .png",
+          "front_bounds": [
+            187,
+            118,
+            562,
+            580
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/allianz-milano-2.jpg",
+          "sha256": "502c2aad5457ad917384e40cda5a51c899c38f2010e0f84dfc204f3723490d3f"
+        }
+      }
+    },
+    "cisterna-volley": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/cisterna-volley-home-uv.png",
+          "primary_hex_approx": "#282051",
+          "secondary_hex_approx": "#99d5eb",
+          "shorts_hex": "#24204e",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/cisterna-volley-home-front.png",
+          "front_bounds": [
+            13,
+            63,
+            1242,
+            1207
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cisterna-volley-1.jpg",
+          "sha256": "6d95d32ae066224c0a290e641f966109b3aba7e1265ff880b4ccdf66d63e9b5a"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/cisterna-volley-away-uv.png",
+          "primary_hex_approx": "#f4f5f7",
+          "secondary_hex_approx": "#88c8e4",
+          "shorts_hex": "#f2f4f5",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/cisterna-volley-away-front.png",
+          "front_bounds": [
+            7,
+            58,
+            1247,
+            1204
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cisterna-volley-2.jpg",
+          "sha256": "8842d1c4f7d457c2f97e313415797358ccf02957569876f225a053b3226a8954"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/cisterna-volley-libero-uv.png",
+          "primary_hex_approx": "#ce303b",
+          "secondary_hex_approx": "#c6e0eb",
+          "shorts_hex": "#ce303b",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/cisterna-volley-libero-front.png",
+          "front_bounds": [
+            25,
+            8,
+            1228,
+            1236
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cisterna-volley-1.jpg",
+          "sha256": "60938fbe03829a286df115a618928b3ffa7f863929d2049d78911c22d0c17459"
+        }
+      }
+    },
+    "cucine-lube-civitanova": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/cucine-lube-civitanova-home-uv.png",
+          "primary_hex_approx": "#232225",
+          "secondary_hex_approx": "#db1a2d",
+          "shorts_hex": "#232225",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/cucine-lube-civitanova-home-front.png",
+          "front_bounds": [
+            9,
+            21,
+            1300,
+            1174
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cucine-lube-civitanova-1.jpg",
+          "sha256": "c213618b520c5ae42bd427e2c104d20a639794052d3f55937a262da971487677"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/cucine-lube-civitanova-away-uv.png",
+          "primary_hex_approx": "#dd152a",
+          "secondary_hex_approx": "#16171b",
+          "shorts_hex": "#d31a2e",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/cucine-lube-civitanova-away-front.png",
+          "front_bounds": [
+            16,
+            19,
+            1358,
+            1119
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cucine-lube-civitanova-2.jpg",
+          "sha256": "13cf98236c9559717ff92065fc4d7849c5a3ee86affb38e1e11964505ce27fad"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/cucine-lube-civitanova-libero-uv.png",
+          "primary_hex_approx": "#f3c724",
+          "secondary_hex_approx": "#181c25",
+          "shorts_hex": "#f2c323",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/cucine-lube-civitanova-libero-front.png",
+          "front_bounds": [
+            14,
+            27,
+            1358,
+            1114
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/cucine-lube-civitanova-1.jpg",
+          "sha256": "43ed032e7557123f806da15d7e18b24ffb9ea6103af075e10df09252b5c2f761"
+        }
+      }
+    },
+    "acqua-santanna-cuneo": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/acqua-santanna-cuneo-home-uv.png",
+          "primary_hex_approx": "#10254c",
+          "secondary_hex_approx": "#15a8c7",
+          "shorts_hex": "#11254b",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/cuneo .png",
+          "front_bounds": [
+            121,
+            85,
+            431,
+            447
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/acqua-santanna-cuneo-1.jpg",
+          "sha256": "5dfdedb2dd9fb191fb65ada733cb8d564c317c5272c58e0c06c4fc866e3b87e5"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/acqua-santanna-cuneo-away-uv.png",
+          "primary_hex_approx": "#b9e5ef",
+          "secondary_hex_approx": "#159ac3",
+          "shorts_hex": "#bde6ee",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/cuneo .png",
+          "front_bounds": [
+            992,
+            85,
+            1301,
+            447
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/acqua-santanna-cuneo-2.jpg",
+          "sha256": "007b720ff18bdf126ac21ae9af6a138d37e1e4477e22b3f8c750fa54f49a1b58"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/acqua-santanna-cuneo-libero-uv.png",
+          "primary_hex_approx": "#e95616",
+          "secondary_hex_approx": "#575651",
+          "shorts_hex": "#ec651b",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/cuneo .png",
+          "front_bounds": [
+            121,
+            714,
+            432,
+            1076
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/acqua-santanna-cuneo-1.jpg",
+          "sha256": "e9ba71cff6f9f150cc32d652839ec86f08795d7cbfbef3910ae725f1879cbe0f"
+        }
+      }
+    },
+    "gas-sales-bluenergy-piacenza": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/gas-sales-bluenergy-piacenza-home-uv.png",
+          "primary_hex_approx": "#bc102c",
+          "secondary_hex_approx": "#e73245",
+          "shorts_hex": "#b81530",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/piacenza.png",
+          "front_bounds": [
+            201,
+            154,
+            488,
+            462
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/gas-sales-bluenergy-piacenza-1.jpg",
+          "sha256": "c4e65db743697399a06b60a348173a32c3d5d415841735c903d761eec6147d83"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/gas-sales-bluenergy-piacenza-away-uv.png",
+          "primary_hex_approx": "#f3f3f3",
+          "secondary_hex_approx": "#c51838",
+          "shorts_hex": "#f3f3f3",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/piacenza.png",
+          "front_bounds": [
+            642,
+            153,
+            939,
+            461
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/gas-sales-bluenergy-piacenza-2.jpg",
+          "sha256": "995c613832de06148cb1acec48dfd3fae1487a396776dd0c95a7687a93f557f6"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/gas-sales-bluenergy-piacenza-libero-uv.png",
+          "primary_hex_approx": "#112735",
+          "secondary_hex_approx": "#f68b22",
+          "shorts_hex": "#102432",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/piacenza.png",
+          "front_bounds": [
+            1088,
+            154,
+            1382,
+            461
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/gas-sales-bluenergy-piacenza-1.jpg",
+          "sha256": "ff7c228a5ef173a91a04d18c2adbf8a2047d650574a62a5b502c1e284fd95ab1"
+        }
+      }
+    },
+    "itas-trentino": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/itas-trentino-home-uv.png",
+          "primary_hex_approx": "#f0f0ed",
+          "secondary_hex_approx": "#e8c62e",
+          "shorts_hex": "#f4f4ef",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/trentino.png",
+          "front_bounds": [
+            75,
+            188,
+            452,
+            637
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/itas-trentino-1.jpg",
+          "sha256": "d8c8a5117a8326716ad13efc5a8a211106aabdcbeeeb017db48be3a400205baf"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/itas-trentino-away-uv.png",
+          "primary_hex_approx": "#111d32",
+          "secondary_hex_approx": "#357bc1",
+          "shorts_hex": "#14233b",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/trentino.png",
+          "front_bounds": [
+            696,
+            188,
+            1077,
+            637
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/itas-trentino-2.jpg",
+          "sha256": "3ff7ab8db09e3db80bd0067b78ef0aea63de88639b3054d27bb7ed2f2b0e12a8"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/itas-trentino-libero-uv.png",
+          "primary_hex_approx": "#b7192f",
+          "secondary_hex_approx": "#dc273a",
+          "shorts_hex": "#b01b31",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/trentino.png",
+          "front_bounds": [
+            1320,
+            188,
+            1700,
+            637
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/itas-trentino-1.jpg",
+          "sha256": "c172319cf9ebd1c35191db6b188cc70a5ee7ef355daa9baa05b36d1dd820ca47"
+        }
+      }
+    },
+    "pallavolo-padova": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/pallavolo-padova-home-uv.png",
+          "primary_hex_approx": "#151619",
+          "secondary_hex_approx": "#dddddd",
+          "shorts_hex": "#151619",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/pallavolo-padova-home-front.png",
+          "front_bounds": [
+            19,
+            18,
+            1289,
+            1173
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/pallavolo-padova-1.jpg",
+          "sha256": "33e66df76fe8840bfe3d958dea89489fd801bc47e7e95a764a74ef772ca1b776"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/pallavolo-padova-away-uv.png",
+          "primary_hex_approx": "#efefec",
+          "secondary_hex_approx": "#b6b8b7",
+          "shorts_hex": "#151619",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/pallavolo-padova-away-front.png",
+          "front_bounds": [
+            220,
+            19,
+            1316,
+            1003
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/pallavolo-padova-2.jpg",
+          "sha256": "fc35ac34439cbc0f0be6fa4ccbacd34f5bca874892a359b1038734688101187b"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/pallavolo-padova-libero-uv.png",
+          "primary_hex_approx": "#086747",
+          "secondary_hex_approx": "#c4d630",
+          "shorts_hex": "#076c4b",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/pallavolo-padova-libero-front.png",
+          "front_bounds": [
+            236,
+            27,
+            1296,
+            999
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/pallavolo-padova-1.jpg",
+          "sha256": "51263945dd72e47e3488256cb9acdfee212e539f0dea115b9d76f1ec2858f550"
+        }
+      }
+    },
+    "rana-verona": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/rana-verona-home-uv.png",
+          "primary_hex_approx": "#104e8e",
+          "secondary_hex_approx": "#e5ca16",
+          "shorts_hex": "#233c7c",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/verona.png",
+          "front_bounds": [
+            380,
+            93,
+            644,
+            377
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/rana-verona-1.jpg",
+          "sha256": "214c864cfff00c0d9abe14819b78540b4a292040ab70fe5aa3fd7a7015f4e3b6"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/rana-verona-away-uv.png",
+          "primary_hex_approx": "#e4d015",
+          "secondary_hex_approx": "#173f82",
+          "shorts_hex": "#233c7c",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/verona.png",
+          "front_bounds": [
+            24,
+            94,
+            293,
+            378
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/rana-verona-2.jpg",
+          "sha256": "a1798d49045a044a792d50b586fb8f45589377b89cbeb9e9b707d92fe8e95e79"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/rana-verona-libero-uv.png",
+          "primary_hex_approx": "#eceeec",
+          "secondary_hex_approx": "#e9cd12",
+          "shorts_hex": "#233c7c",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/reference/Maglie/verona.png",
+          "front_bounds": [
+            732,
+            93,
+            998,
+            379
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/rana-verona-1.jpg",
+          "sha256": "643f982dec1d2625ded2165129bffd8a5fd00901f392ea9c769f4fe8c2088d0f"
+        }
+      }
+    },
+    "sir-susa-scai-perugia": {
+      "dedicated_libero": false,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/sir-susa-scai-perugia-home-uv.png",
+          "primary_hex_approx": "#191c20",
+          "secondary_hex_approx": "#d21b38",
+          "shorts_hex": "#191b20",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/perugia.png",
+          "front_bounds": [
+            143,
+            199,
+            522,
+            640
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/sir-susa-scai-perugia-1.jpg",
+          "sha256": "fa7f39bf57823283224603508f66e2019881153890af30961f466910cc025a13"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/sir-susa-scai-perugia-away-uv.png",
+          "primary_hex_approx": "#a91530",
+          "secondary_hex_approx": "#161b20",
+          "shorts_hex": "#ac1732",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/reference/Maglie/perugia.png",
+          "front_bounds": [
+            669,
+            199,
+            1051,
+            640
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/sir-susa-scai-perugia-2.jpg",
+          "sha256": "16eb364dbeba2801a40750c199ea1fb079276489958c40a467712735a55d35f3"
+        }
+      }
+    },
+    "tinet-prata-di-pordenone": {
+      "dedicated_libero": false,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/tinet-prata-di-pordenone-home-uv.png",
+          "primary_hex_approx": "#1447cf",
+          "secondary_hex_approx": "#16bfdd",
+          "shorts_hex": "#1546ce",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/tinet-prata-di-pordenone-home-front.png",
+          "front_bounds": [
+            28,
+            28,
+            1344,
+            1121
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/tinet-prata-di-pordenone-1.jpg",
+          "sha256": "e000d19191aa0f7697c5105143862993011a3543293c94d4b5a8836136b539cd"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/tinet-prata-di-pordenone-away-uv.png",
+          "primary_hex_approx": "#f0f3f5",
+          "secondary_hex_approx": "#c9e9ee",
+          "shorts_hex": "#eef2f3",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/tinet-prata-di-pordenone-away-front.png",
+          "front_bounds": [
+            101,
+            20,
+            1271,
+            1126
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/tinet-prata-di-pordenone-2.jpg",
+          "sha256": "6bf55cae2781fd9c91fbb73226a7fcf3530f548bfb9c6acd7ebda98cd70624f9"
+        }
+      }
+    },
+    "valsa-group-modena": {
+      "dedicated_libero": true,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/valsa-group-modena-home-uv.png",
+          "primary_hex_approx": "#efd127",
+          "secondary_hex_approx": "#f9e477",
+          "shorts_hex": "#151e32",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/valsa-group-modena-home-front.png",
+          "front_bounds": [
+            75,
+            29,
+            1234,
+            1176
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/valsa-group-modena-1.jpg",
+          "sha256": "abd1b16f550f9a2b93cb7e14e28a1e8743713cd0e8f70b489fefa2450e26c685"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/valsa-group-modena-away-uv.png",
+          "primary_hex_approx": "#15213d",
+          "secondary_hex_approx": "#2855c5",
+          "shorts_hex": "#151e32",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/valsa-group-modena-away-front.png",
+          "front_bounds": [
+            165,
+            34,
+            1191,
+            1129
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/valsa-group-modena-2.jpg",
+          "sha256": "374b135c83191366f2b5551d5f2f6a1c7ec95895e95ef6526fe1325e458f80ae"
+        },
+        "libero": {
+          "variant": "libero",
+          "texture": "res://assets/art/kits45/valsa-group-modena-libero-uv.png",
+          "primary_hex_approx": "#243e3e",
+          "secondary_hex_approx": "#b8d970",
+          "shorts_hex": "#243e3e",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/valsa-group-modena-libero-front.png",
+          "front_bounds": [
+            95,
+            49,
+            1216,
+            1158
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/valsa-group-modena-1.jpg",
+          "sha256": "8a067d47a0cd43b612f777bd86ac237ce8be9f4340893fed6717d8e5590237eb"
+        }
+      }
+    },
+    "vero-volley-monza": {
+      "dedicated_libero": false,
+      "variants": {
+        "home": {
+          "variant": "home",
+          "texture": "res://assets/art/kits45/vero-volley-monza-home-uv.png",
+          "primary_hex_approx": "#1177b6",
+          "secondary_hex_approx": "#1d3e76",
+          "shorts_hex": "#202435",
+          "ink": "#f4f4f4",
+          "front_reference": "assets/art/kits45/vero-volley-monza-home-front.png",
+          "front_bounds": [
+            2,
+            21,
+            1251,
+            1235
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/vero-volley-monza-1.jpg",
+          "sha256": "fcddb1f8b273bc2c460580c93e0cdb5813274a8d5a2452e3da66f869b0c16daa"
+        },
+        "away": {
+          "variant": "away",
+          "texture": "res://assets/art/kits45/vero-volley-monza-away-uv.png",
+          "primary_hex_approx": "#eeefed",
+          "secondary_hex_approx": "#1a2c48",
+          "shorts_hex": "#202435",
+          "ink": "#15243a",
+          "front_reference": "assets/art/kits45/vero-volley-monza-away-front.png",
+          "front_bounds": [
+            17,
+            21,
+            1237,
+            1235
+          ],
+          "back_status": "reconstructed_from_supplied_palette_and_motif",
+          "shorts_reference": "assets/art/kits45/reference/official/vero-volley-monza-2.jpg",
+          "sha256": "e54109b6667bd859b0b11658bedf5fba91c4d2ac2f2d0863e240347f662bf0a9"
+        }
+      }
+    }
+  }
+}

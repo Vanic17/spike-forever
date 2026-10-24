@@ -289,7 +289,7 @@ func match_setup() -> void:
 		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],card.get_child(card.get_child_count()-1)))
 		var refresh=func(_index):
 			var t=db.teams[p.selected]
-			swatch.color=Color(t.uniform_colors["home" if kit_pick.selected==0 else "away"].primary_hex_approx)
+			swatch.color=Color(preload("res://src/club_kits.gd").selection(t.id,"home" if kit_pick.selected==0 else "away").primary_hex_approx)
 		p.item_selected.connect(func(index): match_rosters[team_side]=[]; refresh.call(index)); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)
@@ -306,7 +306,11 @@ func match_setup() -> void:
 		for side in 2:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
 			var squad: Array=match_rosters[side] if not match_rosters[side].is_empty() else db.lineup(t)
-			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],t.uniform_colors["home" if kits[side].selected==0 else "away"],t.uniform_colors.libero)
+			var variant := "home" if kits[side].selected==0 else "away"
+			var club_kits = preload("res://src/club_kits.gd")
+			var chosen_kit: Dictionary = club_kits.selection(t.id,variant)
+			var chosen_libero: Dictionary = club_kits.selection(t.id,variant,true)
+			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],chosen_kit,chosen_libero)
 		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.reset_rally(); game.started=true; hide(); music.stop())
 
 func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:

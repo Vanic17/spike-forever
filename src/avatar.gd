@@ -3,6 +3,7 @@ extends Node3D
 const AnimationExpansion = preload("res://src/animation_expansion.gd")
 const PSK = preload("res://src/psk.gd")
 const Assets = preload("res://src/source_assets.gd")
+const ClubKits = preload("res://src/club_kits.gd")
 const MovementIntent = preload("res://src/movement_intent.gd")
 const PoseTree = preload("res://src/pose_animation_tree.gd")
 const MotionPrototypes = preload("res://src/motion_prototypes.gd")
@@ -65,7 +66,7 @@ var foot_anchors := [Vector3.ZERO, Vector3.ZERO]
 var foot_planted := [false, false]
 var foot_corrections := 0
 var body_lean := Vector2.ZERO
-var cloth_material: StandardMaterial3D
+var cloth_material: Material
 var libero_active := false
 var intent = MovementIntent.new()
 var visual_context := "normal"
@@ -154,7 +155,7 @@ func setup_meshes() -> void:
 	var skin := skeleton.create_skin_from_rest_transforms()
 	for part in model_bank:
 		var node := MeshInstance3D.new()
-		node.mesh = model_bank[part].mesh
+		node.mesh = ClubKits.mesh_with_print_uv(model_bank[part].mesh) if part == "cloth" else model_bank[part].mesh
 		node.skin = skin
 		visual_root.add_child(node)
 		node.skeleton = node.get_path_to(skeleton)
@@ -186,6 +187,7 @@ func setup_meshes() -> void:
 	visual_root.add_child(jersey_number)
 
 func set_libero(value: bool) -> void:
+	if value == libero_active: return
 	libero_active = value
 	if not roster_identity.is_empty():
 		apply_identity()
@@ -209,11 +211,19 @@ func apply_identity() -> void:
 	var primary=Color(kit.get("primary_hex_approx","#17458A"))
 	if libero_active and primary.is_equal_approx(Color(kit_identity.get("primary_hex_approx","#17458A"))): primary=Color(kit_identity.get("secondary_hex_approx","#F5F5F5"))
 	if cloth_material:
-		cloth_material=cloth_material.duplicate(); cloth_material.albedo_texture=null; cloth_material.albedo_color=primary
+		if kit.has("texture"):
+			cloth_material = ClubKits.material(self,person,kit)
+		else:
+			var fallback := StandardMaterial3D.new()
+			fallback.albedo_color = primary
+			fallback.roughness = 0.85
+			fallback.cull_mode = BaseMaterial3D.CULL_DISABLED
+			cloth_material = fallback
 		body_parts.cloth.material_override=cloth_material
 	if jersey_number:
 		jersey_number.text=str(int(person.jersey_number)) if person.get("jersey_number")!=null else "?"
 		jersey_number.modulate=Color.WHITE if primary.get_luminance()<0.45 else Color("14243a")
+		jersey_number.visible = not kit.has("texture")
 	var appearance: Dictionary=person.get("appearance",{})
 	for part in ["body","head","hair"]:
 		if not body_parts.has(part): continue

@@ -1,0 +1,16 @@
+[
+  {
+    "club": "sir-susa-scai-perugia",
+    "variant": "home",
+    "url": "https://www.piuadrenalina.com/wp-content/uploads/2025/11/AM0077_2-640x800.jpg",
+    "status": "unavailable_image_endpoint_returns_html",
+    "fallback": "manufacturer product listing confirms black/home and red/away; shorts reconstructed"
+  },
+  {
+    "club": "sir-susa-scai-perugia",
+    "variant": "away",
+    "url": "https://www.piuadrenalina.com/wp-content/uploads/2025/11/AM0079_2-640x800.jpg",
+    "status": "unavailable_image_endpoint_returns_html",
+    "fallback": "manufacturer product listing confirms black/home and red/away; shorts reconstructed"
+  }
+]

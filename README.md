@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.45.0:** divise delle 12 squadre ricostruite dai riferimenti forniti: 32 varianti casa, trasferta e libero, pantaloncini coordinati, nome e numero stampati sul retro e aggiornati dai dati locali. Libero con divisa opposta quando manca una variante dedicata. [Anteprime, fonti e verifiche](docs/RELEASE_NOTES_45.md).
+
 **Versione 0.44.0:** primo tempo e finta anticipati, corsa e salto in avanzamento anche per pipe e opposto di seconda linea. Muro con contatto continuo sulle mani e risposte diverse tra muro pieno, tocco giocabile e deviazione esterna. Meno ricezioni di la e attacchi CPU ordinari all'82-96,5%. [Dettagli e verifiche](docs/RELEASE_NOTES_44.md).
 
 **Versione 0.43.0:** eliminato il riavvio del bagher dopo un recupero mancato e interrotta la corsa verso il vecchio bersaglio. Centrale preparato prima e palleggiatore piu pronto al secondo tocco, preservando il corridoio del primo tempo. [Dettagli e verifiche](docs/RELEASE_NOTES_43.md).

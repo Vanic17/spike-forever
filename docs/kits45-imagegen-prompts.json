@@ -1,0 +1,132 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "flat photographic garment reconstructions for UV projection",
+  "prompts": [
+    {
+      "key": "cisterna-volley-away",
+      "prompt": "Production garment texture reference for a 3D volleyball game. ONE variant only. Cisterna Volley WHITE AWAY shirt, matching the white shirt on the upper right of the original photo. White body, pale blue angular side panels, thin blue collar/cuffs, dark blue Mizuno and CV crest. Exact sponsors BimboK, credem giocodicuore, main MARINI IMPIANTI INDUSTRIALI S.P.A., SCRMI and STIL as visible. The second image is a cleaned purple HOME style reference only: do not make this variant purple. Output ONE high resolution square flat FRONT shirt reference, no back view or shorts. Garment fills almost all the image, V or round collar appropriate to reference at y5%, hem at y95%, sleeves extend x4% to x96%, torso sides around x22% and x78%. No person, arms, mannequin, hanger, perspective, folds, shadows or poster text; flat neutral #808080 background. Reconstruct the printed garment precisely with subtle uniform textile weave and faithful team branding. REMOVE all player numbers and names entirely, leaving underlying design intact; personalized text is added by the game. Do not invent extra sponsors or fake copy. Preserve exact visible logos and text rather than substituting generic decorations.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\cisterna volley- viola home - bianca away- rossa libero .png",
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cisterna-volley-home-front.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cisterna-volley-away-front.png"
+    },
+    {
+      "key": "cisterna-volley-libero",
+      "prompt": "Production garment texture reference for a 3D volleyball game. ONE variant only. Cisterna Volley RED LIBERO shirt, matching the bottom-right player in the reference. Red angular polygon textile, white and pale blue side panels/cuffs, white Mizuno and CV marks. Reconstruct the actual sponsor print visible on this red garment, including MARINI and ALLI; preserve visible small sponsor marks, do not substitute the purple shirt's color. Output ONE high resolution square flat FRONT shirt reference, no back view or shorts. Garment fills almost all the image, V or round collar appropriate to reference at y5%, hem at y95%, sleeves extend x4% to x96%, torso sides around x22% and x78%. No person, arms, mannequin, hanger, perspective, folds, shadows or poster text; flat neutral #808080 background. Reconstruct the printed garment precisely with subtle uniform textile weave and faithful team branding. REMOVE all player numbers and names entirely, leaving underlying design intact; personalized text is added by the game. Do not invent extra sponsors or fake copy. Preserve exact visible logos and text rather than substituting generic decorations.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\cisterna volley- viola home - bianca away- rossa libero .png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cisterna-volley-libero-front.png"
+    },
+    {
+      "key": "vero-volley-monza-home",
+      "prompt": "Production garment texture reference for a 3D volleyball game. ONE variant only. Vero Volley Monza BLUE HOME shirt, use the stretched blue jersey held by the player on the LEFT as the primary reference (the jersey on right is another similar blue copy). Blue/cyan irregular fine fingerprint-like pattern, white round collar, blue shoulders. Preserve FREDDY, Vero Volley crest, BCC CARATE E TREVIGLIO, GigaTera, up, HOMCOM by Aosom, VICSAMGROUP, BrianzAcque, SKIN LABO, GIGIESSE, wide white VEROVOLLEY band, CONTECO and bottom TXT and AUTOPANCOTTI as closely as visible. Ignore the Halloween poster graphics, people, ball and their signatures. Output ONE high resolution square flat FRONT shirt reference, no back view or shorts. Garment fills almost all the image, V or round collar appropriate to reference at y5%, hem at y95%, sleeves extend x4% to x96%, torso sides around x22% and x78%. No person, arms, mannequin, hanger, perspective, folds, shadows or poster text; flat neutral #808080 background. Reconstruct the printed garment precisely with subtle uniform textile weave and faithful team branding. REMOVE all player numbers and names entirely, leaving underlying design intact; personalized text is added by the game. Do not invent extra sponsors or fake copy. Preserve exact visible logos and text rather than substituting generic decorations.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\monza.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\vero-volley-monza-home-front.png"
+    },
+    {
+      "key": "vero-volley-monza-away",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: White AWAY shirt worn by middle player. White/navy pinstripe subtle fingerprint textile, navy collar, FREDDY/VeroVolley/BCC CARATE E TREVIGLIO/GigaTera/up/HOMCOM by Aosom/VICSAMGROUP/BrianzAcque/SKIN LABO/GIGIESSE. Navy VEROVOLLEY lower band, CONTECO and TXT/AUTOPANCOTTI. Blue held shirts are only supporting sponsor reference. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\monza.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\vero-volley-monza-away-front.png"
+    },
+    {
+      "key": "pallavolo-padova-home",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: BLACK HOME shirt worn by RIGHTMOST player number14. Black, white silver radial wing pattern, Mitsubishi mark, Padova crest, PADOVA VOLLEYBALL central logo. Reconstruct small chest sponsors as visible. Ignore orange, pink, green, white garments. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-home-front.png"
+    },
+    {
+      "key": "pallavolo-padova-away",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: WHITE AWAY shirt worn by tall player number1. White with pale grey radial wing textile, black collar and Mitsubishi mark, Padova crest, PADOVA VOLLEYBALL central logo. Reconstruct small chest sponsors as visible. Ignore black,orange,pink,green garments. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-away-front.png"
+    },
+    {
+      "key": "pallavolo-padova-libero",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: GREEN LIBERO shirt worn by middle player number9. Green deep emerald body, lime radial wing motif, yellow accents, white Mitsubishi mark, Padova crest, main pedron and small chest sponsors. Ignore orange/pink/black/white shirts. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\padova - nera prima- bianca seconda - verde libero.jpg"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\pallavolo-padova-libero-front.png"
+    },
+    {
+      "key": "tinet-prata-di-pordenone-home",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: BLUE HOME shirt on player number8. Royal blue/cyan vertical angular maze motif, yellow V collar/cuffs. Nine, PRATA crest, APM components, central TOMASELLA and Tinet. Use player number3 supporting sponsor reference. No player numbers. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\pordenone.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\tinet-prata-di-pordenone-home-front.png"
+    },
+    {
+      "key": "tinet-prata-di-pordenone-away",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: WHITE AWAY shirt held/worn by player11. White/pale iceblue vertical angular maze motif, yellow collar/cuffs. Nine, PRATA crest, APM components, TOMASELLA and Tinet central. Ignore blue shirts. No player numbers. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No poster graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\pordenone.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\tinet-prata-di-pordenone-away-front.png"
+    },
+    {
+      "key": "valsa-group-modena-home",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: HOME yellow jersey on LEFT. Fine white/gold contour lines, navy collar and cuffs, Nine, Modena crest, SISEL, TIRONI, BULLONERIA EMILIANA, MANTOVANI, ATLANTIC, VEM, LHV, large VALSA GROUP and BPER: and AUTOCLUB. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No shop graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\modena.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\valsa-group-modena-home-front.png"
+    },
+    {
+      "key": "valsa-group-modena-away",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: AWAY navy/royal blue jersey in MIDDLE. Yellow collar/cuffs, blue and gold contour lines down body, Nine/Modena crest/SISEL/TIRONI/BULLONERIA EMILIANA/MANTOVANI/ATLANTIC/VEM/LHV, large VALSA GROUP BPER: AUTOCLUB. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No shop graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\modena.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\valsa-group-modena-away-front.png"
+    },
+    {
+      "key": "valsa-group-modena-libero",
+      "prompt": "Production flat front garment reference for a 3D volleyball videogame. ONE shirt variant: LIBERO dark green jersey on RIGHT. Pale green leaf outline textile pattern, lime collar/cuffs, Nine, Modena crest and large main BSG MATERIALS white logo. Match sponsors actually on green shirt, not yellow/blue ones. Neutral grey #808080 background. Shirt collar y5%, hem y95%, sleeves x4% to96%, torso sides x22%/78%. Symmetric flat front, no person, skin, hanger, perspective, shadow or folds. Preserve actual visible sponsors and crests faithfully, remove player numbers/names leaving underlying textile. No shop graphics. Subtle textile, crisp print. NO shorts or back.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\modena.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\valsa-group-modena-libero-front.png"
+    },
+    {
+      "key": "cucine-lube-civitanova-home",
+      "prompt": "Create ONE cleaned flat FRONT garment production reference for 3D volleyball. BLACK shirt on LEFT, red collar/side panels; Zeus, Lube crest, GoldenPlast, Viafast, LionsEvents, VIARGROUP, CUCINE LUBE red square, GEKO red rectangle, exena., EIJCA. Faithfully flatten this actual 3/4 angle jersey, keep tribal/geometric textile as reference, same exact visible sponsor symbols and legible text, no extra logos. Grey#808080 plain background, no hanger/person/shadow or folds; collar at5% hem95%; sleeves reachx4%96%, torso22%78%. NO player numbers/names, NO back/shorts, no poster labels.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\lube civitanova.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cucine-lube-civitanova-home-front.png"
+    },
+    {
+      "key": "cucine-lube-civitanova-away",
+      "prompt": "Create ONE cleaned flat FRONT garment production reference for 3D volleyball. RED shirt in MIDDLE, black side panels, black collar; Zeus, Lube crest, GoldenPlast, Viafast, LionsEvents, VIARGROUP, CUCINE LUBE red square, GEKO red rectangle, exena., EIJCA. Faithfully flatten this actual 3/4 angle jersey, keep tribal/geometric textile as reference, same exact visible sponsor symbols and legible text, no extra logos. Grey#808080 plain background, no hanger/person/shadow or folds; collar at5% hem95%; sleeves reachx4%96%, torso22%78%. NO player numbers/names, NO back/shorts, no poster labels.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\lube civitanova.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cucine-lube-civitanova-away-front.png"
+    },
+    {
+      "key": "cucine-lube-civitanova-libero",
+      "prompt": "Create ONE cleaned flat FRONT garment production reference for 3D volleyball. YELLOW LIBERO shirt on RIGHT, black side panel/collar, Zeus, Lube crest, GoldenPlast, Viafast, LionsEvents; main Ing. Claudio Baldi BREVETTI-MARCHI, no CUCINE LUBE large central square on this yellow one. Faithfully flatten this actual 3/4 angle jersey, keep tribal/geometric textile as reference, same exact visible sponsor symbols and legible text, no extra logos. Grey#808080 plain background, no hanger/person/shadow or folds; collar at5% hem95%; sleeves reachx4%96%, torso22%78%. NO player numbers/names, NO back/shorts, no poster labels.",
+      "references": [
+        "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\reference\\Maglie\\lube civitanova.png"
+      ],
+      "path": "C:\\Users\\kravi\\Desktop\\Spike Forever\\assets\\art\\kits45\\cucine-lube-civitanova-libero-front.png"
+    },
+    {
+      "key": "cisterna-volley-home",
+      "prompt": "Production flat garment plate, Cisterna purple HOME. Preserve Mizuno/CV/BimboK/credemgiocodicuore/MARINI IMPIANTI INDUSTRIALI S.P.A./PLASTA RECYCLING/STIL, no numbers or names. Flat front with no person or perspective, grey background. Collar5%, hem95%, sleeves4–96%, torso22–78%.",
+      "path": "assets/art/kits45/cisterna-volley-home-front.png"
+    }
+  ]
+}

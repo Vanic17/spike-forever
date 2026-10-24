@@ -1,0 +1,14 @@
+{
+	"clubs": 12,
+	"distinct_variants": 32,
+	"local_identity_print_updates": true,
+	"missing_libero_inverts": [
+		"allianz-milano",
+		"sir-susa-scai-perugia",
+		"tinet-prata-di-pordenone",
+		"vero-volley-monza"
+	],
+	"original_mesh_attributes_preserved": true,
+	"resolution": 2048,
+	"shared_fabric_cache": true
+}

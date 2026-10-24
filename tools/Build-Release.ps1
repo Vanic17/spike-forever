@@ -24,6 +24,13 @@ $files+=@('docs/attack41-integrated-preview.png','docs/dive41-integrated-preview
 $files+=@('docs/RELEASE_NOTES_42.md','docs/PERFORMANCE_42.md','docs/approach42-preview.mp4','docs/approach42-15.png','docs/approach42-40.png','docs/approach42-63.png')
 $files+=@('docs/RELEASE_NOTES_43.md','docs/preparation43-before.json','docs/preparation43-after.json','tools/Test-RecoveryPresentation43.gd','tools/Benchmark-Preparation43.gd')
 $files+=@('docs/RELEASE_NOTES_44.md','docs/attacks44-preview.mp4','docs/balance44-report.json','docs/first-tempo44-report.json')
+$files+='docs/RELEASE_NOTES_45.md'
+foreach($kitTool in @('Build-Kits45.py','Inspect-KitMesh45.py','Fetch-KitReferences45.py','Fetch-ExtraKitReferences45.py','Test-Kits45.gd','Test-KitMatch45.gd','Preview-Kits45.gd','Benchmark-Kits45.gd','Capture-KitMatch45.gd','Check-KitScope45.py')){
+ $files+='tools/'+$kitTool
+}
+foreach($kitReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'kits45-*.json' -or $_.Name -like 'kits45-*.png'}){
+ $files+='docs/'+$kitReport.Name
+}
 foreach($taskTool in @('Preview-Attacks44.gd','Test-RallyBalance44.gd','Test-SweptBlock44.gd','Test-FirstTempo44.gd','Test-ForwardApproach44.gd')){
  $files+='tools/'+$taskTool
 }

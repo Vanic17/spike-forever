@@ -1,0 +1,218 @@
+[
+  {
+    "club": "allianz-milano",
+    "page": "https://www.legavolley.it/team/6858",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6858&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/allianz-milano-1.jpg",
+    "bytes": 25961,
+    "sha256": "ead1e1c98df58bd617702f1be49de0bc0e823d95af33d4e6ee5da01f3c3a59be"
+  },
+  {
+    "club": "allianz-milano",
+    "page": "https://www.legavolley.it/team/6858",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6858&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/allianz-milano-2.jpg",
+    "bytes": 27689,
+    "sha256": "399a5f55fde7671eedcfad1a71130ab1dcd9fe99af3d08f44da3fa98cf9839e2"
+  },
+  {
+    "club": "cisterna-volley",
+    "page": "https://www.legavolley.it/team/6859",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6859&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/cisterna-volley-1.jpg",
+    "bytes": 28700,
+    "sha256": "3a63d978492620f3d731fe5866bf3aa2df92c74fb336bc5f371be3d7ff227ced"
+  },
+  {
+    "club": "cisterna-volley",
+    "page": "https://www.legavolley.it/team/6859",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6859&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/cisterna-volley-2.jpg",
+    "bytes": 28851,
+    "sha256": "8e2b101ad550893630b39e421d64c637c5a43da4799a63faad1a7a4e24af12a9"
+  },
+  {
+    "club": "cucine-lube-civitanova",
+    "page": "https://www.legavolley.it/team/6860",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6860&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/cucine-lube-civitanova-1.jpg",
+    "bytes": 6009,
+    "sha256": "baab29f4b4b08c301249b6f751afa115f7e5a989d6447188963d51d44a012271"
+  },
+  {
+    "club": "cucine-lube-civitanova",
+    "page": "https://www.legavolley.it/team/6860",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6860&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/cucine-lube-civitanova-2.jpg",
+    "bytes": 6071,
+    "sha256": "e351a6f5e91c0b9eef041ca9ef698a8fdfbe3c972eb9c04c94f0a29c6ed459b1"
+  },
+  {
+    "club": "acqua-santanna-cuneo",
+    "page": "https://www.legavolley.it/team/6863",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6863&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/acqua-santanna-cuneo-1.jpg",
+    "bytes": 39578,
+    "sha256": "cddb75738dee135a934b7df888c308f2cb929c6791921a6975f78b24bfc6b672"
+  },
+  {
+    "club": "acqua-santanna-cuneo",
+    "page": "https://www.legavolley.it/team/6863",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6863&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/acqua-santanna-cuneo-2.jpg",
+    "bytes": 36689,
+    "sha256": "14ca3fd100394977476e6f6fff38a8168bffccefdd563c09872a9ac23fb4d165"
+  },
+  {
+    "club": "gas-sales-bluenergy-piacenza",
+    "page": "https://www.legavolley.it/team/6861",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6861&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/gas-sales-bluenergy-piacenza-1.jpg",
+    "bytes": 7742,
+    "sha256": "e09a1ad0987b69ac7a57fcb59c32fdc60d7128bb5fcc88e6d6f316f052cd09f4"
+  },
+  {
+    "club": "gas-sales-bluenergy-piacenza",
+    "page": "https://www.legavolley.it/team/6861",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6861&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/gas-sales-bluenergy-piacenza-2.jpg",
+    "bytes": 6738,
+    "sha256": "ef3aa296d147a6ec4e439800a58c3b9fc8d0cd2780788bd18249342bbbe16001"
+  },
+  {
+    "club": "itas-trentino",
+    "page": "https://www.legavolley.it/team/6862",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6862&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/itas-trentino-1.jpg",
+    "bytes": 28798,
+    "sha256": "278ea2e033c175328b176d0132e6a9067269cabea0fff558d028f71358ee84ec"
+  },
+  {
+    "club": "itas-trentino",
+    "page": "https://www.legavolley.it/team/6862",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6862&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/itas-trentino-2.jpg",
+    "bytes": 30459,
+    "sha256": "0061a0703c9409971a172ba3d9d8088506d03e0e3580d7ca6d27473e8dbf41e7"
+  },
+  {
+    "club": "pallavolo-padova",
+    "page": "https://www.legavolley.it/team/6866",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6866&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/pallavolo-padova-1.jpg",
+    "bytes": 28210,
+    "sha256": "c6514a0c8fad9aed2c4d0eb9dd9640f62ad04832d69e05945459879b9733b4b5"
+  },
+  {
+    "club": "pallavolo-padova",
+    "page": "https://www.legavolley.it/team/6866",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6866&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/pallavolo-padova-2.jpg",
+    "bytes": 26390,
+    "sha256": "8ca81d37e0c4dcaf184aae84c60c40966da95195a2a0e251d9c3f257be690dd4"
+  },
+  {
+    "club": "rana-verona",
+    "page": "https://www.legavolley.it/team/6864",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6864&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/rana-verona-1.jpg",
+    "bytes": 5524,
+    "sha256": "0c1aa3ed615d92d1a1fa96cf0a8213dbb81854b7522847d89f7a0314f25b40de"
+  },
+  {
+    "club": "rana-verona",
+    "page": "https://www.legavolley.it/team/6864",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6864&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/rana-verona-2.jpg",
+    "bytes": 5476,
+    "sha256": "c04aae2b7ba1b1ce1ef2a4f54de4445669c116a49c69d90b681c7069c949744c"
+  },
+  {
+    "club": "sir-susa-scai-perugia",
+    "page": "https://www.legavolley.it/team/6865",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6865&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/sir-susa-scai-perugia-1.jpg",
+    "bytes": 8118,
+    "sha256": "8b692045414a4988b7bc0c90dec3bcf33e7dac67d34c044eb0324dd34c2f08cf"
+  },
+  {
+    "club": "sir-susa-scai-perugia",
+    "page": "https://www.legavolley.it/team/6865",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6865&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/sir-susa-scai-perugia-2.jpg",
+    "bytes": 7879,
+    "sha256": "eaffad42dab86808c10af7e0d90d0835cd4b00504dedb824f284a208282c2bae"
+  },
+  {
+    "club": "tinet-prata-di-pordenone",
+    "page": "https://www.legavolley.it/team/6897",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6897&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/tinet-prata-di-pordenone-1.jpg",
+    "bytes": 11142,
+    "sha256": "d172c0d8340e08eac653dd0e70cc7f7d8e314549ac827b7fc6e29923e4bf14b0"
+  },
+  {
+    "club": "tinet-prata-di-pordenone",
+    "page": "https://www.legavolley.it/team/6897",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6897&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/tinet-prata-di-pordenone-2.jpg",
+    "bytes": 9564,
+    "sha256": "42f43b6f3886daff6e22e9cefcd70a173e4d56d7cbec865e2927ac36a7150028"
+  },
+  {
+    "club": "valsa-group-modena",
+    "page": "https://www.legavolley.it/team/6867",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6867&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/valsa-group-modena-1.jpg",
+    "bytes": 7336,
+    "sha256": "b22c76de61af6979cc477c64c3d2b1e1287b089e0c624857c009727592c40bb9"
+  },
+  {
+    "club": "valsa-group-modena",
+    "page": "https://www.legavolley.it/team/6867",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6867&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/valsa-group-modena-2.jpg",
+    "bytes": 7450,
+    "sha256": "6987d71d12e670ae79e7a0c475da98d57bbaded09104beea2e4026be4559a56d"
+  },
+  {
+    "club": "vero-volley-monza",
+    "page": "https://www.legavolley.it/team/6868",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6868&nr=1",
+    "reference_order": 1,
+    "path": "assets/art/kits45/reference/official/vero-volley-monza-1.jpg",
+    "bytes": 22072,
+    "sha256": "652b74dee592db98b367629e0eac65d843960a4462a39fe009b920603425d7aa"
+  },
+  {
+    "club": "vero-volley-monza",
+    "page": "https://www.legavolley.it/team/6868",
+    "url": "https://ww2.legavolley.it/GetDivisaWP.aspx?Key=6868&nr=2",
+    "reference_order": 2,
+    "path": "assets/art/kits45/reference/official/vero-volley-monza-2.jpg",
+    "bytes": 22798,
+    "sha256": "70582181df9fc956833547bd9eddfa436c02dd4e9ae8171ab8ec619ae353d036"
+  }
+]
