@@ -18,6 +18,8 @@ var formation_return: Control
 var message: Label
 var player_card
 var editor_scroll: ScrollContainer
+var formation_buttons: Array[Button]=[]
+var setup_start: Button
 var keyboard: ConfirmationDialog
 var keyboard_text: LineEdit
 var keyboard_target: LineEdit
@@ -165,6 +167,8 @@ func open_keyboard(target: LineEdit) -> void:
 	var container=keyboard_text.get_parent()
 	container.get_child(1).get_child(0).grab_focus()
 func clear(title: String) -> void:
+	body.add_theme_constant_override("separation",18)
+	for edge in ["left","right","top","bottom"]: body.get_parent().add_theme_constant_override("margin_"+edge,36)
 	for child in body.get_children(): body.remove_child(child); child.queue_free()
 	var top=HBoxContainer.new(); body.add_child(top)
 	var heading=Label.new(); heading.text=title; heading.add_theme_font_size_override("font_size",36); heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL; top.add_child(heading)
@@ -275,19 +279,26 @@ func match_setup() -> void:
 	match_rotations=[0,0]
 	lineup_open=false
 	clear("GIOCA  /  PREPARA LA PARTITA")
-	var scroll=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; body.add_child(scroll)
-	var content=VBoxContainer.new(); content.size_flags_horizontal=Control.SIZE_EXPAND_FILL; content.add_theme_constant_override("separation",12); scroll.add_child(content)
-	var row=HBoxContainer.new(); row.add_theme_constant_override("separation",30); content.add_child(row)
+	body.add_theme_constant_override("separation",12)
+	for edge in ["left","right","top","bottom"]: body.get_parent().add_theme_constant_override("margin_"+edge,24)
+	var row=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; row.add_theme_constant_override("separation",24); body.add_child(row)
+	formation_buttons.clear()
 	var picks: Array=[]; var kits: Array=[]
 	for side in 2:
 		var frame=PanelContainer.new(); frame.size_flags_horizontal=Control.SIZE_EXPAND_FILL; row.add_child(frame)
-		var card=VBoxContainer.new(); card.add_theme_constant_override("separation",12); frame.add_child(card)
+		var card=VBoxContainer.new(); card.add_theme_constant_override("separation",8); frame.add_child(card)
 		label(card,"LA TUA SQUADRA" if side==0 else "AVVERSARIA")
 		var p=picker(card,db.teams.map(func(t): return t.name)); p.select(side); picks.append(p)
-		label(card,"DIVISA"); var kit_pick=picker(card,["Casa","Trasferta"]); kits.append(kit_pick)
-		var swatch=preload("res://src/kit_preview.gd").new(); card.add_child(swatch)
+		var kit_row=HBoxContainer.new(); kit_row.add_theme_constant_override("separation",14); card.add_child(kit_row)
+		label(kit_row,"DIVISA"); var kit_pick=picker(kit_row,["Casa","Trasferta"]); kit_pick.size_flags_horizontal=Control.SIZE_EXPAND_FILL; kits.append(kit_pick)
 		var team_side: int=side
-		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],card.get_child(card.get_child_count()-1)))
+		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],formation_buttons[team_side]))
+		formation_buttons.append(formation)
+		var swatch=preload("res://src/kit_preview.gd").new(); card.add_child(swatch)
+		# Only the artwork yields height. Selectors and formations remain
+		# outside a scroll area and visible even in a short/wide window.
+		swatch.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		swatch.image.custom_minimum_size=Vector2(200,0); swatch.image.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		var refresh=func(_index):
 			var t=db.teams[p.selected]
 			swatch.show_kit(t.id,"home" if kit_pick.selected==0 else "away")
@@ -296,13 +307,13 @@ func match_setup() -> void:
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)
 	var format_box=VBoxContainer.new(); format_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(format_box)
 	label(format_box,"FORMATO PARTITA"); var format=picker(format_box,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2); settings_format=format
-	label(body,"PUNTI PER SET · vantaggio di due punti; set decisivo sempre a 15")
 	var points_box=VBoxContainer.new(); points_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(points_box)
 	label(points_box,"PUNTI PER SET"); var points=picker(points_box,["25","15"]); settings_points=points
-	var error=Label.new(); body.add_child(error)
-	button(body,"SCENDI IN CAMPO",func():
+	var error=Label.new(); body.add_child(error); error.hide()
+	setup_start=button(body,"SCENDI IN CAMPO",func():
 		for side in 2:
-			if db.lineup(db.teams[picks[side].selected]).is_empty(): error.text="Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L."; return
+			if db.lineup(db.teams[picks[side].selected]).is_empty():
+				error.text="Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L."; error.show(); return
 		game.match_best_of=[1,3,5][format.selected]; game.match_points=[25,15][points.selected]
 		for side in 2:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
@@ -312,7 +323,21 @@ func match_setup() -> void:
 			var chosen_kit: Dictionary = club_kits.selection(t.id,variant)
 			var chosen_libero: Dictionary = club_kits.selection(t.id,variant,true)
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],chosen_kit,chosen_libero)
-		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.reset_rally(); game.started=true; hide(); music.stop())
+		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.match_finished=false; game.reset_rally(); game.started=true; hide(); music.stop())
+	var back: Control=body.get_child(0).get_child(1)
+	for side in 2:
+		var column: Array=[picks[side],kits[side],formation_buttons[side],format if side==0 else points]
+		var other: Array=[picks[1-side],kits[1-side],formation_buttons[1-side],points if side==0 else format]
+		for i in column.size():
+			var current: Control=column[i]
+			current.focus_neighbor_top=current.get_path_to(back if i==0 else column[i-1])
+			current.focus_neighbor_bottom=current.get_path_to(setup_start if i==column.size()-1 else column[i+1])
+			current.focus_neighbor_right=current.get_path_to(other[i] if side==0 else current)
+			current.focus_neighbor_left=current.get_path_to(other[i] if side==1 else current)
+			current.focus_next=current.focus_neighbor_bottom
+	back.focus_neighbor_bottom=back.get_path_to(picks[0])
+	setup_start.focus_neighbor_top=setup_start.get_path_to(format); setup_start.focus_next=setup_start.get_path_to(back)
+	picks[0].grab_focus()
 
 func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:
 	formation_return=return_to

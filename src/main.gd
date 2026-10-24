@@ -51,6 +51,7 @@ var scores := [0, 0]
 var team_names := ["AURORA","EMBER"]
 var match_best_of:=5
 var match_points:=25
+var match_finished:=false
 var sets := [0, 0]
 var rotations := [0, 0]
 var touches := [0, 0]
@@ -354,7 +355,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_ESCAPE:
-				if started: paused = not paused
+				if started and not match_finished: paused = not paused
 			KEY_F1: debug_visible = not debug_visible
 			KEY_F2: demo = not demo
 			KEY_F6:
@@ -375,6 +376,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				camera_mode = (camera_mode + 1) % 3
 				set_camera()
 			KEY_R:
+				match_finished=false; paused=false
 				scores = [0, 0]
 				sets = [0, 0]
 				rotations = [0, 0]
@@ -387,6 +389,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if gallery:
 					gallery_index = posmod(gallery_index - 1, clips.size())
 					show_clip()
+	if match_finished: return
 	if event.is_action_pressed("start"):
 		if not started:
 			return
@@ -714,6 +717,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 
 func return_to_main_menu() -> void:
 	started=false; paused=false; demo=false; gallery=false
+	match_finished=false
 	charging=false; armed=false; attack_buffer_start=-1; attack_buffer_power=-1
 	if pause_menu!=null: pause_menu.surface.hide()
 	if match_audio: match_audio.update_match_state(false,phase,false)
@@ -1411,8 +1415,9 @@ func award(team: int, reason: String) -> void:
 		scores = [0, 0]
 		point_reason = "SET " + team_names[team]
 		if sets[team] >= int(match_best_of/2)+1:
-			point_reason = "VITTORIA " + team_names[team] + " · R PER NUOVA PARTITA"
-			paused = true
+			point_reason = "VITTORIA " + team_names[team]
+			match_finished = true
+			paused = false
 	set_phase("POINT")
 	# A whistle ends scoring and contacts, not the physical trajectory.
 	airborne = true
@@ -1501,7 +1506,9 @@ func step(dt: float) -> void:
 			begin_serve_toss()
 	elif phase == "POINT":
 		step_dead_ball(dt)
-		if phase_time > 4.5: reset_rally()
+		if phase_time > 4.5:
+			if match_finished: return_to_main_menu(); return
+			reset_rally()
 	elif airborne:
 		var old := ball_pos
 		var state := BallFlight.advance(ball_pos, ball_vel, flight_spin, dt,flight_gravity)

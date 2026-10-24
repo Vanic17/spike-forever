@@ -29,6 +29,7 @@ $files+='docs/RELEASE_NOTES_45_1.md'
 $files+='docs/RELEASE_NOTES_46.md'
 $files+='docs/RELEASE_NOTES_47.md'
 $files+='docs/RELEASE_NOTES_48.md'
+$files+=@('docs/RELEASE_NOTES_49.md','docs/match49-report.json','docs/match-menu49.png','tools/Test-MatchSetup49.gd','tools/Capture-MatchMenu49.gd')
 foreach($tool48 in @('Inspect-Middle48.gd','Test-FirstTempo48.gd','Preview-FirstTempo48.gd')){ $files+='tools/'+$tool48 }
 foreach($report48 in @('first-tempo48-report.json','first-tempo48-preview.mp4','first-tempo48-set-0.png','first-tempo48-set-1.png','first-tempo48-set-2.png','first-tempo48-hit.png','first-tempo48-feint.png','approach48-contacts.json')){ $files+='docs/'+$report48 }
 foreach($tool47 in @('Fetch-PlayerReferences47.py','Prepare-Appearance47.py','Build-PlayerProfiles47.py','Inspect-Contacts47.gd','Test-Tips47.gd','Test-Gameplay47.gd','Test-BlockRallies47.gd','Test-Appearance47.gd','Test-ProfileOverrides47.gd','Preview-Appearance47.gd','Benchmark-Rendered47.gd')){

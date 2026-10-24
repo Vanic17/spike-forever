@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.49.0:** Formazioni sempre visibili nella preparazione della partita, anteprime delle divise adattive e navigazione con D-pad/levetta sinistra. Fine partita con ritorno automatico alla home dopo l'esultanza; verificati tutti i formati, vantaggi e set decisivi. [Dettagli](docs/RELEASE_NOTES_49.md).
+
 **Versione 0.48.0:** primo tempo con rincorsa, caricamento e stacco anticipati sul contatto del palleggiatore; finta con un vero gesto di schiacciata, senza la posa ferma a due mani. Un solo orologio attraversa alzata e attacco, conservando il pallonetto di polso senza riavviare il salto. [Dettagli e video di verifica](docs/RELEASE_NOTES_48.md).
 
 **Versione 0.47.0:** muro più incisivo e vario, CPU leggermente più pronta a muro, pallonetto sincronizzato con la rincorsa, spostamento del battitore e passo indietro automatico prima del servizio. Nuovi capelli, barbe e carnagioni con 167 profili indicativi dalle foto ufficiali. Priorità del palleggiatore sul secondo tocco. [Dettagli e verifiche](docs/RELEASE_NOTES_47.md).
