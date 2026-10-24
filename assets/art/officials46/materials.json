@@ -1,0 +1,35 @@
+{
+  "M_Char_Socks_01_Black": {
+    "Diffuse": "T_Char_EmptyTex_Black.png",
+    "Normal": "T_Socks_M_01_Normal.png"
+  },
+  "M_Char_Eye_Blue": {
+    "Diffuse": "T_Char_Eye_Blue_Base.png",
+    "Normal": "EYE_NORMALS.png"
+  },
+  "M_Char_Eyelashes_01": {
+    "Diffuse": "T_Char_Eyelashes.png"
+  },
+  "M_Char_M_Coach02_LOD01": {
+    "Diffuse": "T_Char_Head_M_Coach02_Base.png",
+    "Normal": "T_Char_Head_M_Coach02_Normal.png"
+  },
+  "M_Char_Shoes_01_01": {
+    "Diffuse": "SK_Char_Shoe_M_01_Base02.png",
+    "Normal": "SK_Char_Shoe_M_01_Normal.png"
+  },
+  "M_Char_Cloth_Referees_01_Shortsleeves_OW": {
+    "Diffuse": "T_Char_Cloth_Referees01_Diffuse.png",
+    "Normal": "T_Char_Cloth_Coaches_Normal.png"
+  },
+  "M_Char_Eye_Occlusion_01": {
+    "Diffuse": "T_Char_Eyes_Occlusion.png"
+  },
+  "M_Whistle": {
+    "Diffuse": "T_Char_Cloth_Whistle_Base.png",
+    "Normal": "T_Char_Cloth_Whistle_Normal.png"
+  },
+  "M_Char_Body_Caucasian_LOD01": {
+    "Diffuse": "T_Char_Body_Caucasian_M_01_Base.png"
+  }
+}

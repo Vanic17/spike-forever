@@ -18,6 +18,8 @@ func run() -> void:
 			for direction in 4:
 				for quick in [false,true]:
 					g.rotations=[rotation,rotation]; g.server=1-team; g.reset_rally(); g.possession=team
+					for player in g.players:
+						player.blend_left=0; player.apply_pose(0)
 					g.rng.seed=40001
 					g.receiver=team*6+4; g.set_dir=direction
 					# A deep, clean reception gives every attack a legal construction;
@@ -39,6 +41,14 @@ func run() -> void:
 						if g.phase in ["SET","CPU_SET"]: run_distance=maxf(run_distance,g.players[runner].position.distance_to(opening))
 						if g.phase=="ATTACK": g.armed=true; g.charge=0.75; g.input_quality=1
 						g.step(1.0/120)
+						# Collision footprints must follow the displayed pose, as they
+						# do in the rendered game; a stale previous-rally jump is invalid.
+						if frame%8==0:
+							for player in g.players: player.apply_pose(1.0/15)
+						# Preparation now has a grounded upper-body layer instead
+						# of launching the contact jump before the set exists.
+						if not gesture_started and g.phase in ["SET","CPU_SET"] and g.players[runner].middle_load>.5:
+							gesture_started=true; early_gestures+=1
 						if g.phase in ["ATTACK","CPU_ATTACK"]:
 							if release_gap<0: release_gap=g.players[runner].position.distance_to(g.players[runner].stance_for_contact("attack",g.flight_target)); setter_time=g.clock_time
 							run_metres+=g.players[runner].position.distance_to(last_root); max_run_speed=maxf(max_run_speed,g.players[runner].velocity.length())
@@ -57,7 +67,7 @@ func run() -> void:
 		if row.front and row.direction in [0,2] and not row.quick:
 			pin_cases+=1; pin_travel+=row.run_metres; pin_gap+=row.release_gap
 	assert(pin_cases==18 and pin_travel/pin_cases>3.0 and pin_gap/pin_cases>2.8,"High front-row pins retain a real runway after release, rather than a standing jump")
-	assert(early_runs>cases/2 and early_gestures>0,"Approaches start during the first pass and show a longer pre-contact gesture")
+	assert(early_runs>cases/2 and early_gestures>0,"Approaches start during the first pass and show grounded preparation before set release")
 	print("APPROACH42 PASS cases=",cases," early_runs=",early_runs," longer_gestures=",early_gestures," high pin run mean=",pin_travel/pin_cases," release gap mean=",pin_gap/pin_cases," all real receive/set/attack contacts")
 	FileAccess.open("res://docs/approach42-report.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	g.free(); quit()

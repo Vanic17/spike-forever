@@ -19,8 +19,8 @@ static func is_pin(game, index: int, direction: int) -> bool:
 static func opening(game, index: int, stance: Vector3) -> Vector3:
 	var side := 1.0 if game.possession==0 else -1.0
 	var wing := Tactics.wing_for(game,index)
-	var depth := 2.0 if game.planned_fast else 3.25
-	return Vector3(side*wing*5.05,0,side*maxf(3.8,stance.z*side+depth))
+	var depth := 1.35 if game.planned_fast else 2.0
+	return Vector3(side*wing*5.05,0,side*maxf(3.5,stance.z*side+depth))
 
 func target(game, index: int, contact_stance: Vector3) -> Vector3:
 	var back_row: bool=index>=0 and not Tactics.front(index,game.rotations[game.possession]) and game.destination in [2,3]

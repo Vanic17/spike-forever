@@ -14,14 +14,72 @@ var motion_origin:=Vector3.ZERO
 var motion_yaw:=0.0
 var source_begin:=0.0
 var events: Array[Dictionary]=[]
+var real_attack:=false
+var prepared:=false
+var waypoint:=Vector3.ZERO
+var has_waypoint:=false
+var route_at:=-1.0
 
 func reset() -> void:
 	index=-1
 	team=-1
 	cue=""
 	jumped=false
+	real_attack=false
+	prepared=false
+	has_waypoint=false; route_at=-1.0
+
+func clear_segment(game, start: Vector3, finish: Vector3) -> bool:
+	for other in range(team*6,team*6+6):
+		if other==index: continue
+		var body: Vector3=game.players[other].position
+		if start.distance_to(body)<.90:
+			if (start-body).dot(finish-start)<-.0001: return false
+			continue
+		if Geometry3D.get_closest_point_to_segment(body,start,finish).distance_to(body)<.90: return false
+	return true
+
+func route(game, goal: Vector3) -> Vector3:
+	var start: Vector3=game.players[index].position
+	if clear_segment(game,start,goal): has_waypoint=false; return goal
+	if has_waypoint and start.distance_to(waypoint)>.20 and clear_segment(game,start,waypoint): return waypoint
+	route_at=game.clock_time+.12; has_waypoint=false
+	var best:=INF
+	for other in range(team*6,team*6+6):
+		if other==index: continue
+		var body: Vector3=game.players[other].position
+		if Geometry3D.get_closest_point_to_segment(body,start,goal).distance_to(body)>1.1: continue
+		for step in 8:
+			var angle:=step*PI/4
+			var candidate:=body+Vector3(cos(angle)*1.45,0,sin(angle)*1.45)
+			if candidate.z*(1 if team==0 else -1)<.4: continue
+			if start.distance_to(candidate)<.25 or not clear_segment(game,start,candidate): continue
+			# Two adjacent teammates can form a barrier requiring two corners.
+			# Requiring a clear second leg too returned the blocked straight line.
+			var cost:=start.distance_to(candidate)+candidate.distance_to(goal)+(0.0 if clear_segment(game,candidate,goal) else 2.0)
+			if cost<best: best=cost; waypoint=candidate; has_waypoint=true
+	return waypoint if has_waypoint else goal
 
 func update(game) -> void:
+	if game.phase in ["RECEIVE","CPU_RECEIVE"]:
+		var pre_cue: String="pre:"+str(game.possession)+":"+str(game.shot_serial)
+		if pre_cue!=cue: reset(); cue=pre_cue
+		team=game.possession
+		var candidate:=Tactics.attacker(team,game.rotations[team],1,team*6+5)
+		if candidate==game.receiver or game.dive_motions.has(candidate): index=-1; return
+		index=candidate
+		if index>=0: target=Tactics.world(team,.20,1.85)
+		return
+	if jumped and game.phase in ["SET","CPU_SET"] and game.planned_hitter==index:
+		# A changed set choice transfers ownership to the actual attack clock.
+		# Never keep a real recipient locked inside a no-contact fake.
+		jumped=false; prepared=false
+		game.players[index].start_blend()
+		var player=game.players[index]
+		var wanted: String=game.AnimationVariety.attack(1,game.pass_quality,game.shot_serial)
+		if player.source_clips.has(wanted):
+			player.clips.attack=player.source_clips[wanted]
+			player.variant_names.attack=wanted
 	if game.phase in ["SET","CPU_SET"]:
 		var next: String=str(game.possession)+":"+str(game.shot_serial)
 		if next!=cue:
@@ -32,18 +90,26 @@ func update(game) -> void:
 			index=-1
 		return
 	if game.phase not in ["SET","CPU_SET"]: return
-	if game.pass_quality<GOOD_PASS or game.out_of_system<0 or game.planned_hitter<0:
+	# Depth and actual recoverability govern the threat. A percentage gate
+	# wrongly cancelled first-tempo preparation on ordinary playable passes.
+	if game.out_of_system<0 or absf(game.flight_target.z)>=2.85 or game.planned_hitter<0 or game.setter_dump:
 		index=-1
 		return
 	team=game.possession
 	var middle:=Tactics.attacker(team,game.rotations[team],1,game.setter)
-	if middle<0 or middle==game.planned_hitter:
+	if middle<0 or game.dive_motions.has(middle):
 		index=-1
 		return
 	index=middle
+	var next_real: bool=middle==game.planned_hitter
+	if next_real!=real_attack: prepared=false
+	real_attack=next_real
 	var point:=AI.attack_contact(game,1,middle,game.flight_target)
 	point.y=game.contact_height("attack")
 	target=game.players[index].stance_for_contact("attack",point)
+	if real_attack:
+		prepared=true
+		return
 	if game.clips.has("attack_decoy"):
 		var clip=game.clips.attack_decoy
 		var direction:=Basis(Vector3.UP,PI if team==0 else 0.0)
@@ -53,9 +119,17 @@ func update(game) -> void:
 		var player_x: float=game.players[index].position.x*(1 if team==0 else -1)
 		# An already positioned middle uses the final two steps. Retreating to
 		# replay the entire source run-up made the fake late and looked confused.
-		source_begin=maxf(0,clip.takeoff_time-0.22) if game.players[index].position.distance_to(apex)<1.85 and player_x<setter_x-0.55 else 0.0
+		if not prepared:
+			# Fix the last L-R-L steps once. Re-evaluating the compact/full
+			# choice every frame moved the takeoff spot away from its runner.
+			source_begin=maxf(0,maxf(clip.takeoff_time-0.18,clip.contact_time-0.42))
+			prepared=true
 		var offset: Vector3=direction*(Vector3(clip.contact_offset.x,0,clip.contact_offset.z)+clip.root_motion(clip.contact_time)-clip.root_motion(source_begin))
-		target=Vector3(point.x-offset.x,0,point.z-offset.z)
+		# This gesture never contacts the ball. Inferring a start position from
+		# its highest hand key sent some rotations back through the passers.
+		# Keep the grounded first-tempo lane beside the setter; play the final
+		# source steps from there instead of chasing a fictitious hand target.
+		target=Tactics.world(team,point.x*(1 if team==0 else -1),1.85)
 	var preparation: float=(game.clips.attack_decoy.contact_time-source_begin)/1.15 if game.clips.has("attack_decoy") else 0.45
 	jump_at=game.clock_time+game.flight_left+0.02-preparation
 
@@ -63,7 +137,7 @@ func holds(player: int) -> bool:
 	return index==player and jumped
 
 func try_jump(game) -> void:
-	if index<0 or jumped or game.clock_time<jump_at: return
+	if index<0 or real_attack or jumped or game.clock_time<jump_at: return
 	if game.phase not in ["SET","CPU_SET","ATTACK","CPU_ATTACK"] or game.possession!=team: return
 	# A blocked approach must return to coverage, never launch a stale fake
 	# beside a pin who is already hitting the ball.
@@ -74,7 +148,7 @@ func try_jump(game) -> void:
 	# The first-tempo threat is read from the pass, not from the user's
 	# eventual confirmation of the set. A feint cannot touch the ball.
 	var player=game.players[index]
-	if player.position.distance_to(target)>0.30: return
+	if player.position.distance_to(target)>0.55: return
 	if player.clip_name=="block" and player.clips.has("block") and not player.looping and player.animation_time<player.clips.block.recovery_end: return
 	player.select_variant("attack","attack_decoy")
 	player.play("attack",1.15,false)

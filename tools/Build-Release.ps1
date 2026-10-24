@@ -26,6 +26,13 @@ $files+=@('docs/RELEASE_NOTES_43.md','docs/preparation43-before.json','docs/prep
 $files+=@('docs/RELEASE_NOTES_44.md','docs/attacks44-preview.mp4','docs/balance44-report.json','docs/first-tempo44-report.json')
 $files+='docs/RELEASE_NOTES_45.md'
 $files+='docs/RELEASE_NOTES_45_1.md'
+$files+='docs/RELEASE_NOTES_46.md'
+foreach($tool46 in @('Inspect-Officials46.py','Prepare-Officials46.py','Build-Officials46.gd','Build-KitPreviews46.gd','Test-Equipment46.gd','Test-Preparation46.gd','Capture-Equipment46.gd','Capture-MatchMenu46.gd','Preview-Approaches46.gd')){
+ $files+='tools/'+$tool46
+}
+foreach($report46 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'equipment46-*.png' -or $_.Name -like 'approach46-*.png' -or $_.Name -in @('match-menu46.png','officials46-assets.json','preparation46-report.json','approach46-contact-report.json')}){
+ $files+='docs/'+$report46.Name
+}
 foreach($kitTool in @('Build-Kits45.py','Inspect-KitMesh45.py','Fetch-KitReferences45.py','Fetch-ExtraKitReferences45.py','Test-Kits45.gd','Test-KitMatch45.gd','Preview-Kits45.gd','Benchmark-Kits45.gd','Capture-KitMatch45.gd','Check-KitScope45.py')){
  $files+='tools/'+$kitTool
 }

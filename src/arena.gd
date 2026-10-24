@@ -136,6 +136,7 @@ void fragment(){
 		for x in [-5.2, 5.2]: box(Vector3(x, 1.35, 0), Vector3(0.15, 2.7, 0.15), white)
 		box(Vector3(0, 2.43, 0), Vector3(10.4, 0.075, 0.03), white)
 	dynamic_net=preload("res://src/net_dynamics.gd").new(); add_child(dynamic_net)
+	add_child(preload("res://src/net_equipment.gd").new())
 	build_seating()
 	build_crowd()
 	build_branding()

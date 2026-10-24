@@ -284,12 +284,12 @@ func match_setup() -> void:
 		label(card,"LA TUA SQUADRA" if side==0 else "AVVERSARIA")
 		var p=picker(card,db.teams.map(func(t): return t.name)); p.select(side); picks.append(p)
 		label(card,"DIVISA"); var kit_pick=picker(card,["Casa","Trasferta"]); kits.append(kit_pick)
-		var swatch=ColorRect.new(); swatch.custom_minimum_size.y=12; card.add_child(swatch)
+		var swatch=preload("res://src/kit_preview.gd").new(); card.add_child(swatch)
 		var team_side: int=side
 		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],card.get_child(card.get_child_count()-1)))
 		var refresh=func(_index):
 			var t=db.teams[p.selected]
-			swatch.color=Color(preload("res://src/club_kits.gd").selection(t.id,"home" if kit_pick.selected==0 else "away").primary_hex_approx)
+			swatch.show_kit(t.id,"home" if kit_pick.selected==0 else "away")
 		p.item_selected.connect(func(index): match_rosters[team_side]=[]; refresh.call(index)); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)

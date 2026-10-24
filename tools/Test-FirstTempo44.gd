@@ -26,7 +26,7 @@ func run() -> void:
 				if g.phase not in ["SET","CPU_SET"]: break
 				g.step(1.0/120)
 				distance=maxf(distance,g.players[middle].position.distance_to(start))
-				if g.phase in ["SET","CPU_SET"] and g.players[middle].clip_name=="attack" and g.players[middle].animation_time>0 and g.flight_left>0.08: seen=true
+				if g.phase in ["SET","CPU_SET"] and g.flight_left>0.08 and (g.players[middle].middle_load>.5 or (g.players[middle].clip_name=="attack" and g.players[middle].animation_time>0)): seen=true
 			if g.fast_set:
 				if not seen: print("FIRST TEMPO44 DIAG team=",team," R=",rotation+1," q=",g.pass_quality," sys=",g.out_of_system," clip=",g.players[middle].clip_name," distance=",distance," flight=",g.flight_left)
 				assert(seen,"A reachable first tempo must show the source approach before the setter's contact")

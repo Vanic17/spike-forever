@@ -1,0 +1,60 @@
+{
+	"gestures": [
+		{
+			"bones": 145,
+			"frames": 4673,
+			"gesture": "idle",
+			"max_lateral_hand": "(0.22935, 1.118988, 0.175628)",
+			"seconds": 2.4328127004274
+		},
+		{
+			"bones": 145,
+			"frames": 113,
+			"gesture": "serve_left",
+			"max_lateral_hand": "(-0.73044, 1.488604, -0.061728)",
+			"seconds": 3.71681417497624
+		},
+		{
+			"bones": 145,
+			"frames": 113,
+			"gesture": "serve_right",
+			"max_lateral_hand": "(0.723295, 1.474838, -0.057054)",
+			"seconds": 3.71681417497624
+		},
+		{
+			"bones": 145,
+			"frames": 95,
+			"gesture": "point_left",
+			"max_lateral_hand": "(0.709211, 1.371515, 0.006237)",
+			"seconds": 3.1168421678411
+		},
+		{
+			"bones": 145,
+			"frames": 112,
+			"gesture": "point_right",
+			"max_lateral_hand": "(-0.726155, 1.430626, 0.011785)",
+			"seconds": 3.6834821470391
+		},
+		{
+			"bones": 145,
+			"frames": 151,
+			"gesture": "end_set",
+			"max_lateral_hand": "(0.239863, 1.129277, 0.145296)",
+			"seconds": 4.96688729174059
+		}
+	],
+	"materials": [
+		"M_Char_Socks_01_Black",
+		"M_Char_Eye_Blue",
+		"M_Char_Eyelashes_01",
+		"M_Char_M_Coach02_LOD01",
+		"M_Char_Shoes_01_01",
+		"M_Char_Cloth_Referees_01_Shortsleeves_OW",
+		"M_Char_Eye_Occlusion_01",
+		"M_Char_Cloth_Referees_01_Shortsleeves_OW",
+		"M_Whistle",
+		"M_Char_Body_Caucasian_LOD01"
+	],
+	"mesh_bones": 115,
+	"triangles": 31113
+}

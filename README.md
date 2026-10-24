@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.46.0:** pali CREDEM, seggiolone sul lato sinistro e arbitro originale animato con gesti contestuali. Centrale preparato sul primo tempo anche come finta, rincorse complete più leggibili e anteprime reali delle divise nel menu partita. [Dettagli e verifiche](docs/RELEASE_NOTES_46.md).
+
 **Versione 0.45.1:** revisione dei marchi delle maglie di Padova, conservando le 32 divise, la stampa dei giocatori e gli abbinamenti del libero introdotti nella v45. [Dettagli](docs/RELEASE_NOTES_45_1.md).
 
 **Versione 0.45.0:** divise delle 12 squadre ricostruite dai riferimenti forniti: 32 varianti casa, trasferta e libero, pantaloncini coordinati, nome e numero stampati sul retro e aggiornati dai dati locali. Libero con divisa opposta quando manca una variante dedicata. [Anteprime, fonti e verifiche](docs/RELEASE_NOTES_45.md).

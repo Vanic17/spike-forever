@@ -14,6 +14,9 @@ var subtree_indices: Array = []
 static var native_animation_enabled := not "--psa-original" in OS.get_cmdline_user_args()
 var pose_tree: Node3D
 var native_pose_pass := false
+var middle_ready:=false
+var middle_load:=0.0
+var middle_load_age:=0.0
 var native_transition_influence := 0.35 if native_animation_enabled else 0.0
 var clips: Dictionary
 var source_clips: Dictionary
@@ -278,7 +281,7 @@ func prepare_contact(action: String, remaining: float) -> void:
 		start_blend()
 	clip_name = action
 	looping = false
-	animation_speed = 1.15-0.55*smoothstep(0.2,0.4,remaining) if action=="attack" else 1.15
+	animation_speed = 1.15-0.25*smoothstep(0.2,0.4,remaining) if action=="attack" else 1.15
 	# Extend the running preparation, then retain the original speed for the
 	# last 200ms and the contact. The intervening rate changes smoothly.
 	var source_remaining:=maxf(0,remaining)*1.15
@@ -299,13 +302,13 @@ func preparation_lead(action: String, requested: float) -> float:
 
 func attack_source_remaining(seconds: float) -> float:
 	if seconds<=0.2: return seconds*1.15
-	if seconds>=0.4: return 0.405+(seconds-0.4)*0.60
+	if seconds>=0.4: return 0.435+(seconds-0.4)*0.90
 	var u: float=(seconds-0.2)/0.2
-	return 0.23+1.15*(seconds-0.2)-0.11*(u*u*u-0.5*u*u*u*u)
+	return 0.23+1.15*(seconds-0.2)-0.05*(u*u*u-0.5*u*u*u*u)
 
 func attack_clock_seconds(source_seconds: float) -> float:
 	if source_seconds<=0.23: return source_seconds/1.15
-	if source_seconds>=0.405: return 0.4+(source_seconds-0.405)/0.60
+	if source_seconds>=0.435: return 0.4+(source_seconds-0.435)/0.90
 	var low:=0.2; var high:=0.4
 	for iteration in 10:
 		var middle: float=(low+high)*0.5
@@ -522,6 +525,8 @@ func match_gait_time(action: String) -> float:
 	return time
 
 func tick(dt: float, selected: bool, render_pose: bool = true) -> void:
+	middle_load=move_toward(middle_load,1.0 if middle_ready else 0.0,dt*7.0)
+	middle_load_age=middle_load_age+dt if middle_ready else 0.0
 	if indicator: indicator.visible = selected
 	step_cooldown = maxf(0, step_cooldown - dt)
 	idle_time += dt * (0.93 + intent.individuality * 0.15)
@@ -612,6 +617,14 @@ func apply_pose(_dt: float) -> void:
 		if leg_weight > 0 and clips.has(travel_animation_name):
 			var steps := travel_pose()
 			normalized = layer_legs(normalized, steps, leg_weight, clip.parents, clip.names)
+	# A middle threatens the quick even before a high set can start its jump
+	# clip. Layer the original grounded backswing over the travelling feet.
+	if middle_load>0.001 and looping and source_clips.has("attack_decoy"):
+		var loading=source_clips.attack_decoy
+		var load_time: float=minf(maxf(0,loading.takeoff_time-.035),middle_load_age*.75)
+		var ready_pose:=normalized_pose("source:attack_decoy",load_time,false)
+		if pose_tree!=null and pose_tree.initialized:
+			normalized=pose_tree.mix(normalized,ready_pose,middle_load*.85,false,true)
 	# The new performance follows the real contact target before the existing
 	# bounded arm IK. It never moves the actor, legs, ball or action clock.
 	if clip_name == "attack" and native_clip_name(clip_name) == "attack_adaptive41" and reach_action == "attack" and reach_weight > 0.001:

@@ -589,6 +589,7 @@ func reset_rally() -> void:
 	for i in 12:
 		var p = players[i]
 		p.motion_lock = 0
+		p.middle_ready=false; p.middle_load=0; p.middle_load_age=0
 		p.setting_yaw = PI if i<6 else 0.0
 		p.play("idle", 1, true)
 		for action in ["receive","set","fast_set","attack","dive"]: p.select_variant(action)
@@ -1077,6 +1078,10 @@ func plan_attack(direction: int, quick: bool) -> void:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
+			if planned_direction in [0,2] and not planned_fast and pass_quality>=0.72:
+				# Use the complete original running L-R-L, rather than a short
+				# lateral adjustment as the main high-ball performance.
+				variant="attack_line" if posmod(shot_serial,3)!=2 else ("attack_pin_left" if planned_direction==0 else "attack_pin_right")
 			if not Tactics.front(planned_hitter,rotations[possession]) and pass_quality>=0.66:
 				# Back-row D/pipe use a forward L-R-L source. The outside-pin
 				# clips contain a large lateral reach which put an opposite's
@@ -1739,7 +1744,7 @@ func move_players(dt: float) -> void:
 		var team := int(i/6)
 		if i==action_actor: nominal.append(players[i].stance_for_contact(action,flight_target))
 		elif attack_run.landing(i,clock_time): nominal.append(attack_run.landings[i].target)
-		elif i==middle_decoy.index: nominal.append(middle_decoy.target)
+		elif i==middle_decoy.index and not middle_decoy.real_attack: nominal.append(middle_decoy.target)
 		elif i in blockers: nominal.append(blocking_target(i,team))
 		elif phase=="SERVE":
 			var ready: Vector3=Tactics.serve_position(i,team,rotations[team],team==server) if i!=server_index(server) else players[i].position
@@ -1774,9 +1779,12 @@ func move_players(dt: float) -> void:
 			team_targets[index]=cover
 	if phase in ["SET","CPU_SET"] and action_actor>=0:
 		team_targets[action_actor]=contact_navigation.route(self,action_actor,nominal[action_actor])
-	if middle_decoy.index>=0 and not middle_decoy.jumped: middle_decoy.target=team_targets[middle_decoy.index]
+	if middle_decoy.index>=0 and not middle_decoy.jumped and not middle_decoy.real_attack:
+		middle_decoy.target=team_targets[middle_decoy.index]
+		team_targets[middle_decoy.index]=middle_decoy.route(self,middle_decoy.target)
 	for i in 12:
 		var p = players[i]
+		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
 		p.reach_weight = maxf(0, p.reach_weight - dt * 5)
 		p.motion_lock = maxf(0, p.motion_lock - dt)
 		if serve_motion_active and i == serve_motion_player:
@@ -1806,7 +1814,7 @@ func move_players(dt: float) -> void:
 		var preparing_front: bool=team==possession and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"] and i!=action_actor and Tactics.role(i,rotations[team],team==server) not in ["S","L"] and (Tactics.front(i,rotations[team]) or phase in ["SET","CPU_SET"])
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
 		var preparing_middle: bool=preparing_front and Tactics.role(i,rotations[team],team==server).begins_with("MB")
-		var preparing_decoy: bool=i==middle_decoy.index
+		var preparing_decoy: bool=i==middle_decoy.index and not middle_decoy.real_attack
 		var landing_active: bool=i!=action_actor and not i in blockers and attack_run.landing(i,clock_time)
 		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or landing_active or court_shape.setter_yields.has(i)
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
@@ -1958,23 +1966,15 @@ func move_players(dt: float) -> void:
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers
 		p.post_point=phase=="POINT"
 		p.locomotion(p.velocity.length(), dt)
-		if preparing_hitter and planned_direction==1 and pass_quality>=0.70 and out_of_system==1:
-			# Show the first-tempo approach while the setter is still waiting
-			# for the pass, using the existing contact clock and source L-R-L.
-			var first_point: Vector3=RallyAI.attack_contact(self,1,i,flight_target)
-			first_point.y=p.contact_local("attack").y
-			var first_stance: Vector3=p.stance_for_contact("attack",first_point)
-			var gap: float=p.position.distance_to(first_stance)
-			var first_arrival:=maxf(gap/5.4+0.26,preload("res://src/approach_planner.gd").seconds(p,first_stance,Reference.run_speed()*1.10))
-			if planned_fast and gap<0.65: first_arrival=maxf(0.30,first_arrival-0.30)
-			var first_flight:=maxf(Reference.set_seconds(1,planned_fast,pass_quality,flight_target.distance_to(first_point),false),first_arrival)
-			var first_remaining:=flight_left+first_flight
-			if first_remaining<p.preparation_lead("attack",1.12): p.prepare_contact("attack",first_remaining)
+		# The layered grounded load shows preparation during the pass.
+		# The real jump clock starts only once the setter releases the ball;
+		# starting a complete contact clip here could reach recovery early
+		# and brake the middle before his actual approach was finished.
 		if block_pose_locked(i):
 			p.reach_action = "block"
 			p.reach_target = Vector3(p.contact_world("block").x,3.08,side*0.035)
 			p.reach_weight = 1.0
-		var preparation_lead := (0.78 if fast_set else 1.12) if action == "attack" else 0.38
+		var preparation_lead := (1.12 if fast_set else 1.55) if action == "attack" else 0.38
 		preparation_lead += p.intent.individuality * 0.055 + (0.04 if p.visual_context == "emergency" else 0.0)
 		preparation_lead = p.preparation_lead(action,preparation_lead)
 		if i == action_actor and flight_left < preparation_lead:
