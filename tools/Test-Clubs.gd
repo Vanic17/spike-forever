@@ -25,8 +25,11 @@ func run() -> void:
 	clubs.go_back(); assert(not clubs.editing_details and clubs.player_pick.has_focus())
 	clubs.enter_details()
 	clubs.inputs.name.grab_focus()
-	for step in 14:
+	for step in 24:
 		assert(clubs.focus_editor_step(false))
+		await process_frame
+		var focused=get_root().gui_get_focus_owner()
+		if focused is Button and focused.text=="SALVA MODIFICHE": break
 	await process_frame
 	await process_frame
 	assert(get_root().gui_get_focus_owner() is Button,"Controller must reach Save past appearance and every rating")

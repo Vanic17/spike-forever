@@ -10,7 +10,17 @@ func _init() -> void:
 		if data is Dictionary: overrides=data
 	for team in teams:
 		for p in team.roster:
-			if overrides.has(p.id): p.merge(overrides[p.id],true)
+			if overrides.has(p.id):
+				var base_appearance: Dictionary=p.get("appearance",{}).duplicate(true)
+				var saved: Dictionary=overrides[p.id]
+				p.merge(saved,true)
+				# Old full-player saves contain unspecified appearance fields.
+				# Preserve actual edits while allowing improved defaults underneath.
+				for key in saved.get("appearance",{}):
+					if saved.appearance[key]!=null: base_appearance[key]=saved.appearance[key]
+				if not saved.get("appearance",{}).has("hair_style") and saved.get("appearance",{}).get("hair_length")!=null:
+					base_appearance.hair_style=saved.appearance.hair_length
+				p.appearance=base_appearance
 func save(p: Dictionary) -> Error:
 	overrides[p.id]=p.duplicate(true)
 	var f=FileAccess.open(PATH+".tmp",FileAccess.WRITE)

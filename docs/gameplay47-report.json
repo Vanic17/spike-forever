@@ -1,0 +1,35 @@
+{
+  "block_sample_count": 2000,
+  "details": [
+    "high_recycle",
+    "stuff_block",
+    "turn_back",
+    "block_tool",
+    "cushion",
+    "low_dribble",
+    "through_fingers"
+  ],
+  "serves": [
+    {
+      "backward_step": true,
+      "contact": true,
+      "style": 0
+    },
+    {
+      "backward_step": true,
+      "contact": true,
+      "style": 1
+    }
+  ],
+  "service_cameras": 3,
+  "setter_priority": true,
+  "synthetic_block_families": {
+    "block_tool": 757,
+    "block_touch": 931,
+    "stuff_block": 312
+  },
+  "vertical_velocity_range": [
+    -19.7633514404297,
+    8.490478515625
+  ]
+}

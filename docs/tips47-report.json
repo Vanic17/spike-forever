@@ -1,0 +1,450 @@
+[
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 0,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 0,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 1,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 2,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 7
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 0
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 1
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 2
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 3
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 4
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 5
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 6
+  },
+  {
+    "contact": true,
+    "direction": 3,
+    "phase": "CPU_RECEIVE",
+    "rotation": 1,
+    "sector": 7
+  }
+]

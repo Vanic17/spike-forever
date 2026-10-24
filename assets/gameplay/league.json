@@ -53,13 +53,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/REC-FRA-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -110,13 +112,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ICH-TOM-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -167,13 +171,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CAT-DAM-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "corti",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -224,13 +230,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/POR-SIM-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -281,13 +289,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TEN-DAV-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -338,13 +348,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BAR-FIL-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -395,13 +407,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BEN-ALE-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -509,13 +523,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ROT-SEP-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -570,13 +586,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "nero",
+            "skin_tone": "ebano",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SIM-ROB-87",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "pelato",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -627,13 +645,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ORD-SAN-83",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -684,13 +704,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/OTS-TAT-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -741,13 +763,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ARG-FED-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -798,13 +822,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/COR-JAC-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -855,13 +881,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TAT-GEO-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6858?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -959,13 +987,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SZA-VIL-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1016,13 +1046,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAG-GIU-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1073,13 +1105,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAG-LOR-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1130,13 +1164,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PEN-SHI-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1187,13 +1223,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BAR-TOM-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1235,13 +1273,15 @@
             "verified_individual_statistics": false
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "photo_not_individually_reviewed",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/WRO-MIL-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -1282,13 +1322,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LAN-FIL-91",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1339,13 +1381,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FAN-ALE-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1396,13 +1440,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PIE-FRA-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1453,13 +1499,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "lunghi",
+            "hair_color": "nero",
+            "skin_tone": "ebano",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAR-MIG-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "treccine",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1510,13 +1558,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAZ-DAN-92",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1567,13 +1617,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/DUF-NOA-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1624,13 +1676,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TOS-JAC-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1681,13 +1735,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FED-FIL-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6859?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1785,13 +1841,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/NIK-SIM-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1842,13 +1900,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GAR-GIO-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1899,13 +1959,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LOE-ERI-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "riga",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -1956,13 +2018,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BIS-FRA-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2013,13 +2077,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BAL-FAB-95",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2070,13 +2136,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/POL-ALB-95",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2127,13 +2195,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GAR-DAV-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2175,13 +2245,15 @@
             "verified_individual_statistics": false
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "photo_not_individually_reviewed",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KUJ-MIR-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "corti",
+            "beard": "corta"
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -2226,13 +2298,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/NIK-ALE-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2283,13 +2357,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ZOP-FRA-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "pelato",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2344,13 +2420,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/HOW-JAC-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2401,13 +2479,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TON-MAK-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2458,13 +2538,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KLI-ANT-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2519,13 +2601,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BOT-MAT-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6860?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2623,13 +2707,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/COS-MAN-80",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2680,13 +2766,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CAV-DOM-87",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2737,13 +2825,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LOU-THI-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "frangia",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2794,13 +2884,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ARG-BRY-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2851,13 +2943,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SAL-LOR-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2908,13 +3002,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/VOL-NIC-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -2965,13 +3061,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BAR-EMA-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3022,13 +3120,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "ambrata",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/STR-ALE-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "afro",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3079,13 +3179,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FER-NAT-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "frangia",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3140,13 +3242,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KHA-POR-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "corti",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3197,13 +3301,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CHA-ETH-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3254,13 +3360,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/COD-LOR-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "riga",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3311,13 +3419,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GIR-FED-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3368,13 +3478,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MOS-LEA-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6863?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3472,13 +3584,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "scura",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MCH-MER-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3529,13 +3643,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ROB-COO-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3586,13 +3702,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/POR-PAO-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3643,13 +3761,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "ebano",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LEO-HEN-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3700,13 +3820,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PAC-DOM-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3757,13 +3879,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BRB-NIK-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3814,13 +3938,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/COM-FRA-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3871,13 +3997,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GAL-GIA-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "pelato",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3928,13 +4056,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ZLA-MAN-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -3985,13 +4115,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TRA-DRA-86",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4042,13 +4174,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/RIZ-FRA-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4099,13 +4233,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "scura",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/IYE-DAN-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "afro",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4156,13 +4292,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "scura",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GUT-JOS-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4213,13 +4351,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BOV-ALE-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6861?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4317,13 +4457,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ROB-FED-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4374,13 +4516,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ZON-NIC-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4431,13 +4575,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MIC-ALE-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "riga",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4488,13 +4634,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SBE-RIC-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "pelato",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4545,13 +4693,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GOL-RIC-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4602,13 +4752,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FAU-THE",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4659,13 +4811,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BOS-ELI-94",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4720,13 +4874,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LAU-GAB-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "frangia",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4777,13 +4933,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LAV-DAN-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "mossi",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4834,13 +4992,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "lunghi",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/JAN-REN-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "lunghi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4891,13 +5051,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "scura",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CAV-ADR-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -4948,13 +5110,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GUA-FLA-93",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "mossi",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5005,13 +5169,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/NED-ALE-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5062,13 +5228,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TOR-SIM-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6862?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5166,13 +5334,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GOL-AMI-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "mossi",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5223,13 +5393,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BIS-ALE-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5280,13 +5452,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/RUZ-AND-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5337,13 +5511,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/RIN-SIM-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5394,13 +5570,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/DAM-FRA-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5451,13 +5629,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KUN-JOS-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5508,13 +5688,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PEL-MAR-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5565,13 +5747,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ULI-MAT-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5622,13 +5806,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LEO-LEO-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5679,13 +5865,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BER-FRA-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5736,13 +5924,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ORI-MAT-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5793,13 +5983,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BEH-ARS-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "riga",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5850,13 +6042,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MIL-BRE-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -5907,13 +6101,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TRU-AND-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6866?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6011,13 +6207,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ZIN-AID-90",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "pelato",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6068,13 +6266,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/COR-LOR-99",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6125,13 +6325,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SCA-LEO-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6182,13 +6384,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PAE-KEL-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6239,13 +6443,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/VIT-MAR-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6296,13 +6502,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/STA-MAT-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6353,13 +6561,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "ebano",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KEI-NOU-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "afro",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6410,13 +6620,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SAN-FRA-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6467,13 +6679,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CHR-MIC-93",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6515,13 +6729,15 @@
             "verified_individual_statistics": false
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "photo_not_individually_reviewed",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MOL-AND-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "riga",
+            "beard": "piena"
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -6562,13 +6778,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "biondo",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GLA-LUK-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6619,13 +6837,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ANZ-SIM-92",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "riga",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6680,13 +6900,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MOZ-ROK-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6741,13 +6963,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BUC-PAU-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6864?lang=en",
+            "hair_style": "sfumati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6904,13 +7128,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/HEN-MAT-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -6961,13 +7187,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GIA-SIM-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7022,13 +7250,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/REG-FER-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7079,13 +7309,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LOS-AGU-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7136,13 +7368,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CAP-STE-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7193,13 +7427,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LOR-LUC-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7250,13 +7486,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SOL-SEB-91",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7307,13 +7545,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KOL-DAV-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7364,13 +7604,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SEM-KAM-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7421,13 +7663,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PLO-OLE-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7482,13 +7726,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/SAN-GIO-00",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7543,13 +7789,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "pelato",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GAG-MAR-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "pelato",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7600,13 +7848,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/HOS-SAY-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "riga",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7657,13 +7907,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CRO-FED-02",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6865?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7761,13 +8013,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "biondo",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/DHE-WOU-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7818,13 +8072,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KAT-NIC-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "riga",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7875,13 +8131,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ALB-ALE-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7932,13 +8190,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FRA-FED-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -7989,13 +8249,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/POL-ALB-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8046,13 +8308,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAR-SEB-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "corti",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8103,13 +8367,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "lunghi",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TOS-ALE-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "lunghi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8160,13 +8426,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KLE-KIR-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "rasati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8217,13 +8485,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/LAR-JAC-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "sfumati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8274,13 +8544,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GUA-FED-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8331,13 +8603,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TER-JER-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "sfumati",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8426,13 +8700,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BER-LUK-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8483,13 +8759,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/UME-DAV-98",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6897?lang=en",
+            "hair_style": "ricci",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8646,13 +8924,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BEN-ART-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "ricci",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8703,13 +8983,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TIZ-AMI-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8760,13 +9042,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PER-LUK-95",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "ricci",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8817,13 +9101,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAT-PAR-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8874,13 +9160,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MEI-SIL-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "mossi",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8931,13 +9219,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/JAE-THO-93",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -8988,13 +9278,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/GAR-NIC-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9045,13 +9337,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BAR-LEO-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9102,13 +9396,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/TAU-LUC-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "sfumati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9159,13 +9455,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MEN-FED-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "mossi",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9220,13 +9518,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/POR-LUC-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9277,13 +9577,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/DIM-GAB-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9334,13 +9636,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/RUS-ROB-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9395,13 +9699,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MUJ-NIK-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6867?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9499,13 +9805,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/VEL-ZHA-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9556,13 +9864,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FRA-DIE-06",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "riga",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9613,13 +9923,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BON-LEO-07",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "corti",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9670,13 +9982,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MOR-FLA-05",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9727,13 +10041,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAP-NIC-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9784,13 +10100,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/MAS-JAC-88",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9841,13 +10159,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/ROW-AND-03",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "ricci",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9898,13 +10218,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PET-ILI-96",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "rasati",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -9955,13 +10277,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "ebano",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/FAL-BAR-97",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -10016,13 +10340,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "lunghi",
+            "hair_color": "nero",
+            "skin_tone": "olivastra",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/BER-THO-90",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "lunghi",
+            "beard": "piena"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -10073,13 +10399,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/KHO-HRY-08",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -10130,13 +10458,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "marrone",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PES-NIC-91",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "corti",
+            "beard": "corta"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -10187,13 +10517,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "castano chiaro",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/PER-PIE-04",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "frangia",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [
@@ -10244,13 +10576,15 @@
             "checked_at": "2026-10-23"
           },
           "appearance": {
-            "hair_length": null,
-            "hair_color": null,
-            "skin_tone": null,
-            "status": "not_individually_verified_from_photo",
-            "photo_source_url": null,
+            "hair_length": "corti",
+            "hair_color": "nero",
+            "skin_tone": "chiara",
+            "status": "approximate_visual_review_official_portrait",
+            "photo_source_url": "https://www.legavolley.it/player/CEB-VIC-01",
             "reviewed_at": null,
-            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en"
+            "roster_photo_gallery_url": "https://www.legavolley.it/team/6868?lang=en",
+            "hair_style": "rasati",
+            "beard": "nessuna"
           },
           "appearance_allowed_values": {
             "hair_length": [

@@ -130,7 +130,8 @@ func draw_contact(cx: float, y: float) -> void:
 			draw_rect(Rect2(cx + 136, y + 9, minf(1, (power - 1) / 0.4) * 92, 14), RED)
 		if serve:
 			var hint := primary + " · salto   " + alternate + " · float"
-			if game.charging or game.toss_active: hint = ("JUMP FLOAT" if game.serve_type == 0 else "JUMP POWER") + " · tieni e rilascia"
+			if game.charging or game.toss_active: hint = ("JUMP FLOAT" if game.serve_type == 0 else "JUMP POWER") + " · tieni e rilascia · LS: mira"
+			else: hint="LS: sposta il battitore · tieni X/A o Quadrato/X: carica e mira"
 			text(Vector2(cx - 229, y + 44), hint, 13)
 			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "LS: mira · fascia oro 97–100% vincente"), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
 		else:

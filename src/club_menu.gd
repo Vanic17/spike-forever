@@ -250,9 +250,9 @@ func edit_player(index: int) -> void:
 	inputs.role=picker(fields,["outside_hitter","middle_blocker","opposite","setter","libero"])
 	inputs.role.select(["outside_hitter","middle_blocker","opposite","setter","libero"].find(current.role))
 	inputs.role.item_selected.connect(func(_i): player_card.player=player_card.player.duplicate(true); player_card.player.role=inputs.role.get_item_text(inputs.role.selected); player_card.queue_redraw())
-	for key in ["hair_length","hair_color","skin_tone"]:
-		label(fields,{"hair_length":"Capelli · lunghezza","hair_color":"Capelli · colore","skin_tone":"Carnagione"}[key])
-		var values={"hair_length":["Non specificato","corti","lunghi","pelato"],"hair_color":["Non specificato","nero","marrone","biondo"],"skin_tone":["Non specificato","rosa","nero"]}[key]
+	for key in ["hair_style","hair_color","beard","skin_tone"]:
+		label(fields,{"hair_style":"Capelli · taglio","hair_color":"Capelli · colore","beard":"Barba","skin_tone":"Carnagione"}[key])
+		var values={"hair_style":["Non specificato","corti","rasati","sfumati","mossi","ricci","afro","frangia","riga","lunghi","treccine","pelato"],"hair_color":["Non specificato","nero","marrone","castano chiaro","biondo","rosso","grigio"],"beard":["Non specificato","nessuna","corta","piena"],"skin_tone":["Non specificato","chiara","olivastra","ambrata","scura","ebano","rosa","nero"]}[key]
 		var field=picker(fields,values); field.select(maxi(0,values.find(current.appearance.get(key)))); inputs[key]=field
 	label(fields,"VALORI  /  SOLO DATABASE · nessun effetto sul gameplay")
 	for key in current.ratings:
@@ -265,7 +265,8 @@ func edit_player(index: int) -> void:
 func save_player() -> void:
 	if inputs.name.text.strip_edges().is_empty(): message.text="Inserisci un nome."; return
 	current.name=inputs.name.text.strip_edges(); current.jersey_number=int(inputs.number.value); current.role=inputs.role.get_item_text(inputs.role.selected)
-	for key in ["hair_length","hair_color","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
+	for key in ["hair_style","hair_color","beard","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
+	current.appearance.hair_length="pelato" if current.appearance.hair_style=="pelato" else ("lunghi" if current.appearance.hair_style=="lunghi" else "corti")
 	for key in current.ratings: current.ratings[key]=int(inputs["rating_"+key].value)
 	message.text="Salvato in locale ✓" if db.save(current)==OK else "Salvataggio non riuscito: riprova."
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])

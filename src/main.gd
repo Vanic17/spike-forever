@@ -116,6 +116,9 @@ var serve_motion_time := 0.0
 var serve_motion_start_time := 0.0
 var serve_toss_duration := TOSS_TIME
 var serve_motion_yaw := 0.0
+var serve_move:=Vector2.ZERO
+var serve_adjusting:=false
+var serve_adjust_target:=Vector3.ZERO
 var serve_windup_left := 0.0
 var dive_motions: Dictionary = {}
 var contact_log: Array[Dictionary] = []
@@ -421,7 +424,7 @@ func pad() -> int:
 	return ids[0] if not ids.is_empty() else -1
 
 func stick(_right: bool = false) -> Vector2:
-	# The left stick is exclusively tactical aim; every athlete moves by AI.
+	# Left stick: tactical aim during play/charge, server movement before charge.
 	var result := Input.get_vector("left", "right", "up", "down")
 	var id := pad()
 	if id >= 0:
@@ -433,6 +436,8 @@ func stick(_right: bool = false) -> Vector2:
 
 func read_controls(dt: float = 1.0/120.0) -> void:
 	var direction := preload("res://src/view_controls.gd").court_direction(stick(),camera_mode)
+	serve_move=direction if phase=="SERVE" and server==0 and not demo and not charging and not toss_active and not serve_adjusting else Vector2.ZERO
+	if phase=="SERVE" and not charging and not demo: return
 	if human_wall(): manual_wall.read(self,direction,dt)
 	if direction.length() > 0.3:
 		var angle := roundf(direction.angle() / (PI / 4)) * PI / 4
@@ -458,7 +463,7 @@ func press_action(button: String = "action") -> void:
 	if phase=="SET" and armed and button=="action":
 		attack_buffer_start=clock_time; attack_buffer_power=-1.0
 		return
-	if phase == "SERVE" and server == 0 and not charging and not toss_active and button != "dump":
+	if phase == "SERVE" and server == 0 and not charging and not toss_active and not serve_adjusting and button != "dump":
 		serve_type = 0 if button == "alternate" else 1
 		charge_button = button
 		charging = true
@@ -583,6 +588,7 @@ func reset_rally() -> void:
 	toss_active = false
 	serve_pending = false
 	serve_motion_active = false
+	serve_move=Vector2.ZERO; serve_adjusting=false
 	serve_motion_player = -1
 	serve_windup_left = 0
 	dive_motions.clear()
@@ -674,11 +680,14 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	var recovery: float=player_recovery_seconds(designated)
 	var arrival: float=preload("res://src/approach_planner.gd").seconds(players[designated],stance,Reference.run_speed()*1.10)+recovery
 	if designated!=receiver:
-		if recovery<=maxf(0.05,available-0.12) and arrival<=available+0.12: return designated
+		# Keep S on an ordinary playable pass, including the small flight
+		# extension already used by reception. L is an emergency replacement,
+		# not the winner of a nearest-player race.
+		if recovery<=maxf(0.05,available-0.12) and arrival<=available+0.40: return designated
 		if libero>=0:
 			var libero_stance: Vector3=players[libero].stance_for_contact("set",point)
 			var libero_arrival: float=preload("res://src/approach_planner.gd").seconds(players[libero],libero_stance,Reference.run_speed()*1.10)+player_recovery_seconds(libero)
-			if libero_arrival+0.25<arrival and player_recovery_seconds(libero)<available: return libero
+			if libero_arrival+0.45<arrival and libero_arrival<=available+0.20 and player_recovery_seconds(libero)<available: return libero
 		return designated
 	if libero>=0: return libero
 	# If S made the first touch and the libero is off court, another athlete
@@ -761,6 +770,18 @@ func contact_height(action: String) -> float:
 	return clips[action].contact_offset.y if clips.has(action) else players[0].contact_local(action).y
 
 func begin_serve_toss() -> void:
+	var preparation_action := "float" if serve_type==0 else "power"
+	var serving=players[server_index(server)]
+	var side:=1.0 if server==0 else -1.0
+	if clips.has(preparation_action):
+		var clip=clips[preparation_action]
+		var advance: Vector3=Basis(Vector3.UP,serving.rotation.y)*(serving.action_root_motion(preparation_action,clip.takeoff_time)-serving.action_root_motion(preparation_action,serve_start_time(preparation_action)))
+		var safe_depth:=maxf(9.30,9.18-advance.z*side)
+		if serving.position.z*side<safe_depth-.04:
+			charging=false; serve_adjusting=true; serve_move=Vector2.ZERO
+			serve_adjust_target=Vector3(serving.position.x,0,side*safe_depth)
+			return
+	serve_adjusting=false
 	charging = false
 	toss_active = true
 	serve_pending = true
@@ -1149,7 +1170,7 @@ func set_ball() -> void:
 		if not self_test: notice("ALTA DI SICUREZZA", 0.8)
 	block_count = Timing.blockers(false, fast_set, q, destination == 3)
 	if possession == 0:
-		var cpu_correct := rng.randf() < 0.65
+		var cpu_correct := rng.randf() < 0.70
 		block_count = Timing.blockers(cpu_correct, fast_set, q, destination == 3)
 	var early_wall := possession==1 and block_commanded and phase=="CPU_SET"
 	if not early_wall:
@@ -1292,7 +1313,7 @@ func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 	marker.position = Vector3(landing.x, 0.04, landing.z)
 	block_checked = false
 	if attacker == 0:
-		block_quality = rng.randf_range(0.45, 1)
+		block_quality = rng.randf_range(0.50, 1)
 	if incoming_kind == "overpass": prepare_overpass_attack()
 
 func prepare_overpass_attack() -> bool:
@@ -1445,6 +1466,7 @@ func step(dt: float) -> void:
 	move_players(dt)
 	if phase == "SERVE":
 		var serving = players[server_index(server)]
+		if serve_adjusting and serving.position.distance_to(serve_adjust_target)<.06: begin_serve_toss()
 		if toss_active:
 			var toss_dt := dt
 			if serve_windup_left > 0:
@@ -1462,7 +1484,7 @@ func step(dt: float) -> void:
 					if serve_pending: serve_ball(server, serve_power)
 		else:
 			ball_pos = serving.current_hand(true) + Vector3(0, 0.11, 0)
-		if server == 1 and phase_time > 0.65 and not toss_active:
+		if server == 1 and phase_time > 0.65 and not toss_active and not serve_adjusting:
 			serve_type = rng.randi_range(0, 1)
 			serve_power = rng.randf_range(0.55,1.08)
 			begin_serve_toss()
@@ -1580,13 +1602,18 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			advance_block_tail(tail)
 			return
 		if true:
-			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22)
+			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)))
 			var incoming := ball_vel
 			ball_vel=response.velocity
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
 			resume_deflection("block")
-			log_rally_event(response.kind,{"strength":strength,"seal":response.seal,"edge":contact_side,"blocking_team":defender})
+			# A hard stuff remains physically playable, but a hitter in
+			# landing recovery cannot reset instantly into a perfect dig.
+			if response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"]:
+				var recovery: float=players[receiver].contact_recovery_remaining() if players[receiver].clip_name=="attack" else player_recovery_seconds(receiver)
+				scramble_ready[receiver]=maxf(scramble_ready[receiver],clock_time+minf(.32,recovery))
+			log_rally_event(response.kind,{"strength":strength,"seal":response.seal,"edge":contact_side,"blocking_team":defender,"trajectory":response.get("detail",response.kind),"outgoing":ball_vel})
 			notice("MONSTER BLOCK" if response.kind=="stuff_block" else ("TOCCO DI MANI" if response.kind=="block_tool" else "MURO · PALLA GIOCABILE"), 1.0)
 			if match_audio: match_audio.contact("block", ball_pos, 0.85)
 			advance_block_tail(tail)
@@ -1804,7 +1831,7 @@ func move_players(dt: float) -> void:
 		var base: Vector3 = Tactics.serve_position(i, int(i / 6), rotations[int(i / 6)],int(i / 6)==server)
 		var team := int(i / 6)
 		var serving_player := phase == "SERVE" and i == server_index(server)
-		var depth_limit := 12.0 if serving_player else (11.5 if i==action_actor else 10.5)
+		var depth_limit := 13.5 if serving_player else (11.5 if i==action_actor else 10.5)
 		var width_limit := 4.35 if serving_player else (7.0 if i==action_actor else 5.7)
 		# Return from a save outside the sidelines by running, never by clamping
 		# the athlete's root back to the ordinary support rectangle in one frame.
@@ -1904,8 +1931,13 @@ func move_players(dt: float) -> void:
 				delta.y = 0
 				if delta.length() < 0.75 and delta.length() > 0.01: desired += delta.normalized() * (0.75 - delta.length()) * 3.0
 		if serving_player:
-			desired = Vector3.ZERO
-			p.target = p.position
+			if serve_adjusting:
+				p.target=serve_adjust_target
+				desired=(serve_adjust_target-p.position)*5.0
+				desired=desired.limit_length(2.5)
+			else:
+				desired=Vector3(serve_move.x,0,serve_move.y)*2.8
+				p.target=p.position+desired*.15
 		desired *= p.recovery_speed_scale()
 		if middle_decoy.holds(i): desired=Vector3.ZERO
 		if clock_time < scramble_ready[i]: desired = Vector3.ZERO

@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.47.0:** muro più incisivo e vario, CPU leggermente più pronta a muro, pallonetto sincronizzato con la rincorsa, spostamento del battitore e passo indietro automatico prima del servizio. Nuovi capelli, barbe e carnagioni con 167 profili indicativi dalle foto ufficiali. Priorità del palleggiatore sul secondo tocco. [Dettagli e verifiche](docs/RELEASE_NOTES_47.md).
+
 **Versione 0.46.0:** pali CREDEM, seggiolone sul lato sinistro e arbitro originale animato con gesti contestuali. Centrale preparato sul primo tempo anche come finta, rincorse complete più leggibili e anteprime reali delle divise nel menu partita. [Dettagli e verifiche](docs/RELEASE_NOTES_46.md).
 
 **Versione 0.45.1:** revisione dei marchi delle maglie di Padova, conservando le 32 divise, la stampa dei giocatori e gli abbinamenti del libero introdotti nella v45. [Dettagli](docs/RELEASE_NOTES_45_1.md).

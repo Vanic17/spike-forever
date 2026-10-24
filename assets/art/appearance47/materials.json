@@ -1,0 +1,72 @@
+{
+  "MAS_Char_Hair02": {
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png",
+    "Diffuse": "MAS_Char_Hair02-cutout47.png"
+  },
+  "M_Char_Hair01_Afro": {
+    "Opacity": "T_Char_Hair_Venero_Alpha.png",
+    "Other[0]": "T_Char_Hair_Venero_Depth.png",
+    "Other[1]": "T_Char_Hair_Venero_Roots.png",
+    "Other[2]": "T_Char_Hair_Venero_ID.png",
+    "Other[3]": "Good64x64TilingNoiseHighFreq.png",
+    "Diffuse": "M_Char_Hair01_Afro-cutout47.png"
+  },
+  "M_Char_Hair02_Black": {
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png",
+    "Diffuse": "M_Char_Hair02_Black-cutout47.png"
+  },
+  "M_Char_Hair02_Black_LOD01": {
+    "Diffuse": "M_Char_Hair02_Black_LOD01-cutout47.png",
+    "Opacity": "Hair_Anderson_Alpha_Full.png",
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Char_Hair_Rasta": {
+    "Diffuse": "M_Char_Hair_Rasta-cutout47.png",
+    "Opacity": "T_Char_Hair_Venero_Alpha.png"
+  },
+  "MAS_Hair_V2": {
+    "Diffuse": "GlitterTexture.png",
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Beard_V2_Black": {
+    "Diffuse": "M_Beard_V2_Black-cutout47.png",
+    "Opacity": "Beardtest_Mask.png",
+    "Other[0]": "Beardtest_Depth.png",
+    "Other[1]": "Beardtest_ID.png",
+    "Other[2]": "Beardtest_Root.png",
+    "Other[3]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Beard_V2_Brown": {
+    "Diffuse": "M_Beard_V2_Brown-cutout47.png",
+    "Opacity": "Beardtest_Mask.png",
+    "Other[0]": "Beardtest_Depth.png",
+    "Other[1]": "Beardtest_ID.png",
+    "Other[2]": "Beardtest_Root.png",
+    "Other[3]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Hair_V2Brown": {
+    "Diffuse": "M_Hair_V2Brown-cutout47.png",
+    "Opacity": "Hairtest_Mask.png",
+    "Other[0]": "ShiftTexture.png",
+    "Other[1]": "Hairtest_Depth.png",
+    "Other[2]": "Hairtest_ID.png",
+    "Other[3]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Hair_V2_Black1": {
+    "Diffuse": "M_Hair_V2_Black1-cutout47.png",
+    "Opacity": "Hairtest_Mask.png",
+    "Other[0]": "Hairtest_Depth.png",
+    "Other[1]": "Hairtest_ID.png",
+    "Other[2]": "Hairtest_Root.png",
+    "Other[3]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Hair_V2_Brown": {
+    "Diffuse": "M_Hair_V2_Brown-cutout47.png",
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png"
+  },
+  "M_Hair_V2_Brown_LOD01": {
+    "Diffuse": "M_Hair_V2_Brown_LOD01-cutout47.png",
+    "Opacity": "white_alpha.png",
+    "Other[0]": "Good64x64TilingNoiseHighFreq.png"
+  }
+}

@@ -27,6 +27,13 @@ $files+=@('docs/RELEASE_NOTES_44.md','docs/attacks44-preview.mp4','docs/balance4
 $files+='docs/RELEASE_NOTES_45.md'
 $files+='docs/RELEASE_NOTES_45_1.md'
 $files+='docs/RELEASE_NOTES_46.md'
+$files+='docs/RELEASE_NOTES_47.md'
+foreach($tool47 in @('Fetch-PlayerReferences47.py','Prepare-Appearance47.py','Build-PlayerProfiles47.py','Inspect-Contacts47.gd','Test-Tips47.gd','Test-Gameplay47.gd','Test-BlockRallies47.gd','Test-Appearance47.gd','Test-ProfileOverrides47.gd','Preview-Appearance47.gd','Benchmark-Rendered47.gd')){
+ $files+='tools/'+$tool47
+}
+foreach($report47 in @('appearance47-sources.json','appearance47-presets.png','tips47-report.json','gameplay47-report.json','block-rallies47-report.json')){
+ $files+='docs/'+$report47
+}
 foreach($tool46 in @('Inspect-Officials46.py','Prepare-Officials46.py','Build-Officials46.gd','Build-KitPreviews46.gd','Test-Equipment46.gd','Test-Preparation46.gd','Capture-Equipment46.gd','Capture-MatchMenu46.gd','Preview-Approaches46.gd')){
  $files+='tools/'+$tool46
 }

@@ -1,0 +1,2689 @@
+{
+  "method": "manual approximate visible hairstyle/beard/skin-shade review; no facial identity reconstruction",
+  "players": [
+    {
+      "id": "allianz-milano-01",
+      "name": "Francesco Recine",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/REC-FRA-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=REC-FRA-99&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/REC-FRA-99"
+      }
+    },
+    {
+      "id": "allianz-milano-02",
+      "name": "Tommaso Ichino",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/ICH-TOM-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ICH-TOM-04&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ICH-TOM-04"
+      }
+    },
+    {
+      "id": "allianz-milano-03",
+      "name": "Damiano Catania",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/CAT-DAM-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CAT-DAM-01&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CAT-DAM-01"
+      }
+    },
+    {
+      "id": "allianz-milano-04",
+      "name": "Simone Porro",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/POR-SIM-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=POR-SIM-07&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/POR-SIM-07"
+      }
+    },
+    {
+      "id": "allianz-milano-05",
+      "name": "Davi Tenorio",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/TEN-DAV-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TEN-DAV-05&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TEN-DAV-05"
+      }
+    },
+    {
+      "id": "allianz-milano-06",
+      "name": "Filippo Bartolucci",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/BAR-FIL-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BAR-FIL-03&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BAR-FIL-03"
+      }
+    },
+    {
+      "id": "allianz-milano-07",
+      "name": "Alessandro Benacchio",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/BEN-ALE-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BEN-ALE-07&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BEN-ALE-07"
+      }
+    },
+    {
+      "id": "allianz-milano-09",
+      "name": "Seppe Rotty",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/ROT-SEP-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ROT-SEP-01&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ROT-SEP-01"
+      }
+    },
+    {
+      "id": "allianz-milano-10",
+      "name": "Robertlandy Simon",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/SIM-ROB-87",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SIM-ROB-87&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "ebano",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SIM-ROB-87"
+      }
+    },
+    {
+      "id": "allianz-milano-11",
+      "name": "Santiago Orduna",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/ORD-SAN-83",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ORD-SAN-83&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ORD-SAN-83"
+      }
+    },
+    {
+      "id": "allianz-milano-12",
+      "name": "Tatsunori Otsuka",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/OTS-TAT-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=OTS-TAT-00&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/OTS-TAT-00"
+      }
+    },
+    {
+      "id": "allianz-milano-13",
+      "name": "Federico Argano",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/ARG-FED-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ARG-FED-08&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ARG-FED-08"
+      }
+    },
+    {
+      "id": "allianz-milano-14",
+      "name": "Jacopo Corbetta",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/COR-JAC-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=COR-JAC-07&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/COR-JAC-07"
+      }
+    },
+    {
+      "id": "allianz-milano-15",
+      "name": "Georgi Tatarov",
+      "team": "allianz-milano",
+      "page": "https://www.legavolley.it/player/TAT-GEO-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TAT-GEO-03&sqid=6858&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TAT-GEO-03"
+      }
+    },
+    {
+      "id": "cisterna-volley-01",
+      "name": "Vilmos Szabo",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/SZA-VIL-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SZA-VIL-02&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SZA-VIL-02"
+      }
+    },
+    {
+      "id": "cisterna-volley-02",
+      "name": "Giulio Magalini",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/MAG-GIU-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAG-GIU-01&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAG-GIU-01"
+      }
+    },
+    {
+      "id": "cisterna-volley-03",
+      "name": "Lorenzo Magliano",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/MAG-LOR-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAG-LOR-05&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAG-LOR-05"
+      }
+    },
+    {
+      "id": "cisterna-volley-04",
+      "name": "Shikun Peng",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/PEN-SHI-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PEN-SHI-00&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PEN-SHI-00"
+      }
+    },
+    {
+      "id": "cisterna-volley-05",
+      "name": "Tommaso Barotto",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/BAR-TOM-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BAR-TOM-05&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BAR-TOM-05"
+      }
+    },
+    {
+      "id": "cisterna-volley-19",
+      "name": "Milosz Jan Wrobel",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/WRO-MIL-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=WRO-MIL-06&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/WRO-MIL-06"
+      }
+    },
+    {
+      "id": "cisterna-volley-06",
+      "name": "Filippo Lanza",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/LAN-FIL-91",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LAN-FIL-91&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LAN-FIL-91"
+      }
+    },
+    {
+      "id": "cisterna-volley-07",
+      "name": "Alessandro Fanizza",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/FAN-ALE-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FAN-ALE-04&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FAN-ALE-04"
+      }
+    },
+    {
+      "id": "cisterna-volley-08",
+      "name": "Francesco Pierri",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/PIE-FRA-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PIE-FRA-99&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PIE-FRA-99"
+      }
+    },
+    {
+      "id": "cisterna-volley-09",
+      "name": "Miguel Angel Martinez Palacios",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/MAR-MIG-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAR-MIG-03&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "treccine",
+        "hair_length": "lunghi",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "ebano",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAR-MIG-03"
+      }
+    },
+    {
+      "id": "cisterna-volley-10",
+      "name": "Daniele Mazzone",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/MAZ-DAN-92",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAZ-DAN-92&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAZ-DAN-92"
+      }
+    },
+    {
+      "id": "cisterna-volley-11",
+      "name": "Noa Duflos-Rossi",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/DUF-NOA-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=DUF-NOA-07&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/DUF-NOA-07"
+      }
+    },
+    {
+      "id": "cisterna-volley-12",
+      "name": "Jacopo Tosti",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/TOS-JAC-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TOS-JAC-08&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TOS-JAC-08"
+      }
+    },
+    {
+      "id": "cisterna-volley-13",
+      "name": "Filippo Federici",
+      "team": "cisterna-volley",
+      "page": "https://www.legavolley.it/player/FED-FIL-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FED-FIL-00&sqid=6859&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FED-FIL-00"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-01",
+      "name": "Simeon Nikolov",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/NIK-SIM-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=NIK-SIM-06&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/NIK-SIM-06"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-02",
+      "name": "Giovanni Maria Gargiulo",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/GAR-GIO-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GAR-GIO-99&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GAR-GIO-99"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-03",
+      "name": "Eric Loeppky",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/LOE-ERI-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LOE-ERI-98&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LOE-ERI-98"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-04",
+      "name": "Francesco Bisotto",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/BIS-FRA-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BIS-FRA-02&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BIS-FRA-02"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-05",
+      "name": "Fabio Balaso",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/BAL-FAB-95",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BAL-FAB-95&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BAL-FAB-95"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-06",
+      "name": "Alberto Polo",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/POL-ALB-95",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=POL-ALB-95&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/POL-ALB-95"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-07",
+      "name": "Davide Gardini",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/GAR-DAV-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GAR-DAV-99&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GAR-DAV-99"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-21",
+      "name": "Miran Kujundzic",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/KUJ-MIR-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KUJ-MIR-97&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KUJ-MIR-97"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-08",
+      "name": "Aleksandar Nikolov",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/NIK-ALE-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=NIK-ALE-03&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/NIK-ALE-03"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-09",
+      "name": "Francesco Zoppellari",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/ZOP-FRA-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ZOP-FRA-97&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ZOP-FRA-97"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-10",
+      "name": "Jackson Howe",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/HOW-JAC-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=HOW-JAC-98&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/HOW-JAC-98"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-11",
+      "name": "Maksym Tonkonoh",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/TON-MAK-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TON-MAK-07&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TON-MAK-07"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-12",
+      "name": "Antonin Klimes",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/KLI-ANT-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KLI-ANT-05&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KLI-ANT-05"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-13",
+      "name": "Mattia Bottolo",
+      "team": "cucine-lube-civitanova",
+      "page": "https://www.legavolley.it/player/BOT-MAT-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BOT-MAT-00&sqid=6860&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BOT-MAT-00"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-01",
+      "name": "Manuel Coscione",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/COS-MAN-80",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=COS-MAN-80&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/COS-MAN-80"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-02",
+      "name": "Domenico Cavaccini",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/CAV-DOM-87",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CAV-DOM-87&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CAV-DOM-87"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-03",
+      "name": "Thibault Loubeyre",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/LOU-THI-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LOU-THI-01&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LOU-THI-01"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-04",
+      "name": "Bryan Argilagos",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/ARG-BRY-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ARG-BRY-07&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ARG-BRY-07"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-05",
+      "name": "Lorenzo Sala",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/SAL-LOR-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SAL-LOR-02&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SAL-LOR-02"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-06",
+      "name": "Nicolo Volpe",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/VOL-NIC-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=VOL-NIC-03&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/VOL-NIC-03"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-07",
+      "name": "Emanuele Barberio",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/BAR-EMA-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BAR-EMA-07&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BAR-EMA-07"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-08",
+      "name": "Alexandre Strehlau",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/STR-ALE-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=STR-ALE-04&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "afro",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "ambrata",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/STR-ALE-04"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-09",
+      "name": "Nathan Feral",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/FER-NAT-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FER-NAT-03&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FER-NAT-03"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-10",
+      "name": "Poriya Hossein Khanzadeh",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/KHA-POR-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KHA-POR-04&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KHA-POR-04"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-11",
+      "name": "Ethan Champlin",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/CHA-ETH-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CHA-ETH-01&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CHA-ETH-01"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-12",
+      "name": "Lorenzo Codarin",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/COD-LOR-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=COD-LOR-96&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/COD-LOR-96"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-13",
+      "name": "Federico Giraudo",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/GIR-FED-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GIR-FED-07&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GIR-FED-07"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-14",
+      "name": "Leandro Mosca",
+      "team": "acqua-santanna-cuneo",
+      "page": "https://www.legavolley.it/player/MOS-LEA-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MOS-LEA-00&sqid=6863&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MOS-LEA-00"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-01",
+      "name": "Merrick McHenry",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/MCH-MER-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MCH-MER-00&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "scura",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MCH-MER-00"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-02",
+      "name": "Cooper Robinson",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/ROB-COO-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ROB-COO-02&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ROB-COO-02"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-03",
+      "name": "Paolo Porro",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/POR-PAO-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=POR-PAO-01&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/POR-PAO-01"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-04",
+      "name": "Henri Emmanuel Leon",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/LEO-HEN-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LEO-HEN-03&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "ebano",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LEO-HEN-03"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-05",
+      "name": "Domenico Pace",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/PAC-DOM-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PAC-DOM-00&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PAC-DOM-00"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-06",
+      "name": "Nikola Brboric",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/BRB-NIK-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BRB-NIK-06&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BRB-NIK-06"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-07",
+      "name": "Francesco Comparoni",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/COM-FRA-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=COM-FRA-01&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/COM-FRA-01"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-08",
+      "name": "Gianluca Galassi",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/GAL-GIA-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GAL-GIA-97&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GAL-GIA-97"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-09",
+      "name": "Manuel Zlatanov",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/ZLA-MAN-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ZLA-MAN-08&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ZLA-MAN-08"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-10",
+      "name": "Dragan Travica",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/TRA-DRA-86",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TRA-DRA-86&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TRA-DRA-86"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-11",
+      "name": "Francesco Rizzo",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/RIZ-FRA-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=RIZ-FRA-08&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/RIZ-FRA-08"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-12",
+      "name": "Daniel Iyegbekedo",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/IYE-DAN-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=IYE-DAN-07&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "afro",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "scura",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/IYE-DAN-07"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-13",
+      "name": "Jose Miguel Gutierrez",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/GUT-JOS-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GUT-JOS-01&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "scura",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GUT-JOS-01"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-14",
+      "name": "Alessandro Bovolenta",
+      "team": "gas-sales-bluenergy-piacenza",
+      "page": "https://www.legavolley.it/player/BOV-ALE-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BOV-ALE-04&sqid=6861&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BOV-ALE-04"
+      }
+    },
+    {
+      "id": "itas-trentino-01",
+      "name": "Federico Roberti",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/ROB-FED-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ROB-FED-04&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ROB-FED-04"
+      }
+    },
+    {
+      "id": "itas-trentino-02",
+      "name": "Nicola Zonta",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/ZON-NIC-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ZON-NIC-00&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ZON-NIC-00"
+      }
+    },
+    {
+      "id": "itas-trentino-03",
+      "name": "Alessandro Michieletto",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/MIC-ALE-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MIC-ALE-01&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MIC-ALE-01"
+      }
+    },
+    {
+      "id": "itas-trentino-04",
+      "name": "Riccardo Sbertoli",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/SBE-RIC-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SBE-RIC-98&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SBE-RIC-98"
+      }
+    },
+    {
+      "id": "itas-trentino-05",
+      "name": "Riccardo Gollini",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/GOL-RIC-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GOL-RIC-00&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GOL-RIC-00"
+      }
+    },
+    {
+      "id": "itas-trentino-06",
+      "name": "Theo Faure",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/FAU-THE",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FAU-THE&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FAU-THE"
+      }
+    },
+    {
+      "id": "itas-trentino-07",
+      "name": "Elia Bossi",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/BOS-ELI-94",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BOS-ELI-94&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BOS-ELI-94"
+      }
+    },
+    {
+      "id": "itas-trentino-08",
+      "name": "Gabriele Laurenzano",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/LAU-GAB-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LAU-GAB-03&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LAU-GAB-03"
+      }
+    },
+    {
+      "id": "itas-trentino-09",
+      "name": "Daniele Lavia",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/LAV-DAN-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LAV-DAN-99&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LAV-DAN-99"
+      }
+    },
+    {
+      "id": "itas-trentino-10",
+      "name": "Renars-Paul Jansons",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/JAN-REN-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=JAN-REN-02&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "lunghi",
+        "hair_length": "lunghi",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/JAN-REN-02"
+      }
+    },
+    {
+      "id": "itas-trentino-11",
+      "name": "Adriano Xavier Cavalcante",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/CAV-ADR-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CAV-ADR-02&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "scura",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CAV-ADR-02"
+      }
+    },
+    {
+      "id": "itas-trentino-12",
+      "name": "Flavio Resende Gualberto",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/GUA-FLA-93",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GUA-FLA-93&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GUA-FLA-93"
+      }
+    },
+    {
+      "id": "itas-trentino-13",
+      "name": "Aleksandar Nedeljkovic",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/NED-ALE-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=NED-ALE-97&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/NED-ALE-97"
+      }
+    },
+    {
+      "id": "itas-trentino-14",
+      "name": "Simon Valentin Torwie",
+      "team": "itas-trentino",
+      "page": "https://www.legavolley.it/player/TOR-SIM-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TOR-SIM-01&sqid=6862&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TOR-SIM-01"
+      }
+    },
+    {
+      "id": "pallavolo-padova-01",
+      "name": "Amir Mohammad Golzadeh",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/GOL-AMI-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GOL-AMI-03&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GOL-AMI-03"
+      }
+    },
+    {
+      "id": "pallavolo-padova-02",
+      "name": "Alessandro Bristot",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/BIS-ALE-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BIS-ALE-05&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BIS-ALE-05"
+      }
+    },
+    {
+      "id": "pallavolo-padova-03",
+      "name": "Andrea Ruzza",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/RUZ-AND-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=RUZ-AND-07&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/RUZ-AND-07"
+      }
+    },
+    {
+      "id": "pallavolo-padova-04",
+      "name": "Simone Rinaldi",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/RIN-SIM-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=RIN-SIM-07&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/RIN-SIM-07"
+      }
+    },
+    {
+      "id": "pallavolo-padova-05",
+      "name": "Francesco D'Amico",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/DAM-FRA-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=DAM-FRA-99&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/DAM-FRA-99"
+      }
+    },
+    {
+      "id": "pallavolo-padova-06",
+      "name": "Joscha Kunstmann",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/KUN-JOS-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KUN-JOS-03&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KUN-JOS-03"
+      }
+    },
+    {
+      "id": "pallavolo-padova-07",
+      "name": "Marco Pellacani",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/PEL-MAR-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PEL-MAR-04&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PEL-MAR-04"
+      }
+    },
+    {
+      "id": "pallavolo-padova-08",
+      "name": "Mattia Uliana",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/ULI-MAT-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ULI-MAT-07&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ULI-MAT-07"
+      }
+    },
+    {
+      "id": "pallavolo-padova-09",
+      "name": "Leonardo Lukas Leodolter",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/LEO-LEO-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LEO-LEO-02&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LEO-LEO-02"
+      }
+    },
+    {
+      "id": "pallavolo-padova-10",
+      "name": "Francesco Bergamasco",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/BER-FRA-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BER-FRA-05&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BER-FRA-05"
+      }
+    },
+    {
+      "id": "pallavolo-padova-11",
+      "name": "Mattia Orioli",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/ORI-MAT-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ORI-MAT-04&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ORI-MAT-04"
+      }
+    },
+    {
+      "id": "pallavolo-padova-12",
+      "name": "Arshia Behnezhad",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/BEH-ARS-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BEH-ARS-03&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BEH-ARS-03"
+      }
+    },
+    {
+      "id": "pallavolo-padova-13",
+      "name": "Brendan Robert Mills",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/MIL-BRE-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MIL-BRE-03&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MIL-BRE-03"
+      }
+    },
+    {
+      "id": "pallavolo-padova-14",
+      "name": "Andrea Truocchio",
+      "team": "pallavolo-padova",
+      "page": "https://www.legavolley.it/player/TRU-AND-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TRU-AND-00&sqid=6866&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TRU-AND-00"
+      }
+    },
+    {
+      "id": "rana-verona-01",
+      "name": "Aidan Zingel",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/ZIN-AID-90",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ZIN-AID-90&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ZIN-AID-90"
+      }
+    },
+    {
+      "id": "rana-verona-02",
+      "name": "Lorenzo Cortesia",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/COR-LOR-99",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=COR-LOR-99&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/COR-LOR-99"
+      }
+    },
+    {
+      "id": "rana-verona-03",
+      "name": "Leonardo Scanferla",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/SCA-LEO-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SCA-LEO-98&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SCA-LEO-98"
+      }
+    },
+    {
+      "id": "rana-verona-04",
+      "name": "Kellian Motta Paes",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/PAE-KEL-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PAE-KEL-02&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PAE-KEL-02"
+      }
+    },
+    {
+      "id": "rana-verona-05",
+      "name": "Marco Vitelli",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/VIT-MAR-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=VIT-MAR-96&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/VIT-MAR-96"
+      }
+    },
+    {
+      "id": "rana-verona-06",
+      "name": "Matteo Staforini",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/STA-MAT-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=STA-MAT-03&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/STA-MAT-03"
+      }
+    },
+    {
+      "id": "rana-verona-08",
+      "name": "Noumory Keita",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/KEI-NOU-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KEI-NOU-01&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "afro",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "ebano",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KEI-NOU-01"
+      }
+    },
+    {
+      "id": "rana-verona-09",
+      "name": "Francesco Sani",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/SAN-FRA-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SAN-FRA-02&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SAN-FRA-02"
+      }
+    },
+    {
+      "id": "rana-verona-10",
+      "name": "Micah Christenson",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/CHR-MIC-93",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CHR-MIC-93&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CHR-MIC-93"
+      }
+    },
+    {
+      "id": "rana-verona-24",
+      "name": "Anders Mol",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/MOL-AND-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MOL-AND-97&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MOL-AND-97"
+      }
+    },
+    {
+      "id": "rana-verona-11",
+      "name": "Lukas Glatz",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/GLA-LUK-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GLA-LUK-05&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "biondo",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GLA-LUK-05"
+      }
+    },
+    {
+      "id": "rana-verona-12",
+      "name": "Simone Anzani",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/ANZ-SIM-92",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ANZ-SIM-92&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ANZ-SIM-92"
+      }
+    },
+    {
+      "id": "rana-verona-14",
+      "name": "Rok Mozic",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/MOZ-ROK-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MOZ-ROK-02&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MOZ-ROK-02"
+      }
+    },
+    {
+      "id": "rana-verona-13",
+      "name": "Paul Buchegger",
+      "team": "rana-verona",
+      "page": "https://www.legavolley.it/player/BUC-PAU-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BUC-PAU-96&sqid=6864&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BUC-PAU-96"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-01",
+      "name": "Mathis Henno",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/HEN-MAT-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=HEN-MAT-05&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/HEN-MAT-05"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-02",
+      "name": "Simone Giannelli",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/GIA-SIM-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GIA-SIM-96&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GIA-SIM-96"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-03",
+      "name": "Ferre Reggers",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/REG-FER-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=REG-FER-03&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/REG-FER-03"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-04",
+      "name": "Agustin Loser",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/LOS-AGU-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LOS-AGU-97&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LOS-AGU-97"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-05",
+      "name": "Stefano Cappadona",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/CAP-STE-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CAP-STE-05&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CAP-STE-05"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-06",
+      "name": "Luca Loreti",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/LOR-LUC-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LOR-LUC-05&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LOR-LUC-05"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-07",
+      "name": "Sebastian Sole",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/SOL-SEB-91",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SOL-SEB-91&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SOL-SEB-91"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-08",
+      "name": "David Kollator",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/KOL-DAV-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KOL-DAV-03&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KOL-DAV-03"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-09",
+      "name": "Kamil Semeniuk",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/SEM-KAM-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SEM-KAM-96&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SEM-KAM-96"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-10",
+      "name": "Oleh Plotnytskyi",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/PLO-OLE-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PLO-OLE-97&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PLO-OLE-97"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-11",
+      "name": "Giovanni Sanguinetti",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/SAN-GIO-00",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=SAN-GIO-00&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/SAN-GIO-00"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-12",
+      "name": "Marco Gaggini",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/GAG-MAR-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GAG-MAR-02&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "pelato",
+        "hair_length": "pelato",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GAG-MAR-02"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-13",
+      "name": "Seyed Matin Hosseini",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/HOS-SAY-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=HOS-SAY-05&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/HOS-SAY-05"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-14",
+      "name": "Federico Crosato",
+      "team": "sir-susa-scai-perugia",
+      "page": "https://www.legavolley.it/player/CRO-FED-02",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CRO-FED-02&sqid=6865&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CRO-FED-02"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-01",
+      "name": "Wout D'Heer",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/DHE-WOU-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=DHE-WOU-01&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "biondo",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/DHE-WOU-01"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-02",
+      "name": "Nicolo Katalan",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/KAT-NIC-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KAT-NIC-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KAT-NIC-98"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-03",
+      "name": "Alessio Alberini",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/ALB-ALE-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ALB-ALE-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ALB-ALE-98"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-04",
+      "name": "Federico Frassanella Midolo",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/FRA-FED-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FRA-FED-05&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FRA-FED-05"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-05",
+      "name": "Alberto Pol",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/POL-ALB-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=POL-ALB-01&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/POL-ALB-01"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-06",
+      "name": "Sebastiano Marsili",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/MAR-SEB-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAR-SEB-96&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAR-SEB-96"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-07",
+      "name": "Alessandro Toscani",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/TOS-ALE-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TOS-ALE-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "lunghi",
+        "hair_length": "lunghi",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TOS-ALE-98"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-08",
+      "name": "Kirill Klets",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/KLE-KIR-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KLE-KIR-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KLE-KIR-98"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-09",
+      "name": "Jacopo Larizza",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/LAR-JAC-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=LAR-JAC-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/LAR-JAC-98"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-10",
+      "name": "Federico Guadagnini",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/GUA-FED-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GUA-FED-04&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GUA-FED-04"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-11",
+      "name": "Jernej Terpin",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/TER-JER-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TER-JER-96&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TER-JER-96"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-12",
+      "name": "Lukas Felipe Bergmann",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/BER-LUK-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BER-LUK-04&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BER-LUK-04"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-13",
+      "name": "David Umek",
+      "team": "tinet-prata-di-pordenone",
+      "page": "https://www.legavolley.it/player/UME-DAV-98",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=UME-DAV-98&sqid=6897&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/UME-DAV-98"
+      }
+    },
+    {
+      "id": "valsa-group-modena-01",
+      "name": "Arthur Bento",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/BEN-ART-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BEN-ART-04&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "corta",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BEN-ART-04"
+      }
+    },
+    {
+      "id": "valsa-group-modena-02",
+      "name": "Amir Tizi-Oualou",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/TIZ-AMI-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TIZ-AMI-05&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TIZ-AMI-05"
+      }
+    },
+    {
+      "id": "valsa-group-modena-03",
+      "name": "Luke Perry",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/PER-LUK-95",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PER-LUK-95&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PER-LUK-95"
+      }
+    },
+    {
+      "id": "valsa-group-modena-04",
+      "name": "Pardo Mati",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/MAT-PAR-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAT-PAR-06&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAT-PAR-06"
+      }
+    },
+    {
+      "id": "valsa-group-modena-05",
+      "name": "Sil Meijs",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/MEI-SIL-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MEI-SIL-03&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MEI-SIL-03"
+      }
+    },
+    {
+      "id": "valsa-group-modena-06",
+      "name": "Thomas Jaeschke",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/JAE-THO-93",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=JAE-THO-93&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/JAE-THO-93"
+      }
+    },
+    {
+      "id": "valsa-group-modena-07",
+      "name": "Nicolo Garello",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/GAR-NIC-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=GAR-NIC-07&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/GAR-NIC-07"
+      }
+    },
+    {
+      "id": "valsa-group-modena-08",
+      "name": "Leonardo Barbanti",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/BAR-LEO-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BAR-LEO-06&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BAR-LEO-06"
+      }
+    },
+    {
+      "id": "valsa-group-modena-09",
+      "name": "Luca Tauletta",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/TAU-LUC-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=TAU-LUC-03&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "sfumati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/TAU-LUC-03"
+      }
+    },
+    {
+      "id": "valsa-group-modena-10",
+      "name": "Federico Menchetti",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/MEN-FED-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MEN-FED-07&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "mossi",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MEN-FED-07"
+      }
+    },
+    {
+      "id": "valsa-group-modena-11",
+      "name": "Luca Porro",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/POR-LUC-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=POR-LUC-03&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/POR-LUC-03"
+      }
+    },
+    {
+      "id": "valsa-group-modena-12",
+      "name": "Gabriele Di Martino",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/DIM-GAB-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=DIM-GAB-97&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/DIM-GAB-97"
+      }
+    },
+    {
+      "id": "valsa-group-modena-13",
+      "name": "Roberto Russo",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/RUS-ROB-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=RUS-ROB-97&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/RUS-ROB-97"
+      }
+    },
+    {
+      "id": "valsa-group-modena-14",
+      "name": "Nik Mujanovic",
+      "team": "valsa-group-modena",
+      "page": "https://www.legavolley.it/player/MUJ-NIK-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MUJ-NIK-04&sqid=6867&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MUJ-NIK-04"
+      }
+    },
+    {
+      "id": "vero-volley-monza-01",
+      "name": "Zhasmin Velichkov",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/VEL-ZHA-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=VEL-ZHA-07&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/VEL-ZHA-07"
+      }
+    },
+    {
+      "id": "vero-volley-monza-02",
+      "name": "Diego Frascio",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/FRA-DIE-06",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FRA-DIE-06&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "riga",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FRA-DIE-06"
+      }
+    },
+    {
+      "id": "vero-volley-monza-03",
+      "name": "Leonardo Bonacchi",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/BON-LEO-07",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BON-LEO-07&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BON-LEO-07"
+      }
+    },
+    {
+      "id": "vero-volley-monza-04",
+      "name": "Flavio Morazzini",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/MOR-FLA-05",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MOR-FLA-05&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MOR-FLA-05"
+      }
+    },
+    {
+      "id": "vero-volley-monza-05",
+      "name": "Nicolo Mapelli",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/MAP-NIC-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAP-NIC-08&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAP-NIC-08"
+      }
+    },
+    {
+      "id": "vero-volley-monza-06",
+      "name": "Jacopo Massari",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/MAS-JAC-88",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=MAS-JAC-88&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/MAS-JAC-88"
+      }
+    },
+    {
+      "id": "vero-volley-monza-07",
+      "name": "Andrew Rowan",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/ROW-AND-03",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=ROW-AND-03&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "ricci",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/ROW-AND-03"
+      }
+    },
+    {
+      "id": "vero-volley-monza-08",
+      "name": "Iliya Petkov",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/PET-ILI-96",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PET-ILI-96&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "piena",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PET-ILI-96"
+      }
+    },
+    {
+      "id": "vero-volley-monza-09",
+      "name": "Bara Fall",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/FAL-BAR-97",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=FAL-BAR-97&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "ebano",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/FAL-BAR-97"
+      }
+    },
+    {
+      "id": "vero-volley-monza-10",
+      "name": "Thomas Beretta",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/BER-THO-90",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=BER-THO-90&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "lunghi",
+        "hair_length": "lunghi",
+        "hair_color": "nero",
+        "beard": "piena",
+        "skin_tone": "olivastra",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/BER-THO-90"
+      }
+    },
+    {
+      "id": "vero-volley-monza-11",
+      "name": "Hryhorii Khotsevitch",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/KHO-HRY-08",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=KHO-HRY-08&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/KHO-HRY-08"
+      }
+    },
+    {
+      "id": "vero-volley-monza-12",
+      "name": "Nicola Pesaresi",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/PES-NIC-91",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PES-NIC-91&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "corti",
+        "hair_length": "corti",
+        "hair_color": "marrone",
+        "beard": "corta",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PES-NIC-91"
+      }
+    },
+    {
+      "id": "vero-volley-monza-13",
+      "name": "Pierre Perin",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/PER-PIE-04",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=PER-PIE-04&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "frangia",
+        "hair_length": "corti",
+        "hair_color": "castano chiaro",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/PER-PIE-04"
+      }
+    },
+    {
+      "id": "vero-volley-monza-14",
+      "name": "Victorio Ceban",
+      "team": "vero-volley-monza",
+      "page": "https://www.legavolley.it/player/CEB-VIC-01",
+      "photo": "https://www.legavolley.it/Foto.aspx?Key=CEB-VIC-01&sqid=6868&heightImg=350",
+      "appearance": {
+        "hair_style": "rasati",
+        "hair_length": "corti",
+        "hair_color": "nero",
+        "beard": "nessuna",
+        "skin_tone": "chiara",
+        "status": "approximate_visual_review_official_portrait",
+        "photo_source_url": "https://www.legavolley.it/player/CEB-VIC-01"
+      }
+    }
+  ],
+  "unverified": [
+    {
+      "id": "allianz-milano-08",
+      "name": "Basil Dermaux",
+      "reason": "no matched usable official portrait"
+    },
+    {
+      "id": "tinet-prata-di-pordenone-26",
+      "name": "Nooa Marttila",
+      "reason": "no matched usable official portrait"
+    }
+  ]
+}

@@ -35,6 +35,13 @@ func target(game, index: int, contact_stance: Vector3) -> Vector3:
 		corner=contact_stance+Vector3(wing*0.30,0,side*0.95)
 		# A hitter who has already passed the penultimate step must not reverse.
 		planted=start.z*side<=corner.z*side+0.12
+	elif goal.distance_to(contact_stance)>0.03:
+		# A wrist tip changes the interception height after the approach
+		# was planned. Keep the runner attached to the new contact rather
+		# than the cached spike endpoint; never restart a planted run-up.
+		goal=contact_stance
+		var side := 1.0 if index<6 else -1.0
+		corner=contact_stance+Vector3(signf(contact_stance.x)*0.30,0,side*0.95)
 	if game.players[index].position.distance_to(corner)<0.32 or game.flight_left<0.32: planted=true
 	return goal if planted else corner
 

@@ -228,16 +228,7 @@ func apply_identity() -> void:
 		jersey_number.modulate=Color.WHITE if primary.get_luminance()<0.45 else Color("14243a")
 		jersey_number.visible = not kit.has("texture")
 	var appearance: Dictionary=person.get("appearance",{})
-	for part in ["body","head","hair"]:
-		if not body_parts.has(part): continue
-		var node=body_parts[part]
-		var material: StandardMaterial3D=node.material_override.duplicate()
-		if part=="hair":
-			node.visible=appearance.get("hair_length")!="pelato"
-			material.albedo_color={"nero":Color("171310"),"marrone":Color("573623"),"biondo":Color("c5a15e")}.get(appearance.get("hair_color"),Color("211b18"))
-			node.scale=Vector3(1,1.18,1.12) if appearance.get("hair_length")=="lunghi" else Vector3.ONE
-		else: material.albedo_color=Color("604331") if appearance.get("skin_tone")=="nero" else Color.WHITE
-		node.material_override=material
+	preload("res://src/player_appearance.gd").apply(self,appearance)
 
 func play(action: String, speed: float = 1.0, loop: bool = false) -> void:
 	if not clips.has(action): return

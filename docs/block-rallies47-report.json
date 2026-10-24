@@ -1,0 +1,177 @@
+{
+  "cases": [
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": true,
+      "hard": false,
+      "kind": "block_touch",
+      "phase": "CPU_SET",
+      "point_for_block": false
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    },
+    {
+      "cpu_recovered": false,
+      "hard": true,
+      "kind": "stuff_block",
+      "phase": "POINT",
+      "point_for_block": true
+    }
+  ],
+  "fixture": "spiker landing; remaining floor coverage 4.5m+ deep",
+  "hard_points": 12,
+  "hard_total": 12,
+  "soft_recoveries": 12,
+  "soft_total": 12
+}
