@@ -59,6 +59,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			# already travelling; otherwise he has to retreat after the pass.
 			var individual := float(posmod((i%6+1)*5+team*3,11))/10.0
 			var readiness := smoothstep(0.025+individual*0.04,0.20+individual*0.10,game.phase_time)
+			if role.begins_with("MB"): readiness=smoothstep(0.015+individual*0.025,0.14+individual*0.06,game.phase_time)
 			var preparation := Tactics.world(team,0.0,2.6)
 			if role.begins_with("MB"): preparation=Tactics.world(team,0.0,1.95)
 			if not role.begins_with("MB"):

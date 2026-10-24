@@ -1,0 +1,110 @@
+[
+  {
+    "max_speed": 5.01600027084351,
+    "middle_gap_1s": 0.127343535423279,
+    "middle_ready": 0.383333333333334,
+    "rotation": 0,
+    "setter_gap_1s": 3.38432765007019,
+    "setter_ready": 1.69166666666666,
+    "team": 0
+  },
+  {
+    "max_speed": 3.56296586990356,
+    "middle_gap_1s": 2.63768291473389,
+    "middle_ready": null,
+    "rotation": 1,
+    "setter_gap_1s": 1.54807829856873,
+    "setter_ready": null,
+    "team": 0
+  },
+  {
+    "max_speed": 5.01600074768066,
+    "middle_gap_1s": 0.349136590957642,
+    "middle_ready": 0.966666666666666,
+    "rotation": 2,
+    "setter_gap_1s": 3.32313561439514,
+    "setter_ready": null,
+    "team": 0
+  },
+  {
+    "max_speed": 5.01599979400635,
+    "middle_gap_1s": 0.202309489250183,
+    "middle_ready": 0.35,
+    "rotation": 3,
+    "setter_gap_1s": 1.017329454422,
+    "setter_ready": 1.225,
+    "team": 0
+  },
+  {
+    "max_speed": 5.01600027084351,
+    "middle_gap_1s": 0.17798924446106,
+    "middle_ready": 0.858333333333333,
+    "rotation": 4,
+    "setter_gap_1s": 0.0342203825712204,
+    "setter_ready": 0.141666666666667,
+    "team": 0
+  },
+  {
+    "max_speed": 5.01600074768066,
+    "middle_gap_1s": 0.323554277420044,
+    "middle_ready": 0.941666666666666,
+    "rotation": 5,
+    "setter_gap_1s": 0.0382578745484352,
+    "setter_ready": 0.216666666666667,
+    "team": 0
+  },
+  {
+    "max_speed": 5.01599979400635,
+    "middle_gap_1s": 0.214601516723633,
+    "middle_ready": 0.35,
+    "rotation": 0,
+    "setter_gap_1s": 3.52903032302856,
+    "setter_ready": 1.71666666666666,
+    "team": 1
+  },
+  {
+    "max_speed": 3.78391790390015,
+    "middle_gap_1s": 2.57245945930481,
+    "middle_ready": null,
+    "rotation": 1,
+    "setter_gap_1s": 1.43808937072754,
+    "setter_ready": null,
+    "team": 1
+  },
+  {
+    "max_speed": 5.01599979400635,
+    "middle_gap_1s": 0.49937891960144,
+    "middle_ready": 1.03333333333333,
+    "rotation": 2,
+    "setter_gap_1s": 3.2505054473877,
+    "setter_ready": null,
+    "team": 1
+  },
+  {
+    "max_speed": 5.01599979400635,
+    "middle_gap_1s": 0.227216362953186,
+    "middle_ready": 0.366666666666667,
+    "rotation": 3,
+    "setter_gap_1s": 0.83868944644928,
+    "setter_ready": 1.18333333333333,
+    "team": 1
+  },
+  {
+    "max_speed": 5.01599979400635,
+    "middle_gap_1s": 0.170386016368866,
+    "middle_ready": 0.866666666666666,
+    "rotation": 4,
+    "setter_gap_1s": 0.0236827507615089,
+    "setter_ready": 0.1,
+    "team": 1
+  },
+  {
+    "max_speed": 5.01600074768066,
+    "middle_gap_1s": 0.272747129201889,
+    "middle_ready": 0.916666666666666,
+    "rotation": 5,
+    "setter_gap_1s": 0.0380191542208195,
+    "setter_ready": 0.175,
+    "team": 1
+  }
+]

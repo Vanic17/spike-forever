@@ -47,6 +47,7 @@ foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File
 foreach($taskTool in @('Preview-Approach42.gd','Benchmark-Rendered42.gd')){
  Copy-Item -LiteralPath (Join-Path $root ('tools/'+$taskTool)) -Destination (Join-Path $stage ('tools/'+$taskTool))
 }
+Copy-Item -LiteralPath (Join-Path $root 'tools/Benchmark-Preparation43.gd') -Destination (Join-Path $stage 'tools/Benchmark-Preparation43.gd')
 foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'animation42-*.json' -or $_.Name -in @('approach42-report.json','scope42-report.json')}){
  Copy-Item -LiteralPath $taskReport.FullName -Destination (Join-Path $stage 'docs')
 }

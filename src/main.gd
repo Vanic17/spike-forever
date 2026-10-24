@@ -1331,11 +1331,24 @@ func register_touch(index: int) -> void:
 		award(1 - possession, "QUATTRO TOCCHI")
 	players[index].motion_lock = 0.12
 
+func finish_contact_attempt(index: int) -> void:
+	if index<0 or index>=players.size(): return
+	var player=players[index]
+	player.reach_weight=0
+	# Source-driven dives retain their landing and recovery path.
+	if dive_motions.has(index) or (player.clip_name in ["dive","recovery"] and player.contact_recovery_remaining()>0): return
+	player.contact_scheduled=false
+	player.target=player.position+player.velocity*0.12
+	player.intent.reset(player.target)
+	player.steering_target=player.target
+
 func miss_contact() -> void:
 	if self_test:
 		print("MISS ", phase, " ball=", ball_pos, " receiver=", players[receiver].position, " setter=", players[setter].position, " armed=", armed, " quality=", input_quality)
 	var missing_input := possession == 0 and not armed
 	var poor_timing := possession == 0 and armed and input_quality < 0.16
+	var actor: int=receiver if phase in ["RECEIVE","CPU_RECEIVE"] else (setter if phase in ["SET","CPU_SET"] else hitter)
+	finish_contact_attempt(actor)
 	# No magnetic rescue: let gravity carry the missed ball to the floor.
 	phase = "LOOSE"
 	flight_left = 100
@@ -1768,6 +1781,7 @@ func move_players(dt: float) -> void:
 		var preparing_hitter := phase in ["SET", "CPU_SET"] and i == planned_hitter
 		var preparing_front: bool=team==possession and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"] and i!=action_actor and Tactics.role(i,rotations[team],team==server) not in ["S","L"] and (Tactics.front(i,rotations[team]) or phase in ["SET","CPU_SET"])
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
+		var preparing_middle: bool=preparing_front and Tactics.role(i,rotations[team],team==server).begins_with("MB")
 		var preparing_decoy: bool=i==middle_decoy.index
 		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
@@ -1781,6 +1795,9 @@ func move_players(dt: float) -> void:
 			p.intent.reset(p.position)
 			p.steering_ready = true
 		p.intent.observe(phase + ":" + str(shot_serial), Tactics.role(i, rotations[team], team == server), assignment, clock_time)
+		if assignment=="approach" and preparing_middle and not p.intent.reacted:
+			p.intent.delay=minf(p.intent.delay,0.008+p.intent.individuality*0.025)
+			p.intent.react_at=clock_time+maxf(0,p.intent.delay-p.intent.cue_age)
 		var chase_distance: float = p.position.distance_to(flight_target)
 		p.effort = clampf(chase_distance / maxf(0.3, flight_left * 5.4), 0, 1.5) if airborne else 0.0
 		p.visual_context = "quick" if fast_set and phase in ["SET", "CPU_SET", "ATTACK", "CPU_ATTACK"] else ("emergency" if (phase in ["SET", "CPU_SET"] and pass_quality < 0.65) or (i == action_actor and p.effort > 1.0) else "normal")
@@ -1815,6 +1832,13 @@ func move_players(dt: float) -> void:
 			arrival_speed=arrival_distance/maxf(0.055,flight_left-0.12)
 		if preparing_hitter: arrival_speed = movement.length() * 3.5
 		if preparing_front: arrival_speed=movement.length()*3.5
+		if preparing_middle: arrival_speed=movement.length()*4.1
+		if preparing_setter:
+			# Do not accelerate penetration through the middle's first-tempo
+			# lane. Keep the existing arrival pace until this crossing is clear.
+			var middle_lane: Vector3=Tactics.world(team,0,1.95)
+			var crossing:=Geometry3D.get_closest_point_to_segment(middle_lane,p.position,p.target)
+			if crossing.distance_to(middle_lane)>1.35: arrival_speed=maxf(arrival_speed,movement.length()*3.7)
 		if court_shape.setter_yields.has(i): arrival_speed=maxf(arrival_speed,movement.length()*4.5)
 		if preparing_decoy: arrival_speed=movement.length()*4.5
 		if human_wall() and i in blockers: arrival_speed=movement.length()*4.5

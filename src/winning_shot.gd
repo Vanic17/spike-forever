@@ -18,8 +18,9 @@ static func failed_save(game) -> void:
 		var landing:=Vector3(clampf(game.ball_pos.x+lateral,-4.25,4.25),0.105,side*clampf(absf(game.ball_pos.z)+game.rng.randf_range(-1.0,1.8),1.0,8.6))
 		game.ball_vel=game.BallFlight.velocity_to(game.ball_pos,landing,[0.19,0.34,0.48][mishit],game.flight_spin,game.flight_gravity)
 		game.last_touch=game.possession
-	else:
-		if not game.dive_motions.has(game.receiver): player.play(action,1.15,false)
-		player.reach_weight=0
+	# Do not restart a forearm pass after the missed contact. The previous
+	# attempt already owns its follow-through; a restart looked like a second
+	# backward bagher while the root continued chasing the obsolete marker.
+	game.finish_contact_attempt(game.receiver)
 	game.log_rally_event("winning_shot_failed_save",{"defender":game.receiver,"touched":touched,"winner":game.winner_team})
 	game.phase="LOOSE"; game.flight_left=100; game.marker.visible=false

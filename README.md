@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.43.0:** eliminato il riavvio del bagher dopo un recupero mancato e interrotta la corsa verso il vecchio bersaglio. Centrale preparato prima e palleggiatore piu pronto al secondo tocco, preservando il corridoio del primo tempo. [Dettagli e verifiche](docs/RELEASE_NOTES_43.md).
+
 **Versione 0.42.0:** apertura e rincorsa fisica piu ampia per le palle alte in zona 4 e 2, centrale davanti al palleggiatore e priorita S/L sul secondo tocco. Cache delle gerarchie per ridurre il costo CPU delle pose; pausa con ritorno al menu. [Dettagli e video](docs/RELEASE_NOTES_42.md) · [Prestazioni e verifiche](docs/PERFORMANCE_42.md).
 
 **Versione 0.41.0:** due prototipi ibridi integrati: tuffo frontale con caduta/rialzata e schiacciata con adattamento limitato a busto e spalla. Risorse AnimationTree supplementari e fallback PSA conservato; **F7** confronta i nuovi gesti con gli originali, **F6** alterna il backend. [Come provarli, file e limiti](docs/RELEASE_NOTES_41.md) · [Misure prima/dopo con 12 giocatori](docs/ANIMATION_PERFORMANCE_41.md).
