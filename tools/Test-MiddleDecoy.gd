@@ -50,7 +50,8 @@ func run() -> void:
 					p.apply_pose(dt)
 					if p.clip_name=="attack" and game.middle_decoy.events.size()>before:
 						if not runup_seen and p.animation_time>=p.clips.attack.contact_time:
-							assert(p.position.distance_to(game.middle_decoy.motion_origin)>0.5,"The original fake approach must move the actual body instead of running in place")
+							var source_travel: float=(p.clips.attack.root_motion(p.clips.attack.contact_time)-p.clips.attack.root_motion(game.middle_decoy.source_begin)).length()
+							assert(p.position.distance_to(game.middle_decoy.motion_origin)>minf(0.5,source_travel*0.70),"Both the full approach and contextual last steps must move the real body by their source displacement")
 							runup_seen=true
 						var left: int=p.clips.idle.names.find("LeftToeBase")
 						var right: int=p.clips.idle.names.find("RightToeBase")

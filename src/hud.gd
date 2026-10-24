@@ -105,7 +105,7 @@ func _draw() -> void:
 			"F3 animazioni   F5 difficoltà   R nuova partita",
 			"L3 / LS / M · attiva o disattiva tutto l'audio"]
 		for i in lines.size(): text(Vector2(45, 184 + i * 27), lines[i], 13, MUTED)
-	if game.paused:
+	if game.paused and game.get("pause_menu")==null:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.01,0.02,0.04,0.62))
 		centered(h * 0.48, "PAUSA", 47)
 		centered(h * 0.48 + 40, "Options / Start / Esc per riprendere", 17, MUTED)

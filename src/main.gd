@@ -151,6 +151,8 @@ var planned_fast := false
 var planned_hitter := -1
 var set_origin := Vector3.ZERO
 var court_shape = CourtShape.new()
+var attack_run = preload("res://src/attack_run.gd").new()
+var pause_menu
 var middle_decoy=MiddleDecoy.new()
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
@@ -221,6 +223,9 @@ func _ready() -> void:
 	add_child(canvas)
 	canvas.add_child(hud)
 	hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pause_menu=preload("res://src/pause_menu.gd").new()
+	pause_menu.game=self
+	add_child(pause_menu)
 	var rotation_overlay=preload("res://src/rotation_overlay.gd").new()
 	rotation_overlay.game=self
 	canvas.add_child(rotation_overlay)
@@ -623,6 +628,7 @@ func reset_rally() -> void:
 	planned_hitter = -1
 	set_origin = Vector3.ZERO
 	court_shape.reset()
+	attack_run.reset()
 	middle_decoy.reset()
 	marker.visible = false
 	log_rally_event("formation", {"server":server,"rotation":rotations.duplicate()})
@@ -660,8 +666,22 @@ func choose_receiver(team: int, point: Vector3, serve_receive: bool = false) -> 
 
 func choose_setter(team: int, point: Vector3, available: float) -> int:
 	var designated := team * 6 + 5
-	var stance: Vector3 = players[designated].stance_for_contact("set", point)
-	if designated != receiver and player_recovery_seconds(designated) < maxf(0.01, available - 0.2) and players[designated].position.distance_to(stance) < minf(5.26,available * 4.8): return designated
+	var libero := -1
+	for i in range(team*6,team*6+6):
+		if i!=receiver and Tactics.libero(i,rotations[team],team==server): libero=i
+	var stance: Vector3 = players[designated].stance_for_contact("set",point)
+	var recovery: float=player_recovery_seconds(designated)
+	var arrival: float=preload("res://src/approach_planner.gd").seconds(players[designated],stance,Reference.run_speed()*1.10)+recovery
+	if designated!=receiver:
+		if recovery<=maxf(0.05,available-0.12) and arrival<=available+0.12: return designated
+		if libero>=0:
+			var libero_stance: Vector3=players[libero].stance_for_contact("set",point)
+			var libero_arrival: float=preload("res://src/approach_planner.gd").seconds(players[libero],libero_stance,Reference.run_speed()*1.10)+player_recovery_seconds(libero)
+			if libero_arrival+0.25<arrival and player_recovery_seconds(libero)<available: return libero
+		return designated
+	if libero>=0: return libero
+	# If S made the first touch and the libero is off court, another athlete
+	# can only play an emergency forearm ball. Never break consecutive touches.
 	var backup := -1
 	var distance := INF
 	for i in range(team * 6, team * 6 + 6):
@@ -675,6 +695,17 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 			backup = i
 	if not self_test: notice("ALZATA DI EMERGENZA", 0.8)
 	return backup
+
+func return_to_main_menu() -> void:
+	started=false; paused=false; demo=false; gallery=false
+	charging=false; armed=false; attack_buffer_start=-1; attack_buffer_power=-1
+	if pause_menu!=null: pause_menu.surface.hide()
+	if match_audio: match_audio.update_match_state(false,phase,false)
+	for node in get_children():
+		if node.get_script()==preload("res://src/start_menu.gd"):
+			node.overlay.hide(); node.clubs.hide(); node.panel.show(); node.play.grab_focus()
+			return
+	var menu=preload("res://src/start_menu.gd").new(); menu.game=self; add_child(menu)
 
 func player_recovery_seconds(index: int) -> float:
 	if dive_motions.has(index):
@@ -939,6 +970,7 @@ func receive_ball() -> void:
 	setter = choose_setter(possession,target,seconds)
 	players[setter].setting_yaw = -PI/2 if possession==0 else PI/2
 	out_of_system = RallyAI.system_quality(target,Tactics.ROLES[setter%6]=="S")
+	if Tactics.role(setter,rotations[possession],possession==server) not in ["S","L"]: out_of_system=-1
 	if q < 0.32: out_of_system = -1
 	setter_action = "receive" if out_of_system < 0 else "set"
 	target.y = contact_height(setter_action)
@@ -1679,6 +1711,8 @@ func move_players(dt: float) -> void:
 		elif phase=="LOOSE": nominal.append(players[i].target)
 		elif human_wall() and i<6 and Tactics.front(i,rotations[0]): nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
+	if phase in ["ATTACK","CPU_ATTACK"] and action_actor>=0:
+		nominal[action_actor]=attack_run.target(self,action_actor,nominal[action_actor])
 	if phase in ["ATTACK","CPU_ATTACK"]:
 		var floor_plan: Dictionary=defensive_coverage.plan(self,1-possession,flight_target,blockers)
 		for index in floor_plan:
@@ -1732,12 +1766,14 @@ func move_players(dt: float) -> void:
 		depth_limit = maxf(depth_limit, absf(p.position.z))
 		width_limit = maxf(width_limit, absf(p.position.x))
 		var preparing_hitter := phase in ["SET", "CPU_SET"] and i == planned_hitter
+		var preparing_front: bool=team==possession and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"] and i!=action_actor and Tactics.role(i,rotations[team],team==server) not in ["S","L"] and (Tactics.front(i,rotations[team]) or phase in ["SET","CPU_SET"])
 		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
 		var preparing_decoy: bool=i==middle_decoy.index
-		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
+		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or court_shape.setter_yields.has(i)
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
 		if preparing_setter: assignment="approach"
+		if preparing_front: assignment="approach"
 		if i != action_actor and court_shape.bypass.has(i): assignment = "yield"
 		if i != action_actor and court_shape.setter_yields.has(i): assignment = "yield"
 		if preparing_decoy: assignment="approach"
@@ -1774,7 +1810,11 @@ func move_players(dt: float) -> void:
 			# Pace against the whole remaining route, retaining the same deadline.
 			arrival_distance += p.steering_target.distance_to(p.stance_for_contact(action,flight_target))
 		if urgent: arrival_speed = arrival_distance / maxf(0.055, flight_left - 0.12)
+		if i==action_actor and phase in ["ATTACK","CPU_ATTACK"]:
+			arrival_distance=attack_run.remaining(i,p.position,arrival_distance)
+			arrival_speed=arrival_distance/maxf(0.055,flight_left-0.12)
 		if preparing_hitter: arrival_speed = movement.length() * 3.5
+		if preparing_front: arrival_speed=movement.length()*3.5
 		if court_shape.setter_yields.has(i): arrival_speed=maxf(arrival_speed,movement.length()*4.5)
 		if preparing_decoy: arrival_speed=movement.length()*4.5
 		if human_wall() and i in blockers: arrival_speed=movement.length()*4.5
@@ -1783,7 +1823,20 @@ func move_players(dt: float) -> void:
 		if movement.length() < (0.045 if urgent else p.intent.settle_distance()): desired = Vector3.ZERO
 		# The contact route already clears every body; a second social-force
 		# sidestep would steer it back into the very obstacles it avoided.
+		var before_avoid:=desired
 		if i!=action_actor or phase not in ["SET","CPU_SET"]: desired = avoid_teammates(i, desired, movement, max_speed)
+		if i!=action_actor and court_shape.setter_yields.has(i) and phase in ["SET","CPU_SET"]:
+			# Preserve the braking component toward the reserved contact spot,
+			# even while the setter is still approaching from the other side.
+			# Ordinary social avoidance only sees the setter's current body and
+			# could steer the middle back into the endpoint he had just cleared.
+			var reserved: Vector3=players[setter].stance_for_contact(action,flight_target)
+			var away: Vector3=p.position-reserved; away.y=0
+			var gap:=away.length()
+			if gap>0.01 and gap<1.90:
+				var outward:=away/gap
+				var extra_inward:=minf(0,(desired-before_avoid).dot(outward))
+				desired-=outward*extra_inward
 		# Mild separation prevents two athletes occupying the same contact space.
 		if i != action_actor:
 			for j in range(team * 6, team * 6 + 6):

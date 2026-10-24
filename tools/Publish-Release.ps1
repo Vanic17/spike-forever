@@ -44,6 +44,12 @@ foreach($taskTool in @('Build-Motion41.gd','Audit-Animation41.gd','Audit-Dive41.
 foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'animation41-*.json'){
  Copy-Item -LiteralPath $taskReport.FullName -Destination (Join-Path $stage 'docs')
 }
+foreach($taskTool in @('Preview-Approach42.gd','Benchmark-Rendered42.gd')){
+ Copy-Item -LiteralPath (Join-Path $root ('tools/'+$taskTool)) -Destination (Join-Path $stage ('tools/'+$taskTool))
+}
+foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'animation42-*.json' -or $_.Name -in @('approach42-report.json','scope42-report.json')}){
+ Copy-Item -LiteralPath $taskReport.FullName -Destination (Join-Path $stage 'docs')
+}
 foreach($taskImage in @('attack41-integrated-preview.png','dive41-integrated-preview.png','dive41-author-preview.png','animation41-preview.mp4')){
  Copy-Item -LiteralPath (Join-Path $root ('docs/'+$taskImage)) -Destination (Join-Path $stage 'docs')
 }

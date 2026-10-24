@@ -6,6 +6,8 @@ const Assets = preload("res://src/source_assets.gd")
 const MovementIntent = preload("res://src/movement_intent.gd")
 const PoseTree = preload("res://src/pose_animation_tree.gd")
 const MotionPrototypes = preload("res://src/motion_prototypes.gd")
+const PoseHierarchy = preload("res://src/pose_hierarchy.gd")
+var subtree_indices: Array = []
 # All active clips are validated and preconverted. F6 or --psa-original can
 # still select the original parser; it remains the per-clip failure fallback.
 static var native_animation_enabled := not "--psa-original" in OS.get_cmdline_user_args()
@@ -97,6 +99,7 @@ const BLEND_TIME := 0.20
 
 func setup(bank: Dictionary, side: int, jersey: int, models: Dictionary = {}) -> void:
 	source_clips = bank
+	if bank.has("idle"): subtree_indices = PoseHierarchy.descendants(bank.idle.parents)
 	clips = bank.duplicate()
 	for action in ["idle","ready","relaxed","block_ready","run","walk","backwalk","backpedal","shuffle_left","shuffle_right","cross_left","cross_right"]:
 		var variant := AnimationExpansion.stance_or_gait(action,side,jersey)
@@ -349,19 +352,12 @@ func current_joint(name: String) -> Vector3:
 	return global_transform*last_pose[index].origin if index>=0 else contact_world("block")
 
 func rotate_subtree(pose: Array[Transform3D], joint: int, rotation: Basis, hierarchy: Array[int]) -> void:
+	if joint < 0 or joint >= pose.size(): return
 	var pivot := pose[joint].origin
-	for j in pose.size():
-		var ancestor := j
-		var found := false
-		for hop in 24:
-			if ancestor == joint:
-				found = true
-				break
-			if ancestor <= 0 or ancestor >= hierarchy.size(): break
-			ancestor = hierarchy[ancestor]
-		if found:
-			pose[j].origin = pivot + rotation * (pose[j].origin - pivot)
-			pose[j].basis = rotation * pose[j].basis
+	var indices: Array = subtree_indices if subtree_indices.size() == hierarchy.size() else PoseHierarchy.descendants(hierarchy)
+	for j in indices[joint]:
+		pose[j].origin = pivot + rotation * (pose[j].origin - pivot)
+		pose[j].basis = rotation * pose[j].basis
 
 func solve_arm(pose: Array[Transform3D], side: String, target_point: Vector3, hierarchy: Array[int], correction_limit: float = 0.38) -> void:
 	var names: Array[String] = clips.idle.names

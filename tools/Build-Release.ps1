@@ -21,6 +21,13 @@ $files+='docs/RELEASE_NOTES_40.md'
 $files+=@('docs/RELEASE_NOTES_41.md','docs/ANIMATION_AUDIT_41.md','docs/ANIMATION_PERFORMANCE_41.md')
 $files+=@('docs/ANIMATION_GAMEPLAY_PARITY_41.md','docs/animation41-preview.mp4')
 $files+=@('docs/attack41-integrated-preview.png','docs/dive41-integrated-preview.png')
+$files+=@('docs/RELEASE_NOTES_42.md','docs/PERFORMANCE_42.md','docs/approach42-preview.mp4','docs/approach42-15.png','docs/approach42-40.png','docs/approach42-63.png')
+foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'animation42-*.json' -or $_.Name -in @('approach42-report.json','scope42-report.json')}){
+ $files+='docs/'+$taskReport.Name
+}
+foreach($taskTool in @('Preview-Approach42.gd','Benchmark-Rendered42.gd','Test-Approach42.gd','Test-SpecialistsPause42.gd')){
+ $files+='tools/'+$taskTool
+}
 foreach($taskReport in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'animation41-*.json'){
  $files+='docs/'+$taskReport.Name
 }

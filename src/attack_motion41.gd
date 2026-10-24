@@ -5,6 +5,7 @@ extends RefCounted
 ## This module never changes a root, a gameplay deadline or a ball trajectory.
 const SOURCE := "attack_line"
 const MAX_ADAPT_HAND_TRAVEL := 0.14
+const Hierarchy = preload("res://src/pose_hierarchy.gd")
 
 static func source_time(time: float, contact: float, duration: float) -> float:
 	var t := clampf(time, 0.0, duration)
@@ -98,9 +99,5 @@ static func _rotate_index(pose: Array[Transform3D], parents: Array[int], bone: i
 	if bone < 0 or axis.length_squared() < 0.0001 or absf(radians) < 0.000001: return
 	var pivot: Vector3 = pose[bone].origin
 	var turn := Basis(axis.normalized(), radians)
-	for index in range(bone, pose.size()):
-		var ancestor := index
-		while ancestor > bone and ancestor >= 0:
-			ancestor = parents[ancestor]
-		if ancestor != bone: continue
+	for index in Hierarchy.descendants(parents)[bone]:
 		pose[index] = Transform3D(turn * pose[index].basis, pivot + turn * (pose[index].origin - pivot))

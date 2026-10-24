@@ -101,11 +101,9 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 	match direction:
 		1:
 			var setter_x := set_contact.x*side
-			var away := -1.0 if setter_x>=-0.2 else 1.0
-			# Use the middle's existing side of the setter rather than requiring
-			# a late crossover through his contact footprint.
-			var approach_side: float=game.players[attacker].position.x*side-setter_x
-			if absf(approach_side)>0.5: away=signf(approach_side)
+			var away := -1.0
+			# A front first tempo stays in front of the setter's shoulders.
+			# A transient avoidance sidestep must not flip it into a back slide.
 			var lane_key:=str(game.shot_serial)+":"+str(attacker)
 			if not game.court_shape.middle_sides.has(lane_key): game.court_shape.middle_sides[lane_key]=away
 			away=game.court_shape.middle_sides[lane_key]

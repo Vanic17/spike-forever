@@ -123,6 +123,9 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				var nearest:=Geometry3D.get_closest_point_to_segment(start,setter_route_origin,result[actor])
 				if not setter_yields.has(i) and start.distance_to(nearest)<(1.28 if route.length()>0.65 else 1.04):
 					var offset: float=(start-nearest).dot(normal)
+					if Tactics.front(i,game.rotations[game.possession]) and Tactics.ROLES[i%6].begins_with("MB"):
+						var intended: float=(result[i]-nearest).dot(normal)
+						if absf(intended)>0.08: offset=intended
 					if absf(offset)<0.08: offset=(result[i]-nearest).dot(normal)
 					if absf(offset)<0.08: offset=-1.0 if i%2==0 else 1.0
 					setter_yields[i]=nearest+normal*signf(offset)*1.42
@@ -154,9 +157,13 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var opening:=0.42 if game.planned_direction==1 and game.fast_set else (0.95 if game.planned_direction==1 else 1.65)
 			var run_depth:=lerpf(0.22,opening,smoothstep(0.12,0.65,game.flight_left))
 			result[runner]=stance+Vector3(0,0,run_depth if game.possession==0 else -run_depth)
+			if preload("res://src/attack_run.gd").is_pin(game,runner,game.planned_direction):
+				# Keep the high-ball runway open until the set is released.
+				# Closing to 22cm before release erased the entire visible run-up.
+				result[runner]=preload("res://src/attack_run.gd").opening(game,runner,stance)
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
-	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_hitter>=0:
+	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_direction==1 and game.planned_hitter>=0:
 		var hitter: int=game.planned_hitter
 		var direction=game.get("planned_direction")
 		var contact:=RallyAI.attack_contact(game,int(direction) if direction!=null else game.destination,hitter,game.flight_target)
@@ -260,7 +267,29 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 	for i in range(actor_team*6,actor_team*6+6):
 		if i in blockers or floor_bodies.has(i): continue
 		result[i] = route_around_recovery(game,i,result[i],floor_bodies)
+	if game.phase in ["SET","CPU_SET"]: clear_middle_lane(game,result,actor,floor_bodies)
 	return result
+
+func clear_middle_lane(game, result: Array[Vector3], setter: int, floor_bodies: Dictionary) -> void:
+	var middle: int=Tactics.attacker(game.possession,game.rotations[game.possession],1,setter)
+	if middle<0 or floor_bodies.has(middle): return
+	var origin: Vector3=game.players[middle].position
+	var finish: Vector3=result[middle]
+	if origin.distance_to(finish)<0.4: return
+	var side:=1.0 if game.possession==0 else -1.0
+	for other in range(game.possession*6,game.possession*6+6):
+		if other==setter or other==middle or floor_bodies.has(other): continue
+		if other==game.planned_hitter: continue
+		var body: Vector3=game.players[other].position
+		var nearest:=Geometry3D.get_closest_point_to_segment(body,origin,finish)
+		if nearest.distance_to(body)>1.10 or origin.distance_to(body)>3.4: continue
+		# Let the middle pass behind a pin rather than asking both to cross
+		# through each other. Choose a step away from the setter's footprint.
+		var free:=body+Vector3(0,0,-side*0.85)
+		free.z=side*maxf(0.25,absf(body.z)-0.85)
+		if free.distance_to(result[setter])<1.2 or free.distance_to(game.players[setter].position)<1.0: continue
+		if Geometry3D.get_closest_point_to_segment(origin,body,free).distance_to(origin)<0.97: continue
+		result[other]=free
 
 func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor_bodies: Dictionary) -> void:
 	# Specialist crossings and attack openings are resolved above. Read their
@@ -290,6 +319,9 @@ func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor
 		if travel_to_crossing>maxf(0.25,game.flight_left*4.0): continue
 		var nearest:=Geometry3D.get_closest_point_to_segment(origin,start,goal)
 		var offset: float=(origin-nearest).dot(normal)
+		if Tactics.front(index,game.rotations[int(index/6)]) and Tactics.ROLES[index%6].begins_with("MB"):
+			var intended: float=(result[index]-nearest).dot(normal)
+			if absf(intended)>0.08: offset=intended
 		if absf(offset)<0.08: offset=(result[index]-nearest).dot(normal)
 		if absf(offset)<0.08: offset=-1 if index%2==0 else 1
 		var destination:=nearest+normal*signf(offset)*1.45

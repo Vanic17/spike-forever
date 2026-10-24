@@ -3,9 +3,9 @@
 	"checks": 5233,
 	"final_position_m": 0.010777267627418,
 	"foot_anchor_drift_m": 0.11819414049387,
-	"native_cpu_us": 382072,
+	"native_cpu_us": 231267,
 	"original_foot_anchor_drift_m": 0.118194028735161,
-	"psa_cpu_us": 355674,
+	"psa_cpu_us": 198924,
 	"sampling_angle_rad": 0.00138106802478433,
 	"sampling_position_m": 0.0000129653462863644,
 	"toggle_position_m": 0.00000119358207939513
