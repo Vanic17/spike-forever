@@ -149,7 +149,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var point:=RallyAI.attack_contact(game,game.planned_direction,runner,game.flight_target)
 			point.y=game.contact_height("attack")
 			var stance: Vector3=game.players[runner].stance_for_contact("attack",point)
-			var run_depth:=0.20 if game.planned_direction==1 and game.fast_set else 0.65
+			# Open early, then commit the last approach steps before set release.
+			# A first tempo keeps its compact two-step preparation.
+			var opening:=0.42 if game.planned_direction==1 and game.fast_set else (0.95 if game.planned_direction==1 else 1.65)
+			var run_depth:=lerpf(0.22,opening,smoothstep(0.12,0.65,game.flight_left))
 			result[runner]=stance+Vector3(0,0,run_depth if game.possession==0 else -run_depth)
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.

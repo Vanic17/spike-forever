@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.40.0:** raggruppamento a fine punto con passi e attesa eretti; pilone sul lato dell'attacco posizionato automaticamente, centrale su LS e salto comune su Croce/A. L2/R2 continuano ad avvicinare i laterali. Rincorse anticipate e preparazione della schiacciata più estesa; CPU più precisa, con sette risposte difensive differenti. [Dettagli e verifiche](docs/RELEASE_NOTES_40.md).
+
 **Versione 0.39.0:** atmosfera sonora continua con nuovi sottofondi e ritmi più lunghi, dissolvenze e fischio arbitrale registrato. Esultanze del pubblico solo ai punti della squadra di casa, applausi occasionali anche durante il gioco, nessun riquadro dopo i punti ordinari e colori del campo più scuri. **L3 / LS** mantiene il mute globale. [Dettagli e verifiche](docs/RELEASE_NOTES_39.md).
 
 **Versione 0.38.0:** corridoio del palleggiatore preservato anche cambiando attaccante, attacco automatico al 100% sulle ricezioni avversarie che passano di là, campo crema/blu con marchi CREDEM originali e banner sponsor animati. Pubblico rivisto, 54 varianti sonore da palazzetto e **L3 / LS** per disattivare o riattivare tutto l'audio. [Dettagli e verifiche](docs/RELEASE_NOTES_38.md).

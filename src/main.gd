@@ -1825,6 +1825,7 @@ func move_players(dt: float) -> void:
 			var look: Vector3 = ball_pos - p.position
 			if phase == "POINT": look = Vector3(0, 0, side * 3.3) - p.position
 			facing = atan2(look.x, look.z)
+			if phase=="POINT" and p.velocity.length()>0.15 and movement.length()>0.18: facing=atan2(p.velocity.x,p.velocity.z)
 			# Sprint facing the route, then open the shoulders to the ball on braking.
 			var running_weight := smoothstep(2.25,3.6,p.velocity.length())*smoothstep(0.55,1.45,movement.length())
 			facing = lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),running_weight)
@@ -1839,12 +1840,13 @@ func move_players(dt: float) -> void:
 		# Wings waiting to approach and setters waiting to penetrate stand tall;
 		# only passers and floor defenders stay in the low defensive posture.
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers
+		p.post_point=phase=="POINT"
 		p.locomotion(p.velocity.length(), dt)
 		if block_pose_locked(i):
 			p.reach_action = "block"
 			p.reach_target = Vector3(p.contact_world("block").x,3.08,side*0.035)
 			p.reach_weight = 1.0
-		var preparation_lead := (0.51 if fast_set else 0.68) if action == "attack" else 0.38
+		var preparation_lead := (0.78 if fast_set else 1.12) if action == "attack" else 0.38
 		preparation_lead += p.intent.individuality * 0.055 + (0.04 if p.visual_context == "emergency" else 0.0)
 		preparation_lead = p.preparation_lead(action,preparation_lead)
 		if i == action_actor and flight_left < preparation_lead:

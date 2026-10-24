@@ -51,6 +51,7 @@ var reach_weight := 0.0
 var reach_action := ""
 var ready_stance := false
 var relaxed_stance := false
+var post_point := false
 var block_ready_stance := false
 var look_target := Vector3.ZERO
 var acceleration := Vector3.ZERO
@@ -263,8 +264,12 @@ func prepare_contact(action: String, remaining: float) -> void:
 		start_blend()
 	clip_name = action
 	looping = false
-	animation_speed = 1.15
-	animation_time = maxf(0, clips[action].contact_time - maxf(0, remaining) * animation_speed)
+	animation_speed = 1.15-0.55*smoothstep(0.2,0.4,remaining) if action=="attack" else 1.15
+	# Extend the running preparation, then retain the original speed for the
+	# last 200ms and the contact. The intervening rate changes smoothly.
+	var source_remaining:=maxf(0,remaining)*1.15
+	if action=="attack": source_remaining=attack_source_remaining(maxf(0,remaining))
+	animation_time = maxf(0, clips[action].contact_time - source_remaining)
 	contact_scheduled = true
 	if remaining <= 0:
 		blend_left = 0
@@ -273,7 +278,26 @@ func prepare_contact(action: String, remaining: float) -> void:
 func preparation_lead(action: String, requested: float) -> float:
 	# Do not hold frame zero while waiting for the source clip to catch up.
 	# The existing ball deadline and the 1.15 contact playback stay authoritative.
-	return minf(requested, clips[action].contact_time / 1.15) if clips.has(action) else requested
+	if not clips.has(action): return requested
+	var prefix: float=clips[action].contact_time/1.15
+	if action=="attack": prefix=attack_clock_seconds(clips[action].contact_time)
+	return minf(requested,prefix)
+
+func attack_source_remaining(seconds: float) -> float:
+	if seconds<=0.2: return seconds*1.15
+	if seconds>=0.4: return 0.405+(seconds-0.4)*0.60
+	var u: float=(seconds-0.2)/0.2
+	return 0.23+1.15*(seconds-0.2)-0.11*(u*u*u-0.5*u*u*u*u)
+
+func attack_clock_seconds(source_seconds: float) -> float:
+	if source_seconds<=0.23: return source_seconds/1.15
+	if source_seconds>=0.405: return 0.4+(source_seconds-0.405)/0.60
+	var low:=0.2; var high:=0.4
+	for iteration in 10:
+		var middle: float=(low+high)*0.5
+		if attack_source_remaining(middle)<source_seconds: low=middle
+		else: high=middle
+	return (low+high)*0.5
 
 func recovery_speed_scale() -> float:
 	# A grounded forearm pass has no landing to wait for. Source-driven dives,
@@ -373,6 +397,8 @@ func locomotion(speed: float, dt: float) -> void:
 	# last running direction frozen until the actual ball contact.
 	update_travel_gait(speed,dt)
 	if contact_scheduled: return
+	if post_point and not looping and contact_recovery_remaining()<=0:
+		play("relaxed",1,true)
 	if clip_name in ["dive","recovery"] and not looping and contact_recovery_remaining()>0: return
 	if not looping and animation_time < maxf(clips[clip_name].recovery_end+0.08,clips[clip_name].contact_time+0.38) and clip_name in ["attack","block","float","power","set","fast_set","dump"]: return
 	if not looping and animation_time < clips[clip_name].contact_time+0.24: return
@@ -396,6 +422,9 @@ func locomotion(speed: float, dt: float) -> void:
 		else: animation_speed = lerpf(animation_speed,playback,1.0-exp(-dt*14.0))
 
 func choose_gait(speed: float, previous: String) -> String:
+	# A regrouping athlete walks upright; defensive cross/back steps contain
+	# squat preparation that has no purpose after the whistle.
+	if post_point: return "walk" if speed<2.6 else "run"
 	var local_velocity := global_basis.inverse() * velocity
 	var walking := speed < (2.6 if previous in ["walk","backwalk"] else 1.7)
 	var action := "walk" if walking and clips.has("walk") else "run"
@@ -558,6 +587,7 @@ func apply_pose(_dt: float) -> void:
 	# and landing once the source jump begins. Contact sampling at dt=0 is exact.
 	if _dt > 0 and clip_name in ["receive", "set", "fast_set", "attack"] and velocity.length() > 0.18:
 		var remaining: float = (clip.contact_time - animation_time) / maxf(animation_speed, 0.01)
+		if clip_name=="attack": remaining=attack_clock_seconds(clip.contact_time-animation_time)
 		var fade_start := 0.37 if clip_name == "attack" else 0.16
 		var leg_weight := smoothstep(fade_start, fade_start + 0.16, remaining)
 		# Resume the support feet through a grounded pass follow-through;

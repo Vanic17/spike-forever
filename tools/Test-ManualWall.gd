@@ -19,6 +19,7 @@ func run() -> void:
 				game.reset_rally()
 				game.possession=1
 				game.set_phase("CPU_SET")
+				game.planned_hitter=-1 # Neutral set fixture: test trigger-only selection before a pin is known.
 				game.setter=11
 				game.flight_target=Vector3(0,2.5,-1.5)
 				game.flight_left=1
@@ -100,6 +101,7 @@ func run() -> void:
 		assert(game.blocking_players(0).size()==1,"Trigger release on the floor removes the wing immediately")
 	game.reset_rally()
 	game.set_phase("CPU_SET")
+	game.planned_hitter=-1
 	for axis in [JOY_AXIS_TRIGGER_LEFT,JOY_AXIS_TRIGGER_RIGHT]:
 		var event:=InputEventJoypadMotion.new()
 		event.axis=axis

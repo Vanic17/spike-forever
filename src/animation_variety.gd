@@ -42,13 +42,11 @@ static func setting(back: bool, speed: float, quality: float, serial: int) -> St
 	return "set_back" if back else "set"
 
 static func attack(direction: int, quality: float, serial: int) -> String:
-	var expanded := Expansion.attacking(direction,quality,serial)
-	if not expanded.is_empty(): return expanded
 	if quality < 0.66: return "attack_turn"
 	match direction:
-		0: return "attack_pin_left" if serial % 2 == 0 else "attack_angle_left"
-		2: return "attack_pin_right" if serial % 2 == 0 else "attack_angle_right"
-		_: return "attack_angle_left" if serial % 2 == 0 else "attack_line"
+		0: return ["attack_v26_02","attack_pin_left","attack_angle_left"][posmod(serial,3)]
+		2: return ["attack_v26_03","attack_pin_right","attack_angle_right"][posmod(serial,3)]
+		_: return ["attack_v26_01","attack_line","attack_angle_left"][posmod(serial,3)]
 
 static func fast_setting(back: bool, speed: float, quality: float, serial: int, normal_variant: String = "") -> String:
 	var paired := Expansion.paired_quick(normal_variant)
