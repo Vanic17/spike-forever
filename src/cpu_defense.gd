@@ -6,7 +6,7 @@ func reset() -> void:
 	timing_quality=1.0; outcome="clean"; frozen=false
 func prepare(game) -> void:
 	reset()
-	if game.possession!=1: return
+	if not game.cpu_team(game.possession): return
 	var pressure:=clampf(game.incoming_power,0,1)
 	var offset: float=game.rng.randf_range(-0.065,0.13)*(0.6+pressure)
 	timing_quality=clampf(1.0-absf(offset)*0.85,0.65,0.995)

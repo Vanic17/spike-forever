@@ -32,6 +32,9 @@ $files+='docs/RELEASE_NOTES_48.md'
 $files+=@('docs/RELEASE_NOTES_49.md','docs/match49-report.json','docs/match-menu49.png','tools/Test-MatchSetup49.gd','tools/Capture-MatchMenu49.gd')
 $files+=@('docs/RELEASE_NOTES_50.md','docs/running50-preview.mp4','docs/running50-report-30.json','docs/running50-report-60.json','docs/running50-report-120.json','tools/Test-RunningAttack50.gd','tools/Preview-RunningAttack50.gd')
 $files+=@('docs/crossing50-report.json','tools/Test-OutsideCrossing50.gd')
+$files+=@('docs/RELEASE_NOTES_51.md','docs/preferences51-report.json','docs/handed51-report.json','docs/online51-host.json','docs/online51-guest.json','docs/discovery51-report.json','docs/menu51-home.png','docs/menu51-online.png','docs/menu51-preferences.png')
+$files+='docs/handed51-preview.png'
+foreach($tool51 in @('Test-Preferences51.gd','Test-Handed51.gd','Test-Online51.gd','Test-HumanContacts51.gd','Test-OnlineUI51.gd','Test-LobbyLeave51.gd','Test-Discovery51.gd','Capture-Online51.gd')){ $files+='tools/'+$tool51 }
 foreach($tool48 in @('Inspect-Middle48.gd','Test-FirstTempo48.gd','Preview-FirstTempo48.gd')){ $files+='tools/'+$tool48 }
 foreach($report48 in @('first-tempo48-report.json','first-tempo48-preview.mp4','first-tempo48-set-0.png','first-tempo48-set-1.png','first-tempo48-set-2.png','first-tempo48-hit.png','first-tempo48-feint.png','approach48-contacts.json')){ $files+='docs/'+$report48 }
 foreach($tool47 in @('Fetch-PlayerReferences47.py','Prepare-Appearance47.py','Build-PlayerProfiles47.py','Inspect-Contacts47.gd','Test-Tips47.gd','Test-Gameplay47.gd','Test-BlockRallies47.gd','Test-Appearance47.gd','Test-ProfileOverrides47.gd','Preview-Appearance47.gd','Benchmark-Rendered47.gd')){

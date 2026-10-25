@@ -10,6 +10,8 @@ func _init() -> void:
 		if data is Dictionary: overrides=data
 	for team in teams:
 		for p in team.roster:
+			if not p.has("dominant_hand"): p.dominant_hand="right"
+			if not p.has("serve_preference"): p.serve_preference="jump"
 			if overrides.has(p.id):
 				var base_appearance: Dictionary=p.get("appearance",{}).duplicate(true)
 				var saved: Dictionary=overrides[p.id]
@@ -32,7 +34,7 @@ func lineup(team: Dictionary) -> Array:
 	if selected.size()==7:
 		var saved: Array=[]
 		for i in 7:
-			var matches: Array=team.roster.filter(func(p): return p.id==selected[i] and p.role==(ROLES+["libero"])[i])
+			var matches: Array=team.roster.filter(func(p): return p.id==selected[i] and fits_slot(p.role,i))
 			if matches.size()!=1 or selected.count(selected[i])!=1: break
 			saved.append(matches[0])
 		if saved.size()==7: return saved
@@ -52,7 +54,7 @@ func save_lineup(team: Dictionary, ids: Array) -> Error:
 	if ids.size()!=7: return ERR_INVALID_DATA
 	for i in 7:
 		if ids.count(ids[i])!=1: return ERR_INVALID_DATA
-		var matches: Array=team.roster.filter(func(p): return p.id==ids[i] and p.role==(ROLES+["libero"])[i])
+		var matches: Array=team.roster.filter(func(p): return p.id==ids[i] and fits_slot(p.role,i))
 		if matches.size()!=1: return ERR_INVALID_DATA
 	var updated: Dictionary=overrides.duplicate(true)
 	if not updated.has("_lineups"): updated._lineups={}
@@ -63,3 +65,7 @@ func save_lineup(team: Dictionary, ids: Array) -> Error:
 	var error=DirAccess.rename_absolute(ProjectSettings.globalize_path(PATH+".tmp"),ProjectSettings.globalize_path(PATH))
 	if error==OK: overrides=updated
 	return error
+
+static func fits_slot(role: String, slot: int) -> bool:
+	if slot in [0,2,3]: return role in ["outside_hitter","opposite"]
+	return role==(ROLES+["libero"])[slot]

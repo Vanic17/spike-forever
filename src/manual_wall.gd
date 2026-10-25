@@ -4,25 +4,30 @@ var left_joined:=false
 var right_joined:=false
 var jumped: Array[int]=[]
 var routes: Dictionary={}
+var helper_x:=0.0
 
 func reset() -> void:
 	left_joined=false
 	right_joined=false
 	jumped.clear()
 	routes.clear()
+	helper_x=0
 
 func line(game) -> Array[int]:
+	var team: int=game.wall_team()
 	var plan=game.get("defensive_lanes")
 	if plan!=null:
-		var physical: Array[int]=plan.line(game,0)
-		if physical.size()==3: return physical
+		var physical: Array[int]=plan.line(game,team)
+		if physical.size()==3:
+			if team==1: physical.reverse()
+			return physical
 	var middle:=-1
 	var pins: Array[int]=[]
-	for i in 6:
-		if not Tactics.front(i,game.rotations[0]): continue
-		if Tactics.ROLES[i].begins_with("MB"): middle=i
+	for i in range(team*6,team*6+6):
+		if not Tactics.front(i,game.rotations[team]): continue
+		if Tactics.ROLES[i%6].begins_with("MB"): middle=i
 		else: pins.append(i)
-	pins.sort_custom(func(a,b): return Tactics.home(a,0,game.rotations[0],game.server==0,false).x<Tactics.home(b,0,game.rotations[0],game.server==0,false).x)
+	pins.sort_custom(func(a,b): return Tactics.home(a,team,game.rotations[team],game.server==team,false).x*(1 if team==0 else -1)<Tactics.home(b,team,game.rotations[team],game.server==team,false).x*(1 if team==0 else -1))
 	return [pins[0],middle,pins[1]]
 
 func members(game) -> Array[int]:
@@ -36,24 +41,25 @@ func members(game) -> Array[int]:
 	return result
 
 func attack_position(game) -> Vector3:
-	if game.phase=="CPU_ATTACK": return game.flight_target
-	if game.phase=="CPU_SET" and game.planned_hitter>=0:
+	if game.phase in ["ATTACK","CPU_ATTACK"]: return game.flight_target
+	if game.phase in ["SET","CPU_SET"] and game.planned_hitter>=0:
 		return preload("res://src/rally_ai.gd").attack_contact(game,game.planned_direction,game.planned_hitter,game.flight_target)
 	return Vector3.ZERO
 
 func automatic_pin(game) -> int:
-	if game.phase not in ["CPU_SET","CPU_ATTACK"]: return -1
-	if game.phase=="CPU_SET" and game.setter_dump: return -1
-	if game.phase=="CPU_ATTACK" and game.hitter_action!="attack": return -1
-	var point:=attack_position(game)
+	if game.phase not in ["SET","ATTACK","CPU_SET","CPU_ATTACK"]: return -1
+	if game.phase in ["SET","CPU_SET"] and game.setter_dump: return -1
+	if game.phase in ["ATTACK","CPU_ATTACK"] and game.hitter_action!="attack": return -1
+	var point:=attack_position(game)*(1 if game.wall_team()==0 else -1)
 	if absf(point.x)<1.5: return -1
 	var row:=line(game)
 	return row[0] if point.x<0 else row[2]
 
 func pin_x(game) -> float:
-	return clampf(attack_position(game).x,-3.9,3.9)
+	return clampf(attack_position(game).x*(1 if game.wall_team()==0 else -1),-3.9,3.9)
 
 func read(game, direction: Vector2, dt: float) -> void:
+	if game.network_match(): game.block_helper_x=helper_x
 	if not jumped.is_empty():
 		var airborne:=false
 		for index in jumped:
@@ -66,8 +72,8 @@ func read(game, direction: Vector2, dt: float) -> void:
 	if not jumped.is_empty() and not game.block_commanded:
 		jumped.clear()
 	if jumped.is_empty():
-		left_joined=Input.get_action_strength("block_left")>0.35
-		right_joined=Input.get_action_strength("block_right")>0.35
+		left_joined=game.wall_strength("block_left")>0.35
+		right_joined=game.wall_strength("block_right")>0.35
 		var minimum:=-4.12+(Tactics.BLOCK_SPACE if left_joined else 0.0)
 		var maximum:=4.12-(Tactics.BLOCK_SPACE if right_joined else 0.0)
 		var pin:=automatic_pin(game)
@@ -77,29 +83,36 @@ func read(game, direction: Vector2, dt: float) -> void:
 		game.block_helper_x=clampf(game.block_helper_x+direction.x*3.8*dt,minimum,maximum)
 	game.selected=line(game)[1]
 	game.block_count=members(game).size()
+	if game.network_match(): helper_x=game.block_helper_x
 
 func target(game,index: int) -> Vector3:
 	var row:=line(game)
 	if index==automatic_pin(game) and not (left_joined if index==row[0] else right_joined):
-		return Vector3(pin_x(game),0,0.68)
-	var x: float=game.block_helper_x
+		return Tactics.world(game.wall_team(),pin_x(game),0.68)
+	var x: float=helper_x if game.network_match() else game.block_helper_x
 	if index==row[0]: x-=Tactics.BLOCK_SPACE
 	if index==row[2]: x+=Tactics.BLOCK_SPACE
-	return Vector3(x,0,0.68)
+	return Tactics.world(game.wall_team(),x,0.68)
 
 func waiting(game,index: int) -> Vector3:
 	var row:=line(game)
-	var x: float=minf(-3.4,game.block_helper_x-1.35) if index==row[0] else maxf(3.4,game.block_helper_x+1.35)
-	if game.phase=="CPU_ATTACK" and absf(game.flight_target.x)>1.5:
-		var far_pin: int=row[0] if game.flight_target.x>0 else row[2]
-		if index==far_pin and not index in members(game): return Vector3(-3.0 if index==row[0] else 3.0,0,3.15)
-	return Vector3(clampf(x,-5.4,5.4),0,0.68)
+	var center: float=helper_x if game.network_match() else game.block_helper_x
+	var x: float=minf(-3.4,center-1.35) if index==row[0] else maxf(3.4,center+1.35)
+	if game.phase in ["ATTACK","CPU_ATTACK"] and absf(game.flight_target.x)>1.5:
+		var far_pin: int=row[0] if game.flight_target.x*(1 if game.wall_team()==0 else -1)>0 else row[2]
+		if index==far_pin and not index in members(game): return Tactics.world(game.wall_team(),-3.0 if index==row[0] else 3.0,3.15)
+	return Tactics.world(game.wall_team(),clampf(x,-5.4,5.4),0.68)
 
 func route(game,index: int,destination: Vector3) -> Vector3:
+	var side:=1 if game.wall_team()==0 else -1
+	return local_route(game,index,destination*side)*side
+
+func local_route(game,index: int,destination: Vector3) -> Vector3:
 	var row:=line(game)
 	if index==row[1] or not jumped.is_empty(): return destination
-	var p: Vector3=game.players[index].position
-	var middle: Vector3=game.players[row[1]].position
+	var side:=1 if game.wall_team()==0 else -1
+	var p: Vector3=game.players[index].position*side
+	var middle: Vector3=game.players[row[1]].position*side
 	if index==automatic_pin(game) and absf(p.x-destination.x)<0.7 and p.z<1.2: return destination
 	var left:=index==row[0]
 	var wrong_side:=p.x>middle.x-0.75 if left else p.x<middle.x+0.75

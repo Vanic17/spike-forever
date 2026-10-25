@@ -6,7 +6,7 @@ const Reference = preload("res://src/reference_style.gd")
 static func reception_quality(game, timing_quality: float) -> float:
 	var power: float = game.incoming_power
 	var quality := timing_quality
-	if game.possession == 1:
+	if game.cpu_team(game.possession):
 		if game.incoming_kind == "serve":
 			quality = game.rng.randf_range(lerpf(1.0,game.rng.randf_range(0.26,0.90),power),1.0)
 		elif game.incoming_kind == "spike":

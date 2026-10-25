@@ -41,6 +41,8 @@ var animation_bones: Array[int] = []
 var indicator: MeshInstance3D
 var jersey_number: Label3D
 var roster_identity: Dictionary={}
+var left_handed:=false
+var mirror_bones: PackedInt32Array=[]
 var libero_identity: Dictionary={}
 var kit_identity: Dictionary={}
 var libero_kit: Dictionary={}
@@ -211,6 +213,7 @@ func set_roster_identity(player: Dictionary,libero: Dictionary,kit: Dictionary,c
 
 func apply_identity() -> void:
 	var person: Dictionary=libero_identity if libero_active else roster_identity
+	left_handed=person.get("dominant_hand","right")=="left"
 	var kit: Dictionary=libero_kit if libero_active else kit_identity
 	var primary=Color(kit.get("primary_hex_approx","#17458A"))
 	if libero_active and primary.is_equal_approx(Color(kit_identity.get("primary_hex_approx","#17458A"))): primary=Color(kit_identity.get("secondary_hex_approx","#F5F5F5"))
@@ -318,7 +321,9 @@ func recovery_speed_scale() -> float:
 func contact_local(action: String) -> Vector3:
 	if not clips.has(action):
 		return Vector3(0, {"receive":1.15,"recovery":0.65,"dive":0.65,"dump":2.5,"set":2.4,"fast_set":2.4,"attack":3.25,"block":3.1,"float":2.8,"power":3.2}.get(action,1.2), 0.4)
-	return clips[action].contact_offset
+	var result: Vector3=clips[action].contact_offset
+	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
+	return result
 
 func select_variant(action: String, variant: String = "") -> void:
 	var selected := variant if source_clips.has(variant) else action
@@ -331,7 +336,9 @@ func select_variant(action: String, variant: String = "") -> void:
 	variant_names[action]=selected
 
 func action_root_motion(action: String, time: float) -> Vector3:
-	return clips[action].root_motion(time) if clips.has(action) else Vector3.ZERO
+	var result: Vector3=clips[action].root_motion(time) if clips.has(action) else Vector3.ZERO
+	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
+	return result
 
 func contact_recovery_remaining() -> float:
 	if not clips.has(clip_name) or looping: return 0.0
@@ -348,6 +355,7 @@ func contact_world(action: String) -> Vector3:
 	return global_transform * contact_local(action)
 
 func current_hand(left: bool) -> Vector3:
+	if left_handed and clip_name in ["attack","power","float","dump","serve_idle"]: left=not left
 	if last_pose.is_empty(): return contact_world("serve_idle")
 	var idx: int = clips.idle.names.find("LeftHand" if left else "RightHand")
 	return global_transform * last_pose[idx].origin
@@ -657,7 +665,7 @@ func apply_pose(_dt: float) -> void:
 		# into that palm once, then preserve the actual original throwing arc.
 		var saved_reach := reach_weight
 		reach_weight=1.0-smoothstep(power_transfer_start,power_transfer_start+0.35,animation_time)
-		solve_arm(normalized,"Right",power_transfer_from,clip.parents,1.5)
+		solve_arm(normalized,"Left" if left_handed else "Right",power_transfer_from,clip.parents,1.5)
 		reach_weight=saved_reach
 	if reach_weight > 0.001 and reach_action in ["receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "float", "power", "block"]:
 		var point := global_transform.affine_inverse() * reach_target
@@ -668,7 +676,7 @@ func apply_pose(_dt: float) -> void:
 			solve_arm(normalized, "Left", point + Vector3(0.105, -0.07, 0), clip.parents)
 			solve_arm(normalized, "Right", point + Vector3(-0.105, -0.07, 0), clip.parents)
 		else:
-			solve_arm(normalized, "Right", point - Vector3(0, 0, 0.085), clip.parents)
+			solve_arm(normalized, "Left" if left_handed and reach_action in ["attack","power","float","dump"] else "Right", point - Vector3(0, 0, 0.085), clip.parents)
 	if clip_name == "block" and absf(hand_adjust) > 0.01:
 		for side in ["Left", "Right"]:
 			var shoulder: int = clip.names.find(side + "Arm")
@@ -707,9 +715,22 @@ func apply_pose(_dt: float) -> void:
 
 func normalized_pose(name: String, time: float, loop: bool) -> Array[Transform3D]:
 	var native_name := native_clip_name(name)
+	var result: Array[Transform3D]
 	if native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_name):
-		return pose_tree.sample(native_name, time, loop)
-	return psa_normalized_pose(name, time, loop)
+		result=pose_tree.sample(native_name, time, loop)
+	else: result=psa_normalized_pose(name, time, loop)
+	if left_handed and (native_name.begins_with("attack") or native_name in ["power","float","dump","serve_idle"]):
+		if mirror_bones.is_empty():
+			for bone in clips.idle.names:
+				var opposite: String=bone.replace("Left","@SIDE@").replace("Right","Left").replace("@SIDE@","Right")
+				mirror_bones.append(clips.idle.names.find(opposite))
+		var original:=result.duplicate()
+		var reflect:=Basis(Vector3(-1,0,0),Vector3.UP,Vector3.BACK)
+		for i in result.size():
+			var from: int=mirror_bones[i]
+			if from<0: from=i
+			result[i]=Transform3D(reflect*original[from].basis*reflect,reflect*original[from].origin)
+	return result
 
 func native_clip_name(name: String) -> String:
 	return name.trim_prefix("source:") if name.begins_with("source:") else str(variant_names.get(name, name))

@@ -19,7 +19,7 @@ func _ready() -> void:
 	resume_button=Button.new(); resume_button.text="RIPRENDI PARTITA"; resume_button.custom_minimum_size.y=60; column.add_child(resume_button)
 	menu_button=Button.new(); menu_button.text="TORNA AL MENU PRINCIPALE"; menu_button.custom_minimum_size.y=60; column.add_child(menu_button)
 	resume_button.focus_neighbor_bottom=resume_button.get_path_to(menu_button); menu_button.focus_neighbor_top=menu_button.get_path_to(resume_button)
-	resume_button.pressed.connect(func(): game.paused=false)
+	resume_button.pressed.connect(func(): game.request_pause(false))
 	menu_button.pressed.connect(func(): game.return_to_main_menu())
 	var hint=Label.new(); hint.text="A / Croce: conferma · B / Cerchio: riprendi"; hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER; column.add_child(hint)
 	surface.hide()
@@ -30,5 +30,5 @@ func _process(_dt: float) -> void:
 	if wanted: resume_button.grab_focus()
 func _input(event: InputEvent) -> void:
 	if surface!=null and surface.visible and event.is_action_pressed("ui_cancel"):
-		game.paused=false
+		game.request_pause(false)
 		get_viewport().set_input_as_handled()

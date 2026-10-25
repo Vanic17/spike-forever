@@ -162,6 +162,8 @@ func open_keyboard(target: LineEdit) -> void:
 		keyboard.confirmed.connect(func():
 			if is_instance_valid(keyboard_target):
 				keyboard_target.text=keyboard_text.text; keyboard_target.text_changed.emit(keyboard_text.text); keyboard_target.grab_focus())
+	keyboard.title="MODIFICA NOME" if target==inputs.get("name") else "INSERISCI TESTO"
+	keyboard.ok_button_text="CONFERMA"
 	keyboard_text.text=target.text
 	keyboard.popup_centered(Vector2i(780,580))
 	var container=keyboard_text.get_parent()
@@ -221,7 +223,7 @@ func edit_lineup() -> void:
 	for i in 7:
 		label(fields,names[i])
 		var slot: int=i
-		var options: Array=team.roster.filter(func(p): return p.role==(db.ROLES+["libero"])[slot])
+		var options: Array=team.roster.filter(func(p): return db.fits_slot(p.role,slot))
 		candidates.append(options)
 		var pick=picker(fields,options.map(func(p): return "%s · %s"%[str(p.get("jersey_number","?")),p.name]))
 		if existing.size()==7:
@@ -254,6 +256,10 @@ func edit_player(index: int) -> void:
 	inputs.role=picker(fields,["outside_hitter","middle_blocker","opposite","setter","libero"])
 	inputs.role.select(["outside_hitter","middle_blocker","opposite","setter","libero"].find(current.role))
 	inputs.role.item_selected.connect(func(_i): player_card.player=player_card.player.duplicate(true); player_card.player.role=inputs.role.get_item_text(inputs.role.selected); player_card.queue_redraw())
+	label(fields,"MANO DOMINANTE")
+	inputs.dominant_hand=picker(fields,["Destra","Mancino"]); inputs.dominant_hand.select(1 if current.get("dominant_hand","right")=="left" else 0)
+	label(fields,"BATTUTA PREFERITA / CPU")
+	inputs.serve_preference=picker(fields,["Salto","Float"]); inputs.serve_preference.select(1 if current.get("serve_preference","jump")=="float" else 0)
 	for key in ["hair_style","hair_color","beard","skin_tone"]:
 		label(fields,{"hair_style":"Capelli · taglio","hair_color":"Capelli · colore","beard":"Barba","skin_tone":"Carnagione"}[key])
 		var values={"hair_style":["Non specificato","corti","rasati","sfumati","mossi","ricci","afro","frangia","riga","lunghi","treccine","pelato"],"hair_color":["Non specificato","nero","marrone","castano chiaro","biondo","rosso","grigio"],"beard":["Non specificato","nessuna","corta","piena"],"skin_tone":["Non specificato","chiara","olivastra","ambrata","scura","ebano","rosa","nero"]}[key]
@@ -269,6 +275,8 @@ func edit_player(index: int) -> void:
 func save_player() -> void:
 	if inputs.name.text.strip_edges().is_empty(): message.text="Inserisci un nome."; return
 	current.name=inputs.name.text.strip_edges(); current.jersey_number=int(inputs.number.value); current.role=inputs.role.get_item_text(inputs.role.selected)
+	current.dominant_hand="left" if inputs.dominant_hand.selected==1 else "right"
+	current.serve_preference="float" if inputs.serve_preference.selected==1 else "jump"
 	for key in ["hair_style","hair_color","beard","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
 	current.appearance.hair_length="pelato" if current.appearance.hair_style=="pelato" else ("lunghi" if current.appearance.hair_style=="lunghi" else "corti")
 	for key in current.ratings: current.ratings[key]=int(inputs["rating_"+key].value)
@@ -344,7 +352,7 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 	if formation_dialog!=null: formation_dialog.queue_free()
 	formation_dialog=ConfirmationDialog.new(); formation_dialog.title="FORMAZIONE / "+team.name; formation_dialog.ok_button_text="CONFERMA"; formation_dialog.cancel_button_text="ANNULLA"; add_child(formation_dialog)
 	var column=VBoxContainer.new(); column.add_theme_constant_override("separation",16); formation_dialog.add_child(column)
-	label(column,"RETE — prima linea · seleziona una casella per scegliere un sostituto dello stesso ruolo")
+	label(column,"RETE — prima linea · bande e opposti sono intercambiabili")
 	label(column,"Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita")
 	label(column,"ROTAZIONE INIZIALE")
 	var rotation_pick=picker(column,["R1","R2","R3","R4","R5","R6"]); rotation_pick.select(match_rotations[side])
@@ -363,8 +371,8 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 		var index: int=slot
 		var cell=VBoxContainer.new(); cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL; grid.add_child(cell)
 		var zone_label=Label.new(); cell.add_child(zone_label); zone_labels[index]=zone_label
-		var candidates: Array=team.roster.filter(func(player): return player.role==(db.ROLES+["libero"])[index]); options[index]=candidates
-		var labels: Array=candidates.map(func(player): return "%s · %s · %s · GEN %d"%[str(int(player.jersey_number)) if player.get("jersey_number")!=null else "?",abbreviations[index],player.name,int(player.ratings.get("generale",0))])
+		var candidates: Array=team.roster.filter(func(player): return db.fits_slot(player.role,index)); options[index]=candidates
+		var labels: Array=candidates.map(func(player): return "%s · %s · %s · GEN %d"%[str(int(player.jersey_number)) if player.get("jersey_number")!=null else "?",{"outside_hitter":"OH","opposite":"OPP","middle_blocker":"MB","setter":"S","libero":"L"}.get(player.role,player.role),player.name,int(player.ratings.get("generale",0))])
 		var pick=picker(cell,labels); pick.add_theme_font_size_override("font_size",13); pick.fit_to_longest_item=false; pick.clip_text=true; pick.custom_minimum_size=Vector2(320,48); controls[index]=pick
 		for j in candidates.size():
 			if candidates[j].id==squad[index].id: pick.select(j)

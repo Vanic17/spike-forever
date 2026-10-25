@@ -5,6 +5,10 @@ const ATTACK_CHARGE_SECONDS := 0.55
 
 static func winning_power(power: float) -> bool:
 	return power>=0.97-0.000001 and power<=1.000001
+
+static func ace_power(power: float) -> bool:
+	# Exactly the displayed 100%; overcharge never earns a guaranteed ace.
+	return roundi(power*100)==100 and power<=1.000001
 const LATE_RECEIVE_SECONDS := 0.12
 func quality(remaining: float, difficulty: float = 1.0) -> float:
 	var window := 0.62 * difficulty

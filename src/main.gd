@@ -16,6 +16,49 @@ const CourtShape = preload("res://src/court_shape.gd")
 const MiddleDecoy = preload("res://src/middle_decoy.gd")
 const AnimationVariety = preload("res://src/animation_variety.gd")
 var rotation_context=preload("res://src/rotation_context.gd").new()
+var online_session
+var input_team:=0
+
+func network_match() -> bool:
+	return online_session!=null and online_session.playing
+
+func cpu_team(team: int) -> bool:
+	return team==1 and not network_match()
+
+func human_team(team: int) -> bool:
+	return not cpu_team(team)
+
+func local_team() -> int:
+	return online_session.local_side if network_match() else 0
+
+func display_selected() -> int:
+	if not network_match(): return selected
+	var side:=local_team()
+	if phase=="SERVE" and server==side: return server_index(side)
+	if possession==side:
+		if phase in ["RECEIVE","CPU_RECEIVE"]: return receiver
+		if phase in ["SET","CPU_SET"]: return setter
+		if phase in ["ATTACK","CPU_ATTACK"]: return hitter
+	for i in range(side*6,side*6+6):
+		if Tactics.front(i,rotations[side]) and Tactics.ROLES[i%6].begins_with("MB"): return i
+	return side*6
+
+func wall_team() -> int:
+	return 1-possession if network_match() else 0
+
+func ui_wall() -> bool:
+	return human_wall() and (not network_match() or local_team()==wall_team())
+
+func display_phase() -> String:
+	if not network_match() or phase in ["SERVE","POINT","LOOSE"]: return phase
+	return phase.trim_prefix("CPU_") if possession==local_team() else "CPU_"+phase.trim_prefix("CPU_")
+
+func request_pause(value: bool) -> void:
+	if network_match(): online_session.pause_request(value)
+	else: paused=value
+
+func wall_strength(action: String) -> float:
+	return online_session.wall_strength(action) if network_match() else Input.get_action_strength(action)
 var rally_lanes=preload("res://src/rally_lanes.gd").new()
 var contact_navigation=preload("res://src/contact_navigation.gd").new()
 var next_second_touch_read:=0.0
@@ -132,7 +175,9 @@ var late_receive := false
 var recovery_action := "receive"
 var receive_deadline := 0.0
 var block_helper_x := 0.0
-var manual_wall=preload("res://src/manual_wall.gd").new()
+var manual_walls=[preload("res://src/manual_wall.gd").new(),preload("res://src/manual_wall.gd").new()]
+var manual_wall:
+	get: return manual_walls[wall_team()]
 var last_power := 0.0
 var last_precision := 1.0
 var last_serve_fault := ""
@@ -247,6 +292,7 @@ func _ready() -> void:
 		get_tree().quit()
 		return
 	self_test = "--self-test" in OS.get_cmdline_user_args() or "--fallback-test" in OS.get_cmdline_user_args() or "--rally-test" in OS.get_cmdline_user_args()
+	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; add_child(online_session)
 	if not self_test:
 		var start_menu=preload("res://src/start_menu.gd").new()
 		start_menu.game=self
@@ -328,6 +374,9 @@ func build_arena() -> void:
 	set_camera()
 
 func set_camera() -> void:
+	if network_match():
+		camera_mode=0; camera.projection=Camera3D.PROJECTION_PERSPECTIVE; camera.fov=48
+		camera.position=Vector3(0,9.8,18.4*(1 if local_team()==0 else -1)); camera_focus=Vector3(0,.7,0); camera.look_at(camera_focus); return
 	camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 	camera.fov = 48 if camera_mode == 0 else (40 if camera_mode==2 else 50)
 	camera.position = preload("res://src/view_controls.gd").origin(camera_mode)
@@ -335,6 +384,11 @@ func set_camera() -> void:
 	camera.look_at(camera_focus)
 
 func update_camera(dt: float) -> void:
+	if network_match():
+		var side:=1.0 if local_team()==0 else -1.0
+		var eye:=Vector3(0,9.8,18.4*side)
+		var focus:=Vector3(clampf(ball_pos.x*.09,-.4,.4),.7+maxf(0,ball_pos.y-3.2)*.04,0)
+		camera.position=camera.position.lerp(eye,1-exp(-3*dt)); camera_focus=camera_focus.lerp(focus,1-exp(-2.5*dt)); camera.look_at(camera_focus); return
 	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
 	if camera_mode==2:
 		var tv_focus:=Vector3(0,0.7+maxf(0,ball_pos.y-3.2)*0.04,clampf(ball_pos.z*0.06,-0.45,0.45))
@@ -352,6 +406,9 @@ func update_camera(dt: float) -> void:
 	camera.look_at(camera_focus)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if network_match():
+		online_session.capture_input(event)
+		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
 			KEY_ESCAPE:
@@ -438,23 +495,40 @@ func stick(_right: bool = false) -> Vector2:
 	return result.limit_length()
 
 func read_controls(dt: float = 1.0/120.0) -> void:
+	if network_match():
+		online_session.apply_controls(dt)
+		return
 	var direction := preload("res://src/view_controls.gd").court_direction(stick(),camera_mode)
+	apply_direction(direction,dt)
+
+func apply_direction(direction: Vector2,dt: float) -> void:
+	if network_match() and input_team!= (server if phase=="SERVE" else possession):
+		if human_wall() and input_team==wall_team():
+			manual_wall.read(self,direction,dt)
+			if clock_time-block_time<.65: block_hand=direction.x*(1 if input_team==0 else -1)
+		return
 	serve_move=direction if phase=="SERVE" and server==0 and not demo and not charging and not toss_active and not serve_adjusting else Vector2.ZERO
+	if network_match() and phase=="SERVE" and not charging and not toss_active and not serve_adjusting: serve_move=direction*(1 if server==0 else -1)
 	if phase=="SERVE" and not charging and not demo: return
-	if human_wall(): manual_wall.read(self,direction,dt)
+	if human_wall() and not network_match(): manual_wall.read(self,direction,dt)
 	if direction.length() > 0.3:
 		var angle := roundf(direction.angle() / (PI / 4)) * PI / 4
 		aim = direction.limit_length() if phase=="SERVE" else Vector2.from_angle(angle)
+		if network_match() and input_team==1: aim.x=-aim.x
 		if absf(direction.x) > absf(direction.y):
 			set_dir = 0 if direction.x < 0 else 2
 		else:
 			set_dir = 1 if direction.y < 0 else 3
-		if clock_time - block_time < 0.65: block_hand = direction.x
-	if phase == "SET" and not armed and not demo:
+		if not network_match() and clock_time - block_time < 0.65: block_hand = direction.x
+	if phase in ["SET","CPU_SET"] and (phase=="SET" or network_match()) and not armed and not demo:
 		plan_attack(set_dir, fast_set)
 
 func press_action(button: String = "action") -> void:
-	if phase=="ATTACK" and hitter_action=="attack" and button=="alternate" and not armed:
+	if input_team!=(server if phase=="SERVE" else possession):
+		if human_wall() and input_team==wall_team() and button=="action": jump_manual_wall()
+		return
+	var action_phase:=phase.trim_prefix("CPU_") if network_match() else phase
+	if action_phase=="ATTACK" and hitter_action=="attack" and button=="alternate" and not armed:
 		if charging: return
 		attack_tip=true; charging=true; charge_button="alternate"; charge_start=clock_time; charge=0; input_quality=1.0
 		if destination==1 and middle_decoy.real_started and middle_decoy.index==hitter:
@@ -469,20 +543,20 @@ func press_action(button: String = "action") -> void:
 		if not intercept.is_empty(): flight_target=intercept.point; flight_left=maxf(0.001,intercept.seconds)
 		notice("PALLONETTO · COLPO DI POLSO",0.9)
 		return
-	if phase=="SET" and armed and button=="action":
+	if action_phase=="SET" and armed and button=="action":
 		attack_buffer_start=clock_time; attack_buffer_power=-1.0
 		return
-	if phase == "SERVE" and server == 0 and not charging and not toss_active and not serve_adjusting and button != "dump":
+	if action_phase == "SERVE" and human_team(server) and not charging and not toss_active and not serve_adjusting and button != "dump":
 		serve_type = 0 if button == "alternate" else 1
 		charge_button = button
 		charging = true
 		charge_start = clock_time
 		players[server_index(server)].play("serve_idle", 1.0, true)
-	elif phase == "ATTACK" and not armed and not charging and button == "action":
+	elif action_phase == "ATTACK" and not armed and not charging and button == "action":
 		charge_button = button
 		charging = true
 		charge_start = clock_time
-	elif phase == "RECEIVE" and not armed and button == "action":
+	elif action_phase == "RECEIVE" and not armed and button == "action":
 		var remaining := receive_deadline - clock_time
 		receive_offset=remaining
 		if remaining < -Timing.LATE_RECEIVE_SECONDS: return
@@ -498,7 +572,7 @@ func press_action(button: String = "action") -> void:
 		receive_feedback=preload("res://src/shot_variation.gd").reception_label(remaining)+" · %d%%"%roundi(input_quality*100)
 		receive_feedback_left=2.4
 		notice(receive_feedback,1.4)
-	elif phase == "SET" and not armed:
+	elif action_phase == "SET" and not armed:
 		setter_dump = button == "dump"
 		plan_attack(set_dir, button == "alternate")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
@@ -513,34 +587,41 @@ func press_action(button: String = "action") -> void:
 		armed = true
 		input_quality = pass_quality
 		notice("COLPO DI SECONDA" if setter_dump else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE"), 0.8)
-	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action":
+	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action": jump_manual_wall()
+
+func jump_manual_wall() -> void:
+	if not block_commanded:
 		block_commanded = true
 		block_time = clock_time
 		block_quality = 1.0
 		if human_wall(): manual_wall.jumped=manual_wall.members(self)
 		var accepted_jump:=false
-		for blocker in blocking_players(0):
-			if can_jump_block(blocker, 0):
+		for blocker in blocking_players(wall_team()):
+			if can_jump_block(blocker, wall_team()):
 				accepted_jump=request_block_jump(blocker, 0.22) or accepted_jump
 		if not accepted_jump:
 			block_commanded=false
 			manual_wall.jumped.clear()
 
 func release_action() -> void:
-	if phase=="SET" and attack_buffer_start>=0:
+	if input_team!=(server if phase=="SERVE" else possession): return
+	if phase in ["SET","CPU_SET"] and attack_buffer_start>=0:
 		attack_buffer_power=maxf(0,(clock_time-attack_buffer_start)/Timing.ATTACK_CHARGE_SECONDS)
 	if not charging: return
 	charge = current_charge()
 	charging = false
-	if phase == "SERVE" and server == 0:
+	if phase == "SERVE" and human_team(server):
 		input_quality = 1.0
 		serve_power = charge
 		begin_serve_toss()
-	elif phase == "ATTACK" and not armed:
+	elif phase in ["ATTACK","CPU_ATTACK"] and not armed:
 		armed = true
 		input_quality = 1.0
 
 func current_charge() -> float:
+	if network_match() and not online_session.authority():
+		var predicted: float=online_session.predicted_charge()
+		if predicted>=0: return predicted
 	if not charging: return charge
 	return maxf(0, (clock_time - charge_start) / (Timing.SERVE_CHARGE_SECONDS if phase == "SERVE" else Timing.ATTACK_CHARGE_SECONDS))
 
@@ -553,12 +634,12 @@ func notice(message: String, seconds: float = 1.5) -> void:
 
 func set_phase(value: String) -> void:
 	if value in ["RECEIVE","CPU_RECEIVE"]: receive_offset=0.0
-	if value=="CPU_RECEIVE" and phase!="CPU_RECEIVE":
+	if value in (["RECEIVE","CPU_RECEIVE"] if network_match() else ["CPU_RECEIVE"]) and value!=phase:
 		manual_wall.reset()
 		block_commanded=false
 		block_helper_x=0
-		block_rosters.erase(0)
-		block_orders.erase(0)
+		block_rosters.erase(wall_team())
+		block_orders.erase(wall_team())
 	phase = value
 	phase_time = 0
 	armed = false
@@ -581,7 +662,7 @@ func reset_rally() -> void:
 	rotation_context.reset()
 	defensive_lanes.reset()
 	defensive_coverage.reset()
-	manual_wall.reset()
+	for wall in manual_walls: wall.reset()
 	rally_serial += 1
 	test_rallies = 0
 	incoming_kind = "serve"
@@ -716,6 +797,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	return backup
 
 func return_to_main_menu() -> void:
+	if network_match(): online_session.leave("Partita terminata" if match_finished else "Partita chiusa")
 	started=false; paused=false; demo=false; gallery=false
 	match_finished=false
 	charging=false; armed=false; attack_buffer_start=-1; attack_buffer_power=-1
@@ -772,7 +854,7 @@ func launch(target: Vector3, seconds: float) -> void:
 		flight_spin = Vector3(0.3, 0.6, -0.2)
 	ball_vel = BallFlight.velocity_to(ball_pos, target, seconds, flight_spin, flight_gravity)
 	airborne = true
-	if phase == "RECEIVE": receive_deadline = clock_time + seconds
+	if phase in ["RECEIVE","CPU_RECEIVE"] and human_team(possession): receive_deadline = clock_time + seconds
 	marker.position = Vector3(target.x, 0.04, target.z)
 	marker.visible = true
 
@@ -862,10 +944,10 @@ func serve_ball(team: int, power: float) -> void:
 	var s := 1.0 if possession == 0 else -1.0
 	var target := serve_aim_target(team,aim)
 	target.y = contact_height("receive")
-	if team == 1:
+	if cpu_team(team):
 		target.x = rng.randf_range(-3.3, 3.3)
 		target.z = s*rng.randf_range(5.2,8.0)
-	var contact_quality := input_quality if team == 0 and not demo else 0.92
+	var contact_quality := input_quality if human_team(team) and not demo else 0.92
 	var dispersion := 2.2 * (1.0 - contact_quality)
 	target.x += rng.randf_range(-dispersion, dispersion)
 	target.z += rng.randf_range(-dispersion, dispersion)
@@ -895,7 +977,7 @@ func serve_ball(team: int, power: float) -> void:
 	selected = receiver if possession == 0 else 1
 	set_phase("RECEIVE" if possession == 0 else "CPU_RECEIVE")
 	var seconds := Reference.serve_seconds(power,serve_type==0)
-	winner_team=team if Timing.winning_power(power) else -1
+	winner_team=team if Timing.ace_power(power) else -1
 	# Every power band uses the same legal floor trajectory. Gold changes
 	# the defensive outcome, never the flight model or its speed profile.
 	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.85 if serve_type==0 else 1.4),4.5,8.8)
@@ -933,12 +1015,12 @@ func receive_ball() -> void:
 		preload("res://src/winning_shot.gd").failed_save(self)
 		return
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0
-	if possession==1 and cpu_defense.frozen and incoming_kind in ["serve","spike","soft"]:
+	if cpu_team(possession) and cpu_defense.frozen and incoming_kind in ["serve","spike","soft"]:
 		log_rally_event("cpu_hesitation"); miss_contact(); return
-	if possession == 0 and not armed:
+	if human_team(possession) and not armed:
 		miss_contact()
 		return
-	if incoming_out and possession == 1:
+	if incoming_out and cpu_team(possession):
 		log_rally_event("leave_out")
 		miss_contact()
 		return
@@ -949,21 +1031,21 @@ func receive_ball() -> void:
 		miss_contact()
 		return
 	var q := RallyAI.reception_quality(self,input_quality)
-	if possession==1 and incoming_kind in ["serve","spike","soft"]: q=cpu_defense.quality(q,incoming_power)
+	if cpu_team(possession) and incoming_kind in ["serve","spike","soft"]: q=cpu_defense.quality(q,incoming_power)
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
 		players[setter].select_variant("receive",action)
 		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
 		set_ball(); return
-	if possession==0 and receive_offset>0.90 and rng.randf()<0.30:
+	if human_team(possession) and receive_offset>0.90 and rng.randf()<0.30:
 		pass_quality=q; register_touch(receiver)
-		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,-rng.randf_range(1.0,4.0))
+		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,(-1 if possession==0 else 1)*rng.randf_range(1.0,4.0))
 		incoming_kind="overpass"; incoming_power=0.18
-		send_to_court(0,over,1.4); log_rally_event("mistimed_overpass",{"offset":receive_offset}); return
+		send_to_court(possession,over,1.4); log_rally_event("mistimed_overpass",{"offset":receive_offset}); return
 	pass_quality = q
 	register_touch(receiver)
 	if phase=="POINT": return
-	if possession==1 and cpu_defense.outcome=="overpass" and incoming_kind in ["serve","spike","soft"]:
+	if cpu_team(possession) and cpu_defense.outcome=="overpass" and incoming_kind in ["serve","spike","soft"]:
 		var over:=Vector3(rng.randf_range(-2.8,2.8),0.105,rng.randf_range(1.2,4.5))
 		incoming_kind="overpass"; incoming_power=0.18; send_to_court(1,over,1.8); log_rally_event("cpu_overpass"); return
 	if possession==1 and block_time<clock_time-0.6:
@@ -1012,7 +1094,7 @@ func receive_ball() -> void:
 	set_phase("SET" if possession == 0 else "CPU_SET")
 	launch(target,seconds)
 	if out_of_system < 1: log_rally_event("out_of_system",{"setter":setter,"quality":q,"target":target})
-	if possession == 1:
+	if cpu_team(possession):
 		choose_cpu_play()
 	else:
 		if demo: set_dir = int(clock_time) % 4
@@ -1139,9 +1221,9 @@ func set_ball() -> void:
 	# Resolve the same planned play used during preparation, including its pose.
 	if planned_hitter < 0: plan_attack(set_dir, fast_set)
 	fast_set = planned_fast
-	var q := input_quality if possession == 0 else clampf(pass_quality * rng.randf_range(0.95, 1.0), 0, 1)
+	var q := input_quality if human_team(possession) else clampf(pass_quality * rng.randf_range(0.95, 1.0), 0, 1)
 	var contact_action := "receive" if out_of_system < 0 else ("fast_set" if fast_set else "set")
-	if (possession == 0 and not armed) or q < 0.06 or not validate_contact(setter, contact_action):
+	if (human_team(possession) and not armed) or q < 0.06 or not validate_contact(setter, contact_action):
 		miss_contact()
 		return
 	if fast_set and pass_quality < 0.45:
@@ -1197,7 +1279,7 @@ func set_ball() -> void:
 	if possession == 0:
 		var cpu_correct := rng.randf() < 0.70
 		block_count = Timing.blockers(cpu_correct, fast_set, q, destination == 3)
-	var early_wall := possession==1 and block_commanded and phase=="CPU_SET"
+	var early_wall := (possession==1 or network_match()) and block_commanded and phase in ["SET","CPU_SET"]
 	if not early_wall:
 		block_time = -100
 		block_quality = 0
@@ -1208,16 +1290,16 @@ func set_ball() -> void:
 		block_commanded = false
 		block_jumps.clear()
 	set_phase("ATTACK" if possession == 0 else "CPU_ATTACK")
-	if possession==0 and attack_buffer_start>=0 and clock_time-attack_buffer_start<1.5:
+	if human_team(possession) and attack_buffer_start>=0 and clock_time-attack_buffer_start<1.5:
 		if attack_buffer_power>=0: armed=true; charge=attack_buffer_power; input_quality=1.0
 		else: charging=true; charge_button="action"; charge_start=attack_buffer_start
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0
 	launch(target, flight)
-	if not early_wall and not (possession==1 and not demo):
+	if not early_wall and not ((possession==1 or network_match()) and not demo):
 		block_rosters.clear()
 		block_orders.clear()
 	block_anchor = target.x*0.88
-	if possession == 1: block_count = manual_wall.members(self).size() if human_wall() else 2
+	if possession == 1 or network_match(): block_count = manual_wall.members(self).size() if human_wall() else 2
 	if hitter_action == "receive": block_count = 0
 	blocking_team = 1 - possession
 	play_log.append({"attack_id":attack_serial, "setter":setter, "hitter":hitter, "role":Tactics.ROLES[hitter % 6], "direction":destination, "target":target, "quick":fast_set, "flight_s":flight, "time":clock_time})
@@ -1227,7 +1309,7 @@ func set_ball() -> void:
 
 func dump_ball() -> void:
 	var attacker := possession
-	if (possession==0 and not armed) or not validate_contact(setter, "dump"):
+	if (human_team(possession) and not armed) or not validate_contact(setter, "dump"):
 		miss_contact()
 		return
 	register_touch(setter)
@@ -1245,9 +1327,10 @@ func dump_ball() -> void:
 	notice("COLPO DI SECONDA", 0.9)
 
 func attack_ball() -> void:
-	if possession == 0 and charging: release_action()
-	var q := input_quality if possession == 0 else 1.0
-	if (possession == 0 and not armed) or q < 0.12 or not validate_contact(hitter, hitter_action):
+	if human_team(possession) and charging:
+		var owner:=input_team; input_team=possession; release_action(); input_team=owner
+	var q := input_quality if human_team(possession) else 1.0
+	if (human_team(possession) and not armed) or q < 0.12 or not validate_contact(hitter, hitter_action):
 		miss_contact()
 		return
 	var attacker := possession
@@ -1257,7 +1340,7 @@ func attack_ball() -> void:
 	attack_run.finish(self,hitter)
 	last_touch = attacker
 	var automatic_overpass:=overpass_attack_team==attacker
-	var requested_power := 1.0 if automatic_overpass else (charge if attacker == 0 else RallyAI.cpu_attack_power(self))
+	var requested_power := 1.0 if automatic_overpass else (charge if human_team(attacker) else RallyAI.cpu_attack_power(self))
 	var power := clampf(requested_power, 0, 1)
 	if out_of_system<0: power*=0.72
 	var precision := Timing.precision(power)
@@ -1269,7 +1352,7 @@ func attack_ball() -> void:
 	# would continue past the chosen corner when no defender touches the ball.
 	var target := Vector3(signf(aim.x) * 3.85 if absf(aim.x) > 0.3 else 0.0, 0.105, s * (8.0 if aim.y < -0.3 else (3.3 if aim.y > 0.3 else 5.0)))
 	var soft := power < 0.18
-	if attacker == 1 or demo:
+	if cpu_team(attacker) or demo:
 		var choice := RallyAI.attack_choice(self,attacker,power)
 		target = choice.target
 		soft = choice.soft
@@ -1307,7 +1390,7 @@ func attack_ball() -> void:
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
 
 func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
-	if attacker==0:
+	if attacker==0 and not network_match():
 		manual_wall.reset()
 		block_commanded=false
 		block_jumps.clear()
@@ -1329,7 +1412,7 @@ func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 	if not intercept.is_empty():
 		flight_target = intercept.point
 		flight_left = intercept.seconds
-		if phase == "RECEIVE": receive_deadline = clock_time + flight_left
+		if human_team(possession): receive_deadline = clock_time + flight_left
 	receiver = choose_receiver(possession, flight_target)
 	select_receive_pose(receiver,flight_target)
 	cpu_defense.prepare(self)
@@ -1402,9 +1485,10 @@ func finish_contact_attempt(index: int) -> void:
 func miss_contact() -> void:
 	if self_test:
 		print("MISS ", phase, " ball=", ball_pos, " receiver=", players[receiver].position, " setter=", players[setter].position, " armed=", armed, " quality=", input_quality)
-	var missing_input := possession == 0 and not armed
-	var poor_timing := possession == 0 and armed and input_quality < 0.16
+	var missing_input := human_team(possession) and not armed
+	var poor_timing := human_team(possession) and armed and input_quality < 0.16
 	var actor: int=receiver if phase in ["RECEIVE","CPU_RECEIVE"] else (setter if phase in ["SET","CPU_SET"] else hitter)
+	if network_match(): log_rally_event("online_miss",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"hands":players[actor].current_hand(false),"ball":ball_pos,"target":flight_target})
 	finish_contact_attempt(actor)
 	# No magnetic rescue: let gravity carry the missed ball to the floor.
 	phase = "LOOSE"
@@ -1447,6 +1531,7 @@ func award(team: int, reason: String) -> void:
 	if team==0 and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
 
 func _physics_process(dt: float) -> void:
+	if network_match() and not online_session.authority(): return
 	if self_test:
 		return
 	else:
@@ -1484,9 +1569,9 @@ func step(dt: float) -> void:
 	read_controls(dt)
 	if demo:
 		demo_input()
-	if phase in ["SET","CPU_SET"] and (possession==1 or armed):
+	if phase in ["SET","CPU_SET"] and (cpu_team(possession) or armed):
 		preload("res://src/setter_access.gd").try_low_contact(self)
-	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and flight_left>0.001 and flight_left<0.42 and (possession==1 or armed):
+	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
 		if players[receiver].position.distance_to(stance)>flight_left*Reference.run_speed()+0.12: queue_recovery(true)
 	move_players(dt)
@@ -1510,8 +1595,8 @@ func step(dt: float) -> void:
 					if serve_pending: serve_ball(server, serve_power)
 		else:
 			ball_pos = serving.current_hand(true) + Vector3(0, 0.11, 0)
-		if server == 1 and phase_time > 0.65 and not toss_active and not serve_adjusting:
-			serve_type = rng.randi_range(0, 1)
+		if cpu_team(server) and phase_time > 0.65 and not toss_active and not serve_adjusting:
+			serve_type = 0 if serving.roster_identity.get("serve_preference","jump")=="float" else 1
 			serve_power = rng.randf_range(0.55,1.08)
 			begin_serve_toss()
 	elif phase == "POINT":
@@ -1553,7 +1638,7 @@ func step(dt: float) -> void:
 			if true:
 				match phase:
 					"RECEIVE", "CPU_RECEIVE":
-						if phase == "RECEIVE" and not armed and clock_time < receive_deadline + Timing.LATE_RECEIVE_SECONDS:
+						if human_team(possession) and not armed and clock_time < receive_deadline + Timing.LATE_RECEIVE_SECONDS:
 							pass # Small explicit late-input window; never auto-save.
 						else: receive_ball()
 					"SET", "CPU_SET": set_ball()
@@ -1562,7 +1647,7 @@ func step(dt: float) -> void:
 	ball.quaternion = BallContact.spin_rotation(ball.quaternion, flight_spin, dt)
 	shadow.position = Vector3(ball_pos.x, 0.034, ball_pos.z)
 	shadow.scale = Vector3.ONE * (1.0 + maxf(ball_pos.y, 0) * 0.06)
-	for i in 12: players[i].tick(dt, i == selected, not self_test)
+	for i in 12: players[i].tick(dt, i == display_selected(), not self_test)
 
 func step_dead_ball(dt: float) -> void:
 	# Short substeps retain bounce height even after a hard downward spike.
@@ -1651,7 +1736,7 @@ func advance_block_tail(seconds: float) -> void:
 	var state:=BallFlight.advance(ball_pos,ball_vel,flight_spin,seconds,flight_gravity)
 	ball_pos=state[0]; ball_vel=state[1]
 	flight_left-=seconds
-	if phase=="RECEIVE": receive_deadline-=seconds
+	if phase in ["RECEIVE","CPU_RECEIVE"] and human_team(possession): receive_deadline-=seconds
 
 func resume_deflection(kind: String) -> void:
 	# Continue from current position and velocity; both a stuffed block and a
@@ -1681,7 +1766,7 @@ func resume_deflection(kind: String) -> void:
 	scramble_ready[receiver] = clock_time+rng.randf_range(reaction[0],reaction[1])
 
 func human_wall() -> bool:
-	return not demo and phase in ["CPU_RECEIVE","CPU_SET","CPU_ATTACK"]
+	return not demo and (phase in ["CPU_RECEIVE","CPU_SET","CPU_ATTACK"] or (network_match() and phase in ["RECEIVE","SET","ATTACK"]))
 
 func manual_wall_active() -> bool:
 	# The opponent's hit immediately switches to our RECEIVE phase. Preserve
@@ -1692,10 +1777,11 @@ func choose_block_lane(direction: Vector2) -> void:
 	if human_wall(): manual_wall.read(self,direction,1.0/120.0)
 
 func wall_attack_id() -> int:
-	return attack_serial+1 if phase in ["CPU_RECEIVE","CPU_SET"] else attack_serial
+	return attack_serial+1 if phase in (["RECEIVE","SET","CPU_RECEIVE","CPU_SET"] if network_match() else ["CPU_RECEIVE","CPU_SET"]) else attack_serial
 
 func blocking_players(team: int) -> Array[int]:
-	if team==0 and manual_wall_active(): return manual_wall.members(self)
+	if network_match() and not manual_walls[team].jumped.is_empty(): return manual_walls[team].jumped.duplicate()
+	if team==wall_team() and manual_wall_active(): return manual_wall.members(self)
 	var count := block_count
 	if block_rosters.has(team):
 		var result: Array[int] = []
@@ -1722,7 +1808,7 @@ func blocking_players(team: int) -> Array[int]:
 	return candidates
 
 func blocking_target(index: int, team: int) -> Vector3:
-	if team==0 and manual_wall_active(): return manual_wall.target(self,index)
+	if team==wall_team() and manual_wall_active(): return manual_wall.target(self,index)
 	var active := blocking_players(team)
 	var order: Array[int] = []
 	for i in block_orders[team]:
@@ -1730,7 +1816,7 @@ func blocking_target(index: int, team: int) -> Vector3:
 	return Tactics.block_target(index,order,block_helper_x if team==0 and human_wall() else block_anchor,team)
 
 func can_jump_block(index: int, team: int) -> bool:
-	if team==0 and human_wall():
+	if team==wall_team() and human_wall():
 		return true # Manual jump timing also applies while still closing the wall.
 	elif players[index].position.distance_to(blocking_target(index, team)) > 0.14: return false
 	for other in blocking_players(team):
@@ -1739,14 +1825,14 @@ func can_jump_block(index: int, team: int) -> bool:
 	return true
 
 func manual_wall_route(index: int, destination: Vector3) -> Vector3:
-	destination.z=0.68
+	destination.z=0.68 if wall_team()==0 else -0.68
 	return manual_wall.route(self,index,destination)
 
 func waiting_wall_target(index: int) -> Vector3:
 	return manual_wall.waiting(self,index)
 
 func request_block_jump(index: int, contact_in: float) -> bool:
-	if phase not in ["ATTACK", "CPU_ATTACK","CPU_SET","CPU_RECEIVE"]: return false
+	if phase not in (["ATTACK","CPU_ATTACK","SET","CPU_SET","RECEIVE","CPU_RECEIVE"] if network_match() else ["ATTACK", "CPU_ATTACK","CPU_SET","CPU_RECEIVE"]): return false
 	var jump_id := wall_attack_id() if index<6 else attack_serial
 	if block_jumps.get(index, -1) == jump_id: return false
 	var p = players[index]
@@ -1766,6 +1852,7 @@ func request_block_jump(index: int, contact_in: float) -> bool:
 
 func block_pose_locked(index: int) -> bool:
 	var player=players[index]
+	if network_match() and block_jumps.has(index): return player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
 	# The grounded follow-through must not keep the root locked after landing.
 	return block_jumps.get(index,-1)==wall_attack_id() and player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
 
@@ -1789,7 +1876,7 @@ func move_players(dt: float) -> void:
 			action_actor = hitter
 			action = hitter_action
 	var blockers: Array = blocking_players(1 - possession) if phase in ["ATTACK", "CPU_ATTACK"] else []
-	if human_wall() and phase in ["CPU_RECEIVE","CPU_SET"]: blockers=blocking_players(0)
+	if human_wall() and phase in ["RECEIVE","SET","CPU_RECEIVE","CPU_SET"]: blockers=blocking_players(wall_team())
 	if blockers.is_empty() and blocking_team >= 0 and clock_time - block_time < 0.58 and phase in ["RECEIVE", "CPU_RECEIVE"]:
 		blockers = blocking_players(blocking_team)
 		blockers.erase(action_actor)
@@ -1806,7 +1893,7 @@ func move_players(dt: float) -> void:
 			nominal.append(ready)
 		elif phase=="POINT" and point_formation.size()==12: nominal.append(point_formation[i])
 		elif phase=="LOOSE": nominal.append(players[i].target)
-		elif human_wall() and i<6 and Tactics.front(i,rotations[0]): nominal.append(waiting_wall_target(i))
+		elif human_wall() and team==wall_team() and Tactics.front(i,rotations[team]): nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
 	if phase in ["ATTACK","CPU_ATTACK"] and action_actor>=0:
 		nominal[action_actor]=attack_run.target(self,action_actor,nominal[action_actor])
@@ -1896,9 +1983,9 @@ func move_players(dt: float) -> void:
 		if i in blockers:
 			p.target = blocking_target(i, team)
 			# Travel laterally behind the net lane, then step in beside the lead.
-			if team==0 and human_wall(): p.target=manual_wall_route(i,p.target)
+			if team==wall_team() and human_wall(): p.target=manual_wall_route(i,p.target)
 			elif absf(p.position.x - p.target.x) > 0.8: p.target.z = side * 1.20
-			if phase == "ATTACK" and hitter_action=="attack" and team == 1 and flight_left < 0.34 and can_jump_block(i, team):
+			if not network_match() and phase == "ATTACK" and hitter_action=="attack" and team == 1 and flight_left < 0.34 and can_jump_block(i, team):
 				if request_block_jump(i, flight_left + 0.08):
 					if block_time < 0: block_time = clock_time
 					block_quality = 0.85
@@ -2191,7 +2278,7 @@ func avoid_teammates(index: int, desired: Vector3, route: Vector3, max_speed: fl
 			# Closing neighbours preserve their net lane. After a rotation the
 			# actual middle may still be outside a pin: allow an ordinary safe
 			# passing read until their physical and tactical orders agree.
-			if not human_wall() or (players[index].position.x-players[j].position.x)*(blocking_target(index,0).x-blocking_target(j,0).x)>=0: continue
+			if not human_wall() or (players[index].position.x-players[j].position.x)*(blocking_target(index,int(index/6)).x-blocking_target(j,int(j/6)).x)>=0: continue
 		var other_velocity: Vector3=movement_snapshot[j].velocity if movement_snapshot.size()==12 else players[j].velocity
 		var closing:=desired-other_velocity
 		var key := str(index) + ":" + str(j)

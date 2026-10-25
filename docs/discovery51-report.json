@@ -1,0 +1,6 @@
+{
+  "internet_code": true,
+  "lan_code": true,
+  "port_closed": true,
+  "upnp_mapping": true
+}

@@ -31,7 +31,7 @@ func panel(rect: Rect2, color: Color = INK) -> void:
 func point_result_visible() -> bool:
 	# An ordinary rally only updates the scoreboard. Keep an announcement for
 	# the separate set/match result, without covering every point with a panel.
-	return game != null and game.phase == "POINT" and (game.point_reason.begins_with("SET ") or game.point_reason.begins_with("VITTORIA "))
+	return game != null and game.display_phase() == "POINT" and (game.point_reason.begins_with("SET ") or game.point_reason.begins_with("VITTORIA "))
 
 func _draw() -> void:
 	if game == null: return
@@ -79,14 +79,14 @@ func _draw() -> void:
 		text(Vector2(50, h - 77), "ANIMAZIONI / " + name.to_upper(), 20, GOLD)
 		text(Vector2(50, h - 50), game.clips[name].source.get_file() + "    Frecce: cambia    F3: torna in campo", 13, MUTED)
 		return
-	if game.feedback_left > 0 and game.phase != "POINT":
+	if game.feedback_left > 0 and game.display_phase() != "POINT":
 		centered(105, game.feedback, 19, GOLD)
 	if point_result_visible():
 		panel(Rect2(w * 0.5 - 218, h * 0.46 - 41, 436, 84))
 		var result_text: String=game.point_reason
 		var point_px:=clampi(int(29*414/maxf(414,font.get_string_size(result_text,HORIZONTAL_ALIGNMENT_LEFT,-1,29).x)),14,29)
 		centered(h * 0.46 + 7, result_text, point_px)
-	elif game.phase in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.human_wall() or game.phase == "SERVE" and game.server == 0:
+	elif game.display_phase() in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.ui_wall() or game.display_phase() == "SERVE" and game.server == game.local_team():
 		draw_contact(w * 0.5, h - 92)
 	text(Vector2(31, h - 22), "LS / WASD / Frecce · mira e direzioni", 12, MUTED)
 	text(Vector2(w - 420, h - 22), "F1 aiuto   F2 demo   C / Triangolo / Y camera   Esc pausa", 12, MUTED)
@@ -111,11 +111,11 @@ func _draw() -> void:
 		centered(h * 0.48 + 40, "Options / Start / Esc per riprendere", 17, MUTED)
 
 func draw_contact(cx: float, y: float) -> void:
-	var serve: bool = game.phase == "SERVE"
-	var attack: bool = game.phase == "ATTACK"
+	var serve: bool = game.display_phase() == "SERVE"
+	var attack: bool = game.display_phase() == "ATTACK"
 	panel(Rect2(cx - 248, y - 28, 496, 106))
-	var label: String = {"SERVE":"BATTUTA", "RECEIVE":"RICEZIONE", "SET":"ALZATA", "ATTACK":"SCHIACCIATA", "CPU_ATTACK":"MURO"}.get(game.phase, "")
-	if game.human_wall(): label="MURO"
+	var label: String = {"SERVE":"BATTUTA", "RECEIVE":"RICEZIONE", "SET":"ALZATA", "ATTACK":"SCHIACCIATA", "CPU_ATTACK":"MURO"}.get(game.display_phase(), "")
+	if game.ui_wall(): label="MURO"
 	if attack and game.hitter_action=="receive": label = "TERZO TOCCO DI RECUPERO"
 	text(Vector2(cx - 229, y - 5), label, 14, GOLD)
 	if serve or attack:
@@ -125,7 +125,7 @@ func draw_contact(cx: float, y: float) -> void:
 		draw_rect(Rect2(cx - 228, y + 9, 456, 14), Color("425063"))
 		draw_rect(Rect2(cx - 228, y + 9, 364 * fill, 14), GREEN)
 		draw_line(Vector2(cx + 136, y + 5), Vector2(cx + 136, y + 27), WHITE, 2)
-		draw_rect(Rect2(cx-228+364*0.97,y+6,364*0.03,20),GOLD,false,2)
+		draw_rect(Rect2(cx-228+364*(0.995 if serve else 0.97),y+6,364*(0.005 if serve else 0.03),20),GOLD,false,2)
 		if power > 1:
 			draw_rect(Rect2(cx + 136, y + 9, minf(1, (power - 1) / 0.4) * 92, 14), RED)
 		if serve:
@@ -133,24 +133,24 @@ func draw_contact(cx: float, y: float) -> void:
 			if game.charging or game.toss_active: hint = ("JUMP FLOAT" if game.serve_type == 0 else "JUMP POWER") + " · tieni e rilascia · LS: mira"
 			else: hint="LS: sposta il battitore · tieni X/A o Quadrato/X: carica e mira"
 			text(Vector2(cx - 229, y + 44), hint, 13)
-			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "LS: mira · fascia oro 97–100% vincente"), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
+			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%" % roundi(game.Timing.serve_risk(power) * 100) if power > 1 else ("100% · ACE" if game.Timing.ace_power(power) else "LS: mira · ace garantito solo al 100%"), 11, RED if power > 1 else GOLD if game.Timing.ace_power(power) else MUTED)
 		else:
 			text(Vector2(cx - 229, y + 44), primary + " attacco / " + alternate + " pallonetto · tieni e rilascia", 13)
 			text(Vector2(cx - 229, y + 64), "Rischio errore %d%%"%roundi(game.Timing.attack_risk(power,game.attack_tip)*100) if power > 1 else ("97–100% · COLPO VINCENTE" if game.Timing.winning_power(power) else "Precisione %d%% · fascia oro 97–100%% vincente" % roundi(game.Timing.precision(power) * 100)), 11, RED if power > 1 else GOLD if game.Timing.winning_power(power) else MUTED)
-	elif game.phase == "RECEIVE":
+	elif game.display_phase() == "RECEIVE":
 		text(Vector2(cx - 229, y + 24), primary + " · premi quando arriva la palla", 15)
 		text(Vector2(cx - 229, y + 53), ("CONFERMATA · %d%%" % roundi(game.input_quality * 100)) if game.armed else "Mira automatica in zona 3 · piccolo margine per il recupero tardivo", 12, GREEN if game.armed else MUTED)
-	elif game.phase == "SET":
+	elif game.display_phase() == "SET":
 		var target: String = ["ZONA 4", "CENTRO", "ZONA 2", "PIPE"][game.planned_direction]
 		text(Vector2(cx - 229, y + 21), primary + " normale   " + alternate + " veloce   " + dump_button + " seconda", 13)
 		text(Vector2(cx - 229, y + 48), "LS · " + target + ("  " + game.players[game.planned_hitter].role_label() if game.planned_hitter >= 0 else ""), 13, GREEN if game.armed else WHITE)
 		text(Vector2(cx - 229, y + 66), "Qualità ricezione %d%%" % roundi(game.pass_quality * 100), 11, MUTED)
 	else:
-		if game.phase=="CPU_ATTACK" and game.hitter_action=="receive":
+		if game.display_phase()=="CPU_ATTACK" and game.hitter_action=="receive":
 			text(Vector2(cx - 229, y + 24), "PALLA ALTA · prepara la difesa", 15)
 			text(Vector2(cx - 229, y + 53), primary + " · ricezione all'arrivo", 13, MUTED)
 			return
-		var count: int=game.blocking_players(0).size()
+		var count: int=game.block_count if game.network_match() else game.blocking_players(0).size()
 		text(Vector2(cx - 229, y + 21), "LS · centrale / muro a %d" % count, 15)
 		text(Vector2(cx - 229, y + 40), wall_labels, 12, MUTED)
 		text(Vector2(cx - 229, y + 53), primary + " · salta" + ("   /   SALTO ESEGUITO" if game.block_commanded else ""), 13, MUTED)

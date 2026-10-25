@@ -8,6 +8,8 @@ var client
 var install_button: Button
 var play: Button
 var updates: Button
+var online: Button
+var online_menu
 var download_bar: ProgressBar
 var download_label: Label
 var edit: Button
@@ -49,12 +51,21 @@ func _ready() -> void:
 	updates.focus_neighbor_left=updates.get_path_to(play)
 	updates.focus_neighbor_top=updates.get_path_to(play)
 	clubs=preload("res://src/club_menu.gd").new(); clubs.game=game; clubs.host=self; add_child(clubs)
+	online=hero_button("ONLINE",false)
+	online_menu=preload("res://src/online_menu.gd").new(); online_menu.host=self; online_menu.game=game; online_menu.session=game.online_session; add_child(online_menu)
+	game.online_session.menu=online_menu
+	online.pressed.connect(online_menu.open)
 	edit=hero_button("MODIFICA",false)
 	updates.focus_neighbor_right=updates.get_path_to(edit)
 	edit.focus_neighbor_left=edit.get_path_to(updates)
 	edit.pressed.connect(clubs.editor)
 	play.pressed.connect(clubs.match_setup)
 	updates.pressed.connect(show_updates)
+	var navigation: Array=[play,online,updates,edit]
+	for i in navigation.size():
+		navigation[i].focus_neighbor_left=navigation[i].get_path_to(navigation[maxi(0,i-1)])
+		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[mini(navigation.size()-1,i+1)])
+		navigation[i].focus_neighbor_top=navigation[i].focus_neighbor_left; navigation[i].focus_neighbor_bottom=navigation[i].focus_neighbor_right
 	version_label=Label.new()
 	var version=JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version
 	installed_version=str(version)
@@ -110,6 +121,7 @@ func on_versions_ready(versions: Array) -> void:
 	maybe_prompt_update()
 
 func maybe_prompt_update() -> void:
+	if game.network_match(): return
 	if not prompt_waiting or update_prompt.visible: return
 	# A slow network response must not steal a held charge or a live rally.
 	if game.started and game.phase!="POINT" and not (game.phase=="SERVE" and not game.charging and not game.toss_active): return
@@ -264,15 +276,11 @@ func layout() -> void:
 	var size:=panel.size
 	var scale:=minf(size.x/1672.0,size.y/941.0)
 	var origin: Vector2=(size-Vector2(1672,941)*scale)*0.5
-	play.position=origin+Vector2(231,786)*scale
-	updates.position=origin+Vector2(641,786)*scale
-	edit.position=origin+Vector2(1051,786)*scale
-	edit.size=Vector2(390,86)*scale
-	edit.add_theme_font_size_override("font_size",maxi(14,int(30*scale)))
-	play.size=Vector2(390,86)*scale
-	updates.size=Vector2(390,86)*scale
-	play.add_theme_font_size_override("font_size",maxi(18,int(48*scale)))
-	updates.add_theme_font_size_override("font_size",maxi(14,int(33*scale)))
+	var buttons: Array=[play,online,updates,edit]
+	for i in buttons.size():
+		buttons[i].position=origin+Vector2(196+i*324,786)*scale
+		buttons[i].size=Vector2(304,86)*scale
+		buttons[i].add_theme_font_size_override("font_size",maxi(14,int((28 if i==2 else 34)*scale)))
 	version_label.position=Vector2(18,size.y-30)
 	dialog.size=Vector2(minf(900,size.x-40),minf(620,size.y-40))
 	dialog.position=(size-dialog.size)*0.5
@@ -282,6 +290,7 @@ func show_updates() -> void:
 	layout()
 	play.focus_mode=Control.FOCUS_NONE
 	updates.focus_mode=Control.FOCUS_NONE
+	online.focus_mode=Control.FOCUS_NONE; edit.focus_mode=Control.FOCUS_NONE
 	back.grab_focus()
 	client.check()
 
@@ -290,6 +299,7 @@ func close_updates() -> void:
 	overlay.hide()
 	play.focus_mode=Control.FOCUS_ALL
 	updates.focus_mode=Control.FOCUS_ALL
+	online.focus_mode=Control.FOCUS_ALL; edit.focus_mode=Control.FOCUS_ALL
 	updates.grab_focus()
 
 func _process(_dt: float) -> void:
@@ -299,7 +309,7 @@ func _process(_dt: float) -> void:
 func _input(event: InputEvent) -> void:
 	if client==null: return
 	if not game.started and event.is_action_pressed("start"):
-		if not clubs.visible: clubs.match_setup()
+		if not clubs.visible and not online_menu.visible: clubs.match_setup()
 		get_viewport().set_input_as_handled()
 		return
 	if update_prompt!=null and update_prompt.visible:
