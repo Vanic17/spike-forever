@@ -89,9 +89,14 @@ func clear_lane(game, targets: Array[Vector3], index: int) -> void:
 	var normal:=Vector3(direction.z,0,-direction.x)
 	for other in range(int(index/6)*6,int(index/6)*6+6):
 		if other==index or game.middle_decoy.holds(other): continue
+		if game.phase in ["SET","CPU_SET"] and (other==game.setter or game.court_shape.setter_yields.has(other)): continue
+		if game.dive_motions.has(other): continue
 		if yielding.has(other):
-			targets[other]=yielding[other]
-			continue
+			var cached: Vector3=yielding[other]
+			if Geometry3D.get_closest_point_to_segment(cached,start,goal).distance_to(cached)>=1.35:
+				targets[other]=cached
+				continue
+			yielding.erase(other)
 		var p: Vector3=game.players[other].position
 		var nearest:=Geometry3D.get_closest_point_to_segment(p,start,goal)
 		var target_nearest:=Geometry3D.get_closest_point_to_segment(targets[other],start,goal)
@@ -102,7 +107,27 @@ func clear_lane(game, targets: Array[Vector3], index: int) -> void:
 		var free:=nearest+normal*signf(offset)*1.5
 		free.x=clampf(free.x,-5.45,5.45)
 		free.z=(1 if index<6 else -1)*clampf(absf(free.z),.45,9.8)
+		# Net/sideline clamping can move an otherwise clear sidestep BACK
+		# into the final contact footprint. Recheck after bounds, especially
+		# the middle landing next to a right-pin/pipe attack.
+		if Geometry3D.get_closest_point_to_segment(free,start,goal).distance_to(free)<1.35:
+			var away:=free-goal; away.y=0
+			if away.length()<.1: away=normal*signf(offset)
+			free=goal+away.normalized()*1.55
+			free.x=clampf(free.x,-5.45,5.45)
+			free.z=(1 if index<6 else -1)*clampf(absf(free.z),.45,9.8)
 		yielding[other]=free; targets[other]=free
+
+func prepare_pipe(game, targets: Array[Vector3]) -> void:
+	var index: int=game.planned_hitter
+	if index<0: return
+	var key:="pre:"+str(game.shot_serial)+":"+str(index)
+	if cue!=key:
+		cue=key; runner=index; start=game.players[index].position; yielding.clear(); airborne=false
+	var contact: Vector3=preload("res://src/rally_ai.gd").attack_contact(game,3,index,game.flight_target)
+	contact.y=game.players[index].contact_local("attack").y
+	goal=game.players[index].stance_for_contact("attack",contact)
+	clear_lane(game,targets,index)
 
 func remaining(index: int, position: Vector3, ordinary: float) -> float:
 	if runner!=index or planted: return ordinary

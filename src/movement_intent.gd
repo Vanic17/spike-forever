@@ -38,10 +38,10 @@ func observe(key: String, role: String, assignment: String, clock: float) -> voi
 		"yield": delay = 0.015 + individuality * 0.035
 		"recover": delay = 0.12 + individuality * 0.20
 		_:
-			if role == "S": delay = 0.035 + individuality * 0.055
-			elif role == "L": delay = 0.055 + individuality * 0.075
-			elif role.begins_with("MB"): delay = 0.075 + individuality * 0.11
-			else: delay = 0.10 + individuality * 0.17
+			if role == "S": delay = 0.025 + individuality * 0.045
+			elif role == "L": delay = 0.040 + individuality * 0.060
+			elif role.begins_with("MB"): delay = 0.055 + individuality * 0.085
+			else: delay = 0.075 + individuality * 0.13
 	# Yielding a lane and returning to coverage are parts of one read. Adding
 	# another full reaction delay at every assignment change caused stop/start
 	# shuffles beside the setter, even though the athlete had already read it.
@@ -76,7 +76,7 @@ func follow_target(dt: float) -> void:
 	# Exact critically damped integration keeps both target position and its
 	# velocity continuous through a new phase or a corrected reading. The
 	# direct contact assignment above deliberately bypasses this filter.
-	var frequency := (30.0 if task in ["approach", "block", "yield"] else 10.0) + individuality * 3.0
+	var frequency := (30.0 if task in ["approach", "block", "yield"] else 12.0) + individuality * 3.0
 	var offset := filtered_target - accepted_target
 	var decay := exp(-frequency * dt)
 	var travel := (target_velocity + offset * frequency) * dt

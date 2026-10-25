@@ -1,0 +1,218 @@
+[
+  {
+    "contacts": 3,
+    "flight": 0.162725236000549,
+    "ok": true,
+    "rotation": 0,
+    "spacing": 1.23895102739334,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.153084555996233,
+    "ok": true,
+    "rotation": 0,
+    "spacing": 1.77039098739624,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 1.42054254490795,
+    "ok": true,
+    "rotation": 1,
+    "spacing": 1.23895367980003,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 1.28379653868778,
+    "ok": true,
+    "rotation": 1,
+    "spacing": 1.76787309348583,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.167479391865619,
+    "ok": true,
+    "rotation": 2,
+    "spacing": 1.23895271122456,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.158364411428521,
+    "ok": true,
+    "rotation": 2,
+    "spacing": 1.76789881289005,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.167479391865619,
+    "ok": true,
+    "rotation": 3,
+    "spacing": 1.23895271122456,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.153084555996233,
+    "ok": true,
+    "rotation": 3,
+    "spacing": 1.77039098739624,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.162725236000549,
+    "ok": true,
+    "rotation": 4,
+    "spacing": 1.23895102739334,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.153084555996233,
+    "ok": true,
+    "rotation": 4,
+    "spacing": 1.77039098739624,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.162725236000549,
+    "ok": true,
+    "rotation": 5,
+    "spacing": 1.23895102739334,
+    "team": 0,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.153084555996233,
+    "ok": true,
+    "rotation": 5,
+    "spacing": 1.77039098739624,
+    "team": 0,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.16566016029517,
+    "ok": true,
+    "rotation": 0,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.153105870921179,
+    "ok": true,
+    "rotation": 0,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 1.02523137826617,
+    "ok": true,
+    "rotation": 1,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 1.51186110063368,
+    "ok": true,
+    "rotation": 1,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.16566016029517,
+    "ok": true,
+    "rotation": 2,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.159300671908448,
+    "ok": true,
+    "rotation": 2,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.16566016029517,
+    "ok": true,
+    "rotation": 3,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.159300671908448,
+    "ok": true,
+    "rotation": 3,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.16566016029517,
+    "ok": true,
+    "rotation": 4,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.159300671908448,
+    "ok": true,
+    "rotation": 4,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  },
+  {
+    "contacts": 3,
+    "flight": 0.16566016029517,
+    "ok": true,
+    "rotation": 5,
+    "spacing": 1.18112301826477,
+    "team": 1,
+    "wide": false
+  },
+  {
+    "contacts": 3,
+    "flight": 0.15632743879673,
+    "ok": true,
+    "rotation": 5,
+    "spacing": 1.64756119251251,
+    "team": 1,
+    "wide": true
+  }
+]

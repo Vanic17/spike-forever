@@ -25,7 +25,7 @@ static func serve_seconds(power: float, floating: bool) -> float:
 static func set_seconds(direction: int, quick: bool, quality: float, _distance: float, emergency: bool) -> float:
 	var base:=1.02
 	match direction:
-		1: base=0.35 if quick else 0.62
+		1: base=0.35
 		3: base=0.68 if quick else 0.92
 		_: base=0.82 if quick else 1.02
 	return base+(1.0-quality)*1.25

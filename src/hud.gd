@@ -93,6 +93,7 @@ func _draw() -> void:
 	text(Vector2(w - 420, h - 22), "F1 aiuto   F2 demo   C / Triangolo / Y camera   Esc pausa", 12, MUTED)
 	if game.camera_mode==2:
 		text(Vector2(w-420,h-42),"TV: su Z4 / destra centro / giu Z2 / sinistra pipe",12,GOLD)
+	elif game.camera_mode==3: text(Vector2(w-420,h-42),"CAMERA BASSA",12,GOLD)
 	if game.debug_visible:
 		panel(Rect2(30, 157, 435, 269))
 		var lines := [
@@ -143,7 +144,7 @@ func draw_contact(cx: float, y: float) -> void:
 		text(Vector2(cx - 229, y + 53), ("CONFERMATA · %d%%" % roundi(game.input_quality * 100)) if game.armed else "Mira automatica in zona 3 · piccolo margine per il recupero tardivo", 12, GREEN if game.armed else MUTED)
 	elif game.display_phase() == "SET":
 		var target: String = ["ZONA 4", "CENTRO", "ZONA 2", "PIPE"][game.planned_direction]
-		text(Vector2(cx - 229, y + 21), primary + " normale   " + alternate + " veloce   " + dump_button + " seconda", 13)
+		text(Vector2(cx - 229, y + 21), primary + " primo tempo   " + alternate + " 7   " + dump_button + " seconda" if game.planned_direction==1 else primary + " normale   " + alternate + " veloce   " + dump_button + " seconda", 13)
 		text(Vector2(cx - 229, y + 48), "LS · " + target + ("  " + game.players[game.planned_hitter].role_label() if game.planned_hitter >= 0 else ""), 13, GREEN if game.armed else WHITE)
 		text(Vector2(cx - 229, y + 66), "Qualità ricezione %d%%" % roundi(game.pass_quality * 100), 11, MUTED)
 	else:

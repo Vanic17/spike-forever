@@ -72,7 +72,21 @@ static func wing_for(game, index: int) -> float:
 static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
 	var lanes=game.get("rally_lanes")
 	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
-	return attacker(team,game.rotations[team],direction,exclude,mirrored)
+	var primary:=attacker(team,game.rotations[team],direction,exclude,mirrored)
+	if primary>=0 or direction not in [0,2,3]: return primary
+	# An emergency second touch can be played by the normal opposite. Keep
+	# the requested pin/D lane with another eligible hitter, never silently
+	# reinterpret a back set as a middle quick.
+	var best:=-1; var cost:=INF
+	for i in range(team*6,team*6+6):
+		if i==exclude or libero(i,game.rotations[team],team==game.server): continue
+		if not (ROLES[i%6].begins_with("OH") or ROLES[i%6]=="OPP"): continue
+		if direction==0 and not front(i,game.rotations[team]): continue
+		if direction==3 and front(i,game.rotations[team]): continue
+		var point:=world(team,-3.4 if direction==0 else (3.4 if direction==2 else 0),3.4)
+		var distance: float=game.players[i].position.distance_to(point)
+		if distance<cost: best=i; cost=distance
+	return best
 
 static func attack_wing(index: int, rotation: int, service_reception: bool = false) -> float:
 	if not front(index, rotation): return 0.0

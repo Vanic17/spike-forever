@@ -70,7 +70,7 @@
       "passer_x": 1.8,
       "phase": "CPU_RECEIVE",
       "rotation": 2,
-      "target": "(-0.353463, 0.707411, -6.449274)",
+      "target": "(-0.574956, 1.293384, -5.078009)",
       "team": 0
     },
     {
@@ -118,7 +118,7 @@
       "passer_x": 1.8,
       "phase": "CPU_RECEIVE",
       "rotation": 4,
-      "target": "(-0.575221, 1.293384, -5.078011)",
+      "target": "(-0.575221, 1.293384, -5.078008)",
       "team": 0
     },
     {
@@ -335,10 +335,10 @@
     }
   ],
   "failed_constructions": 0,
-  "new_stuffs": 1944,
+  "new_stuffs": 2019,
   "old_stuffs": 1583,
   "performance_intercepts": 16,
   "poor_timing_sets": 2,
-  "soft_touches": 4315,
-  "tools": 3741
+  "soft_touches": 4720,
+  "tools": 3261
 }

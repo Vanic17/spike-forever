@@ -161,7 +161,9 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var stance: Vector3=game.players[runner].stance_for_contact("attack",point)
 			# Open early, then commit the last approach steps before set release.
 			# A first tempo keeps its compact two-step preparation.
-			var opening:=0.42 if game.planned_direction==1 and game.fast_set else (0.95 if game.planned_direction==1 else 1.65)
+			# Both middle routes use the same compact last steps and source
+			# clock. X changes proximity to S, not an extra backward opening.
+			var opening:=0.42 if game.planned_direction==1 else 1.65
 			var run_depth:=lerpf(0.22,opening,smoothstep(0.12,0.65,game.flight_left))
 			result[runner]=stance+Vector3(0,0,run_depth if game.possession==0 else -run_depth)
 			if preload("res://src/attack_run.gd").is_pin(game,runner,game.planned_direction):
@@ -179,7 +181,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				result[runner]=result[runner].lerp(takeoff,1.0-smoothstep(0.08,0.55,game.flight_left))
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
-	if game.phase in ["SET","CPU_SET"] and game.fast_set and game.planned_direction==1 and game.planned_hitter>=0:
+	if game.phase in ["SET","CPU_SET"] and game.planned_direction==1 and game.planned_hitter>=0:
 		var hitter: int=game.planned_hitter
 		var direction=game.get("planned_direction")
 		var contact:=RallyAI.attack_contact(game,int(direction) if direction!=null else game.destination,hitter,game.flight_target)

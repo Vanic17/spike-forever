@@ -5,4 +5,5 @@ static func court_direction(screen: Vector2, mode: int) -> Vector2:
 	return Vector2(screen.y,-screen.x) if mode==2 else screen
 static func origin(mode: int) -> Vector3:
 	if mode==2: return Vector3(16.5,8.5,-5.0)
+	if mode==3: return Vector3(0,8.1,18.4)
 	return Vector3(0,9.8,18.4) if mode==0 else Vector3(0,11.5,23)

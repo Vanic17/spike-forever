@@ -1,0 +1,16 @@
+{
+  "back_set_recipients": 36,
+  "block_after": {
+    "block_tool": 3261,
+    "block_touch": 4720,
+    "stuff_block": 2019
+  },
+  "block_before": {
+    "block_tool": 3741,
+    "block_touch": 4315,
+    "stuff_block": 1944
+  },
+  "early_pipe_yield": true,
+  "four_cameras": true,
+  "mirrored_online_low_camera": true
+}

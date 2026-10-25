@@ -196,6 +196,7 @@ var block_commanded := false
 var block_jumps: Dictionary = {}
 var block_jump_log: Array[Dictionary] = []
 var planned_direction := 0
+var middle_wide := true
 var planned_fast := false
 var planned_hitter := -1
 var set_origin := Vector3.ZERO
@@ -377,10 +378,10 @@ func build_arena() -> void:
 
 func set_camera() -> void:
 	if network_match():
-		camera_mode=0; camera.projection=Camera3D.PROJECTION_PERSPECTIVE; camera.fov=48
-		camera.position=Vector3(0,9.8,18.4*(1 if local_team()==0 else -1)); camera_focus=Vector3(0,.7,0); camera.look_at(camera_focus); return
+		camera_mode=3 if camera_mode==3 else 0; camera.projection=Camera3D.PROJECTION_PERSPECTIVE; camera.fov=48
+		camera.position=Vector3(0,8.1 if camera_mode==3 else 9.8,18.4*(1 if local_team()==0 else -1)); camera_focus=Vector3(0,.7,0); camera.look_at(camera_focus); return
 	camera.projection = Camera3D.PROJECTION_PERSPECTIVE
-	camera.fov = 48 if camera_mode == 0 else (40 if camera_mode==2 else 50)
+	camera.fov = 48 if camera_mode in [0,3] else (40 if camera_mode==2 else 50)
 	camera.position = preload("res://src/view_controls.gd").origin(camera_mode)
 	camera_focus = Vector3(0,0.7,0) if camera_mode==2 else Vector3(0, 0.7, -0.5)
 	camera.look_at(camera_focus)
@@ -388,7 +389,7 @@ func set_camera() -> void:
 func update_camera(dt: float) -> void:
 	if network_match():
 		var side:=1.0 if local_team()==0 else -1.0
-		var eye:=Vector3(0,9.8,18.4*side)
+		var eye:=Vector3(0,8.1 if camera_mode==3 else 9.8,18.4*side)
 		var focus:=Vector3(clampf(ball_pos.x*.09,-.4,.4),.7+maxf(0,ball_pos.y-3.2)*.04,0)
 		camera.position=camera.position.lerp(eye,1-exp(-3*dt)); camera_focus=camera_focus.lerp(focus,1-exp(-2.5*dt)); camera.look_at(camera_focus); return
 	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
@@ -401,7 +402,7 @@ func update_camera(dt: float) -> void:
 		return
 	var focus := Vector3(clampf(ball_pos.x * 0.11, -0.5, 0.5), 0.7 + maxf(0, ball_pos.y - 3.2) * 0.04, -0.5)
 	if phase == "SERVE" and server == 0:
-		origin = Vector3(0, 11.2, 25.0 + maxf(0, players[server_index(0)].position.z - 10.0) * 0.8)
+		origin = Vector3(0, 9.5 if camera_mode==3 else 11.2, 25.0 + maxf(0, players[server_index(0)].position.z - 10.0) * 0.8)
 		focus.z = 0.6
 	camera_focus = camera_focus.lerp(focus, 1.0 - exp(-2.5 * dt))
 	camera.position = camera.position.lerp(origin + Vector3(clampf(ball_pos.x * 0.08, -0.35, 0.35), 0, 0), 1.0 - exp(-1.6 * dt))
@@ -432,7 +433,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else: reset_rally()
 			KEY_F5: difficulty = (difficulty + 1) % 3
 			KEY_C:
-				camera_mode = (camera_mode + 1) % 3
+				camera_mode = (camera_mode + 1) % 4
 				set_camera()
 			KEY_R:
 				match_finished=false; paused=false
@@ -455,7 +456,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			paused = not paused
 	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y and event.pressed and started:
-		camera_mode=(camera_mode+1)%3
+		camera_mode=(camera_mode+1)%4
 		set_camera()
 	if not started or paused or gallery:
 		return
@@ -635,6 +636,7 @@ func notice(message: String, seconds: float = 1.5) -> void:
 	feedback_left = seconds
 
 func set_phase(value: String) -> void:
+	if value in ["RECEIVE","CPU_RECEIVE"]: middle_wide=true
 	if value in ["RECEIVE","CPU_RECEIVE"]: receive_offset=0.0
 	if value in (["RECEIVE","CPU_RECEIVE"] if network_match() else ["CPU_RECEIVE"]) and value!=phase:
 		manual_wall.reset()
@@ -923,7 +925,9 @@ func release_serve_toss() -> void:
 
 func validate_contact(index: int, action: String) -> bool:
 	var player = players[index]
-	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else 0.35): return false
+	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else 0.35):
+		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"stance","expected":player.contact_world(action),"ball":ball_pos,"yaw":player.rotation.y,"stance":player.stance_for_contact(action,ball_pos)})
+		return false
 	player.reach_target = ball_pos
 	player.reach_weight = 1
 	player.reach_action = action
@@ -933,7 +937,9 @@ func validate_contact(index: int, action: String) -> bool:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
 	var distance := actual.distance_to(ball_pos)
 	if not player.skeleton: distance = player.contact_world(action).distance_to(ball_pos)
-	if distance > 0.18: return false
+	if distance > 0.18:
+		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"palm","gap":distance,"hand":actual,"ball":ball_pos,"yaw":player.rotation.y,"lean":player.body_lean})
+		return false
 	max_contact_gap = maxf(max_contact_gap, distance)
 	contact_log.append({"action":action,"variant":player.variant_names.get(action,action), "player":index, "role":Tactics.role(index, rotations[int(index / 6)], int(index / 6) == server), "rotation":rotations[int(index / 6)], "gap":distance, "ball":ball_pos, "hands":actual, "time":clock_time})
 	if contact_log.size() > 2048: contact_log.pop_front()
@@ -1186,6 +1192,7 @@ func choose_cpu_play() -> void:
 
 func plan_attack(direction: int, quick: bool) -> void:
 	planned_direction = direction
+	middle_wide = quick if direction==1 else true
 	planned_fast = quick and pass_quality >= 0.45 and out_of_system == 1
 	fast_set = planned_fast
 	planned_hitter = Tactics.attacker_for(self,possession,planned_direction,setter)
@@ -1263,8 +1270,10 @@ func set_ball() -> void:
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
 	if hitter_action == "receive": target.z = s*4.6
 	target.x += rng.randf_range(-1, 1) * (1 - q) * 0.8
-	target.y = contact_height(hitter_action)
-	if destination==1 and hitter_action=="attack": target.y=players[hitter].contact_local("attack").y
+	# Every recipient must receive at its SELECTED performance's real hand
+	# height. Using the generic spike height for pins/D/pipe sent poor-pass
+	# sets above the running animation's reachable palm.
+	target.y = players[hitter].contact_local(hitter_action).y
 	players[hitter].target = players[hitter].stance_for_contact(hitter_action, target)
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
@@ -1931,6 +1940,7 @@ func move_players(dt: float) -> void:
 		for index in floor_plan:
 			if index!=action_actor and not index in blockers: nominal[index]=floor_plan[index]
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	if phase in ["SET","CPU_SET"] and planned_direction==3: attack_run.prepare_pipe(self,team_targets)
 	if phase in ["ATTACK","CPU_ATTACK"] and action=="attack": attack_run.clear_lane(self,team_targets,action_actor)
 	if phase in ["ATTACK","CPU_ATTACK"] and phase_time<0.22:
 		for index in defensive_coverage.targets:
@@ -1997,6 +2007,7 @@ func move_players(dt: float) -> void:
 		if landing_active: assignment="approach"
 		if i != action_actor and court_shape.bypass.has(i): assignment = "yield"
 		if i != action_actor and court_shape.setter_yields.has(i): assignment = "yield"
+		if i != action_actor and attack_run.yielding.has(i) and phase in ["SET","CPU_SET","ATTACK","CPU_ATTACK"]: assignment="yield"; urgent=true
 		if preparing_decoy: assignment="approach"
 		if not p.steering_ready:
 			p.intent.reset(p.position)

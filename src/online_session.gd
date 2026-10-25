@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF054"
+const PROTOCOL="SF055"
 const PORT=26761
 var game
 var menu
@@ -304,6 +304,8 @@ func snapshot_piece(seq: int, part: int, total: int, packet: PackedByteArray) ->
 
 func capture_input(event: InputEvent) -> void:
 	if not playing: return
+	if (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_Y) or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_C):
+		game.camera_mode=0 if game.camera_mode==3 else 3; game.set_camera(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("start") or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_ESCAPE):
 		pause_request(not game.paused); get_viewport().set_input_as_handled(); return
 	if game.paused: return

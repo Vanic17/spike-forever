@@ -1,10 +1,10 @@
 # Spike Forever
 
-**Versione 0.54.0:** corridoi corretti per il secondo tocco d'emergenza, nuova seconda di sinistra tramite AnimationTree vicino alla rete, lettura CPU dei rimbalzi fuori e copertura post muro leggermente meno efficace. [Correzioni e verifiche](docs/RELEASE_NOTES_54.md). Restano disponibili tutte le [impostazioni grafiche e di lingua](docs/RELEASE_NOTES_53.md).
+**Versione 0.55.0:** pipe preparata con corridoio libero, destinatari delle alzate dietro corretti anche nelle emergenze, primo tempo vicino a S con X/A e “7” con Quadrato/X sullo stesso tempo. Nuova camera bassa anche online, meno mani fuori e giocatori più pronti dopo i tocchi. [Modifiche e verifiche](docs/RELEASE_NOTES_55.md). Restano disponibili tutte le [impostazioni grafiche e di lingua](docs/RELEASE_NOTES_53.md).
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Con la nuova animazione, entrambi i giocatori devono aggiornare alla 0.54.0 (protocollo SF054).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.55.0 (protocollo SF055).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 
