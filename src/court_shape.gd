@@ -127,7 +127,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 					var offset: float=(start-nearest).dot(normal)
 					if Tactics.front(i,game.rotations[game.possession]) and Tactics.ROLES[i%6].begins_with("MB"):
 						var intended: float=(result[i]-nearest).dot(normal)
-						if absf(intended)>0.08: offset=intended
+						if absf(intended)>0.08 and (game.out_of_system>=0 or absf(offset)<0.08 or intended*offset>0): offset=intended
 					if absf(offset)<0.08: offset=(result[i]-nearest).dot(normal)
 					if absf(offset)<0.08: offset=-1.0 if i%2==0 else 1.0
 					setter_yields[i]=nearest+normal*signf(offset)*1.42
@@ -314,25 +314,44 @@ func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor
 	if forward.length()<0.15: forward=Vector3(0,0,1 if actor<6 else -1)
 	forward=forward.normalized()
 	var normal:=Vector3(forward.z,0,-forward.x)
+	var offsets: Array[Vector3]=[Vector3.ZERO]
+	if game.phase in ["SET","CPU_SET"] and game.out_of_system<0:
+		# The bagher platform occupies space IN FRONT of the feet. A middle
+		# outside the root corridor could still stand directly in those arms,
+		# making the contact-navigation endpoint permanently unreachable.
+		var platform: Vector3=Basis(Vector3.UP,PI if actor<6 else 0.0)*game.players[actor].contact_local("receive")
+		platform.y=0
+		offsets.append(platform*.5); offsets.append(platform)
 	for index in range(int(actor/6)*6,int(actor/6)*6+6):
 		if index==actor or floor_bodies.has(index): continue
 		var decoy=game.get("middle_decoy")
 		if decoy!=null and decoy.holds(index): continue
 		if setter_yields.has(index):
-			result[index]=setter_yields[index]
-			continue
+			var still_clear:=true
+			if offsets.size()>1:
+				for offset_sample in offsets:
+					if Geometry3D.get_closest_point_to_segment(setter_yields[index],start+offset_sample,goal+offset_sample).distance_to(setter_yields[index])<1.30: still_clear=false
+			if still_clear:
+				result[index]=setter_yields[index]
+				continue
+			setter_yields.erase(index)
 		var origin: Vector3=game.players[index].position
 		var crossing:=Geometry3D.get_closest_points_between_segments(origin,result[index],start,goal)
+		var chosen_offset:=Vector3.ZERO
+		for offset_sample in offsets:
+			var candidate:=Geometry3D.get_closest_points_between_segments(origin,result[index],start+offset_sample,goal+offset_sample)
+			if candidate[0].distance_to(candidate[1])<crossing[0].distance_to(crossing[1]):
+				crossing=candidate; chosen_offset=offset_sample
 		if crossing[0].distance_to(crossing[1])>=1.30: continue
 		# Distant support movement that would reach the crossing only after the
 		# second touch can finish its ordinary preparation without yielding.
 		var travel_to_crossing: float=origin.distance_to(crossing[0])
 		if travel_to_crossing>maxf(0.25,game.flight_left*4.0): continue
-		var nearest:=Geometry3D.get_closest_point_to_segment(origin,start,goal)
+		var nearest:=Geometry3D.get_closest_point_to_segment(origin,start+chosen_offset,goal+chosen_offset)
 		var offset: float=(origin-nearest).dot(normal)
 		if Tactics.front(index,game.rotations[int(index/6)]) and Tactics.ROLES[index%6].begins_with("MB"):
 			var intended: float=(result[index]-nearest).dot(normal)
-			if absf(intended)>0.08: offset=intended
+			if absf(intended)>0.08 and (game.out_of_system>=0 or absf(offset)<0.08 or intended*offset>0): offset=intended
 		if absf(offset)<0.08: offset=(result[index]-nearest).dot(normal)
 		if absf(offset)<0.08: offset=-1 if index%2==0 else 1
 		var destination:=nearest+normal*signf(offset)*1.45

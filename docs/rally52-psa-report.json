@@ -1,0 +1,344 @@
+{
+  "block_contacts": 10000,
+  "constructions": [
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 0,
+      "target": "(-0.355375, 0.707411, -6.449272)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 0,
+      "target": "(-0.354419, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 0,
+      "target": "(-0.353591, 0.707411, -6.449276)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 1,
+      "target": "(-0.578921, 1.293384, -5.078008)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 1,
+      "target": "(-0.576793, 1.293384, -5.078004)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 1,
+      "target": "(-0.574956, 1.293384, -5.078011)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 2,
+      "target": "(-0.355375, 0.707411, -6.449275)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 2,
+      "target": "(-0.354023, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 2,
+      "target": "(-0.353463, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 3,
+      "target": "(-0.35387, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 3,
+      "target": "(-0.354419, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 3,
+      "target": "(-0.574956, 1.293384, -5.078011)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 4,
+      "target": "(-0.578361, 1.293384, -5.078006)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 4,
+      "target": "(-0.576939, 1.293384, -5.078007)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 4,
+      "target": "(-0.575221, 1.293384, -5.078011)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 5,
+      "target": "(-0.355375, 0.707411, -6.449272)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "CPU_RECEIVE",
+      "rotation": 5,
+      "target": "(-0.354419, 0.707411, -6.449274)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "CPU_RECEIVE",
+      "rotation": 5,
+      "target": "(-0.354175, 0.707411, -6.449273)",
+      "team": 0
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 0,
+      "target": "(0.949087, 1.293384, 3.243691)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 0,
+      "target": "(-1.6606, 1.293384, 4.719305)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 0,
+      "target": "(0.944874, 1.293384, 3.243688)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 1,
+      "target": "(0.931637, 1.293384, 4.71812)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 1,
+      "target": "(0.94038, 1.293384, 4.718129)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 1,
+      "target": "(0.951722, 1.293384, 4.718143)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 2,
+      "target": "(-1.641459, 1.293384, 3.244591)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 2,
+      "target": "(-1.641814, 1.293384, 3.24459)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 2,
+      "target": "(0.938246, 1.293384, 4.718127)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 3,
+      "target": "(0.946917, 1.293384, 3.243689)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 3,
+      "target": "(-1.65952, 1.293384, 4.719307)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 3,
+      "target": "(0.940931, 1.293384, 4.718131)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 4,
+      "target": "(0.949087, 1.293384, 3.243691)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 4,
+      "target": "(0.940332, 1.293384, 4.71813)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 4,
+      "target": "(0.951978, 1.293384, 4.718141)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": -1.8,
+      "phase": "RECEIVE",
+      "rotation": 5,
+      "target": "(-1.64107, 1.293384, 3.244591)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 0.0,
+      "phase": "RECEIVE",
+      "rotation": 5,
+      "target": "(-1.643127, 1.293384, 3.244589)",
+      "team": 1
+    },
+    {
+      "contacts": 3,
+      "passer_x": 1.8,
+      "phase": "RECEIVE",
+      "rotation": 5,
+      "target": "(-1.64528, 1.293384, 3.244589)",
+      "team": 1
+    }
+  ],
+  "digs": [
+    {
+      "max_depth": 1.85246956348419,
+      "max_lateral_error": 0.259170204401016,
+      "min_depth": 1.37493515014648,
+      "quality": 0.95,
+      "team": 0
+    },
+    {
+      "max_depth": 3.96734547615051,
+      "max_lateral_error": 1.8846629858017,
+      "min_depth": 0.61090213060379,
+      "quality": 0.65,
+      "team": 0
+    },
+    {
+      "max_depth": 6.07718992233276,
+      "max_lateral_error": 3.34081602096558,
+      "min_depth": 0.5,
+      "quality": 0.35,
+      "team": 0
+    },
+    {
+      "max_depth": 1.85246956348419,
+      "max_lateral_error": 0.259170204401016,
+      "min_depth": 1.37493515014648,
+      "quality": 0.95,
+      "team": 1
+    },
+    {
+      "max_depth": 3.96734547615051,
+      "max_lateral_error": 1.8846629858017,
+      "min_depth": 0.61090213060379,
+      "quality": 0.65,
+      "team": 1
+    },
+    {
+      "max_depth": 6.07718992233276,
+      "max_lateral_error": 3.34081602096558,
+      "min_depth": 0.5,
+      "quality": 0.35,
+      "team": 1
+    }
+  ],
+  "failed_constructions": 0,
+  "new_stuffs": 1944,
+  "old_stuffs": 1583,
+  "performance_intercepts": 16,
+  "poor_timing_sets": 2,
+  "soft_touches": 4315,
+  "tools": 3741
+}

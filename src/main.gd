@@ -579,7 +579,6 @@ func press_action(button: String = "action") -> void:
 		# Normal and quick are choices of delivery, not a new interception
 		# deadline. Only a genuinely different contact (dump/bump) changes height.
 		var height: float=players[setter].contact_local(setter_action).y
-		if setter_action in ["set","fast_set"]: height=flight_target.y
 		var contact := BallFlight.intercept(ball_pos, ball_vel, flight_spin, height, flight_gravity)
 		if not contact.is_empty():
 			flight_target = contact.point
@@ -769,6 +768,8 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	var stance: Vector3 = players[designated].stance_for_contact("set",point)
 	var recovery: float=player_recovery_seconds(designated)
 	var arrival: float=preload("res://src/approach_planner.gd").seconds(players[designated],stance,Reference.run_speed()*1.10)+recovery
+	var route_length: float=contact_navigation.length_for(self,designated,stance)
+	arrival+=maxf(0,route_length-players[designated].position.distance_to(stance))/(Reference.run_speed()*1.10)
 	if designated!=receiver:
 		# Keep S on an ordinary playable pass, including the small flight
 		# extension already used by reception. L is an emergency replacement,
@@ -777,6 +778,8 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 		if libero>=0:
 			var libero_stance: Vector3=players[libero].stance_for_contact("set",point)
 			var libero_arrival: float=preload("res://src/approach_planner.gd").seconds(players[libero],libero_stance,Reference.run_speed()*1.10)+player_recovery_seconds(libero)
+			var libero_route: float=contact_navigation.length_for(self,libero,libero_stance)
+			libero_arrival+=maxf(0,libero_route-players[libero].position.distance_to(libero_stance))/(Reference.run_speed()*1.10)
 			if libero_arrival+0.45<arrival and libero_arrival<=available+0.20 and player_recovery_seconds(libero)<available: return libero
 		return designated
 	if libero>=0: return libero
@@ -1223,9 +1226,13 @@ func set_ball() -> void:
 	fast_set = planned_fast
 	var q := input_quality if human_team(possession) else clampf(pass_quality * rng.randf_range(0.95, 1.0), 0, 1)
 	var contact_action := "receive" if out_of_system < 0 else ("fast_set" if fast_set else "set")
-	if (human_team(possession) and not armed) or q < 0.06 or not validate_contact(setter, contact_action):
+	if (human_team(possession) and not armed) or not validate_contact(setter, contact_action):
+		if (cpu_team(possession) or armed) and preload("res://src/setter_access.gd").try_low_contact(self): return
 		miss_contact()
 		return
+	# Bad second-touch timing alters delivery, not whether commanded hands
+	# can touch a physically reachable ball. Never create an endless high set.
+	q=maxf(q,0.18)
 	if fast_set and pass_quality < 0.45:
 		fast_set = false
 		notice("RICEZIONE DIFFICILE · ALTA DI EMERGENZA")
@@ -1489,6 +1496,7 @@ func miss_contact() -> void:
 	var poor_timing := human_team(possession) and armed and input_quality < 0.16
 	var actor: int=receiver if phase in ["RECEIVE","CPU_RECEIVE"] else (setter if phase in ["SET","CPU_SET"] else hitter)
 	if network_match(): log_rally_event("online_miss",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"hands":players[actor].current_hand(false),"ball":ball_pos,"target":flight_target})
+	log_rally_event("missed_contact",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"ball":ball_pos,"target":flight_target,"action":setter_action if phase in ["SET","CPU_SET"] else "","variant":players[actor].variant_names.duplicate()})
 	finish_contact_attempt(actor)
 	# No magnetic rescue: let gravity carry the missed ball to the floor.
 	phase = "LOOSE"
@@ -1570,6 +1578,7 @@ func step(dt: float) -> void:
 	if demo:
 		demo_input()
 	if phase in ["SET","CPU_SET"] and (cpu_team(possession) or armed):
+		preload("res://src/setter_access.gd").sync_performance(self)
 		preload("res://src/setter_access.gd").try_low_contact(self)
 	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
@@ -2084,7 +2093,10 @@ func move_players(dt: float) -> void:
 		endpoint.z = clampf(endpoint.z, 9.3 if serving_player else 0.25, depth_limit) if i < 6 else clampf(endpoint.z, -depth_limit, -9.3 if serving_player else -0.25)
 		safe_step = endpoint - p.position
 		for other in range(team * 6, team * 6 + 6):
-			if other != i and endpoint.distance_to(players[other].position) < Tactics.BODY_SPACE - 0.0001:
+			if other != i and endpoint.distance_to(players[other].position) < Tactics.BODY_SPACE - 0.0001 and endpoint.distance_squared_to(players[other].position)<=p.position.distance_squared_to(players[other].position)+0.000001:
+				# Animated landings can begin inside the standing clearance.
+				# Permit a separating step; freezing even outward motion traps
+				# both teammates forever in an overlap they cannot escape.
 				safe_step = Vector3.ZERO
 		p.position += safe_step
 		if "--trace-defence" in OS.get_cmdline_user_args() and i==action_actor and action=="dive" and int(clock_time*120)%10==0:

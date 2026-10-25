@@ -9,10 +9,10 @@ static func solve(incoming: Vector3, defender: int, strength: float, quality: fl
 	if absf(edge)>0.78 and seal<0.88:
 		var lift:=lerpf(1.4,7.5,clampf(variation.y,0,1))
 		return {"kind":"block_tool","velocity":Vector3(incoming.x*0.55+signf(edge)*lerpf(3.0,8.5,clampf(absf(edge),0,1))+variation.x*1.4,incoming.y*0.25+lift,incoming.z*lerpf(.42,.78,absf(variation.z))),"seal":seal}
-	if seal>=0.70:
+	if seal>=0.66:
 		# Pressed hands remove forward momentum and drive the ball down
 		# close to the net. A flatter, deep rebound was an easy CPU dig.
-		return {"kind":"stuff_block","velocity":Vector3(incoming.x*.16+variation.x*1.1,-maxf(8.5,absf(incoming.z)*lerpf(.48,.66,seal)),outward*clampf(absf(incoming.z)*.19+variation.z*1.2,3.2,7.5)),"seal":seal}
+		return {"kind":"stuff_block","velocity":Vector3(incoming.x*.16+variation.x*1.1,-maxf(8.5,absf(incoming.z)*lerpf(.54,.74,seal)),outward*clampf(absf(incoming.z)*.16+variation.z*1.2,2.8,6.5)),"seal":seal}
 	var normal:=Vector3(clampf(edge,-1,1)*0.24,0.10,outward).normalized()
 	var velocity:=incoming
 	var closing:=velocity.dot(normal)

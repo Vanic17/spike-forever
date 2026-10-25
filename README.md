@@ -1,6 +1,8 @@
 # Spike Forever
 
-**Versione 0.51.0:** online 6v6 per due giocatori con invito, scelta individuale di squadra/divisa/formazione e camera frontale dal proprio lato. Host con formato e punti; controlli, pausa e fine partita sincronizzati. Mano dominante e battuta CPU modificabili, OH/OPP intercambiabili e ace garantito solo al 100% mostrato. [Dettagli e istruzioni online](docs/RELEASE_NOTES_51.md).
+**Versione 0.52.0:** correzione dei blocchi fra compagni e del contatto sulle alzate, difese variabili secondo tempismo e pressione, muro chiuso più incisivo. [Dettagli e verifiche](docs/RELEASE_NOTES_52.md).
+
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Per giocare online entrambi devono usare la stessa patch.
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

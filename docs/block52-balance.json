@@ -1,0 +1,729 @@
+{
+  "cases": [
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 0,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 0,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 1,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 1,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 2,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 2,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.693333333333333,
+      "trial": 3,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.693333333333333,
+      "trial": 3,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.8,
+      "saved": true,
+      "strength": 0.741111111111111,
+      "trial": 4,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 4,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 5,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 5,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 6,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 6,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 7,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 7,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 8,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 8,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 9,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.8,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 9,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 10,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 10,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 11,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 11,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 12,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 12,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.693333333333333,
+      "trial": 13,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.693333333333333,
+      "trial": 13,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.86,
+      "saved": true,
+      "strength": 0.741111111111111,
+      "trial": 14,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 14,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 15,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 15,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 16,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 16,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 17,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 17,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 18,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 18,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 19,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.86,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 19,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 20,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 20,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 21,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 21,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 22,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 22,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.92,
+      "saved": true,
+      "strength": 0.693333333333333,
+      "trial": 23,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.693333333333333,
+      "trial": 23,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 24,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": false,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 24,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 25,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 25,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 26,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 26,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 27,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 27,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 28,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 28,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 29,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.92,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 29,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 30,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.55,
+      "trial": 30,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 31,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.597777777777778,
+      "trial": 31,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 32,
+      "version": 51
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.645555555555556,
+      "trial": 32,
+      "version": 52
+    },
+    {
+      "kind": "block_touch",
+      "point": false,
+      "quality": 0.98,
+      "saved": true,
+      "strength": 0.693333333333333,
+      "trial": 33,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.693333333333333,
+      "trial": 33,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 34,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.741111111111111,
+      "trial": 34,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 35,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.788888888888889,
+      "trial": 35,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 36,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.836666666666667,
+      "trial": 36,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 37,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.884444444444444,
+      "trial": 37,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 38,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.932222222222222,
+      "trial": 38,
+      "version": 52
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 39,
+      "version": 51
+    },
+    {
+      "kind": "stuff_block",
+      "point": true,
+      "quality": 0.98,
+      "saved": false,
+      "strength": 0.98,
+      "trial": 39,
+      "version": 52
+    }
+  ],
+  "matched_trials": 40,
+  "points_after": 25,
+  "points_before": 22,
+  "saves_after": 13,
+  "saves_before": 17
+}

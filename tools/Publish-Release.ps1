@@ -55,7 +55,7 @@ foreach($taskImage in @('attack41-integrated-preview.png','dive41-integrated-pre
  Copy-Item -LiteralPath (Join-Path $root ('docs/'+$taskImage)) -Destination (Join-Path $stage 'docs')
 }
 foreach($baseline in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Directory -Filter 'baseline*'){
- Copy-Item -LiteralPath $baseline.FullName -Destination (Join-Path $stage 'docs') -Recurse
+ Copy-Item -LiteralPath $baseline.FullName -Destination (Join-Path $stage 'docs') -Recurse -Force
 }
 Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter '*.md' | Copy-Item -Destination (Join-Path $stage 'docs')
 if(Test-Path (Join-Path $root 'docs/menu-v20.png')){Copy-Item (Join-Path $root 'docs/menu-v20.png') (Join-Path $stage 'docs')}

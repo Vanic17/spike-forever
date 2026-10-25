@@ -56,7 +56,7 @@ static func clear_target(game, point: Vector3, contact_index: int = -1, action: 
 	return best
 
 static func try_low_contact(game) -> bool:
-	if game.setter_dump or game.out_of_system<0 or game.flight_left>0.48 or game.flight_left<=0.015: return false
+	if game.setter_dump or game.setter_action=="receive" or game.flight_left>0.70 or game.ball_pos.y<0.8: return false
 	if game.clock_time<game.next_second_touch_read: return false
 	game.next_second_touch_read=game.clock_time+0.12
 	var player=game.players[game.setter]
@@ -80,3 +80,18 @@ static func try_low_contact(game) -> bool:
 	game.contact_navigation.reset()
 	game.log_rally_event("second_touch_forearm",{"setter":game.setter,"remaining":intercept.seconds,"overhead_distance":distance,"forearm_distance":low_distance})
 	return true
+
+static func sync_performance(game) -> void:
+	# Direction/quick choices can replace a PSA performance after the pass was
+	# launched. Its hands need not be at the previous performance's height.
+	# Intercept the existing flight; never rewrite its velocity or spin.
+	if game.phase not in ["SET","CPU_SET"] or not game.airborne: return
+	var action: String="dump" if game.setter_dump else ("receive" if game.out_of_system<0 else ("fast_set" if game.fast_set else "set"))
+	var player=game.players[game.setter]
+	var height: float=player.contact_local(action).y
+	if absf(height-game.flight_target.y)<0.003: return
+	var contact: Dictionary=game.BallFlight.intercept(game.ball_pos,game.ball_vel,game.flight_spin,height,game.flight_gravity)
+	if contact.is_empty() or contact.seconds<=0.001: return
+	game.flight_target=contact.point; game.flight_left=contact.seconds
+	game.setter_action=action
+	game.contact_navigation.reset()
