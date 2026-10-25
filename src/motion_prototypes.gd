@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41"]
-const AUTHORS := [Dive, Attack]
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd")]
 const LIBRARY_PATH := "res://assets/active/native_motion41.res"
-const FORMAT := 1
+const FORMAT := 2
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -66,6 +66,9 @@ static func author_clip(base, author, label: String):
 		# No visual root travel: preserve the exact physical displacement table.
 		clip.positions[frame * clip.names.size()].x = base.positions[frame * clip.names.size()].x
 		clip.positions[frame * clip.names.size()].y = base.positions[frame * clip.names.size()].y
+	if label=="dump_push54":
+		var contact_pose:=normalized(clip,clip.contact_time)
+		clip.contact_offset=contact_pose[clip.names.find("LeftHand")].origin
 	return clip
 
 static func signature(bank: Dictionary) -> String:

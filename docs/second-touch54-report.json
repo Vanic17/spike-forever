@@ -1,0 +1,2038 @@
+[
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 2,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 0.0
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 2,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 0.0
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 2,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 6.174695)",
+        "team": 0,
+        "time": 0.0
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 2,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 1.339692
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 6.174695)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 0,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 2,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 1.339692
+      },
+      {
+        "kind": "formation",
+        "rally": 3,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 1.34166666666666
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 3,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 1.34166666666666
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 3,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 3.0582706429229
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.72424210250481,
+      "target": "(0.0001, 2.479898, 2.383821)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 0,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 3,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 3.0582706429229
+      },
+      {
+        "kind": "formation",
+        "rally": 4,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 3.05833333333333
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 4,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 3.05833333333333
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 4,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 4.75453083220845
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.69619749887508,
+      "target": "(0.323577, 2.54406, 2.42971)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 0,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 5,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 4.75833333333336
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 5,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 4.75833333333336
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 5,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 5.524694)",
+        "team": 0,
+        "time": 4.75833333333336
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 5,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 6.09802533333343
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 5.524694)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 1,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 5,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 6.09802533333343
+      },
+      {
+        "kind": "formation",
+        "rally": 6,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 6.10000000000009
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 6,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 6.10000000000009
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 6,
+        "seconds": 0.895634857675959,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 7.79747073718245
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.68219304518175,
+      "target": "(0.0001, 2.653649, 2.383821)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 1,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 6,
+        "seconds": 0.895634857675959,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 7.79747073718245
+      },
+      {
+        "kind": "formation",
+        "rally": 7,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 7.80000000000018
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 7,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 7.80000000000018
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "quick_set",
+        "rally": 7,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 9.57902839470036
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.78094301788672,
+      "target": "(-0.001423, 2.528788, 1.866794)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 1,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 8,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 9.58333333333343
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 8,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 9.58333333333343
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 8,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 5.524694)",
+        "team": 0,
+        "time": 9.58333333333343
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 8,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 10.9230253333334
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 5.524694)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 2,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 8,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 10.9230253333334
+      },
+      {
+        "kind": "formation",
+        "rally": 9,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 10.925
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 9,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 10.925
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 9,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 12.6128181618945
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.68219304518175,
+      "target": "(0.0001, 2.581167, 2.383821)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 2,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 9,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 12.6128181618945
+      },
+      {
+        "kind": "formation",
+        "rally": 10,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 12.6166666666666
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 10,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 12.6166666666666
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 10,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 14.3976096845532
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.78094301788672,
+      "target": "(-0.001423, 2.515163, 1.866794)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 2,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 11,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 14.3999999999998
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 11,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 14.3999999999998
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 11,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 6.174695)",
+        "team": 0,
+        "time": 14.3999999999998
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 11,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 15.7396919999997
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 6.174695)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 3,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 11,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 15.7396919999997
+      },
+      {
+        "kind": "formation",
+        "rally": 12,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 15.7416666666664
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 12,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 15.7416666666664
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 12,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 17.4659087691711
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.72424210250481,
+      "target": "(0.0001, 2.538873, 2.383821)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 3,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 12,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 17.4659087691711
+      },
+      {
+        "kind": "formation",
+        "rally": 13,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 17.4666666666663
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 13,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 17.4666666666663
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 13,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 19.2863784440295
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.82207229092308,
+      "target": "(-0.001423, 2.495761, 1.866794)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 3,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 14,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 19.2916666666662
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 14,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 19.2916666666662
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 14,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 5.524694)",
+        "team": 0,
+        "time": 19.2916666666662
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 14,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 20.6313586666661
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 5.524694)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 4,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "emergency_set",
+        "rally": 14,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 20.6313586666661
+      },
+      {
+        "kind": "formation",
+        "rally": 15,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 20.6333333333328
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 15,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 20.6333333333328
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 15,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 22.3076573730144
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.68219304518175,
+      "target": "(0.0001, 2.479898, 2.383821)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 4,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 15,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 22.3076573730144
+      },
+      {
+        "kind": "formation",
+        "rally": 16,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 22.3083333333327
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 16,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 22.3083333333327
+      },
+      {
+        "direction": 1,
+        "hitter": 4,
+        "kind": "quick_set",
+        "rally": 16,
+        "seconds": 0.16,
+        "setter": 5,
+        "system": 1,
+        "team": 0,
+        "time": 24.1009442045731
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.78094301788672,
+      "target": "(-0.001423, 2.609032, 1.866794)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 4,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 17,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 24.1083333333326
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.35624,
+        "rally": 17,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 24.1083333333326
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.35624,
+        "rally": 17,
+        "setter": 5,
+        "target": "(1.806133, 1.293384, 5.524694)",
+        "team": 0,
+        "time": 24.1083333333326
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 17,
+        "seconds": 1.4325,
+        "setter": 5,
+        "system": -1,
+        "team": 0,
+        "time": 25.4480253333325
+      }
+    ],
+    "initial": {
+      "actor": 5,
+      "root": "(2.8, 0.0, 6.3)",
+      "seconds": 1.339692,
+      "target": "(1.806133, 1.293384, 5.524694)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.35,
+    "rotation": 5,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 18,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 25.4499999999992
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.59384,
+        "rally": 18,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 25.4499999999992
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.59384,
+        "rally": 18,
+        "setter": 4,
+        "target": "(-0.5499, 1.293384, 3.336449)",
+        "team": 0,
+        "time": 25.4499999999992
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 18,
+        "seconds": 1.0575,
+        "setter": 4,
+        "system": -1,
+        "team": 0,
+        "time": 27.0273188139774
+      }
+    ],
+    "initial": {
+      "actor": 4,
+      "root": "(-1.3, 0.0, 4.0)",
+      "seconds": 1.57731881397829,
+      "target": "(-0.5499, 1.293384, 3.336449)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.65,
+    "rotation": 5,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 19,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 1,
+        "team": 1,
+        "time": 27.0333333333324
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.83144,
+        "rally": 19,
+        "receiver": 2,
+        "recovery": false,
+        "team": 0,
+        "time": 27.0333333333324
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.83144,
+        "rally": 19,
+        "setter": 4,
+        "target": "(-0.751423, 1.293384, 3.165832)",
+        "team": 0,
+        "time": 27.0333333333324
+      },
+      {
+        "direction": 1,
+        "hitter": 1,
+        "kind": "emergency_set",
+        "rally": 19,
+        "seconds": 0.779493644804057,
+        "setter": 4,
+        "system": -1,
+        "team": 0,
+        "time": 28.6631539534407
+      }
+    ],
+    "initial": {
+      "actor": 4,
+      "root": "(-1.3, 0.0, 4.0)",
+      "seconds": 1.62982062010837,
+      "target": "(-0.751423, 1.293384, 3.165832)"
+    },
+    "ok": true,
+    "phase": "ATTACK",
+    "q": 0.95,
+    "rotation": 5,
+    "team": 0
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 20,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 28.6666666666657
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 20,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 28.6666666666657
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 20,
+        "setter": 11,
+        "target": "(0.620233, 1.293384, -5.273566)",
+        "team": 1,
+        "time": 28.6666666666657
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 20,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 30.0959910434019
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.42932437673631,
+      "target": "(0.620233, 1.293384, -5.273566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 0,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 21,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 30.0999999999989
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 21,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 30.0999999999989
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 21,
+        "setter": 11,
+        "target": "(0.620233, 1.293384, -5.273566)",
+        "team": 1,
+        "time": 30.0999999999989
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 21,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 31.5293243767352
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.42932437673631,
+      "target": "(0.620233, 1.293384, -5.273566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 0,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 22,
+        "rotation": [
+          0,
+          0
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 31.5333333333322
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 22,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 31.5333333333322
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 22,
+        "setter": 11,
+        "target": "(0.620233, 1.293384, -5.273566)",
+        "team": 1,
+        "time": 31.5333333333322
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 22,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 32.9626577100684
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.42932437673631,
+      "target": "(0.620233, 1.293384, -5.273566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 0,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 23,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 32.9666666666654
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 23,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 32.9666666666654
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 23,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 32.9666666666654
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 23,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 34.3685413454684
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 1,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 24,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 34.3749999999987
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 24,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 34.3749999999987
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 24,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 34.3749999999987
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 24,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 35.7768746788017
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 1,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 25,
+        "rotation": [
+          1,
+          1
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 35.783333333332
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 25,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 35.783333333332
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 25,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 35.783333333332
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 25,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 37.1852080121349
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 1,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 26,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 37.1916666666652
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 26,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 37.1916666666652
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 26,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 37.1916666666652
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 26,
+        "seconds": 1.14386949092823,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 38.5935413454682
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 2,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 27,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 38.5999999999985
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 27,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 38.5999999999985
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 27,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 38.5999999999985
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 27,
+        "seconds": 1.14386949092823,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 40.0018746788014
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 2,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 28,
+        "rotation": [
+          2,
+          2
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 40.0083333333317
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 28,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 40.0083333333317
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 28,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 40.0083333333317
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 28,
+        "seconds": 1.14386949092823,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 41.4102080121347
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 2,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 29,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 41.416666666665
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 29,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 41.416666666665
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 29,
+        "setter": 7,
+        "target": "(-0.379767, 1.293384, -5.505617)",
+        "team": 1,
+        "time": 41.416666666665
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 29,
+        "seconds": 1.08434962641029,
+        "setter": 7,
+        "system": -1,
+        "team": 1,
+        "time": 42.6303148381851
+      }
+    ],
+    "initial": {
+      "actor": 7,
+      "root": "(0.0, 0.0, -6.4)",
+      "seconds": 1.21364817152023,
+      "target": "(-0.379767, 1.293384, -5.505617)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 3,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 30,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 42.6333333333316
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 30,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 42.6333333333316
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 30,
+        "setter": 7,
+        "target": "(-0.379767, 1.293384, -5.505617)",
+        "team": 1,
+        "time": 42.6333333333316
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 30,
+        "seconds": 1.08434962641029,
+        "setter": 7,
+        "system": -1,
+        "team": 1,
+        "time": 43.8469815048517
+      }
+    ],
+    "initial": {
+      "actor": 7,
+      "root": "(0.0, 0.0, -6.4)",
+      "seconds": 1.21364817152023,
+      "target": "(-0.379767, 1.293384, -5.505617)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 3,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 31,
+        "rotation": [
+          3,
+          3
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 43.8499999999982
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 31,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 43.8499999999982
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 31,
+        "setter": 7,
+        "target": "(-0.379767, 1.293384, -5.505617)",
+        "team": 1,
+        "time": 43.8499999999982
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 31,
+        "seconds": 1.08434962641029,
+        "setter": 7,
+        "system": -1,
+        "team": 1,
+        "time": 45.0636481715183
+      }
+    ],
+    "initial": {
+      "actor": 7,
+      "root": "(0.0, 0.0, -6.4)",
+      "seconds": 1.21364817152023,
+      "target": "(-0.379767, 1.293384, -5.505617)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 3,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 32,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 45.0666666666648
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 32,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 45.0666666666648
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 32,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 45.0666666666648
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 32,
+        "seconds": 1.35028918715176,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 46.4685413454678
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 4,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 33,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 46.474999999998
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 33,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 46.474999999998
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 33,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 46.474999999998
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 33,
+        "seconds": 1.35028918715176,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 47.876874678801
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 4,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 34,
+        "rotation": [
+          4,
+          4
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 47.8833333333313
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 34,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 47.8833333333313
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 34,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 47.8833333333313
+      },
+      {
+        "direction": 1,
+        "hitter": 10,
+        "kind": "emergency_set",
+        "rally": 34,
+        "seconds": 1.35028918715176,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 49.2852080121343
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 4,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 35,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 49.2916666666645
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 35,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 49.2916666666645
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 35,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 49.2916666666645
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 35,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 50.6935413454675
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.35,
+    "rotation": 5,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 36,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 50.6999999999978
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 36,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 50.6999999999978
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 36,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 50.6999999999978
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 36,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 52.1018746788008
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.65,
+    "rotation": 5,
+    "team": 1
+  },
+  {
+    "events": [
+      {
+        "kind": "formation",
+        "rally": 37,
+        "rotation": [
+          5,
+          5
+        ],
+        "server": 0,
+        "team": 0,
+        "time": 52.108333333331
+      },
+      {
+        "incoming": "spike",
+        "kind": "dig",
+        "quality": 0.636337396621704,
+        "rally": 37,
+        "receiver": 8,
+        "recovery": false,
+        "team": 1,
+        "time": 52.108333333331
+      },
+      {
+        "kind": "out_of_system",
+        "quality": 0.636337396621704,
+        "rally": 37,
+        "setter": 11,
+        "target": "(0.057317, 1.293384, -4.098566)",
+        "team": 1,
+        "time": 52.108333333331
+      },
+      {
+        "direction": 1,
+        "hitter": 7,
+        "kind": "emergency_set",
+        "rally": 37,
+        "seconds": 1.08434962641029,
+        "setter": 11,
+        "system": -1,
+        "team": 1,
+        "time": 53.510208012134
+      }
+    ],
+    "initial": {
+      "actor": 11,
+      "root": "(-2.8, 0.0, -6.3)",
+      "seconds": 1.40187467880306,
+      "target": "(0.057317, 1.293384, -4.098566)"
+    },
+    "ok": true,
+    "phase": "CPU_ATTACK",
+    "q": 0.95,
+    "rotation": 5,
+    "team": 1
+  }
+]

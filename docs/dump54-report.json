@@ -1,0 +1,26 @@
+[
+  {
+    "contact_height": 2.89792132377625,
+    "gap": 0.0850000381469727,
+    "left_handed": false,
+    "team": 0
+  },
+  {
+    "contact_height": 2.89792132377625,
+    "gap": 0.0850000381469727,
+    "left_handed": true,
+    "team": 0
+  },
+  {
+    "contact_height": 2.89792132377625,
+    "gap": 0.0850000381469727,
+    "left_handed": false,
+    "team": 1
+  },
+  {
+    "contact_height": 2.89792132377625,
+    "gap": 0.0850000381469727,
+    "left_handed": true,
+    "team": 1
+  }
+]

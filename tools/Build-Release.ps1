@@ -38,6 +38,8 @@ $files+=@('docs/RELEASE_NOTES_52.md','docs/rally52-report.json','docs/block52-ba
 $files+='docs/rally52-psa-report.json'
 $files+='tools/Capture-Recovery52.gd'
 $files+=@('docs/RELEASE_NOTES_53.md','docs/settings53-report.json','docs/settings53-controller.json','docs/settings53-video.json','tools/Test-Settings53.gd','tools/Test-ControllerSettings53.gd','tools/Test-Video53.gd','tools/Capture-Settings53.gd','tools/DisplayModes.exe')
+$files+=@('docs/RELEASE_NOTES_54.md','docs/second-touch54-report.json','docs/corridors54-report.json','docs/coverage54-report.json','docs/dump54-report.json','docs/baseline-v53/court_shape.gd','docs/baseline-v53/cpu_defense.gd','docs/baseline-v53/block_coverage.gd','tools/Test-SecondTouch54.gd','tools/Test-SetCorridors54.gd','tools/Test-BlockCoverage54.gd','tools/Test-Dump54.gd','tools/Capture-Dump54.gd')
+foreach($frame54 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -Filter 'dump54-*.png' -File){$files+='docs/'+$frame54.Name}
 foreach($preview53 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'settings53-*.png'){ $files+='docs/'+$preview53.Name }
 foreach($preview52 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'recovery52-preview-*.png'){ $files+='docs/'+$preview52.Name }
 foreach($tool51 in @('Test-Preferences51.gd','Test-Handed51.gd','Test-Online51.gd','Test-HumanContacts51.gd','Test-OnlineUI51.gd','Test-LobbyLeave51.gd','Test-Discovery51.gd','Capture-Online51.gd')){ $files+='tools/'+$tool51 }
@@ -86,6 +88,7 @@ foreach($folder in @('src','licenses','assets/ui','assets/active','assets/art','
  }
 }
 if(!$SourceOnly){$files+='tools/godot/Godot_v4.5.1-stable_win64.exe'}
+$files=@($files | Select-Object -Unique)
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $zipPath=Join-Path $destination 'SpikeForever-Windows.zip'

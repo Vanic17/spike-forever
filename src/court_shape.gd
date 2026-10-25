@@ -113,6 +113,11 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var normal:=Vector3(forward.z,0,-forward.x)
 			for i in range(game.possession*6,game.possession*6+6):
 				if i==actor: continue
+				# Emergency forearm contacts reserve BOTH the root and platform
+				# below, after specialist routes are resolved. A root-only yield
+				# here used to replace that reservation on the next frame, sending
+				# a teammate back and forth through the setter's destination.
+				if game.phase in ["SET","CPU_SET"] and game.out_of_system<0 and absf(game.flight_target.z)>3.0: continue
 				if game.phase in ["ATTACK","CPU_ATTACK"] and i!=game.setter: continue
 				if floor_bodies.has(i): continue # A prone passer cannot sidestep out of the setter's way.
 				# For a stationary setter reserve only an existing obstruction.
@@ -303,6 +308,9 @@ func clear_middle_lane(game, result: Array[Vector3], setter: int, floor_bodies: 
 		result[other]=free
 
 func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor_bodies: Dictionary) -> void:
+	if game.out_of_system<0 and absf(game.flight_target.z)>3.0:
+		reserve_emergency_routes(game,result,actor,floor_bodies)
+		return
 	# Specialist crossings and attack openings are resolved above. Read their
 	# NEXT route now, before a body enters the reserved setting footprint.
 	# Looking only at current positions reacts after the setter's endpoint is
@@ -359,6 +367,65 @@ func reserve_next_support_routes(game, result: Array[Vector3], actor: int, floor
 		destination.z=(1 if actor<6 else -1)*clampf(absf(destination.z),0.5,9.8)
 		setter_yields[index]=destination
 		result[index]=destination
+
+func reserve_emergency_routes(game, result: Array[Vector3], actor: int, floor_bodies: Dictionary) -> void:
+	# A low off-net set needs a single reservation of the swept root AND
+	# forearm platform. Testing just the nearest of the three strips can pick
+	# a sidestep that is still inside another strip, or stack two yielders.
+	var start: Vector3=game.players[actor].position
+	var goal: Vector3=result[actor]
+	var forward: Vector3=goal-setter_route_origin; forward.y=0
+	if forward.length()<.15: forward=Vector3(0,0,1 if actor<6 else -1)
+	forward=forward.normalized()
+	var normal:=Vector3(forward.z,0,-forward.x)
+	var platform: Vector3=Basis(Vector3.UP,PI if actor<6 else 0)*game.players[actor].contact_local("receive"); platform.y=0
+	var offsets: Array[Vector3]=[Vector3.ZERO,platform*.5,platform]
+	var reserved: Array[Vector3]=[]
+	for index in range(int(actor/6)*6,int(actor/6)*6+6):
+		if index==actor or floor_bodies.has(index): continue
+		var origin: Vector3=game.players[index].position
+		var threatened:=false
+		for offset in offsets:
+			var cross:=Geometry3D.get_closest_points_between_segments(origin,result[index],start+offset,goal+offset)
+			if cross[0].distance_to(cross[1])<1.35 and origin.distance_to(cross[0])<maxf(.25,game.flight_left*4): threatened=true
+		if not threatened and not setter_yields.has(index): continue
+		if setter_yields.has(index):
+			var cached: Vector3=setter_yields[index]
+			var valid:=true
+			for offset in offsets:
+				if Geometry3D.get_closest_point_to_segment(cached,start+offset,goal+offset).distance_to(cached)<1.36: valid=false; break
+			for other in reserved:
+				if cached.distance_to(other)<1.20: valid=false
+			if valid:
+				result[index]=cached; reserved.append(cached)
+				continue
+		var best:=Vector3.ZERO; var cost:=INF
+		var candidates: Array[Vector3]=[]
+		if setter_yields.has(index): candidates.append(setter_yields[index])
+		candidates.append(origin)
+		for sign_value in [-1,1]:
+			for step in range(1,10):
+				for along in [0.0,-.75,.75]: candidates.append(origin+normal*sign_value*step*.35+forward*along)
+		for candidate in candidates:
+			var side:=1 if actor<6 else -1
+			if absf(candidate.x)>5.4 or candidate.z*side<.5 or candidate.z*side>9.8: continue
+			var free:=true
+			for offset in offsets:
+				if Geometry3D.get_closest_point_to_segment(candidate,start+offset,goal+offset).distance_to(candidate)<1.36: free=false; break
+			if not free: continue
+			for other in reserved:
+				if candidate.distance_to(other)<1.20: free=false
+			for other in range(int(actor/6)*6,int(actor/6)*6+6):
+				if other==index or other==actor: continue
+				if candidate.distance_to(game.players[other].position)<1.05: free=false
+			if not free: continue
+			# Never route a standing teammate through the live setter's body.
+			if Geometry3D.get_closest_point_to_segment(start,origin,candidate).distance_to(start)<.98: continue
+			var score: float=origin.distance_to(candidate)+candidate.distance_to(result[index])*.07
+			if setter_yields.has(index) and candidate==setter_yields[index]: score-=.65
+			if score<cost: cost=score; best=candidate
+		if is_finite(cost):
+			setter_yields[index]=best; result[index]=best; reserved.append(best)
 
 func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: Array) -> void:
 	if game.possession!=pin_team:

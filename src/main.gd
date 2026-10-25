@@ -575,7 +575,8 @@ func press_action(button: String = "action") -> void:
 		receive_feedback_left=2.4
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
-		setter_dump = button == "dump"
+		setter_dump = button == "dump" and preload("res://src/setter_dump.gd").can_request(self)
+		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
 		# Normal and quick are choices of delivery, not a new interception
@@ -587,7 +588,7 @@ func press_action(button: String = "action") -> void:
 			flight_left = maxf(0.001, contact.seconds)
 		armed = true
 		input_quality = pass_quality
-		notice("COLPO DI SECONDA" if setter_dump else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE"), 0.8)
+		notice("COLPO DI SECONDA" if setter_dump else ("SECONDA NON DISPONIBILE · ALZATA NORMALE" if button=="dump" else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE")), 0.8)
 	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action": jump_manual_wall()
 
 func jump_manual_wall() -> void:
@@ -927,7 +928,7 @@ func validate_contact(index: int, action: String) -> bool:
 	player.reach_weight = 1
 	player.reach_action = action
 	player.prepare_contact(action, 0)
-	var actual: Vector3 = player.current_hand(false)
+	var actual: Vector3 = player.current_hand(action=="dump")
 	if action in ["receive", "set", "fast_set", "block"]:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
 	var distance := actual.distance_to(ball_pos)
@@ -1036,7 +1037,7 @@ func receive_ball() -> void:
 		miss_contact()
 		return
 	var q := RallyAI.reception_quality(self,input_quality)
-	if cpu_team(possession) and incoming_kind in ["serve","spike","soft"]: q=cpu_defense.quality(q,incoming_power)
+	if cpu_team(possession) and incoming_kind in ["serve","spike","soft","block"]: q=cpu_defense.quality(q,incoming_power)
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
 		players[setter].select_variant("receive",action)
@@ -1050,6 +1051,13 @@ func receive_ball() -> void:
 	pass_quality = q
 	register_touch(receiver)
 	if phase=="POINT": return
+	if touches[possession]==3:
+		# A second-touch dump can rebound off our own net. This recovery is
+		# the THIRD touch: send it across now, never schedule another set.
+		var third_target:=Tactics.world(1-possession,clampf(ball_pos.x,-3.5,3.5),5.0)+Vector3.UP*.105
+		incoming_kind="soft"; incoming_power=.2
+		send_to_court(possession,third_target,1.65)
+		log_rally_event("third_touch_recovery"); return
 	if cpu_team(possession) and cpu_defense.outcome=="overpass" and incoming_kind in ["serve","spike","soft"]:
 		var over:=Vector3(rng.randf_range(-2.8,2.8),0.105,rng.randf_range(1.2,4.5))
 		incoming_kind="overpass"; incoming_power=0.18; send_to_court(1,over,1.8); log_rally_event("cpu_overpass"); return
@@ -1147,7 +1155,8 @@ func queue_recovery(anticipate: bool = false) -> bool:
 	return true
 
 func choose_cpu_play() -> void:
-	if pass_quality > 0.65 and absf(flight_target.z)<2.6 and rng.randf()<0.10:
+	if pass_quality > 0.65 and absf(flight_target.z)<2.6 and rng.randf()<0.10 and preload("res://src/setter_dump.gd").can_request(self):
+		players[setter].select_variant("dump","dump_push54")
 		setter_dump = true
 		setter_action = "dump"
 		var dump_contact := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("dump"),flight_gravity)
@@ -1327,11 +1336,15 @@ func dump_ball() -> void:
 	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > 2.43:
 		award(1 - attacker, "ATTACCO IRREGOLARE DI SECONDA LINEA")
 		return
-	var side := -1.0 if attacker == 0 else 1.0
-	var landing := Vector3(aim.x * 2.9, 0.105, side * (2.3 if aim.y >= 0 else 5.5))
+	var delivery: Dictionary=preload("res://src/setter_dump.gd").trajectory(ball_pos,aim,attacker,flight_spin)
+	if delivery.is_empty():
+		# A touched ball must remain live; never replay the same second touch
+		# through receive->set and accidentally count a fourth team contact.
+		phase="LOOSE"; flight_left=100; ball_vel=Vector3(0,1.0,-1 if attacker==0 else 1)*2.0
+		return
 	incoming_kind = "dump"
 	incoming_power = 0.35
-	send_to_court(attacker, landing, 0.83)
+	send_to_court(attacker, delivery.target, delivery.seconds)
 	log_rally_event("setter_dump")
 	notice("COLPO DI SECONDA", 0.9)
 
@@ -1582,7 +1595,7 @@ func step(dt: float) -> void:
 	if phase in ["SET","CPU_SET"] and (cpu_team(possession) or armed):
 		preload("res://src/setter_access.gd").sync_performance(self)
 		preload("res://src/setter_access.gd").try_low_contact(self)
-	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
+	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and not (incoming_out and cpu_team(possession)) and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
 		if players[receiver].position.distance_to(stance)>flight_left*Reference.run_speed()+0.12: queue_recovery(true)
 	move_players(dt)
@@ -1764,7 +1777,8 @@ func resume_deflection(kind: String) -> void:
 	set_phase("RECEIVE" if possession==0 else "CPU_RECEIVE")
 	incoming_kind = kind
 	incoming_power = clampf(ball_vel.length()/35.0,0,1)
-	incoming_out = false
+	var floor_hit:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,.105,flight_gravity)
+	incoming_out = not floor_hit.is_empty() and (absf(floor_hit.point.x)>4.605 or absf(floor_hit.point.z)>9.105) and last_touch!=possession
 	flight_target = interception.point
 	flight_left = interception.seconds
 	receive_deadline = clock_time+flight_left
@@ -1775,6 +1789,7 @@ func resume_deflection(kind: String) -> void:
 	marker.visible = true
 	var reaction: Array = Reference.data.reaction.tape if kind=="net" else Reference.data.reaction.block
 	scramble_ready[receiver] = clock_time+rng.randf_range(reaction[0],reaction[1])
+	cpu_defense.prepare(self)
 
 func human_wall() -> bool:
 	return not demo and (phase in ["CPU_RECEIVE","CPU_SET","CPU_ATTACK"] or (network_match() and phase in ["RECEIVE","SET","ATTACK"]))
@@ -1886,6 +1901,9 @@ func move_players(dt: float) -> void:
 		"ATTACK", "CPU_ATTACK":
 			action_actor = hitter
 			action = hitter_action
+	if phase in ["RECEIVE","CPU_RECEIVE"] and incoming_out and cpu_team(possession):
+		# Read a clearly out rebound without chasing or starting a rescue.
+		action_actor=-1; action=""; marker.visible=false
 	var blockers: Array = blocking_players(1 - possession) if phase in ["ATTACK", "CPU_ATTACK"] else []
 	if human_wall() and phase in ["RECEIVE","SET","CPU_RECEIVE","CPU_SET"]: blockers=blocking_players(wall_team())
 	if blockers.is_empty() and blocking_team >= 0 and clock_time - block_time < 0.58 and phase in ["RECEIVE", "CPU_RECEIVE"]:

@@ -50,7 +50,16 @@ func setup(bank: Dictionary, sampler: Callable) -> void:
 	graph.add_node("Clip", first)
 	graph.add_node("Seek", AnimationNodeTimeSeek.new())
 	graph.connect_node("Seek", 0, "Clip")
-	graph.connect_node("output", 0, "Seek")
+	var disguise:=AnimationNodeAnimation.new(); disguise.animation="psa/set"
+	graph.add_node("Disguise",disguise)
+	graph.add_node("DisguiseSeek",AnimationNodeTimeSeek.new())
+	graph.connect_node("DisguiseSeek",0,"Disguise")
+	var arms:=AnimationNodeBlend2.new(); arms.filter_enabled=true
+	for bone in names.size():
+		if upper_mask[bone]: arms.set_filter_path(NodePath("Rig:"+names[bone]),true)
+	graph.add_node("DumpArms",arms)
+	graph.connect_node("DumpArms",0,"Seek"); graph.connect_node("DumpArms",1,"DisguiseSeek")
+	graph.connect_node("output", 0, "DumpArms")
 	tree = AnimationTree.new()
 	add_child(tree)
 	tree.anim_player = tree.get_path_to(player)
@@ -79,6 +88,12 @@ func sample(name: String, time: float, loop: bool) -> Array[Transform3D]:
 		return sample_cache[key].duplicate()
 	var native_name := "psa/" + name
 	if first.animation != native_name: first.animation = native_name
+	var disguise_weight:=0.0
+	if name=="dump_push54":
+		var contact: float=animation.get_meta("contact_time",0.0)
+		disguise_weight=.25*(1.0-smoothstep(contact-.35,contact-.12,t))
+		tree.set("parameters/DisguiseSeek/seek_request",t)
+	tree.set("parameters/DumpArms/blend_amount",disguise_weight)
 	tree.set("parameters/Seek/seek_request", t)
 	tree.advance(0)
 	evaluations += 1

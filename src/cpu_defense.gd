@@ -7,7 +7,17 @@ func reset() -> void:
 func prepare(game) -> void:
 	reset()
 	if not game.cpu_team(game.possession): return
+	if game.incoming_out: return
 	var pressure:=clampf(game.incoming_power,0,1)
+	if game.incoming_kind=="block":
+		# Attack coverage reacts to the actual rebound after landing. Keep
+		# saves possible, but remove the old perfect/instant block exception.
+		timing_quality=game.rng.randf_range(.85,.98)
+		var read: float=game.rng.randf()
+		if read<.035+pressure*.035: outcome="stretched"
+		elif read<.15+pressure*.04: outcome="loose"
+		game.scramble_ready[game.receiver]=maxf(game.scramble_ready[game.receiver],game.clock_time)+.025+pressure*.025
+		return
 	var offset: float=game.rng.randf_range(-0.065,0.13)*(0.6+pressure)
 	timing_quality=clampf(1.0-absf(offset)*0.85,0.65,0.995)
 	var roll: float=game.rng.randf()

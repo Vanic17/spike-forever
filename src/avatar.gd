@@ -676,7 +676,8 @@ func apply_pose(_dt: float) -> void:
 			solve_arm(normalized, "Left", point + Vector3(0.105, -0.07, 0), clip.parents)
 			solve_arm(normalized, "Right", point + Vector3(-0.105, -0.07, 0), clip.parents)
 		else:
-			solve_arm(normalized, "Left" if left_handed and reach_action in ["attack","power","float","dump"] else "Right", point - Vector3(0, 0, 0.085), clip.parents)
+			var left_arm: bool=(not left_handed) if reach_action=="dump" else (left_handed and reach_action in ["attack","power","float"])
+			solve_arm(normalized, "Left" if left_arm else "Right", point - Vector3(0, 0, 0.085), clip.parents)
 	if clip_name == "block" and absf(hand_adjust) > 0.01:
 		for side in ["Left", "Right"]:
 			var shoulder: int = clip.names.find(side + "Arm")
@@ -719,7 +720,7 @@ func normalized_pose(name: String, time: float, loop: bool) -> Array[Transform3D
 	if native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_name):
 		result=pose_tree.sample(native_name, time, loop)
 	else: result=psa_normalized_pose(name, time, loop)
-	if left_handed and (native_name.begins_with("attack") or native_name in ["power","float","dump","serve_idle"]):
+	if left_handed and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle"]):
 		if mirror_bones.is_empty():
 			for bone in clips.idle.names:
 				var opposite: String=bone.replace("Left","@SIDE@").replace("Right","Left").replace("@SIDE@","Right")
