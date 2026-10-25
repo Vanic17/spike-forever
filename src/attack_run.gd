@@ -12,10 +12,12 @@ var airborne:=false
 var air_start:=Vector3.ZERO
 var air_target:=Vector3.ZERO
 var air_duration:=0.0
+var yielding: Dictionary={}
 
 func reset() -> void:
 	cue=""; runner=-1; planted=false; airborne=false
 	landings.clear()
+	yielding.clear()
 
 static func is_pin(game, index: int, direction: int) -> bool:
 	return index>=0 and direction in [0,2] and Tactics.front(index,game.rotations[game.possession])
@@ -56,6 +58,7 @@ func target(game, index: int, contact_stance: Vector3) -> Vector3:
 	var key := str(game.shot_serial)+":"+str(index)
 	if key!=cue:
 		cue=key; runner=index; goal=contact_stance; start=game.players[index].position; planted=false; airborne=false
+		yielding.clear()
 		var side := 1.0 if index<6 else -1.0
 		var wing := signf(contact_stance.x)
 		corner=contact_stance+Vector3(wing*0.30,0,side*0.95)
@@ -77,6 +80,29 @@ func target(game, index: int, contact_stance: Vector3) -> Vector3:
 	# A continuous run to the plant, without a second corner/braking stop.
 	planted=true
 	return launch
+
+func clear_lane(game, targets: Array[Vector3], index: int) -> void:
+	if runner!=index: return
+	var direction:=goal-start; direction.y=0
+	if direction.length()<.1: return
+	direction=direction.normalized()
+	var normal:=Vector3(direction.z,0,-direction.x)
+	for other in range(int(index/6)*6,int(index/6)*6+6):
+		if other==index or game.middle_decoy.holds(other): continue
+		if yielding.has(other):
+			targets[other]=yielding[other]
+			continue
+		var p: Vector3=game.players[other].position
+		var nearest:=Geometry3D.get_closest_point_to_segment(p,start,goal)
+		var target_nearest:=Geometry3D.get_closest_point_to_segment(targets[other],start,goal)
+		if p.distance_to(nearest)>1.35 and targets[other].distance_to(target_nearest)>1.35: continue
+		var offset: float=(p-nearest).dot(normal)
+		if absf(offset)<.1: offset=(targets[other]-target_nearest).dot(normal)
+		if absf(offset)<.1: offset=1 if other%2==0 else -1
+		var free:=nearest+normal*signf(offset)*1.5
+		free.x=clampf(free.x,-5.45,5.45)
+		free.z=(1 if index<6 else -1)*clampf(absf(free.z),.45,9.8)
+		yielding[other]=free; targets[other]=free
 
 func remaining(index: int, position: Vector3, ordinary: float) -> float:
 	if runner!=index or planted: return ordinary

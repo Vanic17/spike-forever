@@ -75,11 +75,25 @@ Native $git @('-C',$stage,'config','user.name','Vanic17')
 Native $git @('-C',$stage,'config','user.email','264198889+Vanic17@users.noreply.github.com')
 Native $git @('-C',$stage,'remote','add','origin',('https://github.com/'+$Repository+'.git'))
 $helper='credential.helper=!gh auth git-credential'
+# Reuse an already published staging repository's immutable Git objects.
+# A fresh stage otherwise downloads the entire asset history for every patch.
+$seed=Get-ChildItem -LiteralPath (Join-Path $root 'dist') -Directory -Filter 'source-*' | Where-Object {Test-Path -LiteralPath (Join-Path $_.FullName '.git/refs/heads/main')} | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+if($seed){
+ $objects=(Join-Path $seed.FullName '.git/objects').Replace('\','/')
+ [IO.File]::WriteAllText((Join-Path $stage '.git/objects/info/alternates'),$objects+"`n")
+}
 Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'fetch','origin','main') -AllowFailure
 if($script:LastNativeExit -eq 0){Native $git @('-C',$stage,'reset','--mixed','origin/main')}
 Native $git @('-C',$stage,'add','--all')
 Native $git @('-C',$stage,'commit','-m',('Spike Forever '+$tag))
 Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'push','origin','main')
-Native $gh @('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag),'--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
+$existing=(Native $gh @('release','view',$tag,'--repo',$Repository,'--json','isDraft') -AllowFailure)
+if($script:LastNativeExit -eq 0){
+ if(!($existing | ConvertFrom-Json).isDraft){throw ('Release already published; use a new version: '+$tag)}
+ Native $gh @('release','upload',$tag,$package,'--repo',$Repository,'--clobber')
+ Native $gh @('release','edit',$tag,'--repo',$Repository,'--draft=false','--latest')
+}else{
+ Native $gh @('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag),'--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
+}
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)

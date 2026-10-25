@@ -1110,15 +1110,15 @@ func plan_attack(direction: int, quick: bool) -> void:
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
 			if planned_direction==1 and out_of_system>=0: variant="attack_v26_01"
-			if planned_direction in [0,2,3] and pass_quality>=0.45:
+			if planned_direction in [0,2,3]:
 				# Use the complete original running L-R-L, rather than a short
 				# lateral adjustment as the main high-ball performance.
-				variant="attack_line"
+				variant="attack_pin_right" if planned_direction==2 else "attack_pin_left"
 			if not Tactics.front(planned_hitter,rotations[possession]) and pass_quality>=0.66:
 				# Back-row D/pipe use a forward L-R-L source. The outside-pin
 				# clips contain a large lateral reach which put an opposite's
 				# feet beyond the sideline before his hands reached the set.
-				variant="attack_line"
+				variant="attack_pin_right" if planned_direction==2 else "attack_pin_left"
 			variant = preload("res://src/motion_prototypes.gd").attack_variant(variant,planned_direction,pass_quality)
 			players[planned_hitter].select_variant("attack",variant)
 		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
@@ -1815,6 +1815,7 @@ func move_players(dt: float) -> void:
 		for index in floor_plan:
 			if index!=action_actor and not index in blockers: nominal[index]=floor_plan[index]
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	if phase in ["ATTACK","CPU_ATTACK"] and action=="attack": attack_run.clear_lane(self,team_targets,action_actor)
 	if phase in ["ATTACK","CPU_ATTACK"] and phase_time<0.22:
 		for index in defensive_coverage.targets:
 			if defensive_coverage.assignments.get(index,"")=="short" and not index in blockers:

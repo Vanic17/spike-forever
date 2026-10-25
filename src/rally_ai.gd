@@ -125,7 +125,7 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 	# Back-row legality is measured at takeoff, not at hand contact. D/pipe
 	# contact inside the attack line after a forward running jump.
 	var depth:=1.05
-	if back: depth=(2.65 if game.fast_set else 2.85) if direction==3 else 2.50
+	if back: depth=(2.45 if game.fast_set else 2.65) if direction==3 else 2.50
 	return Tactics.world(team,width,depth)
 
 static func opening(game, index: int, team: int) -> Vector3:

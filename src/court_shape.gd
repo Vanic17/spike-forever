@@ -358,9 +358,10 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 		if is_zero_approx(wing): continue
 		var start: Vector3=game.players[i].position
 		if not pin_routes.has(i) and start.x*side*wing< -0.6:
-			# OH crosses behind the passers; OPP uses the shallower 4.4m lane.
-			# Neither cuts through the setter/first-tempo takeoff corridor.
-			pin_routes[i]={"stage":0,"x":start.x,"depth":maxf(start.z*side,6.0 if wing<0 else 4.4)}
+			# Front-row specialists change wings behind the first-tempo lane,
+			# in FRONT of the receivers. The old 6m detour sent R4's OH2
+			# straight through the libero and left him late for the outside set.
+			pin_routes[i]={"stage":0,"x":start.x,"depth":maxf(3.65,minf(start.z*side,4.4))}
 		if not pin_routes.has(i): continue
 		var route: Dictionary=pin_routes[i]
 		if route.stage==0:

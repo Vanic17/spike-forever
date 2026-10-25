@@ -1,0 +1,62 @@
+[
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 0,
+    "run_frames": 257,
+    "stalled_frames": 0,
+    "team": 0
+  },
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 1,
+    "run_frames": 257,
+    "stalled_frames": 0,
+    "team": 0
+  },
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 2,
+    "run_frames": 257,
+    "stalled_frames": 0,
+    "team": 0
+  },
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 0,
+    "run_frames": 259,
+    "stalled_frames": 0,
+    "team": 1
+  },
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 1,
+    "run_frames": 259,
+    "stalled_frames": 0,
+    "team": 1
+  },
+  {
+    "clip": "attack_pin_left",
+    "contacts": 3,
+    "max_depth": 4.09999990463257,
+    "ok": true,
+    "passer": 2,
+    "run_frames": 259,
+    "stalled_frames": 0,
+    "team": 1
+  }
+]
