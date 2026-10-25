@@ -202,6 +202,7 @@ var set_origin := Vector3.ZERO
 var court_shape = CourtShape.new()
 var attack_run = preload("res://src/attack_run.gd").new()
 var pause_menu
+var preferences
 var middle_decoy=MiddleDecoy.new()
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
@@ -228,6 +229,7 @@ var last_ai_direction := -1
 var support_travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 
 func _ready() -> void:
+	preferences=preload("res://src/app_settings.gd").new(); preferences.game=self; add_child(preferences)
 	rng.seed = 194260
 	setup_inputs()
 	var audio_controls=preload("res://src/global_audio.gd").new()

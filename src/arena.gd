@@ -357,6 +357,7 @@ void fragment(){
 			instance += 1
 		crowd_instance_count+=instance
 		node.multimesh = instances
+		node.set_meta("spectators",true)
 		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		add_child(node)
 	return true

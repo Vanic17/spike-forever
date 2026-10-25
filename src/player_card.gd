@@ -4,7 +4,8 @@ var ratings: Dictionary={}
 const KEYS=["battuta","ricezione","palleggio","schiacciata","muro"]
 func update_player(data: Dictionary) -> void:
 	player=data; ratings=data.get("ratings",{}).duplicate(); queue_redraw()
-func caption(at: Vector2, text: String, font_size: int, color: Color) -> void:
+func caption(at: Vector2, text: String, font_size: int, color: Color,translate_value: bool=true) -> void:
+	if translate_value: text=tr(text)
 	var font=ThemeDB.fallback_font
 	draw_string(font,at-Vector2(font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size).x/2,0),text,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size,color)
 func _draw() -> void:
@@ -13,7 +14,7 @@ func _draw() -> void:
 	draw_set_transform(Vector2.ZERO,0,Vector2(1,minf(1,size.y/530.0)))
 	caption(Vector2(size.x/2,32),"PLAYER PROFILE",13,gold)
 	var name: String=str(player.get("name",""))
-	caption(Vector2(size.x/2,65),name,20,Color.WHITE)
+	caption(Vector2(size.x/2,65),name,20,Color.WHITE,false)
 	var role: String={"setter":"S / PALLEGGIATORE","opposite":"OPP / OPPOSTO","outside_hitter":"OH / BANDA","middle_blocker":"MB / CENTRALE","libero":"L / LIBERO"}.get(player.get("role",""),"")
 	caption(Vector2(size.x/2,91),role,12,muted)
 	draw_circle(Vector2(size.x/2,145),35,Color("26374b"))

@@ -100,8 +100,7 @@ static func material(owner: Node, person: Dictionary, kit: Dictionary) -> Shader
 	if not fabrics.has(texture_path):
 		var image := Image.load_from_file(texture_path)
 		if image == null: return null
-		image.generate_mipmaps()
-		fabrics[texture_path] = ImageTexture.create_from_image(image)
+		fabrics[texture_path] = preload("res://src/texture_quality.gd").create(image,texture_path)
 	var result := ShaderMaterial.new()
 	result.shader = FABRIC_SHADER
 	result.set_shader_parameter("fabric",fabrics[texture_path])

@@ -16,10 +16,11 @@ var wall_labels := "Z sinistra / B destra"
 func _ready() -> void: mouse_filter = Control.MOUSE_FILTER_IGNORE
 func _process(_dt: float) -> void: queue_redraw()
 
-func text(at: Vector2, value: String, px: int = 16, color: Color = WHITE) -> void:
-	draw_string(font, at, value, HORIZONTAL_ALIGNMENT_LEFT, -1, px, color)
+func text(at: Vector2, value: String, px: int = 16, color: Color = WHITE,translate_value: bool=true) -> void:
+	draw_string(font, at, tr(value) if translate_value else value, HORIZONTAL_ALIGNMENT_LEFT, -1, px, color)
 
 func centered(y: float, value: String, px: int = 18, color: Color = WHITE) -> void:
+	value=tr(value)
 	text(Vector2((size.x - font.get_string_size(value, HORIZONTAL_ALIGNMENT_LEFT, -1, px).x) * 0.5, y), value, px, color)
 
 func panel(rect: Rect2, color: Color = INK) -> void:
@@ -62,8 +63,8 @@ func _draw() -> void:
 	panel(Rect2(30, 27, 263, 85))
 	draw_rect(Rect2(30, 27, 5, 42), Color("285a9c"))
 	draw_rect(Rect2(30, 70, 5, 42), Color("e7e6e0"))
-	text(Vector2(48, 56), game.team_names[0].left(18), 13)
-	text(Vector2(48, 98), game.team_names[1].left(18), 13)
+	text(Vector2(48, 56), game.team_names[0].left(18), 13,WHITE,false)
+	text(Vector2(48, 98), game.team_names[1].left(18), 13,WHITE,false)
 	text(Vector2(192, 58), "%02d" % game.scores[0], 25)
 	text(Vector2(192, 100), "%02d" % game.scores[1], 25)
 	draw_rect(Rect2(244, 27, 49, 85), Color("26364a"))

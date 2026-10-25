@@ -19,8 +19,7 @@ func original_region(file: String, region: Rect2i) -> Texture2D:
 	var image := Image.load_from_file("res://assets/art/sponsors/"+file)
 	if image == null: return null
 	image=image.get_region(region)
-	image.generate_mipmaps()
-	return ImageTexture.create_from_image(image)
+	return preload("res://src/texture_quality.gd").create(image,"res://assets/art/sponsors/"+file,region)
 
 func _ready() -> void:
 	for source in SOURCES: logos.append(original_region(source.file,source.region))

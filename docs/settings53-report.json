@@ -1,0 +1,29 @@
+{
+  "controller_footer_both_pages": true,
+  "crowd_groups": 8,
+  "english_hud_dynamic": true,
+  "environment_nodes": 1,
+  "fsr_ssil_ssr_exposure_shadow_distance_verified": true,
+  "italian_roundtrip": true,
+  "low_ultra_presets_verified": true,
+  "native_monitor_cases": [
+    "1920x1080",
+    "2560x1440",
+    "3840x2160",
+    "3440x1440"
+  ],
+  "physics_and_rotations_unchanged": true,
+  "physics_hz": 120,
+  "role_ids_preserved": true,
+  "saved_and_reloaded": true,
+  "shadow_lights": 1,
+  "texture_dimensions": [
+    1024,
+    512,
+    1024
+  ],
+  "texture_reference_preserved": true,
+  "translations": 370,
+  "video_timeout_rollback": true,
+  "viewport_verified": true
+}

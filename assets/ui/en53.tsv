@@ -1,0 +1,371 @@
+# Italian source<TAB>English display; names, IDs and gameplay state stay unchanged.
+GIOCA	PLAY
+AGGIORNAMENTI	UPDATES
+MODIFICA	EDIT
+IMPOSTAZIONI	SETTINGS
+LINGUA E VIDEO	LANGUAGE & VIDEO
+GRAFICA	GRAPHICS
+Preferenze locali · conservate dopo gli aggiornamenti	Local preferences · preserved after updates
+Lingua	Language
+Modalità schermo	Display mode
+Risoluzione	Resolution
+Frequenza monitor	Monitor refresh rate
+Limite FPS	FPS limit
+Sincronizzazione verticale	Vertical sync
+Qualità texture	Texture quality
+Risoluzione 3D	3D render scale
+Antialiasing MSAA	MSAA antialiasing
+Antialiasing temporale	Temporal antialiasing
+Qualità ombre	Shadow quality
+Occlusione ambientale	Ambient occlusion
+Bagliore luci	Light bloom
+Densità pubblico	Crowd density
+Filtro anisotropico	Anisotropic filtering
+Finestra	Windowed
+Schermo intero senza bordi	Borderless fullscreen
+Schermo intero esclusivo	Exclusive fullscreen
+Desktop / automatico	Desktop / automatic
+Illimitati	Unlimited
+Disattivato	Disabled
+Attivato	Enabled
+Adattivo	Adaptive
+Originale / massima	Original / maximum
+Bassa / 512 px	Low / 512 px
+Media / 1024 px	Medium / 1024 px
+Alta / 2048 px	High / 2048 px
+Disattivate	Disabled
+Basse	Low
+Alte	High
+Massime	Ultra
+Ridotto	Reduced
+Medio	Medium
+Completo	Full
+APPLICA E SALVA	APPLY & SAVE
+VALORI PREDEFINITI	RESTORE DEFAULTS
+MANTIENI	KEEP CHANGES
+RIPRISTINA	REVERT
+Conferma modalità video	Confirm display mode
+Mantieni queste impostazioni? Ripristino automatico tra %d secondi.	Keep these settings? Reverting automatically in %d seconds.
+Impostazioni applicate e salvate.	Settings applied and saved.
+Impostazioni precedenti ripristinate.	Previous settings restored.
+Salvataggio impostazioni non riuscito.	Could not save settings.
+Modalità video non disponibile su questo display.	Display mode unavailable on this monitor.
+Risoluzione o frequenza non supportata. Ripristinate le impostazioni precedenti.	Resolution or refresh rate unsupported. Previous settings restored.
+Hz regolabili in schermo intero esclusivo; senza bordi usa il desktop. FPS e Hz sono indipendenti.	Refresh rate is adjustable in exclusive fullscreen; borderless uses the desktop. FPS and Hz are independent.
+Le modifiche grafiche si applicano anche alla partita. Nessuna modifica a fisica, timing o controlli.	Graphics changes also apply in matches. Physics, timing and controls stay unchanged.
+A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: indietro	A / Cross: select · D-pad / left stick: navigate · B / Circle: back
+Applicazione impostazioni…	Applying settings…
+FORMATO PARTITA	MATCH FORMAT
+GIOCA  /  PREPARA LA PARTITA	PLAY  /  MATCH SETUP
+LA TUA SQUADRA	YOUR TEAM
+AVVERSARIA	OPPONENT
+AVVERSARIO	OPPONENT
+DIVISA	KIT
+FORMAZIONI / SOSTITUZIONI	LINEUPS / SUBSTITUTIONS
+FORMAZIONE / SOSTITUZIONI	LINEUP / SUBSTITUTIONS
+FORMAZIONE INIZIALE	STARTING LINEUP
+ROTAZIONE INIZIALE	STARTING ROTATION
+PUNTI PER SET	POINTS PER SET
+SCENDI IN CAMPO	START MATCH
+Meglio dei 3	Best of 3
+Meglio dei 5	Best of 5
+INDIETRO · B / CERCHIO	BACK · B / CIRCLE
+TORNA AL MENU	BACK TO MENU
+TORNA AL MENU PRINCIPALE	BACK TO MAIN MENU
+PARTITA IN PAUSA	MATCH PAUSED
+RIPRENDI PARTITA	RESUME MATCH
+A / Croce: conferma · B / Cerchio: riprendi	A / Cross: confirm · B / Circle: resume
+CASA	HOME
+TRASFERTA	AWAY
+FRONTE E RETRO	FRONT & BACK
+CONFERMA	CONFIRM
+ANNULLA	CANCEL
+CANCELLA	DELETE
+SALVA FORMAZIONE	SAVE LINEUP
+SALVA MODIFICHE	SAVE CHANGES
+SALVA NOME	SAVE NAME
+MODIFICA NOME	EDIT NAME
+INSERISCI TESTO	ENTER TEXT
+FORMAZIONE	LINEUP
+MODIFICA  /  SUPERLEGA 2026–27	EDIT  /  SUPERLEGA 2026–27
+Il tuo roster personale • salvato su questo PC • conservato dopo gli aggiornamenti	Your personal roster • saved on this PC • preserved after updates
+IDENTITÀ E ASPETTO	IDENTITY & APPEARANCE
+MANO DOMINANTE	DOMINANT HAND
+BATTUTA PREFERITA / CPU	CPU SERVE PREFERENCE
+Nome	Name
+Numero di maglia	Jersey number
+Ruolo	Role
+Capelli · colore	Hair · colour
+Capelli · taglio	Hair · style
+Capelli · lunghezza	Hair · length
+Barba	Beard
+Carnagione	Skin tone
+Generale	Overall
+Battuta	Serve
+Ricezione	Reception
+Palleggio	Setting
+Schiacciata	Spike
+Muro	Block
+Destra	Right
+Mancino	Left-handed
+Salto	Jump
+Non specificato	Unspecified
+castano chiaro	light brown
+nero	black
+castano	brown
+biondo	blond
+rosso	red
+grigio	grey
+bianco	white
+rasato	shaved
+corto	short
+medio	medium
+lungo	long
+riccio	curly
+lisci	straight
+assente	none
+corta	short
+lunga	long
+chiara	light
+media	medium
+scura	dark
+molto scura	very dark
+OH1 · Banda	OH1 · Outside hitter
+OH2 · Banda	OH2 · Outside hitter
+MB1 · Centrale	MB1 · Middle blocker
+MB2 · Centrale	MB2 · Middle blocker
+OPP · Opposto	OPP · Opposite
+S · Palleggiatore	S · Setter
+L · Libero	L · Libero
+OH / BANDA	OH / OUTSIDE HITTER
+MB / CENTRALE	MB / MIDDLE BLOCKER
+OPP / OPPOSTO	OPP / OPPOSITE
+S / PALLEGGIATORE	S / SETTER
+L / LIBERO	L / LIBERO
+VALORI EDITORIALI / SOLO DATABASE	EDITOR RATINGS / DATABASE ONLY
+VALORI  /  SOLO DATABASE · nessun effetto sul gameplay	RATINGS  /  DATABASE ONLY · no gameplay effect
+Controller: A / Croce sul nome · ← → numeri · stick destro per scorrere	Controller: A / Cross on name · ← → numbers · right stick to scroll
+Formazione non salvata: scegli sette giocatori distinti, con i ruoli corretti.	Lineup not saved: choose seven different players in compatible roles.
+Formazione salvata: verrà usata nella prossima partita.	Lineup saved: it will be used in the next match.
+Salvato in locale ✓	Saved locally ✓
+Salvataggio non riuscito: riprova.	Save failed: please try again.
+Inserisci un nome.	Enter a name.
+Manca un giocatore per uno dei ruoli.	A player is missing for one of the roles.
+Roster incompleto: completa i ruoli nel menu Modifica.	Incomplete roster: fill the missing roles in Edit.
+Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L.	Incomplete roster: requires 2 OH, 2 MB, 1 OPP, 1 S and 1 L.
+Seleziona sei titolari e libero. Ogni giocatore può occupare un solo posto.	Choose six starters and a libero. Each player can fill only one slot.
+Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita	Starting six + libero · the libero replaces the back-row middle during the match
+RETE — prima linea · bande e opposti sono intercambiabili	NET — front row · outside hitters and opposites are interchangeable
+A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: annulla	A / Cross: select · D-pad / left stick: navigate · B / Circle: cancel
+CREA PARTITA	CREATE MATCH
+UNISCITI	JOIN
+CODICE STANZA	ROOM CODE
+COPIA CODICE	COPY CODE
+INSERISCI CODICE	ENTER CODE
+CONFERMA / PRONTO	CONFIRM / READY
+ANNULLA PRONTO	NOT READY
+PRONTO	READY
+FORMATO (HOST)	FORMAT (HOST)
+PUNTI	POINTS
+INIZIA PARTITA (HOST)	START MATCH (HOST)
+Codice stanza SF-…	Room code SF-…
+In attesa dell'altro giocatore…	Waiting for the other player…
+Ogni giocatore vede il campo dal proprio lato.\nCamera frontale · comandi relativi alla tua squadra.	Each player sees the court from their own side.\nFront camera · controls relative to your team.
+sta preparando la formazione	is preparing their lineup
+Stessa rete / VPN LAN	Same network / LAN VPN
+Stanza chiusa	Room closed
+Partita chiusa	Match closed
+Partita terminata	Match finished
+AGGIORNA	UPDATE
+NON ORA	NOT NOW
+Aggiornamento disponibile	Update available
+Versione installata:	Installed version:
+Patch e versioni precedenti	Patches and previous versions
+INSTALLA LA VERSIONE SELEZIONATA	INSTALL SELECTED VERSION
+Gioca offline oppure cerca una versione da installare.	Play offline or check for a version to install.
+È disponibile Spike Forever	Spike Forever is available
+Vuoi scaricare e installare l'aggiornamento?	Download and install the update?
+Il gioco si riavvierà dopo l'installazione.	The game will restart after installation.
+%.1f MB scaricati · dimensione in attesa	%.1f MB downloaded · waiting for total size
+Ricerca versioni pubblicate…	Checking published versions…
+Seleziona la versione più recente oppure una precedente, poi premi Installa.	Select the latest or an earlier version, then choose Install.
+Connessione non riuscita	Connection failed
+Download in corso…	Downloading…
+Preparazione aggiornamento…	Preparing update…
+Installazione aggiornamento…	Installing update…
+SPAZIO	SPACE
+X / CROCE	X / CROSS
+QUADRATO	SQUARE
+CERCHIO	CIRCLE
+PAUSA	PAUSED
+Tastiera	Keyboard
+IL TUO GIOCO. IL TUO CAMPO.	YOUR GAME. YOUR COURT.
+6 CONTRO 6  /  INDOOR VOLLEYBALL	6 ON 6  /  INDOOR VOLLEYBALL
+OPTIONS / START / INVIO PER GIOCARE	OPTIONS / START / ENTER TO PLAY
+ANIMAZIONI	ANIMATIONS
+RICEZIONE	RECEPTION
+BATTUTA	SERVE
+ALZATA	SET
+SCHIACCIATA	SPIKE
+MURO	BLOCK
+CENTRO	MIDDLE
+ZONA 2	ZONE 2
+ZONA 3	ZONE 3
+ZONA 4	ZONE 4
+ZONA 6	ZONE 6
+TERZO TOCCO DI RECUPERO	EMERGENCY THIRD TOUCH
+COLPO VINCENTE	WINNING SHOT
+SALTO ESEGUITO	JUMP COMMANDED
+MOLTO IN ANTICIPO	VERY EARLY
+LEGGERMENTE IN ANTICIPO	SLIGHTLY EARLY
+IN ANTICIPO	EARLY
+MOLTO IN RITARDO	VERY LATE
+LEGGERMENTE IN RITARDO	SLIGHTLY LATE
+PERFETTA	PERFECT
+CONFERMATA	CONFIRMED
+Qualità ricezione %d%%	Reception quality %d%%
+Rischio errore %d%%	Error risk %d%%
+Precisione %d%% · fascia oro 97–100%% vincente	Accuracy %d%% · 97–100%% winning gold zone
+Mira automatica in zona 3 · piccolo margine per il recupero tardivo	Automatic zone 3 target · small window for a late recovery
+LS: mira · ace garantito solo al 100%	LS: aim · guaranteed ace only at 100%
+LS: sposta il battitore · tieni X/A o Quadrato/X: carica e mira	LS: move server · hold X/A or Square/X: charge and aim
+LS · centrale / muro a %d	LS · middle / %d-player block
+LS / WASD / Frecce · mira e direzioni	LS / WASD / Arrows · aim and directions
+LS / WASD / frecce: mira e direzioni	LS / WASD / arrows: aim and directions
+LS · mira e direzioni   F1 · tutti i comandi	LS · aim and directions   F1 · all controls
+F1 aiuto   F2 demo   C / Triangolo / Y camera   Esc pausa	F1 help   F2 demo   C / Triangle / Y camera   Esc pause
+F3 animazioni   F5 difficoltà   R nuova partita	F3 animations   F5 difficulty   R new match
+L3 / LS / M · attiva o disattiva tutto l'audio	L3 / LS / M · toggle all audio
+Battuta / attacco: tieni e rilascia	Serve / attack: hold and release
+Ricezione: premi vicino all'arrivo della palla	Reception: press just before the ball arrives
+Muro: LS muove il centrale;	Block: LS moves the middle;
+PALLA ALTA · prepara la difesa	HIGH BALL · prepare to defend
+TV: su Z4 / destra centro / giu Z2 / sinistra pipe	TV: up Z4 / right middle / down Z2 / left pipe
+Options / Start / Esc per riprendere	Options / Start / Esc to resume
+ · ricezione / alzata / attacco / muro	 · receive / set / attack / block
+ · float / veloce / pallonetto	 · float / quick set / tip
+ · float / veloce	 · float / quick set
+ · colpo di seconda	 · setter dump
+ · premi quando arriva la palla	 · press when the ball arrives
+ · ricezione all'arrivo	 · receive on arrival
+ · tieni e rilascia · LS: mira	 · hold and release · LS: aim
+ pallonetto · tieni e rilascia	 tip · hold and release
+ attacco / 	 attack /
+ normale   	 normal
+ veloce   	 quick
+ seconda	 dump
+ · salta	 · jump
+ · salto   	 · jump
+ · azione   /   	 · action /
+sinistra	left
+destra	right
+alto	up
+basso	down
+ALTA DI SICUREZZA	SAFE HIGH SET
+ALZATA DI EMERGENZA	EMERGENCY SET
+ALZATA NORMALE	NORMAL SET
+ALZATA VELOCE	QUICK SET
+RICEZIONE DIFFICILE · ALTA DI EMERGENZA	DIFFICULT PASS · EMERGENCY HIGH SET
+COLPO DI SECONDA	SETTER DUMP
+COLPO NON COMANDATO	NO INPUT
+PALLA FUORI PORTATA	BALL OUT OF REACH
+PALLA A TERRA	BALL DOWN
+TOCCO DI MANI	OFF THE HANDS
+MURO · PALLA GIOCABILE	BLOCK · BALL IN PLAY
+PALLONETTO · COLPO DI POLSO	TIP · WRIST TOUCH
+ATTACCO IRREGOLARE DI SECONDA LINEA	BACK-ROW ATTACK FAULT
+FALLO DI POSIZIONE IN RICEZIONE	RECEPTION POSITION FAULT
+QUATTRO TOCCHI	FOUR TOUCHES
+SERVIZIO · CONTATTO MANCATO	SERVE · MISSED CONTACT
+SOVRACCARICO	OVERCHARGE
+TIMING ERRATO	MISTIMED
+RETE	NET
+FUORI	OUT
+VITTORIA	VICTORY
+BENVENUTO IN CAMPO	WELCOME TO THE COURT
+NUOVI GESTI:	NEW PERFORMANCES:
+ANIMAZIONI ASSENTI · GIOCATORI PROVVISORI	ANIMATIONS MISSING · TEMPORARY PLAYERS
+ORIGINALI	ORIGINAL
+ATTIVI	ENABLED
+DALLA PROSSIMA AZIONE	FROM THE NEXT RALLY
+AUDIO ATTIVO · L3 / LS per disattivare	AUDIO ON · L3 / LS to mute
+AUDIO DISATTIVATO · L3 / LS per riattivare	AUDIO MUTED · L3 / LS to unmute
+PALLA SPORCA · RECUPERO	LOOSE BALL · RECOVER
+Premi APPLICA E SALVA per confermare i valori predefiniti.	Choose APPLY & SAVE to confirm the default settings.
+outside_hitter	Outside hitter
+middle_blocker	Middle blocker
+opposite	Opposite
+setter	Setter
+libero	Libero
+Download in corso. La versione attuale resta disponibile fino alla verifica.	Downloading. The current version remains available until verification.
+Download non avviato:	Download could not start:
+Impossibile avviare l'installazione. Nessun file modificato.	Could not start installation. No files changed.
+Impossibile avviare la connessione:	Could not connect:
+La cartella del gioco non è scrivibile. Spostala in una cartella personale prima di aggiornare.	The game folder is not writable. Move it to a personal folder before updating.
+Nessuna patch pubblicata: la cronologia inizierà dalla prima release.	No patches published: history will start with the first release.
+Nessuna release disponibile: repository non pubblicata o connessione non riuscita.	No release available: repository not published or connection failed.
+Pacchetto verificato. Chiusura e installazione; il gioco verrà riavviato.	Package verified. Closing and installing; the game will restart.
+Questa versione non contiene un pacchetto Windows verificabile.	This version has no verifiable Windows package.
+Risposta delle versioni non valida.	Invalid release response.
+Verifica del download fallita: aggiornamento annullato.	Download verification failed: update cancelled.
+Riprova più tardi.	Please try again later.
+Connessione non riuscita: verifica codice e raggiungibilità dell'host.	Connection failed: check the code and host reachability.
+L'host ha chiuso la partita.	The host closed the match.
+L'avversario si è disconnesso.	The opponent disconnected.
+L'avversario ha lasciato la stanza.	The opponent left the room.
+Host non raggiungibile. Controlla codice, porta UDP o VPN LAN.	Host unreachable. Check the code, UDP port or LAN VPN.
+Connessione con l'host interrotta.	Connection to the host lost.
+corti	short
+rasati	buzz cut
+sfumati	fade
+mossi	wavy
+ricci	curly
+frangia	fringe
+riga	parted
+lunghi	long
+treccine	braids
+pelato	bald
+marrone	brown
+nessuna	none
+piena	full
+olivastra	olive
+ambrata	tan
+ebano	ebony
+rosa	pink
+Crea una partita oppure inserisci il codice dell'host.	Create a match or enter the host's code.
+Porta UDP %d non disponibile: %s	UDP port %d unavailable: %s
+Stanza aperta. Preparazione del codice Internet…	Room open. Preparing the Internet code…
+Codice per stessa rete / VPN LAN.	Code for the same network / LAN VPN.
+Attendo l'indirizzo Internet. Puoi scegliere stessa rete / VPN LAN.	Waiting for the Internet address. You can choose the same network / LAN VPN.
+Connessione alla stanza…	Connecting to the room…
+Versione o codice stanza non corrispondente.	Version or room code mismatch.
+Avversario collegato. Scegliete squadra, divisa e formazione.	Opponent connected. Choose teams, kits and lineups.
+Collegato. Scegli squadra, divisa e formazione.	Connected. Choose your team, kit and lineup.
+Formazione non valida: scegli sette giocatori distinti e ruoli compatibili.	Invalid lineup: choose seven different players in compatible roles.
+Partita online	Online match
+ospite	guest
+Casa	Home
+Trasferta	Away
+GEN	OVR
+ZONA	ZONE
+FACILE	EASY
+NORMALE	NORMAL
+DIFFICILE	HARD
+Codice Internet pronto · porta UDP aperta tramite UPnP.	Internet code ready · UDP port opened through UPnP.
+Codice Internet pronto · l'host deve essere raggiungibile sulla porta UDP %d (UPnP, inoltro porta o VPN).	Internet code ready · the host must be reachable on UDP port %d (UPnP, port forwarding or VPN).
+Codice non valido: controlla tutte le lettere.	Invalid code: check every character.
+Aggiornamento installato correttamente.	Update installed successfully.
+Frecce: cambia    F3: torna in campo	Arrows: change    F3: return to court
+Regola la qualità e le prestazioni. Le impostazioni vengono mantenute a ogni avvio.	Adjust image quality and performance. Your settings are kept between sessions.
+Automatica · nativa %d × %d	Automatic · native %d × %d
+Profilo grafico	Graphics preset
+Personalizzato	Custom
+Basso	Low
+Alto	High
+Ricostruzione immagine	Image reconstruction
+Bilineare	Bilinear
+Distanza ombre	Shadow distance
+Illuminazione indiretta	Indirect lighting
+Riflessi dello schermo	Screen-space reflections
+Luminosità	Brightness
+Automatica · desktop %d × %d	Automatic · desktop %d × %d

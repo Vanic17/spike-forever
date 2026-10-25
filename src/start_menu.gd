@@ -10,6 +10,8 @@ var play: Button
 var updates: Button
 var online: Button
 var online_menu
+var settings_button: Button
+var settings_menu
 var download_bar: ProgressBar
 var download_label: Label
 var edit: Button
@@ -56,12 +58,15 @@ func _ready() -> void:
 	game.online_session.menu=online_menu
 	online.pressed.connect(online_menu.open)
 	edit=hero_button("MODIFICA",false)
+	settings_button=hero_button("IMPOSTAZIONI",false)
+	settings_menu=preload("res://src/settings_menu.gd").new(); settings_menu.host=self; settings_menu.service=game.preferences; add_child(settings_menu)
+	settings_button.pressed.connect(settings_menu.open)
 	updates.focus_neighbor_right=updates.get_path_to(edit)
 	edit.focus_neighbor_left=edit.get_path_to(updates)
 	edit.pressed.connect(clubs.editor)
 	play.pressed.connect(clubs.match_setup)
 	updates.pressed.connect(show_updates)
-	var navigation: Array=[play,online,updates,edit]
+	var navigation: Array=[play,online,updates,edit,settings_button]
 	for i in navigation.size():
 		navigation[i].focus_neighbor_left=navigation[i].get_path_to(navigation[maxi(0,i-1)])
 		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[mini(navigation.size()-1,i+1)])
@@ -276,11 +281,11 @@ func layout() -> void:
 	var size:=panel.size
 	var scale:=minf(size.x/1672.0,size.y/941.0)
 	var origin: Vector2=(size-Vector2(1672,941)*scale)*0.5
-	var buttons: Array=[play,online,updates,edit]
+	var buttons: Array=[play,online,updates,edit,settings_button]
 	for i in buttons.size():
-		buttons[i].position=origin+Vector2(196+i*324,786)*scale
-		buttons[i].size=Vector2(304,86)*scale
-		buttons[i].add_theme_font_size_override("font_size",maxi(14,int((28 if i==2 else 34)*scale)))
+		buttons[i].position=origin+Vector2(126+i*288,786)*scale
+		buttons[i].size=Vector2(270,86)*scale
+		buttons[i].add_theme_font_size_override("font_size",maxi(13,int((24 if i in [2,4] else 31)*scale)))
 	version_label.position=Vector2(18,size.y-30)
 	dialog.size=Vector2(minf(900,size.x-40),minf(620,size.y-40))
 	dialog.position=(size-dialog.size)*0.5
@@ -291,6 +296,7 @@ func show_updates() -> void:
 	play.focus_mode=Control.FOCUS_NONE
 	updates.focus_mode=Control.FOCUS_NONE
 	online.focus_mode=Control.FOCUS_NONE; edit.focus_mode=Control.FOCUS_NONE
+	settings_button.focus_mode=Control.FOCUS_NONE
 	back.grab_focus()
 	client.check()
 
@@ -300,6 +306,7 @@ func close_updates() -> void:
 	play.focus_mode=Control.FOCUS_ALL
 	updates.focus_mode=Control.FOCUS_ALL
 	online.focus_mode=Control.FOCUS_ALL; edit.focus_mode=Control.FOCUS_ALL
+	settings_button.focus_mode=Control.FOCUS_ALL
 	updates.grab_focus()
 
 func _process(_dt: float) -> void:
@@ -309,7 +316,7 @@ func _process(_dt: float) -> void:
 func _input(event: InputEvent) -> void:
 	if client==null: return
 	if not game.started and event.is_action_pressed("start"):
-		if not clubs.visible and not online_menu.visible: clubs.match_setup()
+		if not clubs.visible and not online_menu.visible and not settings_menu.visible: clubs.match_setup()
 		get_viewport().set_input_as_handled()
 		return
 	if update_prompt!=null and update_prompt.visible:

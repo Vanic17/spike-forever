@@ -1,8 +1,10 @@
 # Spike Forever
 
-**Versione 0.52.0:** correzione dei blocchi fra compagni e del contatto sulle alzate, difese variabili secondo tempismo e pressione, muro chiuso più incisivo. [Dettagli e verifiche](docs/RELEASE_NOTES_52.md).
+**Versione 0.53.0:** menu Impostazioni con italiano/inglese, risoluzione automatica del monitor, Hz/FPS, preset Basso/Medio/Alto/Ultra, FSR, texture, ombre, illuminazione, riflessi e altre opzioni grafiche applicate in partita. Salvataggio locale e ripristino automatico dei cambi video non confermati. [Opzioni e verifiche](docs/RELEASE_NOTES_53.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Per giocare online entrambi devono usare la stessa patch.
+La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
+
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). La 0.53.0 è compatibile online con la 0.52.0.
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

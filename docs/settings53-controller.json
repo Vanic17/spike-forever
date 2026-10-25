@@ -1,0 +1,10 @@
+{
+  "buttons": "Xbox A/B, PS Cross/Circle",
+  "failures": 0,
+  "navigation": "real joypad events, popup, scroll and home",
+  "window_sizes": [
+    "1440x810",
+    "1280x720",
+    "1024x600"
+  ]
+}

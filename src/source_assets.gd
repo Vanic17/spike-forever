@@ -21,8 +21,7 @@ static func texture(name: String) -> Texture2D:
 	if not files.has(name): return null
 	var image := Image.load_from_file(files[name])
 	if image == null or image.is_empty(): return null
-	image.generate_mipmaps()
-	var result := ImageTexture.create_from_image(image)
+	var result := preload("res://src/texture_quality.gd").create(image,files[name])
 	textures[name] = result
 	return result
 

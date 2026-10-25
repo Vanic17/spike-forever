@@ -1,0 +1,17 @@
+{
+  "borderless": true,
+  "desktop_restored": true,
+  "exclusive": {
+    "device": "\\\\.\\DISPLAY1",
+    "height": 1440,
+    "hz": 240,
+    "width": 2560
+  },
+  "fps_cap_30_observed": 30.0013500607527,
+  "fps_cap_60_observed": 60.0077409985888,
+  "limits": "Only current desktop resolution/Hz applied in exclusive test; other combinations validated/enumerated by Windows without changing the user's desktop.",
+  "renderer": "forward_plus",
+  "unsupported_mode_rejected": true,
+  "windowed": "1280x720",
+  "windows_mode_validation": true
+}
