@@ -1,0 +1,98 @@
+[
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371813164191931,
+    "serial": 0,
+    "start_time": 0.0694028158417168,
+    "variant": "dive"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386369212438979,
+    "serial": 1,
+    "start_time": 0.0860783214604854,
+    "variant": "dive_v26_01"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386369212438979,
+    "serial": 2,
+    "start_time": 0.0860783214604854,
+    "variant": "dive_v26_01"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386369212438979,
+    "serial": 3,
+    "start_time": 0.0860783214604854,
+    "variant": "dive_v26_01"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371813164191931,
+    "serial": 4,
+    "start_time": 0.0694028158417168,
+    "variant": "dive"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371833030396192,
+    "serial": 5,
+    "start_time": 0.0693799697068171,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371833030396192,
+    "serial": 6,
+    "start_time": 0.0693799697068171,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371833030396192,
+    "serial": 7,
+    "start_time": 0.0693799697068171,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.371813164191931,
+    "serial": 8,
+    "start_time": 0.0694028158417168,
+    "variant": "dive"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386262147166276,
+    "serial": 9,
+    "start_time": 0.0862014465240946,
+    "variant": "dive_short"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386262147166276,
+    "serial": 10,
+    "start_time": 0.0862014465240946,
+    "variant": "dive_short"
+  },
+  {
+    "contact": true,
+    "rewind": 0.0,
+    "seconds": 0.386262147166276,
+    "serial": 11,
+    "start_time": 0.0862014465240946,
+    "variant": "dive_short"
+  }
+]

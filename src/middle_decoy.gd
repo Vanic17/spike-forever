@@ -77,7 +77,7 @@ func update(game) -> void:
 			# service waiting position. Open on the front-quick side of
 			# that expected pass before its exact final offset is known.
 			var expected: Vector3=AI.attack_contact(game,1,index,Tactics.world(team,0,1.5))
-			target=Tactics.world(team,expected.x*(1 if team==0 else -1),1.85)
+			target=Tactics.world(team,expected.x*(1 if team==0 else -1),2.35)
 		return
 	if jumped and game.phase in ["SET","CPU_SET"] and game.planned_hitter==index:
 		# A changed set choice transfers ownership to the actual attack clock.
@@ -118,7 +118,7 @@ func update(game) -> void:
 	# takeoff therefore happen BEFORE the setter touches the pass.
 	var clip=game.clips[PERFORMANCE]
 	if not prepared: source_begin=.03; prepared=true
-	target=Tactics.world(team,point.x*(1 if team==0 else -1),1.85)
+	target=Tactics.world(team,point.x*(1 if team==0 else -1),2.35)
 	var preparation: float=(clip.contact_time-source_begin)/1.15
 	jump_at=game.clock_time+game.flight_left+QUICK_DELAY-preparation
 

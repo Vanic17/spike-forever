@@ -1046,9 +1046,11 @@ func receive_ball() -> void:
 	if cpu_team(possession) and incoming_kind in ["serve","spike","soft","block"]: q=cpu_defense.quality(q,incoming_power)
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
-		players[setter].select_variant("receive",action)
 		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
-		set_ball(); return
+		# The rescue itself IS the second touch. Keep its actual one-hand
+		# performance; do not replace it with a different two-hand PSA pose.
+		setter_action=action
+		set_ball(action); return
 	if human_team(possession) and receive_offset>0.90 and rng.randf()<0.30:
 		pass_quality=q; register_touch(receiver)
 		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,(-1 if possession==0 else 1)*rng.randf_range(1.0,4.0))
@@ -1141,6 +1143,12 @@ func queue_recovery(anticipate: bool = false) -> bool:
 	if anticipate:
 		dive_variant = preload("res://src/motion_prototypes.gd").dive_variant(dive_variant,local_ball,ball_vel,recovery.point.y,recovery.seconds)
 	player.select_variant("dive",dive_variant)
+	if anticipate:
+		# The selected low/lateral source need not have the generic dive's
+		# hand height. Meet this same flight at its actual source contact.
+		var exact: Dictionary=BallFlight.intercept(ball_pos,ball_vel,flight_spin,player.contact_local("dive").y,flight_gravity)
+		if exact.is_empty() or exact.seconds<=.005 or exact.seconds>.45: return false
+		recovery=exact
 	var toward: Vector3 = recovery.point-player.position
 	player.dive_yaw = atan2(toward.x,toward.z)-atan2(player.contact_local("dive").x,player.contact_local("dive").z)
 	# A forward dive cannot rotate an upright body through a half-turn in the
@@ -1149,9 +1157,9 @@ func queue_recovery(anticipate: bool = false) -> bool:
 	var stance: Vector3 = player.stance_for_contact(action,recovery.point)
 	if player.position.distance_to(stance) > recovery.seconds*(7.2 if anticipate else 4.8)+0.52: return false
 	if anticipate and clips.has(action):
-		var source_start := maxf(0, player.clips[action].contact_time - recovery.seconds * 1.15)
-		dive_motions[receiver] = {"origin":player.position,"stance":stance,"start_time":source_start,"source_time":source_start,"duration":recovery.seconds,"elapsed":0.0,"yaw":player.dive_yaw,"initial_yaw":player.rotation.y,"action":action}
-		player.prepare_contact(action, recovery.seconds)
+		var source_start: float=player.clips[action].contact_time-recovery.seconds*1.15
+		dive_motions[receiver] = {"origin":player.position,"stance":stance,"start_time":source_start,"source_time":source_start,"duration":recovery.seconds,"elapsed":0.0,"yaw":player.dive_yaw,"initial_yaw":player.rotation.y,"action":action,"committed":source_start>=0}
+		if source_start>=0: player.prepare_contact(action,recovery.seconds)
 	late_receive = true
 	recovery_action = action
 	flight_target = recovery.point
@@ -1233,7 +1241,7 @@ func select_receive_pose(index: int, point: Vector3) -> void:
 	var variant := AnimationVariety.receive(local,player.velocity.length(),incoming_kind,shot_serial)
 	player.select_variant("receive",variant)
 
-func set_ball() -> void:
+func set_ball(contact_override: String = "") -> void:
 	overpass_attack_team=-1
 	attack_tip=false
 	if setter_dump:
@@ -1243,9 +1251,9 @@ func set_ball() -> void:
 	if planned_hitter < 0: plan_attack(set_dir, fast_set)
 	fast_set = planned_fast
 	var q := input_quality if human_team(possession) else clampf(pass_quality * rng.randf_range(0.95, 1.0), 0, 1)
-	var contact_action := "receive" if out_of_system < 0 else ("fast_set" if fast_set else "set")
+	var contact_action := contact_override if not contact_override.is_empty() else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
 	if (human_team(possession) and not armed) or not validate_contact(setter, contact_action):
-		if (cpu_team(possession) or armed) and preload("res://src/setter_access.gd").try_low_contact(self): return
+		if contact_override.is_empty() and (cpu_team(possession) or armed) and preload("res://src/setter_access.gd").try_low_contact(self): return
 		miss_contact()
 		return
 	# Bad second-touch timing alters delivery, not whether commanded hands
@@ -2222,6 +2230,31 @@ func advance_dive_body(index: int, dt: float) -> void:
 	var clip = player.clips[action]
 	motion.elapsed += dt
 	motion.source_time = minf(clip.duration, motion.start_time + motion.elapsed * 1.15)
+	if not motion.get("committed",true):
+		if motion.source_time<0:
+			# Walk/run into the plant while the ball is still too far away
+			# for the source prefix. Never play an entire save, then rewind it
+			# to contact when a slow shank finally reaches the hands.
+			var root_delta: Vector3=Basis(Vector3.UP,motion.yaw)*(player.action_root_motion(action,clip.contact_time)-player.action_root_motion(action,0))
+			var plant: Vector3=motion.stance-root_delta
+			var delta: Vector3=plant-player.position; delta.y=0
+			var desired: Vector3=delta.normalized()*minf(4.8,delta.length()*5.0)
+			var before_velocity: Vector3=player.velocity
+			player.velocity=player.velocity.move_toward(desired,22*dt)
+			var step: Vector3=collision_safe_step(index,player.velocity*dt)
+			player.position+=step; player.velocity=step/maxf(dt,.00001)
+			player.acceleration=(player.velocity-before_velocity)/maxf(dt,.00001)
+			travel[index]+=step.length()
+			player.rotation.y=lerp_angle(player.rotation.y,motion.yaw,1-exp(-8*dt))
+			player.target=plant; player.contact_scheduled=false
+			player.locomotion(player.velocity.length(),dt)
+			return
+		var previous_time: float=motion.source_time-dt*1.15
+		motion.origin=player.position; motion.initial_yaw=player.rotation.y
+		motion.start_time=previous_time; motion.elapsed=dt
+		motion.duration=(clip.contact_time-previous_time)/1.15
+		motion.committed=true
+		player.prepare_contact(action,maxf(0,motion.duration-dt))
 	var basis := Basis(Vector3.UP, motion.yaw)
 	var start_root: Vector3 = player.action_root_motion(action, motion.start_time)
 	var source_delta: Vector3 = basis * (player.action_root_motion(action, motion.source_time) - start_root)

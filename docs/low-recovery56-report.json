@@ -1,0 +1,38 @@
+[
+  {
+    "contact": true,
+    "duration": 0.597381316065672,
+    "hz": 60,
+    "max_root_step": 0.0526100359857082,
+    "motion_active": true,
+    "phase": "ATTACK",
+    "team": 0
+  },
+  {
+    "contact": true,
+    "duration": 0.597381316065672,
+    "hz": 120,
+    "max_root_step": 0.0267581157386303,
+    "motion_active": true,
+    "phase": "ATTACK",
+    "team": 0
+  },
+  {
+    "contact": true,
+    "duration": 0.597375319721057,
+    "hz": 60,
+    "max_root_step": 0.0739089846611023,
+    "motion_active": true,
+    "phase": "CPU_ATTACK",
+    "team": 1
+  },
+  {
+    "contact": true,
+    "duration": 0.597375319721057,
+    "hz": 120,
+    "max_root_step": 0.037001084536314,
+    "motion_active": true,
+    "phase": "CPU_ATTACK",
+    "team": 1
+  }
+]

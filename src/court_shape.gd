@@ -166,6 +166,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			var opening:=0.42 if game.planned_direction==1 else 1.65
 			var run_depth:=lerpf(0.22,opening,smoothstep(0.12,0.65,game.flight_left))
 			result[runner]=stance+Vector3(0,0,run_depth if game.possession==0 else -run_depth)
+			if game.planned_direction==1:
+				var side:=1.0 if game.possession==0 else -1.0
+				var staging:=Vector3(stance.x,0,side*maxf(2.35,stance.z*side+.95))
+				result[runner]=staging.lerp(stance,1.0-smoothstep(.12,.85,game.flight_left))
 			if preload("res://src/attack_run.gd").is_pin(game,runner,game.planned_direction):
 				# Keep the high-ball runway open until the set is released.
 				# Closing to 22cm before release erased the entire visible run-up.
@@ -188,7 +192,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		var ready: Vector3=game.players[hitter].stance_for_contact("attack",contact)
 		# A quick recipient already in his takeoff lane must not first retreat
 		# to the full high-ball opening, then be declared late for the quick.
-		if game.players[hitter].position.distance_to(ready)<1.5 and not setter_yields.has(hitter): result[hitter]=ready
+		if game.flight_left<.12 and game.players[hitter].position.distance_to(ready)<1.5 and not setter_yields.has(hitter): result[hitter]=ready
 	route_specialist_pins(game,result,actor,blockers)
 	if actor>=0 and game.phase in ["SET","CPU_SET"]:
 		reserve_next_support_routes(game,result,actor,floor_bodies)
