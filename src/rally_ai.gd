@@ -122,7 +122,11 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 			width = clampf(setter_x+away*spacing,-3.0,3.0)
 		2: width = float(Tactics.positioning.d_width) if back else 3.4
 		3: width = float(Tactics.positioning.pipe_width)
-	return Tactics.world(team,width,3.65 if back else 1.05)
+	# Back-row legality is measured at takeoff, not at hand contact. D/pipe
+	# contact inside the attack line after a forward running jump.
+	var depth:=1.05
+	if back: depth=(2.65 if game.fast_set else 2.85) if direction==3 else 2.50
+	return Tactics.world(team,width,depth)
 
 static func opening(game, index: int, team: int) -> Vector3:
 	var p: Dictionary = Tactics.positioning

@@ -26,7 +26,7 @@ static func set_seconds(direction: int, quick: bool, quality: float, _distance: 
 	var base:=1.02
 	match direction:
 		1: base=0.35 if quick else 0.62
-		3: base=0.88 if quick else 0.92
+		3: base=0.68 if quick else 0.92
 		_: base=0.82 if quick else 1.02
 	return base+(1.0-quality)*1.25
 

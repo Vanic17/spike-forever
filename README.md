@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
+
 **Versione 0.49.0:** Formazioni sempre visibili nella preparazione della partita, anteprime delle divise adattive e navigazione con D-pad/levetta sinistra. Fine partita con ritorno automatico alla home dopo l'esultanza; verificati tutti i formati, vantaggi e set decisivi. [Dettagli](docs/RELEASE_NOTES_49.md).
 
 **Versione 0.48.0:** primo tempo con rincorsa, caricamento e stacco anticipati sul contatto del palleggiatore; finta con un vero gesto di schiacciata, senza la posa ferma a due mani. Un solo orologio attraversa alzata e attacco, conservando il pallonetto di polso senza riavviare il salto. [Dettagli e video di verifica](docs/RELEASE_NOTES_48.md).

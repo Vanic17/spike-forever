@@ -15,6 +15,8 @@ func run() -> void:
 		var runner: int=g.planned_hitter; var running:=false
 		for frame in 700:
 			if g.test_contacts>=contacts+3 or g.phase in ["POINT","LOOSE"]: break
+			if g.phase in ["SET","ATTACK"]:
+				if g.players[runner].travel_animation_name=="run" and g.players[runner].velocity.length()>1.25: running=true
 			if g.phase=="ATTACK":
 				g.armed=true; g.charge=0.7; g.input_quality=1
 				if g.players[runner].travel_animation_name=="run" and g.players[runner].velocity.length()>1.25: running=true
@@ -22,7 +24,7 @@ func run() -> void:
 		assert(g.test_contacts==contacts+3 and running,"Wing, back-row opposite and pipe must use a running approach and retain physical contact")
 		var root: Vector3=g.players[runner].position
 		assert(g.attack_run.landing(runner,g.clock_time))
-		if scenario[1] in [2,3]: assert(root.z>3.0,"The back-row contact cannot migrate inside the attack line")
+		if scenario[1] in [2,3]: assert(root.z<3.0 and g.attack_run.air_start.z>3.0,"Back-row players take off behind the line and contact inside it")
 		g.block_time=-100
 		for frame in 42: g.step(1.0/120)
 		assert(root.z-g.players[runner].position.z>0.025,"The physical root must continue forward through the follow-through, not only the mesh")

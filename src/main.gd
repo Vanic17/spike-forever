@@ -1110,10 +1110,10 @@ func plan_attack(direction: int, quick: bool) -> void:
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
 			if planned_direction==1 and out_of_system>=0: variant="attack_v26_01"
-			if planned_direction in [0,2] and not planned_fast and pass_quality>=0.72:
+			if planned_direction in [0,2,3] and pass_quality>=0.45:
 				# Use the complete original running L-R-L, rather than a short
 				# lateral adjustment as the main high-ball performance.
-				variant="attack_line" if posmod(shot_serial,3)!=2 else ("attack_pin_left" if planned_direction==0 else "attack_pin_right")
+				variant="attack_line"
 			if not Tactics.front(planned_hitter,rotations[possession]) and pass_quality>=0.66:
 				# Back-row D/pipe use a forward L-R-L source. The outside-pin
 				# clips contain a large lateral reach which put an opposite's
@@ -1169,6 +1169,16 @@ func set_ball() -> void:
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
 	var approach_time := maxf(approach_distance / 5.4 + 0.26,preload("res://src/approach_planner.gd").seconds(players[hitter],players[hitter].target,Reference.run_speed()*1.10))
+	if hitter_action=="attack" and destination in [0,2,3]:
+		# Reach the legal takeoff, then travel forward while airborne. Planning
+		# a full stop at the hand-contact point erased the running jump.
+		var takeoff:=attack_run.takeoff_stance(self,hitter,players[hitter].target)
+		approach_time=attack_run.run_seconds(players[hitter],takeoff,Reference.run_speed()*1.10)+attack_run.air_seconds(players[hitter])
+		if Tactics.front(hitter,rotations[possession]):
+			# A pin may still be circling the passer outside the sideline.
+			# Keep its existing collision/route allowance instead of assuming
+			# the direct free runway used by D and pipe.
+			approach_time=preload("res://src/approach_planner.gd").seconds(players[hitter],takeoff,Reference.run_speed()*1.10)+attack_run.air_seconds(players[hitter])
 	if destination==1 and fast_set and approach_distance<0.65:
 		# A middle already planted in his quick lane does not need a second
 		# generic .38s plant after preparing during reception and the first pass.
@@ -1910,6 +1920,8 @@ func move_players(dt: float) -> void:
 		if i==action_actor and phase in ["ATTACK","CPU_ATTACK"]:
 			arrival_distance=attack_run.remaining(i,p.position,arrival_distance)
 			arrival_speed=arrival_distance/maxf(0.055,flight_left-0.12)
+			if action=="attack" and destination in [0,2,3] and not attack_run.flying(i):
+				arrival_speed=arrival_distance/maxf(.045,flight_left-attack_run.air_seconds(p))
 		if preparing_hitter: arrival_speed = movement.length() * 3.5
 		if preparing_front: arrival_speed=movement.length()*3.5
 		if landing_active: arrival_speed=movement.length()*3.5
@@ -1970,6 +1982,10 @@ func move_players(dt: float) -> void:
 			p.velocity = Vector3.ZERO
 			p.acceleration = Vector3.ZERO
 		var safe_step: Vector3 = p.velocity * dt
+		if i==action_actor and attack_run.flying(i):
+			# Root travel belongs to gameplay, never to the visual skeleton.
+			# The same collision checks below still protect the landing corridor.
+			safe_step=attack_run.air_target-p.position
 		for projection in 3:
 			var bounded: Vector3 = p.position + safe_step
 			bounded.x = clampf(bounded.x, -width_limit, width_limit)
@@ -1993,6 +2009,8 @@ func move_players(dt: float) -> void:
 		p.position.x = clampf(p.position.x, -width_limit, width_limit)
 		p.position.z = clampf(p.position.z, 9.3 if serving_player else 0.25, depth_limit) if i < 6 else clampf(p.position.z, -depth_limit, -9.3 if serving_player else -0.25)
 		var facing := PI if team == 0 else 0.0
+		if i==action_actor and action=="attack" and not attack_run.flying(i) and flight_left>0.42 and p.velocity.length()>1.25:
+			facing=lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),smoothstep(0.45,1.35,movement.length()))
 		if i==action_actor and action=="dive": facing = p.dive_yaw
 		if i==action_actor and action in ["set","fast_set"]: facing = p.setting_yaw
 		if phase != "SERVE" and i != action_actor and not i in blockers:
