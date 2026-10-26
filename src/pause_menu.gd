@@ -24,7 +24,7 @@ func _ready() -> void:
 	var hint=Label.new(); hint.text="A / Croce: conferma · B / Cerchio: riprendi"; hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER; column.add_child(hint)
 	surface.hide()
 func _process(_dt: float) -> void:
-	var wanted: bool=game.started and game.paused and not game.match_finished
+	var wanted: bool=game.started and game.paused and not game.match_finished and (game.tutorial==null or not game.tutorial.active)
 	if surface.visible==wanted: return
 	surface.visible=wanted
 	if wanted: resume_button.grab_focus()

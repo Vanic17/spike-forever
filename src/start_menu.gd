@@ -11,6 +11,7 @@ var updates: Button
 var online: Button
 var online_menu
 var settings_button: Button
+var tutorial_button: Button
 var settings_menu
 var download_bar: ProgressBar
 var download_label: Label
@@ -61,16 +62,19 @@ func _ready() -> void:
 	settings_button=hero_button("IMPOSTAZIONI",false)
 	settings_menu=preload("res://src/settings_menu.gd").new(); settings_menu.host=self; settings_menu.service=game.preferences; add_child(settings_menu)
 	settings_button.pressed.connect(settings_menu.open)
+	tutorial_button=hero_button("TUTORIAL",false)
+	tutorial_button.pressed.connect(func(): game.tutorial.open(self))
 	updates.focus_neighbor_right=updates.get_path_to(edit)
 	edit.focus_neighbor_left=edit.get_path_to(updates)
 	edit.pressed.connect(clubs.editor)
 	play.pressed.connect(clubs.match_setup)
 	updates.pressed.connect(show_updates)
-	var navigation: Array=[play,online,updates,edit,settings_button]
+	var navigation: Array=[play,online,tutorial_button,updates,edit,settings_button]
 	for i in navigation.size():
-		navigation[i].focus_neighbor_left=navigation[i].get_path_to(navigation[maxi(0,i-1)])
-		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[mini(navigation.size()-1,i+1)])
-		navigation[i].focus_neighbor_top=navigation[i].focus_neighbor_left; navigation[i].focus_neighbor_bottom=navigation[i].focus_neighbor_right
+		navigation[i].focus_neighbor_left=navigation[i].get_path_to(navigation[i-1 if i%3>0 else i])
+		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[i+1 if i%3<2 else i])
+		navigation[i].focus_neighbor_top=navigation[i].get_path_to(navigation[i-3 if i>=3 else i])
+		navigation[i].focus_neighbor_bottom=navigation[i].get_path_to(navigation[i+3 if i<3 else i])
 	version_label=Label.new()
 	var version=JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version
 	installed_version=str(version)
@@ -127,6 +131,7 @@ func on_versions_ready(versions: Array) -> void:
 
 func maybe_prompt_update() -> void:
 	if game.network_match(): return
+	if game.tutorial!=null and (game.tutorial.active or game.tutorial.menu.visible): return
 	if not prompt_waiting or update_prompt.visible: return
 	# A slow network response must not steal a held charge or a live rally.
 	if game.started and game.phase!="POINT" and not (game.phase=="SERVE" and not game.charging and not game.toss_active): return
@@ -281,11 +286,11 @@ func layout() -> void:
 	var size:=panel.size
 	var scale:=minf(size.x/1672.0,size.y/941.0)
 	var origin: Vector2=(size-Vector2(1672,941)*scale)*0.5
-	var buttons: Array=[play,online,updates,edit,settings_button]
+	var buttons: Array=[play,online,tutorial_button,updates,edit,settings_button]
 	for i in buttons.size():
-		buttons[i].position=origin+Vector2(126+i*288,786)*scale
-		buttons[i].size=Vector2(270,86)*scale
-		buttons[i].add_theme_font_size_override("font_size",maxi(13,int((24 if i in [2,4] else 31)*scale)))
+		buttons[i].position=origin+Vector2(150+(i%3)*466,766+(i/3)*74)*scale
+		buttons[i].size=Vector2(440,64)*scale
+		buttons[i].add_theme_font_size_override("font_size",maxi(13,int(29*scale)))
 	version_label.position=Vector2(18,size.y-30)
 	dialog.size=Vector2(minf(900,size.x-40),minf(620,size.y-40))
 	dialog.position=(size-dialog.size)*0.5
@@ -297,6 +302,7 @@ func show_updates() -> void:
 	updates.focus_mode=Control.FOCUS_NONE
 	online.focus_mode=Control.FOCUS_NONE; edit.focus_mode=Control.FOCUS_NONE
 	settings_button.focus_mode=Control.FOCUS_NONE
+	tutorial_button.focus_mode=Control.FOCUS_NONE
 	back.grab_focus()
 	client.check()
 
@@ -307,6 +313,7 @@ func close_updates() -> void:
 	updates.focus_mode=Control.FOCUS_ALL
 	online.focus_mode=Control.FOCUS_ALL; edit.focus_mode=Control.FOCUS_ALL
 	settings_button.focus_mode=Control.FOCUS_ALL
+	tutorial_button.focus_mode=Control.FOCUS_ALL
 	updates.grab_focus()
 
 func _process(_dt: float) -> void:
@@ -315,8 +322,9 @@ func _process(_dt: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if client==null: return
+	if game.tutorial!=null and game.tutorial.menu.visible: return
 	if not game.started and event.is_action_pressed("start"):
-		if not clubs.visible and not online_menu.visible and not settings_menu.visible: clubs.match_setup()
+		if not clubs.visible and not online_menu.visible and not settings_menu.visible and not game.tutorial.menu.visible: clubs.match_setup()
 		get_viewport().set_input_as_handled()
 		return
 	if update_prompt!=null and update_prompt.visible:

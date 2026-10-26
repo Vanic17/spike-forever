@@ -49,6 +49,9 @@ func _draw() -> void:
 	dump_button = "CERCHIO" if ps else ("B" if pad >= 0 else "E")
 	wall_labels="L2 sinistra / R2 destra" if ps else ("LT sinistra / RT destra" if pad>=0 else "Z sinistra / B destra")
 	if game.camera_mode==2: wall_labels=wall_labels.replace("sinistra","alto").replace("destra","basso")
+	if game.tutorial!=null and game.tutorial.active:
+		if not game.paused and game.phase in ["SERVE","RECEIVE","SET","ATTACK","CPU_ATTACK"]: draw_contact(w*.5,h-92)
+		return
 	if not game.started:
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.015,0.025,0.045,0.45))
 		text(Vector2(75, h * 0.38), "SPIKE", 76)

@@ -1,0 +1,848 @@
+{
+  "cases": [
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 76%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "jump",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.007558, 0.105, -8.610713)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 76%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "float",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.030556, 0.105, -8.307208)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 76%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "right",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(2.397054, 0.105, -8.360827)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 76%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "left",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-2.477207, 0.105, -8.361039)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 76%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "move",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.00362, 0.105, -8.610707)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 98%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "power",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.022016, 0.105, -8.934591)",
+      "success": true
+    },
+    {
+      "category": "serve",
+      "contacts": 0,
+      "feedback": "Carica: 112%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "over",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.498097, 0.105, -8.023637)",
+      "success": true
+    },
+    {
+      "category": "receive",
+      "contacts": 1,
+      "feedback": "Qualità 100% · PERFETTA",
+      "input": true,
+      "lesson": "contact",
+      "net_frames": [],
+      "phase": "SET",
+      "position": "(0.094413, 1.261947, 4.602909)",
+      "success": true
+    },
+    {
+      "category": "receive",
+      "contacts": 2,
+      "feedback": "Qualità 100% · PERFETTA",
+      "input": true,
+      "lesson": "perfect",
+      "net_frames": [],
+      "phase": "SET",
+      "position": "(0.094169, 1.285694, 4.594593)",
+      "success": true
+    },
+    {
+      "category": "receive",
+      "contacts": 3,
+      "feedback": "Qualità 100% · PERFETTA",
+      "input": true,
+      "lesson": "pace",
+      "net_frames": [],
+      "phase": "SET",
+      "position": "(0.093782, 1.341239, 4.581371)",
+      "success": true
+    },
+    {
+      "category": "receive",
+      "contacts": 4,
+      "feedback": "Qualità 87% · PERFETTA",
+      "input": true,
+      "lesson": "dig",
+      "net_frames": [],
+      "phase": "SET",
+      "position": "(-0.190075, 1.163763, 4.617495)",
+      "success": true
+    },
+    {
+      "category": "receive",
+      "contacts": 5,
+      "feedback": "Qualità 87% · PERFETTA",
+      "input": true,
+      "lesson": "recovery",
+      "net_frames": [],
+      "phase": "SET",
+      "position": "(-0.191709, 1.180537, 4.610845)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 6,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_0_false",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.448384, 2.61164, 1.485988)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 7,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_2_false",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.525624, 2.738402, 1.490451)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 8,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_3_false",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.460204, 2.599221, 1.507697)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 9,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_1_false",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.410934, 2.585797, 1.456989)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 10,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_0_true",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.409413, 2.620119, 1.488285)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 11,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_2_true",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.504535, 2.705036, 1.509004)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 12,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_3_true",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.431298, 2.61267, 1.518366)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 13,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "set_1_true",
+      "net_frames": [],
+      "phase": "ATTACK",
+      "position": "(1.336823, 2.611793, 1.453739)",
+      "success": true
+    },
+    {
+      "category": "set",
+      "contacts": 14,
+      "feedback": "Alzata corretta: attaccante e variante richiesti.",
+      "input": true,
+      "lesson": "dump",
+      "net_frames": [],
+      "phase": "CPU_RECEIVE",
+      "position": "(1.422655, 2.89602, 0.844985)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 17,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "swing",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(0.010031, 0.105, -8.032989)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 20,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "line",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-3.997618, 0.105, -8.229393)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 23,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "cross",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(3.808121, 0.105, -7.880393)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 26,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "opposite",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.081383, 0.105, -8.141438)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 29,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "pipe",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(-0.109175, 0.105, -8.058215)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 32,
+      "feedback": "Carica: 67%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "tip",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(3.776994, 0.105, -3.342688)",
+      "success": true
+    },
+    {
+      "category": "attack",
+      "contacts": 35,
+      "feedback": "Carica: 94%. Obiettivo raggiunto!",
+      "input": true,
+      "lesson": "full",
+      "net_frames": [],
+      "phase": "POINT",
+      "position": "(0.250385, 0.105, -7.826988)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 37,
+      "feedback": "Muro pieno!",
+      "input": true,
+      "lesson": "single",
+      "net_frames": [
+        {
+          "age": 0.233333333333333,
+          "ball": "(0.362402, 3.23492, -0.557565)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180739, 3.093464, 0.127913)",
+              "right": "(0.222068, 3.073728, 0.140956)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.181858, 3.06018, 0.127672)",
+              "right": "(1.578529, 3.076689, 0.057777)",
+              "root": "(1.63667, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(0.242069, 3.206235, -0.351853)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.179246, 3.108743, 0.124043)",
+              "right": "(0.221835, 3.088255, 0.137715)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.179739, 3.060043, 0.124473)",
+              "right": "(1.577986, 3.077285, 0.054235)",
+              "root": "(1.63667, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(0.121761, 3.174482, -0.146231)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180054, 3.105571, 0.120325)",
+              "right": "(0.222961, 3.084549, 0.133992)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.178425, 3.059623, 0.123141)",
+              "right": "(1.577672, 3.077421, 0.052541)",
+              "root": "(1.63667, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "CPU_RECEIVE",
+      "position": "(0.001477, 3.139664, 0.059295)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 39,
+      "feedback": "Tocco di muro riuscito.",
+      "input": true,
+      "lesson": "right",
+      "net_frames": [
+        {
+          "age": 0.233333333333333,
+          "ball": "(3.407604, 3.258825, -0.697124)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(0.657096, 3.082211, 0.184518)",
+              "right": "(1.030907, 3.073708, 0.142821)",
+              "root": "(1.038582, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(2.806715, 3.038961, 0.221357)",
+              "right": "(3.145225, 3.067787, 0.11901)",
+              "root": "(3.4, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(3.40696, 3.174524, -0.392361)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(0.658415, 3.098228, 0.180329)",
+              "right": "(1.030824, 3.087974, 0.139516)",
+              "root": "(1.038582, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(2.80359, 3.039191, 0.21796)",
+              "right": "(3.143734, 3.068772, 0.114531)",
+              "root": "(3.4, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(3.406371, 3.087012, -0.087817)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(0.657995, 3.095134, 0.17707)",
+              "right": "(1.031916, 3.084296, 0.135651)",
+              "root": "(1.038582, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(2.801025, 3.038128, 0.21612)",
+              "right": "(3.142382, 3.068724, 0.111699)",
+              "root": "(3.4, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "LOOSE",
+      "position": "(3.405836, 2.99629, 0.216501)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 41,
+      "feedback": "Tocco di muro riuscito.",
+      "input": true,
+      "lesson": "left",
+      "net_frames": [
+        {
+          "age": 0.233333333333333,
+          "ball": "(-3.389841, 3.126682, -0.551921)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-1.725042, 2.917523, 0.302755)",
+              "right": "(-1.326308, 2.942321, 0.258016)",
+              "root": "(-1.639799, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-3.362235, 3.085106, 0.140241)",
+              "right": "(-2.994811, 3.065809, 0.203881)",
+              "root": "(-3.4, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(-3.389324, 3.055289, -0.267929)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-1.725204, 2.951549, 0.288417)",
+              "right": "(-1.329847, 2.976725, 0.238971)",
+              "root": "(-1.639799, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-3.362699, 3.080281, 0.137368)",
+              "right": "(-2.994549, 3.062611, 0.201887)",
+              "root": "(-3.4, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "LOOSE",
+      "position": "(-3.388851, 2.980714, 0.015874)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 43,
+      "feedback": "Muro pieno!",
+      "input": true,
+      "lesson": "join_right",
+      "net_frames": [
+        {
+          "age": 0.233333333333333,
+          "ball": "(0.380421, 3.235996, -0.565722)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180742, 3.093479, 0.127963)",
+              "right": "(0.222046, 3.073776, 0.140993)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.48233, 3.06018, 0.127672)",
+              "right": "(0.879001, 3.076689, 0.057777)",
+              "root": "(0.937142, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(0.25973, 3.207433, -0.360007)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.179246, 3.108743, 0.124043)",
+              "right": "(0.221835, 3.088255, 0.137715)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.480211, 3.060043, 0.124473)",
+              "right": "(0.878458, 3.077285, 0.054235)",
+              "root": "(0.937142, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(0.139064, 3.175802, -0.154381)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180054, 3.105571, 0.120325)",
+              "right": "(0.222961, 3.084549, 0.133992)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.478897, 3.059623, 0.123141)",
+              "right": "(0.878144, 3.077421, 0.052541)",
+              "root": "(0.937142, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "CPU_RECEIVE",
+      "position": "(0.018423, 3.141105, 0.05115)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 45,
+      "feedback": "Muro pieno!",
+      "input": true,
+      "lesson": "join_left",
+      "net_frames": [
+        {
+          "age": 0.216666666666666,
+          "ball": "(0.45634, 3.252416, -0.695371)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.184837, 3.054789, 0.135196)",
+              "right": "(0.221372, 3.051022, 0.148689)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.185568, 3.060329, 0.134531)",
+              "right": "(1.579532, 3.074927, 0.065146)",
+              "root": "(1.63667, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.121545, 3.089757, 0.122915)",
+              "right": "(-0.716361, 3.076617, 0.135391)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.233333333333333,
+          "ball": "(0.335637, 3.225785, -0.489602)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180742, 3.093479, 0.127963)",
+              "right": "(0.222046, 3.073776, 0.140993)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.181858, 3.06018, 0.127672)",
+              "right": "(1.578529, 3.076689, 0.057777)",
+              "root": "(1.63667, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.122406, 3.088721, 0.118311)",
+              "right": "(-0.715378, 3.076425, 0.13094)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(0.21496, 3.196087, -0.283919)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.179246, 3.108743, 0.124043)",
+              "right": "(0.221835, 3.088255, 0.137715)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.179739, 3.060043, 0.124473)",
+              "right": "(1.577986, 3.077285, 0.054235)",
+              "root": "(1.63667, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.123203, 3.083763, 0.116224)",
+              "right": "(-0.714868, 3.073477, 0.128788)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(0.094306, 3.163322, -0.078328)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180054, 3.105571, 0.120325)",
+              "right": "(0.222961, 3.084549, 0.133992)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(1.178425, 3.059623, 0.123141)",
+              "right": "(1.577672, 3.077421, 0.052541)",
+              "root": "(1.63667, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.124102, 3.075658, 0.115198)",
+              "right": "(-0.714407, 3.067781, 0.127657)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "CPU_RECEIVE",
+      "position": "(-0.026322, 3.127491, 0.127167)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 47,
+      "feedback": "Muro pieno!",
+      "input": true,
+      "lesson": "triple",
+      "net_frames": [
+        {
+          "age": 0.233333333333333,
+          "ball": "(0.38257, 3.236947, -0.572977)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180737, 3.093474, 0.127943)",
+              "right": "(0.22206, 3.073752, 0.140974)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.48233, 3.06018, 0.127672)",
+              "right": "(0.879001, 3.076689, 0.057777)",
+              "root": "(0.937142, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.122406, 3.088721, 0.118311)",
+              "right": "(-0.715378, 3.076425, 0.13094)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.249999999999999,
+          "ball": "(0.261935, 3.208492, -0.367258)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.179246, 3.108743, 0.124043)",
+              "right": "(0.221835, 3.088255, 0.137715)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.480211, 3.060043, 0.124473)",
+              "right": "(0.878458, 3.077285, 0.054235)",
+              "root": "(0.937142, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.123203, 3.083763, 0.116224)",
+              "right": "(-0.714868, 3.073477, 0.128788)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(0.141325, 3.176969, -0.161629)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(-0.180054, 3.105571, 0.120325)",
+              "right": "(0.222961, 3.084549, 0.133992)",
+              "root": "(0.0, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(0.478897, 3.059623, 0.123141)",
+              "right": "(0.878144, 3.077421, 0.052541)",
+              "root": "(0.937142, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 2,
+              "left": "(-1.124102, 3.075658, 0.115198)",
+              "right": "(-0.714407, 3.067781, 0.127657)",
+              "root": "(-0.937188, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "CPU_RECEIVE",
+      "position": "(0.02074, 3.14238, 0.043905)",
+      "success": true
+    },
+    {
+      "category": "block",
+      "contacts": 49,
+      "feedback": "Muro pieno!",
+      "input": true,
+      "lesson": "press",
+      "net_frames": [
+        {
+          "age": 0.249999999999999,
+          "ball": "(3.268293, 3.194311, -0.44779)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(0.34033, 3.098228, 0.180329)",
+              "right": "(0.712739, 3.087974, 0.139516)",
+              "root": "(0.720497, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(2.80359, 3.039191, 0.21796)",
+              "right": "(3.143734, 3.068772, 0.114531)",
+              "root": "(3.4, 0.0, 0.68)"
+            }
+          ]
+        },
+        {
+          "age": 0.266666666666666,
+          "ball": "(3.206734, 3.111532, -0.15117)",
+          "hands": [
+            {
+              "clip": "block",
+              "index": 1,
+              "left": "(0.339911, 3.095134, 0.17707)",
+              "right": "(0.713832, 3.084296, 0.135651)",
+              "root": "(0.720497, 0.0, 0.68)"
+            },
+            {
+              "clip": "block",
+              "index": 0,
+              "left": "(2.801025, 3.038128, 0.21612)",
+              "right": "(3.142382, 3.068724, 0.111699)",
+              "root": "(3.4, 0.0, 0.68)"
+            }
+          ]
+        }
+      ],
+      "phase": "CPU_RECEIVE",
+      "position": "(3.15311, 3.010242, 0.09813)",
+      "success": true
+    }
+  ],
+  "failures": 0,
+  "hz": 60,
+  "native": true
+}

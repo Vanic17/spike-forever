@@ -204,6 +204,7 @@ var court_shape = CourtShape.new()
 var attack_run = preload("res://src/attack_run.gd").new()
 var pause_menu
 var preferences
+var tutorial
 var middle_decoy=MiddleDecoy.new()
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
@@ -296,6 +297,7 @@ func _ready() -> void:
 		return
 	self_test = "--self-test" in OS.get_cmdline_user_args() or "--fallback-test" in OS.get_cmdline_user_args() or "--rally-test" in OS.get_cmdline_user_args()
 	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; add_child(online_session)
+	tutorial=preload("res://src/tutorial_mode.gd").new(); tutorial.game=self; add_child(tutorial)
 	if not self_test:
 		var start_menu=preload("res://src/start_menu.gd").new()
 		start_menu.game=self
@@ -739,6 +741,7 @@ func log_rally_event(kind: String, details: Dictionary = {}) -> void:
 	event.merge(details,true)
 	rally_events.append(event)
 	if rally_events.size() > 4096: rally_events.pop_front()
+	if tutorial!=null and tutorial.active: tutorial.on_event(event)
 
 func server_index(team: int) -> int:
 	return Tactics.server(team, rotations[team])
@@ -1413,6 +1416,8 @@ func attack_ball() -> void:
 	target += Vector3(rng.randf_range(-minf(spread,0.8),minf(spread,0.8)),0,rng.randf_range(-minf(spread,0.65),minf(spread,0.65)))
 	target+=Vector3(rng.randf_range(-0.18,0.18),0,rng.randf_range(-0.22,0.22))
 	target.x=clampf(target.x,-4.25,4.25); target.z=s*clampf(absf(target.z),2.8,8.8)
+	if tutorial!=null and tutorial.active and tutorial.category=="block":
+		target=tutorial.coach_attack_target(); soft=false
 	winner_team=attacker if Timing.winning_power(requested_power) and hitter_action=="attack" else -1
 	if requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip):
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
@@ -1430,6 +1435,7 @@ func attack_ball() -> void:
 		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.70)*(1.35-0.35*power)
 	if hitter_action == "receive": seconds = 1.4
 	elif requested_power>1.0: seconds/=requested_power
+	if tutorial!=null and tutorial.active and tutorial.category=="block": seconds=tutorial.coach_seconds(target,seconds)
 	send_to_court(attacker,target,seconds)
 	if automatic_overpass: log_rally_event("overpass_kill",{"hitter":hitter,"power":requested_power,"seconds":seconds})
 	overpass_attack_team=-1
@@ -1549,6 +1555,9 @@ func miss_contact() -> void:
 
 func award(team: int, reason: String) -> void:
 	if phase == "POINT": return
+	if tutorial!=null and tutorial.active:
+		tutorial.on_point(team,reason)
+		return
 	if self_test: print("POINT ", team, " ", reason, " phase=", phase, " ball=", ball_pos)
 	scores[team] += 1
 	if server != team: rotations[team] = posmod(rotations[team] + 1, 6)
@@ -1613,6 +1622,7 @@ func step(dt: float) -> void:
 		for p in players: p.tick(dt, false)
 		return
 	if not started or paused: return
+	if tutorial!=null and tutorial.active and tutorial.before_step(dt): return
 	clock_time += dt
 	phase_time += dt
 	feedback_left -= dt
@@ -1970,6 +1980,7 @@ func move_players(dt: float) -> void:
 		for index in floor_plan:
 			if index!=action_actor and not index in blockers: nominal[index]=floor_plan[index]
 	var team_targets: Array[Vector3] = court_shape.arrange(self,nominal,action_actor,action,blockers)
+	if tutorial!=null and tutorial.active: tutorial.practice_targets(team_targets)
 	if phase in ["SET","CPU_SET"] and planned_direction==3: attack_run.prepare_pipe(self,team_targets)
 	if phase in ["ATTACK","CPU_ATTACK"] and action=="attack": attack_run.clear_lane(self,team_targets,action_actor)
 	if phase in ["ATTACK","CPU_ATTACK"] and phase_time<0.22:

@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "attempts": 2,
+      "case": "automatic_repetition",
+      "completion_modal": true,
+      "successes": 2
+    },
+    {
+      "case": "no_input",
+      "category": "receive",
+      "successes": 0
+    },
+    {
+      "case": "no_input",
+      "category": "attack",
+      "successes": 0
+    },
+    {
+      "case": "no_input",
+      "category": "block",
+      "successes": 0
+    },
+    {
+      "case": "wrong_set_direction",
+      "successes": 0
+    }
+  ],
+  "free_practice": true,
+  "home": true,
+  "paused_charge_restart": true
+}

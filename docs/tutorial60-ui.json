@@ -1,0 +1,18 @@
+{
+  "back_navigation": true,
+  "category_layouts": 40,
+  "languages": [
+    "it",
+    "en"
+  ],
+  "lesson_modals": 280,
+  "live_circle_dump": true,
+  "match_restored": true,
+  "progress_persistence": true,
+  "sizes": [
+    "1440x810",
+    "1280x720",
+    "1280x600",
+    "1024x600"
+  ]
+}
