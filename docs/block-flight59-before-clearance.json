@@ -1,0 +1,261 @@
+{
+  "actual_ball_contacts": 8,
+  "cases": [
+    {
+      "block_point": false,
+      "contact_position": "(0.003967, 3.000936, 0.148706)",
+      "defender": 0,
+      "events": [
+        {
+          "kind": "net_rebound",
+          "rally": 2,
+          "team": 1,
+          "time": 10.2666666666667
+        }
+      ],
+      "final_ball": "(0.199778, 0.63052, 0.165437)",
+      "hz": 60,
+      "jump_key": 1,
+      "kind": "stuff_block",
+      "native": false,
+      "net_contacts": 1,
+      "outgoing": "(0.896211, -14.0278, -2.802224)",
+      "phase": "SET",
+      "point_against_block": false,
+      "recovered": true,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": false,
+      "contact_position": "(0.002313, 2.978983, -0.095419)",
+      "defender": 1,
+      "events": [
+        {
+          "kind": "net_rebound",
+          "rally": 3,
+          "team": 0,
+          "time": 10.25
+        }
+      ],
+      "final_ball": "(0.064899, 1.250044, -0.162298)",
+      "hz": 60,
+      "jump_key": 2,
+      "kind": "stuff_block",
+      "native": false,
+      "net_contacts": 1,
+      "outgoing": "(0.355944, -14.06724, 2.803426)",
+      "phase": "CPU_SET",
+      "point_against_block": false,
+      "recovered": true,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": true,
+      "contact_position": "(-0.000187, 3.084458, 0.089793)",
+      "defender": 0,
+      "events": [
+        {
+          "action": "",
+          "actor": 7,
+          "armed": false,
+          "ball": "(0.154414, 0.484649, -0.400881)",
+          "kind": "missed_contact",
+          "phase": "CPU_RECEIVE",
+          "quality": 0.0,
+          "rally": 4,
+          "root": "(-0.942648, 0.0, -1.564367)",
+          "target": "(0.154414, 0.484581, -0.400885)",
+          "team": 1,
+          "time": 10.3725734770934,
+          "variant": {
+            "backpedal": "backpedal_v26_01",
+            "backwalk": "backwalk_v26_01",
+            "block": "block_v26_07",
+            "block_ready": "block_ready_v26_01",
+            "cross_left": "cross_left_v26_01",
+            "cross_right": "cross_right_v26_01",
+            "dive": "dive_v26_03",
+            "idle": "ready_v26_01",
+            "ready": "ready_v26_07",
+            "receive": "receive_left_step",
+            "relaxed": "relaxed",
+            "run": "run_right",
+            "shuffle_left": "shuffle_left_v26_01",
+            "shuffle_right": "shuffle_right_v26_01",
+            "walk": "walk"
+          }
+        }
+      ],
+      "final_ball": "(0.178971, 0.105, -0.480296)",
+      "hz": 120,
+      "jump_key": 3,
+      "kind": "stuff_block",
+      "native": false,
+      "net_contacts": 0,
+      "outgoing": "(0.896159, -14.24276, -2.8)",
+      "phase": "POINT",
+      "point_against_block": false,
+      "recovered": false,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": false,
+      "contact_position": "(-0.000163, 3.124828, 0.072872)",
+      "defender": 1,
+      "events": [],
+      "final_ball": "(-5.797242, 0.517393, -8.298238)",
+      "hz": 120,
+      "jump_key": 4,
+      "kind": "block_tool",
+      "native": false,
+      "net_contacts": 0,
+      "outgoing": "(-8.04823, 0.20108, -11.39604)",
+      "phase": "CPU_SET",
+      "point_against_block": false,
+      "recovered": true,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": false,
+      "contact_position": "(0.057827, 3.103987, 0.220561)",
+      "defender": 0,
+      "events": [],
+      "final_ball": "(13.20223, 0.105, 20.43408)",
+      "hz": 60,
+      "jump_key": 5,
+      "kind": "block_tool",
+      "native": true,
+      "net_contacts": 0,
+      "outgoing": "(9.636718, 5.160276, 14.22783)",
+      "phase": "POINT",
+      "point_against_block": true,
+      "recovered": false,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": false,
+      "contact_position": "(0.001857, 2.990624, -0.123761)",
+      "defender": 1,
+      "events": [
+        {
+          "kind": "net_rebound",
+          "rally": 7,
+          "team": 0,
+          "time": 10.25
+        }
+      ],
+      "final_ball": "(0.058144, 1.493069, -0.16323)",
+      "hz": 60,
+      "jump_key": 6,
+      "kind": "stuff_block",
+      "native": true,
+      "net_contacts": 1,
+      "outgoing": "(0.355856, -14.05513, 2.802744)",
+      "phase": "CPU_SET",
+      "point_against_block": false,
+      "recovered": true,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": true,
+      "contact_position": "(-0.000187, 3.084458, 0.089793)",
+      "defender": 0,
+      "events": [
+        {
+          "action": "",
+          "actor": 7,
+          "armed": false,
+          "ball": "(0.153666, 0.483335, -0.398048)",
+          "kind": "missed_contact",
+          "phase": "CPU_RECEIVE",
+          "quality": 0.0,
+          "rally": 8,
+          "root": "(-0.942308, 0.0, -1.565018)",
+          "target": "(0.153666, 0.483255, -0.398052)",
+          "team": 1,
+          "time": 10.3715431192763,
+          "variant": {
+            "attack": "attack",
+            "backpedal": "backpedal_v26_01",
+            "backwalk": "backwalk_v26_01",
+            "block": "block_v26_06",
+            "block_ready": "block_ready_v26_01",
+            "cross_left": "cross_left_v26_01",
+            "cross_right": "cross_right_v26_01",
+            "dive": "dive_v26_02",
+            "idle": "ready_v26_01",
+            "ready": "ready_v26_07",
+            "receive": "receive_left_step",
+            "relaxed": "relaxed",
+            "run": "run_right",
+            "shuffle_left": "shuffle_left_v26_01",
+            "shuffle_right": "shuffle_right_v26_01",
+            "walk": "walk"
+          }
+        }
+      ],
+      "final_ball": "(0.179214, 0.105, -0.480489)",
+      "hz": 120,
+      "jump_key": 7,
+      "kind": "stuff_block",
+      "native": true,
+      "net_contacts": 0,
+      "outgoing": "(0.896159, -14.34618, -2.8)",
+      "phase": "POINT",
+      "point_against_block": false,
+      "recovered": false,
+      "root_travel": 0.0
+    },
+    {
+      "block_point": true,
+      "contact_position": "(-0.000163, 3.124828, 0.072872)",
+      "defender": 1,
+      "events": [
+        {
+          "action": "",
+          "actor": 1,
+          "armed": true,
+          "ball": "(0.05146, 1.000487, 0.482829)",
+          "kind": "missed_contact",
+          "phase": "RECEIVE",
+          "quality": 0.999999999999989,
+          "rally": 9,
+          "root": "(1.2, 0.0, 2.15)",
+          "target": "(0.05146, 1.000413, 0.482833)",
+          "team": 0,
+          "time": 10.3361931586646,
+          "variant": {
+            "backpedal": "backpedal_v26_01",
+            "backwalk": "backwalk_v26_01",
+            "block": "block_v26_06",
+            "block_ready": "block_ready_v26_01",
+            "cross_left": "cross_left_v26_01",
+            "cross_right": "cross_right_v26_01",
+            "dive": "dive",
+            "idle": "ready_v26_01",
+            "ready": "ready_v26_01",
+            "receive": "receive_v26_15",
+            "relaxed": "relaxed_v26_01",
+            "run": "run_right",
+            "shuffle_left": "shuffle_left_v26_01",
+            "shuffle_right": "shuffle_right_v26_01",
+            "walk": "walk"
+          }
+        }
+      ],
+      "final_ball": "(0.074394, 0.105, 0.667332)",
+      "hz": 120,
+      "jump_key": 8,
+      "kind": "stuff_block",
+      "native": true,
+      "net_contacts": 0,
+      "outgoing": "(0.355769, -14.00971, 2.8)",
+      "phase": "POINT",
+      "point_against_block": false,
+      "recovered": false,
+      "root_travel": 0.0
+    }
+  ],
+  "lock_checks": 8,
+  "manual_commands": 4
+}

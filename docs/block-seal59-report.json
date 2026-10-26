@@ -1,0 +1,395 @@
+{
+  "contact_grid": {
+    "block_tool": 1024,
+    "block_touch": 663,
+    "stuff_block": 657
+  },
+  "edge_max_error": 0.0000000726580624554884,
+  "game_cases": [
+    {
+      "fixture": "square",
+      "hz": 60,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 60,
+      "kind": "block_touch",
+      "strength": 0.351574745072349,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 60,
+      "kind": "block_touch",
+      "strength": 0.484889937842531,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 60,
+      "kind": "block_tool",
+      "strength": 0.484901447925546,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "square",
+      "hz": 120,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 120,
+      "kind": "block_touch",
+      "strength": 0.351574745072349,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 120,
+      "kind": "block_touch",
+      "strength": 0.484889937842531,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 120,
+      "kind": "block_tool",
+      "strength": 0.484901447925546,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "square",
+      "hz": 240,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 240,
+      "kind": "block_touch",
+      "strength": 0.351573500296325,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 240,
+      "kind": "block_touch",
+      "strength": 0.606112422303163,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 240,
+      "kind": "block_tool",
+      "strength": 0.606126809906932,
+      "team": 0,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 0,
+      "touched": false
+    },
+    {
+      "fixture": "square",
+      "hz": 60,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 60,
+      "kind": "block_touch",
+      "strength": 0.351573500296325,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 60,
+      "kind": "block_touch",
+      "strength": 0.59390409947144,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 60,
+      "kind": "block_tool",
+      "strength": 0.593889711858726,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 60,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "square",
+      "hz": 120,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 120,
+      "kind": "block_touch",
+      "strength": 0.351573500296325,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 120,
+      "kind": "block_touch",
+      "strength": 0.59390409947144,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 120,
+      "kind": "block_tool",
+      "strength": 0.593889711858726,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 120,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "square",
+      "hz": 240,
+      "kind": "stuff_block",
+      "strength": 0.98,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "graze",
+      "hz": 240,
+      "kind": "block_touch",
+      "strength": 0.351573500296325,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_inside",
+      "hz": 240,
+      "kind": "block_touch",
+      "strength": 0.59390409947144,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "edge_outside",
+      "hz": 240,
+      "kind": "block_tool",
+      "strength": 0.593889711858726,
+      "team": 1,
+      "touched": true
+    },
+    {
+      "fixture": "outside",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "bad_jump",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    },
+    {
+      "fixture": "not_blocking",
+      "hz": 240,
+      "kind": "none",
+      "strength": -1.0,
+      "team": 1,
+      "touched": false
+    }
+  ],
+  "intermediate_strengths": 1394,
+  "new_max_range": 0.00000159880694217129,
+  "phase_checks": 336,
+  "previous_edge_max_error": 0.139678033317642,
+  "previous_max_range": 0.772060684890269,
+  "rows": [
+    {
+      "fixture": "square",
+      "kind": "stuff_block",
+      "previous_range": 0.772060684890269,
+      "range_60_120_240": 0.0,
+      "strength": 0.98
+    },
+    {
+      "fixture": "inside",
+      "kind": "stuff_block",
+      "previous_range": 0.701826508156955,
+      "range_60_120_240": 0.0,
+      "strength": 0.98
+    },
+    {
+      "fixture": "graze",
+      "kind": "block_touch",
+      "previous_range": 0.135893747210503,
+      "range_60_120_240": 0.0000012447464801113,
+      "strength": 0.35156603172881
+    },
+    {
+      "fixture": "edge_inside",
+      "kind": "block_touch",
+      "previous_range": 0.301736438026031,
+      "range_60_120_240": 0.00000159880694217129,
+      "strength": 0.600000767427332
+    },
+    {
+      "fixture": "edge_outside",
+      "kind": "block_tool",
+      "previous_range": 0.301736438026031,
+      "range_60_120_240": 0.00000159880694217129,
+      "strength": 0.600000767427332
+    },
+    {
+      "fixture": "outer_finger",
+      "kind": "block_tool",
+      "previous_range": 0.332513668884834,
+      "range_60_120_240": 0.000000197084765507505,
+      "strength": 0.666749542744609
+    }
+  ]
+}

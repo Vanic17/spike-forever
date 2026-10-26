@@ -1439,7 +1439,10 @@ func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 	if attacker==0 and not network_match():
 		manual_wall.reset()
 		block_commanded=false
-		block_jumps.clear()
+		# The defending CPU is already airborne. Only release the previous
+		# human wall: clearing both teams here unlocked CPU roots mid-jump.
+		for index in block_jumps.keys():
+			if index<6: block_jumps.erase(index)
 	# The net's geometry also checks the resulting ballistic arc, including pipe attacks.
 	possession = 1 - attacker
 	touches[possession] = 0
@@ -1740,20 +1743,24 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 		var nearest_point: Vector3=pair[1]
 		var hit: Vector3=pair[0]
 		var gap := nearest_point.distance_to(hit)
+		var forearm:=false
 		for arm in ["Left","Right"]:
 			var hand: Vector3 = player.current_joint(arm+"Hand")
 			var elbow: Vector3 = player.current_joint(arm+"ForeArm")
 			var arm_pair:=Geometry3D.get_closest_points_between_segments(previous,ball_pos,hand,elbow)
 			if arm_pair[1].y>2.53 and arm_pair[0].distance_to(arm_pair[1])<gap:
 				gap=arm_pair[0].distance_to(arm_pair[1]); hit=arm_pair[0]
+				forearm=true
 		if "--trace-block" in OS.get_cmdline_user_args(): print("BLOCK a=",attack_serial," dt=",clock_time-block_time," ball=",ball_pos," player=",i," root=",player.position," left=",left," right=",right," elbow=",player.current_joint("RightForeArm")," gap=",gap)
 		if gap < 0.20:
 			near = true
-			if strength<clampf(1.0-gap/0.24,0.18,1.0):
+			var seal_alignment:=preload("res://src/block_contact.gd").alignment(hit,ball_vel,left,right,forearm)
+			if strength<seal_alignment:
 				var span: Vector3=right-left
-				contact_side=clampf((hit.x-(left.x+right.x)*0.5)/maxf(0.15,absf(span.x)*0.5),-1.25,1.25)
+				var crossing:=preload("res://src/block_contact.gd").palm_crossing(hit,ball_vel,left,right)
+				contact_side=clampf((crossing.x-(left.x+right.x)*0.5)/maxf(0.15,absf(span.x)*0.5),-1.25,1.25)
 				contact_point=hit
-			strength = maxf(strength,clampf(1.0-gap/0.24,0.18,1.0))
+			strength = maxf(strength,seal_alignment)
 	if good_jump and near:
 		block_checked=true
 		var tail: float=seconds*(1.0-clampf(previous.distance_to(contact_point)/maxf(0.00001,previous.distance_to(ball_pos)),0,1))
@@ -1771,6 +1778,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)))
 			var incoming := ball_vel
 			ball_vel=response.velocity
+			if response.kind=="stuff_block": ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
 			resume_deflection("block")
@@ -1910,7 +1918,8 @@ func block_pose_locked(index: int) -> bool:
 	var player=players[index]
 	if network_match() and block_jumps.has(index): return player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
 	# The grounded follow-through must not keep the root locked after landing.
-	return block_jumps.get(index,-1)==wall_attack_id() and player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
+	var jump_id:=wall_attack_id() if index<6 else attack_serial
+	return block_jumps.get(index,-1)==jump_id and player.clip_name=="block" and not player.looping and player.animation_time<player.clips.block.recovery_end
 
 func move_players(dt: float) -> void:
 	defensive_lanes.update(self)

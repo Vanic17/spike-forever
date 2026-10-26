@@ -1,0 +1,372 @@
+{
+  "fixture": "Two independent natural serve-to-point scenes, 25 scored rallies per seed, deterministic input driver using production input/analog/manual wall. No forced positions, hand contacts or solver inputs. Exactly matched seeds; trajectories diverge after fixes, attack totals differ.",
+  "seeds": [
+    59001,
+    59002
+  ],
+  "hz": 60,
+  "limits": "Controlled analog driver is not human performance. Human offense uses demo input charge near65%. Counts do not guarantee a per-set quota. CPU defense and real physical floor scoring remain active.",
+  "before": [
+    {
+      "seed": 59001,
+      "rally_points": 25,
+      "all_contacts": 385,
+      "hard_attack_contacts": 104,
+      "soft_attack_contacts": 8,
+      "block_jumps": 244,
+      "block_points_by_team": [
+        1,
+        0
+      ],
+      "stuff_contacts": 3,
+      "tools": 16,
+      "other_block_touches": 17,
+      "hard_stuff_floor_points": 1,
+      "hard_stuff_recoveries": 2,
+      "hard_stuff_net_rebounds": 1,
+      "stuff_outcomes": [
+        {
+          "team": 0,
+          "rally": 4,
+          "time": 41.4666666666656,
+          "seal": 0.724451860974032,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": true
+        },
+        {
+          "team": 0,
+          "rally": 17,
+          "time": 441.683333333261,
+          "seal": 0.679425664985178,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 25,
+          "time": 625.966666666428,
+          "seal": 0.792429582762222,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        }
+      ],
+      "rotations_seen": [
+        "[0, 1]",
+        "[1, 1]",
+        "[1, 2]",
+        "[2, 2]",
+        "[2, 3]",
+        "[3, 3]",
+        "[3, 4]"
+      ]
+    },
+    {
+      "seed": 59002,
+      "rally_points": 25,
+      "all_contacts": 263,
+      "hard_attack_contacts": 74,
+      "soft_attack_contacts": 10,
+      "block_jumps": 179,
+      "block_points_by_team": [
+        1,
+        0
+      ],
+      "stuff_contacts": 3,
+      "tools": 15,
+      "other_block_touches": 10,
+      "hard_stuff_floor_points": 1,
+      "hard_stuff_recoveries": 2,
+      "hard_stuff_net_rebounds": 1,
+      "stuff_outcomes": [
+        {
+          "team": 0,
+          "rally": 15,
+          "time": 226.833333333405,
+          "seal": 0.735552795565456,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": true
+        },
+        {
+          "team": 0,
+          "rally": 15,
+          "time": 249.916666666757,
+          "seal": 0.942839247953768,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 25,
+          "time": 492.366666666549,
+          "seal": 0.736230506642411,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        }
+      ],
+      "rotations_seen": [
+        "[0, 1]",
+        "[1, 1]",
+        "[1, 2]",
+        "[2, 2]",
+        "[2, 3]",
+        "[3, 3]",
+        "[3, 4]",
+        "[4, 4]",
+        "[4, 5]",
+        "[5, 5]",
+        "[5, 0]",
+        "[0, 0]"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "seed": 59001,
+      "rally_points": 25,
+      "all_contacts": 245,
+      "hard_attack_contacts": 75,
+      "soft_attack_contacts": 2,
+      "block_jumps": 169,
+      "block_points_by_team": [
+        2,
+        3
+      ],
+      "stuff_contacts": 10,
+      "tools": 27,
+      "other_block_touches": 6,
+      "hard_stuff_floor_points": 4,
+      "hard_stuff_recoveries": 6,
+      "hard_stuff_net_rebounds": 0,
+      "stuff_outcomes": [
+        {
+          "team": 1,
+          "rally": 3,
+          "time": 39.1666666666658,
+          "seal": 0.822430707118682,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 9,
+          "time": 131.03333333333,
+          "seal": 0.71828777946527,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 9,
+          "time": 148.883333333344,
+          "seal": 0.853614013223327,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 11,
+          "time": 188.550000000042,
+          "seal": 0.751041716894022,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 11,
+          "time": 204.966666666721,
+          "seal": 0.735100671947981,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 11,
+          "time": 208.433333333391,
+          "seal": 0.653592771793883,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 18,
+          "time": 345.400000000014,
+          "seal": 0.740379584221662,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 19,
+          "time": 360.133333333335,
+          "seal": 0.9359,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 23,
+          "time": 433.316666666602,
+          "seal": 0.9359,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 25,
+          "time": 488.183333333219,
+          "seal": 0.917547050872953,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        }
+      ],
+      "rotations_seen": [
+        "[0, 1]",
+        "[1, 1]",
+        "[1, 2]",
+        "[2, 2]",
+        "[2, 3]",
+        "[3, 3]",
+        "[3, 4]",
+        "[4, 4]",
+        "[4, 5]",
+        "[5, 5]",
+        "[5, 0]",
+        "[0, 0]"
+      ]
+    },
+    {
+      "seed": 59002,
+      "rally_points": 25,
+      "all_contacts": 243,
+      "hard_attack_contacts": 67,
+      "soft_attack_contacts": 4,
+      "block_jumps": 150,
+      "block_points_by_team": [
+        3,
+        1
+      ],
+      "stuff_contacts": 6,
+      "tools": 23,
+      "other_block_touches": 9,
+      "hard_stuff_floor_points": 3,
+      "hard_stuff_recoveries": 3,
+      "hard_stuff_net_rebounds": 0,
+      "stuff_outcomes": [
+        {
+          "team": 0,
+          "rally": 4,
+          "time": 62.7833333333311,
+          "seal": 0.821077485482701,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 5,
+          "time": 102.999999999995,
+          "seal": 0.9359,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 13,
+          "time": 281.183333333406,
+          "seal": 0.754287450078476,
+          "direct_floor_point": false,
+          "recovered_with_contact": true,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 14,
+          "time": 298.266666666724,
+          "seal": 0.852338795479202,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 0,
+          "rally": 16,
+          "time": 344.383333333349,
+          "seal": 0.93430077709321,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        },
+        {
+          "team": 1,
+          "rally": 26,
+          "time": 495.64999999988,
+          "seal": 0.906434250831604,
+          "direct_floor_point": true,
+          "recovered_with_contact": false,
+          "net_after_block_before_contact": false
+        }
+      ],
+      "rotations_seen": [
+        "[0, 0]",
+        "[0, 1]",
+        "[1, 1]",
+        "[1, 2]",
+        "[2, 2]",
+        "[2, 3]",
+        "[3, 3]",
+        "[3, 4]",
+        "[4, 4]",
+        "[4, 5]",
+        "[5, 5]",
+        "[5, 0]"
+      ]
+    }
+  ],
+  "before_totals": {
+    "rally_points": 50,
+    "block_points_by_team": [
+      2,
+      0
+    ],
+    "stuff_contacts": 6,
+    "tools": 31,
+    "other_block_touches": 27,
+    "hard_stuff_floor_points": 2,
+    "hard_stuff_recoveries": 4,
+    "hard_stuff_net_rebounds": 2,
+    "hard_attack_contacts": 178,
+    "soft_attack_contacts": 18
+  },
+  "after_totals": {
+    "rally_points": 50,
+    "block_points_by_team": [
+      5,
+      4
+    ],
+    "stuff_contacts": 16,
+    "tools": 50,
+    "other_block_touches": 15,
+    "hard_stuff_floor_points": 7,
+    "hard_stuff_recoveries": 9,
+    "hard_stuff_net_rebounds": 0,
+    "hard_attack_contacts": 142,
+    "soft_attack_contacts": 6
+  }
+}

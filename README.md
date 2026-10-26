@@ -1,12 +1,12 @@
 # Spike Forever
 
-**Versione 0.58.0:** mani fuori leggermente meno frequenti, più muri incisivi e più tocchi frenati che restano difendibili nel campo di chi mura. [Modifiche e verifiche](docs/RELEASE_NOTES_58.md).
+**Versione 0.59.0:** corretta la chiusura sulle mani nei contatti reali e conservato il salto del muro CPU durante la schiacciata. I muri ben eseguiti producono punti reali, con tocchi morbidi e coperture ancora possibili. [Modifiche e verifiche](docs/RELEASE_NOTES_59.md).
 
 Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/RELEASE_NOTES_57.md) e tutte le [impostazioni grafiche e di lingua](docs/RELEASE_NOTES_53.md).
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.58.0 (protocollo SF058).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.59.0 (protocollo SF059).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 
