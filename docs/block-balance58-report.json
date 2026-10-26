@@ -1,0 +1,138 @@
+{
+  "after": {
+    "block_tool": 2710,
+    "block_touch": 5078,
+    "details": {
+      "cushion": 1057,
+      "cushion_cover": 473,
+      "high_recycle": 976,
+      "low_dribble": 1251,
+      "through_fingers": 687,
+      "turn_back": 634
+    },
+    "flight_samples": 1000,
+    "opponent_inside_stuff": 218,
+    "outside": 430,
+    "own_playable_touch": 174,
+    "stuff_block": 2212
+  },
+  "baseline_sha256": "7b4286a04beaf7b74be86c59b878015aa10f8cd931360e1cf3f8ef1cdc180ab5",
+  "before": {
+    "block_tool": 3266,
+    "block_touch": 4700,
+    "details": {
+      "cushion": 1075,
+      "high_recycle": 996,
+      "low_dribble": 1281,
+      "through_fingers": 699,
+      "turn_back": 649
+    },
+    "flight_samples": 1000,
+    "opponent_inside_stuff": 208,
+    "outside": 482,
+    "own_playable_touch": 130,
+    "stuff_block": 2034
+  },
+  "current_sha256": "6b3bf61af968aae498575948f85b1f167dcc7425c929a2efc39e50cf5495a53a",
+  "flight_hz_checks": 2000,
+  "matched_contacts_per_version": 10000,
+  "mirror_checks": 20000,
+  "physical_flight_subset": "Every20th contact; two mirrored courts; actual gravity, drag and net response;60/120Hz; starts x=-3,0,3m. Own playable means inside the blocking team's court with at least.25s before receive height.",
+  "real_game_cases": [
+    {
+      "actual_defensive_touch": true,
+      "defender": 0,
+      "detail": "cushion_cover",
+      "hz": 60,
+      "kind": "block_touch",
+      "pass_quality": 0.85,
+      "phase": "SET",
+      "real_floor_point": false
+    },
+    {
+      "actual_defensive_touch": false,
+      "defender": 0,
+      "detail": "",
+      "hz": 60,
+      "kind": "stuff_block",
+      "pass_quality": -1,
+      "phase": "POINT",
+      "real_floor_point": true
+    },
+    {
+      "actual_defensive_touch": true,
+      "defender": 0,
+      "detail": "cushion_cover",
+      "hz": 120,
+      "kind": "block_touch",
+      "pass_quality": 0.85,
+      "phase": "SET",
+      "real_floor_point": false
+    },
+    {
+      "actual_defensive_touch": false,
+      "defender": 0,
+      "detail": "",
+      "hz": 120,
+      "kind": "stuff_block",
+      "pass_quality": -1,
+      "phase": "POINT",
+      "real_floor_point": true
+    },
+    {
+      "actual_defensive_touch": true,
+      "defender": 1,
+      "detail": "cushion_cover",
+      "hz": 60,
+      "kind": "block_touch",
+      "pass_quality": 0.796187762523397,
+      "phase": "CPU_SET",
+      "real_floor_point": false
+    },
+    {
+      "actual_defensive_touch": false,
+      "defender": 1,
+      "detail": "",
+      "hz": 60,
+      "kind": "stuff_block",
+      "pass_quality": -1,
+      "phase": "POINT",
+      "real_floor_point": true
+    },
+    {
+      "actual_defensive_touch": true,
+      "defender": 1,
+      "detail": "cushion_cover",
+      "hz": 120,
+      "kind": "block_touch",
+      "pass_quality": 0.796187762523397,
+      "phase": "CPU_SET",
+      "real_floor_point": false
+    },
+    {
+      "actual_defensive_touch": false,
+      "defender": 1,
+      "detail": "",
+      "hz": 120,
+      "kind": "stuff_block",
+      "pass_quality": -1,
+      "phase": "POINT",
+      "real_floor_point": true
+    },
+    {
+      "actual_defensive_touch": false,
+      "case": "no_human_input",
+      "defender": 0,
+      "hz": 60,
+      "phase": "POINT"
+    },
+    {
+      "actual_defensive_touch": false,
+      "case": "no_human_input",
+      "defender": 0,
+      "hz": 120,
+      "phase": "POINT"
+    }
+  ],
+  "seed": 58101
+}

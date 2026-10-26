@@ -48,6 +48,7 @@ $files+=@('docs/RELEASE_NOTES_57.md','docs/second-touch57-report.json','docs/rec
 $files+=@('tools/Test-SecondTouch57.gd','tools/Test-ReceiveClock57.gd','tools/Test-YieldRoutes57.gd','tools/Test-Rescue57.gd','tools/Test-Scramble57.gd','tools/Test-LongPass57.gd','tools/Diagnose-Contacts57.gd','tools/Benchmark-Contacts57.gd','tools/Capture-Rescue57.gd')
 $files+=@('tools/Test-EmergencyAttack57.gd','docs/emergency-attack57-report.json')
 $files+=@('tools/Test-MiddleReady57.gd','docs/middle-ready57-report.json','docs/middle-ready57-baseline.json')
+$files+=@('docs/RELEASE_NOTES_58.md','docs/baseline-v57/block_response.gd','docs/block-balance58-report.json','tools/Test-BlockBalance58.gd')
 foreach($preview53 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'settings53-*.png'){ $files+='docs/'+$preview53.Name }
 foreach($preview52 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'recovery52-preview-*.png'){ $files+='docs/'+$preview52.Name }
 foreach($tool51 in @('Test-Preferences51.gd','Test-Handed51.gd','Test-Online51.gd','Test-HumanContacts51.gd','Test-OnlineUI51.gd','Test-LobbyLeave51.gd','Test-Discovery51.gd','Capture-Online51.gd')){ $files+='tools/'+$tool51 }
