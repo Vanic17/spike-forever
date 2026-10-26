@@ -46,6 +46,7 @@ var _rally_mix_live := false
 var _home_point := false
 var _audience_ducked := false
 var _legacy_ambience: AudioStream
+var service_whistled:=false
 
 func _ready() -> void:
 	random.randomize()
@@ -218,6 +219,7 @@ func _advance_channels(dt: float) -> void:
 			else: envelopes.erase(id)
 
 func update_match_state(started: bool, phase: String, paused: bool = false) -> void:
+	if not started or phase!="SERVE": service_whistled=false
 	var active := enabled and started and not paused
 	if not active:
 		if match_active: _stop_all()
@@ -232,6 +234,8 @@ func update_match_state(started: bool, phase: String, paused: bool = false) -> v
 	match_phase = phase
 	if phase == "SERVE":
 		_rally_mix_live = false
+		if not service_whistled:
+			referee_whistle("serve"); service_whistled=true
 		# Existing phrases remain alive; a new service is not a music restart.
 	elif phase in LIVE_PHASES:
 		_begin_rally()
@@ -361,9 +365,7 @@ func point_event(home_point: bool) -> void:
 	if not enabled or not match_active or _point_cooldown > 0: return
 	_point_cooldown = 0.65
 	_home_point = home_point
-	var whistle_group := "whistle_real" if arena_banks.has("whistle_real") else "whistle"
-	_play_channel(whistle, whistle_group, -3.5, random.randf_range(0.99, 1.01))
-	_note("referee")
+	referee_whistle("point")
 	if not home_point:
 		_horn_left = -1
 		_interlude_left = -1
@@ -384,6 +386,12 @@ func point_event(home_point: bool) -> void:
 	_note("home_celebration")
 	_horn_left = random.randf_range(0.35, 0.8) if random.randf() < 0.29 else -1.0
 	_interlude_left = random.randf_range(0.8, 1.6) if random.randf() < 0.24 else -1.0
+
+func referee_whistle(reason: String) -> void:
+	if not enabled or not match_active: return
+	var group := "whistle_real" if arena_banks.has("whistle_real") else "whistle"
+	if _play_channel(whistle, group, -3.5, random.randf_range(.99, 1.01)):
+		_note("referee"); _note("referee_"+reason)
 
 func movement(point: Vector3, speed: float, lateral: float = 0.0) -> void:
 	if not enabled or not match_active or not match_phase in LIVE_PHASES + ["SERVE"]: return

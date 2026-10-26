@@ -14,6 +14,6 @@
   },
   "pause": true,
   "role": "host",
-  "snapshot_max": 1730,
+  "snapshot_max": 1750,
   "version": "0.51.0"
 }

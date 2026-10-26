@@ -1,6 +1,6 @@
 # Spike Forever
 
-**Versione 0.60.0:** nuova sezione **Tutorial**, con 35 lezioni libere su servizio, ricezione/difesa, palleggio, attacco e muro. Istruzioni PlayStation, Xbox e tastiera, bersagli in campo, ripetizioni e progressi locali. [Come funziona](docs/RELEASE_NOTES_60.md).
+**Versione 0.61.0:** fischi di inizio servizio e fine azione, corrimano dell'arbitro, riserve e allenatori animati sulle panchine. Rimossa la copertura CPU sui monster block. [Dettagli](docs/RELEASE_NOTES_61.md).
 
 Restano le correzioni del [muro della 0.59](docs/RELEASE_NOTES_59.md): contatti pieni sulle mani, salto CPU conservato fino all'atterraggio e press della palla oltre la rete.
 
@@ -8,7 +8,7 @@ Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.60.0 (protocollo SF060).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.61.0 (protocollo SF061).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

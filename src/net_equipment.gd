@@ -54,3 +54,12 @@ func _ready() -> void:
 	var label:=Label3D.new(); label.text="CREDEM\nBANCA"; label.font_size=45; label.pixel_size=.0026; label.modulate=Color("fff04b")
 	label.position=Vector3(.44,1.18,0); label.rotation.y=PI/2; label.outline_size=0; stand.add_child(label)
 	official=preload("res://src/referee.gd").new(); official.position=Vector3(-6.07,2.045,0); official.rotation.y=PI/2; add_child(official)
+	# Fit the court-facing rail to the source referee's idle hands.
+	var rig: Skeleton3D=official.get_node("Rig")
+	var hands:=Vector3.ZERO
+	for joint in ["LeftHand","RightHand"]:
+		hands+=stand.to_local(rig.to_global(rig.get_bone_global_pose(rig.find_bone(joint)).origin))*.5
+	hands.y-=.025
+	var handrail:=Node3D.new(); handrail.name="RefereeHandrail"; stand.add_child(handrail)
+	rod(handrail,Vector3(hands.x,hands.y,-.60),Vector3(hands.x,hands.y,.60),.032,red)
+	for z in [-.60,.60]: rod(handrail,Vector3(hands.x,2.05,z),Vector3(hands.x,hands.y,z),.025,red)

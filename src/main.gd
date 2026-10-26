@@ -182,6 +182,7 @@ var last_power := 0.0
 var last_precision := 1.0
 var last_serve_fault := ""
 var block_rosters: Dictionary = {}
+var terminal_cpu_block:=false
 var dead_ball_bounces := 0
 var point_formation: Array[Vector3] = []
 var block_orders: Dictionary = {}
@@ -657,6 +658,7 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	terminal_cpu_block=false
 	cpu_defense.reset()
 	overpass_attack_team=-1
 	attack_tip=false
@@ -1792,6 +1794,12 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
 			resume_deflection("block")
+			# A sealed monster block is terminal for CPU attack coverage.
+			# Keep its real flight and floor scoring; soft touches remain recoverable.
+			if response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession):
+				terminal_cpu_block=true
+				phase="LOOSE"; flight_left=100; marker.visible=false
+				log_rally_event("monster_block_no_cpu_cover",{"team":possession})
 			# A hard stuff remains physically playable, but a hitter in
 			# landing recovery cannot reset instantly into a perfect dig.
 			if response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"]:
@@ -1810,6 +1818,9 @@ func advance_block_tail(seconds: float) -> void:
 	if phase in ["RECEIVE","CPU_RECEIVE"] and human_team(possession): receive_deadline-=seconds
 
 func resume_deflection(kind: String) -> void:
+	if terminal_cpu_block:
+		phase="LOOSE"; flight_left=100; marker.visible=false
+		return
 	# Continue from current position and velocity; both a stuffed block and a
 	# light touch can stay live on whichever side the real rebound reaches.
 	flight_gravity = G

@@ -140,6 +140,7 @@ void fragment(){
 	build_seating()
 	build_crowd()
 	build_branding()
+	add_child(preload("res://src/team_benches.gd").new())
 	ball = MeshInstance3D.new()
 	var sphere := SphereMesh.new()
 	sphere.radius = 0.105

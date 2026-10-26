@@ -52,6 +52,7 @@ $files+=@('docs/RELEASE_NOTES_58.md','docs/baseline-v57/block_response.gd','docs
 $files+=@('docs/RELEASE_NOTES_59.md','docs/baseline-v58/main.gd','docs/baseline-v58/block_response.gd','tools/Diagnose-Blocks59.gd','tools/Test-BlockSeal59.gd','tools/Test-BlockFlight59.gd','tools/Test-BlockGeometry59.gd')
 foreach($report59 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'block-*59*.json'){$files+='docs/'+$report59.Name}
 $files+=@('docs/RELEASE_NOTES_60.md','tools/Test-Tutorial60.gd','tools/Test-TutorialUI60.gd','tools/Test-TutorialFlow60.gd','tools/Capture-Tutorial60.gd')
+$files+=@('docs/RELEASE_NOTES_61.md','tools/Test-Arena61.gd','tools/Capture-Arena61.gd','docs/arena61-bench.png','docs/arena61-referee.png')
 $files+=@('docs/tutorial60-gameplay.json','docs/tutorial60-gameplay-60.json','docs/tutorial60-gameplay-psa.json','docs/tutorial60-ui.json','docs/tutorial60-flow.json')
 foreach($capture60 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'tutorial60-*.png'){$files+='docs/'+$capture60.Name}
 foreach($preview53 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'settings53-*.png'){ $files+='docs/'+$preview53.Name }

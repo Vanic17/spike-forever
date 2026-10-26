@@ -436,7 +436,7 @@
           ]
         }
       ],
-      "phase": "CPU_RECEIVE",
+      "phase": "LOOSE",
       "position": "(0.061616, 3.157456, -0.043456)",
       "success": true
     },
@@ -792,7 +792,7 @@
           ]
         }
       ],
-      "phase": "CPU_RECEIVE",
+      "phase": "LOOSE",
       "position": "(0.07874, 3.158837, -0.051603)",
       "success": true
     },
@@ -993,7 +993,7 @@
           ]
         }
       ],
-      "phase": "CPU_RECEIVE",
+      "phase": "LOOSE",
       "position": "(0.033989, 3.145789, 0.024432)",
       "success": true
     },
@@ -1194,7 +1194,7 @@
           ]
         }
       ],
-      "phase": "CPU_RECEIVE",
+      "phase": "LOOSE",
       "position": "(0.02074, 3.14238, 0.043905)",
       "success": true
     },
@@ -1286,7 +1286,7 @@
           ]
         }
       ],
-      "phase": "CPU_RECEIVE",
+      "phase": "LOOSE",
       "position": "(3.18029, 3.075002, -0.023858)",
       "success": true
     }
