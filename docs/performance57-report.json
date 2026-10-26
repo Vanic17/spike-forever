@@ -1,0 +1,1013 @@
+{
+  "measurement": "Headless CPU simulation only; not GPU performance, rendered FPS, or display frame pacing.",
+  "comparison": "Sequential runs on the same machine, published v0.56.0 followed by final v0.57.0, including central preparation changes. Each process warms all 12 fixtures before 24 measured constructions. Same executable, benchmark, seed57002, 120Hz physics and 30Hz sampled poses.",
+  "baseline_project": "dist/source-0.56.0-3d7b2649bfd942dfbe65d2aa053cd6d8",
+  "benchmark_sha256": "66923b9fd149a9e101cba70923dc6c2602fc43784988ec7ad481c6e7d06987a0",
+  "percentage_change": {
+    "step": {
+      "mean_ms": 1.7019817464254627,
+      "p95_ms": -2.3201856148491906,
+      "max_ms": 12.67521025230276
+    },
+    "step_plus_sampled_poses": {
+      "mean_ms": 1.5341863009820766,
+      "p95_ms": 1.00145137880987,
+      "max_ms": 3.587398373983741
+    }
+  },
+  "published56": {
+    "cases": [
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 0,
+        "step": {
+          "max_ms": 3.94,
+          "mean_ms": 1.24477325581395,
+          "p95_ms": 2.124,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.151,
+          "mean_ms": 2.23304651162791,
+          "p95_ms": 5.927,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 1,
+        "step": {
+          "max_ms": 3.431,
+          "mean_ms": 1.35866878980892,
+          "p95_ms": 2.772,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.992,
+          "mean_ms": 2.48128025477707,
+          "p95_ms": 6.794,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.314,
+          "mean_ms": 1.35127388535032,
+          "p95_ms": 2.257,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.048,
+          "mean_ms": 2.46908280254777,
+          "p95_ms": 6.648,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 3,
+        "step": {
+          "max_ms": 3.517,
+          "mean_ms": 1.25637209302326,
+          "p95_ms": 2.185,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.025,
+          "mean_ms": 2.30926162790698,
+          "p95_ms": 6.711,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 4,
+        "step": {
+          "max_ms": 3.778,
+          "mean_ms": 1.30705095541401,
+          "p95_ms": 2.275,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.791,
+          "mean_ms": 2.45883439490446,
+          "p95_ms": 6.89,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 5,
+        "step": {
+          "max_ms": 3.284,
+          "mean_ms": 1.32758598726115,
+          "p95_ms": 2.24,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.971,
+          "mean_ms": 2.43628025477707,
+          "p95_ms": 6.514,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.159,
+          "mean_ms": 1.48469594594595,
+          "p95_ms": 3.001,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.848,
+          "mean_ms": 2.62157432432432,
+          "p95_ms": 7.252,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 1,
+        "step": {
+          "max_ms": 4.424,
+          "mean_ms": 1.46147972972973,
+          "p95_ms": 2.445,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.938,
+          "mean_ms": 2.56793918918919,
+          "p95_ms": 6.922,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 1,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.815,
+          "mean_ms": 1.53774269005848,
+          "p95_ms": 2.965,
+          "samples": 171
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.88,
+          "mean_ms": 2.62598830409357,
+          "p95_ms": 7.053,
+          "samples": 171
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 1,
+        "rotation": 3,
+        "step": {
+          "max_ms": 4.422,
+          "mean_ms": 1.52673988439306,
+          "p95_ms": 2.628,
+          "samples": 173
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.246,
+          "mean_ms": 2.71505202312139,
+          "p95_ms": 7.122,
+          "samples": 173
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 1,
+        "rotation": 4,
+        "step": {
+          "max_ms": 4.145,
+          "mean_ms": 1.40345945945946,
+          "p95_ms": 2.663,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.506,
+          "mean_ms": 2.50911486486487,
+          "p95_ms": 7.18,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 1,
+        "rotation": 5,
+        "step": {
+          "max_ms": 4.709,
+          "mean_ms": 1.50860135135135,
+          "p95_ms": 2.823,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.523,
+          "mean_ms": 2.6395472972973,
+          "p95_ms": 7.275,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.012,
+          "mean_ms": 1.24766860465116,
+          "p95_ms": 2.173,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.213,
+          "mean_ms": 2.23624418604651,
+          "p95_ms": 6.039,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 1,
+        "step": {
+          "max_ms": 3.392,
+          "mean_ms": 1.36293630573248,
+          "p95_ms": 2.766,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.035,
+          "mean_ms": 2.48840127388535,
+          "p95_ms": 6.856,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.38,
+          "mean_ms": 1.37403184713376,
+          "p95_ms": 2.278,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.941,
+          "mean_ms": 2.49980891719745,
+          "p95_ms": 6.668,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 3,
+        "step": {
+          "max_ms": 3.483,
+          "mean_ms": 1.26817441860465,
+          "p95_ms": 2.166,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.17,
+          "mean_ms": 2.32385465116279,
+          "p95_ms": 6.701,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 4,
+        "step": {
+          "max_ms": 3.808,
+          "mean_ms": 1.30510191082803,
+          "p95_ms": 2.232,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.84,
+          "mean_ms": 2.44573248407643,
+          "p95_ms": 6.901,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 5,
+        "step": {
+          "max_ms": 3.313,
+          "mean_ms": 1.33566878980892,
+          "p95_ms": 2.271,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.011,
+          "mean_ms": 2.44466878980892,
+          "p95_ms": 6.514,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.205,
+          "mean_ms": 1.48581756756757,
+          "p95_ms": 3.035,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.894,
+          "mean_ms": 2.62677702702703,
+          "p95_ms": 7.304,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 1,
+        "step": {
+          "max_ms": 4.994,
+          "mean_ms": 1.45850675675676,
+          "p95_ms": 2.42,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.047,
+          "mean_ms": 2.57087162162162,
+          "p95_ms": 6.828,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 2,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.803,
+          "mean_ms": 1.53354970760234,
+          "p95_ms": 3.009,
+          "samples": 171
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.888,
+          "mean_ms": 2.62242105263158,
+          "p95_ms": 7.004,
+          "samples": 171
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 2,
+        "rotation": 3,
+        "step": {
+          "max_ms": 4.508,
+          "mean_ms": 1.52538728323699,
+          "p95_ms": 2.501,
+          "samples": 173
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.186,
+          "mean_ms": 2.71845664739884,
+          "p95_ms": 7.159,
+          "samples": 173
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 2,
+        "rotation": 4,
+        "step": {
+          "max_ms": 4.174,
+          "mean_ms": 1.40667567567568,
+          "p95_ms": 2.649,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.578,
+          "mean_ms": 2.51748648648649,
+          "p95_ms": 7.167,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 1,
+        "end_phase": "LOOSE",
+        "repetition": 2,
+        "rotation": 5,
+        "step": {
+          "max_ms": 4.686,
+          "mean_ms": 1.5010472972973,
+          "p95_ms": 2.844,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.479,
+          "mean_ms": 2.63372972972973,
+          "p95_ms": 7.26,
+          "samples": 148
+        },
+        "team": 1
+      }
+    ],
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+    "godot": "4.5.1-stable (official)",
+    "label": "published56",
+    "physics_hz": 120,
+    "rendered": false,
+    "sampled_pose_component": {
+      "max_ms": 6.832,
+      "mean_ms": 1.1081750524109,
+      "p95_ms": 5.329,
+      "samples": 3816
+    },
+    "scenario": "Physical first-pass -> second-touch SET. Same seed57002, spike power .85, initial input .45; all rotations both teams; includes passer-yield crossing team1rotation4. Source poses sampled at30Hz, cost reported separately; no GPU draw/display/frame-pacing measurement.",
+    "source_hashes": {
+      "attack_run": "3ebaf1f8d9c36607b07c85480b6365c85adb8aa9f552150c54db0ab32ce47511",
+      "avatar": "2dd0a4b73b61721c42e7f699a08ade55f4f3384ae5ea397d7e5cb353ef26f296",
+      "contact_navigation": "b2ff3ad6e540c841746477dccf0be284782db7122fd4b3145dfee962db88fcca",
+      "court_shape": "b7dfaf6b58249449f9d429ddd650c1d1b34daaec9c58acc3734f228c28b18764",
+      "main": "12434656c1b49a58ddf1c1a0d26dbe402ca2c368a8b921b42ba887041d7bd889",
+      "middle_decoy": "6eada16a127b2760dca800f4a2e01d3a51fadf3d76fec990a6501e5b28f72e72",
+      "setter_access": "311a6b6197f445bf37ad002ac7e6a38d55f374aaa25ba2456b493a44f0d7997b"
+    },
+    "step": {
+      "max_ms": 4.994,
+      "mean_ms": 1.39744680293501,
+      "p95_ms": 2.586,
+      "samples": 3816
+    },
+    "step_plus_sampled_poses": {
+      "max_ms": 9.84,
+      "mean_ms": 2.50562185534591,
+      "p95_ms": 6.89,
+      "samples": 3816
+    },
+    "warmup_excluded": "12 full SET constructions, both teams/all rotations; scene, assets and all source variants loaded before measurement"
+  },
+  "current57": {
+    "cases": [
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.019,
+          "mean_ms": 1.26038372093023,
+          "p95_ms": 2.134,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.214,
+          "mean_ms": 2.25511627906977,
+          "p95_ms": 5.927,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 1,
+        "step": {
+          "max_ms": 3.363,
+          "mean_ms": 1.37708280254777,
+          "p95_ms": 2.804,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.112,
+          "mean_ms": 2.50510828025478,
+          "p95_ms": 6.789,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.425,
+          "mean_ms": 1.37075159235669,
+          "p95_ms": 2.289,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.093,
+          "mean_ms": 2.49420382165605,
+          "p95_ms": 6.71,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 3,
+        "step": {
+          "max_ms": 4.454,
+          "mean_ms": 1.29079781420765,
+          "p95_ms": 2.163,
+          "samples": 183
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.947,
+          "mean_ms": 2.35390710382514,
+          "p95_ms": 6.705,
+          "samples": 183
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 4,
+        "step": {
+          "max_ms": 3.357,
+          "mean_ms": 1.3457898089172,
+          "p95_ms": 2.295,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.0,
+          "mean_ms": 2.53217834394904,
+          "p95_ms": 6.949,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 1,
+        "rotation": 5,
+        "step": {
+          "max_ms": 3.328,
+          "mean_ms": 1.35282165605095,
+          "p95_ms": 2.312,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.984,
+          "mean_ms": 2.44408280254777,
+          "p95_ms": 6.567,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.161,
+          "mean_ms": 1.49510810810811,
+          "p95_ms": 3.006,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.055,
+          "mean_ms": 2.63683783783784,
+          "p95_ms": 7.293,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 1,
+        "step": {
+          "max_ms": 4.438,
+          "mean_ms": 1.47627027027027,
+          "p95_ms": 2.45,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.925,
+          "mean_ms": 2.58677027027027,
+          "p95_ms": 6.859,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.657,
+          "mean_ms": 1.53233108108108,
+          "p95_ms": 2.933,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.923,
+          "mean_ms": 2.64025,
+          "p95_ms": 7.204,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 3,
+        "step": {
+          "max_ms": 3.588,
+          "mean_ms": 1.59668918918919,
+          "p95_ms": 2.808,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 10.107,
+          "mean_ms": 2.83337837837838,
+          "p95_ms": 7.548,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 4,
+        "step": {
+          "max_ms": 4.434,
+          "mean_ms": 1.45983108108108,
+          "p95_ms": 3.03,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.734,
+          "mean_ms": 2.60667567567568,
+          "p95_ms": 7.381,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 1,
+        "rotation": 5,
+        "step": {
+          "max_ms": 5.588,
+          "mean_ms": 1.5524364640884,
+          "p95_ms": 2.884,
+          "samples": 181
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 10.131,
+          "mean_ms": 2.7311546961326,
+          "p95_ms": 7.302,
+          "samples": 181
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 0,
+        "step": {
+          "max_ms": 3.999,
+          "mean_ms": 1.27311627906977,
+          "p95_ms": 2.182,
+          "samples": 172
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.354,
+          "mean_ms": 2.26770348837209,
+          "p95_ms": 5.924,
+          "samples": 172
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 1,
+        "step": {
+          "max_ms": 3.408,
+          "mean_ms": 1.37794267515924,
+          "p95_ms": 2.825,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.107,
+          "mean_ms": 2.50594267515924,
+          "p95_ms": 6.813,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.41,
+          "mean_ms": 1.36703821656051,
+          "p95_ms": 2.289,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.987,
+          "mean_ms": 2.4864076433121,
+          "p95_ms": 6.656,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 3,
+        "step": {
+          "max_ms": 4.485,
+          "mean_ms": 1.2823825136612,
+          "p95_ms": 2.153,
+          "samples": 183
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.03,
+          "mean_ms": 2.34291803278689,
+          "p95_ms": 6.547,
+          "samples": 183
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 4,
+        "step": {
+          "max_ms": 3.839,
+          "mean_ms": 1.34929936305732,
+          "p95_ms": 2.297,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 9.805,
+          "mean_ms": 2.53023566878981,
+          "p95_ms": 7.216,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "ATTACK",
+        "repetition": 2,
+        "rotation": 5,
+        "step": {
+          "max_ms": 3.383,
+          "mean_ms": 1.34559872611465,
+          "p95_ms": 2.276,
+          "samples": 157
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.015,
+          "mean_ms": 2.44493630573248,
+          "p95_ms": 6.509,
+          "samples": 157
+        },
+        "team": 0
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 0,
+        "step": {
+          "max_ms": 4.151,
+          "mean_ms": 1.48890540540541,
+          "p95_ms": 2.996,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.976,
+          "mean_ms": 2.62825,
+          "p95_ms": 7.225,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 1,
+        "step": {
+          "max_ms": 4.474,
+          "mean_ms": 1.47030405405405,
+          "p95_ms": 2.441,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 7.901,
+          "mean_ms": 2.58308783783784,
+          "p95_ms": 6.866,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 2,
+        "step": {
+          "max_ms": 3.611,
+          "mean_ms": 1.52259459459459,
+          "p95_ms": 2.767,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.952,
+          "mean_ms": 2.62941891891892,
+          "p95_ms": 7.121,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 3,
+        "step": {
+          "max_ms": 4.486,
+          "mean_ms": 1.60136486486486,
+          "p95_ms": 2.725,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.913,
+          "mean_ms": 2.83401351351351,
+          "p95_ms": 7.514,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 4,
+        "step": {
+          "max_ms": 4.241,
+          "mean_ms": 1.45442567567568,
+          "p95_ms": 3.062,
+          "samples": 148
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 8.681,
+          "mean_ms": 2.61383783783784,
+          "p95_ms": 7.326,
+          "samples": 148
+        },
+        "team": 1
+      },
+      {
+        "contacts": 2,
+        "end_phase": "CPU_ATTACK",
+        "repetition": 2,
+        "rotation": 5,
+        "step": {
+          "max_ms": 5.627,
+          "mean_ms": 1.55122651933702,
+          "p95_ms": 2.807,
+          "samples": 181
+        },
+        "step_plus_sampled_poses": {
+          "max_ms": 10.193,
+          "mean_ms": 2.70303314917127,
+          "p95_ms": 7.253,
+          "samples": 181
+        },
+        "team": 1
+      }
+    ],
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor",
+    "godot": "4.5.1-stable (official)",
+    "label": "final57",
+    "physics_hz": 120,
+    "rendered": false,
+    "sampled_pose_component": {
+      "max_ms": 6.723,
+      "mean_ms": 1.12283167016807,
+      "p95_ms": 5.357,
+      "samples": 3808
+    },
+    "scenario": "Physical first-pass -> second-touch SET. Same seed57002, spike power .85, initial input .45; all rotations both teams; includes passer-yield crossing team1rotation4. Source poses sampled at30Hz, cost reported separately; no GPU draw/display/frame-pacing measurement.",
+    "source_hashes": {
+      "attack_run": "3fe75e338d7297c60af9a9477a7136dacaee248e7bd713983f3773ef49ad2b09",
+      "avatar": "2dd0a4b73b61721c42e7f699a08ade55f4f3384ae5ea397d7e5cb353ef26f296",
+      "contact_navigation": "b2ff3ad6e540c841746477dccf0be284782db7122fd4b3145dfee962db88fcca",
+      "contact_rescue": "d6761a6d709f5f0894db762ea49cfa58c26bf96a038dec2a8bfb772b95169f5f",
+      "court_shape": "2d9919899dc488b04fb4c4bc3b2b63aca345c277bd7fd21d005fd60b93c5eac8",
+      "main": "57d0b9f6bb1f5be748042b1de064c12ba2a1f77a0bc5307f77aeae7546068bf7",
+      "middle_decoy": "2d5270cfc3652690a25c209b99918f395d64067962f71c5ab7a6755599e3f6df",
+      "receive_access": "eab156cf98fd3159e796cf5ca729dc53ed6bf092bc3308cf1001382bc8d982a8",
+      "setter_access": "57e8553316af13eac277063ef103c2c27a856264c99bed26c2943748c8d29afa"
+    },
+    "step": {
+      "max_ms": 5.627,
+      "mean_ms": 1.42123109243697,
+      "p95_ms": 2.526,
+      "samples": 3808
+    },
+    "step_plus_sampled_poses": {
+      "max_ms": 10.193,
+      "mean_ms": 2.54406276260504,
+      "p95_ms": 6.959,
+      "samples": 3808
+    },
+    "warmup_excluded": "12 full SET constructions, both teams/all rotations; scene, assets and all source variants loaded before measurement"
+  },
+  "limits": [
+    "SET construction sample; no claim about every rally or every renderer/hardware configuration.",
+    "Exact routes can differ after a fix; recorded contact outcomes and source hashes are included.",
+    "Individual maxima include OS scheduling variation; no fixed FPS guarantee."
+  ]
+}

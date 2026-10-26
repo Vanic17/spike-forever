@@ -7,12 +7,22 @@ static func start(game, passer: int) -> void:
 	if contact.is_empty(): game.phase="LOOSE"; return
 	game.set_phase("RECEIVE" if game.possession==0 else "CPU_RECEIVE")
 	game.incoming_kind="shank"; game.incoming_power=0.15; game.incoming_out=false
-	game.receiver=game.nearest(game.possession,contact.point,passer)
-	var planned: Dictionary=preload("res://src/low_recovery.gd").plan(game,game.receiver)
+	var nearest: int=game.nearest(game.possession,contact.point,passer)
+	var planned: Dictionary={}
+	# A close teammate may still be landing or lying across the route. Read
+	# every legal rescuer before committing a pose, not merely the nearest root.
+	for index in range(game.possession*6,game.possession*6+6):
+		if index==passer: continue
+		var candidate: Dictionary=preload("res://src/contact_rescue.gd").proposal(game,index,1.2)
+		if candidate.is_empty(): continue
+		if planned.is_empty() or candidate.cost<planned.cost: planned=candidate
 	if planned.is_empty():
 		game.phase="LOOSE"; game.flight_left=100; game.marker.visible=false
-		game.log_rally_event("low_save_unreachable",{"actor":game.receiver})
+		game.log_rally_event("low_save_unreachable",{"actor":nearest})
 		return
+	game.receiver=planned.index
+	preload("res://src/contact_rescue.gd").commit(game,planned,false)
+	if game.receiver!=nearest: game.log_rally_event("low_save_handoff",{"nearest":nearest,"rescuer":game.receiver})
 	contact=planned
 	game.flight_target=contact.point; game.flight_left=contact.seconds; game.receive_deadline=game.clock_time+contact.seconds
 	game.late_receive=true; game.recovery_action="dive"; game.selected=game.receiver if game.possession==0 else game.selected

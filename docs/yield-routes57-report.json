@@ -1,0 +1,42 @@
+[
+  {
+    "blocked_seconds": 0.0166666666666667,
+    "closest_pair_m": 1.42204511165619,
+    "contacts": 2,
+    "hz": 60,
+    "maximum_root_step_m": 0.0236146543174982,
+    "native": true,
+    "ok": true,
+    "phase": "CPU_ATTACK"
+  },
+  {
+    "blocked_seconds": 0.00833333333333333,
+    "closest_pair_m": 1.42391562461853,
+    "contacts": 2,
+    "hz": 120,
+    "maximum_root_step_m": 0.0125189637765288,
+    "native": true,
+    "ok": true,
+    "phase": "CPU_ATTACK"
+  },
+  {
+    "blocked_seconds": 0.0166666666666667,
+    "closest_pair_m": 1.42204511165619,
+    "contacts": 2,
+    "hz": 60,
+    "maximum_root_step_m": 0.0236146543174982,
+    "native": false,
+    "ok": true,
+    "phase": "CPU_ATTACK"
+  },
+  {
+    "blocked_seconds": 0.00833333333333333,
+    "closest_pair_m": 1.42391562461853,
+    "contacts": 2,
+    "hz": 120,
+    "maximum_root_step_m": 0.0125189637765288,
+    "native": false,
+    "ok": true,
+    "phase": "CPU_ATTACK"
+  }
+]

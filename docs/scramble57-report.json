@@ -1,0 +1,92 @@
+[
+  {
+    "case": "nearest_recovering",
+    "contact": true,
+    "duration": 0.597616141271254,
+    "handoff": true,
+    "hz": 60,
+    "max_root_step": 0.0522304400801659,
+    "nearest": 3,
+    "receiver": 4,
+    "team": 0,
+    "variant": "dive_v26_01"
+  },
+  {
+    "case": "all_unreachable",
+    "contacts": 0,
+    "hz": 60,
+    "phase": "LOOSE",
+    "team": 0
+  },
+  {
+    "case": "no_input",
+    "contacts": 0,
+    "hz": 60,
+    "phase": "POINT",
+    "team": 0
+  },
+  {
+    "case": "nearest_recovering",
+    "contact": true,
+    "duration": 0.597616141271254,
+    "handoff": true,
+    "hz": 120,
+    "max_root_step": 0.0267193112522364,
+    "nearest": 3,
+    "receiver": 4,
+    "team": 0,
+    "variant": "dive_v26_01"
+  },
+  {
+    "case": "all_unreachable",
+    "contacts": 0,
+    "hz": 120,
+    "phase": "LOOSE",
+    "team": 0
+  },
+  {
+    "case": "no_input",
+    "contacts": 0,
+    "hz": 120,
+    "phase": "POINT",
+    "team": 0
+  },
+  {
+    "case": "nearest_recovering",
+    "contact": true,
+    "duration": 0.571287436798916,
+    "handoff": true,
+    "hz": 60,
+    "max_root_step": 0.0797018557786942,
+    "nearest": 9,
+    "receiver": 10,
+    "team": 1,
+    "variant": "dive_v26_06"
+  },
+  {
+    "case": "all_unreachable",
+    "contacts": 0,
+    "hz": 60,
+    "phase": "LOOSE",
+    "team": 1
+  },
+  {
+    "case": "nearest_recovering",
+    "contact": true,
+    "duration": 0.571287436798916,
+    "handoff": true,
+    "hz": 120,
+    "max_root_step": 0.0398277454078197,
+    "nearest": 9,
+    "receiver": 10,
+    "team": 1,
+    "variant": "dive_v26_06"
+  },
+  {
+    "case": "all_unreachable",
+    "contacts": 0,
+    "hz": 120,
+    "phase": "LOOSE",
+    "team": 1
+  }
+]

@@ -79,8 +79,40 @@ $helper='credential.helper=!gh auth git-credential'
 # A fresh stage otherwise downloads the entire asset history for every patch.
 $seed=Get-ChildItem -LiteralPath (Join-Path $root 'dist') -Directory -Filter 'source-*' | Where-Object {Test-Path -LiteralPath (Join-Path $_.FullName '.git/refs/heads/main')} | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 if($seed){
- $objects=(Join-Path $seed.FullName '.git/objects').Replace('\','/')
- [IO.File]::WriteAllText((Join-Path $stage '.git/objects/info/alternates'),$objects+"`n")
+ # Each former stage could itself borrow another stage. Git stops traversing
+ # deep alternate chains, leaving trees unreadable despite a successful fetch.
+ # Materialize immutable objects once; future stages are independent of old
+ # staging directories, and fetch can still reuse the complete local history.
+ $distRoot=[IO.Path]::GetFullPath((Join-Path $root 'dist'))+[IO.Path]::DirectorySeparatorChar
+ $targetObjects=[IO.Path]::GetFullPath((Join-Path $stage '.git/objects'))
+ if(!$targetObjects.StartsWith($distRoot,[StringComparison]::OrdinalIgnoreCase)){throw 'Git object destination outside workspace dist'}
+ $queue=[Collections.Generic.Queue[string]]::new()
+ $queue.Enqueue((Join-Path $seed.FullName '.git/objects'))
+ $visited=@{}
+ while($queue.Count -gt 0){
+  $objectRoot=(Resolve-Path -LiteralPath $queue.Dequeue()).Path
+  if(!$objectRoot.StartsWith($distRoot,[StringComparison]::OrdinalIgnoreCase) -or !(($objectRoot.Replace('\','/')).EndsWith('/.git/objects'))){throw 'Git object cache outside intended staging directory'}
+  if($visited.ContainsKey($objectRoot)){continue}
+  $visited[$objectRoot]=$true
+  foreach($bucket in Get-ChildItem -LiteralPath $objectRoot -Directory -Force){
+   if($bucket.Name -ne 'pack' -and $bucket.Name -notmatch '^[0-9a-f]{2}$'){continue}
+   $destination=Join-Path $targetObjects $bucket.Name
+   New-Item -ItemType Directory -Force $destination | Out-Null
+   foreach($objectFile in Get-ChildItem -LiteralPath $bucket.FullName -File -Force){
+    $targetFile=Join-Path $destination $objectFile.Name
+    if(!(Test-Path -LiteralPath $targetFile)){Copy-Item -LiteralPath $objectFile.FullName -Destination $targetFile}
+   }
+  }
+  $alternates=Join-Path $objectRoot 'info/alternates'
+  if(Test-Path -LiteralPath $alternates){
+   foreach($entry in Get-Content -LiteralPath $alternates){
+    if(!$entry.Trim()){continue}
+    $next=$entry.Trim()
+    if(![IO.Path]::IsPathRooted($next)){$next=Join-Path $objectRoot $next}
+    $queue.Enqueue([IO.Path]::GetFullPath($next))
+   }
+  }
+ }
 }
 Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'fetch','origin','main') -AllowFailure
 if($script:LastNativeExit -eq 0){Native $git @('-C',$stage,'reset','--mixed','origin/main')}

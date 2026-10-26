@@ -22,6 +22,8 @@ var prepared:=false
 var waypoint:=Vector3.ZERO
 var has_waypoint:=false
 var route_at:=-1.0
+var route_clear:=false
+var approach_goal:=Vector3.ZERO
 
 func reset() -> void:
 	index=-1
@@ -32,37 +34,78 @@ func reset() -> void:
 	real_started=false
 	prepared=false
 	has_waypoint=false; route_at=-1.0
+	route_clear=false
+
+func obstacles(game) -> Array[Vector3]:
+	var result: Array[Vector3]=[]
+	for other in range(team*6,team*6+6):
+		if other!=index: result.append_array(game.compute_footprint_points(other))
+	if game.phase in ["SET","CPU_SET"] and game.out_of_system>=0 and game.setter!=index:
+		# The live setter and his still-reserved contact spot remain obstacles
+		# when a curved middle approach replaces an obsolete straight yield.
+		var setter=game.players[game.setter]
+		var contact: Vector3=setter.stance_for_contact(game.second_touch_contact_action(),game.flight_target)
+		var steps:=maxi(1,ceili(setter.position.distance_to(contact)/.4))
+		for sample in range(1,steps+1): result.append(setter.position.lerp(contact,float(sample)/steps))
+	return result
 
 func clear_segment(game, start: Vector3, finish: Vector3) -> bool:
-	for other in range(team*6,team*6+6):
-		if other==index: continue
-		var body: Vector3=game.players[other].position
-		if start.distance_to(body)<.90:
+	return clear_points(start,finish,obstacles(game))
+
+func clear_points(start: Vector3, finish: Vector3, bodies: Array[Vector3]) -> bool:
+	for body in bodies:
+		if start.distance_to(body)<1.025:
 			if (start-body).dot(finish-start)<-.0001: return false
 			continue
-		if Geometry3D.get_closest_point_to_segment(body,start,finish).distance_to(body)<.90: return false
+		if Geometry3D.get_closest_point_to_segment(body,start,finish).distance_to(body)<1.025: return false
 	return true
 
 func route(game, goal: Vector3) -> Vector3:
 	var start: Vector3=game.players[index].position
-	if clear_segment(game,start,goal): has_waypoint=false; return goal
-	if has_waypoint and start.distance_to(waypoint)>.20 and clear_segment(game,start,waypoint): return waypoint
+	approach_goal=goal
+	var bodies:=obstacles(game)
+	route_clear=false
+	if clear_points(start,goal,bodies): has_waypoint=false; route_clear=true; return goal
+	if has_waypoint and start.distance_to(waypoint)>.20 and clear_points(start,waypoint,bodies): route_clear=true; return waypoint
 	route_at=game.clock_time+.12; has_waypoint=false
 	var best:=INF
-	for other in range(team*6,team*6+6):
-		if other==index: continue
-		var body: Vector3=game.players[other].position
+	for body in bodies:
 		if Geometry3D.get_closest_point_to_segment(body,start,goal).distance_to(body)>1.1: continue
 		for step in 8:
 			var angle:=step*PI/4
 			var candidate:=body+Vector3(cos(angle)*1.45,0,sin(angle)*1.45)
-			if candidate.z*(1 if team==0 else -1)<.4: continue
-			if start.distance_to(candidate)<.25 or not clear_segment(game,start,candidate): continue
+			# Cross behind the setting lane while opening for a quick. The
+			# shortest geometric corner used to run along the net, then send
+			# the middle back into S on the next step.
+			if candidate.z*(1 if team==0 else -1)<2.35: continue
+			if start.distance_to(candidate)<.25 or not clear_points(start,candidate,bodies): continue
 			# Two adjacent teammates can form a barrier requiring two corners.
 			# Requiring a clear second leg too returned the blocked straight line.
-			var cost:=start.distance_to(candidate)+candidate.distance_to(goal)+(0.0 if clear_segment(game,candidate,goal) else 2.0)
+			var cost:=start.distance_to(candidate)+candidate.distance_to(goal)+(0.0 if clear_points(candidate,goal,bodies) else 2.0)
 			if cost<best: best=cost; waypoint=candidate; has_waypoint=true
+	route_clear=has_waypoint
 	return waypoint if has_waypoint else goal
+
+func preparation_route(game, assigned: Vector3) -> Vector3:
+	var preferred:=target if game.phase in ["RECEIVE","CPU_RECEIVE"] else assigned
+	var release_yield:=false
+	if game.phase in ["SET","CPU_SET"] and game.court_shape.setter_yields.has(index) and game.out_of_system>=0:
+		# A bent route that clears the entire REMAINING setter approach can
+		# start now. Waiting for S to finish his run consumed the quick's run-up.
+		preferred=target
+		if real_attack:
+			var side:=1.0 if team==0 else -1.0
+			var staging:=Vector3(target.x,0,side*maxf(2.35,target.z*side+.95))
+			preferred=staging.lerp(target,1.0-smoothstep(.12,.85,game.flight_left))
+		release_yield=true
+	var next:=route(game,preferred)
+	# A blocked ideal is not a valid replacement for the teammate's yielding
+	# assignment. Keep S's priority until a genuinely clear corner exists.
+	if release_yield and not route_clear:
+		approach_goal=assigned
+		return assigned
+	if release_yield and route_clear: game.court_shape.setter_yields.erase(index)
+	return next
 
 func update(game) -> void:
 	if game.phase in ["RECEIVE","CPU_RECEIVE"]:

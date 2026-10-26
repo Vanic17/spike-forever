@@ -1000,6 +1000,7 @@ func serve_ball(team: int, power: float) -> void:
 	launch(target,seconds)
 	var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
 	if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
+	preload("res://src/receive_access.gd").sync_performance(self,true)
 	cpu_defense.prepare(self)
 	log_rally_event("float_serve" if serve_type==0 else "power_serve",{"seconds":seconds,"power":power})
 
@@ -1241,6 +1242,10 @@ func select_receive_pose(index: int, point: Vector3) -> void:
 	var variant := AnimationVariety.receive(local,player.velocity.length(),incoming_kind,shot_serial)
 	player.select_variant("receive",variant)
 
+func second_touch_contact_action() -> String:
+	if setter_action=="dive" and dive_motions.has(setter) and dive_motions[setter].get("second_touch",false): return "dive"
+	return "dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
+
 func set_ball(contact_override: String = "") -> void:
 	overpass_attack_team=-1
 	attack_tip=false
@@ -1251,9 +1256,10 @@ func set_ball(contact_override: String = "") -> void:
 	if planned_hitter < 0: plan_attack(set_dir, fast_set)
 	fast_set = planned_fast
 	var q := input_quality if human_team(possession) else clampf(pass_quality * rng.randf_range(0.95, 1.0), 0, 1)
-	var contact_action := contact_override if not contact_override.is_empty() else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
+	var contact_action := contact_override if not contact_override.is_empty() else second_touch_contact_action()
 	if (human_team(possession) and not armed) or not validate_contact(setter, contact_action):
 		if contact_override.is_empty() and (cpu_team(possession) or armed) and preload("res://src/setter_access.gd").try_low_contact(self): return
+		if contact_override.is_empty() and preload("res://src/contact_rescue.gd").try_second_touch(self): return
 		miss_contact()
 		return
 	# Bad second-touch timing alters delivery, not whether commanded hands
@@ -1282,6 +1288,7 @@ func set_ball(contact_override: String = "") -> void:
 	# height. Using the generic spike height for pins/D/pipe sent poor-pass
 	# sets above the running animation's reachable palm.
 	target.y = players[hitter].contact_local(hitter_action).y
+	target = attack_run.emergency_contact(self,hitter,target)
 	players[hitter].target = players[hitter].stance_for_contact(hitter_action, target)
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
 	var approach_distance: float = players[hitter].position.distance_to(players[hitter].target)
@@ -1454,6 +1461,7 @@ func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 		if human_team(possession): receive_deadline = clock_time + flight_left
 	receiver = choose_receiver(possession, flight_target)
 	select_receive_pose(receiver,flight_target)
+	preload("res://src/receive_access.gd").sync_performance(self,true)
 	cpu_defense.prepare(self)
 	players[receiver].target = players[receiver].stance_for_contact("receive", flight_target)
 	selected = receiver if possession == 0 else selected
@@ -1611,7 +1619,11 @@ func step(dt: float) -> void:
 		demo_input()
 	if phase in ["SET","CPU_SET"] and (cpu_team(possession) or armed):
 		preload("res://src/setter_access.gd").sync_performance(self)
-		preload("res://src/setter_access.gd").try_low_contact(self)
+		var read_second_touch:=clock_time>=next_second_touch_read
+		var low_contact: bool=preload("res://src/setter_access.gd").try_low_contact(self)
+		if read_second_touch and not low_contact: preload("res://src/contact_rescue.gd").try_second_touch(self)
+	if phase in ["RECEIVE","CPU_RECEIVE"]:
+		preload("res://src/receive_access.gd").sync_performance(self)
 	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and not (incoming_out and cpu_team(possession)) and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
 		if players[receiver].position.distance_to(stance)>flight_left*Reference.run_speed()+0.12: queue_recovery(true)
@@ -1801,6 +1813,7 @@ func resume_deflection(kind: String) -> void:
 	receive_deadline = clock_time+flight_left
 	receiver = choose_receiver(possession,flight_target)
 	select_receive_pose(receiver,flight_target)
+	preload("res://src/receive_access.gd").sync_performance(self,true)
 	selected = receiver if possession==0 else selected
 	marker.position = Vector3(flight_target.x,0.04,flight_target.z)
 	marker.visible = true
@@ -1914,7 +1927,7 @@ func move_players(dt: float) -> void:
 			action = recovery_action if late_receive else "receive"
 		"SET", "CPU_SET":
 			action_actor = setter
-			action = "dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
+			action = second_touch_contact_action()
 		"ATTACK", "CPU_ATTACK":
 			action_actor = hitter
 			action = hitter_action
@@ -1969,10 +1982,12 @@ func move_players(dt: float) -> void:
 			team_targets[index]=cover
 	if phase in ["SET","CPU_SET"] and action_actor>=0:
 		team_targets[action_actor]=contact_navigation.route(self,action_actor,nominal[action_actor])
-	if middle_decoy.index>=0 and not middle_decoy.jumped and not middle_decoy.real_attack and phase in ["SET","CPU_SET"]:
+	if middle_decoy.index>=0 and not middle_decoy.jumped and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"]:
 		# A yielding sidestep is not the takeoff lane. Keep the ideal jump
 		# destination separate, otherwise a feint can launch in S's corridor.
-		team_targets[middle_decoy.index]=middle_decoy.route(self,team_targets[middle_decoy.index])
+		# Read this route during reception too: in P6, waiting until the pass
+		# left the platform trapped the middle on the wrong side of the setter.
+		team_targets[middle_decoy.index]=middle_decoy.preparation_route(self,team_targets[middle_decoy.index])
 	for i in 12:
 		var p = players[i]
 		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
@@ -2071,13 +2086,21 @@ func move_players(dt: float) -> void:
 		if court_shape.setter_yields.has(i): arrival_speed=maxf(arrival_speed,movement.length()*4.5)
 		if preparing_decoy: arrival_speed=movement.length()*4.5
 		if human_wall() and i in blockers: arrival_speed=movement.length()*4.5
+		if i==middle_decoy.index and middle_decoy.route_clear and middle_decoy.has_waypoint and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"]:
+			# A safe corner is a passing point. Braking to a stop there left
+			# the middle circling S instead of completing his quick approach.
+			arrival_distance+=p.steering_target.distance_to(middle_decoy.approach_goal)
+			var preparation_budget: float=flight_left-.24
+			if phase in ["RECEIVE","CPU_RECEIVE"]: preparation_budget+=Reference.receive_seconds(.75,false)
+			arrival_speed=maxf(arrival_speed,arrival_distance/maxf(.10,preparation_budget))
 		if urgent and action!="dive": arrival_speed = minf(arrival_speed, sqrt(2.0 * 22.0 * arrival_distance) * 0.72)
 		var desired := movement.normalized() * minf(max_speed, arrival_speed)
 		if movement.length() < (0.045 if urgent else p.intent.settle_distance()): desired = Vector3.ZERO
 		# The contact route already clears every body; a second social-force
 		# sidestep would steer it back into the very obstacles it avoided.
 		var before_avoid:=desired
-		if i!=action_actor or phase not in ["SET","CPU_SET"]: desired = avoid_teammates(i, desired, movement, max_speed)
+		var clear_middle_route: bool=i==middle_decoy.index and middle_decoy.route_clear and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"]
+		if not clear_middle_route and (i!=action_actor or phase not in ["SET","CPU_SET"]): desired = avoid_teammates(i, desired, movement, max_speed)
 		if i!=action_actor and court_shape.setter_yields.has(i) and phase in ["SET","CPU_SET"]:
 			# Preserve the braking component toward the reserved contact spot,
 			# even while the setter is still approaching from the other side.
@@ -2264,7 +2287,9 @@ func advance_dive_body(index: int, dt: float) -> void:
 	var destination: Vector3 = motion.origin + source_delta + correction * smoothstep(0, 1, progress)
 	destination.z = maxf(0.25, destination.z) if index < 6 else minf(-0.25, destination.z)
 	var previous: Vector3 = player.position
-	player.position += collision_safe_step(index, destination - player.position)
+	# A blocked source must not bank root travel and teleport through it when
+	# the teammate clears. Keep the existing dive-speed limit through the rise.
+	player.position += collision_safe_step(index, (destination - player.position).limit_length(7.2*dt))
 	player.velocity = (player.position - previous) / maxf(dt, 0.00001)
 	player.acceleration = Vector3.ZERO
 	player.target = motion.stance

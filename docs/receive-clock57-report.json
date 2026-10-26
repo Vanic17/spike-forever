@@ -1,0 +1,2207 @@
+{
+  "baseline_misses": 0,
+  "cases": [
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_low"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 60,
+        "max_root_step": 0.0161232948303223,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0345962855607666,
+        "variant": "receive_low"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 60,
+        "max_root_step": 0.0434637069702148,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0122191488134612,
+        "variant": "receive_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_left_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.0165300369262695,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_left_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_right_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 60,
+        "max_root_step": 0.0175108909606934,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0317857359180077,
+        "variant": "receive_right_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_01"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 60,
+        "max_root_step": 0.0244688987731934,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0185194275341348,
+        "variant": "receive_v26_01"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_02"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 60,
+        "max_root_step": 0.0430436134338379,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0116483764992479,
+        "variant": "receive_v26_02"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_03"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 60,
+        "max_root_step": 0.0137624749913812,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0394056605418111,
+        "variant": "receive_v26_03"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_04"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 60,
+        "max_root_step": 0.0101256379857659,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.047075460664209,
+        "variant": "receive_v26_04"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_05"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 60,
+        "max_root_step": 0.013741017319262,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0394496185604815,
+        "variant": "receive_v26_05"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_06"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 60,
+        "max_root_step": 0.0179247856140137,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0309702701252066,
+        "variant": "receive_v26_06"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_07"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 60,
+        "max_root_step": 0.0180873870849609,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0306508667136279,
+        "variant": "receive_v26_07"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_08"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 60,
+        "max_root_step": 0.0381660461425781,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.00439997616540239,
+        "variant": "receive_v26_08"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_09"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 60,
+        "max_root_step": 0.0217609405517578,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0236010050497042,
+        "variant": "receive_v26_09"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_10"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 60,
+        "max_root_step": 0.0217766761779785,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0235713100712301,
+        "variant": "receive_v26_10"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_11"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 60,
+        "max_root_step": 0.0215754508972168,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0239494053738192,
+        "variant": "receive_v26_11"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_12"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 60,
+        "max_root_step": 0.0217990875244141,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0235294335354004,
+        "variant": "receive_v26_12"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_13"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.00987529847770929,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_13"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_14"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.0165300369262695,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_v26_14"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_15"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.00987529847770929,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_15"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_16"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 60,
+        "max_root_step": 0.0438041687011719,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0126798647492137,
+        "variant": "receive_v26_16"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_17"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 60,
+        "max_root_step": 0.024080753326416,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0192277286622326,
+        "variant": "receive_v26_17"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_18"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 60,
+        "max_root_step": 0.0203461647033691,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0262781011164019,
+        "variant": "receive_v26_18"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_19"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 60,
+        "max_root_step": 0.017643928527832,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0315239065461062,
+        "variant": "receive_v26_19"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_20"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 60,
+        "max_root_step": 0.0186014175415039,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0296456063130447,
+        "variant": "receive_v26_20"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_low"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 120,
+        "max_root_step": 0.00830841064453125,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0345962855607666,
+        "variant": "receive_low"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 120,
+        "max_root_step": 0.0221700668334961,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0122191488134612,
+        "variant": "receive_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_left_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.00851917266845703,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_left_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_right_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 120,
+        "max_root_step": 0.00902843475341797,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0317857359180077,
+        "variant": "receive_right_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_01"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 120,
+        "max_root_step": 0.0126051902770996,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0185194275341348,
+        "variant": "receive_v26_01"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_02"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 120,
+        "max_root_step": 0.0219788551330566,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0116483764992479,
+        "variant": "receive_v26_02"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_03"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 120,
+        "max_root_step": 0.00708723114803433,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0394056605418111,
+        "variant": "receive_v26_03"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_04"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 120,
+        "max_root_step": 0.00520944641903043,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.047075460664209,
+        "variant": "receive_v26_04"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_05"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 120,
+        "max_root_step": 0.00707626389339566,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0394496185604815,
+        "variant": "receive_v26_05"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_06"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 120,
+        "max_root_step": 0.00924301147460938,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0309702701252066,
+        "variant": "receive_v26_06"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_07"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 120,
+        "max_root_step": 0.00932741165161133,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0306508667136279,
+        "variant": "receive_v26_07"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_08"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 120,
+        "max_root_step": 0.0195159912109375,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.00439997616540239,
+        "variant": "receive_v26_08"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_09"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 120,
+        "max_root_step": 0.0112180709838867,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0236010050497042,
+        "variant": "receive_v26_09"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_10"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 120,
+        "max_root_step": 0.0112261772155762,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0235713100712301,
+        "variant": "receive_v26_10"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_11"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 120,
+        "max_root_step": 0.0111217498779297,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0239494053738192,
+        "variant": "receive_v26_11"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_12"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 120,
+        "max_root_step": 0.011237621307373,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0235294335354004,
+        "variant": "receive_v26_12"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_13"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.00508022354915738,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_13"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_14"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.00851917266845703,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_v26_14"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_15"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.00508022354915738,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_15"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_16"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 120,
+        "max_root_step": 0.0223250389099121,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": -0.0126798647492137,
+        "variant": "receive_v26_16"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_17"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 120,
+        "max_root_step": 0.0124177932739258,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0192277286622326,
+        "variant": "receive_v26_17"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_18"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 120,
+        "max_root_step": 0.0104999542236328,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0262781011164019,
+        "variant": "receive_v26_18"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_19"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 120,
+        "max_root_step": 0.00909709930419922,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0315239065461062,
+        "variant": "receive_v26_19"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_20"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 120,
+        "max_root_step": 0.00959396362304688,
+        "phase": "SET",
+        "team": 0,
+        "time_adjustment": 0.0296456063130447,
+        "variant": "receive_v26_20"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_low"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 60,
+        "max_root_step": 0.0161232948303223,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0345962855607666,
+        "variant": "receive_low"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 60,
+        "max_root_step": 0.0434637069702148,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0122191488134612,
+        "variant": "receive_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_left_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.0165300369262695,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_left_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_right_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 60,
+        "max_root_step": 0.0175108909606934,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0317857359180077,
+        "variant": "receive_right_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_01"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 60,
+        "max_root_step": 0.0244688987731934,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0185194275341348,
+        "variant": "receive_v26_01"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_02"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 60,
+        "max_root_step": 0.0430436134338379,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0116483764992479,
+        "variant": "receive_v26_02"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_03"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 60,
+        "max_root_step": 0.0137624749913812,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0394056605418111,
+        "variant": "receive_v26_03"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_04"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 60,
+        "max_root_step": 0.0101256379857659,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.047075460664209,
+        "variant": "receive_v26_04"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_05"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 60,
+        "max_root_step": 0.013741017319262,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0394496185604815,
+        "variant": "receive_v26_05"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_06"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 60,
+        "max_root_step": 0.0179247856140137,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0309702701252066,
+        "variant": "receive_v26_06"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_07"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 60,
+        "max_root_step": 0.0180873870849609,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0306508667136279,
+        "variant": "receive_v26_07"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_08"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 60,
+        "max_root_step": 0.0381660461425781,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.00439997616540239,
+        "variant": "receive_v26_08"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_09"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 60,
+        "max_root_step": 0.0217609405517578,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0236010050497042,
+        "variant": "receive_v26_09"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_10"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 60,
+        "max_root_step": 0.0217766761779785,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0235713100712301,
+        "variant": "receive_v26_10"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_11"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 60,
+        "max_root_step": 0.0215754508972168,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0239494053738192,
+        "variant": "receive_v26_11"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_12"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 60,
+        "max_root_step": 0.0217990875244141,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0235294335354004,
+        "variant": "receive_v26_12"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_13"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.00987529847770929,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_13"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_14"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 60,
+        "max_root_step": 0.0165300369262695,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_v26_14"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_15"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 60,
+        "max_root_step": 0.00987529847770929,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_15"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_16"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 60,
+        "max_root_step": 0.0438041687011719,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0126798647492137,
+        "variant": "receive_v26_16"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_17"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 60,
+        "max_root_step": 0.024080753326416,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0192277286622326,
+        "variant": "receive_v26_17"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_18"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 60,
+        "max_root_step": 0.0203461647033691,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0262781011164019,
+        "variant": "receive_v26_18"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_19"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 60,
+        "max_root_step": 0.017643928527832,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0315239065461062,
+        "variant": "receive_v26_19"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 60,
+        "max_root_step": 0.035304069519043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_20"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 60,
+        "max_root_step": 0.0186014175415039,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0296456063130447,
+        "variant": "receive_v26_20"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_low"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.210620284080505,
+        "hz": 120,
+        "max_root_step": 0.00830841064453125,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0345962855607666,
+        "variant": "receive_low"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0715205669403076,
+        "hz": 120,
+        "max_root_step": 0.0221700668334961,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0122191488134612,
+        "variant": "receive_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_left_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.00851917266845703,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_left_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_right_step"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.19310450553894,
+        "hz": 120,
+        "max_root_step": 0.00902843475341797,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0317857359180077,
+        "variant": "receive_right_step"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_01"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.111315250396729,
+        "hz": 120,
+        "max_root_step": 0.0126051902770996,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0185194275341348,
+        "variant": "receive_v26_01"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_02"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0682098865509033,
+        "hz": 120,
+        "max_root_step": 0.0219788551330566,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0116483764992479,
+        "variant": "receive_v26_02"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_03"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.24086582660675,
+        "hz": 120,
+        "max_root_step": 0.00708723114803433,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0394056605418111,
+        "variant": "receive_v26_03"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_04"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.289507031440735,
+        "hz": 120,
+        "max_root_step": 0.00520944641903043,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.047075460664209,
+        "variant": "receive_v26_04"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_05"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.241142272949219,
+        "hz": 120,
+        "max_root_step": 0.00707626389339566,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0394496185604815,
+        "variant": "receive_v26_05"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_06"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.188042521476746,
+        "hz": 120,
+        "max_root_step": 0.00924301147460938,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0309702701252066,
+        "variant": "receive_v26_06"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_07"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.186059832572937,
+        "hz": 120,
+        "max_root_step": 0.00932741165161133,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0306508667136279,
+        "variant": "receive_v26_07"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_08"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0258797407150269,
+        "hz": 120,
+        "max_root_step": 0.0195159912109375,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.00439997616540239,
+        "variant": "receive_v26_08"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_09"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.14244532585144,
+        "hz": 120,
+        "max_root_step": 0.0112180709838867,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0236010050497042,
+        "variant": "receive_v26_09"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_10"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142263412475586,
+        "hz": 120,
+        "max_root_step": 0.0112261772155762,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0235713100712301,
+        "variant": "receive_v26_10"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_11"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.144579648971558,
+        "hz": 120,
+        "max_root_step": 0.0111217498779297,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0239494053738192,
+        "variant": "receive_v26_11"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_12"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.142006874084473,
+        "hz": 120,
+        "max_root_step": 0.011237621307373,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0235294335354004,
+        "variant": "receive_v26_12"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_13"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.00508022354915738,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_13"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_14"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.205496907234192,
+        "hz": 120,
+        "max_root_step": 0.00851917266845703,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0337816121125473,
+        "variant": "receive_v26_14"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_15"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.29297149181366,
+        "hz": 120,
+        "max_root_step": 0.00508022354915738,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0476193091246961,
+        "variant": "receive_v26_15"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_16"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.0741928815841675,
+        "hz": 120,
+        "max_root_step": 0.0223250389099121,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": -0.0126798647492137,
+        "variant": "receive_v26_16"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_17"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.115654349327087,
+        "hz": 120,
+        "max_root_step": 0.0124177932739258,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0192277286622326,
+        "variant": "receive_v26_17"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_18"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.158915996551514,
+        "hz": 120,
+        "max_root_step": 0.0104999542236328,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0262781011164019,
+        "variant": "receive_v26_18"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_19"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.191479206085205,
+        "hz": 120,
+        "max_root_step": 0.00909709930419922,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0315239065461062,
+        "variant": "receive_v26_19"
+      }
+    },
+    {
+      "baseline": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 120,
+        "max_root_step": 0.0181155204772949,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0,
+        "variant": "receive_v26_20"
+      },
+      "fixed": {
+        "contact": true,
+        "height_gap": 0.179819703102112,
+        "hz": 120,
+        "max_root_step": 0.00959396362304688,
+        "phase": "CPU_SET",
+        "team": 1,
+        "time_adjustment": 0.0296456063130447,
+        "variant": "receive_v26_20"
+      }
+    }
+  ],
+  "fixed_contacts": 100,
+  "largest_height_gap": 0.29297149181366
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "contact": true,
+    "hz": 60,
+    "max_root_step": 0.0740589499473572,
+    "team": 0,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "hz": 120,
+    "max_root_step": 0.0370294749736786,
+    "team": 0,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "hz": 60,
+    "max_root_step": 0.0740583091974258,
+    "team": 1,
+    "variant": "dive_v26_06"
+  },
+  {
+    "contact": true,
+    "hz": 120,
+    "max_root_step": 0.037029393017292,
+    "team": 1,
+    "variant": "dive_v26_06"
+  },
+  {
+    "case": "source_save_to_attack",
+    "complete": true,
+    "contacts": 2,
+    "hz": 60,
+    "source_touch": true,
+    "team": 0
+  },
+  {
+    "case": "source_save_to_attack",
+    "complete": true,
+    "contacts": 2,
+    "hz": 120,
+    "source_touch": true,
+    "team": 0
+  },
+  {
+    "case": "source_save_to_attack",
+    "complete": true,
+    "contacts": 2,
+    "hz": 60,
+    "source_touch": true,
+    "team": 1
+  },
+  {
+    "case": "source_save_to_attack",
+    "complete": true,
+    "contacts": 2,
+    "hz": 120,
+    "source_touch": true,
+    "team": 1
+  }
+]

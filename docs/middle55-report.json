@@ -19,7 +19,7 @@
   },
   {
     "contacts": 3,
-    "flight": 1.46601921489403,
+    "flight": 1.16794503977602,
     "ok": true,
     "rotation": 1,
     "spacing": 1.23895367980003,
@@ -28,7 +28,7 @@
   },
   {
     "contacts": 3,
-    "flight": 1.28106355109206,
+    "flight": 0.818129112034748,
     "ok": true,
     "rotation": 1,
     "spacing": 1.76787309348583,
@@ -127,7 +127,7 @@
   },
   {
     "contacts": 3,
-    "flight": 0.98311237250154,
+    "flight": 0.16566016029517,
     "ok": true,
     "rotation": 1,
     "spacing": 1.18112301826477,
@@ -136,7 +136,7 @@
   },
   {
     "contacts": 3,
-    "flight": 1.53117249331335,
+    "flight": 0.156146690435623,
     "ok": true,
     "rotation": 1,
     "spacing": 1.64756119251251,

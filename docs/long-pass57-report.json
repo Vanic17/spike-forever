@@ -1,0 +1,58 @@
+[
+  {
+    "backup": false,
+    "contact": true,
+    "hz": 60,
+    "seconds": 2.09,
+    "team": 0
+  },
+  {
+    "backup": true,
+    "contact": true,
+    "hz": 60,
+    "seconds": 2.09,
+    "team": 0
+  },
+  {
+    "backup": false,
+    "contact": true,
+    "hz": 120,
+    "seconds": 2.09,
+    "team": 0
+  },
+  {
+    "backup": true,
+    "contact": true,
+    "hz": 120,
+    "seconds": 2.09,
+    "team": 0
+  },
+  {
+    "backup": false,
+    "contact": true,
+    "hz": 60,
+    "seconds": 2.09,
+    "team": 1
+  },
+  {
+    "backup": true,
+    "contact": true,
+    "hz": 60,
+    "seconds": 2.09,
+    "team": 1
+  },
+  {
+    "backup": false,
+    "contact": true,
+    "hz": 120,
+    "seconds": 2.09,
+    "team": 1
+  },
+  {
+    "backup": true,
+    "contact": true,
+    "hz": 120,
+    "seconds": 2.09,
+    "team": 1
+  }
+]

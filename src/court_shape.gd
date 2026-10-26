@@ -127,7 +127,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				var jumping=game.get("middle_decoy")
 				if jumping!=null and jumping.holds(i): continue
 				var start: Vector3=game.players[i].position
-				var nearest:=Geometry3D.get_closest_point_to_segment(start,setter_route_origin,result[actor])
+				# The penetration already travelled is no longer a live barrier.
+				# Reassigning from its old origin repeatedly trapped the middle
+				# behind a corridor the setter had already cleared.
+				var nearest:=Geometry3D.get_closest_point_to_segment(start,game.players[actor].position,result[actor])
 				if not setter_yields.has(i) and start.distance_to(nearest)<(1.28 if route.length()>0.65 else 1.04):
 					var offset: float=(start-nearest).dot(normal)
 					if Tactics.front(i,game.rotations[game.possession]) and Tactics.ROLES[i%6].begins_with("MB"):
@@ -289,8 +292,47 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 	for i in range(actor_team*6,actor_team*6+6):
 		if i in blockers or floor_bodies.has(i): continue
 		result[i] = route_around_recovery(game,i,result[i],floor_bodies)
-	if game.phase in ["SET","CPU_SET"]: clear_middle_lane(game,result,actor,floor_bodies)
+	if game.phase in ["SET","CPU_SET"]:
+		clear_middle_lane(game,result,actor,floor_bodies)
+		route_setter_yields(game,result,actor,floor_bodies)
 	return result
+
+func route_setter_yields(game, result: Array[Vector3], actor: int, floor_bodies: Dictionary) -> void:
+	# A free yield endpoint is insufficient: the teammate must also reach it
+	# without crossing S's live body or final standing footprint. In particular,
+	# a passer behind S could previously run straight across the contact spot
+	# towards a "free" destination on its opposite side and block the set.
+	var start: Vector3=game.players[actor].position
+	var goal: Vector3=result[actor]
+	var reserved: Array[Vector3]=[start,goal]
+	for index in setter_yields.keys():
+		if index==actor or floor_bodies.has(index): continue
+		# The committed runner's approach is coordinated with S separately;
+		# moving his final takeoff lane would invalidate the authored quick.
+		if index==game.planned_hitter: continue
+		var origin: Vector3=game.players[index].position
+		var destination: Vector3=result[index]
+		if game.contact_navigation.segment_clear(origin,destination,reserved,1.12): continue
+		var candidates: Array[Vector3]=[origin]
+		for radius in [1.45,1.85,2.35,2.85]:
+			for direction in 16:
+				candidates.append(goal+Vector3(cos(direction*TAU/16),0,sin(direction*TAU/16))*radius)
+		var best:=origin; var cost:=INF
+		for candidate in candidates:
+			var side:=1 if actor<6 else -1
+			if absf(candidate.x)>5.4 or candidate.z*side<.5 or candidate.z*side>9.8: continue
+			if not game.contact_navigation.segment_clear(origin,candidate,reserved,1.12): continue
+			var free:=true
+			for other in range(int(actor/6)*6,int(actor/6)*6+6):
+				if other==actor or other==index: continue
+				if candidate.distance_to(game.players[other].position)<1.05: free=false; break
+			if not free: continue
+			var score: float=candidate.distance_to(destination)+origin.distance_to(candidate)*.25
+			if score<cost: cost=score; best=candidate
+		# If already inside a reserved footprint, staying put is safer than a new
+		# crossing; the existing swept body guard still permits outward escape.
+		setter_yields[index]=best
+		result[index]=best
 
 func clear_middle_lane(game, result: Array[Vector3], setter: int, floor_bodies: Dictionary) -> void:
 	var middle: int=Tactics.attacker(game.possession,game.rotations[game.possession],1,setter)
@@ -481,6 +523,14 @@ func recovering_bodies(game) -> Dictionary:
 
 func clear_recovery_route(start: Vector3, destination: Vector3, points: Array, clearance: float) -> bool:
 	for point in points:
+		var relative: Vector3=start-point
+		relative.y=0
+		if relative.length()<clearance:
+			# A save can expand into a standing teammate's existing footprint.
+			# Let him leave that overlap outward, as the swept collision guard
+			# does; routing around the near shoulder would turn him into the body.
+			if relative.dot(destination-start)<-.00001: return false
+			continue
 		if Geometry3D.get_closest_point_to_segment(point,start,destination).distance_to(point)<clearance: return false
 	return true
 

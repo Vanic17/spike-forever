@@ -1,0 +1,22 @@
+[
+  {
+    "actor": 4,
+    "frames": 150,
+    "hit_frame": 35,
+    "large_steps": [],
+    "max_root_step": 0.0612991787493229,
+    "scene": 0,
+    "source_time": 2.71814435330336,
+    "variant": "dive_v26_01"
+  },
+  {
+    "actor": 5,
+    "frames": 150,
+    "hit_frame": 15,
+    "large_steps": [],
+    "max_root_step": 0.0740589499473572,
+    "scene": 1,
+    "source_time": 0.3,
+    "variant": "dive_v26_06"
+  }
+]

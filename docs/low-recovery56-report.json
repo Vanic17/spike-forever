@@ -1,36 +1,36 @@
 [
   {
     "contact": true,
-    "duration": 0.597381316065672,
+    "duration": 0.597571906939551,
     "hz": 60,
-    "max_root_step": 0.0526100359857082,
+    "max_root_step": 0.0522432774305344,
     "motion_active": true,
     "phase": "ATTACK",
     "team": 0
   },
   {
     "contact": true,
-    "duration": 0.597381316065672,
+    "duration": 0.597571906939551,
     "hz": 120,
-    "max_root_step": 0.0267581157386303,
+    "max_root_step": 0.0266926810145378,
     "motion_active": true,
     "phase": "ATTACK",
     "team": 0
   },
   {
     "contact": true,
-    "duration": 0.597375319721057,
+    "duration": 0.571224367242411,
     "hz": 60,
-    "max_root_step": 0.0739089846611023,
+    "max_root_step": 0.0796884819865227,
     "motion_active": true,
     "phase": "CPU_ATTACK",
     "team": 1
   },
   {
     "contact": true,
-    "duration": 0.597375319721057,
+    "duration": 0.571224367242411,
     "hz": 120,
-    "max_root_step": 0.037001084536314,
+    "max_root_step": 0.0398220643401146,
     "motion_active": true,
     "phase": "CPU_ATTACK",
     "team": 1

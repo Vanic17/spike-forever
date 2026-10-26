@@ -18,6 +18,11 @@ func run() -> void:
 				var initial_contacts: int=game.test_contacts
 				var duration: float=game.flight_left
 				var physical_deadline:=duration
+				var original_position: Vector3=game.ball_pos
+				var original_velocity: Vector3=game.ball_vel
+				var original_spin: Vector3=game.flight_spin
+				var original_gravity: float=game.flight_gravity
+				var contact_height: float=game.flight_target.y
 				var forearm:=false
 				var elapsed:=0.0
 				var gap:=INF
@@ -31,9 +36,19 @@ func run() -> void:
 					var speed: float=game.players[game.setter].velocity.length()
 					game.step(1.0/fps)
 					elapsed+=1.0/fps
-					if game.out_of_system<0 and not forearm and game.phase in ["SET","CPU_SET"]:
-						forearm=true
-						physical_deadline=elapsed+game.flight_left
+					if game.phase in ["SET","CPU_SET"]:
+						# A forearm or one-hand source can meet the SAME pass at a
+						# lower physical height. Derive each revised deadline from
+						# the original integrator state, never the reassigned timer.
+						var predicted: Array=game.BallFlight.advance(original_position,original_velocity,original_spin,elapsed,original_gravity)
+						assert(game.ball_pos.distance_to(predicted[0])<.005 and game.ball_vel.distance_to(predicted[1])<.005,"Recovery must preserve the original moving ball, not pause or relaunch it")
+						assert(game.flight_spin==original_spin and game.flight_gravity==original_gravity)
+						if not is_equal_approx(contact_height,game.flight_target.y):
+							contact_height=game.flight_target.y
+							var crossing: Dictionary=game.BallFlight.intercept(original_position,original_velocity,original_spin,contact_height,original_gravity)
+							assert(not crossing.is_empty(),"Changed pose must have a real original-flight intercept")
+							physical_deadline=crossing.seconds
+						if game.out_of_system<0: forearm=true
 					var displacement: float=prior.distance_to(game.players[game.setter].position)
 					maximum_step=maxf(maximum_step,displacement)
 					if speed>1.0 and displacement<0.002: stalls+=1
