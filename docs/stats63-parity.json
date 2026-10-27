@@ -1,0 +1,16 @@
+[
+  {
+    "before": "docs/stats63-demo-before.json",
+    "after": "docs/stats63-after.json",
+    "sha256": "63f5331c85fa288d82ea7d333acfed574d04bb928c899dd53c75ad7410042408",
+    "rows": 240,
+    "identical": true
+  },
+  {
+    "before": "docs/stats63-manual-before.json",
+    "after": "docs/stats63-manual-after.json",
+    "sha256": "6021db1999efe52ccd4f9e605fb58cda7dc8a7ad5e518e5da9e0616646679b7d",
+    "rows": 240,
+    "identical": true
+  }
+]

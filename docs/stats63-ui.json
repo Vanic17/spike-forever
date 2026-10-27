@@ -1,0 +1,12 @@
+{
+  "both_modes_launch": true,
+  "circle_back": true,
+  "controller_defense": true,
+  "controller_stats": true,
+  "hexagon": true,
+  "layouts": [
+    "(1440, 810)",
+    "(1280, 720)",
+    "(1280, 600)"
+  ]
+}

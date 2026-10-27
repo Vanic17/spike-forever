@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF062"
+const PROTOCOL="SF063"
 const PORT=26761
 var game
 var menu
@@ -18,6 +18,8 @@ var choices: Array=[{},{}]
 var ready_flags: Array=[false,false]
 var best_of:=5
 var points:=25
+var use_player_stats:=false
+var local_charge_release_seen:=-1.0
 var inputs: Array=[{},{}]
 var sequence:=0
 var last_sequence: Array=[-1,-1]
@@ -150,7 +152,16 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 		var p: Dictionary=value.roster[i]
 		if not club.roster.any(func(base): return base.id==p.get("id")) or p.get("id") in ids or not db.fits_slot(str(p.get("role","")),i): return {}
 		ids.append(p.id)
-		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"appearance":p.get("appearance",{}).duplicate(true),"ratings":{"generale":clampi(int(p.get("ratings",{}).get("generale",50)),0,100)},"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+		var base: Dictionary=club.roster.filter(func(item): return item.id==p.id)[0]
+		if not p.get("ratings",{}) is Dictionary: return {}
+		var overall=p.get("ratings",{}).get("generale",50)
+		if not (overall is float or overall is int) or not is_finite(float(overall)): return {}
+		var values: Dictionary={"generale":clampi(int(overall),0,100)}
+		for key in preload("res://src/player_stats_gameplay.gd").KEYS:
+			var raw=p.get("ratings",{}).get(key,base.ratings.get(key,85))
+			if not (raw is float or raw is int) or not is_finite(float(raw)): return {}
+			values[key]=clampf(float(raw),0,99)
+		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
 	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean}
 
 func choose(value: Dictionary, confirmed: bool) -> void:
@@ -170,26 +181,27 @@ func set_choice(side: int, value: Dictionary, confirmed: bool) -> void:
 
 func broadcast_lobby() -> void:
 	if not authority(): return
-	if guest!=0: lobby_state.rpc_id(guest,choices,ready_flags,best_of,points)
+	if guest!=0: lobby_state.rpc_id(guest,choices,ready_flags,best_of,points,use_player_stats)
 	refresh()
 
 @rpc("authority","call_remote","reliable",0)
-func lobby_state(selected: Array, flags: Array, format: int, target: int) -> void:
+func lobby_state(selected: Array, flags: Array, format: int, target: int, stats_enabled: bool=false) -> void:
 	if local_side!=1 or selected.size()!=2 or flags.size()!=2: return
-	choices=selected; ready_flags=flags; best_of=format; points=target; packet_age=0; refresh()
+	choices=selected; ready_flags=flags; best_of=format; points=target; use_player_stats=stats_enabled; packet_age=0; refresh()
 
 func start_match() -> bool:
 	if not authority() or guest==0 or not ready_flags[0] or not ready_flags[1] or choices[0].is_empty() or choices[1].is_empty(): return false
-	begin_match.rpc_id(guest,choices,best_of,points)
-	begin_local(choices,best_of,points)
+	begin_match.rpc_id(guest,choices,best_of,points,use_player_stats)
+	begin_local(choices,best_of,points,use_player_stats)
 	return true
 
 @rpc("authority","call_remote","reliable",0)
-func begin_match(selected: Array, format: int, target: int) -> void:
-	if local_side==1 and active: begin_local(selected,format,target)
+func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=false) -> void:
+	if local_side==1 and active: begin_local(selected,format,target,stats_enabled)
 
-func begin_local(selected: Array, format: int, target: int) -> void:
+func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false) -> void:
 	State.setup(game)
+	use_player_stats=stats_enabled; game.use_player_stats=stats_enabled
 	choices=selected; best_of=format; points=target; playing=true; buffered.clear(); incoming_chunks.clear(); packet_age=0
 	game.match_best_of=format; game.match_points=target; game.camera_mode=0; game.demo=false; game.gallery=false
 	var kits=load("res://src/club_kits.gd")
@@ -341,11 +353,20 @@ func send_command(button: String, pressed: bool) -> void:
 		if pressed and chargeable and local_charge_start<0:
 			local_charge_start=Time.get_ticks_usec()/1000000.0; local_charge_kind="serve" if phase=="SERVE" else "attack"; local_charge_button=button; local_charge_released=-1
 		elif not pressed and button==local_charge_button and local_charge_start>=0:
+			if game.use_player_stats and local_charge_kind=="attack":
+				sync_local_release()
 			held=maxf(0,Time.get_ticks_usec()/1000000.0-local_charge_start)
-			local_charge_released=held/(game.Timing.SERVE_CHARGE_SECONDS if local_charge_kind=="serve" else game.Timing.ATTACK_CHARGE_SECONDS)
+			if game.use_player_stats and local_charge_kind=="attack" and phase=="SET": held=0
+			local_charge_released=held/game.charge_seconds(local_charge_kind)
 			local_charge_expiry=Time.get_ticks_usec()/1000000.0+.25; local_charge_start=-1
 	if authority(): apply_command(0,sequence,button,pressed,value,held)
 	else: control_command.rpc_id(1,sequence,button,pressed,value,held)
+
+func sync_local_release() -> void:
+	if game.phase.trim_prefix("CPU_")!="ATTACK" or local_charge_release_seen==game.stats_release_clock: return
+	local_charge_release_seen=game.stats_release_clock
+	if local_charge_start>=0: local_charge_start=Time.get_ticks_usec()/1000000.0-maxf(0,game.clock_time-game.stats_release_clock)
+	else: local_charge_released=0.0
 
 func predicted_charge() -> float:
 	if authority() or not playing: return -1
@@ -353,7 +374,10 @@ func predicted_charge() -> float:
 	var valid: bool=(phase=="SERVE" and game.server==local_side) if local_charge_kind=="serve" else (phase in ["SET","ATTACK"] and game.possession==local_side)
 	if not valid:
 		local_charge_start=-1; local_charge_released=-1; return -1
-	if local_charge_start>=0: return maxf(0,Time.get_ticks_usec()/1000000.0-local_charge_start)/(game.Timing.SERVE_CHARGE_SECONDS if local_charge_kind=="serve" else game.Timing.ATTACK_CHARGE_SECONDS)
+	if game.use_player_stats and local_charge_kind=="attack":
+		if phase=="SET": return 0.0
+		sync_local_release()
+	if local_charge_start>=0: return maxf(0,Time.get_ticks_usec()/1000000.0-local_charge_start)/game.charge_seconds(local_charge_kind)
 	return local_charge_released if Time.get_ticks_usec()/1000000.0<local_charge_expiry else -1
 
 @rpc("any_peer","call_remote","reliable",0)
@@ -367,6 +391,7 @@ func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictio
 	if not pressed and side==1 and side==(game.server if game.phase=="SERVE" else game.possession) and is_finite(held) and held>=0:
 		# The local bar and released power use the same held duration. Network
 		# jitter must not turn the guest's visible 100% into an overcharge.
+		if game.use_player_stats and game.phase in ["ATTACK","CPU_ATTACK"]: held=minf(held,maxf(0,game.clock_time-game.stats_release_clock))
 		if game.charging and game.charge_button==button: game.charge_start=game.clock_time-clampf(held,0,30)
 		if game.attack_buffer_start>=0: game.attack_buffer_start=game.clock_time-clampf(held,0,30)
 	if pressed: game.press_action(button)

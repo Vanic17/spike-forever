@@ -36,7 +36,8 @@
             "palleggio": 59,
             "schiacciata": 85,
             "muro": 68,
-            "generale": 79
+            "generale": 79,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -44,7 +45,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Recine",
+                  "digs": 61.0,
+                  "attempts": 178.0,
+                  "success_percent": 34.27,
+                  "digs_per_match": 2.77
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -95,7 +110,8 @@
             "palleggio": 56,
             "schiacciata": 75,
             "muro": 59,
-            "generale": 72
+            "generale": 72,
+            "difesa": 72
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -103,7 +119,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Ichino",
+                  "digs": 27.0,
+                  "attempts": 75.0,
+                  "success_percent": 36.0,
+                  "digs_per_match": 0.9
+                }
+              ]
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -154,7 +184,8 @@
             "palleggio": 71,
             "schiacciata": 35,
             "muro": 28,
-            "generale": 80
+            "generale": 80,
+            "difesa": 78
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -162,7 +193,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Catania",
+                  "digs": 120.0,
+                  "attempts": 358.0,
+                  "success_percent": 33.52,
+                  "digs_per_match": 4.0
+                }
+              ]
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -213,7 +258,8 @@
             "palleggio": 91,
             "schiacciata": 56,
             "muro": 55,
-            "generale": 79
+            "generale": 79,
+            "difesa": 72
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -221,7 +267,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -272,7 +323,8 @@
             "palleggio": 47,
             "schiacciata": 75,
             "muro": 82,
-            "generale": 76
+            "generale": 76,
+            "difesa": 58
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -280,7 +332,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -331,7 +388,8 @@
             "palleggio": 43,
             "schiacciata": 76,
             "muro": 81,
-            "generale": 75
+            "generale": 75,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -339,7 +397,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -390,7 +453,8 @@
             "palleggio": 45,
             "schiacciata": 69,
             "muro": 73,
-            "generale": 69
+            "generale": 69,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -398,7 +462,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -449,7 +518,8 @@
             "palleggio": 47,
             "schiacciata": 85,
             "muro": 68,
-            "generale": 78
+            "generale": 78,
+            "difesa": 65
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -457,7 +527,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Dermaux",
+                  "digs": 1.0,
+                  "attempts": 2.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 0.25
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -506,7 +590,8 @@
             "palleggio": 54,
             "schiacciata": 73,
             "muro": 62,
-            "generale": 70
+            "generale": 70,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -514,7 +599,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Rotty",
+                  "digs": 4.0,
+                  "attempts": 7.0,
+                  "success_percent": 57.14,
+                  "digs_per_match": 0.4
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Rotty",
+                  "digs": 26.0,
+                  "attempts": 48.0,
+                  "success_percent": 54.17,
+                  "digs_per_match": 2.36
+                }
+              ]
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -565,7 +672,8 @@
             "palleggio": 47,
             "schiacciata": 88,
             "muro": 91,
-            "generale": 87
+            "generale": 87,
+            "difesa": 61
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -577,7 +685,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Simón",
+                  "digs": 30.0,
+                  "attempts": 51.0,
+                  "success_percent": 58.82,
+                  "digs_per_match": 1.11
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Simón",
+                  "digs": 12.0,
+                  "attempts": 26.0,
+                  "success_percent": 46.15,
+                  "digs_per_match": 1.5
+                }
+              ]
+            }
           },
           "jersey_number": 13,
           "jersey_number_metadata": {
@@ -628,7 +758,8 @@
             "palleggio": 80,
             "schiacciata": 53,
             "muro": 51,
-            "generale": 71
+            "generale": 71,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -636,7 +767,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Orduna",
+                  "digs": 8.0,
+                  "attempts": 27.0,
+                  "success_percent": 29.63,
+                  "digs_per_match": 0.25
+                }
+              ]
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -687,7 +832,8 @@
             "palleggio": 60,
             "schiacciata": 82,
             "muro": 65,
-            "generale": 79
+            "generale": 79,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -695,7 +841,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Otsuka",
+                  "digs": 54.0,
+                  "attempts": 151.0,
+                  "success_percent": 35.76,
+                  "digs_per_match": 1.8
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Otsuka",
+                  "digs": 20.0,
+                  "attempts": 45.0,
+                  "success_percent": 44.44,
+                  "digs_per_match": 1.43
+                }
+              ]
+            }
           },
           "jersey_number": 15,
           "jersey_number_metadata": {
@@ -746,7 +914,8 @@
             "palleggio": 44,
             "schiacciata": 76,
             "muro": 62,
-            "generale": 71
+            "generale": 71,
+            "difesa": 66
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -754,7 +923,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 16,
           "jersey_number_metadata": {
@@ -805,7 +979,8 @@
             "palleggio": 67,
             "schiacciata": 33,
             "muro": 23,
-            "generale": 73
+            "generale": 73,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -813,7 +988,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Corbetta",
+                  "digs": 15.0,
+                  "attempts": 28.0,
+                  "success_percent": 53.57,
+                  "digs_per_match": 0.83
+                }
+              ]
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -864,7 +1053,8 @@
             "palleggio": 51,
             "schiacciata": 79,
             "muro": 66,
-            "generale": 73
+            "generale": 73,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -872,7 +1062,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Tatarov",
+                  "digs": 34.0,
+                  "attempts": 84.0,
+                  "success_percent": 40.48,
+                  "digs_per_match": 1.62
+                }
+              ]
+            }
           },
           "jersey_number": 21,
           "jersey_number_metadata": {
@@ -970,7 +1174,8 @@
             "palleggio": 83,
             "schiacciata": 50,
             "muro": 45,
-            "generale": 71
+            "generale": 71,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -978,7 +1183,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -1029,7 +1239,8 @@
             "palleggio": 57,
             "schiacciata": 86,
             "muro": 69,
-            "generale": 80
+            "generale": 80,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1037,7 +1248,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Magalini",
+                  "digs": 70.0,
+                  "attempts": 143.0,
+                  "success_percent": 48.95,
+                  "digs_per_match": 3.18
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -1088,7 +1313,8 @@
             "palleggio": 54,
             "schiacciata": 80,
             "muro": 64,
-            "generale": 73
+            "generale": 73,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1096,7 +1322,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -1147,7 +1378,8 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 80,
-            "generale": 75
+            "generale": 75,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1155,7 +1387,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -1206,7 +1443,8 @@
             "palleggio": 52,
             "schiacciata": 88,
             "muro": 67,
-            "generale": 80
+            "generale": 80,
+            "difesa": 65
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1214,7 +1452,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Barotto",
+                  "digs": 49.0,
+                  "attempts": 133.0,
+                  "success_percent": 36.84,
+                  "digs_per_match": 2.04
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -1265,12 +1517,18 @@
             "palleggio": 47,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73
+            "generale": 73,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
             "confidence": "low",
-            "verified_individual_statistics": false
+            "verified_individual_statistics": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "appearance": {
             "hair_length": "corti",
@@ -1305,7 +1563,8 @@
             "palleggio": 58,
             "schiacciata": 77,
             "muro": 63,
-            "generale": 74
+            "generale": 74,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1313,7 +1572,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Lanza",
+                  "digs": 57.0,
+                  "attempts": 117.0,
+                  "success_percent": 48.72,
+                  "digs_per_match": 2.85
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -1364,7 +1637,8 @@
             "palleggio": 86,
             "schiacciata": 62,
             "muro": 59,
-            "generale": 77
+            "generale": 77,
+            "difesa": 68
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1372,7 +1646,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Fanizza",
+                  "digs": 54.0,
+                  "attempts": 147.0,
+                  "success_percent": 36.73,
+                  "digs_per_match": 2.25
+                }
+              ]
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -1423,7 +1711,8 @@
             "palleggio": 60,
             "schiacciata": 29,
             "muro": 27,
-            "generale": 74
+            "generale": 74,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1431,7 +1720,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -1482,7 +1776,8 @@
             "palleggio": 42,
             "schiacciata": 81,
             "muro": 62,
-            "generale": 73
+            "generale": 73,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1490,7 +1785,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -1541,7 +1841,8 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 83,
-            "generale": 80
+            "generale": 80,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1549,7 +1850,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Mazzone",
+                  "digs": 21.0,
+                  "attempts": 60.0,
+                  "success_percent": 35.0,
+                  "digs_per_match": 0.88
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -1600,7 +1915,8 @@
             "palleggio": 59,
             "schiacciata": 79,
             "muro": 59,
-            "generale": 72
+            "generale": 72,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1608,7 +1924,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Duflos Rossi",
+                  "digs": 7.0,
+                  "attempts": 27.0,
+                  "success_percent": 25.93,
+                  "digs_per_match": 0.22
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Duflos Rossi",
+                  "digs": 7.0,
+                  "attempts": 16.0,
+                  "success_percent": 43.75,
+                  "digs_per_match": 0.58
+                }
+              ]
+            }
           },
           "jersey_number": 22,
           "jersey_number_metadata": {
@@ -1659,7 +1997,8 @@
             "palleggio": 39,
             "schiacciata": 69,
             "muro": 81,
-            "generale": 73
+            "generale": 73,
+            "difesa": 54
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1667,7 +2006,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Tosti",
+                  "digs": 3.0,
+                  "attempts": 4.0,
+                  "success_percent": 75.0,
+                  "digs_per_match": 0.12
+                }
+              ]
+            }
           },
           "jersey_number": 24,
           "jersey_number_metadata": {
@@ -1718,7 +2071,8 @@
             "palleggio": 66,
             "schiacciata": 38,
             "muro": 31,
-            "generale": 77
+            "generale": 77,
+            "difesa": 88
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1726,7 +2080,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Federici",
+                  "digs": 1.0,
+                  "attempts": 2.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 0.03
+                }
+              ]
+            }
           },
           "jersey_number": 77,
           "jersey_number_metadata": {
@@ -1824,7 +2192,8 @@
             "palleggio": 90,
             "schiacciata": 71,
             "muro": 68,
-            "generale": 83
+            "generale": 83,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1832,7 +2201,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "S. Nikolov",
+                  "digs": 70.0,
+                  "attempts": 118.0,
+                  "success_percent": 59.32,
+                  "digs_per_match": 5.83
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -1883,7 +2266,8 @@
             "palleggio": 48,
             "schiacciata": 86,
             "muro": 89,
-            "generale": 84
+            "generale": 84,
+            "difesa": 60
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1891,7 +2275,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Gargiulo",
+                  "digs": 47.0,
+                  "attempts": 87.0,
+                  "success_percent": 54.02,
+                  "digs_per_match": 1.47
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Gargiulo",
+                  "digs": 0.0,
+                  "attempts": 3.0,
+                  "success_percent": 0.0,
+                  "digs_per_match": 0.0
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -1942,7 +2348,8 @@
             "palleggio": 60,
             "schiacciata": 88,
             "muro": 70,
-            "generale": 81
+            "generale": 81,
+            "difesa": 78
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -1950,7 +2357,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Loeppky",
+                  "digs": 79.0,
+                  "attempts": 160.0,
+                  "success_percent": 49.38,
+                  "digs_per_match": 2.47
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Loeppky",
+                  "digs": 31.0,
+                  "attempts": 49.0,
+                  "success_percent": 63.27,
+                  "digs_per_match": 7.75
+                }
+              ]
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -2001,7 +2430,8 @@
             "palleggio": 67,
             "schiacciata": 30,
             "muro": 22,
-            "generale": 75
+            "generale": 75,
+            "difesa": 83
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2009,7 +2439,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Bisotto",
+                  "digs": 26.0,
+                  "attempts": 55.0,
+                  "success_percent": 47.27,
+                  "digs_per_match": 0.81
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -2060,7 +2504,8 @@
             "palleggio": 76,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 85
+            "generale": 85,
+            "difesa": 86
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2068,7 +2513,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Balaso",
+                  "digs": 159.0,
+                  "attempts": 301.0,
+                  "success_percent": 52.82,
+                  "digs_per_match": 4.97
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Balaso",
+                  "digs": 30.0,
+                  "attempts": 52.0,
+                  "success_percent": 57.69,
+                  "digs_per_match": 6.0
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -2119,7 +2586,8 @@
             "palleggio": 43,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 72
+            "generale": 72,
+            "difesa": 59
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2127,7 +2595,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Polo",
+                  "digs": 34.0,
+                  "attempts": 71.0,
+                  "success_percent": 47.89,
+                  "digs_per_match": 1.42
+                }
+              ]
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -2178,7 +2660,8 @@
             "palleggio": 55,
             "schiacciata": 73,
             "muro": 63,
-            "generale": 70
+            "generale": 70,
+            "difesa": 72
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2186,7 +2669,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Gardini",
+                  "digs": 65.0,
+                  "attempts": 176.0,
+                  "success_percent": 36.93,
+                  "digs_per_match": 2.71
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -2237,12 +2734,27 @@
             "palleggio": 55,
             "schiacciata": 76,
             "muro": 61,
-            "generale": 73
+            "generale": 73,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
             "confidence": "low",
-            "verified_individual_statistics": false
+            "verified_individual_statistics": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Kujundžić",
+                  "digs": 1.0,
+                  "attempts": 2.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 0.25
+                }
+              ]
+            }
           },
           "appearance": {
             "hair_length": "corti",
@@ -2277,7 +2789,8 @@
             "palleggio": 58,
             "schiacciata": 95,
             "muro": 72,
-            "generale": 84
+            "generale": 84,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2289,7 +2802,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "A. Nikolov",
+                  "digs": 94.0,
+                  "attempts": 231.0,
+                  "success_percent": 40.69,
+                  "digs_per_match": 3.03
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "A. Nikolov",
+                  "digs": 47.0,
+                  "attempts": 85.0,
+                  "success_percent": 55.29,
+                  "digs_per_match": 3.92
+                }
+              ]
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -2340,7 +2875,8 @@
             "palleggio": 81,
             "schiacciata": 55,
             "muro": 52,
-            "generale": 72
+            "generale": 72,
+            "difesa": 69
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2348,7 +2884,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Zoppellari",
+                  "digs": 16.0,
+                  "attempts": 40.0,
+                  "success_percent": 40.0,
+                  "digs_per_match": 0.67
+                }
+              ]
+            }
           },
           "jersey_number": 15,
           "jersey_number_metadata": {
@@ -2399,7 +2949,8 @@
             "palleggio": 52,
             "schiacciata": 83,
             "muro": 85,
-            "generale": 81
+            "generale": 81,
+            "difesa": 54
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2411,7 +2962,21 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Howe",
+                  "digs": 12.0,
+                  "attempts": 40.0,
+                  "success_percent": 30.0,
+                  "digs_per_match": 1.0
+                }
+              ]
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -2462,7 +3027,8 @@
             "palleggio": 51,
             "schiacciata": 82,
             "muro": 67,
-            "generale": 76
+            "generale": 76,
+            "difesa": 65
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2470,7 +3036,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Tonkonoh",
+                  "digs": 6.0,
+                  "attempts": 17.0,
+                  "success_percent": 35.29,
+                  "digs_per_match": 0.67
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -2521,7 +3101,8 @@
             "palleggio": 42,
             "schiacciata": 71,
             "muro": 76,
-            "generale": 71
+            "generale": 71,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2529,7 +3110,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 19,
           "jersey_number_metadata": {
@@ -2580,7 +3166,8 @@
             "palleggio": 62,
             "schiacciata": 89,
             "muro": 74,
-            "generale": 85
+            "generale": 85,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2592,7 +3179,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Bottolo",
+                  "digs": 84.0,
+                  "attempts": 218.0,
+                  "success_percent": 38.53,
+                  "digs_per_match": 2.62
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Bottolo",
+                  "digs": 59.0,
+                  "attempts": 101.0,
+                  "success_percent": 58.42,
+                  "digs_per_match": 4.54
+                }
+              ]
+            }
           },
           "jersey_number": 21,
           "jersey_number_metadata": {
@@ -2690,7 +3299,8 @@
             "palleggio": 79,
             "schiacciata": 51,
             "muro": 52,
-            "generale": 70
+            "generale": 70,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2698,7 +3308,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -2749,7 +3364,8 @@
             "palleggio": 67,
             "schiacciata": 42,
             "muro": 31,
-            "generale": 75
+            "generale": 75,
+            "difesa": 84
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2757,7 +3373,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Cavaccini",
+                  "digs": 78.0,
+                  "attempts": 158.0,
+                  "success_percent": 49.37,
+                  "digs_per_match": 3.25
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -2808,7 +3438,8 @@
             "palleggio": 61,
             "schiacciata": 33,
             "muro": 24,
-            "generale": 69
+            "generale": 69,
+            "difesa": 84
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2816,7 +3447,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -2867,7 +3503,8 @@
             "palleggio": 80,
             "schiacciata": 52,
             "muro": 52,
-            "generale": 71
+            "generale": 71,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2875,7 +3512,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Argilagos",
+                  "digs": 14.0,
+                  "attempts": 29.0,
+                  "success_percent": 48.28,
+                  "digs_per_match": 0.45
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -2926,7 +3577,8 @@
             "palleggio": 47,
             "schiacciata": 80,
             "muro": 63,
-            "generale": 72
+            "generale": 72,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2934,7 +3586,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Sala",
+                  "digs": 9.0,
+                  "attempts": 14.0,
+                  "success_percent": 64.29,
+                  "digs_per_match": 0.38
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -2985,7 +3651,8 @@
             "palleggio": 40,
             "schiacciata": 75,
             "muro": 80,
-            "generale": 74
+            "generale": 74,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -2993,7 +3660,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -3044,7 +3716,8 @@
             "palleggio": 42,
             "schiacciata": 71,
             "muro": 74,
-            "generale": 70
+            "generale": 70,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3052,7 +3725,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -3103,7 +3781,8 @@
             "palleggio": 56,
             "schiacciata": 79,
             "muro": 62,
-            "generale": 72
+            "generale": 72,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3111,7 +3790,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Strehlau",
+                  "digs": 13.0,
+                  "attempts": 30.0,
+                  "success_percent": 43.33,
+                  "digs_per_match": 1.18
+                }
+              ]
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -3162,7 +3855,8 @@
             "palleggio": 50,
             "schiacciata": 88,
             "muro": 71,
-            "generale": 80
+            "generale": 80,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3170,7 +3864,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Feral",
+                  "digs": 34.0,
+                  "attempts": 70.0,
+                  "success_percent": 48.57,
+                  "digs_per_match": 1.42
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -3221,7 +3929,8 @@
             "palleggio": 57,
             "schiacciata": 86,
             "muro": 70,
-            "generale": 79
+            "generale": 79,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3233,7 +3942,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Poriya",
+                  "digs": 15.0,
+                  "attempts": 24.0,
+                  "success_percent": 62.5,
+                  "digs_per_match": 1.07
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Poriya",
+                  "digs": 18.0,
+                  "attempts": 37.0,
+                  "success_percent": 48.65,
+                  "digs_per_match": 1.5
+                }
+              ]
+            }
           },
           "jersey_number": 19,
           "jersey_number_metadata": {
@@ -3284,7 +4015,8 @@
             "palleggio": 65,
             "schiacciata": 85,
             "muro": 65,
-            "generale": 79
+            "generale": 79,
+            "difesa": 78
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3292,7 +4024,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Champlin",
+                  "digs": 37.0,
+                  "attempts": 56.0,
+                  "success_percent": 66.07,
+                  "digs_per_match": 2.47
+                }
+              ]
+            }
           },
           "jersey_number": 20,
           "jersey_number_metadata": {
@@ -3343,7 +4089,8 @@
             "palleggio": 45,
             "schiacciata": 77,
             "muro": 85,
-            "generale": 78
+            "generale": 78,
+            "difesa": 59
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3351,7 +4098,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Codarin",
+                  "digs": 23.0,
+                  "attempts": 39.0,
+                  "success_percent": 58.97,
+                  "digs_per_match": 0.96
+                }
+              ]
+            }
           },
           "jersey_number": 22,
           "jersey_number_metadata": {
@@ -3402,7 +4163,8 @@
             "palleggio": 54,
             "schiacciata": 72,
             "muro": 66,
-            "generale": 71
+            "generale": 71,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3410,7 +4172,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Giraudo",
+                  "digs": 3.0,
+                  "attempts": 5.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 0.38
+                }
+              ]
+            }
           },
           "jersey_number": 23,
           "jersey_number_metadata": {
@@ -3461,7 +4237,8 @@
             "palleggio": 45,
             "schiacciata": 80,
             "muro": 82,
-            "generale": 78
+            "generale": 78,
+            "difesa": 53
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3469,7 +4246,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Mosca",
+                  "digs": 14.0,
+                  "attempts": 57.0,
+                  "success_percent": 24.56,
+                  "digs_per_match": 0.48
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Mosca",
+                  "digs": 2.0,
+                  "attempts": 4.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 0.25
+                }
+              ]
+            }
           },
           "jersey_number": 39,
           "jersey_number_metadata": {
@@ -3567,7 +4366,8 @@
             "palleggio": 47,
             "schiacciata": 76,
             "muro": 79,
-            "generale": 74
+            "generale": 74,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3575,7 +4375,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "McHenry",
+                  "digs": 14.0,
+                  "attempts": 31.0,
+                  "success_percent": 45.16,
+                  "digs_per_match": 1.0
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -3626,7 +4440,8 @@
             "palleggio": 63,
             "schiacciata": 86,
             "muro": 70,
-            "generale": 78
+            "generale": 78,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3634,7 +4449,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Robinson",
+                  "digs": 11.0,
+                  "attempts": 17.0,
+                  "success_percent": 64.71,
+                  "digs_per_match": 1.1
+                }
+              ]
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -3685,7 +4514,8 @@
             "palleggio": 87,
             "schiacciata": 62,
             "muro": 59,
-            "generale": 78
+            "generale": 78,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3693,7 +4523,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Porro P.",
+                  "digs": 109.0,
+                  "attempts": 227.0,
+                  "success_percent": 48.02,
+                  "digs_per_match": 3.76
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Porro P.",
+                  "digs": 29.0,
+                  "attempts": 48.0,
+                  "success_percent": 60.42,
+                  "digs_per_match": 3.62
+                }
+              ]
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -3744,7 +4596,8 @@
             "palleggio": 42,
             "schiacciata": 78,
             "muro": 67,
-            "generale": 73
+            "generale": 73,
+            "difesa": 65
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3752,7 +4605,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Leon",
+                  "digs": 14.0,
+                  "attempts": 35.0,
+                  "success_percent": 40.0,
+                  "digs_per_match": 0.47
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -3803,7 +4670,8 @@
             "palleggio": 71,
             "schiacciata": 35,
             "muro": 27,
-            "generale": 79
+            "generale": 79,
+            "difesa": 88
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3811,7 +4679,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Pace",
+                  "digs": 184.0,
+                  "attempts": 333.0,
+                  "success_percent": 55.26,
+                  "digs_per_match": 6.13
+                }
+              ]
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -3862,7 +4744,8 @@
             "palleggio": 52,
             "schiacciata": 72,
             "muro": 65,
-            "generale": 69
+            "generale": 69,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3870,7 +4753,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Brborić",
+                  "digs": 7.0,
+                  "attempts": 16.0,
+                  "success_percent": 43.75,
+                  "digs_per_match": 0.58
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -3921,7 +4818,8 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 79,
-            "generale": 75
+            "generale": 75,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3929,7 +4827,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Comparoni",
+                  "digs": 19.0,
+                  "attempts": 47.0,
+                  "success_percent": 40.43,
+                  "digs_per_match": 0.66
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -3980,7 +4892,8 @@
             "palleggio": 46,
             "schiacciata": 84,
             "muro": 87,
-            "generale": 82
+            "generale": 82,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -3988,7 +4901,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Galassi",
+                  "digs": 10.0,
+                  "attempts": 26.0,
+                  "success_percent": 38.46,
+                  "digs_per_match": 0.56
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Galassi",
+                  "digs": 5.0,
+                  "attempts": 9.0,
+                  "success_percent": 55.56,
+                  "digs_per_match": 0.56
+                }
+              ]
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -4039,7 +4974,8 @@
             "palleggio": 63,
             "schiacciata": 84,
             "muro": 66,
-            "generale": 79
+            "generale": 79,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4047,7 +4983,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 13,
           "jersey_number_metadata": {
@@ -4098,7 +5039,8 @@
             "palleggio": 81,
             "schiacciata": 54,
             "muro": 54,
-            "generale": 72
+            "generale": 72,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4106,7 +5048,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Travica",
+                  "digs": 5.0,
+                  "attempts": 10.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 0.17
+                }
+              ]
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -4157,7 +5113,8 @@
             "palleggio": 60,
             "schiacciata": 35,
             "muro": 25,
-            "generale": 73
+            "generale": 73,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4165,7 +5122,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 15,
           "jersey_number_metadata": {
@@ -4216,7 +5178,8 @@
             "palleggio": 42,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73
+            "generale": 73,
+            "difesa": 58
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4224,7 +5187,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Iyegbekedo",
+                  "digs": 9.0,
+                  "attempts": 17.0,
+                  "success_percent": 52.94,
+                  "digs_per_match": 0.6
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Iyegbekedo",
+                  "digs": 9.0,
+                  "attempts": 15.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 0.75
+                }
+              ]
+            }
           },
           "jersey_number": 21,
           "jersey_number_metadata": {
@@ -4275,7 +5260,8 @@
             "palleggio": 56,
             "schiacciata": 84,
             "muro": 67,
-            "generale": 78
+            "generale": 78,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4283,7 +5269,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "J. Gutierrez",
+                  "digs": 69.0,
+                  "attempts": 156.0,
+                  "success_percent": 44.23,
+                  "digs_per_match": 2.3
+                }
+              ]
+            }
           },
           "jersey_number": 22,
           "jersey_number_metadata": {
@@ -4334,7 +5334,8 @@
             "palleggio": 49,
             "schiacciata": 88,
             "muro": 70,
-            "generale": 80
+            "generale": 80,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4342,7 +5343,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Bovolenta",
+                  "digs": 112.0,
+                  "attempts": 202.0,
+                  "success_percent": 55.45,
+                  "digs_per_match": 3.73
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Bovolenta",
+                  "digs": 29.0,
+                  "attempts": 50.0,
+                  "success_percent": 58.0,
+                  "digs_per_match": 2.23
+                }
+              ]
+            }
           },
           "jersey_number": 23,
           "jersey_number_metadata": {
@@ -4440,7 +5463,8 @@
             "palleggio": 58,
             "schiacciata": 73,
             "muro": 64,
-            "generale": 69
+            "generale": 69,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4448,7 +5472,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -4499,7 +5528,8 @@
             "palleggio": 82,
             "schiacciata": 48,
             "muro": 46,
-            "generale": 71
+            "generale": 71,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4507,7 +5537,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -4558,7 +5593,8 @@
             "palleggio": 69,
             "schiacciata": 94,
             "muro": 83,
-            "generale": 89
+            "generale": 89,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4566,7 +5602,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Michieletto",
+                  "digs": 56.0,
+                  "attempts": 103.0,
+                  "success_percent": 54.37,
+                  "digs_per_match": 3.29
+                }
+              ]
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -4617,7 +5667,8 @@
             "palleggio": 89,
             "schiacciata": 62,
             "muro": 61,
-            "generale": 80
+            "generale": 80,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4625,7 +5676,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Sbertoli",
+                  "digs": 111.0,
+                  "attempts": 232.0,
+                  "success_percent": 47.84,
+                  "digs_per_match": 3.83
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Sbertoli",
+                  "digs": 15.0,
+                  "attempts": 33.0,
+                  "success_percent": 45.45,
+                  "digs_per_match": 1.67
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -4676,7 +5749,8 @@
             "palleggio": 64,
             "schiacciata": 34,
             "muro": 24,
-            "generale": 75
+            "generale": 75,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4684,7 +5758,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -4735,7 +5814,8 @@
             "palleggio": 50,
             "schiacciata": 91,
             "muro": 73,
-            "generale": 83
+            "generale": 83,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4743,7 +5823,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Faure",
+                  "digs": 90.0,
+                  "attempts": 150.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 3.33
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Faure",
+                  "digs": 8.0,
+                  "attempts": 10.0,
+                  "success_percent": 80.0,
+                  "digs_per_match": 2.0
+                }
+              ]
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -4794,7 +5896,8 @@
             "palleggio": 39,
             "schiacciata": 69,
             "muro": 78,
-            "generale": 71
+            "generale": 71,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4802,7 +5905,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -4853,7 +5961,8 @@
             "palleggio": 75,
             "schiacciata": 35,
             "muro": 27,
-            "generale": 84
+            "generale": 84,
+            "difesa": 90
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4865,7 +5974,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Laurenzano",
+                  "digs": 206.0,
+                  "attempts": 344.0,
+                  "success_percent": 59.88,
+                  "digs_per_match": 7.1
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Laurenzano",
+                  "digs": 86.0,
+                  "attempts": 146.0,
+                  "success_percent": 58.9,
+                  "digs_per_match": 6.62
+                }
+              ]
+            }
           },
           "jersey_number": 13,
           "jersey_number_metadata": {
@@ -4916,7 +6047,8 @@
             "palleggio": 63,
             "schiacciata": 88,
             "muro": 74,
-            "generale": 83
+            "generale": 83,
+            "difesa": 80
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4924,7 +6056,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Lavia",
+                  "digs": 37.0,
+                  "attempts": 59.0,
+                  "success_percent": 62.71,
+                  "digs_per_match": 4.62
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Lavia",
+                  "digs": 25.0,
+                  "attempts": 43.0,
+                  "success_percent": 58.14,
+                  "digs_per_match": 2.78
+                }
+              ]
+            }
           },
           "jersey_number": 15,
           "jersey_number_metadata": {
@@ -4975,7 +6129,8 @@
             "palleggio": 50,
             "schiacciata": 76,
             "muro": 67,
-            "generale": 71
+            "generale": 71,
+            "difesa": 66
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -4983,7 +6138,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -5034,7 +6194,8 @@
             "palleggio": 55,
             "schiacciata": 79,
             "muro": 62,
-            "generale": 72
+            "generale": 72,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5042,7 +6203,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -5093,7 +6259,8 @@
             "palleggio": 47,
             "schiacciata": 87,
             "muro": 90,
-            "generale": 85
+            "generale": 85,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5101,7 +6268,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Flavio",
+                  "digs": 23.0,
+                  "attempts": 60.0,
+                  "success_percent": 38.33,
+                  "digs_per_match": 0.85
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Flavio",
+                  "digs": 11.0,
+                  "attempts": 34.0,
+                  "success_percent": 32.35,
+                  "digs_per_match": 1.0
+                }
+              ]
+            }
           },
           "jersey_number": 23,
           "jersey_number_metadata": {
@@ -5152,7 +6341,8 @@
             "palleggio": 48,
             "schiacciata": 80,
             "muro": 86,
-            "generale": 80
+            "generale": 80,
+            "difesa": 58
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5160,7 +6350,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Nedeljković",
+                  "digs": 9.0,
+                  "attempts": 24.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.45
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Nedeljković",
+                  "digs": 29.0,
+                  "attempts": 55.0,
+                  "success_percent": 52.73,
+                  "digs_per_match": 2.42
+                }
+              ]
+            }
           },
           "jersey_number": 29,
           "jersey_number_metadata": {
@@ -5211,7 +6423,8 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 79,
-            "generale": 74
+            "generale": 74,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5219,7 +6432,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Torwie",
+                  "digs": 10.0,
+                  "attempts": 25.0,
+                  "success_percent": 40.0,
+                  "digs_per_match": 0.34
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Torwie",
+                  "digs": 8.0,
+                  "attempts": 27.0,
+                  "success_percent": 29.63,
+                  "digs_per_match": 0.67
+                }
+              ]
+            }
           },
           "jersey_number": 33,
           "jersey_number_metadata": {
@@ -5317,7 +6552,8 @@
             "palleggio": 49,
             "schiacciata": 86,
             "muro": 72,
-            "generale": 80
+            "generale": 80,
+            "difesa": 64
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5325,7 +6561,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Golzadeh",
+                  "digs": 35.0,
+                  "attempts": 100.0,
+                  "success_percent": 35.0,
+                  "digs_per_match": 1.84
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -5376,7 +6626,8 @@
             "palleggio": 55,
             "schiacciata": 81,
             "muro": 63,
-            "generale": 75
+            "generale": 75,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5384,7 +6635,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Bristot",
+                  "digs": 13.0,
+                  "attempts": 21.0,
+                  "success_percent": 61.9,
+                  "digs_per_match": 0.45
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -5435,7 +6700,8 @@
             "palleggio": 47,
             "schiacciata": 71,
             "muro": 81,
-            "generale": 73
+            "generale": 73,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5443,7 +6709,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -5494,7 +6765,8 @@
             "palleggio": 85,
             "schiacciata": 52,
             "muro": 50,
-            "generale": 73
+            "generale": 73,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5502,7 +6774,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -5553,7 +6830,8 @@
             "palleggio": 70,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 77
+            "generale": 77,
+            "difesa": 86
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5561,7 +6839,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "D'Amico",
+                  "digs": 42.0,
+                  "attempts": 72.0,
+                  "success_percent": 58.33,
+                  "digs_per_match": 1.91
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -5612,7 +6904,8 @@
             "palleggio": 53,
             "schiacciata": 75,
             "muro": 82,
-            "generale": 77
+            "generale": 77,
+            "difesa": 54
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5620,7 +6913,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Kunstmann",
+                  "digs": 3.0,
+                  "attempts": 4.0,
+                  "success_percent": 75.0,
+                  "digs_per_match": 0.75
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -5671,7 +6978,8 @@
             "palleggio": 51,
             "schiacciata": 79,
             "muro": 87,
-            "generale": 80
+            "generale": 80,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5679,7 +6987,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Pellacani",
+                  "digs": 18.0,
+                  "attempts": 35.0,
+                  "success_percent": 51.43,
+                  "digs_per_match": 0.82
+                }
+              ]
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -5730,7 +7052,8 @@
             "palleggio": 62,
             "schiacciata": 30,
             "muro": 23,
-            "generale": 74
+            "generale": 74,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5738,7 +7061,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -5789,7 +7117,8 @@
             "palleggio": 54,
             "schiacciata": 78,
             "muro": 58,
-            "generale": 72
+            "generale": 72,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5797,7 +7126,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -5848,7 +7182,8 @@
             "palleggio": 54,
             "schiacciata": 72,
             "muro": 63,
-            "generale": 70
+            "generale": 70,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5856,7 +7191,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -5907,7 +7247,8 @@
             "palleggio": 55,
             "schiacciata": 81,
             "muro": 64,
-            "generale": 75
+            "generale": 75,
+            "difesa": 80
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5915,7 +7256,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Orioli",
+                  "digs": 87.0,
+                  "attempts": 142.0,
+                  "success_percent": 61.27,
+                  "digs_per_match": 3.62
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Orioli",
+                  "digs": 0.0,
+                  "attempts": 1.0,
+                  "success_percent": 0.0,
+                  "digs_per_match": 0.0
+                }
+              ]
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -5966,7 +7329,8 @@
             "palleggio": 85,
             "schiacciata": 59,
             "muro": 58,
-            "generale": 76
+            "generale": 76,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -5974,7 +7338,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 15,
           "jersey_number_metadata": {
@@ -6025,7 +7394,8 @@
             "palleggio": 46,
             "schiacciata": 79,
             "muro": 63,
-            "generale": 73
+            "generale": 73,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6033,7 +7403,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -6084,7 +7459,8 @@
             "palleggio": 42,
             "schiacciata": 75,
             "muro": 78,
-            "generale": 74
+            "generale": 74,
+            "difesa": 53
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6092,7 +7468,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Truocchio",
+                  "digs": 14.0,
+                  "attempts": 58.0,
+                  "success_percent": 24.14,
+                  "digs_per_match": 0.58
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -6190,7 +7580,8 @@
             "palleggio": 43,
             "schiacciata": 74,
             "muro": 73,
-            "generale": 71
+            "generale": 71,
+            "difesa": 53
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6198,7 +7589,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Zingel",
+                  "digs": 1.0,
+                  "attempts": 10.0,
+                  "success_percent": 10.0,
+                  "digs_per_match": 0.05
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -6249,7 +7654,8 @@
             "palleggio": 53,
             "schiacciata": 75,
             "muro": 85,
-            "generale": 78
+            "generale": 78,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6257,7 +7663,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Cortesia",
+                  "digs": 8.0,
+                  "attempts": 19.0,
+                  "success_percent": 42.11,
+                  "digs_per_match": 0.36
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Cortesia",
+                  "digs": 3.0,
+                  "attempts": 3.0,
+                  "success_percent": 100.0,
+                  "digs_per_match": 0.75
+                }
+              ]
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -6308,7 +7736,8 @@
             "palleggio": 72,
             "schiacciata": 35,
             "muro": 28,
-            "generale": 80
+            "generale": 80,
+            "difesa": 83
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6316,7 +7745,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Scanferla",
+                  "digs": 161.0,
+                  "attempts": 377.0,
+                  "success_percent": 42.71,
+                  "digs_per_match": 5.55
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -6367,7 +7810,8 @@
             "palleggio": 79,
             "schiacciata": 54,
             "muro": 45,
-            "generale": 69
+            "generale": 69,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6375,7 +7819,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -6426,7 +7875,8 @@
             "palleggio": 45,
             "schiacciata": 82,
             "muro": 84,
-            "generale": 80
+            "generale": 80,
+            "difesa": 58
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6434,7 +7884,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Vitelli",
+                  "digs": 19.0,
+                  "attempts": 34.0,
+                  "success_percent": 55.88,
+                  "digs_per_match": 0.63
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -6485,7 +7949,8 @@
             "palleggio": 67,
             "schiacciata": 30,
             "muro": 26,
-            "generale": 74
+            "generale": 74,
+            "difesa": 83
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6493,7 +7958,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Staforini",
+                  "digs": 88.0,
+                  "attempts": 181.0,
+                  "success_percent": 48.62,
+                  "digs_per_match": 3.03
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -6544,7 +8023,8 @@
             "palleggio": 55,
             "schiacciata": 94,
             "muro": 74,
-            "generale": 82
+            "generale": 82,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6552,7 +8032,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Keita",
+                  "digs": 42.0,
+                  "attempts": 97.0,
+                  "success_percent": 43.3,
+                  "digs_per_match": 1.45
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -6603,7 +8097,8 @@
             "palleggio": 52,
             "schiacciata": 80,
             "muro": 61,
-            "generale": 72
+            "generale": 72,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6611,7 +8106,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Sani",
+                  "digs": 24.0,
+                  "attempts": 51.0,
+                  "success_percent": 47.06,
+                  "digs_per_match": 0.8
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Sani",
+                  "digs": 9.0,
+                  "attempts": 24.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.69
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -6662,7 +8179,8 @@
             "palleggio": 94,
             "schiacciata": 65,
             "muro": 66,
-            "generale": 84
+            "generale": 84,
+            "difesa": 69
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6670,7 +8188,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Christenson",
+                  "digs": 37.0,
+                  "attempts": 127.0,
+                  "success_percent": 29.13,
+                  "digs_per_match": 1.23
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Christenson",
+                  "digs": 60.0,
+                  "attempts": 110.0,
+                  "success_percent": 54.55,
+                  "digs_per_match": 5.45
+                }
+              ]
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -6721,12 +8261,18 @@
             "palleggio": 51,
             "schiacciata": 80,
             "muro": 65,
-            "generale": 74
+            "generale": 74,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
             "confidence": "low",
-            "verified_individual_statistics": false
+            "verified_individual_statistics": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "appearance": {
             "hair_length": "corti",
@@ -6761,7 +8307,8 @@
             "palleggio": 54,
             "schiacciata": 73,
             "muro": 59,
-            "generale": 68
+            "generale": 68,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6769,7 +8316,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 16,
           "jersey_number_metadata": {
@@ -6820,7 +8372,8 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 87,
-            "generale": 82
+            "generale": 82,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6828,7 +8381,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Anzani",
+                  "digs": 15.0,
+                  "attempts": 33.0,
+                  "success_percent": 45.45,
+                  "digs_per_match": 0.47
+                }
+              ]
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -6879,7 +8446,8 @@
             "palleggio": 59,
             "schiacciata": 90,
             "muro": 71,
-            "generale": 81
+            "generale": 81,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6891,7 +8459,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Možič",
+                  "digs": 28.0,
+                  "attempts": 72.0,
+                  "success_percent": 38.89,
+                  "digs_per_match": 0.97
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Možič",
+                  "digs": 44.0,
+                  "attempts": 80.0,
+                  "success_percent": 55.0,
+                  "digs_per_match": 2.93
+                }
+              ]
+            }
           },
           "jersey_number": 19,
           "jersey_number_metadata": {
@@ -6942,7 +8532,8 @@
             "palleggio": 50,
             "schiacciata": 93,
             "muro": 74,
-            "generale": 86
+            "generale": 86,
+            "difesa": 73
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -6954,7 +8545,21 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Buchegger",
+                  "digs": 117.0,
+                  "attempts": 195.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 3.55
+                }
+              ]
+            }
           },
           "jersey_number": 20,
           "jersey_number_metadata": {
@@ -7107,7 +8712,8 @@
             "palleggio": 58,
             "schiacciata": 86,
             "muro": 67,
-            "generale": 83
+            "generale": 83,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7119,7 +8725,12 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -7170,7 +8781,8 @@
             "palleggio": 95,
             "schiacciata": 72,
             "muro": 72,
-            "generale": 87
+            "generale": 87,
+            "difesa": 69
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7178,7 +8790,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Giannelli",
+                  "digs": 71.0,
+                  "attempts": 209.0,
+                  "success_percent": 33.97,
+                  "digs_per_match": 2.29
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Giannelli",
+                  "digs": 21.0,
+                  "attempts": 40.0,
+                  "success_percent": 52.5,
+                  "digs_per_match": 4.2
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -7229,7 +8863,8 @@
             "palleggio": 52,
             "schiacciata": 94,
             "muro": 78,
-            "generale": 86
+            "generale": 86,
+            "difesa": 68
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7241,7 +8876,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Reggers",
+                  "digs": 84.0,
+                  "attempts": 200.0,
+                  "success_percent": 42.0,
+                  "digs_per_match": 2.8
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Reggers",
+                  "digs": 44.0,
+                  "attempts": 101.0,
+                  "success_percent": 43.56,
+                  "digs_per_match": 3.67
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -7292,7 +8949,8 @@
             "palleggio": 47,
             "schiacciata": 85,
             "muro": 89,
-            "generale": 84
+            "generale": 84,
+            "difesa": 59
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7300,7 +8958,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -7351,7 +9014,8 @@
             "palleggio": 79,
             "schiacciata": 55,
             "muro": 49,
-            "generale": 70
+            "generale": 70,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7359,7 +9023,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -7410,7 +9079,8 @@
             "palleggio": 73,
             "schiacciata": 38,
             "muro": 33,
-            "generale": 77
+            "generale": 77,
+            "difesa": 86
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7418,7 +9088,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Loreti",
+                  "digs": 11.0,
+                  "attempts": 19.0,
+                  "success_percent": 57.89,
+                  "digs_per_match": 0.37
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -7469,7 +9153,8 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 88,
-            "generale": 82
+            "generale": 82,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7477,7 +9162,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Sole",
+                  "digs": 22.0,
+                  "attempts": 50.0,
+                  "success_percent": 44.0,
+                  "digs_per_match": 0.71
+                }
+              ]
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -7528,7 +9227,8 @@
             "palleggio": 47,
             "schiacciata": 82,
             "muro": 69,
-            "generale": 75
+            "generale": 75,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7536,7 +9236,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -7587,7 +9292,8 @@
             "palleggio": 65,
             "schiacciata": 88,
             "muro": 76,
-            "generale": 84
+            "generale": 84,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7595,7 +9301,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Semeniuk",
+                  "digs": 108.0,
+                  "attempts": 204.0,
+                  "success_percent": 52.94,
+                  "digs_per_match": 3.48
+                }
+              ]
+            }
           },
           "jersey_number": 16,
           "jersey_number_metadata": {
@@ -7646,7 +9366,8 @@
             "palleggio": 59,
             "schiacciata": 91,
             "muro": 76,
-            "generale": 84
+            "generale": 84,
+            "difesa": 79
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7654,7 +9375,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Plotnytskyi",
+                  "digs": 102.0,
+                  "attempts": 204.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 3.29
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Plotnytskyi",
+                  "digs": 56.0,
+                  "attempts": 86.0,
+                  "success_percent": 65.12,
+                  "digs_per_match": 6.22
+                }
+              ]
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -7705,7 +9448,8 @@
             "palleggio": 47,
             "schiacciata": 86,
             "muro": 93,
-            "generale": 86
+            "generale": 86,
+            "difesa": 59
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7717,7 +9461,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Sanguinetti",
+                  "digs": 37.0,
+                  "attempts": 67.0,
+                  "success_percent": 55.22,
+                  "digs_per_match": 1.12
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Sanguinetti",
+                  "digs": 8.0,
+                  "attempts": 30.0,
+                  "success_percent": 26.67,
+                  "digs_per_match": 0.62
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -7768,7 +9534,8 @@
             "palleggio": 73,
             "schiacciata": 34,
             "muro": 26,
-            "generale": 85
+            "generale": 85,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7780,7 +9547,21 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Gaggini",
+                  "digs": 52.0,
+                  "attempts": 92.0,
+                  "success_percent": 56.52,
+                  "digs_per_match": 1.68
+                }
+              ]
+            }
           },
           "jersey_number": 20,
           "jersey_number_metadata": {
@@ -7831,7 +9612,8 @@
             "palleggio": 54,
             "schiacciata": 75,
             "muro": 61,
-            "generale": 70
+            "generale": 70,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7839,7 +9621,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 21,
           "jersey_number_metadata": {
@@ -7890,7 +9677,8 @@
             "palleggio": 44,
             "schiacciata": 71,
             "muro": 74,
-            "generale": 70
+            "generale": 70,
+            "difesa": 54
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -7898,7 +9686,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Crosato",
+                  "digs": 3.0,
+                  "attempts": 8.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.1
+                }
+              ]
+            }
           },
           "jersey_number": 22,
           "jersey_number_metadata": {
@@ -7996,7 +9798,8 @@
             "palleggio": 53,
             "schiacciata": 76,
             "muro": 87,
-            "generale": 79
+            "generale": 79,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8004,7 +9807,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "D'heer",
+                  "digs": 10.0,
+                  "attempts": 30.0,
+                  "success_percent": 33.33,
+                  "digs_per_match": 0.31
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "D'heer",
+                  "digs": 12.0,
+                  "attempts": 22.0,
+                  "success_percent": 54.55,
+                  "digs_per_match": 1.0
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -8055,7 +9880,8 @@
             "palleggio": 47,
             "schiacciata": 74,
             "muro": 79,
-            "generale": 74
+            "generale": 74,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8063,7 +9889,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -8114,7 +9945,8 @@
             "palleggio": 90,
             "schiacciata": 54,
             "muro": 59,
-            "generale": 79
+            "generale": 79,
+            "difesa": 72
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8122,7 +9954,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -8173,7 +10010,8 @@
             "palleggio": 45,
             "schiacciata": 76,
             "muro": 75,
-            "generale": 73
+            "generale": 73,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8181,7 +10019,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -8232,7 +10075,8 @@
             "palleggio": 59,
             "schiacciata": 75,
             "muro": 64,
-            "generale": 70
+            "generale": 70,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8240,7 +10084,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -8291,7 +10140,8 @@
             "palleggio": 84,
             "schiacciata": 49,
             "muro": 49,
-            "generale": 72
+            "generale": 72,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8299,7 +10149,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -8350,7 +10205,8 @@
             "palleggio": 68,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 75
+            "generale": 75,
+            "difesa": 83
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8358,7 +10214,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Toscani",
+                  "digs": 36.0,
+                  "attempts": 72.0,
+                  "success_percent": 50.0,
+                  "digs_per_match": 1.5
+                }
+              ]
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -8409,7 +10279,8 @@
             "palleggio": 46,
             "schiacciata": 84,
             "muro": 65,
-            "generale": 76
+            "generale": 76,
+            "difesa": 67
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8417,7 +10288,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -8468,7 +10344,8 @@
             "palleggio": 45,
             "schiacciata": 80,
             "muro": 81,
-            "generale": 78
+            "generale": 78,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8476,7 +10353,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Larizza",
+                  "digs": 15.0,
+                  "attempts": 40.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.52
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -8527,7 +10418,8 @@
             "palleggio": 67,
             "schiacciata": 34,
             "muro": 25,
-            "generale": 71
+            "generale": 71,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8535,7 +10427,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 11,
           "jersey_number_metadata": {
@@ -8586,7 +10483,8 @@
             "palleggio": 57,
             "schiacciata": 82,
             "muro": 64,
-            "generale": 77
+            "generale": 77,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8594,7 +10492,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 12,
           "jersey_number_metadata": {
@@ -8645,12 +10548,27 @@
             "palleggio": 60,
             "schiacciata": 76,
             "muro": 67,
-            "generale": 73
+            "generale": 73,
+            "difesa": 71
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
             "confidence": "low",
-            "verified_individual_statistics": false
+            "verified_individual_statistics": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Marttila",
+                  "digs": 14.0,
+                  "attempts": 51.0,
+                  "success_percent": 27.45,
+                  "digs_per_match": 1.08
+                }
+              ]
+            }
           },
           "appearance": {
             "hair_length": null,
@@ -8683,7 +10601,8 @@
             "palleggio": 59,
             "schiacciata": 83,
             "muro": 66,
-            "generale": 76
+            "generale": 76,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8691,7 +10610,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Bergmann",
+                  "digs": 14.0,
+                  "attempts": 34.0,
+                  "success_percent": 41.18,
+                  "digs_per_match": 0.47
+                }
+              ]
+            }
           },
           "jersey_number": 14,
           "jersey_number_metadata": {
@@ -8742,7 +10675,8 @@
             "palleggio": 52,
             "schiacciata": 78,
             "muro": 65,
-            "generale": 73
+            "generale": 73,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8750,7 +10684,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -8907,7 +10846,8 @@
             "palleggio": 57,
             "schiacciata": 80,
             "muro": 60,
-            "generale": 74
+            "generale": 74,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8915,7 +10855,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Arthur",
+                  "digs": 12.0,
+                  "attempts": 17.0,
+                  "success_percent": 70.59,
+                  "digs_per_match": 0.36
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Arthur",
+                  "digs": 3.0,
+                  "attempts": 10.0,
+                  "success_percent": 30.0,
+                  "digs_per_match": 0.3
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -8966,7 +10928,8 @@
             "palleggio": 85,
             "schiacciata": 60,
             "muro": 57,
-            "generale": 76
+            "generale": 76,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -8974,7 +10937,29 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Tizi-Oualou",
+                  "digs": 87.0,
+                  "attempts": 199.0,
+                  "success_percent": 43.72,
+                  "digs_per_match": 2.64
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Tizi-Oualou",
+                  "digs": 6.0,
+                  "attempts": 18.0,
+                  "success_percent": 33.33,
+                  "digs_per_match": 0.5
+                }
+              ]
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -9025,7 +11010,8 @@
             "palleggio": 75,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 83
+            "generale": 83,
+            "difesa": 89
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9033,7 +11019,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Perry",
+                  "digs": 226.0,
+                  "attempts": 395.0,
+                  "success_percent": 57.22,
+                  "digs_per_match": 6.85
+                }
+              ]
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -9084,7 +11084,8 @@
             "palleggio": 49,
             "schiacciata": 82,
             "muro": 80,
-            "generale": 78
+            "generale": 78,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9092,7 +11093,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Mati",
+                  "digs": 19.0,
+                  "attempts": 50.0,
+                  "success_percent": 38.0,
+                  "digs_per_match": 0.58
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Mati",
+                  "digs": 5.0,
+                  "attempts": 13.0,
+                  "success_percent": 38.46,
+                  "digs_per_match": 0.56
+                }
+              ]
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -9143,7 +11166,8 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 64,
-            "generale": 70
+            "generale": 70,
+            "difesa": 66
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9151,7 +11175,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -9202,7 +11231,8 @@
             "palleggio": 62,
             "schiacciata": 87,
             "muro": 70,
-            "generale": 82
+            "generale": 82,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9210,7 +11240,12 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -9261,7 +11296,8 @@
             "palleggio": 53,
             "schiacciata": 75,
             "muro": 66,
-            "generale": 71
+            "generale": 71,
+            "difesa": 75
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9269,7 +11305,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 8,
           "jersey_number_metadata": {
@@ -9320,7 +11361,8 @@
             "palleggio": 84,
             "schiacciata": 56,
             "muro": 53,
-            "generale": 74
+            "generale": 74,
+            "difesa": 66
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9328,7 +11370,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Barbanti",
+                  "digs": 4.0,
+                  "attempts": 22.0,
+                  "success_percent": 18.18,
+                  "digs_per_match": 0.16
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -9379,7 +11435,8 @@
             "palleggio": 42,
             "schiacciata": 72,
             "muro": 76,
-            "generale": 72
+            "generale": 72,
+            "difesa": 53
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9387,7 +11444,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Tauletta",
+                  "digs": 0.0,
+                  "attempts": 2.0,
+                  "success_percent": 0.0,
+                  "digs_per_match": 0.0
+                }
+              ]
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -9438,7 +11509,8 @@
             "palleggio": 67,
             "schiacciata": 34,
             "muro": 30,
-            "generale": 76
+            "generale": 76,
+            "difesa": 86
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9446,7 +11518,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 13,
           "jersey_number_metadata": {
@@ -9497,7 +11574,8 @@
             "palleggio": 61,
             "schiacciata": 86,
             "muro": 68,
-            "generale": 82
+            "generale": 82,
+            "difesa": 78
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9509,7 +11587,29 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Porro L.",
+                  "digs": 123.0,
+                  "attempts": 216.0,
+                  "success_percent": 56.94,
+                  "digs_per_match": 3.73
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Porro L.",
+                  "digs": 26.0,
+                  "attempts": 60.0,
+                  "success_percent": 43.33,
+                  "digs_per_match": 2.0
+                }
+              ]
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -9560,7 +11660,8 @@
             "palleggio": 40,
             "schiacciata": 73,
             "muro": 81,
-            "generale": 74
+            "generale": 74,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9568,7 +11669,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -9619,7 +11725,8 @@
             "palleggio": 48,
             "schiacciata": 86,
             "muro": 89,
-            "generale": 84
+            "generale": 84,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9627,7 +11734,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Russo",
+                  "digs": 21.0,
+                  "attempts": 56.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.75
+                }
+              ]
+            }
           },
           "jersey_number": 19,
           "jersey_number_metadata": {
@@ -9678,7 +11799,8 @@
             "palleggio": 48,
             "schiacciata": 90,
             "muro": 70,
-            "generale": 81
+            "generale": 81,
+            "difesa": 68
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9690,7 +11812,21 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": true
+            "national_team_data_used": true,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Mujanović",
+                  "digs": 57.0,
+                  "attempts": 117.0,
+                  "success_percent": 48.72,
+                  "digs_per_match": 3.8
+                }
+              ]
+            }
           },
           "jersey_number": 20,
           "jersey_number_metadata": {
@@ -9788,7 +11924,8 @@
             "palleggio": 65,
             "schiacciata": 85,
             "muro": 70,
-            "generale": 78
+            "generale": 78,
+            "difesa": 72
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9796,7 +11933,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "medium",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Velichkov",
+                  "digs": 47.0,
+                  "attempts": 114.0,
+                  "success_percent": 41.23,
+                  "digs_per_match": 1.62
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "Velichkov",
+                  "digs": 5.0,
+                  "attempts": 14.0,
+                  "success_percent": 35.71,
+                  "digs_per_match": 0.62
+                }
+              ]
+            }
           },
           "jersey_number": 1,
           "jersey_number_metadata": {
@@ -9847,7 +12006,8 @@
             "palleggio": 49,
             "schiacciata": 82,
             "muro": 74,
-            "generale": 77
+            "generale": 77,
+            "difesa": 63
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9855,7 +12015,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Frascio",
+                  "digs": 18.0,
+                  "attempts": 56.0,
+                  "success_percent": 32.14,
+                  "digs_per_match": 0.62
+                }
+              ]
+            }
           },
           "jersey_number": 2,
           "jersey_number_metadata": {
@@ -9906,7 +12080,8 @@
             "palleggio": 78,
             "schiacciata": 50,
             "muro": 50,
-            "generale": 68
+            "generale": 68,
+            "difesa": 70
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9914,7 +12089,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 3,
           "jersey_number_metadata": {
@@ -9965,7 +12145,8 @@
             "palleggio": 68,
             "schiacciata": 31,
             "muro": 26,
-            "generale": 74
+            "generale": 74,
+            "difesa": 85
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -9973,7 +12154,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 4,
           "jersey_number_metadata": {
@@ -10024,7 +12210,8 @@
             "palleggio": 47,
             "schiacciata": 81,
             "muro": 68,
-            "generale": 74
+            "generale": 74,
+            "difesa": 66
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10032,7 +12219,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Mapelli",
+                  "digs": 3.0,
+                  "attempts": 5.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 0.19
+                }
+              ]
+            }
           },
           "jersey_number": 5,
           "jersey_number_metadata": {
@@ -10083,7 +12284,8 @@
             "palleggio": 57,
             "schiacciata": 77,
             "muro": 63,
-            "generale": 74
+            "generale": 74,
+            "difesa": 74
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10091,7 +12293,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Massari",
+                  "digs": 4.0,
+                  "attempts": 13.0,
+                  "success_percent": 30.77,
+                  "digs_per_match": 0.12
+                }
+              ]
+            }
           },
           "jersey_number": 6,
           "jersey_number_metadata": {
@@ -10142,7 +12358,8 @@
             "palleggio": 82,
             "schiacciata": 58,
             "muro": 55,
-            "generale": 74
+            "generale": 74,
+            "difesa": 69
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10150,7 +12367,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Rowan",
+                  "digs": 1.0,
+                  "attempts": 5.0,
+                  "success_percent": 20.0,
+                  "digs_per_match": 0.25
+                }
+              ]
+            }
           },
           "jersey_number": 7,
           "jersey_number_metadata": {
@@ -10201,7 +12432,8 @@
             "palleggio": 49,
             "schiacciata": 76,
             "muro": 81,
-            "generale": 76
+            "generale": 76,
+            "difesa": 60
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10209,7 +12441,29 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "I. Petkov",
+                  "digs": 30.0,
+                  "attempts": 50.0,
+                  "success_percent": 60.0,
+                  "digs_per_match": 1.43
+                },
+                {
+                  "competition": "VNL 2026",
+                  "name": "I. Petkov",
+                  "digs": 10.0,
+                  "attempts": 31.0,
+                  "success_percent": 32.26,
+                  "digs_per_match": 0.83
+                }
+              ]
+            }
           },
           "jersey_number": 9,
           "jersey_number_metadata": {
@@ -10260,7 +12514,8 @@
             "palleggio": 47,
             "schiacciata": 72,
             "muro": 73,
-            "generale": 70
+            "generale": 70,
+            "difesa": 56
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10268,7 +12523,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 10,
           "jersey_number_metadata": {
@@ -10319,7 +12579,8 @@
             "palleggio": 45,
             "schiacciata": 79,
             "muro": 92,
-            "generale": 83
+            "generale": 83,
+            "difesa": 55
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10331,7 +12592,21 @@
               "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-attackers/",
               "https://it.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-receivers/"
             ],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Beretta",
+                  "digs": 26.0,
+                  "attempts": 75.0,
+                  "success_percent": 34.67,
+                  "digs_per_match": 0.9
+                }
+              ]
+            }
           },
           "jersey_number": 13,
           "jersey_number_metadata": {
@@ -10382,7 +12657,8 @@
             "palleggio": 55,
             "schiacciata": 78,
             "muro": 64,
-            "generale": 74
+            "generale": 74,
+            "difesa": 76
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10390,7 +12666,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 17,
           "jersey_number_metadata": {
@@ -10441,7 +12722,8 @@
             "palleggio": 71,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 78
+            "generale": 78,
+            "difesa": 86
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10449,7 +12731,21 @@
             "confidence": "medium",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "SuperLega 2025-2026",
+                  "name": "Pesaresi",
+                  "digs": 3.0,
+                  "attempts": 8.0,
+                  "success_percent": 37.5,
+                  "digs_per_match": 0.1
+                }
+              ]
+            }
           },
           "jersey_number": 18,
           "jersey_number_metadata": {
@@ -10500,7 +12796,8 @@
             "palleggio": 55,
             "schiacciata": 75,
             "muro": 64,
-            "generale": 73
+            "generale": 73,
+            "difesa": 77
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10508,7 +12805,21 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "official-dig-control-shrunk-to-role-prior-v1",
+              "confidence": "low",
+              "observations": [
+                {
+                  "competition": "VNL 2026",
+                  "name": "Perin",
+                  "digs": 26.0,
+                  "attempts": 49.0,
+                  "success_percent": 53.06,
+                  "digs_per_match": 3.25
+                }
+              ]
+            }
           },
           "jersey_number": 19,
           "jersey_number_metadata": {
@@ -10559,7 +12870,8 @@
             "palleggio": 46,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73
+            "generale": 73,
+            "difesa": 57
           },
           "ratings_metadata": {
             "type": "stima_editoriale_videogioco",
@@ -10567,7 +12879,12 @@
             "confidence": "low",
             "verified_individual_statistics": false,
             "evidence_urls": [],
-            "national_team_data_used": false
+            "national_team_data_used": false,
+            "difesa": {
+              "method": "role-and-existing-overall-prior-only",
+              "confidence": "low",
+              "observations": []
+            }
           },
           "jersey_number": 22,
           "jersey_number_metadata": {

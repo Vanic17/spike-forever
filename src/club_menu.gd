@@ -33,6 +33,7 @@ func enter_details() -> void:
 		if control is LineEdit or control is OptionButton or control is Button or control is SpinBox: control.focus_mode=Control.FOCUS_ALL
 	inputs.name.grab_focus()
 	editor_scroll.ensure_control_visible(inputs.name)
+var settings_stats: OptionButton
 var settings_format: OptionButton
 var settings_points: OptionButton
 
@@ -266,7 +267,7 @@ func edit_player(index: int) -> void:
 		var field=picker(fields,values); field.select(maxi(0,values.find(current.appearance.get(key)))); inputs[key]=field
 	label(fields,"VALORI  /  SOLO DATABASE · nessun effetto sul gameplay")
 	for key in current.ratings:
-		label(fields,key.capitalize()); var value=SpinBox.new(); value.min_value=0; value.max_value=100; value.value=current.ratings[key]; fields.add_child(value); inputs["rating_"+key]=value
+		label(fields,key.capitalize()); var value=SpinBox.new(); value.min_value=0; value.max_value=100 if key=="generale" else 99; value.value=current.ratings[key]; fields.add_child(value); inputs["rating_"+key]=value
 		var skill: String=key
 		value.value_changed.connect(func(v): player_card.ratings[skill]=int(v); player_card.queue_redraw())
 	button(fields,"SALVA MODIFICHE",save_player)
@@ -317,11 +318,14 @@ func match_setup() -> void:
 	label(format_box,"FORMATO PARTITA"); var format=picker(format_box,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2); settings_format=format
 	var points_box=VBoxContainer.new(); points_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(points_box)
 	label(points_box,"PUNTI PER SET"); var points=picker(points_box,["25","15"]); settings_points=points
+	var stats_box=VBoxContainer.new(); stats_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(stats_box)
+	label(stats_box,"VALORI GIOCATORI"); settings_stats=picker(stats_box,["Disattivati · originale","Attivi · database V1"])
 	var error=Label.new(); body.add_child(error); error.hide()
 	setup_start=button(body,"SCENDI IN CAMPO",func():
 		for side in 2:
 			if db.lineup(db.teams[picks[side].selected]).is_empty():
 				error.text="Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L."; error.show(); return
+		game.use_player_stats=settings_stats.selected==1
 		game.match_best_of=[1,3,5][format.selected]; game.match_points=[25,15][points.selected]
 		for side in 2:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
@@ -345,6 +349,12 @@ func match_setup() -> void:
 			current.focus_next=current.focus_neighbor_bottom
 	back.focus_neighbor_bottom=back.get_path_to(picks[0])
 	setup_start.focus_neighbor_top=setup_start.get_path_to(format); setup_start.focus_next=setup_start.get_path_to(back)
+	format.focus_neighbor_right=format.get_path_to(points)
+	points.focus_neighbor_right=points.get_path_to(settings_stats)
+	settings_stats.focus_neighbor_left=settings_stats.get_path_to(points)
+	settings_stats.focus_neighbor_top=settings_stats.get_path_to(formation_buttons[1])
+	settings_stats.focus_neighbor_bottom=settings_stats.get_path_to(setup_start)
+	settings_stats.focus_next=settings_stats.get_path_to(setup_start)
 	picks[0].grab_focus()
 
 func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:

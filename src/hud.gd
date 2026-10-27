@@ -126,14 +126,18 @@ func draw_contact(cx: float, y: float) -> void:
 	if serve or attack:
 		var power: float = game.current_charge()
 		var fill: float = clampf(power, 0, 1)
-		text(Vector2(cx + 137, y - 5), "%d%%" % roundi(power * 100), 17, RED if power > 1 else GREEN)
+		text(Vector2(cx + 137, y - 5), ("%.2f%%" % (power*100)) if game.use_player_stats else ("%d%%" % roundi(power * 100)), 17, RED if power > 1 else GREEN)
 		draw_rect(Rect2(cx - 228, y + 9, 456, 14), Color("425063"))
 		draw_rect(Rect2(cx - 228, y + 9, 364 * fill, 14), GREEN)
 		draw_line(Vector2(cx + 136, y + 5), Vector2(cx + 136, y + 27), WHITE, 2)
-		draw_rect(Rect2(cx-228+364*(0.995 if serve else 0.97),y+6,364*(0.005 if serve else 0.03),20),GOLD,false,2)
+		var low: float=game.PlayerStats.green_low(game,serve) if game.use_player_stats else (0.995 if serve else 0.97)
+		draw_rect(Rect2(cx-228+364*low,y+6,364*(1.0-low),20),GOLD,false,2)
 		if power > 1:
 			draw_rect(Rect2(cx + 136, y + 9, minf(1, (power - 1) / 0.4) * 92, 14), RED)
-		if serve:
+		if game.use_player_stats:
+			text(Vector2(cx-229,y+44),primary+" / "+alternate+" · tieni e rilascia · LS: mira",13)
+			text(Vector2(cx-229,y+64),("Battuta" if serve else "Alzata "+game.PlayerStats.GRADE_NAMES[game.stats_set_grade])+" · verde %.2f–100%% · nessun punto automatico"%(low*100),11,GOLD)
+		elif serve:
 			var hint := primary + " · salto   " + alternate + " · float"
 			if game.charging or game.toss_active: hint = ("JUMP FLOAT" if game.serve_type == 0 else "JUMP POWER") + " · tieni e rilascia · LS: mira"
 			else: hint="LS: sposta il battitore · tieni X/A o Quadrato/X: carica e mira"

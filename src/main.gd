@@ -64,6 +64,11 @@ var contact_navigation=preload("res://src/contact_navigation.gd").new()
 var next_second_touch_read:=0.0
 var attack_buffer_start:=-1.0
 var attack_buffer_power:=-1.0
+const PlayerStats=preload("res://src/player_stats_gameplay.gd")
+var use_player_stats:=false
+var stats_set_grade:=2
+var stats_release_flight:=0.0
+var stats_release_clock:=-1.0
 var winner_team:=-1
 var attack_tip:=false
 var overpass_attack_team:=-1
@@ -624,12 +629,16 @@ func release_action() -> void:
 		armed = true
 		input_quality = 1.0
 
+func charge_seconds(kind: String) -> float:
+	if use_player_stats: return PlayerStats.charge_seconds(self,kind)
+	return Timing.SERVE_CHARGE_SECONDS if kind=="serve" else Timing.ATTACK_CHARGE_SECONDS
+
 func current_charge() -> float:
 	if network_match() and not online_session.authority():
 		var predicted: float=online_session.predicted_charge()
 		if predicted>=0: return predicted
 	if not charging: return charge
-	return maxf(0, (clock_time - charge_start) / (Timing.SERVE_CHARGE_SECONDS if phase == "SERVE" else Timing.ATTACK_CHARGE_SECONDS))
+	return maxf(0, (clock_time - charge_start) / charge_seconds("serve" if phase=="SERVE" else "attack"))
 
 func difficulty_scale() -> float:
 	return [1.55, 1.0, 0.72][difficulty]
@@ -662,6 +671,7 @@ func reset_rally() -> void:
 	cpu_defense.reset()
 	overpass_attack_team=-1
 	attack_tip=false
+	stats_set_grade=2; stats_release_flight=0.0; stats_release_clock=-1.0
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0; winner_team=-1
 	contact_navigation.reset()
 	next_second_touch_read=0.0
@@ -969,6 +979,7 @@ func serve_ball(team: int, power: float) -> void:
 		target.x = rng.randf_range(-3.3, 3.3)
 		target.z = s*rng.randf_range(5.2,8.0)
 	var contact_quality := input_quality if human_team(team) and not demo else 0.92
+	if use_player_stats: contact_quality=1.0 if PlayerStats.perfect(power,PlayerStats.green_low(self,true)) else clampf(1.0-absf(1.0-power)*.65,.35,.92)
 	var dispersion := 2.2 * (1.0 - contact_quality)
 	target.x += rng.randf_range(-dispersion, dispersion)
 	target.z += rng.randf_range(-dispersion, dispersion)
@@ -998,7 +1009,7 @@ func serve_ball(team: int, power: float) -> void:
 	selected = receiver if possession == 0 else 1
 	set_phase("RECEIVE" if possession == 0 else "CPU_RECEIVE")
 	var seconds := Reference.serve_seconds(power,serve_type==0)
-	winner_team=team if Timing.ace_power(power) else -1
+	winner_team=team if not use_player_stats and Timing.ace_power(power) else -1
 	# Every power band uses the same legal floor trajectory. Gold changes
 	# the defensive outcome, never the flight model or its speed profile.
 	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.85 if serve_type==0 else 1.4),4.5,8.8)
@@ -1054,6 +1065,7 @@ func receive_ball() -> void:
 		return
 	var q := RallyAI.reception_quality(self,input_quality)
 	if cpu_team(possession) and incoming_kind in ["serve","spike","soft","block"]: q=cpu_defense.quality(q,incoming_power)
+	if use_player_stats: q=PlayerStats.touch_quality(q,PlayerStats.rating(self,receiver,"ricezione" if incoming_kind=="serve" else "difesa"))
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
 		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
@@ -1277,6 +1289,11 @@ func set_ball(contact_override: String = "") -> void:
 	if fast_set and pass_quality < 0.45:
 		fast_set = false
 		notice("RICEZIONE DIFFICILE · ALTA DI EMERGENZA")
+	if use_player_stats:
+		var penalty: float=(PlayerStats.settings().emergency_penalty if out_of_system<0 else 0.0)+(PlayerStats.settings().forearm_penalty if contact_action not in ["set","fast_set"] else 0.0)
+		stats_set_grade=PlayerStats.set_grade(pass_quality,PlayerStats.rating(self,setter,"palleggio"),penalty)
+		var graded: float=PlayerStats.settings().set_strength[stats_set_grade]
+		q=minf(q,graded) if stats_set_grade==0 else graded
 	set_quality = q
 	destination = planned_direction
 	committed_destination = destination
@@ -1293,6 +1310,7 @@ func set_ball(contact_override: String = "") -> void:
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
 	if hitter_action == "receive": target.z = s*4.6
 	target.x += rng.randf_range(-1, 1) * (1 - q) * 0.8
+	if use_player_stats: target.z+=s*float(PlayerStats.settings().set_depth_error[stats_set_grade])
 	# Every recipient must receive at its SELECTED performance's real hand
 	# height. Using the generic spike height for pins/D/pipe sent poor-pass
 	# sets above the running animation's reachable palm.
@@ -1340,10 +1358,11 @@ func set_ball(contact_override: String = "") -> void:
 	if not early_wall:
 		block_commanded = false
 		block_jumps.clear()
+	stats_release_flight=flight; stats_release_clock=clock_time
 	set_phase("ATTACK" if possession == 0 else "CPU_ATTACK")
 	if human_team(possession) and attack_buffer_start>=0 and clock_time-attack_buffer_start<1.5:
-		if attack_buffer_power>=0: armed=true; charge=attack_buffer_power; input_quality=1.0
-		else: charging=true; charge_button="action"; charge_start=attack_buffer_start
+		if attack_buffer_power>=0: armed=true; charge=0.0 if use_player_stats else attack_buffer_power; input_quality=1.0
+		else: charging=true; charge_button="action"; charge_start=clock_time if use_player_stats else attack_buffer_start
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0
 	launch(target, flight)
 	if not early_wall and not ((possession==1 or network_match()) and not demo):
@@ -1399,6 +1418,7 @@ func attack_ball() -> void:
 	var power := clampf(requested_power, 0, 1)
 	if out_of_system<0: power*=0.72
 	var precision := Timing.precision(power)
+	if use_player_stats and PlayerStats.perfect(requested_power,PlayerStats.green_low(self,false)): precision=.99
 	last_power = requested_power
 	last_precision = precision
 	var spread := (1.0 - precision) * 3.0
@@ -1424,7 +1444,7 @@ func attack_ball() -> void:
 	target.x=clampf(target.x,-4.25,4.25); target.z=s*clampf(absf(target.z),2.8,8.8)
 	if tutorial!=null and tutorial.active and tutorial.category=="block":
 		target=tutorial.coach_attack_target(); soft=false
-	winner_team=attacker if Timing.winning_power(requested_power) and hitter_action=="attack" else -1
+	winner_team=attacker if not use_player_stats and Timing.winning_power(requested_power) and hitter_action=="attack" else -1
 	if requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip):
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
 		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/requested_power)
@@ -1669,7 +1689,7 @@ func step(dt: float) -> void:
 			ball_pos = serving.current_hand(true) + Vector3(0, 0.11, 0)
 		if cpu_team(server) and phase_time > 0.65 and not toss_active and not serve_adjusting:
 			serve_type = 0 if serving.roster_identity.get("serve_preference","jump")=="float" else 1
-			serve_power = rng.randf_range(0.55,1.08)
+			serve_power = PlayerStats.ai_power(self,server_index(server),"battuta") if use_player_stats else rng.randf_range(0.55,1.08)
 			begin_serve_toss()
 	elif phase == "POINT":
 		step_dead_ball(dt)
@@ -1749,6 +1769,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 	var strength := 0.0
 	var contact_side:=0.0
 	var contact_point:=ball_pos
+	var contact_blocker:=-1
 	for i in blocking_players(defender):
 		var player = players[i]
 		if player.clip_name != "block": continue
@@ -1776,6 +1797,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 				var crossing:=preload("res://src/block_contact.gd").palm_crossing(hit,ball_vel,left,right)
 				contact_side=clampf((crossing.x-(left.x+right.x)*0.5)/maxf(0.15,absf(span.x)*0.5),-1.25,1.25)
 				contact_point=hit
+				contact_blocker=i
 			strength = maxf(strength,seal_alignment)
 	if good_jump and near:
 		block_checked=true
@@ -1792,6 +1814,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			return
 		if true:
 			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)))
+			if use_player_stats: response=PlayerStats.block(ball_vel,defender,strength,block_quality,contact_side+block_hand*.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)),PlayerStats.rating(self,contact_blocker,"muro"),rng.randf())
 			var incoming := ball_vel
 			ball_vel=response.velocity
 			if response.kind=="stuff_block": ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
@@ -1800,7 +1823,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			resume_deflection("block")
 			# A sealed monster block is terminal for CPU attack coverage.
 			# Keep its real flight and floor scoring; soft touches remain recoverable.
-			if response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession):
+			if not use_player_stats and response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession):
 				terminal_cpu_block=true
 				phase="LOOSE"; flight_left=100; marker.visible=false
 				log_rally_event("monster_block_no_cpu_cover",{"team":possession})

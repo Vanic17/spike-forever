@@ -1,0 +1,98 @@
+{
+  "automatic_home": true,
+  "complete_matches": [
+    {
+      "best_of": 1,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 0
+    },
+    {
+      "best_of": 1,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 1
+    },
+    {
+      "best_of": 1,
+      "decider": 25,
+      "home": true,
+      "points": 25,
+      "winner": 0
+    },
+    {
+      "best_of": 1,
+      "decider": 25,
+      "home": true,
+      "points": 25,
+      "winner": 1
+    },
+    {
+      "best_of": 3,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 0
+    },
+    {
+      "best_of": 3,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 1
+    },
+    {
+      "best_of": 3,
+      "decider": 15,
+      "home": true,
+      "points": 25,
+      "winner": 0
+    },
+    {
+      "best_of": 3,
+      "decider": 15,
+      "home": true,
+      "points": 25,
+      "winner": 1
+    },
+    {
+      "best_of": 5,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 0
+    },
+    {
+      "best_of": 5,
+      "decider": 15,
+      "home": true,
+      "points": 15,
+      "winner": 1
+    },
+    {
+      "best_of": 5,
+      "decider": 15,
+      "home": true,
+      "points": 25,
+      "winner": 0
+    },
+    {
+      "best_of": 5,
+      "decider": 15,
+      "home": true,
+      "points": 25,
+      "winner": 1
+    }
+  ],
+  "controller_paths_and_circle": true,
+  "deuce_verified": true,
+  "layout_sizes": [
+    "(1440, 810)",
+    "(1440, 720)",
+    "(1280, 720)",
+    "(1280, 600)"
+  ],
+  "straight_set_wins": 4
+}

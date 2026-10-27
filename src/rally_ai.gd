@@ -58,6 +58,9 @@ static func attack_choice(game, team: int, power: float) -> Dictionary:
 	return result
 
 static func cpu_attack_power(game) -> float:
+	if game.use_player_stats:
+		var power: float=game.PlayerStats.ai_power(game,game.hitter,"schiacciata")
+		return power*.78 if game.out_of_system<0 else (power*.9 if game.set_quality<.55 else power)
 	if game.out_of_system<0: return game.rng.randf_range(0.55,0.82)
 	if game.set_quality<0.55: return game.rng.randf_range(0.72,0.92)
 	# Keep ordinary CPU swings below the guaranteed-winning gold band.

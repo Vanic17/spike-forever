@@ -1,0 +1,30 @@
+[
+  {
+    "contacts": 262,
+    "returned_home": true,
+    "scores": [
+      15,
+      13
+    ],
+    "sets": [
+      1,
+      0
+    ],
+    "stats": false,
+    "steps": 31354
+  },
+  {
+    "contacts": 216,
+    "returned_home": true,
+    "scores": [
+      15,
+      7
+    ],
+    "sets": [
+      1,
+      0
+    ],
+    "stats": true,
+    "steps": 25137
+  }
+]

@@ -1,0 +1,1378 @@
+{
+  "sources": [
+    "https://en.volleyballworld.com/volleyball/competitions/superlega/2025-2026/statistics/best-diggers/",
+    "https://en.volleyballworld.com/volleyball/competitions/volleyball-nations-league/statistics/men/best-diggers/"
+  ],
+  "source_sha256": {
+    "2025": "a14e43fd4f147bbe5a62ccd1f1a7a55d18b07cbbe821ab206379258f626dbf61",
+    "vnl": "06186502ad30be9f66ff3db83136631d1b45ab320ea1e15a07c9e2b897dc8e4f"
+  },
+  "method": "Editorial 0-99 estimates: successful dig control and digs/match, sample-size shrinkage to role priors; VNL evidence weighted 0.65. Non-matched players explicitly estimated, never official ratings. Source dates 2026-10-27.",
+  "formula": {
+    "role_priors": {
+      "libero": 88,
+      "outside_hitter": 76,
+      "setter": 70,
+      "opposite": 65,
+      "middle_blocker": 53
+    },
+    "measurement": "48+33*clamp((success_percent-20)/45)+15*clamp(digs_per_match/7)",
+    "weight": "attempts/(attempts+90), x0.65 for VNL",
+    "matched": "(role_prior+sum(measurement*weight))/(1+sum(weight))",
+    "unmatched": "0.8*role_prior+0.2*existing_overall"
+  },
+  "players": [
+    {
+      "id": "allianz-milano-01",
+      "name": "Francesco Recine",
+      "role": "outside_hitter",
+      "defense": 71,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-02",
+      "name": "Tommaso Ichino",
+      "role": "outside_hitter",
+      "defense": 72,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-03",
+      "name": "Damiano Catania",
+      "role": "libero",
+      "defense": 78,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-04",
+      "name": "Simone Porro",
+      "role": "setter",
+      "defense": 72,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "allianz-milano-05",
+      "name": "Davi Tenorio",
+      "role": "middle_blocker",
+      "defense": 58,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "allianz-milano-06",
+      "name": "Filippo Bartolucci",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "allianz-milano-07",
+      "name": "Alessandro Benacchio",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "allianz-milano-08",
+      "name": "Basil Dermaux",
+      "role": "opposite",
+      "defense": 65,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-09",
+      "name": "Seppe Rotty",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-10",
+      "name": "Robertlandy Simon",
+      "role": "middle_blocker",
+      "defense": 61,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-11",
+      "name": "Santiago Orduna",
+      "role": "setter",
+      "defense": 67,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-12",
+      "name": "Tatsunori Otsuka",
+      "role": "outside_hitter",
+      "defense": 71,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-13",
+      "name": "Federico Argano",
+      "role": "opposite",
+      "defense": 66,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "allianz-milano-14",
+      "name": "Jacopo Corbetta",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "allianz-milano-15",
+      "name": "Georgi Tatarov",
+      "role": "outside_hitter",
+      "defense": 73,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-01",
+      "name": "Vilmos Szabo",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-02",
+      "name": "Giulio Magalini",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-03",
+      "name": "Lorenzo Magliano",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-04",
+      "name": "Shikun Peng",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-05",
+      "name": "Tommaso Barotto",
+      "role": "opposite",
+      "defense": 65,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-19",
+      "name": "Milosz Jan Wrobel",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-06",
+      "name": "Filippo Lanza",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-07",
+      "name": "Alessandro Fanizza",
+      "role": "setter",
+      "defense": 68,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-08",
+      "name": "Francesco Pierri",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-09",
+      "name": "Miguel Angel Martinez Palacios",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cisterna-volley-10",
+      "name": "Daniele Mazzone",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-11",
+      "name": "Noa Duflos-Rossi",
+      "role": "outside_hitter",
+      "defense": 71,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-12",
+      "name": "Jacopo Tosti",
+      "role": "middle_blocker",
+      "defense": 54,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cisterna-volley-13",
+      "name": "Filippo Federici",
+      "role": "libero",
+      "defense": 88,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-01",
+      "name": "Simeon Nikolov",
+      "role": "setter",
+      "defense": 75,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-02",
+      "name": "Giovanni Maria Gargiulo",
+      "role": "middle_blocker",
+      "defense": 60,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-03",
+      "name": "Eric Loeppky",
+      "role": "outside_hitter",
+      "defense": 78,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-04",
+      "name": "Francesco Bisotto",
+      "role": "libero",
+      "defense": 83,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-05",
+      "name": "Fabio Balaso",
+      "role": "libero",
+      "defense": 86,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-06",
+      "name": "Alberto Polo",
+      "role": "middle_blocker",
+      "defense": 59,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-07",
+      "name": "Davide Gardini",
+      "role": "outside_hitter",
+      "defense": 72,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-21",
+      "name": "Miran Kujundzic",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-08",
+      "name": "Aleksandar Nikolov",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-09",
+      "name": "Francesco Zoppellari",
+      "role": "setter",
+      "defense": 69,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-10",
+      "name": "Jackson Howe",
+      "role": "middle_blocker",
+      "defense": 54,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-11",
+      "name": "Maksym Tonkonoh",
+      "role": "opposite",
+      "defense": 65,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "cucine-lube-civitanova-12",
+      "name": "Antonin Klimes",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "cucine-lube-civitanova-13",
+      "name": "Mattia Bottolo",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-01",
+      "name": "Manuel Coscione",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "acqua-santanna-cuneo-02",
+      "name": "Domenico Cavaccini",
+      "role": "libero",
+      "defense": 84,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-03",
+      "name": "Thibault Loubeyre",
+      "role": "libero",
+      "defense": 84,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "acqua-santanna-cuneo-04",
+      "name": "Bryan Argilagos",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-05",
+      "name": "Lorenzo Sala",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-06",
+      "name": "Nicolo Volpe",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "acqua-santanna-cuneo-07",
+      "name": "Emanuele Barberio",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "acqua-santanna-cuneo-08",
+      "name": "Alexandre Strehlau",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-09",
+      "name": "Nathan Feral",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-10",
+      "name": "Poriya Hossein Khanzadeh",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-11",
+      "name": "Ethan Champlin",
+      "role": "outside_hitter",
+      "defense": 78,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-12",
+      "name": "Lorenzo Codarin",
+      "role": "middle_blocker",
+      "defense": 59,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-13",
+      "name": "Federico Giraudo",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "acqua-santanna-cuneo-14",
+      "name": "Leandro Mosca",
+      "role": "middle_blocker",
+      "defense": 53,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-01",
+      "name": "Merrick McHenry",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-02",
+      "name": "Cooper Robinson",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-03",
+      "name": "Paolo Porro",
+      "role": "setter",
+      "defense": 74,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-04",
+      "name": "Henri Emmanuel Leon",
+      "role": "opposite",
+      "defense": 65,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-05",
+      "name": "Domenico Pace",
+      "role": "libero",
+      "defense": 88,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-06",
+      "name": "Nikola Brboric",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-07",
+      "name": "Francesco Comparoni",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-08",
+      "name": "Gianluca Galassi",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-09",
+      "name": "Manuel Zlatanov",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-10",
+      "name": "Dragan Travica",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-11",
+      "name": "Francesco Rizzo",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-12",
+      "name": "Daniel Iyegbekedo",
+      "role": "middle_blocker",
+      "defense": 58,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-13",
+      "name": "Jose Miguel Gutierrez",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-14",
+      "name": "Alessandro Bovolenta",
+      "role": "opposite",
+      "defense": 73,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-01",
+      "name": "Federico Roberti",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-02",
+      "name": "Nicola Zonta",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-03",
+      "name": "Alessandro Michieletto",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-04",
+      "name": "Riccardo Sbertoli",
+      "role": "setter",
+      "defense": 73,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-05",
+      "name": "Riccardo Gollini",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-06",
+      "name": "Theo Faure",
+      "role": "opposite",
+      "defense": 73,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-07",
+      "name": "Elia Bossi",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-08",
+      "name": "Gabriele Laurenzano",
+      "role": "libero",
+      "defense": 90,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-09",
+      "name": "Daniele Lavia",
+      "role": "outside_hitter",
+      "defense": 80,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-10",
+      "name": "Renars-Paul Jansons",
+      "role": "opposite",
+      "defense": 66,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-11",
+      "name": "Adriano Xavier Cavalcante",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "itas-trentino-12",
+      "name": "Flavio Resende Gualberto",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-13",
+      "name": "Aleksandar Nedeljkovic",
+      "role": "middle_blocker",
+      "defense": 58,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "itas-trentino-14",
+      "name": "Simon Valentin Torwie",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-01",
+      "name": "Amir Mohammad Golzadeh",
+      "role": "opposite",
+      "defense": 64,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-02",
+      "name": "Alessandro Bristot",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-03",
+      "name": "Andrea Ruzza",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-04",
+      "name": "Simone Rinaldi",
+      "role": "setter",
+      "defense": 71,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-05",
+      "name": "Francesco D'Amico",
+      "role": "libero",
+      "defense": 86,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-06",
+      "name": "Joscha Kunstmann",
+      "role": "middle_blocker",
+      "defense": 54,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-07",
+      "name": "Marco Pellacani",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-08",
+      "name": "Mattia Uliana",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-09",
+      "name": "Leonardo Lukas Leodolter",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-10",
+      "name": "Francesco Bergamasco",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-11",
+      "name": "Mattia Orioli",
+      "role": "outside_hitter",
+      "defense": 80,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "pallavolo-padova-12",
+      "name": "Arshia Behnezhad",
+      "role": "setter",
+      "defense": 71,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-13",
+      "name": "Brendan Robert Mills",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "pallavolo-padova-14",
+      "name": "Andrea Truocchio",
+      "role": "middle_blocker",
+      "defense": 53,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-01",
+      "name": "Aidan Zingel",
+      "role": "middle_blocker",
+      "defense": 53,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-02",
+      "name": "Lorenzo Cortesia",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-03",
+      "name": "Leonardo Scanferla",
+      "role": "libero",
+      "defense": 83,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "rana-verona-04",
+      "name": "Kellian Motta Paes",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "rana-verona-05",
+      "name": "Marco Vitelli",
+      "role": "middle_blocker",
+      "defense": 58,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-06",
+      "name": "Matteo Staforini",
+      "role": "libero",
+      "defense": 83,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "rana-verona-08",
+      "name": "Noumory Keita",
+      "role": "outside_hitter",
+      "defense": 73,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-09",
+      "name": "Francesco Sani",
+      "role": "outside_hitter",
+      "defense": 73,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-10",
+      "name": "Micah Christenson",
+      "role": "setter",
+      "defense": 69,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "rana-verona-24",
+      "name": "Anders Mol",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "rana-verona-11",
+      "name": "Lukas Glatz",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "rana-verona-12",
+      "name": "Simone Anzani",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-14",
+      "name": "Rok Mozic",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "rana-verona-13",
+      "name": "Paul Buchegger",
+      "role": "opposite",
+      "defense": 73,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-01",
+      "name": "Mathis Henno",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "sir-susa-scai-perugia-02",
+      "name": "Simone Giannelli",
+      "role": "setter",
+      "defense": 69,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-03",
+      "name": "Ferre Reggers",
+      "role": "opposite",
+      "defense": 68,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-04",
+      "name": "Agustin Loser",
+      "role": "middle_blocker",
+      "defense": 59,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "sir-susa-scai-perugia-05",
+      "name": "Stefano Cappadona",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "sir-susa-scai-perugia-06",
+      "name": "Luca Loreti",
+      "role": "libero",
+      "defense": 86,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-07",
+      "name": "Sebastian Sole",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-08",
+      "name": "David Kollator",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "sir-susa-scai-perugia-09",
+      "name": "Kamil Semeniuk",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-10",
+      "name": "Oleh Plotnytskyi",
+      "role": "outside_hitter",
+      "defense": 79,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-11",
+      "name": "Giovanni Sanguinetti",
+      "role": "middle_blocker",
+      "defense": 59,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-12",
+      "name": "Marco Gaggini",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "sir-susa-scai-perugia-13",
+      "name": "Seyed Matin Hosseini",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "sir-susa-scai-perugia-14",
+      "name": "Federico Crosato",
+      "role": "middle_blocker",
+      "defense": 54,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-01",
+      "name": "Wout D'Heer",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-02",
+      "name": "Nicolo Katalan",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-03",
+      "name": "Alessio Alberini",
+      "role": "setter",
+      "defense": 72,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-04",
+      "name": "Federico Frassanella Midolo",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-05",
+      "name": "Alberto Pol",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-06",
+      "name": "Sebastiano Marsili",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-07",
+      "name": "Alessandro Toscani",
+      "role": "libero",
+      "defense": 83,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-08",
+      "name": "Kirill Klets",
+      "role": "opposite",
+      "defense": 67,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-09",
+      "name": "Jacopo Larizza",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-10",
+      "name": "Federico Guadagnini",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-11",
+      "name": "Jernej Terpin",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "tinet-prata-di-pordenone-26",
+      "name": "Nooa Marttila",
+      "role": "outside_hitter",
+      "defense": 71,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-12",
+      "name": "Lukas Felipe Bergmann",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "tinet-prata-di-pordenone-13",
+      "name": "David Umek",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-01",
+      "name": "Arthur Bento",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-02",
+      "name": "Amir Tizi-Oualou",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-03",
+      "name": "Luke Perry",
+      "role": "libero",
+      "defense": 89,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-04",
+      "name": "Pardo Mati",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-05",
+      "name": "Sil Meijs",
+      "role": "opposite",
+      "defense": 66,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-06",
+      "name": "Thomas Jaeschke",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-07",
+      "name": "Nicolo Garello",
+      "role": "outside_hitter",
+      "defense": 75,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-08",
+      "name": "Leonardo Barbanti",
+      "role": "setter",
+      "defense": 66,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-09",
+      "name": "Luca Tauletta",
+      "role": "middle_blocker",
+      "defense": 53,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-10",
+      "name": "Federico Menchetti",
+      "role": "libero",
+      "defense": 86,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-11",
+      "name": "Luca Porro",
+      "role": "outside_hitter",
+      "defense": 78,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-12",
+      "name": "Gabriele Di Martino",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "valsa-group-modena-13",
+      "name": "Roberto Russo",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "valsa-group-modena-14",
+      "name": "Nik Mujanovic",
+      "role": "opposite",
+      "defense": 68,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-01",
+      "name": "Zhasmin Velichkov",
+      "role": "outside_hitter",
+      "defense": 72,
+      "confidence": "medium",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-02",
+      "name": "Diego Frascio",
+      "role": "opposite",
+      "defense": 63,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-03",
+      "name": "Leonardo Bonacchi",
+      "role": "setter",
+      "defense": 70,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "vero-volley-monza-04",
+      "name": "Flavio Morazzini",
+      "role": "libero",
+      "defense": 85,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "vero-volley-monza-05",
+      "name": "Nicolo Mapelli",
+      "role": "opposite",
+      "defense": 66,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-06",
+      "name": "Jacopo Massari",
+      "role": "outside_hitter",
+      "defense": 74,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-07",
+      "name": "Andrew Rowan",
+      "role": "setter",
+      "defense": 69,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-08",
+      "name": "Iliya Petkov",
+      "role": "middle_blocker",
+      "defense": 60,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-09",
+      "name": "Bara Fall",
+      "role": "middle_blocker",
+      "defense": 56,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "vero-volley-monza-10",
+      "name": "Thomas Beretta",
+      "role": "middle_blocker",
+      "defense": 55,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-11",
+      "name": "Hryhorii Khotsevitch",
+      "role": "outside_hitter",
+      "defense": 76,
+      "confidence": "low",
+      "data": false
+    },
+    {
+      "id": "vero-volley-monza-12",
+      "name": "Nicola Pesaresi",
+      "role": "libero",
+      "defense": 86,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-13",
+      "name": "Pierre Perin",
+      "role": "outside_hitter",
+      "defense": 77,
+      "confidence": "low",
+      "data": true
+    },
+    {
+      "id": "vero-volley-monza-14",
+      "name": "Victorio Ceban",
+      "role": "middle_blocker",
+      "defense": 57,
+      "confidence": "low",
+      "data": false
+    }
+  ]
+}

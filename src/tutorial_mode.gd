@@ -179,7 +179,7 @@ func refresh_detail():
 func capture():
 	if not saved.is_empty(): return
 	for key in ["scores","sets","rotations","team_names"]: saved[key]=game.get(key).duplicate()
-	for key in ["server","match_best_of","match_points","camera_mode","difficulty","clock_time","attack_serial","shot_serial","rally_serial"]: saved[key]=game.get(key)
+	for key in ["server","use_player_stats","match_best_of","match_points","camera_mode","difficulty","clock_time","attack_serial","shot_serial","rally_serial"]: saved[key]=game.get(key)
 	saved.visibility=[]
 	for p in game.players: saved.visibility.append(p.visible)
 	saved.rng_seed=game.rng.seed; saved.rng_state=game.rng.state
@@ -189,7 +189,7 @@ func restore():
 	if is_instance_valid(target): target.hide()
 	game.started=false; game.paused=false
 	if not saved.is_empty():
-		for key in ["scores","sets","rotations","team_names","server","match_best_of","match_points","camera_mode","difficulty","clock_time","attack_serial","shot_serial","rally_serial"]: game.set(key,saved[key])
+		for key in ["scores","sets","rotations","team_names","server","use_player_stats","match_best_of","match_points","camera_mode","difficulty","clock_time","attack_serial","shot_serial","rally_serial"]: game.set(key,saved[key])
 		game.rng.seed=saved.rng_seed; game.rng.state=saved.rng_state
 		for i in game.players.size(): game.players[i].visible=saved.visibility[i]
 		saved.clear()
@@ -202,6 +202,7 @@ func home():
 func start_lesson(id: String,index: int):
 	capture(); category=id; lesson_index=clampi(index,0,Lessons.all(id).size()-1); exercise=Lessons.all(id)[lesson_index]
 	active=true; successes=0; attempts=0; free_practice=false; pending=""; menu.hide(); coach.show()
+	game.use_player_stats=false
 	game.camera_mode=0; game.set_camera(); game.demo=false; game.started=true
 	prepare_attempt(); show_modal(true)
 

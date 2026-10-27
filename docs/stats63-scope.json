@@ -1,0 +1,30 @@
+{
+  "unchanged_original_systems_sha256": {
+    "timing.gd": "78c148def7be768bbc6448e1f25470ab43a4abafb66fc76bbbac220eb72308cf",
+    "ball_flight.gd": "b64de66437ed8d242679fe3e718e724c32dc874e2eb55f522e8a63f9ace986dd",
+    "block_contact.gd": "23424e7b627b4b3a96df23a5b978c9f99785def628cda82516f6b8d8be9cacc3",
+    "block_response.gd": "6b3bf61af968aae498575948f85b1f167dcc7425c929a2efc39e50cf5495a53a",
+    "avatar.gd": "2dd0a4b73b61721c42e7f699a08ade55f4f3384ae5ea397d7e5cb353ef26f296",
+    "rally_lanes.gd": "67a2101656cd130802a21f5791191693943a3c82ebde785fd5fc4a1943464e80",
+    "rotation_layout.gd": "d08bb7c1ae0762a19f12dc69f96bc7d595cd5955e54e7b8dd883774be68fd4f0",
+    "tactics.gd": "732be6dbb67cf703b328f7fc2517d5a9e16c5aca45bd411d5cd35a83a7e641b1",
+    "winning_shot.gd": "1e31122c02f198a98e2fb6fa33b16af7d11f3c8e7974f68d9a4c95251510ada6",
+    "middle_decoy.gd": "f51dbe9547ea1dca5397e248946be4e856450759e5c3b2b500fa30e1b1f7690f",
+    "attack_run.gd": "3fe75e338d7297c60af9a9477a7136dacaee248e7bd713983f3773ef49ad2b09",
+    "cpu_defense.gd": "96275cf5bb765fb2e7a2a6ce368923aed3a31664044ac05486273a091f745cc6",
+    "setter_access.gd": "57e8553316af13eac277063ef103c2c27a856264c99bed26c2943748c8d29afa"
+  },
+  "changed_or_new_scripts": [
+    "club_menu.gd",
+    "hud.gd",
+    "league.gd",
+    "main.gd",
+    "online_menu.gd",
+    "online_session.gd",
+    "online_state.gd",
+    "player_card.gd",
+    "player_stats_gameplay.gd",
+    "rally_ai.gd",
+    "tutorial_mode.gd"
+  ]
+}

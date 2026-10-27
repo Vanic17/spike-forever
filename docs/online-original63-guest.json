@@ -1,0 +1,11 @@
+{
+  "contacts": 8,
+  "home": true,
+  "observed": {
+
+  },
+  "pause": true,
+  "role": "guest",
+  "snapshot_max": 0,
+  "version": "0.63.0"
+}

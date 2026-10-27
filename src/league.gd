@@ -14,8 +14,10 @@ func _init() -> void:
 			if not p.has("serve_preference"): p.serve_preference="jump"
 			if overrides.has(p.id):
 				var base_appearance: Dictionary=p.get("appearance",{}).duplicate(true)
+				var base_ratings: Dictionary=p.ratings.duplicate(true)
 				var saved: Dictionary=overrides[p.id]
 				p.merge(saved,true)
+				base_ratings.merge(saved.get("ratings",{}),true); p.ratings=base_ratings
 				# Old full-player saves contain unspecified appearance fields.
 				# Preserve actual edits while allowing improved defaults underneath.
 				for key in saved.get("appearance",{}):

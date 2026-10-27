@@ -1,7 +1,7 @@
 extends Control
 var player: Dictionary={}
 var ratings: Dictionary={}
-const KEYS=["battuta","ricezione","palleggio","schiacciata","muro"]
+const KEYS=["battuta","ricezione","difesa","palleggio","schiacciata","muro"]
 func update_player(data: Dictionary) -> void:
 	player=data; ratings=data.get("ratings",{}).duplicate(); queue_redraw()
 func caption(at: Vector2, text: String, font_size: int, color: Color,translate_value: bool=true) -> void:
@@ -24,18 +24,18 @@ func _draw() -> void:
 	var centre=Vector2(size.x/2,340)
 	for ring in range(1,5):
 		var polygon=PackedVector2Array()
-		for i in 6: polygon.append(centre+Vector2.from_angle(-PI/2+TAU*(i%5)/5)*radius*ring/4)
+		for i in 7: polygon.append(centre+Vector2.from_angle(-PI/2+TAU*(i%6)/6)*radius*ring/4)
 		draw_polyline(polygon,Color("35475b"),1,true)
 	var values=PackedVector2Array()
-	for i in 5:
-		var axis=Vector2.from_angle(-PI/2+TAU*i/5)
+	for i in 6:
+		var axis=Vector2.from_angle(-PI/2+TAU*i/6)
 		draw_line(centre,centre+axis*radius,Color("35475b"),1,true)
 		var value=int(ratings.get(KEYS[i],0))
-		values.append(centre+axis*radius*clampf(value/100.0,0,1))
+		values.append(centre+axis*radius*clampf(value/99.0,0,1))
 		var at=centre+axis*(radius+32)
 		caption(at,KEYS[i].capitalize(),12,muted)
 		caption(at+Vector2(0,19),str(value),17,Color.WHITE)
 	draw_colored_polygon(values,Color(0.28,0.78,0.87,0.28))
 	var outline=values.duplicate(); outline.append(values[0]); draw_polyline(outline,Color("70d6e5"),2,true)
 	for point in values: draw_circle(point,3,gold)
-	caption(Vector2(size.x/2,510),"VALORI EDITORIALI / SOLO DATABASE",10,muted)
+	caption(Vector2(size.x/2,510),"VALORI MODIFICABILI / GAMEPLAY OPZIONALE",10,muted)

@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.63.0:** Difesa per tutti i giocatori, radar esagonale e statistiche gameplay opzionali offline/online, con percorso originale conservato. [Dettagli e verifiche](docs/PLAYER_STATS_63.md).
+
 **Versione 0.62.0:** rotazioni P1–P6 ricostruite dai 18 schemi forniti: ricezione, attacco, difesa e corridoi di preparazione. Nuovo fischio dell'arbitro dall'audio allegato. [Dettagli](docs/RELEASE_NOTES_62.md).
 
 Restano le correzioni del [muro della 0.59](docs/RELEASE_NOTES_59.md): contatti pieni sulle mani, salto CPU conservato fino all'atterraggio e press della palla oltre la rete.
@@ -8,7 +10,7 @@ Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.62.0 (protocollo SF062).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.63.0 (protocollo SF063).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

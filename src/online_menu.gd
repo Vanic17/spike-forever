@@ -9,6 +9,7 @@ var scope: OptionButton
 var own_team: OptionButton
 var own_kit: OptionButton
 var format: OptionButton
+var stats_pick: OptionButton
 var target: OptionButton
 var create: Button
 var join: Button
@@ -45,7 +46,8 @@ func _ready() -> void:
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",16); body.add_child(settings)
 	host.clubs.label(settings,"FORMATO (HOST)"); format=host.clubs.picker(settings,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2)
 	host.clubs.label(settings,"PUNTI"); target=host.clubs.picker(settings,["25","15"])
-	format.item_selected.connect(settings_changed); target.item_selected.connect(settings_changed)
+	host.clubs.label(settings,"VALORI GIOCATORI"); stats_pick=host.clubs.picker(settings,["Disattivati · originale","Attivi · database V1"])
+	format.item_selected.connect(settings_changed); target.item_selected.connect(settings_changed); stats_pick.item_selected.connect(settings_changed)
 	var cards=HBoxContainer.new(); cards.size_flags_vertical=SIZE_EXPAND_FILL; cards.add_theme_constant_override("separation",22); body.add_child(cards)
 	var own=VBoxContainer.new(); own.size_flags_horizontal=SIZE_EXPAND_FILL; cards.add_child(own)
 	host.clubs.label(own,"LA TUA SQUADRA")
@@ -95,7 +97,7 @@ func changed_choice() -> void:
 
 func settings_changed(_index: int) -> void:
 	if updating or (session.active and not session.authority()): return
-	session.best_of=[1,3,5][format.selected]; session.points=[25,15][target.selected]
+	session.best_of=[1,3,5][format.selected]; session.points=[25,15][target.selected]; session.use_player_stats=stats_pick.selected==1
 	session.ready_flags=[false,false]
 	if session.authority(): session.broadcast_lobby()
 
@@ -106,8 +108,8 @@ func refresh() -> void:
 	updating=true; info.text=session.info
 	create.disabled=session.active or session.closing; join.disabled=session.active or session.closing; code.editable=not session.active
 	if session.authority(): code.text=session.room_code
-	format.disabled=session.active and not session.authority(); target.disabled=format.disabled
-	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points))
+	format.disabled=session.active and not session.authority(); target.disabled=format.disabled; stats_pick.disabled=format.disabled
+	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points)); stats_pick.select(1 if session.use_player_stats else 0)
 	confirm.disabled=not session.active or (session.local_side==1 and session.guest==0)
 	confirm.text="ANNULLA PRONTO" if session.ready_flags[session.local_side] else "CONFERMA / PRONTO"
 	var locked: bool=session.active and session.ready_flags[session.local_side]
