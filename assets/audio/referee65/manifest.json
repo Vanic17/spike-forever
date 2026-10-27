@@ -1,0 +1,54 @@
+{
+  "source": "referee62.ogg",
+  "source_sha256": "23d80d55aca2ee6f7ce46f2f7ef86fdaee26298daeb1ea043d9c25e5ae1ce094",
+  "variants": [
+    {
+      "group": "serve",
+      "file": "serve-0.ogg",
+      "duration": 0.487,
+      "pitch": 0.985
+    },
+    {
+      "group": "serve",
+      "file": "serve-1.ogg",
+      "duration": 0.58,
+      "pitch": 1.018
+    },
+    {
+      "group": "serve",
+      "file": "serve-2.ogg",
+      "duration": 0.683,
+      "pitch": 0.996
+    },
+    {
+      "group": "serve",
+      "file": "serve-3.ogg",
+      "duration": 0.759,
+      "pitch": 1.028
+    },
+    {
+      "group": "point",
+      "file": "point-0.ogg",
+      "duration": 0.619,
+      "pitch": 0.985
+    },
+    {
+      "group": "point",
+      "file": "point-1.ogg",
+      "duration": 0.727,
+      "pitch": 1.018
+    },
+    {
+      "group": "point",
+      "file": "point-2.ogg",
+      "duration": 0.904,
+      "pitch": 0.996
+    },
+    {
+      "group": "point",
+      "file": "point-3.ogg",
+      "duration": 1.012,
+      "pitch": 1.028
+    }
+  ]
+}

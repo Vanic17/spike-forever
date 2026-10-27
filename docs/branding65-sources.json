@@ -1,0 +1,402 @@
+{
+  "source_page": "https://www.legavolley.it/documenti/loghi-lega-e-club",
+  "clubs": {
+    "allianz-milano": {
+      "abbreviation": "MIL",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Milano.zip",
+      "artwork": {
+        "color": {
+          "member": "Milano_COLORE_PDF.pdf",
+          "size": [
+            2195,
+            917
+          ],
+          "source_sha256": "2dac63f05c1ec3053443664f97613e0fae725254288dc10b1322823a0de85630",
+          "texture_sha256": "b5b9b2ad905d306165cb55aa04fd9ce1a09a3954e4c9b9e7d1a0f9973242e8c6",
+          "vector_paths": 21
+        },
+        "white": {
+          "member": "Milano_BIANCO_PNG.png",
+          "size": [
+            932,
+            390
+          ],
+          "original_size": [
+            1046,
+            567
+          ],
+          "source_sha256": "db84f0ebdcd0f10831e3a2786805a8cfa26847bb36546a9b4d068ed208ee1ddc",
+          "texture_sha256": "b39b5b92d63fa035486002a115eb210cffc521a56b9cc3195a9e34e798f3aed9",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/allianz-milano-color.png",
+      "white": "assets/ui/branding/allianz-milano-white.png"
+    },
+    "cisterna-volley": {
+      "abbreviation": "CIS",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Cisterna.zip",
+      "artwork": {
+        "color": {
+          "member": "Cisterna/CISTERNA_COLORE.pdf",
+          "size": [
+            1856,
+            2197
+          ],
+          "source_sha256": "2e70b01cf6899e896dcd96173ce983656d9b1fafc4cc3902c5ce51a12586789e",
+          "texture_sha256": "9449ae9afe20f7dff79fc98ecd2766fd53a096f7665421a85754bb4bf6580e14",
+          "vector_paths": 25
+        },
+        "white": {
+          "member": "Cisterna/CISTERNA_BIANCO.png",
+          "size": [
+            1498,
+            1773
+          ],
+          "original_size": [
+            1498,
+            1773
+          ],
+          "source_sha256": "dd1212e2c9933280af8774578d9a0efe9234d6acf8b50c5aa800ca08c570b512",
+          "texture_sha256": "f74b18c0cfbfaf41da276395825f588551e0c62fe992437eaa2ec5dc6690b7fd",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/cisterna-volley-color.png",
+      "white": "assets/ui/branding/cisterna-volley-white.png"
+    },
+    "cucine-lube-civitanova": {
+      "abbreviation": "CIV",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/CIVITANOVA_LOGO-3.zip",
+      "artwork": {
+        "color": {
+          "member": "CIVITANOVA_LOGO/CIVITANOVA-pdf/CIVITANOVA-colore.pdf",
+          "size": [
+            1496,
+            2188
+          ],
+          "source_sha256": "1779702cc4a68ffa18e2a9441940bf65b2aef8081f451165a23c10bf241fded3",
+          "texture_sha256": "f556116a19dc053d63b0838a7c479bb093ff1a6dd79de5b94f21fab542bc25b5",
+          "vector_paths": 1
+        },
+        "white": {
+          "member": "CIVITANOVA_LOGO/CIVITANOVA-png/CIVITANOVA-bianco RGB.png",
+          "size": [
+            867,
+            1264
+          ],
+          "original_size": [
+            1080,
+            1371
+          ],
+          "source_sha256": "8727dab9226c7284d867f0ac408b694786d1bf4901cca5866110b0733df751a2",
+          "texture_sha256": "1ef9221071f127a02d0f5216f2799a6e93fc9f0dbc3c89ed552860edb8d37f78",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/cucine-lube-civitanova-color.png",
+      "white": "assets/ui/branding/cucine-lube-civitanova-white.png"
+    },
+    "acqua-santanna-cuneo": {
+      "abbreviation": "CUN",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Cuneo.zip",
+      "artwork": {
+        "color": {
+          "member": "cuneo_voley_logo/PDF/Logo Cuneo Volley_COLORE.pdf",
+          "size": [
+            1746,
+            2200
+          ],
+          "source_sha256": "89db867e4328cb0d78e5aa6c741c6f14d09354370ac59ac4a1a8171dba68817b",
+          "texture_sha256": "30c249e955296bdb450f645742e76c801f25a963bdc9abace5e63d3874761bbc",
+          "vector_paths": 30
+        },
+        "white": {
+          "member": "cuneo_voley_logo/PNG/Logo Cuneo Volley Bianco.png",
+          "size": [
+            928,
+            1181
+          ],
+          "original_size": [
+            928,
+            1181
+          ],
+          "source_sha256": "5285db24ad4caf9df9593a2ec653bb0bb5fc5e02e5cf921bfe162bd9103a9e47",
+          "texture_sha256": "f6b1b2b108245888fc00e52a984f34760ac20b05cd32bd4c28941e38b86ec4f8",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/acqua-santanna-cuneo-color.png",
+      "white": "assets/ui/branding/acqua-santanna-cuneo-white.png"
+    },
+    "gas-sales-bluenergy-piacenza": {
+      "abbreviation": "PIA",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2026/07/SuperLega_Piacenza.zip",
+      "artwork": {
+        "color": {
+          "member": "Piacenza_COLORE_ROSSO_BLU_orizzontale.pdf",
+          "size": [
+            2198,
+            531
+          ],
+          "source_sha256": "b96a82cfa1aaae795d8111c120bae980ddb41d3171aa694f3936422f5e06f25b",
+          "texture_sha256": "7403ef24bac137376e86bbf0c0fea0b4218578851c9ae3adc9c3ffd5eab50931",
+          "vector_paths": 34
+        },
+        "white": {
+          "member": "Piacenza_BIANCO_orizzontale.png",
+          "size": [
+            3506,
+            846
+          ],
+          "original_size": [
+            4500,
+            4500
+          ],
+          "source_sha256": "7351d067d5a970bcb7d61dc81ce509e1174777cd7a2fc25bb6fd39680ef02bc4",
+          "texture_sha256": "1539eac68b3e6066ed63a965451c28f97d553b91dad6e9d7ce58b15bc4d1d068",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/gas-sales-bluenergy-piacenza-color.png",
+      "white": "assets/ui/branding/gas-sales-bluenergy-piacenza-white.png"
+    },
+    "itas-trentino": {
+      "abbreviation": "TRE",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Trento-1.zip",
+      "artwork": {
+        "color": {
+          "member": "Trento/TRENTO-colore_PDF.pdf",
+          "size": [
+            2129,
+            2194
+          ],
+          "source_sha256": "236b872618d8afd3b4617a410ad52dd9daad6bab304e306f0e8a8d2a71df8410",
+          "texture_sha256": "48bf2033dcdfd91ac65a0c2486fd840b675e55efad86d07d0080b3333864998d",
+          "vector_paths": 2
+        },
+        "white": {
+          "member": "Trento/TRENTO-bianco_JPG.pdf",
+          "size": [
+            2198,
+            2198
+          ],
+          "source_sha256": "e718e800e19ae5e755889bda8e2befa7ef9056abd251b5113b1dd4f096355bc9",
+          "texture_sha256": "5a45a388b2d0f7c1555e2aca371c33be40732fc8013d5a7eacfe673d592ca1c4",
+          "vector_paths": 3
+        }
+      },
+      "color": "assets/ui/branding/itas-trentino-color.png",
+      "white": "assets/ui/branding/itas-trentino-white.png"
+    },
+    "pallavolo-padova": {
+      "abbreviation": "PAD",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2026/07/SuperLega_Padova.zip",
+      "artwork": {
+        "color": {
+          "member": "SuperLega_Padova/Padova_COLORE_PDF.pdf",
+          "size": [
+            1460,
+            2192
+          ],
+          "source_sha256": "7094f5561702ad94f1c803e7122d18546482a0474d25af8e466ccdc924442747",
+          "texture_sha256": "7f7ad333ba7d94035b268f7faff3b2d55cbadfd5cec9594f07be409c59fdfd01",
+          "vector_paths": 24
+        },
+        "white": {
+          "member": "SuperLega_Padova/Padova_BIANCO_PDF.pdf",
+          "size": [
+            1461,
+            2194
+          ],
+          "source_sha256": "cfa1a4f52ba8c5c38f63b459e37bb895e3c114a9a796aeb747d40f42858e0762",
+          "texture_sha256": "4f8cc03be0e721c93243b28688815ad13f094f55de6b542f3254609b59fd1c3a",
+          "vector_paths": 19
+        }
+      },
+      "color": "assets/ui/branding/pallavolo-padova-color.png",
+      "white": "assets/ui/branding/pallavolo-padova-white.png"
+    },
+    "rana-verona": {
+      "abbreviation": "VER",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Verona.zip",
+      "artwork": {
+        "color": {
+          "member": "Verona/VERONA_COLORE_PNG.png",
+          "size": [
+            269,
+            171
+          ],
+          "original_size": [
+            395,
+            318
+          ],
+          "source_sha256": "74f6a524c9b4b55263fd2f81a084368043d04f932777b92615f604f6766ac92b",
+          "texture_sha256": "9f5c9d9072e0c2d9b77199ac9b53f310e715035c200eb7244169436ddd199e71",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        },
+        "white": {
+          "member": "Verona/VERONA_BIANCO_PNG.png",
+          "size": [
+            1139,
+            725
+          ],
+          "original_size": [
+            1316,
+            1218
+          ],
+          "source_sha256": "66b0cd46f3456d9702fe8a3246f9779801ba405fd167a1cd64c4aeb5412c5f28",
+          "texture_sha256": "d4f7574543bb96d7d9036ae8d7d0f605bff93e29286ef6480b69ea1760b6743f",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/rana-verona-color.png",
+      "white": "assets/ui/branding/rana-verona-white.png"
+    },
+    "sir-susa-scai-perugia": {
+      "abbreviation": "PER",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/11/Pacchetto_Loghi_Perugia.zip",
+      "artwork": {
+        "color": {
+          "member": "Perugia_COLORE_AI copia.pdf",
+          "size": [
+            2195,
+            1674
+          ],
+          "source_sha256": "77b0646e1d42ef21a936350681fe92ac22be21a15f2b9aa7993fa29451676ab7",
+          "texture_sha256": "14d05dee5935fe4d527670723ab3629c47f1a87340963d48ea0bb5f0b334407d",
+          "vector_paths": 21
+        },
+        "white": {
+          "member": "Perugia_BIANCO_AI.png",
+          "size": [
+            3978,
+            3033
+          ],
+          "original_size": [
+            4000,
+            3052
+          ],
+          "source_sha256": "05de7272506a0453cbfb97f7be0fdd7b2812e01c11b3c50476de167f50270751",
+          "texture_sha256": "8be71da5c7abc020db873071a16588cad6753f52567f71d067f0420bbff8c914",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/sir-susa-scai-perugia-color.png",
+      "white": "assets/ui/branding/sir-susa-scai-perugia-white.png"
+    },
+    "tinet-prata-di-pordenone": {
+      "abbreviation": "PRA",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2026/07/SuperLega_Prata.zip",
+      "artwork": {
+        "color": {
+          "member": "SuperLega_Prata/Prata_COLORE.pdf",
+          "size": [
+            944,
+            2200
+          ],
+          "source_sha256": "6d9b4b01c6e017f5f6da931de2cce3ff62d40f9fa738087a091c69b7e7cbf5dd",
+          "texture_sha256": "a8478e38fa970e071a9eea1524f429bf9d28f5421c67c233c10410fded9a6062",
+          "vector_paths": 19
+        },
+        "white": {
+          "member": "SuperLega_Prata/Prata_BIANCO.pdf",
+          "size": [
+            944,
+            2200
+          ],
+          "source_sha256": "78a518ac87af863e76480fc78a39c597a197893b82638a7654128e26dbdfd9a2",
+          "texture_sha256": "48748d70e6798f50881aa55f19036880b866f6770641d35e4fab1b5d40d1a852",
+          "vector_paths": 14
+        }
+      },
+      "color": "assets/ui/branding/tinet-prata-di-pordenone-color.png",
+      "white": "assets/ui/branding/tinet-prata-di-pordenone-white.png"
+    },
+    "valsa-group-modena": {
+      "abbreviation": "MOD",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/09/Modena.zip",
+      "artwork": {
+        "color": {
+          "member": "Modena/MV_Logo_Blu.pdf",
+          "size": [
+            1909,
+            2197
+          ],
+          "source_sha256": "989ad21144a26654b05587b63c1f5e81179102044c55346fb3501c1ee646c7d0",
+          "texture_sha256": "6e7e2793ef06bc7aeb20d88a570e50f8817eded61f917951cbdb6f01539ea404",
+          "vector_paths": 14
+        },
+        "white": {
+          "member": "Modena/MV_Logo_Bianco.png",
+          "size": [
+            2501,
+            2880
+          ],
+          "original_size": [
+            4168,
+            4500
+          ],
+          "source_sha256": "faf10d42905bf6e9d3911ccca4e498ad07b1b1dac8afac76974ae22c6d95aefb",
+          "texture_sha256": "ae4be60d3ea4329b66fb614724ebdceb9aed3875f5ccc4d03583a9f0b11e7e7e",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/valsa-group-modena-color.png",
+      "white": "assets/ui/branding/valsa-group-modena-white.png"
+    },
+    "vero-volley-monza": {
+      "abbreviation": "MON",
+      "source_archive": "https://www.legavolley.it/wp-content/uploads/2025/10/Monza_Loghi.zip",
+      "artwork": {
+        "color": {
+          "member": "Monza_COLORE_PDF.pdf",
+          "size": [
+            1955,
+            2195
+          ],
+          "source_sha256": "ef11d359ad13e777021108545a8b0f850b6f5804da263a96e8fbecc98cb143f0",
+          "texture_sha256": "98a08443c19f42f1c9d70833fb2a9f5cfe8b6ed961c9025503f250f6690348d1",
+          "vector_paths": 9
+        },
+        "white": {
+          "member": "Monza_BIANCO_PNG.png",
+          "size": [
+            1304,
+            1464
+          ],
+          "original_size": [
+            2154,
+            1723
+          ],
+          "source_sha256": "c580a6e6747350fe2cc7b70113738182291112aaa793f324a6c0a5c1e9910d2c",
+          "texture_sha256": "c16667bb3af020913c0e6fd11fd3347c8e75bd487269dc1e862ad35bccb721b0",
+          "vector_paths": 0,
+          "method": "official original transparent PNG, alpha bounds cropped, no upscaling"
+        }
+      },
+      "color": "assets/ui/branding/vero-volley-monza-color.png",
+      "white": "assets/ui/branding/vero-volley-monza-white.png"
+    }
+  },
+  "superlega": {
+    "path": "assets/ui/branding/superlega.png",
+    "source": "https://www.legavolley.it/wp-content/uploads/2020/07/CREDEM-SUPERLEGA.pdf",
+    "size": [
+      1323,
+      2195
+    ],
+    "source_sha256": "42a36b74b616799a2b665f8092e704000123d11d46d759f80fc6f12d9e3d6208",
+    "texture_sha256": "43580e510375d6e34cfdc1b488a2930d5af7856beed3ba5c2a9adbe0e7258263",
+    "vector_paths": 53
+  }
+}

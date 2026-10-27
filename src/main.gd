@@ -73,6 +73,9 @@ var winner_team:=-1
 var attack_tip:=false
 var overpass_attack_team:=-1
 var receive_offset:=0.0
+var replay
+var timing_results: Array=[{},{}]
+const TimingResult=preload("res://src/timing_result.gd")
 var receive_feedback:=""
 var receive_feedback_left:=0.0
 var dynamic_net
@@ -304,6 +307,7 @@ func _ready() -> void:
 	self_test = "--self-test" in OS.get_cmdline_user_args() or "--fallback-test" in OS.get_cmdline_user_args() or "--rally-test" in OS.get_cmdline_user_args()
 	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; add_child(online_session)
 	tutorial=preload("res://src/tutorial_mode.gd").new(); tutorial.game=self; add_child(tutorial)
+	replay=preload("res://src/match_replay.gd").new(); replay.name="MatchReplay"; replay.game=self; add_child(replay)
 	if not self_test:
 		var start_menu=preload("res://src/start_menu.gd").new()
 		start_menu.game=self
@@ -417,6 +421,7 @@ func update_camera(dt: float) -> void:
 	camera.look_at(camera_focus)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if replay!=null and replay.handle_input(event): get_viewport().set_input_as_handled(); return
 	if network_match():
 		online_session.capture_input(event)
 		return
@@ -535,6 +540,7 @@ func apply_direction(direction: Vector2,dt: float) -> void:
 		plan_attack(set_dir, fast_set)
 
 func press_action(button: String = "action") -> void:
+	if replay!=null and replay.active: return
 	if input_team!=(server if phase=="SERVE" else possession):
 		if human_wall() and input_team==wall_team() and button=="action": jump_manual_wall()
 		return
@@ -582,6 +588,7 @@ func press_action(button: String = "action") -> void:
 		armed = true
 		receive_feedback=preload("res://src/shot_variation.gd").reception_label(remaining)+" · %d%%"%roundi(input_quality*100)
 		receive_feedback_left=2.4
+		TimingResult.put(self,possession,"RICEZIONE" if incoming_kind=="serve" else "DIFESA",input_quality,preload("res://src/shot_variation.gd").reception_label(remaining))
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
 		setter_dump = button == "dump" and preload("res://src/setter_dump.gd").can_request(self)
@@ -615,11 +622,13 @@ func jump_manual_wall() -> void:
 			manual_wall.jumped.clear()
 
 func release_action() -> void:
+	if replay!=null and replay.active: return
 	if input_team!=(server if phase=="SERVE" else possession): return
 	if phase in ["SET","CPU_SET"] and attack_buffer_start>=0:
 		attack_buffer_power=maxf(0,(clock_time-attack_buffer_start)/Timing.ATTACK_CHARGE_SECONDS)
 	if not charging: return
 	charge = current_charge()
+	TimingResult.put(self,input_team,"BATTUTA" if phase=="SERVE" else ("PALLONETTO" if attack_tip else "ATTACCO"),charge)
 	charging = false
 	if phase == "SERVE" and human_team(server):
 		input_quality = 1.0
@@ -667,6 +676,8 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	if replay!=null: replay.reset()
+	timing_results=[{},{}]
 	terminal_cpu_block=false
 	cpu_defense.reset()
 	overpass_attack_team=-1
@@ -824,6 +835,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	return backup
 
 func return_to_main_menu() -> void:
+	if replay!=null: replay.reset()
 	if network_match(): online_session.leave("Partita terminata" if match_finished else "Partita chiusa")
 	started=false; paused=false; demo=false; gallery=false
 	match_finished=false
@@ -1023,6 +1035,7 @@ func serve_ball(team: int, power: float) -> void:
 	preload("res://src/receive_access.gd").sync_performance(self,true)
 	cpu_defense.prepare(self)
 	log_rally_event("float_serve" if serve_type==0 else "power_serve",{"seconds":seconds,"power":power})
+	if replay!=null: replay.mark_shot("serve",team)
 
 func serve_aim_target(team: int, direction: Vector2) -> Vector3:
 	# Screen-left/right stay world-left/right from every service position.
@@ -1084,9 +1097,9 @@ func receive_ball() -> void:
 	if touches[possession]==3:
 		# A second-touch dump can rebound off our own net. This recovery is
 		# the THIRD touch: send it across now, never schedule another set.
-		var third_target:=Tactics.world(1-possession,clampf(ball_pos.x,-3.5,3.5),5.0)+Vector3.UP*.105
-		incoming_kind="soft"; incoming_power=.2
-		send_to_court(possession,third_target,1.65)
+		var third_delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,possession)
+		incoming_kind="free"; incoming_power=.2
+		send_to_court(possession,third_delivery.target,third_delivery.seconds)
 		log_rally_event("third_touch_recovery"); return
 	if cpu_team(possession) and cpu_defense.outcome=="overpass" and incoming_kind in ["serve","spike","soft"]:
 		var over:=Vector3(rng.randf_range(-2.8,2.8),0.105,rng.randf_range(1.2,4.5))
@@ -1299,6 +1312,9 @@ func set_ball(contact_override: String = "") -> void:
 	committed_destination = destination
 	register_touch(setter)
 	if phase=="POINT": return
+	if replay!=null: replay.clear_shot()
+	if replay!=null: replay.mark_set()
+	TimingResult.put(self,possession,"ALZATA",input_quality if human_team(possession) else q)
 	players[setter].prepare_contact(contact_action, 0)
 	var s := 1.0 if possession == 0 else -1.0
 	set_origin = ball_pos
@@ -1308,8 +1324,14 @@ func set_ball(contact_override: String = "") -> void:
 		return
 	var target := RallyAI.attack_contact(self,destination,hitter,set_origin)
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
+	if out_of_system<0:
+		hitter_action="attack" if preload("res://src/recovery_delivery.gd").can_spike(self,hitter,q,set_origin) else "receive"
+		target=preload("res://src/recovery_delivery.gd").contact(self,hitter,target,set_origin)
 	var late_middle: bool=destination==1 and middle_decoy.late_recipient==hitter
 	if late_middle: hitter_action="receive"
+	if cpu_team(possession) and hitter_action=="attack" and destination!=1 and absf(target.z)<3.0 and q>.55 and rng.randf()<.09:
+		attack_tip=true
+		players[hitter].select_variant("attack",preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial))
 	if hitter_action == "receive": target.z = s*4.6
 	if late_middle:
 		# Keep the completed fake and its landing. A late central command gets
@@ -1356,7 +1378,7 @@ func set_ball(contact_override: String = "") -> void:
 	block_count = Timing.blockers(false, fast_set, q, destination == 3)
 	if possession == 0:
 		var cpu_correct := rng.randf() < 0.70
-		block_count = Timing.blockers(cpu_correct, fast_set, q, destination == 3)
+		block_count = preload("res://src/recovery_delivery.gd").cpu_blockers(self,cpu_correct,flight,target)
 	var early_wall := (possession==1 or network_match()) and block_commanded and phase in ["SET","CPU_SET"]
 	if not early_wall:
 		block_time = -100
@@ -1425,7 +1447,7 @@ func attack_ball() -> void:
 	var automatic_overpass:=overpass_attack_team==attacker
 	var requested_power := 1.0 if automatic_overpass else (charge if human_team(attacker) else RallyAI.cpu_attack_power(self))
 	var power := clampf(requested_power, 0, 1)
-	if out_of_system<0: power*=0.72
+	if out_of_system<0 and human_team(attacker): power*=0.72
 	var precision := Timing.precision(power)
 	if use_player_stats and PlayerStats.perfect(requested_power,PlayerStats.green_low(self,false)): precision=.99
 	last_power = requested_power
@@ -1463,18 +1485,24 @@ func attack_ball() -> void:
 	var back_row := not Tactics.front(hitter,rotations[attacker])
 	var angle := clampf((9.0-absf(target.z))/8.0,0,1)
 	var seconds := Reference.attack_seconds(power,angle,back_row,soft)
-	var full_seconds:=Reference.attack_seconds(1.0,angle,back_row,false)
-	seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,full_seconds)*seconds/full_seconds
+	if not attack_tip and hitter_action=="attack":
+		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").spike(self,target,seconds,power)
+		target=delivery.target; seconds=delivery.seconds
 	if attack_tip:
 		incoming_kind="soft"; incoming_power=lerpf(0.12,0.65,power)
 		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.70)*(1.35-0.35*power)
-	if hitter_action == "receive": seconds = 1.4
+	if hitter_action == "receive":
+		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
+		target=delivery.target; seconds=delivery.seconds
 	elif requested_power>1.0: seconds/=requested_power
 	if tutorial!=null and tutorial.active and tutorial.category=="block": seconds=tutorial.coach_seconds(target,seconds)
 	send_to_court(attacker,target,seconds)
 	if automatic_overpass: log_rally_event("overpass_kill",{"hitter":hitter,"power":requested_power,"seconds":seconds})
 	overpass_attack_team=-1
 	log_rally_event(incoming_kind,{"power":power,"seconds":seconds,"target":target})
+	if replay!=null:
+		var perfect: bool=PlayerStats.perfect(requested_power,PlayerStats.green_low(self,false)) if use_player_stats else Timing.winning_power(requested_power)
+		replay.mark_shot("attack" if hitter_action=="attack" and not attack_tip else "other",attacker,perfect)
 
 func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
 	if attacker==0 and not network_match():
@@ -1554,6 +1582,7 @@ func prepare_overpass_attack() -> bool:
 
 func register_touch(index: int) -> void:
 	touches[possession] += 1
+	if replay!=null and touches[possession]>=2: replay.clear_shot()
 	last_touch = possession
 	test_contacts += 1
 	test_rallies += 1
@@ -1621,6 +1650,7 @@ func award(team: int, reason: String) -> void:
 	marker.visible = false
 	test_points += 1
 	test_rallies = 0
+	if replay!=null: replay.on_point(team)
 	if match_audio:
 		match_audio.point_event(team==0)
 	if team==0 and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
@@ -1634,12 +1664,17 @@ func _physics_process(dt: float) -> void:
 
 func _process(_dt: float) -> void:
 	if match_audio and match_audio.has_method("update_match_state"): match_audio.update_match_state(started,phase,paused and phase!="POINT")
-	if camera and not self_test: update_camera(_dt)
+	if camera and not self_test and not (replay!=null and replay.active): update_camera(_dt)
+	if started and not (tutorial!=null and tutorial.active) and not gallery:
+		marker.hide()
+		for player in players:
+			if player.indicator: player.indicator.hide()
 	if "--preview" in OS.get_cmdline_user_args() and clock_time > 5.5:
 		get_viewport().get_texture().get_image().save_png("res://docs/preview.png")
 		get_tree().quit()
 
 func step(dt: float) -> void:
+	if replay!=null and replay.active: return
 	# Substep to the exact contact event; never validate an overshot ball.
 	if phase == "SERVE" and toss_active:
 		var service_left := serve_windup_left + serve_toss_duration - toss_elapsed
@@ -1829,6 +1864,8 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			if response.kind=="stuff_block": ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
+			if replay!=null and response.kind=="stuff_block": replay.mark_shot("monster",defender)
+			TimingResult.put(self,defender,"MURO",block_quality*strength)
 			resume_deflection("block")
 			# A sealed monster block is terminal for CPU attack coverage.
 			# Keep its real flight and floor scoring; soft touches remain recoverable.
@@ -2542,7 +2579,7 @@ func run_tests() -> void:
 	assert(is_equal_approx(Timing.precision(0.9), 0.8))
 	assert(Timing.blockers(true, false, 1, false) == 2)
 	assert(Timing.blockers(false, true, 1, false) == 1)
-	assert(Timing.blockers(true, false, 0.8, false) == 3)
+	assert(Timing.blockers(true, false, 0.8, false) == 2)
 	assert(Timing.blockers(false, false, 1, true) == 1)
 	assert(timing.quality(0) > timing.quality(0.3))
 	assert(timing.quality(0.8) == 0, "Early presses must never become perfect again")

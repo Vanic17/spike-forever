@@ -1,0 +1,9 @@
+{
+  "frozen_simulation": true,
+  "guest_skip": true,
+  "home": true,
+  "lateral": true,
+  "replays": 3,
+  "restored": 3,
+  "role": "host"
+}

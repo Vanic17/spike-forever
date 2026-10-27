@@ -31,8 +31,9 @@ static func attack_choice(game, team: int, power: float) -> Dictionary:
 	var result: Dictionary = {}
 	# Select a tactical soft shot once, not three soft candidates competing
 	# against five hard ones on every otherwise clean construction.
-	var soft_chance:=0.24 if game.out_of_system<0 else (0.10 if game.block_count>0 else 0.04)
-	var tactical_soft: bool=game.rng.randf()<soft_chance
+	# The soft performance is chosen at set release, before its approach.
+	# Never turn a full swing into a lob only after its palm hits the ball.
+	var tactical_soft: bool=game.attack_tip
 	for sector in 8:
 		var direction := Vector2.from_angle(float(sector)*PI/4)
 		var soft := tactical_soft and sector % 3 == 0 and absf(game.ball_pos.z) < 3.5

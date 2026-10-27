@@ -83,7 +83,7 @@ func run() -> void:
 	check(count(audio, "horn") == before_horn, "No home horn on away point")
 	check(not audio.channel_states.has(audio.horn.get_instance_id()), "Any preceding home horn fades away after an away point")
 	check(count(audio, "interlude") + count(audio, "interlude_long") == before_interlude, "No home victory motif on away point")
-	check(count(audio, "whistle_real") == count(audio, "referee"), "Real supplied whistle replaces every synthetic referee cue")
+	check(count(audio, "whistle_real")+count(audio,"whistle_serve")+count(audio,"whistle_point") == count(audio, "referee"), "Real supplied whistle and its breath variants replace every synthetic referee cue")
 	check(count(audio, "whistle") == 0, "Old synthetic whistle remains unused when real source exists")
 	var home_points := 0
 	var away_points := 1

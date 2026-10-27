@@ -30,16 +30,11 @@ func panel(rect: Rect2, color: Color = INK) -> void:
 	draw_style_box(style, rect)
 
 func point_result_visible() -> bool:
-	# An ordinary rally only updates the scoreboard. Keep an announcement for
-	# the separate set/match result, without covering every point with a panel.
-	return game != null and game.display_phase() == "POINT" and (game.point_reason.begins_with("SET ") or game.point_reason.begins_with("VITTORIA "))
+	return false
 
 func _draw() -> void:
-	if game == null: return
-	if game.started and game.receive_feedback_left>0:
-		centered(size.y-215,game.receive_feedback,15,GOLD)
-	var w := size.x
-	var h := size.y
+	if game==null or not game.started: return
+	var w:=size.x; var h:=size.y
 	var pad: int = game.pad()
 	var pad_name := Input.get_joy_name(pad) if pad >= 0 else "Tastiera"
 	var name_lower := pad_name.to_lower()
@@ -52,68 +47,41 @@ func _draw() -> void:
 	if game.tutorial!=null and game.tutorial.active:
 		if not game.paused and game.phase in ["SERVE","RECEIVE","SET","ATTACK","CPU_ATTACK"]: draw_contact(w*.5,h-92)
 		return
-	if not game.started:
-		draw_rect(Rect2(Vector2.ZERO, size), Color(0.015,0.025,0.045,0.45))
-		text(Vector2(75, h * 0.38), "SPIKE", 76)
-		text(Vector2(75, h * 0.38 + 74), "FOREVER", 76, GOLD)
-		text(Vector2(81, h * 0.38 + 111), "IL TUO GIOCO. IL TUO CAMPO.", 15, MUTED)
-		text(Vector2(81, h * 0.38 + 155), "6 CONTRO 6  /  INDOOR VOLLEYBALL", 17)
-		panel(Rect2(75, h - 183, 560, 120))
-		text(Vector2(96, h - 145), "OPTIONS / START / INVIO PER GIOCARE", 21, GOLD)
-		text(Vector2(96, h - 113), primary + " · azione   /   " + alternate + " · float / veloce", 14)
-		text(Vector2(96, h - 88), "LS · mira e direzioni   F1 · tutti i comandi", 13, MUTED)
-		return
-	panel(Rect2(30, 27, 263, 85))
-	draw_rect(Rect2(30, 27, 5, 42), Color("285a9c"))
-	draw_rect(Rect2(30, 70, 5, 42), Color("e7e6e0"))
-	text(Vector2(48, 56), game.team_names[0].left(18), 13,WHITE,false)
-	text(Vector2(48, 98), game.team_names[1].left(18), 13,WHITE,false)
-	text(Vector2(192, 58), "%02d" % game.scores[0], 25)
-	text(Vector2(192, 100), "%02d" % game.scores[1], 25)
-	draw_rect(Rect2(244, 27, 49, 85), Color("26364a"))
-	text(Vector2(262, 56), str(game.sets[0]), 18, MUTED)
-	text(Vector2(262, 98), str(game.sets[1]), 18, MUTED)
-	draw_line(Vector2(35, 69), Vector2(293,69), Color("344154"), 1)
-	text(Vector2(31, 133), "SET %d  /  BEST OF %d" % [game.sets[0] + game.sets[1] + 1,game.match_best_of], 11, MUTED)
-	text(Vector2(w - 219, 43), "SPIKE / FOREVER", 20)
-	text(Vector2(w - 218, 65), "CPU vs CPU" if game.demo else "6 vs 6  /  LIVE", 12, MUTED)
-	if game.gallery:
-		panel(Rect2(30, h - 109, w - 60, 77))
-		var name: String = game.clips.keys()[game.gallery_index]
-		text(Vector2(50, h - 77), "ANIMAZIONI / " + name.to_upper(), 20, GOLD)
-		text(Vector2(50, h - 50), game.clips[name].source.get_file() + "    Frecce: cambia    F3: torna in campo", 13, MUTED)
-		return
-	if game.feedback_left > 0 and game.display_phase() != "POINT":
-		centered(105, game.feedback, 19, GOLD)
-	if point_result_visible():
-		panel(Rect2(w * 0.5 - 218, h * 0.46 - 41, 436, 84))
-		var result_text: String=game.point_reason
-		var point_px:=clampi(int(29*414/maxf(414,font.get_string_size(result_text,HORIZONTAL_ALIGNMENT_LEFT,-1,29).x)),14,29)
-		centered(h * 0.46 + 7, result_text, point_px)
-	elif game.display_phase() in ["RECEIVE", "SET", "ATTACK", "CPU_ATTACK"] or game.ui_wall() or game.display_phase() == "SERVE" and game.server == game.local_team():
-		draw_contact(w * 0.5, h - 92)
-	text(Vector2(31, h - 22), "LS / WASD / Frecce · mira e direzioni", 12, MUTED)
-	text(Vector2(w - 420, h - 22), "F1 aiuto   F2 demo   C / Triangolo / Y camera   Esc pausa", 12, MUTED)
-	if game.camera_mode==2:
-		text(Vector2(w-420,h-42),"TV: su Z4 / destra centro / giu Z2 / sinistra pipe",12,GOLD)
-	elif game.camera_mode==3: text(Vector2(w-420,h-42),"CAMERA BASSA",12,GOLD)
-	if game.debug_visible:
-		panel(Rect2(30, 157, 435, 269))
-		var lines := [
-			primary + " · ricezione / alzata / attacco / muro",
-			alternate + " · float / veloce / pallonetto",
-			dump_button + " · colpo di seconda",
-			"Battuta / attacco: tieni e rilascia",
-			"LS / WASD / frecce: mira e direzioni",
-			"Muro: LS muove il centrale; "+wall_labels,
-			"Ricezione: premi vicino all'arrivo della palla",
-			"F3 animazioni   F5 difficoltà   R nuova partita",
-			"L3 / LS / M · attiva o disattiva tutto l'audio"]
-		for i in lines.size(): text(Vector2(45, 184 + i * 27), lines[i], 13, MUTED)
-	if game.paused and game.get("pause_menu")==null:
-		draw_rect(Rect2(Vector2.ZERO, size), Color(0.01,0.02,0.04,0.62))
-		centered(h * 0.48, "PAUSA", 47)
-		centered(h * 0.48 + 40, "Options / Start / Esc per riprendere", 17, MUTED)
+	preload("res://src/broadcast_scoreboard.gd").draw(self,game,size)
+	if game.replay!=null and game.replay.active: return
+	draw_timing_result()
+	var phase: String=game.display_phase()
+	if (phase=="SERVE" and game.server==game.local_team()) or phase=="ATTACK": draw_power_bar()
+
+func draw_timing_result() -> void:
+	var result: Dictionary=game.timing_results[game.local_team()]
+	if result.is_empty() or game.clock_time>float(result.until): return
+	var scale:=clampf(minf(size.x/1920.0,size.y/1080.0),.5,2.5)
+	var bounds:=Rect2(Vector2(size.x*.5-300*scale,145*scale),Vector2(600,58)*scale)
+	panel(bounds,Color("102039"))
+	var value: String=tr(result.get("kind",""))+" · "+tr(result.get("detail",""))+" · %.1f%%"%(float(result.quality)*100)
+	var font_size:=int(26*scale)
+	font_size=int(font_size*minf(1,(bounds.size.x-32*scale)/maxf(1,font.get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size).x)))
+	var color:=RED if float(result.quality)>1 else (GREEN if float(result.quality)>=.95 else GOLD)
+	var width:=font.get_string_size(value,HORIZONTAL_ALIGNMENT_LEFT,-1,font_size).x
+	text(Vector2(bounds.get_center().x-width*.5,bounds.position.y+38*scale),value,font_size,color,false)
+
+func draw_power_bar() -> void:
+	var scale:=clampf(minf(size.x/1920.0,size.y/1080.0),.5,2.5)
+	var origin:=Vector2(size.x*.5,size.y-92*scale)
+	draw_set_transform(origin,0,Vector2.ONE*scale)
+	var serve: bool=game.display_phase()=="SERVE"
+	var power: float=game.current_charge()
+	panel(Rect2(-282,-22,564,78),Color("102039"))
+	text(Vector2(-258,2),"BATTUTA" if serve else ("PALLONETTO" if game.attack_tip else "ATTACCO"),20,GOLD)
+	text(Vector2(174,2),("%.2f%%" if game.use_player_stats else "%.0f%%")%(power*100),22,RED if power>1 else GREEN)
+	draw_rect(Rect2(-258,18,516,16),Color("43536c"))
+	draw_rect(Rect2(-258,18,416*clampf(power,0,1),16),GREEN)
+	var low: float=game.PlayerStats.green_low(game,serve) if game.use_player_stats else (.995 if serve else .97)
+	draw_rect(Rect2(-258+416*low,15,416*(1-low),22),GOLD,false,2)
+	draw_line(Vector2(158,13),Vector2(158,38),WHITE,2)
+	if power>1: draw_rect(Rect2(158,18,minf(1,(power-1)/.4)*100,16),RED)
+	draw_set_transform(Vector2.ZERO,0,Vector2.ONE)
 
 func draw_contact(cx: float, y: float) -> void:
 	var serve: bool = game.display_phase() == "SERVE"

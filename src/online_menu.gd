@@ -6,6 +6,8 @@ var body: VBoxContainer
 var info: Label
 var code: LineEdit
 var scope: OptionButton
+var team_emblem: TextureRect
+var opponent_emblem: TextureRect
 var own_team: OptionButton
 var own_kit: OptionButton
 var format: OptionButton
@@ -51,12 +53,15 @@ func _ready() -> void:
 	var cards=HBoxContainer.new(); cards.size_flags_vertical=SIZE_EXPAND_FILL; cards.add_theme_constant_override("separation",22); body.add_child(cards)
 	var own=VBoxContainer.new(); own.size_flags_horizontal=SIZE_EXPAND_FILL; cards.add_child(own)
 	host.clubs.label(own,"LA TUA SQUADRA")
-	own_team=host.clubs.picker(own,host.clubs.db.teams.map(func(t): return t.name))
+	var team_row=HBoxContainer.new(); own.add_child(team_row)
+	team_emblem=host.clubs.Branding.emblem(team_row,host.clubs.db.teams[0].id,64,45)
+	own_team=host.clubs.picker(team_row,host.clubs.db.teams.map(func(t): return t.name)); own_team.size_flags_horizontal=SIZE_EXPAND_FILL
 	own_kit=host.clubs.picker(own,["Casa","Trasferta"])
 	formation=host.clubs.button(own,"FORMAZIONE / SOSTITUZIONI",open_formation)
 	preview=load("res://src/kit_preview.gd").new(); own.add_child(preview); preview.size_flags_vertical=SIZE_EXPAND_FILL; preview.image.custom_minimum_size=Vector2(200,0); preview.image.size_flags_vertical=SIZE_EXPAND_FILL
 	var other=VBoxContainer.new(); other.size_flags_horizontal=SIZE_EXPAND_FILL; cards.add_child(other)
 	host.clubs.label(other,"AVVERSARIO")
+	opponent_emblem=host.clubs.Branding.emblem(other,"",76,56); opponent_emblem.hide()
 	opponent=Label.new(); opponent.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; opponent.size_flags_vertical=SIZE_EXPAND_FILL; other.add_child(opponent)
 	host.clubs.label(other,"Ogni giocatore vede il campo dal proprio lato.\nCamera frontale · comandi relativi alla tua squadra.")
 	var buttons=HBoxContainer.new(); body.add_child(buttons)
@@ -92,6 +97,7 @@ func choice() -> Dictionary:
 
 func changed_choice() -> void:
 	if updating: return
+	team_emblem.texture=host.clubs.Branding.logo(host.clubs.db.teams[own_team.selected].id,true)
 	preview.show_kit(host.clubs.db.teams[own_team.selected].id,"home" if own_kit.selected==0 else "away")
 	if session.active: session.choose(choice(),false)
 
@@ -116,6 +122,8 @@ func refresh() -> void:
 	own_team.disabled=locked; own_kit.disabled=locked; formation.disabled=locked
 	launch.disabled=not session.authority() or session.guest==0 or not session.ready_flags[0] or not session.ready_flags[1]
 	var remote: Dictionary=session.choices[1-session.local_side]
+	opponent_emblem.texture=host.clubs.Branding.logo(remote.get("club",""),true)
+	opponent_emblem.visible=not remote.is_empty()
 	opponent.text="In attesa dell'altro giocatore…" if remote.is_empty() else remote.name+"\n"+("Trasferta" if remote.kit=="away" else "Casa")+" · "+("PRONTO" if session.ready_flags[1-session.local_side] else "sta preparando la formazione")
 	if not remote.is_empty():
 		for p in remote.roster: opponent.text+="\n%d · %s · %s · GEN %d"%[int(p.jersey_number),{"outside_hitter":"OH","opposite":"OPP","middle_blocker":"MB","setter":"S","libero":"L"}.get(p.role,p.role),p.name,int(p.ratings.get("generale",50))]

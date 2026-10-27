@@ -27,8 +27,6 @@ static func attack_risk(power: float, tip: bool=false) -> float:
 	return clampf((power-1.0)*(4.5 if tip else 4.0),0,1)
 
 static func blockers(correct: bool, fast: bool, set_quality: float, pipe: bool) -> int:
-	if not fast and set_quality < 0.94:
-		return 3
 	if pipe:
 		return 1
 	return 2 if correct else 1

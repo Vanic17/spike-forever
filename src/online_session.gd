@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF064"
+const PROTOCOL="SF065"
 const PORT=26761
 var game
 var menu
@@ -270,10 +270,11 @@ func _process(dt: float) -> void:
 		packet_age+=dt
 		if local_side==1:
 			if packet_age>8: leave("Connessione con l'host interrotta."); return
-			State.render(self,dt)
+			if game.replay!=null and game.replay.active: packet_age=0
+			else: State.render(self,dt)
 
 func _physics_process(dt: float) -> void:
-	if not playing: return
+	if not playing or (game.replay!=null and game.replay.active): return
 	send_clock+=dt
 	if send_clock<1.0/30.0: return
 	send_clock=0
@@ -385,6 +386,7 @@ func control_command(seq: int, button: String, pressed: bool, value: Dictionary,
 	if authority() and multiplayer.get_remote_sender_id()==guest: apply_command(1,seq,button,pressed,value,held)
 
 func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictionary,held: float=-1.0) -> void:
+	if game.replay!=null and game.replay.active: return
 	if not playing or game.paused or seq<=last_sequence[side] or button not in ["action","alternate","dump"]: return
 	last_sequence[side]=seq; accept_axes(side,value)
 	game.input_team=side; game.apply_direction(inputs[side].get("direction",Vector2.ZERO),0)
@@ -416,3 +418,25 @@ func pause_request(value: bool) -> void:
 @rpc("any_peer","call_remote","reliable",0)
 func pause_command(value: bool) -> void:
 	if authority() and playing and multiplayer.get_remote_sender_id()==guest: game.paused=value
+
+@rpc("authority","call_remote","reliable",0)
+func replay_notice(kind: String,token: int,start: float) -> void:
+	if playing and local_side==1 and kind in ["serve","attack","monster"]: game.replay.queue(kind,token,start)
+
+func request_replay_skip() -> void:
+	if authority():
+		game.replay.begin_exit()
+		if guest!=0: replay_skip.rpc_id(guest)
+	elif playing: replay_skip_request.rpc_id(1)
+
+@rpc("any_peer","call_remote","reliable",0)
+func replay_skip_request() -> void:
+	if authority() and playing and multiplayer.get_remote_sender_id()==guest and game.replay.active: request_replay_skip()
+
+@rpc("authority","call_remote","reliable",0)
+func replay_skip() -> void:
+	if playing and local_side==1: game.replay.begin_exit()
+
+@rpc("authority","call_remote","reliable",0)
+func replay_finished() -> void:
+	if playing and local_side==1: game.replay.finish()

@@ -65,6 +65,14 @@ func _ready() -> void:
 	if FileAccess.file_exists(official_path):
 		var official_stream:=AudioStreamOggVorbis.load_from_file(official_path)
 		if official_stream: arena_banks["whistle_real"]=[official_stream]
+	var whistle_manifest:="res://assets/audio/referee65/manifest.json"
+	if FileAccess.file_exists(whistle_manifest):
+		var manifest: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(whistle_manifest))
+		for entry in manifest.variants:
+			var stream:=AudioStreamOggVorbis.load_from_file("res://assets/audio/referee65/"+str(entry.file))
+			var group: String="whistle_"+str(entry.group)
+			if not arena_banks.has(group): arena_banks[group]=[]
+			if stream: arena_banks[group].append(stream)
 	for i in 18:
 		var player := AudioStreamPlayer3D.new()
 		player.max_distance = 65
@@ -207,7 +215,7 @@ func _advance_channels(dt: float) -> void:
 			_finish(state.player)
 			continue
 		var tail := 3.0 if state.group in ["ambient_bed", "rhythm_long", "interlude_long", "legacy_ambience"] else 0.9
-		if state.group in ["whistle", "whistle_real"]: continue
+		if state.group in ["whistle", "whistle_real", "whistle_serve", "whistle_point"]: continue
 		if not state.tail_started and state.remaining <= tail:
 			state.tail_started = true
 			_fade(state.player, SILENCE_DB, state.remaining, true)
@@ -395,7 +403,8 @@ func point_event(home_point: bool) -> void:
 func referee_whistle(reason: String) -> void:
 	if not enabled or not match_active: return
 	var group := "whistle_real" if arena_banks.has("whistle_real") else "whistle"
-	if _play_channel(whistle, group, -3.5, 1.0):
+	if arena_banks.has("whistle_"+reason): group="whistle_"+reason
+	if _play_channel(whistle, group, random.randf_range(-7.0,-5.0), random.randf_range(.992,1.008)):
 		_note("referee"); _note("referee_"+reason)
 
 func movement(point: Vector3, speed: float, lateral: float = 0.0) -> void:

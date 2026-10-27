@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.65.0:** loghi ufficiali dei 12 club, scoreboard televisivo in alto a sinistra, logo SuperLega in alto a destra e replay brevi laterali con transizioni. Fischi variati, attacchi più tesi, muro CPU a tre limitato ai recuperi con alzata alta e terzi tocchi più vari. [Novità](docs/RELEASE_NOTES_65.md) · [Implementazione e verifiche](docs/BROADCAST_REPLAY_65.md).
+
 **Versione 0.64.0:** primo attacco distinto dalla ricezione e dai rigiocati, sei schemi aggiuntivi, continuità di primo tempo/7 e verifica delle seconde palle. [Dettagli e verifiche](docs/FIRST_ATTACK_64.md).
 
 **Versione 0.63.0:** Difesa per tutti i giocatori, radar esagonale e statistiche gameplay opzionali offline/online, con percorso originale conservato. [Dettagli e verifiche](docs/PLAYER_STATS_63.md).
@@ -12,7 +14,7 @@ Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.64.0 (protocollo SF064).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.65.0 (protocollo SF065).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

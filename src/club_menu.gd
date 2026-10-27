@@ -3,6 +3,8 @@ var game
 var host
 var db=preload("res://src/league.gd").new()
 var body: VBoxContainer
+const Branding=preload("res://src/league_branding.gd")
+var team_emblem: TextureRect
 var team_pick: OptionButton
 var player_pick: ItemList
 var fields: VBoxContainer
@@ -191,6 +193,7 @@ func editor() -> void:
 	clear("MODIFICA  /  SUPERLEGA 2026–27")
 	label(body,"Il tuo roster personale • salvato su questo PC • conservato dopo gli aggiornamenti")
 	var toolbar=HBoxContainer.new(); body.add_child(toolbar)
+	team_emblem=Branding.emblem(toolbar,db.teams[0].id,64,54)
 	team_pick=picker(toolbar,db.teams.map(func(t): return t.name)); team_pick.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	button(toolbar,"FORMAZIONE INIZIALE",edit_lineup)
 	var columns=HBoxContainer.new(); columns.size_flags_vertical=Control.SIZE_EXPAND_FILL; columns.add_theme_constant_override("separation",28); body.add_child(columns)
@@ -202,6 +205,7 @@ func editor() -> void:
 	message=Label.new(); body.add_child(message)
 	team_pick.item_selected.connect(func(_i): roster()); player_pick.item_selected.connect(edit_player); roster()
 func roster() -> void:
+	team_emblem.texture=Branding.logo(db.teams[team_pick.selected].id,true)
 	player_pick.clear()
 	for p in db.teams[team_pick.selected].roster:
 		var role: String={"setter":"S","opposite":"OPP","outside_hitter":"OH","middle_blocker":"MB","libero":"L"}.get(p.role,p.role)
@@ -297,7 +301,9 @@ func match_setup() -> void:
 		var frame=PanelContainer.new(); frame.size_flags_horizontal=Control.SIZE_EXPAND_FILL; row.add_child(frame)
 		var card=VBoxContainer.new(); card.add_theme_constant_override("separation",8); frame.add_child(card)
 		label(card,"LA TUA SQUADRA" if side==0 else "AVVERSARIA")
-		var p=picker(card,db.teams.map(func(t): return t.name)); p.select(side); picks.append(p)
+		var team_row=HBoxContainer.new(); card.add_child(team_row)
+		var emblem=Branding.emblem(team_row,db.teams[side].id,74,54)
+		var p=picker(team_row,db.teams.map(func(t): return t.name)); p.size_flags_horizontal=Control.SIZE_EXPAND_FILL; p.select(side); picks.append(p)
 		var kit_row=HBoxContainer.new(); kit_row.add_theme_constant_override("separation",14); card.add_child(kit_row)
 		label(kit_row,"DIVISA"); var kit_pick=picker(kit_row,["Casa","Trasferta"]); kit_pick.size_flags_horizontal=Control.SIZE_EXPAND_FILL; kits.append(kit_pick)
 		var team_side: int=side
@@ -310,6 +316,7 @@ func match_setup() -> void:
 		swatch.image.custom_minimum_size=Vector2(200,0); swatch.image.size_flags_vertical=Control.SIZE_EXPAND_FILL
 		var refresh=func(_index):
 			var t=db.teams[p.selected]
+			emblem.texture=Branding.logo(t.id,true)
 			swatch.show_kit(t.id,"home" if kit_pick.selected==0 else "away")
 		p.item_selected.connect(func(index): match_rosters[team_side]=[]; refresh.call(index)); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)

@@ -1,0 +1,82 @@
+[
+  {
+    "apex": 4.62210941314697,
+    "contacts": 2,
+    "depth": 6.2,
+    "kind": "spike",
+    "power": 0.612,
+    "quick_request": false,
+    "set_seconds": 1.3325,
+    "team": 0
+  },
+  {
+    "apex": 4.62210941314697,
+    "contacts": 2,
+    "depth": 6.2,
+    "kind": "spike",
+    "power": 0.612,
+    "quick_request": true,
+    "set_seconds": 1.3325,
+    "team": 0
+  },
+  {
+    "apex": 4.62189435958862,
+    "contacts": 2,
+    "depth": 8.4,
+    "kind": "spike",
+    "power": 0.612,
+    "quick_request": false,
+    "set_seconds": 1.3325,
+    "team": 0
+  },
+  {
+    "apex": 4.62189435958862,
+    "contacts": 2,
+    "depth": 8.4,
+    "kind": "spike",
+    "power": 0.612,
+    "quick_request": true,
+    "set_seconds": 1.3325,
+    "team": 0
+  },
+  {
+    "apex": 4.86164093017578,
+    "contacts": 2,
+    "depth": 6.2,
+    "kind": "spike",
+    "power": 0.624214351177216,
+    "quick_request": false,
+    "set_seconds": 1.40706589490175,
+    "team": 1
+  },
+  {
+    "apex": 4.86164093017578,
+    "contacts": 2,
+    "depth": 6.2,
+    "kind": "spike",
+    "power": 0.624214351177216,
+    "quick_request": true,
+    "set_seconds": 1.40706589490175,
+    "team": 1
+  },
+  {
+    "apex": 4.86191177368164,
+    "contacts": 2,
+    "depth": 8.4,
+    "kind": "spike",
+    "power": 0.624214351177216,
+    "quick_request": false,
+    "set_seconds": 1.40706589490175,
+    "team": 1
+  },
+  {
+    "apex": 4.86191177368164,
+    "contacts": 2,
+    "depth": 8.4,
+    "kind": "spike",
+    "power": 0.624214351177216,
+    "quick_request": true,
+    "set_seconds": 1.40706589490175,
+    "team": 1
+  }
+]
