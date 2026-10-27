@@ -98,7 +98,10 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				# coverage plan for every free front-row defender.
 				result[i].z=(1.0 if team==0 else -1.0)*3.05
 			if Tactics.role(i,game.rotations[team],team==game.server)=="L" and team==game.possession and game.phase in ["SET","CPU_SET"]:
-				result[i] = Tactics.world(team,-2.3,4.35)
+				if Tactics.first_ball(game):
+					var anchor:=Tactics.Layout.first_attack(i,game.rotations[team])
+					result[i]=Tactics.world(team,anchor.x,anchor.z)
+				else: result[i] = Tactics.world(team,-2.3,4.35)
 	# Reserve the entire setter approach, not only the final hand-contact spot.
 	# A support player already at his own destination otherwise never yielded,
 	# leaving the setter stopped against the body guard while his arms played.

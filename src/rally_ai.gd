@@ -164,6 +164,12 @@ static func opening(game, index: int, team: int) -> Vector3:
 	if role=="S":
 		if index==game.setter: return Tactics.setter_position(team)
 		return Tactics.world(team,3.52,1.0) if front else base
+	if Tactics.first_ball(game) and not (front and role.begins_with("MB")):
+		# Receive -> first side-out -> ordinary attack are different layouts.
+		# In particular L does not cross to the left in P1/P5/P4/P2, and the
+		# back-row OH keeps the diagram's preparation side until selected.
+		var anchor:=Tactics.Layout.first_attack(index,rotation)
+		return Tactics.world(team,anchor.x,anchor.z)
 	if role=="L":
 		# All six attack diagrams leave L on the left, outside the pipe lane.
 		return Tactics.world(team,-2.3,4.35)

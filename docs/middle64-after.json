@@ -1,0 +1,110 @@
+[
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 5
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 5
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 5
+  }
+]

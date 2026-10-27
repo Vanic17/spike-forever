@@ -1308,13 +1308,20 @@ func set_ball(contact_override: String = "") -> void:
 		return
 	var target := RallyAI.attack_contact(self,destination,hitter,set_origin)
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
+	var late_middle: bool=destination==1 and middle_decoy.late_recipient==hitter
+	if late_middle: hitter_action="receive"
 	if hitter_action == "receive": target.z = s*4.6
+	if late_middle:
+		# Keep the completed fake and its landing. A late central command gets
+		# a playable grounded recovery, never a restarted airborne attack.
+		target=middle_decoy.recovery_contact(self)
 	target.x += rng.randf_range(-1, 1) * (1 - q) * 0.8
 	if use_player_stats: target.z+=s*float(PlayerStats.settings().set_depth_error[stats_set_grade])
 	# Every recipient must receive at its SELECTED performance's real hand
 	# height. Using the generic spike height for pins/D/pipe sent poor-pass
 	# sets above the running animation's reachable palm.
 	target.y = players[hitter].contact_local(hitter_action).y
+	if destination==1 and hitter_action=="attack": target=middle_decoy.committed_contact(self,hitter,target)
 	target = attack_run.emergency_contact(self,hitter,target)
 	players[hitter].target = players[hitter].stance_for_contact(hitter_action, target)
 	selected = hitter if possession == 0 else nearest(0, Vector3(target.x, 0, 0.6))
@@ -1338,6 +1345,8 @@ func set_ball(contact_override: String = "") -> void:
 	if destination==1 and hitter_action=="attack":
 		var first_tempo: float=middle_decoy.release_seconds(self,hitter,players[hitter].target)
 		if first_tempo>=.12 and first_tempo<=.55: flight=first_tempo
+	if late_middle:
+		flight=maxf(flight,maxf(0,middle_decoy.finish_at-clock_time)+players[hitter].preparation_lead("receive",.38))
 	if fast_set and flight > 1.1:
 		# A rushed but unreachable quick is converted before launch, never rerouted
 		# to a random nearby player after the ball has left the setter's hands.

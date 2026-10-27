@@ -1,0 +1,20 @@
+{
+  "contacts": 17,
+  "home": true,
+  "observed": {
+    "0:attack": true,
+    "0:float": true,
+    "0:receive": true,
+    "0:set": true,
+    "1:attack": true,
+    "1:dive": true,
+    "1:power": true,
+    "1:receive": true,
+    "1:set": true
+  },
+  "pause": true,
+  "role": "host",
+  "snapshot_max": 1742,
+  "stats": true,
+  "version": "0.64.0"
+}

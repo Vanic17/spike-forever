@@ -24,6 +24,7 @@ var has_waypoint:=false
 var route_at:=-1.0
 var route_clear:=false
 var approach_goal:=Vector3.ZERO
+var late_recipient:=-1
 
 func reset() -> void:
 	index=-1
@@ -35,6 +36,7 @@ func reset() -> void:
 	prepared=false
 	has_waypoint=false; route_at=-1.0
 	route_clear=false
+	late_recipient=-1
 
 func obstacles(game) -> Array[Vector3]:
 	var result: Array[Vector3]=[]
@@ -125,6 +127,13 @@ func update(game) -> void:
 			target=Tactics.world(team,expected.x*(1 if team==0 else -1),2.35)
 		return
 	if jumped and game.phase in ["SET","CPU_SET"] and game.planned_hitter==index:
+		if late_recipient==index: return
+		var player=game.players[index]
+		if source_time>=player.clips.attack.contact_time-.025:
+			# The feint has already passed its hitting instant. Do not rewind
+			# a descending/recovering jumper into a second first-tempo takeoff.
+			late_recipient=index
+			return
 		# A changed set choice transfers ownership to the actual attack clock.
 		# Never keep a real recipient locked inside a no-contact fake.
 		jumped=false; prepared=false; real_started=true
@@ -163,7 +172,11 @@ func update(game) -> void:
 	# takeoff therefore happen BEFORE the setter touches the pass.
 	var clip=game.clips[PERFORMANCE]
 	if not prepared: source_begin=.03; prepared=true
-	target=Tactics.world(team,point.x*(1 if team==0 else -1),2.35)
+	var side:=1.0 if team==0 else -1.0
+	var root: Vector3=point-Basis(Vector3.UP,PI if team==0 else 0.0)*clip.contact_offset
+	root.y=0
+	var staging:=Vector3(root.x,0,side*maxf(2.35,root.z*side+.95))
+	target=staging.lerp(root,1.0-smoothstep(.32,1.05,game.flight_left))
 	var preparation: float=(clip.contact_time-source_begin)/1.15
 	jump_at=game.clock_time+game.flight_left+QUICK_DELAY-preparation
 
@@ -182,6 +195,8 @@ func prepare_real(game, dt: float) -> void:
 	if not real_started and (player.position.distance_to(stance)>.55 or not clear_segment(game,player.position,stance)): return
 	var fresh:=not real_started
 	real_started=true
+	if not fresh and player.clip_name=="attack" and player.animation_time>=player.clips.attack.takeoff_time:
+		remaining=minf(remaining,player.attack_clock_seconds(maxf(0,player.clips.attack.contact_time-player.animation_time)))
 	player.prepare_contact("attack",remaining)
 	if fresh:
 		player.blend_duration=.11; player.blend_left=minf(player.blend_left,.11)
@@ -199,6 +214,25 @@ func release_seconds(game, player_index: int, stance: Vector3) -> float:
 	if not preload("res://src/setter_access.gd").grounded_arrival(game,index,stance,remaining,game.Reference.run_speed()*1.10,distance): return -1.0
 	# The same source clock crosses SET -> ATTACK, with no restart at release.
 	return remaining
+
+func committed_contact(game, player_index: int, proposed: Vector3) -> Vector3:
+	if not real_started or not real_attack or index!=player_index: return proposed
+	var player=game.players[index]
+	if player.clip_name!="attack" or player.animation_time<player.clips.attack.takeoff_time: return proposed
+	# Once airborne, set to the already committed jumper's actual contact
+	# stance. Replanning a new ideal across S could reject the short clock,
+	# choose a long high-ball flight and rewind the same jump to frame zero.
+	var remaining: float=player.attack_clock_seconds(maxf(0,player.clips.attack.contact_time-player.animation_time))
+	if remaining<.025 or remaining>.55: return proposed
+	var point: Vector3=player.position+Basis(Vector3.UP,player.rotation.y)*player.contact_local("attack")
+	return point if point.distance_to(proposed)<2.0 else proposed
+
+func recovery_contact(game) -> Vector3:
+	var player=game.players[late_recipient]
+	var clip=player.clips.attack
+	var landing: Vector3=motion_origin+Basis(Vector3.UP,motion_yaw)*(clip.root_motion(clip.recovery_end+.12)-clip.root_motion(source_begin))
+	landing.z=maxf(.40,landing.z) if team==0 else minf(-.40,landing.z)
+	return landing+Basis(Vector3.UP,PI if team==0 else 0.0)*player.contact_local("receive")
 
 func holds(player: int) -> bool:
 	return index==player and jumped

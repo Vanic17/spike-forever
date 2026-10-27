@@ -1,0 +1,3227 @@
+{
+  "baseline_audit_cases": 144,
+  "baseline_failed": 5,
+  "baseline_failures": [
+    {
+      "rotation": 3,
+      "seed": 57001,
+      "team": 0
+    },
+    {
+      "rotation": 2,
+      "seed": 57002,
+      "team": 1
+    },
+    {
+      "rotation": 3,
+      "seed": 57002,
+      "team": 1
+    },
+    {
+      "rotation": 4,
+      "seed": 57002,
+      "team": 1
+    },
+    {
+      "rotation": 5,
+      "seed": 57002,
+      "team": 1
+    }
+  ],
+  "cases": [
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0107727311551571,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 60,
+      "max_step": 0.0112420283257961,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000172294676303864,
+      "hz": 60,
+      "max_step": 0.00281394179910421,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000244358602685679,
+      "hz": 60,
+      "max_step": 0.000517046777531505,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.003787, 2.515163, -2.109932)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000172294676303864,
+      "hz": 60,
+      "max_step": 0.00281394179910421,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 60,
+      "max_step": 0.00416663661599159,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.003787, 2.54406, -2.109932)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000172294676303864,
+      "hz": 60,
+      "max_step": 0.00281394179910421,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000119209289550781,
+      "hz": 60,
+      "max_step": 0.0154861696064472,
+      "max_waiting": 0.05,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.54406, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000172294676303864,
+      "hz": 60,
+      "max_step": 0.00281394179910421,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0113907717168331,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.515163, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 60,
+      "max_step": 0.0115404054522514,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.243282, 2.479898, -3.036823)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0166668426245451,
+      "max_waiting": 0.05,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.884129, 2.515163, -1.872015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000172294676303864,
+      "hz": 60,
+      "max_step": 0.00281394179910421,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 60,
+      "max_step": 0.0113907717168331,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.515163, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238600421198498,
+      "hz": 120,
+      "max_step": 0.00325901689939201,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.008293, 2.479898, 2.695384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00548973260447383,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.459368, 2.479898, 2.86658)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00328724109567702,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.038639, 2.479898, 2.690137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00402561342343688,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.239749, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.00372826401144266,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.11306, 2.479898, 2.717515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00682525243610144,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.698341, 2.479898, 2.875186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.0063706710934639,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.667946, 2.479898, 2.826258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00378205557353795,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.274368, 2.479898, 2.731659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 0,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238600421198498,
+      "hz": 120,
+      "max_step": 0.00325901689939201,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.008293, 2.479898, 2.695384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00548973260447383,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.459368, 2.479898, 2.86658)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00375449517741799,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.038639, 2.479898, 2.690137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.00579131487756968,
+      "hz": 120,
+      "max_step": 0.0188752915710211,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.239749, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.00372826401144266,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.11306, 2.479898, 2.717515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00682525243610144,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.698341, 2.479898, 2.875186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0075301923789084,
+      "hz": 120,
+      "max_step": 0.0172695480287075,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.667946, 2.479898, 2.826258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0058361035771668,
+      "hz": 120,
+      "max_step": 0.018378809094429,
+      "max_waiting": 0.00833333333333333,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.274368, 2.479898, 2.731659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 1,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238600421198498,
+      "hz": 120,
+      "max_step": 0.00325901689939201,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.008293, 2.479898, 2.695384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00548973260447383,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.459368, 2.479898, 2.86658)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00328724109567702,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.038639, 2.479898, 2.690137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00402561342343688,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.239749, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.00372826401144266,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.11306, 2.479898, 2.717515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00682525243610144,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.698341, 2.479898, 2.875186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.0063706710934639,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.667946, 2.479898, 2.826258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00378205557353795,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.274368, 2.479898, 2.731659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 2,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238600421198498,
+      "hz": 120,
+      "max_step": 0.00325901689939201,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.008293, 2.479898, 2.695384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00548973260447383,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.459368, 2.479898, 2.86658)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00328724109567702,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.038639, 2.479898, 2.690137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00402561342343688,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.239749, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.00372826401144266,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.11306, 2.479898, 2.717515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00682525243610144,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.698341, 2.479898, 2.875186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.0063706710934639,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.667946, 2.479898, 2.826258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00378205557353795,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.274368, 2.479898, 2.731659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 3,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.0069737141020596,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.554623, 2.479898, 3.020384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00716278096660972,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.753548, 2.479898, 2.54158)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00680342130362988,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.524278, 2.479898, 3.015137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00560167478397489,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.410251, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00670366361737251,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.449857, 2.479898, 3.042515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00731453206390142,
+      "max_waiting": 0.0666666666666667,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.135424, 2.479898, 3.200186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00690386258065701,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.10503, 2.479898, 3.151258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00618005776777864,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.187284, 2.479898, 3.056659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 4,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238600421198498,
+      "hz": 120,
+      "max_step": 0.00325901689939201,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.008293, 2.479898, 2.695384)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00543348537757993,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.368642, 2.479898, 2.789534)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000240274005136598,
+      "hz": 120,
+      "max_step": 0.00567022804170847,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.296552, 2.479898, 2.884156)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00548973260447383,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.459368, 2.479898, 2.86658)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00328724109567702,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.038639, 2.479898, 2.690137)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00542951328679919,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.293291, 2.479898, 2.850805)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00402561342343688,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.239749, 2.479898, 2.776647)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.00372826401144266,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.11306, 2.479898, 2.717515)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00682525243610144,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.698341, 2.479898, 2.875186)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.0063706710934639,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.667946, 2.479898, 2.826258)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00378205557353795,
+      "max_waiting": 0.0,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(0.274368, 2.479898, 2.731659)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 5,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00715085910633206,
+      "max_waiting": 0.075,
+      "phase": "ATTACK",
+      "rotation": 5,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 5,
+        "seconds": 1.185,
+        "start": "(0.5, 0.0, 2.2)",
+        "target": "(-0.649842, 2.479898, 2.773633)"
+      },
+      "team": 0
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.00000012287812012346,
+      "hz": 120,
+      "max_step": 0.00400138692930341,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.299594, 2.495761, -1.642898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000023283064365387,
+      "hz": 120,
+      "max_step": 0.00141874654218555,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000209547579288483,
+      "hz": 120,
+      "max_step": 0.000246076728217304,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.003787, 2.515163, -2.109932)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.000836442050058395,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.119963, 2.515163, -2.137912)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00427791057154536,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.316513, 2.54406, -1.829388)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.0049318540841341,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.524748, 2.479898, -2.347783)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000223517417907715,
+      "hz": 120,
+      "max_step": 0.00177386810537428,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.056528, 2.528788, -2.179015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00355449761264026,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.338502, 2.609032, -1.730054)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00145215552765876,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.198766, 2.515163, -2.111012)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000245756240246919,
+      "hz": 120,
+      "max_step": 0.00169576390180737,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.291226, 2.528788, -2.100648)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00131172582041472,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.12694, 2.495761, -2.209162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00102914031594992,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 0,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.127615, 2.479898, -2.190258)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0850000232458115,
+      "hz": 120,
+      "max_step": 0.0231243278831244,
+      "max_waiting": 0.0166666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.299594, 2.495761, -2.292898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000023283064365387,
+      "hz": 120,
+      "max_step": 0.00141874654218555,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00210302066989243,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.003787, 2.54406, -2.109932)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0849998593330383,
+      "hz": 120,
+      "max_step": 0.0352134816348553,
+      "max_waiting": 0.05,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.119963, 2.515163, -2.137912)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00427791057154536,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.316513, 2.54406, -1.829388)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00544603588059545,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.524748, 2.581167, -2.347783)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0850000530481339,
+      "hz": 120,
+      "max_step": 0.0203164909034967,
+      "max_waiting": 0.05,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.056528, 2.495761, -2.179015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0849998146295547,
+      "hz": 120,
+      "max_step": 0.0207241140305996,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.663502, 2.641844, -2.292971)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00145215552765876,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.198766, 2.515163, -2.111012)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000245756240246919,
+      "hz": 120,
+      "max_step": 0.00169576390180737,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.291226, 2.528788, -2.100648)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00102621002588421,
+      "max_waiting": 0.116666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.12694, 2.609032, -2.209162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00102914031594992,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 1,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.127615, 2.479898, -2.190258)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00564289791509509,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.299594, 2.528788, -1.642898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000023283064365387,
+      "hz": 120,
+      "max_step": 0.00141874654218555,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00781664252281189,
+      "max_waiting": 0.0583333333333333,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.54406, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000140577270713038,
+      "hz": 120,
+      "max_step": 0.00509236240759492,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.205037, 2.515163, -1.574996)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00333204516209662,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.316513, 2.515163, -1.829388)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00544603588059545,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.524748, 2.581167, -2.347783)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00473106047138572,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.056528, 2.495761, -1.529015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00517201470211148,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.338502, 2.641844, -1.730054)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00517714628949761,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.126234, 2.515163, -1.548096)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.00000011944189282076,
+      "hz": 120,
+      "max_step": 0.00517249619588256,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.033774, 2.495761, -1.537731)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00655932212248445,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.12694, 2.528788, -1.559162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00102914031594992,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 2,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.127615, 2.479898, -2.190258)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00564289791509509,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.299594, 2.528788, -1.642898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000023283064365387,
+      "hz": 120,
+      "max_step": 0.00141874654218555,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00574947753921151,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.515163, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.00000012287812012346,
+      "hz": 120,
+      "max_step": 0.00718509079888463,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.205037, 2.54406, -1.574996)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00333204516209662,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.316513, 2.515163, -1.829388)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.0049318540841341,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.524748, 2.479898, -2.347783)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00473106047138572,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.056528, 2.495761, -1.529015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00355449761264026,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.338502, 2.609032, -1.730054)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00728333368897438,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.126234, 2.54406, -1.548096)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.00000011944189282076,
+      "hz": 120,
+      "max_step": 0.00517249619588256,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.033774, 2.495761, -1.537731)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000298023223876953,
+      "hz": 120,
+      "max_step": 0.00655932212248445,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.12694, 2.528788, -1.559162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00102914031594992,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 3,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.127615, 2.479898, -2.190258)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000245756240246919,
+      "hz": 120,
+      "max_step": 0.00717173749580979,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.653034, 2.495761, -2.192898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000149011611938477,
+      "hz": 120,
+      "max_step": 0.00581823335960507,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.243282, 2.479898, -3.036823)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00841253995895386,
+      "max_waiting": 0.0583333333333333,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.884129, 2.515163, -1.872015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00904732570052147,
+      "max_waiting": 0.0416666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.767953, 2.54406, -1.899996)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000238883785641519,
+      "hz": 120,
+      "max_step": 0.0066570146009326,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.233487, 2.515163, -2.782017)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000337174782316652,
+      "hz": 120,
+      "max_step": 0.00592874083667994,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.199748, 2.581167, -2.9107)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00660436879843473,
+      "max_waiting": 0.075,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.493472, 2.528788, -2.481643)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000337174782316652,
+      "hz": 120,
+      "max_step": 0.00705569423735142,
+      "max_waiting": 0.075,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.614126, 2.609032, -2.280054)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00813300255686045,
+      "max_waiting": 0.0583333333333333,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.689151, 2.54406, -2.523096)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00782866589725018,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.583774, 2.495761, -2.490359)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00879417173564434,
+      "max_waiting": 0.0416666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.825688, 2.495761, -2.109162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000238418579101563,
+      "hz": 120,
+      "max_step": 0.00690753431990743,
+      "max_waiting": 0.075,
+      "phase": "CPU_ATTACK",
+      "rotation": 4,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.365532, 2.581167, -3.078174)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.00000012287812012346,
+      "hz": 120,
+      "max_step": 0.00400138692930341,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57000,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10754357125759,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.299594, 2.495761, -1.642898)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000023283064365387,
+      "hz": 120,
+      "max_step": 0.00141874654218555,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57001,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.23367664959431,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.005365, 2.479898, -2.148906)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00574947753921151,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57002,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.11199772801399,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.321213, 2.515163, -1.547015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000140577270713038,
+      "hz": 120,
+      "max_step": 0.00509236240759492,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57003,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.09865690317154,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.205037, 2.515163, -1.574996)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00427791057154536,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57004,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.10759906616211,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.316513, 2.54406, -1.829388)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.0049318540841341,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57005,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.2068340941906,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.524748, 2.479898, -2.347783)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000260770320892334,
+      "hz": 120,
+      "max_step": 0.00667830230668187,
+      "max_waiting": 0.075,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57006,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.12693425264359,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.056528, 2.528788, -1.529015)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00334754376672208,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57007,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.1348677977562,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.338502, 2.495761, -1.730054)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0,
+      "hz": 120,
+      "max_step": 0.00517714628949761,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57008,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.07693009819984,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.126234, 2.515163, -1.548096)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000127315573195119,
+      "hz": 120,
+      "max_step": 0.00729268835857511,
+      "max_waiting": 0.0666666666666667,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57009,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.0669278993845,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(0.033774, 2.528788, -1.537731)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.000000120137002568299,
+      "hz": 120,
+      "max_step": 0.00458950130268931,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57010,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.08954187180996,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.12694, 2.495761, -1.559162)"
+      },
+      "team": 1
+    },
+    {
+      "actual_actor": 11,
+      "contact": true,
+      "gap": 0.0000000596046447753906,
+      "hz": 120,
+      "max_step": 0.00102914031594992,
+      "max_waiting": 0.0,
+      "phase": "CPU_ATTACK",
+      "rotation": 5,
+      "seed": 57011,
+      "source": {
+        "action": "set",
+        "actor": 11,
+        "seconds": 1.19169551875591,
+        "start": "(-0.5, 0.0, -2.2)",
+        "target": "(-0.127615, 2.479898, -2.190258)"
+      },
+      "team": 1
+    }
+  ],
+  "failed": 0,
+  "scenarios": 168
+}

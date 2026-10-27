@@ -19,6 +19,19 @@ const DEFENSE := [
 	[[-3.40,.68],[-2.85,4.65],[2.85,4.65],[0.0,5.35],[0.0,.68],[3.40,.68]],
 	[[-3.40,.68],[0.0,.68],[2.85,4.65],[0.0,5.35],[-2.85,4.65],[3.40,.68]]
 ]
+## Separate first side-out preparation, from the six additional user diagrams.
+## These are approach/support anchors, not forced hand-contact coordinates.
+const FIRST_ATTACK := [
+	[[4.0,2.45],[0.0,2.45],[-4.0,2.45],[-1.95,4.25],[1.55,4.25],[1.55,.65]],
+	[[1.85,4.15],[0.0,2.45],[4.0,2.45],[-4.0,2.45],[-2.0,4.25],[1.85,.65]],
+	[[-1.85,4.20],[1.55,4.20],[4.0,2.45],[-4.0,2.45],[0.0,2.45],[1.55,.65]],
+	[[-1.85,4.20],[1.45,4.20],[4.0,4.30],[-4.0,2.45],[0.0,2.45],[1.45,.65]],
+	[[-4.0,2.45],[-2.0,4.20],[4.0,4.05],[1.45,4.25],[-.35,2.45],[1.45,.65]],
+	[[-4.0,2.45],[-.70,2.45],[4.0,4.15],[-1.85,4.25],[.85,4.25],[1.15,.65]]
+]
+
+static func first_attack(index: int, rotation: int) -> Vector3:
+	return point(FIRST_ATTACK,index,rotation)
 
 static func point(table: Array, index: int, rotation: int) -> Vector3:
 	var p: Array=table[posmod(rotation,6)][index%6]

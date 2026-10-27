@@ -1,0 +1,294 @@
+{
+  "anchors": [
+    {
+      "anchor": "(4.0, 0.0, 2.45)",
+      "role": "OH1",
+      "rotation": "P1",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OPP",
+      "rotation": "P1",
+      "team": 0
+    },
+    {
+      "anchor": "(-1.95, 0.0, 4.25)",
+      "role": "OH2",
+      "rotation": "P1",
+      "team": 0
+    },
+    {
+      "anchor": "(1.55, 0.0, 4.25)",
+      "role": "L",
+      "rotation": "P1",
+      "team": 0
+    },
+    {
+      "anchor": "(1.85, 0.0, 4.15)",
+      "role": "OH1",
+      "rotation": "P6",
+      "team": 0
+    },
+    {
+      "anchor": "(4.0, 0.0, 2.45)",
+      "role": "OPP",
+      "rotation": "P6",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OH2",
+      "rotation": "P6",
+      "team": 0
+    },
+    {
+      "anchor": "(-2.0, 0.0, 4.25)",
+      "role": "L",
+      "rotation": "P6",
+      "team": 0
+    },
+    {
+      "anchor": "(-1.85, 0.0, 4.2)",
+      "role": "OH1",
+      "rotation": "P5",
+      "team": 0
+    },
+    {
+      "anchor": "(1.55, 0.0, 4.2)",
+      "role": "L",
+      "rotation": "P5",
+      "team": 0
+    },
+    {
+      "anchor": "(4.0, 0.0, 2.45)",
+      "role": "OPP",
+      "rotation": "P5",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OH2",
+      "rotation": "P5",
+      "team": 0
+    },
+    {
+      "anchor": "(-1.85, 0.0, 4.2)",
+      "role": "OH1",
+      "rotation": "P4",
+      "team": 0
+    },
+    {
+      "anchor": "(1.45, 0.0, 4.2)",
+      "role": "L",
+      "rotation": "P4",
+      "team": 0
+    },
+    {
+      "anchor": "(4.0, 0.0, 4.3)",
+      "role": "OPP",
+      "rotation": "P4",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OH2",
+      "rotation": "P4",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OH1",
+      "rotation": "P3",
+      "team": 0
+    },
+    {
+      "anchor": "(-2.0, 0.0, 4.2)",
+      "role": "L",
+      "rotation": "P3",
+      "team": 0
+    },
+    {
+      "anchor": "(4.0, 0.0, 4.05)",
+      "role": "OPP",
+      "rotation": "P3",
+      "team": 0
+    },
+    {
+      "anchor": "(1.45, 0.0, 4.25)",
+      "role": "OH2",
+      "rotation": "P3",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, 2.45)",
+      "role": "OH1",
+      "rotation": "P2",
+      "team": 0
+    },
+    {
+      "anchor": "(4.0, 0.0, 4.15)",
+      "role": "OPP",
+      "rotation": "P2",
+      "team": 0
+    },
+    {
+      "anchor": "(-1.85, 0.0, 4.25)",
+      "role": "OH2",
+      "rotation": "P2",
+      "team": 0
+    },
+    {
+      "anchor": "(0.85, 0.0, 4.25)",
+      "role": "L",
+      "rotation": "P2",
+      "team": 0
+    },
+    {
+      "anchor": "(-4.0, 0.0, -2.45)",
+      "role": "OH1",
+      "rotation": "P1",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OPP",
+      "rotation": "P1",
+      "team": 1
+    },
+    {
+      "anchor": "(1.95, 0.0, -4.25)",
+      "role": "OH2",
+      "rotation": "P1",
+      "team": 1
+    },
+    {
+      "anchor": "(-1.55, 0.0, -4.25)",
+      "role": "L",
+      "rotation": "P1",
+      "team": 1
+    },
+    {
+      "anchor": "(-1.85, 0.0, -4.15)",
+      "role": "OH1",
+      "rotation": "P6",
+      "team": 1
+    },
+    {
+      "anchor": "(-4.0, 0.0, -2.45)",
+      "role": "OPP",
+      "rotation": "P6",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OH2",
+      "rotation": "P6",
+      "team": 1
+    },
+    {
+      "anchor": "(2.0, 0.0, -4.25)",
+      "role": "L",
+      "rotation": "P6",
+      "team": 1
+    },
+    {
+      "anchor": "(1.85, 0.0, -4.2)",
+      "role": "OH1",
+      "rotation": "P5",
+      "team": 1
+    },
+    {
+      "anchor": "(-1.55, 0.0, -4.2)",
+      "role": "L",
+      "rotation": "P5",
+      "team": 1
+    },
+    {
+      "anchor": "(-4.0, 0.0, -2.45)",
+      "role": "OPP",
+      "rotation": "P5",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OH2",
+      "rotation": "P5",
+      "team": 1
+    },
+    {
+      "anchor": "(1.85, 0.0, -4.2)",
+      "role": "OH1",
+      "rotation": "P4",
+      "team": 1
+    },
+    {
+      "anchor": "(-1.45, 0.0, -4.2)",
+      "role": "L",
+      "rotation": "P4",
+      "team": 1
+    },
+    {
+      "anchor": "(-4.0, 0.0, -4.3)",
+      "role": "OPP",
+      "rotation": "P4",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OH2",
+      "rotation": "P4",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OH1",
+      "rotation": "P3",
+      "team": 1
+    },
+    {
+      "anchor": "(2.0, 0.0, -4.2)",
+      "role": "L",
+      "rotation": "P3",
+      "team": 1
+    },
+    {
+      "anchor": "(-4.0, 0.0, -4.05)",
+      "role": "OPP",
+      "rotation": "P3",
+      "team": 1
+    },
+    {
+      "anchor": "(-1.45, 0.0, -4.25)",
+      "role": "OH2",
+      "rotation": "P3",
+      "team": 1
+    },
+    {
+      "anchor": "(4.0, 0.0, -2.45)",
+      "role": "OH1",
+      "rotation": "P2",
+      "team": 1
+    },
+    {
+      "anchor": "(-4.0, 0.0, -4.15)",
+      "role": "OPP",
+      "rotation": "P2",
+      "team": 1
+    },
+    {
+      "anchor": "(1.85, 0.0, -4.25)",
+      "role": "OH2",
+      "rotation": "P2",
+      "team": 1
+    },
+    {
+      "anchor": "(-0.85, 0.0, -4.25)",
+      "role": "L",
+      "rotation": "P2",
+      "team": 1
+    }
+  ],
+  "later_attack_unchanged": true,
+  "receiving_defense_unchanged": true
+}

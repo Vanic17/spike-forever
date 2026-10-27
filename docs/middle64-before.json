@@ -1,0 +1,170 @@
+[
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [],
+    "rotation": 0
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [
+      {
+        "after": 0.0112789934828738,
+        "before": 0.709342117954013,
+        "jumped": false,
+        "left": 0.453902992050053,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 2.24999999999999
+      }
+    ],
+    "rotation": 1
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [
+      {
+        "after": 0.0149737660541814,
+        "before": 0.709542590261591,
+        "jumped": false,
+        "left": 0.449797689193045,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 2.24999999999999
+      }
+    ],
+    "rotation": 2
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [
+      {
+        "after": 0.0379548169195602,
+        "before": 0.308445449808179,
+        "jumped": false,
+        "left": 0.424263188231513,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 1.90833333333333
+      }
+    ],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [
+      {
+        "after": 0.0136228575317177,
+        "before": 0.644457937515462,
+        "jumped": false,
+        "left": 0.451298698662449,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 2.17499999999999
+      }
+    ],
+    "rotation": 3
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [
+      {
+        "after": 0.0140684701789447,
+        "before": 0.709342687777657,
+        "jumped": false,
+        "left": 0.450803573498863,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 2.24999999999999
+      }
+    ],
+    "rotation": 4
+  },
+  {
+    "contacts": 3,
+    "delay": 0.0,
+    "rewinds": [],
+    "rotation": 5
+  },
+  {
+    "contacts": 3,
+    "delay": 0.35,
+    "rewinds": [],
+    "rotation": 5
+  },
+  {
+    "contacts": 3,
+    "delay": 0.65,
+    "rewinds": [
+      {
+        "after": 0.00820425591343071,
+        "before": 0.702771151040521,
+        "jumped": false,
+        "left": 0.457319367127212,
+        "phase": "ATTACK",
+        "real": true,
+        "time": 2.24999999999999
+      }
+    ],
+    "rotation": 5
+  }
+]

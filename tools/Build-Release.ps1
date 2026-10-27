@@ -55,6 +55,11 @@ $files+=@('docs/RELEASE_NOTES_60.md','tools/Test-Tutorial60.gd','tools/Test-Tuto
 $files+=@('docs/RELEASE_NOTES_61.md','tools/Test-Arena61.gd','tools/Capture-Arena61.gd','docs/arena61-bench.png','docs/arena61-referee.png')
 $files+=@('docs/RELEASE_NOTES_62.md','docs/ROTATIONS_62.md','docs/WHISTLE_62.md','tools/Test-Rotations62.gd','tools/Test-Transitions62.gd','tools/Test-MiddleReady62.gd','tools/Capture-Rotations62.gd','docs/rotations62-receive.png','docs/middle-ready62-report.json')
 $files+=@('docs/RELEASE_NOTES_63.md','docs/PLAYER_STATS_63.md','docs/defense63-ratings.json','tools/Build-Defense63.py')
+$files+=@('docs/RELEASE_NOTES_64.md','docs/FIRST_ATTACK_64.md','docs/baseline-v63/rotation_layout.gd','docs/baseline-v63/rally_ai.gd')
+foreach($pattern64 in @('first-attack64-*','middle64-*','second-touch64-*','online64-*')){
+ foreach($report64 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern64){$files+='docs/'+$report64.Name}
+}
+foreach($tool64 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*64.gd'){$files+='tools/'+$tool64.Name}
 foreach($report63 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'stats63-*'){$files+='docs/'+$report63.Name}
 foreach($report63 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'online-*63-*.json'){$files+='docs/'+$report63.Name}
 foreach($tool63 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*63.gd'){$files+='tools/'+$tool63.Name}
