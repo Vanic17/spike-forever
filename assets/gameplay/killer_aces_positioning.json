@@ -12,7 +12,7 @@
   "middle_offset_far": 2.0,
   "back_wait_depth": 6.0,
   "back_commit_depth": 4.0,
-  "pipe_width": -1.6,
+  "pipe_width": 0.0,
   "d_width": 4.48,
   "cover_front_depth": 2.0,
   "cover_back_depth": 4.26,
@@ -23,6 +23,7 @@
   "defensive_middle_offset": 0.46,
   "court_depth": 9.01,
   "provenance": {
+    "pipe_width": "User posizioni.7z, P1-P6 attack diagrams: centre pipe lane; patch 62",
     "setter_target": "reference-profile.positions.locActions[2]",
     "wing_opening": "player.cs:2312-2331",
     "middle_opening": "player.cs:2334-2409, excluding modeGender==1 slide",

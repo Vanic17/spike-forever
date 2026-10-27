@@ -73,8 +73,8 @@ func run() -> void:
 						var setter:=team*6+5
 						var oh:=Tactics.attacker(team,rotation,0,setter,first_ball)
 						var opp:=Tactics.attacker(team,rotation,2,setter,first_ball)
-						assert(Model.front(oh,rotation) and (Model.ROLES[oh%6]=="OPP" if first_ball and rotation==0 else Model.ROLES[oh%6].begins_with("OH")))
-						assert(Model.ROLES[opp%6]==("OH1" if first_ball and rotation==0 else "OPP"))
+						assert(Model.front(oh,rotation) and (Model.ROLES[oh%6]=="OPP" if rotation==0 else Model.ROLES[oh%6].begins_with("OH")))
+						assert(Model.ROLES[opp%6]==("OH1" if rotation==0 else "OPP"))
 						checks+=3
 				# Receiving feet are checked; serving fronts are deliberately free.
 				var bad_index: int=legal.zones[4]

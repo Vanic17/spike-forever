@@ -60,6 +60,11 @@ func _ready() -> void:
 				if stream: banks[action].append(stream)
 	_load_manifest(ARENA_MANIFEST, "res://assets/audio/arena/")
 	_load_manifest(LONG_MANIFEST, "res://assets/audio/arena39/")
+	# Exact replacement supplied by the user; never shuffle older whistles in.
+	var official_path:="res://assets/audio/referee62.ogg"
+	if FileAccess.file_exists(official_path):
+		var official_stream:=AudioStreamOggVorbis.load_from_file(official_path)
+		if official_stream: arena_banks["whistle_real"]=[official_stream]
 	for i in 18:
 		var player := AudioStreamPlayer3D.new()
 		player.max_distance = 65
@@ -390,7 +395,7 @@ func point_event(home_point: bool) -> void:
 func referee_whistle(reason: String) -> void:
 	if not enabled or not match_active: return
 	var group := "whistle_real" if arena_banks.has("whistle_real") else "whistle"
-	if _play_channel(whistle, group, -3.5, random.randf_range(.99, 1.01)):
+	if _play_channel(whistle, group, -3.5, 1.0):
 		_note("referee"); _note("referee_"+reason)
 
 func movement(point: Vector3, speed: float, lateral: float = 0.0) -> void:

@@ -1,0 +1,137 @@
+{
+  "cases": [
+    {
+      "label": "P1",
+      "legal": true,
+      "rotation": 0,
+      "team": 0,
+      "wall": [
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "label": "P6",
+      "legal": true,
+      "rotation": 1,
+      "team": 0,
+      "wall": [
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "label": "P5",
+      "legal": true,
+      "rotation": 2,
+      "team": 0,
+      "wall": [
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "label": "P4",
+      "legal": true,
+      "rotation": 3,
+      "team": 0,
+      "wall": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "P3",
+      "legal": true,
+      "rotation": 4,
+      "team": 0,
+      "wall": [
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "label": "P2",
+      "legal": true,
+      "rotation": 5,
+      "team": 0,
+      "wall": [
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "label": "P1",
+      "legal": true,
+      "rotation": 0,
+      "team": 1,
+      "wall": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "label": "P6",
+      "legal": true,
+      "rotation": 1,
+      "team": 1,
+      "wall": [
+        8,
+        7,
+        9
+      ]
+    },
+    {
+      "label": "P5",
+      "legal": true,
+      "rotation": 2,
+      "team": 1,
+      "wall": [
+        8,
+        10,
+        9
+      ]
+    },
+    {
+      "label": "P4",
+      "legal": true,
+      "rotation": 3,
+      "team": 1,
+      "wall": [
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "label": "P3",
+      "legal": true,
+      "rotation": 4,
+      "team": 1,
+      "wall": [
+        11,
+        10,
+        6
+      ]
+    },
+    {
+      "label": "P2",
+      "legal": true,
+      "rotation": 5,
+      "team": 1,
+      "wall": [
+        11,
+        7,
+        6
+      ]
+    }
+  ],
+  "player_checks": 72
+}

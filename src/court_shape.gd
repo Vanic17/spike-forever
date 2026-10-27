@@ -13,6 +13,7 @@ var recovery_bypass: Dictionary = {}
 var pin_routes: Dictionary={}
 var pin_team:=-1
 var middle_sides: Dictionary={}
+var pipe_exits: Dictionary={}
 
 func reset() -> void:
 	cue = ""
@@ -24,6 +25,7 @@ func reset() -> void:
 	pin_routes.clear()
 	pin_team=-1
 	middle_sides.clear()
+	pipe_exits.clear()
 
 func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers: Array) -> Array[Vector3]:
 	var result: Array[Vector3] = nominal.duplicate()
@@ -96,7 +98,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				# coverage plan for every free front-row defender.
 				result[i].z=(1.0 if team==0 else -1.0)*3.05
 			if Tactics.role(i,game.rotations[team],team==game.server)=="L" and team==game.possession and game.phase in ["SET","CPU_SET"]:
-				result[i] = Tactics.world(team,-2.6,6.25)
+				result[i] = Tactics.world(team,-2.3,4.35)
 	# Reserve the entire setter approach, not only the final hand-contact spot.
 	# A support player already at his own destination otherwise never yielded,
 	# leaving the setter stopped against the body guard while his arms played.
@@ -172,7 +174,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 			if game.planned_direction==1:
 				var side:=1.0 if game.possession==0 else -1.0
 				var staging:=Vector3(stance.x,0,side*maxf(2.35,stance.z*side+.95))
-				result[runner]=staging.lerp(stance,1.0-smoothstep(.12,.85,game.flight_left))
+				result[runner]=staging.lerp(stance,1.0-smoothstep(.32,1.05,game.flight_left))
 			if preload("res://src/attack_run.gd").is_pin(game,runner,game.planned_direction):
 				# Keep the high-ball runway open until the set is released.
 				# Closing to 22cm before release erased the entire visible run-up.
@@ -491,6 +493,11 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 		var wing:=Tactics.wing_for(game,i)
 		if is_zero_approx(wing): continue
 		var start: Vector3=game.players[i].position
+		# P6's O opens on the net side of S before stepping off for his
+		# approach. A diagonal shortcut wedges him between S and C1.
+		if game.rotations[team]==1 and Tactics.ROLES[i%6]=="OPP" and start.x*side<2.40 and game.phase in ["RECEIVE","CPU_RECEIVE"]:
+			result[i]=Tactics.world(team,2.75,.45)
+			continue
 		if not pin_routes.has(i) and start.x*side*wing< -0.6:
 			# Front-row specialists change wings behind the first-tempo lane,
 			# in FRONT of the receivers. The old 6m detour sent R4's OH2

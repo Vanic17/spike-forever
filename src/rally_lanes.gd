@@ -4,10 +4,10 @@ extends RefCounted
 const Rotation=preload("res://src/rotation_model.gd")
 var mirrors: Array[bool]=[false,false]
 var rows: Dictionary={}
-func reset(rotations: Array, serving_team: int) -> void:
+func reset(rotations: Array, _serving_team: int) -> void:
 	rows.clear()
 	for team in 2:
-		mirrors[team]=posmod(rotations[team],6)==0 and team!=serving_team
+		mirrors[team]=posmod(rotations[team],6)==0
 		var middle:=-1
 		var pins: Array[int]=[]
 		for index in range(team*6,team*6+6):

@@ -355,7 +355,7 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 	label(column,"RETE — prima linea · bande e opposti sono intercambiabili")
 	label(column,"Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita")
 	label(column,"ROTAZIONE INIZIALE")
-	var rotation_pick=picker(column,["R1","R2","R3","R4","R5","R6"]); rotation_pick.select(match_rotations[side])
+	var rotation_pick=picker(column,["P1 · S: 1","P6 · S: 6","P5 · S: 5","P4 · S: 4","P3 · S: 3","P2 · S: 2"]); rotation_pick.select(match_rotations[side])
 	var court=PanelContainer.new(); column.add_child(court)
 	var surface=StyleBoxFlat.new(); surface.bg_color=Color("174451"); surface.border_color=Color("d5e7e7"); surface.set_border_width_all(2)
 	for edge in ["left","right","top","bottom"]: surface.set("content_margin_"+edge,12)

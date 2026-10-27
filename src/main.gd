@@ -757,6 +757,10 @@ func choose_receiver(team: int, point: Vector3, serve_receive: bool = false) -> 
 		var cost: float = players[i].position.distance_to(stance)
 		if player_recovery_seconds(i) > maxf(0.05, flight_left - 0.2): cost += 50.0
 		if serve_receive:
+			# Opposite stays out of reception, except the short Z4 ball in P1.
+			if r=="OPP":
+				var local: Vector3=point*(1.0 if team==0 else -1.0)
+				if Tactics.wing_for(self,i)!=-1.0 or local.x> -2.5 or local.z>3.3: continue
 			if r == "S": cost += 30.0
 			elif r.begins_with("MB"): cost += 6.0
 			elif r == "OPP" and not Tactics.front(i,rotations[team]): cost += 10.0
@@ -2216,13 +2220,20 @@ func move_players(dt: float) -> void:
 			facing = lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),running_weight)
 			if clock_time < p.intent.react_at: facing = p.rotation.y
 		if attack_run.landing(i,clock_time) and i!=action_actor: facing=PI if team==0 else 0.0
+		# A real first-tempo jumper prepares while S is still the action actor.
+		# Turning back towards S's ball during takeoff invalidates the fixed
+		# attack stance, even though the source arms are already in the air.
+		if i==middle_decoy.index and middle_decoy.real_attack and phase in ["SET","CPU_SET"]:
+			facing=PI if team==0 else 0.0
 		var turn := wrapf(facing - p.rotation.y, -PI, PI)
 		var turn_speed: float = (15.0 if action=="dive" else 7.0) if urgent else 3.1 + p.intent.individuality * 0.8
 		p.rotation.y += clampf(turn * (8.0 if urgent else 5.0 + p.intent.individuality * 2.0), -turn_speed, turn_speed) * dt
 		p.look_target = Vector3(0, 1.7, side * 3.3) if phase == "POINT" else ball_pos
 		p.ready_stance = (team == possession and phase in ["RECEIVE", "CPU_RECEIVE"] and (zone >= 3 or i == receiver)) or (team != possession and phase in ["ATTACK", "CPU_ATTACK"])
 		p.block_ready_stance = team != possession and zone < 3 and absf(p.target.z)<2.0 and phase in ["RECEIVE", "CPU_RECEIVE", "SET", "CPU_SET", "ATTACK", "CPU_ATTACK"]
-		if phase == "SERVE": p.ready_stance = team != server and zone >= 3
+		if phase == "SERVE":
+			var receiving_role:=Tactics.role(i,rotations[team],team==server)
+			p.ready_stance=team!=server and (receiving_role.begins_with("OH") or receiving_role=="L")
 		# Wings waiting to approach and setters waiting to penetrate stand tall;
 		# only passers and floor defenders stay in the low defensive posture.
 		p.relaxed_stance = not p.ready_stance and i != action_actor and not i in blockers

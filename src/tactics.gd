@@ -3,6 +3,7 @@ extends RefCounted
 const Reference = preload("res://src/reference_style.gd")
 const Rotation=preload("res://src/rotation_model.gd")
 const ServeLayout=preload("res://src/serve_layout.gd")
+const Layout=preload("res://src/rotation_layout.gd")
 const ROLES=Rotation.ROLES
 const INITIAL_SLOTS=Rotation.INITIAL_SLOTS
 const ZONES=Rotation.ZONES
@@ -46,15 +47,8 @@ static func setter_position(team: int) -> Vector3:
 	return world(team, float(p[0]), float(p[2]))
 
 static func home(index: int, team: int, rotation: int, serving: bool, attack: bool) -> Vector3:
-	var r := role(index, rotation, serving)
-	var is_front := front(index, rotation)
-	var base_index := 0
-	if r == "L": base_index = 1
-	elif r.begins_with("OH"): base_index = 3 if is_front else 2
-	elif r.begins_with("MB"): base_index = 4 if is_front else 1
-	elif r in ["OPP", "S"]: base_index = 5 if is_front else 0
-	if r == "S" and attack: return setter_position(team)
-	var p := Reference.base(base_index)
+	if role(index,rotation,serving)=="S" and attack: return setter_position(team)
+	var p:=Layout.defense(index,rotation)
 	return world(team,p.x,p.z)
 
 static func first_ball(game) -> bool:
@@ -88,15 +82,14 @@ static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
 		if distance<cost: best=i; cost=distance
 	return best
 
-static func attack_wing(index: int, rotation: int, service_reception: bool = false) -> float:
+static func attack_wing(index: int, rotation: int, _service_reception: bool = false) -> float:
 	if not front(index, rotation): return 0.0
 	var r: String = ROLES[index % 6]
 	if not r.begins_with("OH") and r != "OPP": return 0.0
 	var wing := -1.0 if r.begins_with("OH") else 1.0
-	# R1 receives with OH1 on the right and OPP already on the left.
-	# Play the first ball on these pins; do not cross both behind the passer
-	# before the first set. Identities and rotation slots remain unchanged.
-	if service_reception and posmod(rotation,6)==0: wing=-wing
+	# The user's P1 diagrams keep O on Z4 and B1 on Z2 in attack AND defense.
+	# Preserve these pins for both serving teams and through the whole rally.
+	if posmod(rotation,6)==0: wing=-wing
 	return wing
 
 static func attacker(team: int, rotation: int, direction: int, exclude: int, service_reception: bool = false) -> int:

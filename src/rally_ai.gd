@@ -70,11 +70,11 @@ static func target(game, index: int, team: int) -> Vector3:
 	var attacking: bool = game.phase in ["ATTACK","CPU_ATTACK"]
 	if own and receiving:
 		if game.incoming_kind == "serve":
-			if _role(game,index,team)=="S": return Tactics.setter_position(team)
+			if _role(game,index,team)=="S": return receiving_setter_base(game,index,team)
 			# The receiver has a separate contact assignment in main.gd. All
 			# other passers retain the actual six-rotation reception formation.
 			return Tactics.serve_position(index,team,game.rotations[team],false)
-		if _role(game,index,team)=="S": return Tactics.setter_position(team)
+		if _role(game,index,team)=="S": return receiving_setter_base(game,index,team)
 		return defensive_base(game,index,team)
 	if own and setting: return opening(game,index,team)
 	if own and attacking:
@@ -88,6 +88,16 @@ static func target(game, index: int, team: int) -> Vector3:
 
 static func _role(game, index: int, team: int) -> String:
 	return Tactics.role(index,game.rotations[team],team==game.server)
+
+static func receiving_setter_base(game, index: int, team: int) -> Vector3:
+	# Read the usual zone-3 first pass, using the upcoming setting pose.
+	# The old x=1.5/depth=.5 waiting point cut across O's P6 release lane,
+	# although the actual pass was aimed at x=0/depth=1.5.
+	var yaw: float=-PI/2 if team==0 else PI/2
+	var hand: Vector3=Basis(Vector3.UP,yaw)*game.players[index].contact_local("set")
+	var result:=Tactics.world(team,0,1.5)-hand
+	result.y=0
+	return result
 
 static func _destination(game, index: int) -> Vector3:
 	var destination = game.players[index].get("target")
@@ -121,7 +131,7 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 			var spacing := lerpf(float(Tactics.positioning.middle_offset_near),float(Tactics.positioning.middle_offset_far),off_net)
 			var wide_choice=game.get("middle_wide")
 			var committed: bool=game.armed or game.cpu_team(team) or game.phase in ["ATTACK","CPU_ATTACK"]
-			if game.planned_direction==1 and wide_choice==false and committed: spacing=lerpf(1.12,1.35,off_net)
+			if game.planned_direction==1 and wide_choice==false and committed: spacing=lerpf(1.30,1.45,off_net)
 			width = clampf(setter_x+away*spacing,-3.0,3.0)
 		2: width = float(Tactics.positioning.d_width) if back else 3.4
 		3: width = float(Tactics.positioning.pipe_width)
@@ -152,11 +162,8 @@ static func opening(game, index: int, team: int) -> Vector3:
 		if index==game.setter: return Tactics.setter_position(team)
 		return Tactics.world(team,3.52,1.0) if front else base
 	if role=="L":
-		# JobMover gives the pipe runner a separate lane. Use its committed
-		# opening side, so merely crossing centre cannot reverse the libero.
-		var local_x: float = game.players[index].position.x*side
-		if local_x>0: return Tactics.world(team,1.0,float(p.court_depth)-3.0)
-		return Tactics.world(team,-1.0,float(p.court_depth)-2.0)
+		# All six attack diagrams leave L on the left, outside the pipe lane.
+		return Tactics.world(team,-2.3,4.35)
 	if front and role.begins_with("MB"):
 		if setting and game.fast_set and game.get("planned_hitter")==index: commit=1.0
 		if game.out_of_system<1: return Tactics.world(team,signf(setter_x)*0.26,1.0)
@@ -187,7 +194,19 @@ static func coverage(game, index: int, team: int) -> Vector3:
 	var inward:=-signf(hit_x) if absf(hit_x)>0.2 else 1.0
 	# Two coverage rings follow the actual attacker, rather than resetting all
 	# six athletes to the same 2m/4.26m rows for every set direction.
-	if role=="S": return Tactics.world(team,clampf(hit_x+inward*2.1,-3.8,3.8),depth+1.3)
+	if role=="S" or (index==game.setter and game.destination==3 and game.phase in ["ATTACK","CPU_ATTACK"]):
+		if index==game.setter and game.destination==3 and game.phase in ["ATTACK","CPU_ATTACK"]:
+			# Leave the pipe's landing/contact lane to the runner. Retreating
+			# diagonally to the generic cover ring sent S into the airborne
+			# hitter after an otherwise correct set. Exit laterally on the
+			# free side of the middle, then remain in short coverage.
+			var key:=str(game.shot_serial)+":"+str(index)
+			if not game.court_shape.pipe_exits.has(key):
+				var middle:=Tactics.attacker(team,game.rotations[team],1,index)
+				var middle_x: float=game.players[middle].position.x*side if middle>=0 else -1.0
+				game.court_shape.pipe_exits[key]=-1.9 if middle_x>0 else 1.9
+			return Tactics.world(team,game.court_shape.pipe_exits[key],1.25)
+		return Tactics.world(team,clampf(hit_x+inward*2.1,-3.8,3.8),depth+1.3)
 	if not front:
 		var x:=base.x*side*0.65+hit_x*0.25
 		var back_depth:=5.8 if role=="OPP" else (6.2 if role.begins_with("OH") else 4.8)

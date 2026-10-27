@@ -96,7 +96,7 @@ func preparation_route(game, assigned: Vector3) -> Vector3:
 		if real_attack:
 			var side:=1.0 if team==0 else -1.0
 			var staging:=Vector3(target.x,0,side*maxf(2.35,target.z*side+.95))
-			preferred=staging.lerp(target,1.0-smoothstep(.12,.85,game.flight_left))
+			preferred=staging.lerp(target,1.0-smoothstep(.32,1.05,game.flight_left))
 		release_yield=true
 	var next:=route(game,preferred)
 	# A blocked ideal is not a valid replacement for the teammate's yielding
@@ -119,6 +119,8 @@ func update(game) -> void:
 			# Reception is aimed at zone 3 (x=0), not at the setter's
 			# service waiting position. Open on the front-quick side of
 			# that expected pass before its exact final offset is known.
+			# Prepare the expected zone-3 first tempo before the set choice;
+			# the actual first/7 input then commits its existing contact lane.
 			var expected: Vector3=AI.attack_contact(game,1,index,Tactics.world(team,0,1.5))
 			target=Tactics.world(team,expected.x*(1 if team==0 else -1),2.35)
 		return
@@ -177,7 +179,7 @@ func prepare_real(game, dt: float) -> void:
 	if remaining>player.preparation_lead("attack",1): return
 	# Do not launch a jump that would require crossing another athlete in air.
 	# The ordinary high-ball construction remains available when far away.
-	if not real_started and (player.position.distance_to(stance)>.85 or not clear_segment(game,player.position,stance)): return
+	if not real_started and (player.position.distance_to(stance)>.55 or not clear_segment(game,player.position,stance)): return
 	var fresh:=not real_started
 	real_started=true
 	player.prepare_contact("attack",remaining)
@@ -188,9 +190,15 @@ func prepare_real(game, dt: float) -> void:
 func release_seconds(game, player_index: int, stance: Vector3) -> float:
 	if not real_started or index!=player_index or not real_attack: return -1.0
 	var player=game.players[index]
-	if player.position.distance_to(stance)>.75: return -1.0
+	var distance: float=player.position.distance_to(stance)
+	if distance>.75 or not clear_segment(game,player.position,stance): return -1.0
+	var remaining: float=player.attack_clock_seconds(maxf(0,player.clips.attack.contact_time-player.animation_time))
+	# A nearby root can still be braking in the wrong direction after a
+	# crossing. Test its existing acceleration/arrival law before committing
+	# the short shared flight; distance alone released unreachable quicks.
+	if not preload("res://src/setter_access.gd").grounded_arrival(game,index,stance,remaining,game.Reference.run_speed()*1.10,distance): return -1.0
 	# The same source clock crosses SET -> ATTACK, with no restart at release.
-	return player.attack_clock_seconds(maxf(0,player.clips.attack.contact_time-player.animation_time))
+	return remaining
 
 func holds(player: int) -> bool:
 	return index==player and jumped
