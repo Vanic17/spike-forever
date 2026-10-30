@@ -1,0 +1,21 @@
+{
+	"block_gap": 0.183962613344193,
+	"checks": 66,
+	"dive_gap": 0.280619025230408,
+	"failures": [],
+	"jump": {
+		"duration": 0.9,
+		"physical_peak": 0.966282963752747,
+		"visible_foot_peak": 1.12802690267563
+	},
+	"movement": {
+		"distance": 3.66893362998962,
+		"stop_drift": 0.0
+	},
+	"receive_gap": 0.181551903486252,
+	"shirt": {
+		"identity_count": 1,
+		"name": "Luca Testa",
+		"number": 12
+	}
+}

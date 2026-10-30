@@ -12,6 +12,7 @@ var online: Button
 var online_menu
 var play_hub
 var career_menu
+var legend_menu
 var settings_button: Button
 var tutorial_button: Button
 var settings_menu
@@ -73,6 +74,7 @@ func _ready() -> void:
 	updates.pressed.connect(show_updates)
 	play.pressed.disconnect(clubs.match_setup)
 	career_menu=preload("res://src/career_menu.gd").new(); career_menu.host=self; career_menu.game=game; add_child(career_menu)
+	legend_menu=preload("res://src/legend_menu.gd").new(); legend_menu.host=self; legend_menu.game=game; add_child(legend_menu)
 	var old_online=online
 	play_hub=preload("res://src/play_hub.gd").new(); play_hub.host=self; play_hub.game=game; add_child(play_hub)
 	old_online.queue_free()
@@ -330,7 +332,7 @@ func _process(_dt: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if client==null: return
-	if (play_hub!=null and play_hub.visible) or (career_menu!=null and career_menu.visible): return
+	if (play_hub!=null and play_hub.visible) or (career_menu!=null and career_menu.visible) or (legend_menu!=null and legend_menu.visible): return
 	if game.tutorial!=null and game.tutorial.menu.visible: return
 	if not game.started and event.is_action_pressed("start"):
 		if not clubs.visible and not online_menu.visible and not settings_menu.visible and not game.tutorial.menu.visible: play_hub.open()

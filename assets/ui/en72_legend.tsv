@@ -1,0 +1,283 @@
+DIVENTA UN MITO	BECOME A LEGEND
+Il campo è tuo. Una partita, una sfida online, una stagione o la tua carriera.	The court is yours. A match, an online challenge, a season or your career.
+04 / CARRIERA GIOCATORE	04 / PLAYER CAREER
+Crea il tuo atleta e conquista un posto tra i grandi.\nUn solo giocatore, tutta la sua carriera.	Create your athlete and earn your place among the greats.\nOne player, an entire career.
+INIZIA LA TUA STORIA	BEGIN YOUR STORY
+LA TUA CARRIERA, UN SOLO GIOCATORE	YOUR CAREER, ONE PLAYER
+HUB	HUB
+PROFILO	PROFILE
+CRESCITA	DEVELOPMENT
+CALENDARIO	CALENDAR
+CLASSIFICA	STANDINGS
+MERCATO	TRANSFERS
+STORICO	HISTORY
+SALVATAGGI	SAVES
+SALVA	SAVE
+INDIETRO	BACK
+LA TUA LEGGENDA	YOUR LEGEND
+DAL PRIMO ALLENAMENTO ALLA LEGGENDA	FROM YOUR FIRST PRACTICE TO GREATNESS
+IL TUO NOME.\nLA TUA STORIA.	YOUR NAME.\nYOUR STORY.
+Crea il tuo atleta, parti dal basso e conquista la SuperLega. In campo controlli solo te stesso: posizione, tempi e scelte fanno la differenza.	Create your athlete, start at the bottom and conquer the SuperLega. You control yourself on court: positioning, timing and decisions make the difference.
+CREA IL TUO GIOCATORE	CREATE YOUR PLAYER
+CONTINUA LA CARRIERA	CONTINUE CAREER
+CARICA SALVATAGGIO	LOAD CAREER
+COMANDI E RUOLI	CONTROLS AND ROLES
+UN SOLO ATLETA · UNDICI COMPAGNI E AVVERSARI	ONE ATHLETE · ELEVEN TEAMMATES AND OPPONENTS
+Ogni fondamentale migliora con i punti conquistati dalle tue azioni. Le prestazioni aprono le porte a club più forti.	Improve your skills with points earned through your actions. Your performances open the door to stronger clubs.
+01 / IL TUO GIOCATORE	01 / YOUR PLAYER
+IDENTITÀ E ASPETTO	IDENTITY AND APPEARANCE
+NOME	NAME
+TASTIERA	KEYBOARD
+NUMERO DI MAGLIA	SHIRT NUMBER
+RUOLO	ROLE
+MANO DOMINANTE	DOMINANT HAND
+SERVIZIO PREFERITO	PREFERRED SERVE
+Destra	Right
+Sinistra	Left
+Salto potente	Power jump serve
+Float	Float
+Banda / Schiacciatore	Outside hitter
+Opposto	Opposite
+Centrale	Middle blocker
+Palleggiatore	Setter
+Libero	Libero
+CAPELLI	HAIR
+COLORE CAPELLI	HAIR COLOR
+CARNAGIONE	SKIN TONE
+BARBA	BEARD
+Corti	Short
+Rasati	Buzz cut
+Sfumati	Fade
+Mossi	Wavy
+Ricci	Curly
+Afro	Afro
+Frangia	Fringe
+Riga	Side part
+Lunghi	Long
+Treccine	Braids
+Pelato	Bald
+Nero	Black
+Marrone	Brown
+Castano chiaro	Light brown
+Biondo	Blond
+Rosso	Red
+Grigio	Gray
+Rosa	Pink
+Chiara	Fair
+Olivastra	Olive
+Ambrata	Amber
+Scura	Dark
+Ebano	Ebony
+Nessuna	None
+Corta	Short
+Piena	Full
+IL TUO PUNTO DI PARTENZA	YOUR STARTING POINT
+Distribuisci 300 punti. Ogni attributo parte da 30 e può arrivare a 65. Il ruolo determina il tuo OVR.	Distribute 300 points. Each attribute ranges from 30 to 65. Your role determines your OVR.
+PUNTI RIMANENTI: %d / 300	POINTS LEFT: %d / 300
+OVR %d · MASSIMO INIZIALE 65	OVR %d · STARTING MAXIMUM 65
+CONTINUA · SCEGLI IL CLUB	CONTINUE · CHOOSE YOUR CLUB
+BATTUTA	SERVE
+RICEZIONE	RECEPTION
+DIFESA	DEFENSE
+PALLEGGIO	SETTING
+SCHIACCIATA	ATTACK
+MURO	BLOCK
+02 / IL PRIMO CONTRATTO	02 / YOUR FIRST CONTRACT
+La tua carriera comincia da uno dei tre club più deboli. La forza è calcolata sulle formazioni del database attuale.	Your career starts at one of the three weakest clubs. Strength is calculated from the current database lineups.
+FORZA SQUADRA · OVR %d	TEAM STRENGTH · OVR %d
+Contratto da titolare nel ruolo scelto. La tua crescita può portarti verso nuove squadre.	A starting contract in your chosen role. Your development can take you to new teams.
+CLUB SCELTO	SELECTED CLUB
+SCEGLI QUESTO CLUB	CHOOSE THIS CLUB
+FORMATO	FORMAT
+DIFFICOLTÀ	DIFFICULTY
+SLOT	SLOT
+Meglio dei 5	Best of 5
+Meglio dei 3	Best of 3
+Accessibile	Accessible
+Normale	Normal
+Impegnativa	Challenging
+Slot %d	Slot %d
+FIRMA E INIZIA	SIGN AND START
+Questo slot contiene già una carriera Diventa un mito. Vuoi sostituirla?	This slot already contains a Become a Legend career. Replace it?
+REPUTAZIONE %.1f / 100	REPUTATION %.1f / 100
+MATCH CENTER	MATCH CENTER
+UNA STAGIONE NELLA STORIA	A SEASON TO REMEMBER
+Tutte le competizioni sono concluse. Conserva i tuoi progressi e preparati alla prossima stagione.	All competitions are complete. Keep your progress and prepare for the next season.
+INIZIA LA PROSSIMA STAGIONE	START NEXT SEASON
+IN CASA	AT HOME
+IN TRASFERTA	AWAY
+Controlli solo il tuo atleta. Muoviti nello spazio del tuo ruolo, chiama l'alzata e cerca il contatto con il pallone.	You control your athlete only. Move into position, call for the set and reach the ball.
+SCENDI IN CAMPO	TAKE THE COURT
+LA TUA ASCESA	YOUR RISE
+LIVELLO %d	LEVEL %d
+PUNTI ABILITÀ: %d	SKILL POINTS: %d
+ESPERIENZA AL PROSSIMO PUNTO	EXPERIENCE TO NEXT POINT
+ALLENA I FONDAMENTALI	TRAIN YOUR SKILLS
+IL TUO CONTRATTO	YOUR CONTRACT
+Scadenza: stagione %d/%s	Expires: season %d/%s
+OFFERTE RICEVUTE: %d	OFFERS RECEIVED: %d
+ULTIMA PRESTAZIONE	LAST PERFORMANCE
+VOTO %.1f · +%d XP	RATING %.1f · +%d XP
+COMANDI E RUOLO	CONTROLS AND ROLE
+IDENTITÀ DEL GIOCATORE	PLAYER IDENTITY
+MAGLIA NUMERO %d	SHIRT NUMBER %d
+MANO SINISTRA	LEFT HANDED
+MANO DESTRA	RIGHT HANDED
+SERVIZIO FLOAT	FLOAT SERVE
+SERVIZIO IN SALTO	JUMP SERVE
+PALMARÈS	HONORS
+TROFEI DEL CLUB	CLUB TROPHIES
+La tua bacheca aspetta il primo trofeo.	Your trophy cabinet is waiting for its first title.
+IL TUO STILE	YOUR STYLE
+Il tuo aspetto viene aggiornato anche in campo.	Your appearance is updated on court too.
+COSTRUISCI LA TUA CARRIERA	BUILD YOUR CAREER
+PUNTI ABILITÀ DISPONIBILI: %d	AVAILABLE SKILL POINTS: %d
+Le tue azioni in partita assegnano voto, esperienza e reputazione. Spendi i punti abilità per aumentare i fondamentali. Il costo cresce oltre 70 e 85.	Your match actions earn ratings, experience and reputation. Spend skill points to improve your attributes. Costs increase at 70 and 85.
++1 · %d PT	+1 · %d PT
+PROGRESSI	PROGRESS
+ESPERIENZA TOTALE: %d	TOTAL EXPERIENCE: %d
+AL PROSSIMO PUNTO ABILITÀ	TO NEXT SKILL POINT
+REPUTAZIONE	REPUTATION
+Gioca bene con continuità per ricevere offerte da squadre più forti.	Perform consistently to receive offers from stronger teams.
+IL TUO CALENDARIO	YOUR CALENDAR
+Solo il mio club	My club only
+Tutte le squadre	All teams
+Tutte le competizioni	All competitions
+Tutte le giornate	All rounds
+Giornata %d	Round %d
+DATA	DATE
+INCONTRO	MATCH
+COMPETIZIONE	COMPETITION
+RISULTATO	RESULT
+Nessun incontro per questi filtri.	No fixtures match these filters.
+Incontro da disputare.	Match to be played.
+LA CORSA AL TITOLO	THE TITLE RACE
+SQUADRA	TEAM
+G	P
+V	W
+P	L
+PT	PTS
+SET +	SETS +
+SET −	SETS −
+FORMA	FORM
+COMPETIZIONE IN CORSO	COMPETITION IN PROGRESS
+Ingaggio: € %d / mese	Salary: € %d / month
+Le offerte dipendono dal rendimento personale. Ogni trasferimento conserva identità, attributi e statistiche.	Offers depend on your performance. Every transfer preserves your identity, attributes and statistics.
+IL MERCATO TI OSSERVA	THE MARKET IS WATCHING
+Nessuna offerta disponibile. Mostra il tuo valore in partita: servono continuità e reputazione per attirare un club più forte.	No offers available. Show your quality on court: consistency and reputation attract stronger clubs.
+OVR %d · %d stagioni · € %d / mese	OVR %d · %d seasons · € %d / month
+Contratto da titolare nel ruolo scelto	Starting contract in your chosen role
+ACCETTA IL CONTRATTO	ACCEPT CONTRACT
+Vuoi firmare per %s? Il trasferimento sarà immediato.	Sign for %s? The transfer takes effect immediately.
+ULTIMO TRASFERIMENTO	LATEST TRANSFER
+LA STORIA CHE STAI SCRIVENDO	THE STORY YOU ARE WRITING
+PARTITE	MATCHES
+VOTO MEDIO	AVERAGE RATING
+ATTACCHI VINCENTI	ATTACK KILLS
+ACE	ACES
+MURI	BLOCKS
+DIFESE	DIGS
+AVVERSARIO	OPPONENT
+ESITO	RESULT
+VOTO	RATING
+PUNTI	POINTS
+La prima pagina della tua storia si scrive in campo.	The first page of your story begins on court.
+VINTA	WON
+PERSA	LOST
+Voto %.1f · +%d XP · +%d punti abilità\nAttacchi %d/%d · Ace %d · Muri %d\nDifese %d · Ricezioni %d · Assist %d\nErrori %d	Rating %.1f · +%d XP · +%d skill points\nAttacks %d/%d · Aces %d · Blocks %d\nDigs %d · Receptions %d · Assists %d\nErrors %d
+LE TUE CARRIERE	YOUR CAREERS
+Dodici slot dedicati a Diventa un mito. Ogni slot conserva giocatore, stagione e progressi.	Twelve slots dedicated to Become a Legend. Each slot preserves your player, season and progress.
+SLOT %02d · VUOTO · CREA UNA CARRIERA	SLOT %02d · EMPTY · CREATE A CAREER
+SLOT %02d · %s · %s · %s	SLOT %02d · %s · %s · %s
+LA TUA PRESTAZIONE	YOUR PERFORMANCE
+VITTORIA	VICTORY
+SCONFITTA	DEFEAT
+VOTO %.1f	RATING %.1f
++%d XP  ·  +%d PUNTI ABILITÀ	+%d XP  ·  +%d SKILL POINTS
+OGNI AZIONE CONTA	EVERY ACTION COUNTS
+RICEZIONI	RECEPTIONS
+ASSIST	ASSISTS
+ERRORI	ERRORS
+REPUTAZIONE: %+.2f	REPUTATION: %+.2f
+IL CAMPO È NELLE TUE MANI	THE COURT IS IN YOUR HANDS
+CONTROLLI MANUALI	MANUAL CONTROLS
+Azione contestuale e carica servizio	Context action and serve charge
+Battuta float e pallonetto	Float serve and tip
+Attacco di seconda e recupero	Setter dump and recovery
+TORNA AL MATCH CENTER	BACK TO MATCH CENTER
+GIOCA PER MOSTRARE IL TUO VALORE	PLAY TO SHOW YOUR QUALITY
+Movimento libero del tuo giocatore	Move your player freely
+Mira di battuta e attacco	Aim your serve and attack
+Salto manuale	Manual jump
+Passaggio o bagher	Pass or forearm reception
+Palleggio e alzata	Set and overhead pass
+Attacco, battuta e pallonetto	Attack, serve and tip
+Chiama la palla	Call for the ball
+Scatto	Sprint
+Tuffo difensivo	Defensive dive
+GIOCA IL TUO RUOLO	PLAY YOUR ROLE
+Banda: ricevi e attacca dalle antenne.\nOpposto: cerca il punto sul lato destro.\nCentrale: salta a muro e prepara il primo tempo.\nPalleggiatore: costruisci l'attacco dei compagni.\nLibero: difendi e ricevi nella seconda linea.	Outside hitter: receive and attack from the pins.\nOpposite: score from the right side.\nMiddle blocker: jump to block and prepare quick attacks.\nSetter: build your teammates' offense.\nLibero: defend and receive in the back row.
+Il salto richiede il tuo comando. Le azioni riescono soltanto quando il pallone è alla tua portata.	You must trigger every jump. Actions succeed only when the ball is within reach.
+TORNA ALLA CARRIERA	BACK TO CAREER
+Carriera salvata.	Career saved.
+Motore partita non disponibile.	Match engine unavailable.
+Impossibile avviare la partita.	Unable to start the match.
+CONFERMA	CONFIRM
+ANNULLA	CANCEL
+IL TUO NOME	YOUR NAME
+SPAZIO	SPACE
+CANCELLA	DELETE
+LS / FRECCE: scegli   A / INVIO: conferma   B / ESC: indietro   L1 / R1: schede   RS: scorri   MENU / F5: salva	LS / ARROWS: choose   A / ENTER: confirm   B / ESC: back   LB / RB: tabs   RS: scroll   MENU / F5: save
+Mira di battuta, alzata e attacco	Aim serves, sets and attacks
+Tieni per caricare, rilascia al contatto	Hold to charge, release at contact
+Risultato conservato in memoria. Premi SALVA per riprovare prima di uscire.	Result kept in memory. Press SAVE to retry before leaving.
+DIVENTA UN MITO · LS MUOVE · RS MIRA · R1/RB SALTO MANUALE	BECOME A LEGEND · LS MOVE · RS AIM · R1/RB MANUAL JUMP
+BATTUTA MANUALE	MANUAL SERVE
+RICEZIONE / DIFESA	RECEPTION / DEFENSE
+SECONDO TOCCO / ALZATA	SECOND CONTACT / SET
+ATTACCO / COPERTURA	ATTACK / COVERAGE
+MURO / DIFESA	BLOCK / DEFENSE
+IN CAMPO	ON COURT
+IN PANCHINA · ATTENDI IL RIENTRO IN SECONDA LINEA	ON THE BENCH · WAIT FOR BACK-ROW REENTRY
+IN PANCHINA · IL CENTRALE GIOCA LA PRIMA LINEA E IL SERVIZIO	ON THE BENCH · THE MIDDLE PLAYS FRONT ROW AND SERVES
+LANCIO	TOSS
+R1/RB SALTA	R1/RB JUMP
+RILASCIA X/A O QUADRATO/X	RELEASE CROSS/A OR SQUARE/X
+SALTO MANUALE	MANUAL JUMP
+MANI A MURO	HANDS UP TO BLOCK
+RILASCIA X/A PER COLPIRE	RELEASE CROSS/A TO HIT
+RAGGIUNGI IL CENTRO RETE	REACH THE MIDDLE ATTACK LANE
+RAGGIUNGI ZONA PALLEGGIO	REACH THE SETTING ZONE
+RAGGIUNGI LA DIFESA DI SECONDA LINEA	REACH THE BACK-ROW DEFENSE
+RAGGIUNGI IL TUO CORRIDOIO D'ATTACCO	REACH YOUR ATTACK LANE
+R1/RB SALTA, X/A COLPISCI	R1/RB JUMP, CROSS/A HIT
+BAGHER	FOREARM PASS
+ALZATA	SET
+ATTACCO	ATTACK
+TOCCO A MURO	BLOCK TOUCH
+DIFESA IN TUFFO	DIVING DIG
+RECUPERO	SAVE
+SECONDA	SETTER DUMP
+BATTUTA FLOAT	FLOAT SERVE
+BATTUTA IN SALTO	JUMP SERVE
+TOCCO	CONTACT
+OTTO SECONDI AL SERVIZIO	EIGHT-SECOND SERVICE FAULT
+SERVIZIO NON COLPITO	MISSED SERVE
+FALLO DI PIEDE	FOOT FAULT
+ATTACCO DEL LIBERO SOPRA RETE	LIBERO ATTACK ABOVE THE NET
+ATTACCO DI SECONDA LINEA DENTRO I TRE METRI	BACK-ROW ATTACK INSIDE THREE METRES
+FUORI ANTENNA	OUTSIDE THE ANTENNA
+BATTUTA IN RETE	SERVE INTO THE NET
+PALLA A TERRA	BALL DOWN
+FUORI	OUT
+QUATTRO TOCCHI	FOUR CONTACTS
+SCEGLI COME GIOCARE	CHOOSE HOW TO PLAY
+ESIBIZIONE	EXHIBITION
+CAMPIONATO	MASTER LEAGUE
+Scegli squadre, divise e formazione.\nUna partita, alle tue condizioni.	Pick teams, kits and lineups.\nOne match, your rules.
+GIOCA UNA PARTITA	PLAY A MATCH
+Crea una stanza o usa un codice.\nDue allenatori, un solo campo.	Create a room or join with a code.\nTwo coaches, one court.
+CREA O UNISCITI	HOST OR JOIN
+Guida uno dei dodici club della SuperLega.\nCalendario, rosa, coppe e una storia da scrivere.	Lead one of twelve SuperLega clubs.\nFixtures, squads, cups and your story to write.
+ENTRA IN CAMPIONATO	ENTER MASTER LEAGUE
+B / CERCHIO  ·  INDIETRO	B / CIRCLE  ·  BACK

@@ -7,6 +7,11 @@ $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike 
 $files+='docs/RELEASE_NOTES_69.md'
 $files+='docs/RELEASE_NOTES_70.md'
 $files+='docs/RELEASE_NOTES_71.md'
+$files+='docs/RELEASE_NOTES_72.md'
+foreach($report72 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'legend72-*'){
+ if($report72.Extension -in @('.md','.json','.png')){$files+='docs/'+$report72.Name}
+}
+foreach($tool72 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*72.*'){$files+='tools/'+$tool72.Name}
 foreach($report71 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'bench71-*'){$files+='docs/'+$report71.Name}
 foreach($tool71 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*71.*'){$files+='tools/'+$tool71.Name}
 foreach($report70 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'arena70-*'){$files+='docs/'+$report70.Name}

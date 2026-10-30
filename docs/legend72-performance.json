@@ -1,0 +1,10 @@
+{
+	"avatars": 12,
+	"max_step_us": 14405,
+	"mean_step_us": 4632.11,
+	"native_animation": true,
+	"p95_step_us": 7055,
+	"samples": 600,
+	"scope": "CPU manual simulation plus twelve full native pose evaluations at 60 Hz; excludes stadium render, GPU, driver and real controller latency",
+	"source_clips": 137
+}

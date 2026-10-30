@@ -1,0 +1,175 @@
+{
+  "abandon_to_career": true,
+  "assertions": 197,
+  "controller_navigation": true,
+  "failures": 0,
+  "four_modes": true,
+  "layouts": [
+    {
+      "page": "create",
+      "resolution": "(1920, 1080)",
+      "targets": 16
+    },
+    {
+      "page": "clubs",
+      "resolution": "(1920, 1080)",
+      "targets": 7
+    },
+    {
+      "page": "create",
+      "resolution": "(1280, 720)",
+      "targets": 16
+    },
+    {
+      "page": "clubs",
+      "resolution": "(1280, 720)",
+      "targets": 7
+    },
+    {
+      "page": "create",
+      "resolution": "(1600, 900)",
+      "targets": 16
+    },
+    {
+      "page": "clubs",
+      "resolution": "(1600, 900)",
+      "targets": 7
+    },
+    {
+      "page": "home",
+      "resolution": "(1920, 1080)",
+      "targets": 4
+    },
+    {
+      "page": "profile",
+      "resolution": "(1920, 1080)",
+      "targets": 4
+    },
+    {
+      "page": "growth",
+      "resolution": "(1920, 1080)",
+      "targets": 1
+    },
+    {
+      "page": "calendar",
+      "resolution": "(1920, 1080)",
+      "targets": 25
+    },
+    {
+      "page": "standings",
+      "resolution": "(1920, 1080)",
+      "targets": 13
+    },
+    {
+      "page": "offers",
+      "resolution": "(1920, 1080)",
+      "targets": 1
+    },
+    {
+      "page": "history",
+      "resolution": "(1920, 1080)",
+      "targets": 1
+    },
+    {
+      "page": "saves",
+      "resolution": "(1920, 1080)",
+      "targets": 12
+    },
+    {
+      "page": "help",
+      "resolution": "(1920, 1080)",
+      "targets": 1
+    },
+    {
+      "page": "home",
+      "resolution": "(1280, 720)",
+      "targets": 4
+    },
+    {
+      "page": "profile",
+      "resolution": "(1280, 720)",
+      "targets": 4
+    },
+    {
+      "page": "growth",
+      "resolution": "(1280, 720)",
+      "targets": 1
+    },
+    {
+      "page": "calendar",
+      "resolution": "(1280, 720)",
+      "targets": 25
+    },
+    {
+      "page": "standings",
+      "resolution": "(1280, 720)",
+      "targets": 13
+    },
+    {
+      "page": "offers",
+      "resolution": "(1280, 720)",
+      "targets": 1
+    },
+    {
+      "page": "history",
+      "resolution": "(1280, 720)",
+      "targets": 1
+    },
+    {
+      "page": "saves",
+      "resolution": "(1280, 720)",
+      "targets": 12
+    },
+    {
+      "page": "help",
+      "resolution": "(1280, 720)",
+      "targets": 1
+    },
+    {
+      "page": "home",
+      "resolution": "(1600, 900)",
+      "targets": 4
+    },
+    {
+      "page": "profile",
+      "resolution": "(1600, 900)",
+      "targets": 4
+    },
+    {
+      "page": "growth",
+      "resolution": "(1600, 900)",
+      "targets": 1
+    },
+    {
+      "page": "calendar",
+      "resolution": "(1600, 900)",
+      "targets": 25
+    },
+    {
+      "page": "standings",
+      "resolution": "(1600, 900)",
+      "targets": 13
+    },
+    {
+      "page": "offers",
+      "resolution": "(1600, 900)",
+      "targets": 1
+    },
+    {
+      "page": "history",
+      "resolution": "(1600, 900)",
+      "targets": 1
+    },
+    {
+      "page": "saves",
+      "resolution": "(1600, 900)",
+      "targets": 12
+    },
+    {
+      "page": "help",
+      "resolution": "(1600, 900)",
+      "targets": 1
+    }
+  ],
+  "separate_saves": true
+}

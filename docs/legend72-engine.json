@@ -1,0 +1,77 @@
+{
+  "assertions": 355,
+  "backup_recovery": true,
+  "base_db_unchanged": true,
+  "failures": 0,
+  "no_duplicate_identity": true,
+  "no_duplicate_rewards": true,
+  "seasons": [
+    {
+      "champions": {
+        "cup": "cisterna-volley",
+        "fifth": "allianz-milano",
+        "playoff": "cisterna-volley",
+        "playout": "gas-sales-bluenergy-piacenza",
+        "regular": "cisterna-volley",
+        "supercup": "sir-susa-scai-perugia"
+      },
+      "fixtures": 181,
+      "player_matches": 28,
+      "season": 2026
+    },
+    {
+      "champions": {
+        "cup": "cisterna-volley",
+        "fifth": "sir-susa-scai-perugia",
+        "playoff": "cisterna-volley",
+        "playout": "gas-sales-bluenergy-piacenza",
+        "regular": "cisterna-volley",
+        "supercup": "cisterna-volley"
+      },
+      "fixtures": 178,
+      "player_matches": 36,
+      "season": 2027
+    },
+    {
+      "champions": {
+        "cup": "cisterna-volley",
+        "fifth": "cucine-lube-civitanova",
+        "playoff": "cisterna-volley",
+        "playout": "pallavolo-padova",
+        "regular": "cisterna-volley",
+        "supercup": "cisterna-volley"
+      },
+      "fixtures": 180,
+      "player_matches": 36,
+      "season": 2028
+    },
+    {
+      "champions": {
+        "cup": "cisterna-volley",
+        "fifth": "vero-volley-monza",
+        "playoff": "cisterna-volley",
+        "playout": "acqua-santanna-cuneo",
+        "regular": "cisterna-volley",
+        "supercup": "cisterna-volley"
+      },
+      "fixtures": 181,
+      "player_matches": 36,
+      "season": 2029
+    }
+  ],
+  "separate_saves": true,
+  "starter_clubs": [
+    {
+      "id": "acqua-santanna-cuneo",
+      "strength": 76.1428571428571
+    },
+    {
+      "id": "vero-volley-monza",
+      "strength": 76.1428571428571
+    },
+    {
+      "id": "tinet-prata-di-pordenone",
+      "strength": 76.2857142857143
+    }
+  ]
+}

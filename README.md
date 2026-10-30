@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.72.0:** Diventa un mito nel menu Gioca: crea il tuo atleta, firma per uno dei tre club di ingresso e controllalo manualmente in campo. Carriera personale con valutazioni, crescita, offerte, trasferimenti e dodici salvataggi separati. [Novità, comandi e verifiche](docs/RELEASE_NOTES_72.md).
+
 **Versione 0.71.0:** eliminate le stampe che coprivano le linee di fondo in tutti i campi; tavolo dei segnapunti ribassato e addetti con mani sul piano; reazioni della panchina distribuite tra persone diverse, senza gesti duplicati nello stesso punto. [Novità e verifiche](docs/RELEASE_NOTES_71.md).
 
 **Versione 0.70.0:** dodici campi con grafica e sponsor della squadra di casa, loghi originali sui LED e sul pavimento, campo tricolore di Perugia e Del Monte su tutti i campi. Casa = squadra a sinistra in esibizione, host in online, calendario in carriera. [Novità e verifiche](docs/RELEASE_NOTES_70.md).

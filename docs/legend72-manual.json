@@ -1,0 +1,77 @@
+{
+	"ai": {
+		"actions": {
+			"attack": 20,
+			"block": 1,
+			"power": 19,
+			"receive": 23,
+			"set": 20
+		},
+		"contacts": 83,
+		"crossings": 59,
+		"max_contact_gap": 0.668377578258514,
+		"phases": [
+			"SERVE",
+			"CPU_RECEIVE",
+			"CPU_SET",
+			"CPU_ATTACK",
+			"RECEIVE",
+			"POINT",
+			"SET",
+			"ATTACK"
+		],
+		"points": 18
+	},
+	"block_attribute": {
+		"high": 140,
+		"low": 70
+	},
+	"checks": 172,
+	"difficulty_means": [
+		0.688452422618866,
+		0.783639495670795,
+		0.855136105418205
+	],
+	"failures": [],
+	"full_match": {
+		"contacts": 626,
+		"finished": true,
+		"points": 63,
+		"seconds": 880.274999999364,
+		"sets": [
+			0,
+			2
+		]
+	},
+	"libero_exchanges": true,
+	"manual_contacts": true,
+	"motion": {
+		"braking_speed": 3.80833148956299,
+		"first_speed": 0.116666667163372,
+		"running_speed": 3.96666479110718
+	},
+	"overcharge_serve_seconds": [
+		1.35,
+		1.22727272727273
+	],
+	"physical_gap": true,
+	"roles": {
+		"L": 4,
+		"MB": 1,
+		"OH": 0,
+		"OPP": 2,
+		"S": 5
+	},
+	"scoring": {
+		"best_of_five": true,
+		"best_of_three": true,
+		"deuce_25": true,
+		"sideout": true,
+		"tie_break_15": true
+	},
+	"set_distribution": {
+		"0": 127,
+		"1": 41,
+		"2": 32
+	}
+}

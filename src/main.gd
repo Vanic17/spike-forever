@@ -17,6 +17,7 @@ const MiddleDecoy = preload("res://src/middle_decoy.gd")
 const AnimationVariety = preload("res://src/animation_variety.gd")
 var rotation_context=preload("res://src/rotation_context.gd").new()
 var online_session
+var legend_match
 var input_team:=0
 var home_club_id := ""
 var home_team := 0
@@ -39,6 +40,7 @@ func local_team() -> int:
 	return online_session.local_side if network_match() else 0
 
 func display_selected() -> int:
+	if legend_match!=null and legend_match.active: return legend_match.controlled_index
 	if not network_match(): return selected
 	var side:=local_team()
 	if phase=="SERVE" and server==side: return server_index(side)
@@ -320,6 +322,7 @@ func _ready() -> void:
 	tutorial=preload("res://src/tutorial_mode.gd").new(); tutorial.game=self; add_child(tutorial)
 	replay=preload("res://src/match_replay.gd").new(); replay.name="MatchReplay"; replay.game=self; add_child(replay)
 	substitution_scene=preload("res://src/substitution_scene.gd").new(); substitution_scene.name="SubstitutionScene"; substitution_scene.game=self; add_child(substitution_scene)
+	legend_match=preload("res://src/legend_match.gd").new(); legend_match.name="LegendMatch"; legend_match.game=self; add_child(legend_match)
 	if not self_test:
 		var start_menu=preload("res://src/start_menu.gd").new()
 		start_menu.game=self
@@ -437,6 +440,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if replay!=null and replay.handle_input(event): get_viewport().set_input_as_handled(); return
 	if network_match():
 		online_session.capture_input(event)
+		return
+	if legend_match!=null and legend_match.active:
+		# This mode owns movement and strokes. Legacy demo/reset/tactical inputs
+		# cannot take over its single-player controller.
+		if event.is_action_pressed("start") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_ESCAPE):
+			if started and not match_finished:request_pause(not paused)
+			get_viewport().set_input_as_handled();return
+		if (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_V) or (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_Y):
+			camera_mode=preload("res://src/view_controls.gd").next_camera(camera_mode);set_camera()
+			get_viewport().set_input_as_handled();return
+		if legend_match.handle_input(event):get_viewport().set_input_as_handled()
 		return
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.physical_keycode:
@@ -849,6 +863,8 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	return backup
 
 func return_to_main_menu() -> void:
+	var from_legend: bool=legend_match!=null and legend_match.active
+	if from_legend:legend_match.stop()
 	if substitution_scene!=null: substitution_scene.cancel()
 	if replay!=null: replay.reset()
 	match_management.suspend()
@@ -860,6 +876,9 @@ func return_to_main_menu() -> void:
 	if match_audio: match_audio.update_match_state(false,phase,false)
 	for node in get_children():
 		if node.get_script()==preload("res://src/start_menu.gd"):
+			if from_legend:
+				node.overlay.hide();node.clubs.hide();node.panel.show();node.play_hub.hide();node.career_menu.hide()
+				node.legend_menu.on_match_abandoned();return
 			node.overlay.hide(); node.clubs.hide(); node.panel.show(); node.play.grab_focus()
 			return
 	var menu=preload("res://src/start_menu.gd").new(); menu.game=self; add_child(menu)
@@ -1700,13 +1719,16 @@ func _process(_dt: float) -> void:
 	if camera and not self_test and not (replay!=null and replay.active) and not (substitution_scene!=null and substitution_scene.active): update_camera(_dt)
 	if started and not (tutorial!=null and tutorial.active) and not gallery:
 		marker.hide()
-		for player in players:
-			if player.indicator: player.indicator.hide()
+		for i in players.size():
+			if players[i].indicator: players[i].indicator.visible=legend_match!=null and legend_match.active and legend_match.manual_available and i==legend_match.controlled_index
 	if "--preview" in OS.get_cmdline_user_args() and clock_time > 5.5:
 		get_viewport().get_texture().get_image().save_png("res://docs/preview.png")
 		get_tree().quit()
 
 func step(dt: float) -> void:
+	if legend_match!=null and legend_match.active:
+		if started and not paused:legend_match.step(dt)
+		return
 	if substitution_scene!=null and substitution_scene.active: return
 	if replay!=null and replay.active: return
 	# Substep to the exact contact event; never validate an overshot ball.

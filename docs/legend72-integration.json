@@ -1,0 +1,23 @@
+{
+	"cancel": true,
+	"checks": 46,
+	"failures": [],
+	"real_scene": {
+		"clips": 137,
+		"club": "acqua-santanna-cuneo",
+		"kit_variant": "home",
+		"models": 6,
+		"native": true
+	},
+	"result": {
+		"away": false,
+		"fixture_id": "sl2026-005",
+		"history": 1,
+		"sets": [
+			2,
+			0
+		],
+		"signal_count": 1
+	},
+	"save_retry": true
+}

@@ -7,6 +7,6 @@
   "minimum_actor_separation": 0.785252451896667,
   "native_cinematic_clips": 25,
   "paths_avoid_actual_obstacles": true,
-  "planning_usec": 12938,
+  "planning_usec": 11459,
   "stable_bench_seats": true
 }

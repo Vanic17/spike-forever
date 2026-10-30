@@ -28,7 +28,12 @@ func _ready() -> void:
 	var hint=Label.new(); hint.text="A / Croce: conferma · B / Cerchio: riprendi"; hint.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER; column.add_child(hint)
 	surface.hide()
 func _process(_dt: float) -> void:
-	substitution_button.disabled=not game.match_management.active
+	var legend: bool=game.legend_match!=null and game.legend_match.active
+	substitution_button.visible=not legend
+	substitution_button.disabled=legend or not game.match_management.active
+	menu_button.text=preload("res://src/legend_locale.gd").text("TORNA ALLA CARRIERA") if legend else "TORNA AL MENU PRINCIPALE"
+	resume_button.focus_neighbor_bottom=resume_button.get_path_to(menu_button if legend else substitution_button)
+	menu_button.focus_neighbor_top=menu_button.get_path_to(resume_button if legend else substitution_button)
 	var wanted: bool=game.started and game.paused and not game.match_finished and (game.tutorial==null or not game.tutorial.active) and not (game.substitution_scene!=null and game.substitution_scene.active)
 	if surface.visible==wanted: return
 	surface.visible=wanted

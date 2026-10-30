@@ -48,6 +48,9 @@ func _draw() -> void:
 		if not game.paused and game.phase in ["SERVE","RECEIVE","SET","ATTACK","CPU_ATTACK"]: draw_contact(w*.5,h-92)
 		return
 	preload("res://src/broadcast_scoreboard.gd").draw(self,game,size)
+	if game.legend_match!=null and game.legend_match.active:
+		preload("res://src/legend_hud.gd").draw(self,game,size,pad,ps)
+		return
 	if game.replay!=null and game.replay.active: return
 	draw_timing_result()
 	var phase: String=game.display_phase()
