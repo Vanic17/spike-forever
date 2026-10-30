@@ -212,6 +212,8 @@ var set_origin := Vector3.ZERO
 var court_shape = CourtShape.new()
 var attack_run = preload("res://src/attack_run.gd").new()
 var pause_menu
+var match_management
+var match_condition: Array=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 var preferences
 var tutorial
 var middle_decoy=MiddleDecoy.new()
@@ -278,6 +280,7 @@ func _ready() -> void:
 			player.setup(clips, team, i + 1, models)
 			player.rotation.y = PI if team == 0 else 0.0
 			players.append(player)
+	match_management=preload("res://src/match_management.gd").new(); match_management.game=self; add_child(match_management)
 	hud = Control.new()
 	hud.set_script(HUD)
 	hud.game = self
@@ -758,6 +761,7 @@ func reset_rally() -> void:
 	middle_decoy.reset()
 	marker.visible = false
 	log_rally_event("formation", {"server":server,"rotation":rotations.duplicate()})
+	if match_management!=null and match_management.active: match_management.update_condition_vector()
 
 func log_rally_event(kind: String, details: Dictionary = {}) -> void:
 	var event := {"kind":kind,"time":clock_time,"rally":rally_serial,"team":possession}
@@ -836,6 +840,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 
 func return_to_main_menu() -> void:
 	if replay!=null: replay.reset()
+	match_management.suspend()
 	if network_match(): online_session.leave("Partita terminata" if match_finished else "Partita chiusa")
 	started=false; paused=false; demo=false; gallery=false
 	match_finished=false
@@ -901,6 +906,7 @@ func contact_height(action: String) -> float:
 	return clips[action].contact_offset.y if clips.has(action) else players[0].contact_local(action).y
 
 func begin_serve_toss() -> void:
+	match_management.lock_lineup()
 	var preparation_action := "float" if serve_type==0 else "power"
 	var serving=players[server_index(server)]
 	var side:=1.0 if server==0 else -1.0
@@ -992,6 +998,7 @@ func serve_ball(team: int, power: float) -> void:
 		target.z = s*rng.randf_range(5.2,8.0)
 	var contact_quality := input_quality if human_team(team) and not demo else 0.92
 	if use_player_stats: contact_quality=1.0 if PlayerStats.perfect(power,PlayerStats.green_low(self,true)) else clampf(1.0-absf(1.0-power)*.65,.35,.92)
+	contact_quality=match_management.quality(server_index(team),contact_quality)
 	var dispersion := 2.2 * (1.0 - contact_quality)
 	target.x += rng.randf_range(-dispersion, dispersion)
 	target.z += rng.randf_range(-dispersion, dispersion)
@@ -1001,19 +1008,21 @@ func serve_ball(team: int, power: float) -> void:
 	if not layout.legal:
 		award(team,"FALLO DI POSIZIONE IN RICEZIONE")
 		return
+	match_management.touch(server_index(team),"serve")
 	toss_active = false
 	last_power = power
 	incoming_power = power
 	incoming_kind = "serve"
 	last_serve_fault = ""
-	if power > 1.0 and rng.randf() < Timing.serve_risk(power):
+	var tired_serve: float=match_management.risk(server_index(team))*(1.0-smoothstep(.90,1.0,power))
+	if (power > 1.0 and rng.randf() < Timing.serve_risk(power)) or (tired_serve>0 and rng.randf()<tired_serve):
 		last_serve_fault = "NET" if serve_fault_sequence%2==0 else "OUT"
 		serve_fault_sequence+=1
 		if last_serve_fault == "NET":
-			fault_flight(Vector3(clampf(target.x,-3.8,3.8),rng.randf_range(1.1,1.8),-0.15 if team == 0 else 0.15), 0.58/power)
+			fault_flight(Vector3(clampf(target.x,-3.8,3.8),rng.randf_range(1.1,1.8),-0.15 if team == 0 else 0.15), 0.58/maxf(.25,power))
 		else:
 			var outside:=Vector3(target.x,0.105,s*(11.0+minf(power-1,2)*4))
-			fault_flight(outside,preload("res://src/winning_shot.gd").flight_seconds(self,outside,0.90/power))
+			fault_flight(outside,preload("res://src/winning_shot.gd").flight_seconds(self,outside,0.90/maxf(.25,power)))
 		return
 	receiver = choose_receiver(possession, target, true)
 	select_receive_pose(receiver,target)
@@ -1079,6 +1088,7 @@ func receive_ball() -> void:
 	var q := RallyAI.reception_quality(self,input_quality)
 	if cpu_team(possession) and incoming_kind in ["serve","spike","soft","block"]: q=cpu_defense.quality(q,incoming_power)
 	if use_player_stats: q=PlayerStats.touch_quality(q,PlayerStats.rating(self,receiver,"ricezione" if incoming_kind=="serve" else "difesa"))
+	q=match_management.quality(receiver,q)
 	if incoming_kind=="shank" and touches[possession]==1:
 		setter=receiver; pass_quality=maxf(q,0.25); input_quality=pass_quality; out_of_system=-1
 		phase="SET" if possession==0 else "CPU_SET"; armed=true; setter_dump=false; plan_attack(set_dir,false)
@@ -1086,6 +1096,7 @@ func receive_ball() -> void:
 		# performance; do not replace it with a different two-hand PSA pose.
 		setter_action=action
 		set_ball(action); return
+	match_management.touch(receiver,"reception" if incoming_kind=="serve" else "dig",q)
 	if human_team(possession) and receive_offset>0.90 and rng.randf()<0.30:
 		pass_quality=q; register_touch(receiver)
 		var over:=Vector3(clampf(ball_pos.x+rng.randf_range(-0.7,0.7),-4.1,4.1),0.105,(-1 if possession==0 else 1)*rng.randf_range(1.0,4.0))
@@ -1307,11 +1318,13 @@ func set_ball(contact_override: String = "") -> void:
 		stats_set_grade=PlayerStats.set_grade(pass_quality,PlayerStats.rating(self,setter,"palleggio"),penalty)
 		var graded: float=PlayerStats.settings().set_strength[stats_set_grade]
 		q=minf(q,graded) if stats_set_grade==0 else graded
+	q=match_management.quality(setter,q)
 	set_quality = q
 	destination = planned_direction
 	committed_destination = destination
 	register_touch(setter)
 	if phase=="POINT": return
+	match_management.touch(setter,"set")
 	if replay!=null: replay.clear_shot()
 	if replay!=null: replay.mark_set()
 	TimingResult.put(self,possession,"ALZATA",input_quality if human_team(possession) else q)
@@ -1415,6 +1428,7 @@ func dump_ball() -> void:
 		return
 	register_touch(setter)
 	if phase=="POINT": return
+	match_management.touch(setter,"attack")
 	# Back-row setters may dump only below the top of the net in the front zone.
 	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > 2.43:
 		award(1 - attacker, "ATTACCO IRREGOLARE DI SECONDA LINEA")
@@ -1441,6 +1455,7 @@ func attack_ball() -> void:
 	var attacker := possession
 	register_touch(hitter)
 	if phase=="POINT": return
+	if hitter_action=="attack": match_management.touch(hitter,"attack")
 	players[hitter].prepare_contact(hitter_action, 0)
 	attack_run.finish(self,hitter)
 	last_touch = attacker
@@ -1450,6 +1465,7 @@ func attack_ball() -> void:
 	if out_of_system<0 and human_team(attacker): power*=0.72
 	var precision := Timing.precision(power)
 	if use_player_stats and PlayerStats.perfect(requested_power,PlayerStats.green_low(self,false)): precision=.99
+	precision=match_management.precision(hitter,precision)
 	last_power = requested_power
 	last_precision = precision
 	var spread := (1.0 - precision) * 3.0
@@ -1476,9 +1492,10 @@ func attack_ball() -> void:
 	if tutorial!=null and tutorial.active and tutorial.category=="block":
 		target=tutorial.coach_attack_target(); soft=false
 	winner_team=attacker if not use_player_stats and Timing.winning_power(requested_power) and hitter_action=="attack" else -1
-	if requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip):
+	var tired_attack: float=0.0 if automatic_overpass or hitter_action!="attack" else match_management.risk(hitter)*(1.0-smoothstep(.90,1.0,requested_power))
+	if (requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip)) or (tired_attack>0 and rng.randf()<tired_attack):
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
-		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/requested_power)
+		fault_flight(target, Reference.attack_seconds(1.0,0.0,false,false)/maxf(.25,requested_power))
 		return
 	incoming_kind = "free" if hitter_action=="receive" else ("soft" if soft else "spike")
 	incoming_power = power
@@ -1623,12 +1640,14 @@ func award(team: int, reason: String) -> void:
 		tutorial.on_point(team,reason)
 		return
 	if self_test: print("POINT ", team, " ", reason, " phase=", phase, " ball=", ball_pos)
+	match_management.point(team,reason)
 	scores[team] += 1
 	if server != team: rotations[team] = posmod(rotations[team] + 1, 6)
 	server = team
 	point_reason = reason
 	var target_points:=15 if match_best_of>1 and sets[0]+sets[1]==match_best_of-1 else match_points
 	if scores[team] >= target_points and scores[team] - scores[1 - team] >= 2:
+		match_management.finish_set(scores)
 		sets[team] += 1
 		scores = [0, 0]
 		point_reason = "SET " + team_names[team]
@@ -1636,6 +1655,7 @@ func award(team: int, reason: String) -> void:
 			point_reason = "VITTORIA " + team_names[team]
 			match_finished = true
 			paused = false
+			match_management.finish_match()
 	set_phase("POINT")
 	# A whistle ends scoring and contacts, not the physical trajectory.
 	airborne = true
@@ -1692,6 +1712,7 @@ func step(dt: float) -> void:
 		for p in players: p.tick(dt, false)
 		return
 	if not started or paused: return
+	match_management.tick(dt)
 	if tutorial!=null and tutorial.active and tutorial.before_step(dt): return
 	clock_time += dt
 	phase_time += dt
@@ -1848,6 +1869,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 		var tail: float=seconds*(1.0-clampf(previous.distance_to(contact_point)/maxf(0.00001,previous.distance_to(ball_pos)),0,1))
 		ball_pos=contact_point
 		if winner_team>=0:
+			match_management.touch(contact_blocker,"block")
 			var side:=1.0 if defender==0 else -1.0
 			var landing:=Vector3(clampf(ball_pos.x,-3.9,3.9),0.105,side*2.0)
 			ball_vel=BallFlight.velocity_to(ball_pos,landing,0.26,flight_spin,flight_gravity)
@@ -1864,6 +1886,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			if response.kind=="stuff_block": ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
+			match_management.touch(contact_blocker,"block")
 			if replay!=null and response.kind=="stuff_block": replay.mark_shot("monster",defender)
 			TimingResult.put(self,defender,"MURO",block_quality*strength)
 			resume_deflection("block")

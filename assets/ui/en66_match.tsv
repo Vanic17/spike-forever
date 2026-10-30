@@ -1,0 +1,35 @@
+GESTIONE PARTITA / SOSTITUZIONI	MATCH MANAGEMENT / SUBSTITUTIONS
+SOSTITUZIONI / RESISTENZA	SUBSTITUTIONS / STAMINA
+SESTETTO IN CAMPO	ON COURT
+PANCHINA / CONFRONTO	BENCH / COMPARISON
+CONFERMA SOSTITUZIONE	CONFIRM SUBSTITUTION
+SOSTITUZIONE ECCEZIONALE	EXCEPTIONAL SUBSTITUTION
+A / Croce: scegli · B / Cerchio: torna al sestetto / chiudi · LS / D-pad: naviga	A / Cross: select · B / Circle: return to court / close · LS / D-pad: navigate
+%d · %s · %s\nGEN %d   |   RES %d%%   |   FORMA %+.0f	%d · %s · %s\nOVR %d   |   STA %d%%   |   FORM %+.0f
+%s · SET %d · Sostituzioni ordinarie %d / 6 · Libero: ingressi separati	%s · SET %d · Ordinary substitutions %d / 6 · Separate libero replacements
+%s · FORMAZIONE NUOVO SET · Cambi liberi prima della prima battuta	%s · NEW SET LINEUP · Free changes before the first serve
+ · FATICA DISATTIVATA	 · FATIGUE OFF
+Seleziona un giocatore in campo, quindi una riserva. Ogni titolare può uscire e rientrare una sola volta per set.	Select an on-court player, then a substitute. Each starter may leave and return once per set.
+%s → %s   |   GEN %+.0f   |   Resistenza %d%% → %d%%\nRuolo %s → %s · La posizione nell'ordine di rotazione resta invariata.	%s → %s   |   OVR %+.0f   |   Stamina %d%% → %d%%\nRole %s → %s · The position in the rotation order stays the same.
+Cambio ordinario consentito.	Ordinary substitution permitted.
+Richiesta inviata all'host…	Request sent to the host…
+Formazione non disponibile.	Lineup unavailable.
+Le sostituzioni si effettuano a palla ferma, prima della battuta.	Substitutions are allowed during an interruption, before service.
+Attendi il rientro del centrale al posto del libero.	Wait for the middle blocker to return in place of the libero.
+Giocatore non iscritto alla partita.	This player is not registered for this match.
+Il libero utilizza gli ingressi dedicati, non le sostituzioni ordinarie.	Libero replacements are separate from ordinary substitutions.
+Giocatore già in campo.	This player is already on court.
+Giocatore indisponibile.	This player is unavailable.
+La sostituzione eccezionale richiede un giocatore impossibilitato a continuare.	An exceptional substitution requires a player who cannot continue.
+È disponibile una sostituzione ordinaria.	An ordinary substitution is available.
+Il sostituito regolare del libero non può entrare eccezionalmente.	The libero's regular replacement cannot enter as an exceptional substitute.
+Raggiunto il limite di sei sostituzioni ordinarie in questo set.	The six ordinary substitutions for this set have been used.
+Può rientrare solo il titolare abbinato a questa riserva.	Only the starter paired with this substitute may return.
+Il titolare ha già lasciato e ripreso il campo in questo set.	This starter has already left and returned during this set.
+La riserva è già stata utilizzata in questo set.	This substitute has already been used during this set.
+Battuta	Serve
+Ricezione	Reception
+Difesa	Defense
+Palleggio	Setting
+Schiacciata	Spike
+Muro	Block

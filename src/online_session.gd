@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF065"
+const PROTOCOL="SF066"
 const PORT=26761
 var game
 var menu
@@ -19,6 +19,7 @@ var ready_flags: Array=[false,false]
 var best_of:=5
 var points:=25
 var use_player_stats:=false
+var use_fatigue:=true
 var local_charge_release_seen:=-1.0
 var inputs: Array=[{},{}]
 var sequence:=0
@@ -162,7 +163,24 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			if not (raw is float or raw is int) or not is_finite(float(raw)): return {}
 			values[key]=clampf(float(raw),0,99)
 		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
-	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean}
+	var bench: Array=[]
+	var provided=value.get("bench",club.roster)
+	if not provided is Array or provided.size()>32: return {}
+	for raw in provided:
+		if not raw is Dictionary: return {}
+		var id: String=str(raw.get("id",""))
+		if id in ids: continue
+		var matches_player: Array=club.roster.filter(func(p): return str(p.id)==id)
+		if matches_player.size()!=1 or bench.any(func(p): return str(p.id)==id): return {}
+		var p: Dictionary=raw.duplicate(true); var original: Dictionary=matches_player[0]
+		if not p.get("ratings",{}) is Dictionary or str(p.get("role",original.role)) not in ["outside_hitter","opposite","middle_blocker","setter","libero"]: return {}
+		var values: Dictionary={"generale":clampi(int(p.get("ratings",{}).get("generale",50)),0,100)}
+		for key in preload("res://src/player_stats_gameplay.gd").KEYS:
+			var rating=p.get("ratings",{}).get(key,original.ratings.get(key,85))
+			if not (rating is int or rating is float) or not is_finite(float(rating)): return {}
+			values[key]=clampf(float(rating),0,99)
+		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean,"bench":bench}
 
 func choose(value: Dictionary, confirmed: bool) -> void:
 	if not active or playing: return
@@ -181,27 +199,27 @@ func set_choice(side: int, value: Dictionary, confirmed: bool) -> void:
 
 func broadcast_lobby() -> void:
 	if not authority(): return
-	if guest!=0: lobby_state.rpc_id(guest,choices,ready_flags,best_of,points,use_player_stats)
+	if guest!=0: lobby_state.rpc_id(guest,choices,ready_flags,best_of,points,use_player_stats,use_fatigue)
 	refresh()
 
 @rpc("authority","call_remote","reliable",0)
-func lobby_state(selected: Array, flags: Array, format: int, target: int, stats_enabled: bool=false) -> void:
+func lobby_state(selected: Array, flags: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
 	if local_side!=1 or selected.size()!=2 or flags.size()!=2: return
-	choices=selected; ready_flags=flags; best_of=format; points=target; use_player_stats=stats_enabled; packet_age=0; refresh()
+	choices=selected; ready_flags=flags; best_of=format; points=target; use_player_stats=stats_enabled; use_fatigue=fatigue_enabled; packet_age=0; refresh()
 
 func start_match() -> bool:
 	if not authority() or guest==0 or not ready_flags[0] or not ready_flags[1] or choices[0].is_empty() or choices[1].is_empty(): return false
-	begin_match.rpc_id(guest,choices,best_of,points,use_player_stats)
-	begin_local(choices,best_of,points,use_player_stats)
+	begin_match.rpc_id(guest,choices,best_of,points,use_player_stats,use_fatigue)
+	begin_local(choices,best_of,points,use_player_stats,use_fatigue)
 	return true
 
 @rpc("authority","call_remote","reliable",0)
-func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=false) -> void:
-	if local_side==1 and active: begin_local(selected,format,target,stats_enabled)
+func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
+	if local_side==1 and active: begin_local(selected,format,target,stats_enabled,fatigue_enabled)
 
-func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false) -> void:
+func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
 	State.setup(game)
-	use_player_stats=stats_enabled; game.use_player_stats=stats_enabled
+	use_player_stats=stats_enabled; game.use_player_stats=stats_enabled; use_fatigue=fatigue_enabled
 	choices=selected; best_of=format; points=target; playing=true; buffered.clear(); incoming_chunks.clear(); packet_age=0
 	game.match_best_of=format; game.match_points=target; game.camera_mode=0; game.demo=false; game.gallery=false
 	var kits=load("res://src/club_kits.gd")
@@ -209,6 +227,9 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 		var selection: Dictionary=selected[side]; var squad: Array=selection.roster
 		game.team_names[side]=selection.name
 		for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],kits.selection(selection.club,selection.kit),kits.selection(selection.club,selection.kit,true))
+	var management_teams: Array=[]
+	for choice in selected: management_teams.append({"id":choice.club,"roster":choice.roster+choice.get("bench",[])})
+	game.match_management.configure_rosters(management_teams,[selected[0].roster,selected[1].roster],{},{"fatigue":use_fatigue,"injuries":false})
 	game.rotations=[selected[0].rotation,selected[1].rotation]; game.scores=[0,0]; game.sets=[0,0]
 	game.server=0; game.paused=false; game.match_finished=false; game.started=true
 	for wall in game.manual_walls: wall.reset()
@@ -216,6 +237,33 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 	if is_instance_valid(menu): menu.hide(); menu.host.clubs.hide(); menu.host.clubs.music.stop()
 	info="Partita online · "+("host" if authority() else "ospite")
 	refresh()
+
+func broadcast_management() -> void:
+	if authority() and playing and guest!=0: management_state.rpc_id(guest,game.match_management.export_state())
+
+@rpc("authority","call_remote","reliable",0)
+func management_state(value: Dictionary) -> void:
+	if not playing or local_side!=1: return
+	game.match_management.import_state(value)
+	if game.match_management.menu.opened:
+		game.match_management.menu.incoming=""; game.match_management.menu.zone=0; game.match_management.menu.refresh(); game.match_management.menu.rows[game.match_management.menu.selected_slot].grab_focus()
+
+func request_substitution(slot: int,incoming: String,exceptional: bool=false) -> void:
+	if not playing: return
+	if authority():
+		var reason: String=game.match_management.substitute(0,slot,incoming,exceptional)
+		if not reason.is_empty(): game.notice(reason)
+	else: substitution_request.rpc_id(1,slot,incoming,exceptional)
+
+@rpc("any_peer","call_remote","reliable",0)
+func substitution_request(slot: int,incoming: String,exceptional: bool) -> void:
+	if not authority() or not playing or multiplayer.get_remote_sender_id()!=guest: return
+	var reason: String=game.match_management.substitute(1,slot,incoming,exceptional)
+	if not reason.is_empty(): substitution_reply.rpc_id(guest,reason)
+
+@rpc("authority","call_remote","reliable",0)
+func substitution_reply(reason: String) -> void:
+	if playing and local_side==1 and game.match_management.menu.opened: game.match_management.menu.status.text=reason
 
 func peer_left(id: int) -> void:
 	if active and authority() and id==guest: leave("L'avversario si è disconnesso.")
