@@ -1,0 +1,99 @@
+{
+  "all_source_pairs_checked": true,
+  "early_dates_preserved": true,
+  "later_seasons": [
+    {
+      "asymmetric": true,
+      "finish": "2028-02-27",
+      "fixtures": 132,
+      "min_return_gap": 5,
+      "start": "2027-10-17",
+      "year": 2027
+    },
+    {
+      "asymmetric": true,
+      "finish": "2029-02-28",
+      "fixtures": 132,
+      "min_return_gap": 6,
+      "start": "2028-10-15",
+      "year": 2028
+    },
+    {
+      "asymmetric": true,
+      "finish": "2030-02-27",
+      "fixtures": 132,
+      "min_return_gap": 7,
+      "start": "2029-10-21",
+      "year": 2029
+    },
+    {
+      "asymmetric": true,
+      "finish": "2031-02-26",
+      "fixtures": 132,
+      "min_return_gap": 4,
+      "start": "2030-10-20",
+      "year": 2030
+    },
+    {
+      "asymmetric": true,
+      "finish": "2032-02-29",
+      "fixtures": 132,
+      "min_return_gap": 5,
+      "start": "2031-10-19",
+      "year": 2031
+    },
+    {
+      "asymmetric": true,
+      "finish": "2033-02-27",
+      "fixtures": 132,
+      "min_return_gap": 6,
+      "start": "2032-10-17",
+      "year": 2032
+    },
+    {
+      "asymmetric": true,
+      "finish": "2034-02-26",
+      "fixtures": 132,
+      "min_return_gap": 6,
+      "start": "2033-10-16",
+      "year": 2033
+    },
+    {
+      "asymmetric": true,
+      "finish": "2035-02-28",
+      "fixtures": 132,
+      "min_return_gap": 6,
+      "start": "2034-10-15",
+      "year": 2034
+    },
+    {
+      "asymmetric": true,
+      "finish": "2036-02-27",
+      "fixtures": 132,
+      "min_return_gap": 4,
+      "start": "2035-10-21",
+      "year": 2035
+    },
+    {
+      "asymmetric": true,
+      "finish": "2037-02-25",
+      "fixtures": 132,
+      "min_return_gap": 6,
+      "start": "2036-10-19",
+      "year": 2036
+    },
+    {
+      "asymmetric": true,
+      "finish": "2038-02-28",
+      "fixtures": 132,
+      "min_return_gap": 5,
+      "start": "2037-10-18",
+      "year": 2037
+    }
+  ],
+  "no_imported_results": true,
+  "official_career_gate": true,
+  "official_fixtures": 132,
+  "rules_verified": true,
+  "table_tiebreaks": true
+}

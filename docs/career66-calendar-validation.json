@@ -1,0 +1,26 @@
+{
+  "fixtures": 132,
+  "teams": 12,
+  "rounds": 22,
+  "games_per_team": 22,
+  "home_per_team": 11,
+  "away_per_team": 11,
+  "all_pairings_crosschecked": true,
+  "results_imported": false,
+  "tuple_sha256": "c97302dc2a91a7064cbe4babe9f5d5e28a23c52f48426e634a0acf2d48281a3a",
+  "comparison_url": "https://www.dallarivolley.com/it-it/i-calendari-dei-campionati-di-serie-a-maschili-202627.aspx",
+  "comparison_source_sha256": "ffdc163e819b4134e0658c6e1990367c23294493bb23f52fa518af9a2c03d321",
+  "official_sources": [
+    {
+      "url": "https://ww2.legavolley.it/Calendario.asp?Anno=2026&IdCampionato=999&IdFase=1&IdSquadra=0",
+      "sha256": "8bdb2e4092317ee61bf2b98c4e3b473100d80f1f5d0eefb471671334647489d5",
+      "verified_at": "2026-10-29"
+    },
+    {
+      "url": "https://ww2.legavolley.it/Calendario.asp?Anno=2026&IdCampionato=999&IdFase=2&IdSquadra=0",
+      "sha256": "cafc7ecb900989a9e0b52e8c806d609b8bd9ffe75a7c24a2a7957117a83285c6",
+      "verified_at": "2026-10-29"
+    }
+  ],
+  "verified_at": "2026-10-29"
+}

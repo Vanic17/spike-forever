@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "season": "2026/27",
+  "official": true,
+  "verified_at": "2026-10-29",
+  "formula_source": "https://www.legavolley.it/formula-superlega-2026-27/",
+  "standings_source": "https://www.federvolley.it/regolamenti-0",
+  "standings_article": 42,
+  "standings_order": ["points", "wins", "set_ratio", "point_ratio", "head_to_head"],
+  "match": {"best_of": 5, "points": 25, "deciding_points": 15, "win_by": 2, "substitutions_per_set": 6},
+  "regular": {"teams": 12, "rounds": 22, "fixtures": 132, "first_nominal": "2026-10-18", "last_nominal": "2027-02-28", "win_3_0_or_3_1": 3, "win_3_2": 2, "loss_2_3": 1, "loss_0_3_or_1_3": 0},
+  "supercup": {
+    "participants": ["sir-susa-scai-perugia", "rana-verona", "cucine-lube-civitanova", "itas-trentino"],
+    "pairs": [["sir-susa-scai-perugia", "itas-trentino"], ["rana-verona", "cucine-lube-civitanova"]],
+    "dates": ["2026-11-14", "2026-11-15"],
+    "semifinal_times": ["15:30", "18:00"], "final_time": "18:00", "neutral": true, "venue": "PalaRaschi, Parma",
+    "source_url": "https://ww2.legavolley.it/Calendario.asp?Anno=2026&IdCampionato=1004",
+    "final_source_url": "https://ww2.legavolley.it/Calendario.asp?Anno=2026&IdCampionato=1004&IdFase=7",
+    "rights_order": ["scudetto_winner", "cup_winner", "scudetto_runner_up", "cup_runner_up"],
+    "duplicate_replacement": "best_previous_regular_season_not_already_qualified", "semi_best_of": 1, "final_best_of": 1
+  },
+  "cup": {"qualification_round": 11, "qualified": 8, "quarter_pairs": [[1,8],[4,5],[2,7],[3,6]], "quarter_dates": ["2026-12-30"], "quarter_home": "better_first_half_rank", "semi_date": "2027-02-06", "final_date": "2027-02-07", "final_four_neutral": true, "venue": "Campo neutro", "venue_verified": false, "quarter_best_of": 1, "semi_best_of": 1, "final_best_of": 1},
+  "playoff": {"qualified": 8, "quarter_pairs": [[1,8],[4,5],[2,7],[3,6]], "semifinal_pairs": [[0,1],[2,3]], "quarter_dates": ["2027-03-07","2027-03-14","2027-03-17","2027-03-21","2027-03-28"], "semi_dates": ["2027-04-04","2027-04-07","2027-04-11","2027-04-18","2027-04-25"], "final_dates": ["2027-04-28","2027-05-02","2027-05-05","2027-05-08","2027-05-11"], "best_of": 5, "better_rank_home_games": [1,3,5]},
+  "playout": {"four_team_gap_max": 7, "four_team_positions": [9,10,11,12], "four_team_bonuses": [5,4,3,0], "three_team_positions": [10,11,12], "three_team_bonuses": [4,3,0], "dates": ["2027-03-14","2027-03-21","2027-03-29","2027-04-04","2027-04-11","2027-04-18"], "double_round_robin": true, "relegation_enabled": false, "last_label": "Ultima Play Out · nessuna retrocessione", "ninth_if_gap_high": "season_finished"},
+  "fifth": {"condition": "regular_winner_survives_quarters", "qualified": "four_scudetto_quarter_losers", "semi_pairs_by_regular_rank": [[1,4],[2,3]], "best_of": 3, "better_rank_home_games": [1,3], "semi_dates": ["2027-04-04","2027-04-07","2027-04-11"], "final_dates": ["2027-04-18","2027-04-25","2027-04-28"], "alternate": {"condition": "regular_winner_eliminated_in_quarters", "group_qualified": "three_other_scudetto_quarter_losers", "group_double_round_robin": true, "final_opponent": "worse_regular_ranked_scudetto_semifinal_loser", "group_dates": ["2027-04-04","2027-04-07","2027-04-11","2027-04-18","2027-04-25","2027-04-28"], "final_dates": ["2027-05-01","2027-05-04","2027-05-09"]}, "group_dates": ["2027-04-04","2027-04-07","2027-04-11","2027-04-18","2027-04-25","2027-04-28"], "alternate_final_dates": ["2027-05-01","2027-05-04","2027-05-09"]},
+  "europe": {"simulate_matches": false, "regular_winner_survives_quarters": {"champions": ["scudetto_finalists", "better_regular_ranked_scudetto_semifinal_loser"], "cev_cup": "worse_regular_ranked_scudetto_semifinal_loser", "challenge": "fifth_winner"}, "regular_winner_eliminated_in_quarters": {"champions": ["scudetto_finalists", "regular_winner"], "cev_cup": "better_regular_ranked_scudetto_semifinal_loser", "challenge": "fifth_winner"}}
+}
