@@ -6,6 +6,9 @@ New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
 $files+='docs/RELEASE_NOTES_69.md'
 $files+='docs/RELEASE_NOTES_70.md'
+$files+='docs/RELEASE_NOTES_71.md'
+foreach($report71 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'bench71-*'){$files+='docs/'+$report71.Name}
+foreach($tool71 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*71.*'){$files+='tools/'+$tool71.Name}
 foreach($report70 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'arena70-*'){$files+='docs/'+$report70.Name}
 foreach($tool70 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*70.*'){$files+='tools/'+$tool70.Name}
 foreach($pattern69 in @('sideline69-*','substitution69-*')){

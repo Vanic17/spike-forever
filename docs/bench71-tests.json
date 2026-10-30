@@ -1,0 +1,18 @@
+{
+	"clear_end_lines": 12,
+	"different_seat_combinations": 173,
+	"lower_body_samples": 150,
+	"match_rng_preserved": true,
+	"passed": true,
+	"planned_gestures": 663,
+	"points": 200,
+	"table_height": 0.800000011920929,
+	"unique_families": [
+		"clap",
+		"point",
+		"sign",
+		"open",
+		"nod",
+		"turn"
+	]
+}

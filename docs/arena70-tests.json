@@ -1,23 +1,23 @@
 {
 	"bounded_nodes": {
-		"acqua-santanna-cuneo": 34,
-		"allianz-milano": 34,
-		"cisterna-volley": 36,
-		"cucine-lube-civitanova": 34,
-		"gas-sales-bluenergy-piacenza": 34,
-		"itas-trentino": 34,
-		"pallavolo-padova": 34,
-		"rana-verona": 34,
-		"sir-susa-scai-perugia": 36,
-		"tinet-prata-di-pordenone": 34,
-		"valsa-group-modena": 36,
-		"vero-volley-monza": 34
+		"acqua-santanna-cuneo": 32,
+		"allianz-milano": 32,
+		"cisterna-volley": 34,
+		"cucine-lube-civitanova": 32,
+		"gas-sales-bluenergy-piacenza": 32,
+		"itas-trentino": 32,
+		"pallavolo-padova": 32,
+		"rana-verona": 32,
+		"sir-susa-scai-perugia": 34,
+		"tinet-prata-di-pordenone": 32,
+		"valsa-group-modena": 34,
+		"vero-volley-monza": 32
 	},
 	"clubs": [
 		{
 			"club": "allianz-milano",
-			"floor_marks": 12,
-			"profile_switch_us": 60951,
+			"floor_marks": 10,
+			"profile_switch_us": 61835,
 			"sponsors": [
 				"allianz",
 				"joma"
@@ -25,8 +25,8 @@
 		},
 		{
 			"club": "cisterna-volley",
-			"floor_marks": 14,
-			"profile_switch_us": 60334,
+			"floor_marks": 12,
+			"profile_switch_us": 60552,
 			"sponsors": [
 				"conit",
 				"gesa",
@@ -36,8 +36,8 @@
 		},
 		{
 			"club": "cucine-lube-civitanova",
-			"floor_marks": 12,
-			"profile_switch_us": 58064,
+			"floor_marks": 10,
+			"profile_switch_us": 58726,
 			"sponsors": [
 				"lube",
 				"joma"
@@ -45,8 +45,8 @@
 		},
 		{
 			"club": "acqua-santanna-cuneo",
-			"floor_marks": 12,
-			"profile_switch_us": 41910,
+			"floor_marks": 10,
+			"profile_switch_us": 42054,
 			"sponsors": [
 				"santanna",
 				"banca-alpi",
@@ -55,8 +55,8 @@
 		},
 		{
 			"club": "gas-sales-bluenergy-piacenza",
-			"floor_marks": 12,
-			"profile_switch_us": 54173,
+			"floor_marks": 10,
+			"profile_switch_us": 54219,
 			"sponsors": [
 				"gas-sales",
 				"bluenergy",
@@ -65,8 +65,8 @@
 		},
 		{
 			"club": "itas-trentino",
-			"floor_marks": 12,
-			"profile_switch_us": 40642,
+			"floor_marks": 10,
+			"profile_switch_us": 40878,
 			"sponsors": [
 				"itas",
 				"trentino",
@@ -75,8 +75,8 @@
 		},
 		{
 			"club": "pallavolo-padova",
-			"floor_marks": 12,
-			"profile_switch_us": 65867,
+			"floor_marks": 10,
+			"profile_switch_us": 66009,
 			"sponsors": [
 				"kioene",
 				"joma"
@@ -84,8 +84,8 @@
 		},
 		{
 			"club": "rana-verona",
-			"floor_marks": 12,
-			"profile_switch_us": 53952,
+			"floor_marks": 10,
+			"profile_switch_us": 54169,
 			"sponsors": [
 				"rana",
 				"airone",
@@ -94,8 +94,8 @@
 		},
 		{
 			"club": "sir-susa-scai-perugia",
-			"floor_marks": 14,
-			"profile_switch_us": 79957,
+			"floor_marks": 12,
+			"profile_switch_us": 80164,
 			"sponsors": [
 				"sir",
 				"susa",
@@ -106,8 +106,8 @@
 		},
 		{
 			"club": "tinet-prata-di-pordenone",
-			"floor_marks": 12,
-			"profile_switch_us": 66970,
+			"floor_marks": 10,
+			"profile_switch_us": 67047,
 			"sponsors": [
 				"tinet",
 				"joma"
@@ -115,8 +115,8 @@
 		},
 		{
 			"club": "valsa-group-modena",
-			"floor_marks": 14,
-			"profile_switch_us": 52965,
+			"floor_marks": 12,
+			"profile_switch_us": 53414,
 			"sponsors": [
 				"valsa",
 				"bper",
@@ -126,8 +126,8 @@
 		},
 		{
 			"club": "vero-volley-monza",
-			"floor_marks": 12,
-			"profile_switch_us": 52041,
+			"floor_marks": 10,
+			"profile_switch_us": 52091,
 			"sponsors": [
 				"homcom",
 				"bcc-carate",

@@ -22,6 +22,8 @@ var identity_key:=""
 var updates:=0
 var identity_poll:=0.0
 var database
+var reaction_plans: Array[Dictionary]=[{},{}]
+var previous_reactions: Array[Dictionary]=[{},{}]
 
 func _ready() -> void:
 	name="TeamBenches"
@@ -87,10 +89,10 @@ func build() -> void:
 	for entry in actors:
 		var motion=preload("res://src/sideline_animation.gd").new(); entry.actor.add_child(motion)
 		motion.setup(entry.actor,"coach_idle" if entry.coach else ("bench_idle_l" if entry.slot%2==0 else "bench_idle_r"),entry.slot*.67+entry.team*.41)
-		entry["motion"]=motion; entry["reacted"]=""; entry["advice_at"]=-20.0
+		entry["motion"]=motion; entry["reacted"]=""; entry["advice_at"]=entry.team*4.7
 	for i in officials.size():
 		var motion=preload("res://src/sideline_animation.gd").new(); officials[i].add_child(motion)
-		motion.setup(officials[i],"bench_idle_l" if i%2==0 else "bench_idle_r",i*.81); official_motions.append(motion)
+		motion.setup(officials[i],"official_work",i*.81); official_motions.append(motion)
 	sync_identity()
 
 func dress_staff(actor,color: Color) -> void:
@@ -145,18 +147,24 @@ func _process(dt: float) -> void:
 		identity_poll=0; sync_identity()
 	var key:=str([game.scores,game.sets])
 	if key!=score_key:
-		if game.phase=="POINT" and not scores.is_empty(): reaction_team=game.server; reaction_age=0
+		if game.phase=="POINT" and not scores.is_empty():
+			reaction_team=game.server;reaction_age=0
+			for entry in actors:
+				if entry.motion.player.current_animation!=entry.motion.idle:entry.motion.play(entry.motion.idle,.25)
+			for team in 2:
+				reaction_plans[team]=preload("res://src/bench_reactions.gd").plan(actors.filter(func(e):return e.team==team),team,team==reaction_team,key,previous_reactions[team])
+				for slot in reaction_plans[team]:previous_reactions[team][slot]=reaction_plans[team][slot].family
+		else:reaction_plans=[{},{}]
 		score_key=key; scores=game.scores.duplicate()
 	for entry in actors:
 		var actor=entry.actor
 		if not actor.visible: continue
-		var age: float=reaction_age-.16-entry.slot*.095
-		if age>=0 and age<1.0 and reaction_team==entry.team and entry.reacted!=score_key:
+		var plan: Dictionary=reaction_plans[entry.team].get(entry.slot,{})
+		var age: float=reaction_age-float(plan.get("delay",100))
+		if not plan.is_empty() and age>=0 and age<.6 and entry.reacted!=score_key:
 			entry.reacted=score_key
-			# The two end seats have room to stand without stepping into the coach.
-			var clip: String="coach_win" if entry.coach else (("bench_stand_" if entry.slot==6+(game.scores[entry.team]%2) else "bench_clap_")+("l" if entry.slot%2==0 else "r"))
-			entry.motion.play(clip,.25,1.10 if entry.coach else 1.20)
+			entry.motion.play(plan.clip,.25,plan.speed)
 		elif entry.coach and game.phase in ["SET","CPU_SET","ATTACK","CPU_ATTACK"] and elapsed-entry.advice_at>12 and reaction_age>7:
-			entry.advice_at=elapsed; entry.motion.play("coach_advice",.30,1.0)
+			entry.advice_at=elapsed; entry.motion.play("coach_point" if int(elapsed/12+entry.team)%2==0 else "coach_nod",.30,1.0)
 		entry.motion.advance(frame_dt)
 	for motion in official_motions: motion.advance(frame_dt)

@@ -1,0 +1,8 @@
+{
+	"actors": 21,
+	"animation_trees_added": 0,
+	"mean_update_us": 747.8145,
+	"p95_update_us": 814,
+	"samples": 2000,
+	"scope": "CPU time of the cosmetic sideline updater; not whole-game GPU FPS"
+}

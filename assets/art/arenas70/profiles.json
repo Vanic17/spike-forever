@@ -282,22 +282,6 @@
           "yaw": 90
         },
         {
-          "mark": "allianz",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "allianz",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "joma",
           "x": -6.5,
           "z": -6,
@@ -357,22 +341,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "conit",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "conit",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {
@@ -452,22 +420,6 @@
           "yaw": 90
         },
         {
-          "mark": "lube",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "lube",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "joma",
           "x": -6.5,
           "z": -6,
@@ -526,22 +478,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "santanna",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "santanna",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {
@@ -606,22 +542,6 @@
           "yaw": 90
         },
         {
-          "mark": "gas-sales",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "gas-sales",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "macron",
           "x": -6.5,
           "z": -6,
@@ -683,22 +603,6 @@
           "yaw": 90
         },
         {
-          "mark": "itas",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "itas",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "errea",
           "x": -6.5,
           "z": -6,
@@ -756,22 +660,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "kioene",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "kioene",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {
@@ -836,22 +724,6 @@
           "yaw": 90
         },
         {
-          "mark": "rana",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "rana",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "joma",
           "x": -6.5,
           "z": -6,
@@ -912,22 +784,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "sir",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "sir",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {
@@ -1008,22 +864,6 @@
           "yaw": 90
         },
         {
-          "mark": "tinet",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "tinet",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
           "mark": "joma",
           "x": -6.5,
           "z": -6,
@@ -1083,22 +923,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "valsa",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "valsa",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {
@@ -1176,22 +1000,6 @@
           "z": 5.8,
           "width": 3.25,
           "height": 1.625,
-          "yaw": 90
-        },
-        {
-          "mark": "homcom",
-          "x": 0,
-          "z": -10.3,
-          "width": 3.8,
-          "height": 1.9,
-          "yaw": 90
-        },
-        {
-          "mark": "homcom",
-          "x": 0,
-          "z": 10.3,
-          "width": 3.8,
-          "height": 1.9,
           "yaw": 90
         },
         {

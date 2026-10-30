@@ -1,7 +1,7 @@
 {
   "extra_players": 0,
   "lateral_camera": true,
-  "mean_capture_usec": 10.4609375,
+  "mean_capture_usec": 10.55625,
   "poses_recorded": 540,
   "six_trigger_cases": true,
   "state_rng_and_pose_restore": true

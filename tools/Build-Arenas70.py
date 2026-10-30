@@ -77,7 +77,6 @@ for club,ref,free,court,attack,sponsors in rows:
  pair(primary,0,1.55,2.65,1.325)
  secondary=sponsors[1] if sponsors[1] not in ['joma','errea','macron','freddy'] else primary
  pair(secondary,6.65,5.8,3.25,1.625)
- pair(primary,0,10.3,3.8,1.9)
  pair(sponsors[-1],-6.5,6,2.5,1.25)
  if len(sponsors)>3:pair(sponsors[2],-6.5,10.5,2.6,1.3)
  clubs[club]={'reference':ref,'free_zone':'#'+free,'court':'#'+court,'attack_zone':'#'+attack,'sponsors':sponsors,'floor':floor}

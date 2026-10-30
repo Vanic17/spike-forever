@@ -1,0 +1,18 @@
+[
+    {
+        "test":  "Test-Substitution69",
+        "passed":  true
+    },
+    {
+        "test":  "Test-Arena61",
+        "passed":  true
+    },
+    {
+        "test":  "Test-Arenas70",
+        "passed":  true
+    },
+    {
+        "test":  "Test-Replay65",
+        "passed":  true
+    }
+]

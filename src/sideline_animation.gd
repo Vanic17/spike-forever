@@ -5,7 +5,10 @@ var player: AnimationPlayer
 var idle:="bench_idle_l"
 var actor
 static func bank() -> AnimationLibrary:
-	if library==null: library=load("res://assets/art/sideline69/animations.res")
+	if library==null:
+		library=load("res://assets/art/sideline69/animations.res").duplicate()
+		var extra: AnimationLibrary=load("res://assets/art/sideline71/animations.res")
+		for key in extra.get_animation_list():library.add_animation(key,extra.get_animation(key))
 	return library
 func setup(target,idle_clip: String,offset: float=0.0) -> void:
 	actor=target; idle=idle_clip; actor.visual_root.name="Visual"; actor.skeleton.name="Rig"

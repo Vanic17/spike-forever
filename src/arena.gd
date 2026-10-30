@@ -381,10 +381,11 @@ func build_branding() -> void:
 		box(Vector3(-7.72,0.82,side*7.15),Vector3(0.08,0.65,6.4),solid(Color("244b6c"),0.58))
 		for z_offset in [-2.5,0.0,2.5]:
 			box(Vector3(-7.4,0.21,side*7.15+z_offset),Vector3(0.48,0.42,0.06),board)
-	box(Vector3(-7.8,0.55,0),Vector3(0.85,1.1,4.3),board)
-	box(Vector3(-7.8,1.12,0),Vector3(1.05,0.06,4.4),solid(Color("909ba7"),0.38))
+	box(Vector3(-7.8,0.38,0),Vector3(0.85,0.76,4.3),board).name="ScorersTableFront"
+	box(Vector3(-7.8,0.80,0),Vector3(1.05,0.06,4.4),solid(Color("909ba7"),0.38)).name="ScorersTableTop"
 	for z in [-1.2,0.0,1.2]:
-		box(Vector3(-7.45,1.38,z),Vector3(0.06,0.43,0.52),board)
+		box(Vector3(-7.45,1.02,z),Vector3(0.06,0.32,0.48),board)
+		box(Vector3(-8.02,0.841,z),Vector3(0.24,0.016,0.38),solid(Color("273442"),0.7))
 		box(Vector3(-8.38,.43,z),Vector3(.52,.10,.56),solid(Color("263d53"),.85))
 		box(Vector3(-8.67,.79,z),Vector3(.07,.68,.56),solid(Color("263d53"),.85))
 		box(Vector3(-8.38,.21,z),Vector3(.1,.42,.4),board)

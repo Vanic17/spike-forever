@@ -1,0 +1,86 @@
+{
+	"bench_nod_l": {
+		"base": "bench_idle_l",
+		"family": "nod",
+		"legs": "original cinematic",
+		"seconds": 1.9
+	},
+	"bench_nod_r": {
+		"base": "bench_idle_r",
+		"family": "nod",
+		"legs": "original cinematic",
+		"seconds": 1.9
+	},
+	"bench_open_l": {
+		"base": "bench_idle_l",
+		"family": "open",
+		"legs": "original cinematic",
+		"seconds": 2.5
+	},
+	"bench_open_r": {
+		"base": "bench_idle_r",
+		"family": "open",
+		"legs": "original cinematic",
+		"seconds": 2.5
+	},
+	"bench_point_l": {
+		"base": "bench_idle_l",
+		"family": "point",
+		"legs": "original cinematic",
+		"seconds": 2.6
+	},
+	"bench_point_r": {
+		"base": "bench_idle_r",
+		"family": "point",
+		"legs": "original cinematic",
+		"seconds": 2.6
+	},
+	"bench_sign_l": {
+		"base": "bench_idle_l",
+		"family": "sign",
+		"legs": "original cinematic",
+		"seconds": 2.25
+	},
+	"bench_sign_r": {
+		"base": "bench_idle_r",
+		"family": "sign",
+		"legs": "original cinematic",
+		"seconds": 2.25
+	},
+	"bench_turn_l": {
+		"base": "bench_idle_l",
+		"family": "turn",
+		"legs": "original cinematic",
+		"seconds": 3.0
+	},
+	"bench_turn_r": {
+		"base": "bench_idle_r",
+		"family": "turn",
+		"legs": "original cinematic",
+		"seconds": 3.0
+	},
+	"coach_nod": {
+		"base": "coach_idle",
+		"family": "nod",
+		"legs": "original cinematic",
+		"seconds": 1.9
+	},
+	"coach_point": {
+		"base": "coach_idle",
+		"family": "point",
+		"legs": "original cinematic",
+		"seconds": 2.6
+	},
+	"coach_sign": {
+		"base": "coach_idle",
+		"family": "sign",
+		"legs": "original cinematic",
+		"seconds": 2.25
+	},
+	"official_work": {
+		"base": "bench_idle_l",
+		"family": "work",
+		"legs": "original cinematic",
+		"seconds": 4.7
+	}
+}
