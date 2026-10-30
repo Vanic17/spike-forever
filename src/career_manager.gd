@@ -36,8 +36,11 @@ static func add_days(date: String,days: int) -> String:
 	return Time.get_datetime_string_from_unix_time(int(Time.get_unix_time_from_datetime_string(date+"T12:00:00"))+days*86400).left(10)
 static func day_gap(from: String,to: String) -> int:
 	return maxi(0,roundi((Time.get_unix_time_from_datetime_string(to+"T12:00:00")-Time.get_unix_time_from_datetime_string(from+"T12:00:00"))/86400.0))
+func best_of() -> int:
+	return 3 if int(state.get("options",{}).get("best_of",5))==3 else 5
+
 func _normalized_options(input: Dictionary) -> Dictionary:
-	return {"use_player_stats":bool(input.get("stats",input.get("use_player_stats",false))),"stats":bool(input.get("stats",input.get("use_player_stats",false))),"fatigue":bool(input.get("fatigue",true)),"injuries":bool(input.get("injuries",true)),"injury_intensity":clampf(float(input.get("injury_intensity",1.0)),0,2),"difficulty":clampi(int(input.get("difficulty",1)),0,2),"set_points":25,"news_frequency":clampi(int(input.get("news_frequency",1)),0,2),"simulation_detail":input.get("simulation_detail","quick"),"autosave":bool(input.get("autosave",true)),"auto_substitutions":bool(input.get("auto_subs",input.get("auto_substitutions",false))),"auto_subs":bool(input.get("auto_subs",input.get("auto_substitutions",false))),"coach_name":str(input.get("coach_name","")).left(48)}
+	return {"best_of":3 if int(input.get("best_of",5))==3 else 5,"use_player_stats":bool(input.get("stats",input.get("use_player_stats",false))),"stats":bool(input.get("stats",input.get("use_player_stats",false))),"fatigue":bool(input.get("fatigue",true)),"injuries":bool(input.get("injuries",true)),"injury_intensity":clampf(float(input.get("injury_intensity",1.0)),0,2),"difficulty":clampi(int(input.get("difficulty",1)),0,2),"set_points":25,"news_frequency":clampi(int(input.get("news_frequency",1)),0,2),"simulation_detail":input.get("simulation_detail","quick"),"autosave":bool(input.get("autosave",true)),"auto_substitutions":bool(input.get("auto_subs",input.get("auto_substitutions",false))),"auto_subs":bool(input.get("auto_subs",input.get("auto_substitutions",false))),"coach_name":str(input.get("coach_name","")).left(48)}
 func new_career(club_id: String,options: Dictionary={},slot: int=1) -> bool:
 	error=""
 	if rules==null: error="Calendario ufficiale non disponibile: avvio carriera bloccato."; return false
@@ -157,7 +160,7 @@ func standings(competition: String="regular") -> Array:
 			if not table.has(id): continue
 			var row: Dictionary=table[id]; var own: int=int(result.sets[side]); var other: int=int(result.sets[1-side]); var won:=own>other
 			row.played+=1; row.wins+=int(won); row.losses+=int(not won); row.sets_for+=own; row.sets_against+=other
-			row.points+=(3 if other<2 else 2) if won else (1 if own==2 else 0)
+			row.points+=rules.points_for_score(own,other)
 			for score in result.set_scores: row.points_for+=int(score[side]); row.points_against+=int(score[1-side])
 			if result.get("team_stats",[]).size()==2:
 				for key in ["aces","blocks","errors"]:
@@ -272,17 +275,18 @@ func record_played_result(fixture_id: String,result: Dictionary) -> bool:
 	return _record(f,measured)
 func _validate_result(result: Dictionary) -> bool:
 	if not result.get("sets") is Array or result.sets.size()!=2 or not result.get("set_scores") is Array: return false
-	if maxi(result.sets[0],result.sets[1])!=3 or mini(result.sets[0],result.sets[1])<0 or mini(result.sets[0],result.sets[1])>2: return false
+	var needed:=int(best_of()/2)+1
+	if maxi(result.sets[0],result.sets[1])!=needed or mini(result.sets[0],result.sets[1])<0 or mini(result.sets[0],result.sets[1])>=needed: return false
 	if result.set_scores.size()!=int(result.sets[0])+int(result.sets[1]): return false
 	var wins: Array=[0,0]
 	for i in result.set_scores.size():
 		var score: Array=result.set_scores[i]
 		if score.size()!=2 or mini(score[0],score[1])<0: return false
-		var target:=15 if i==4 else 25
+		var target:=15 if i==best_of()-1 else 25
 		if maxi(score[0],score[1])<target or absi(int(score[0])-int(score[1]))<2: return false
 		if maxi(score[0],score[1])>target and absi(int(score[0])-int(score[1]))!=2: return false
 		wins[0 if score[0]>score[1] else 1]+=1
-		if maxi(wins[0],wins[1])==3 and i<result.set_scores.size()-1: return false
+		if maxi(wins[0],wins[1])==needed and i<result.set_scores.size()-1: return false
 	return wins==result.sets
 func _record(f: Dictionary,result: Dictionary) -> bool:
 	if not f.result.is_empty() or state.results.has(f.id): error="Incontro già registrato."; return false

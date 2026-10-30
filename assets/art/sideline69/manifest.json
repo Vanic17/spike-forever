@@ -1,0 +1,90 @@
+{
+  "bench_clap_l": {
+    "heading": -0.0863903891992439,
+    "hip_first": 0.590657353401184,
+    "hip_last": 0.590657591819763,
+    "seconds": 6.46683660883151,
+    "source": "Substitute/Cine_NPC_HJ_lookL_D0_SeatApplause_TO_LookR_D0.psa",
+    "stand_at": -1.0
+  },
+  "bench_clap_r": {
+    "heading": -0.0863904582843238,
+    "hip_first": 0.590657114982605,
+    "hip_last": 0.590656876564026,
+    "seconds": 6.46683660883151,
+    "source": "Substitute/Cine_NPC_HJ_lookR_D0_SeatApplause_TO_LookL_D0.psa",
+    "stand_at": -1.0
+  },
+  "bench_idle_l": {
+    "heading": -0.0863903075484979,
+    "hip_first": 0.589170515537262,
+    "hip_last": 0.589129090309143,
+    "seconds": 4.71678327969615,
+    "source": "Substitute/Cine_NPC_HJ_lookL_D0_Idle1.psa",
+    "stand_at": -1.0
+  },
+  "bench_idle_r": {
+    "heading": -0.0863904485816038,
+    "hip_first": 0.589282214641571,
+    "hip_last": 0.5892413854599,
+    "seconds": 4.71678327969615,
+    "source": "Substitute/Cine_NPC_HJ_lookR_D0_Idle1.psa",
+    "stand_at": -1.0
+  },
+  "bench_stand_l": {
+    "heading": -0.0861916078756527,
+    "hip_first": 0.589819192886353,
+    "hip_last": 0.590004920959473,
+    "seconds": 8.71673021186719,
+    "source": "Substitute/Cine_NPC_HJ_lookL_D0_StandApplause.psa",
+    "stand_at": 0.8
+  },
+  "bench_stand_r": {
+    "heading": -0.0861915484922695,
+    "hip_first": 0.589820623397827,
+    "hip_last": 0.590006351470947,
+    "seconds": 8.71673021186719,
+    "source": "Substitute/Cine_NPC_HJ_lookR_D0_StandApplause.psa",
+    "stand_at": 0.8
+  },
+  "coach_advice": {
+    "heading": -0.0484168407538618,
+    "hip_first": 1.07746410369873,
+    "hip_last": 1.0774405002594,
+    "seconds": 12.2167115766055,
+    "source": "Coach/Cine_NPC_C_armsRelease_Advice.psa",
+    "stand_at": 0.0
+  },
+  "coach_idle": {
+    "heading": -0.0484166621494789,
+    "hip_first": 1.06478130817413,
+    "hip_last": 1.06478071212769,
+    "seconds": 9.00012326849259,
+    "source": "Coach/Cine_NPC_C_armsReleased_Idle_02.psa",
+    "stand_at": 0.0
+  },
+  "coach_win": {
+    "heading": -0.0484166174983827,
+    "hip_first": 1.07898139953613,
+    "hip_last": 1.0788848400116,
+    "seconds": 9.65005707136561,
+    "source": "Coach/Cine_NPC_C_armsReleased_WIN_1.psa",
+    "stand_at": 0.0
+  },
+  "stand": {
+    "heading": -0.0166643463538363,
+    "hip_first": 1.05490911006927,
+    "hip_last": 1.05490911006927,
+    "seconds": 4.06693551514945,
+    "source": "Idle/Cine_Idle_Static.psa",
+    "stand_at": 0.0
+  },
+  "walk": {
+    "heading": -0.033045644210595,
+    "hip_first": 1.04835438728333,
+    "hip_last": 1.04889786243439,
+    "seconds": 1.30081300813008,
+    "source": "Move/Cine_Move_Walk_L_S1_in_place.psa",
+    "stand_at": 0.0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "bench_poll_before_scene": true,
+  "controller_cases": 42,
+  "high_five_hand_gap": 0.00268080271780491,
+  "live_rally_queued_not_applied": true,
+  "lower_reserves_confirm": true,
+  "minimum_actor_separation": 0.785252451896667,
+  "native_cinematic_clips": 11,
+  "paths_avoid_actual_obstacles": true,
+  "planning_usec": 11382,
+  "stable_bench_seats": true
+}

@@ -145,24 +145,11 @@ void fragment(){
 	var sphere := SphereMesh.new()
 	sphere.radius = 0.105
 	sphere.height = 0.21
-	sphere.radial_segments = 32
-	sphere.rings = 16
+	sphere.radial_segments = 64
+	sphere.rings = 32
 	ball.mesh = sphere
-	var ball_shader := Shader.new()
-	ball_shader.code = "shader_type spatial; uniform sampler2D diffuse_map : source_color, filter_linear_mipmap_anisotropic; uniform sampler2D color_mask : filter_linear_mipmap; uniform sampler2D normal_map : hint_normal; void fragment(){ vec3 mask=texture(color_mask,UV).rgb; vec3 tint=mask.r*vec3(0.92,0.68,0.06)+mask.g*vec3(0.045,0.13,0.40)+max(0.0,1.0-mask.r-mask.g)*vec3(0.9); ALBEDO=texture(diffuse_map,UV).rgb*tint; NORMAL_MAP=texture(normal_map,UV).rgb; NORMAL_MAP_DEPTH=0.5; ROUGHNESS=0.5; }"
-	var ball_material := ShaderMaterial.new()
-	ball_material.shader = ball_shader
-	ball_material.set_shader_parameter("diffuse_map", Assets.texture("T_Acc_VolleyBallB_BaseColor.png"))
-	ball_material.set_shader_parameter("color_mask", Assets.texture("T_Acc_VolleyBallB_Mask.png"))
-	ball_material.set_shader_parameter("normal_map", Assets.texture("T_Acc_VolleyBallB_Normal.png"))
-	ball.material_override = ball_material
+	ball.material_override = preload("res://src/volleyball_visual.gd").material()
 	add_child(ball)
-	# The source mesh has the panel UVs; use it instead of spherical UVs when available.
-	var ball_model := Assets.scene("SM_Acc_VolleyBallB.gltf")
-	if ball_model:
-		var meshes := descendants(ball_model)
-		if not meshes.is_empty(): ball.mesh = meshes[0].mesh
-		ball_model.free()
 	shadow = MeshInstance3D.new()
 	var disc := CylinderMesh.new()
 	disc.top_radius = 0.13
@@ -380,14 +367,17 @@ func build_branding() -> void:
 			box(Vector3(x, 12.5, z), Vector3(1.8, 0.05, 0.18), illuminated)
 	# A real scorers' table and team benches fill the former empty sidelines.
 	for side in [-1,1]:
-		box(Vector3(-7.4,0.42,side*6.6),Vector3(0.65,0.11,4.5),solid(Color("244b6c"),0.58))
-		box(Vector3(-7.72,0.82,side*6.6),Vector3(0.08,0.65,4.5),solid(Color("244b6c"),0.58))
-		for z_offset in [-1.8,0.0,1.8]:
-			box(Vector3(-7.4,0.21,side*6.6+z_offset),Vector3(0.48,0.42,0.06),board)
+		box(Vector3(-7.4,0.42,side*7.15),Vector3(0.65,0.11,6.4),solid(Color("244b6c"),0.58))
+		box(Vector3(-7.72,0.82,side*7.15),Vector3(0.08,0.65,6.4),solid(Color("244b6c"),0.58))
+		for z_offset in [-2.5,0.0,2.5]:
+			box(Vector3(-7.4,0.21,side*7.15+z_offset),Vector3(0.48,0.42,0.06),board)
 	box(Vector3(-7.8,0.55,0),Vector3(0.85,1.1,4.3),board)
 	box(Vector3(-7.8,1.12,0),Vector3(1.05,0.06,4.4),solid(Color("909ba7"),0.38))
 	for z in [-1.2,0.0,1.2]:
 		box(Vector3(-7.45,1.38,z),Vector3(0.06,0.43,0.52),board)
+		box(Vector3(-8.38,.43,z),Vector3(.52,.10,.56),solid(Color("263d53"),.85))
+		box(Vector3(-8.67,.79,z),Vector3(.07,.68,.56),solid(Color("263d53"),.85))
+		box(Vector3(-8.38,.21,z),Vector3(.1,.42,.4),board)
 
 func crowd_react() -> void:
 	crowd_excitement=1.0

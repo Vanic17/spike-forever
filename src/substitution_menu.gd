@@ -50,6 +50,8 @@ func _ready() -> void:
 	var actions=HBoxContainer.new(); body.add_child(actions)
 	confirm_button=UI.button(actions,"CONFERMA SOSTITUZIONE",func(): apply(false)); confirm_button.alignment=HORIZONTAL_ALIGNMENT_CENTER
 	exception_button=UI.button(actions,"CAMBIO ECCEZIONALE / INFORTUNIO",func(): apply(true)); exception_button.alignment=HORIZONTAL_ALIGNMENT_CENTER
+	for button in [confirm_button,exception_button]:
+		button.add_theme_stylebox_override("disabled",UI.surface(Color("172536"),12,14)); button.add_theme_color_override("font_disabled_color",Color("9daabb"))
 	UI.label(body,"A / Croce: seleziona e conferma · B / Cerchio: indietro · LS / D-pad: scorri senza selezionare",19,UI.MUTED)
 	surface.resized.connect(layout); layout(); surface.hide()
 func layout():
@@ -91,6 +93,7 @@ func refresh() -> void:
 	update_detail()
 func update_detail() -> void:
 	confirm_button.disabled=true; exception_button.disabled=true; exception_button.hide()
+	confirm_button.text=tr("CONFERMA SOSTITUZIONE") if manager.dead_ball() else tr("PROGRAMMA SOSTITUZIONE")
 	for i in rows.size():
 		rows[i].add_theme_stylebox_override("normal",UI.surface(Color("31465c") if zone>0 and selected_slot==i else Color("20334b"),12,14))
 	for candidate in candidates:
@@ -111,10 +114,10 @@ func update_detail() -> void:
 	var values: Array=[]
 	for key in ["battuta","ricezione","difesa","palleggio","schiacciata","muro"]: values.append(tr(key.capitalize())+" %d → %d"%[int(old.ratings.get(key,50)),int(next.ratings.get(key,50))])
 	detail.text+="\n"+" · ".join(values)
-	var reason: String=manager.eligibility(side,selected_slot,incoming)
-	status.text=tr(reason) if not reason.is_empty() else tr("Cambio consentito. L'ordine di rotazione resta invariato. Premi CONFERMA per applicarlo.")
+	var reason: String=manager.eligibility(side,selected_slot,incoming,false,false)
+	status.text=tr(reason) if not reason.is_empty() else (tr("Cambio consentito. L'ordine di rotazione resta invariato. Premi CONFERMA per applicarlo.") if manager.dead_ball() else tr("Cambio alla prossima palla ferma. Conferma per programmarlo e riprendere lo scambio."))
 	confirm_button.disabled=not reason.is_empty()
-	var exceptional=not manager.eligibility(side,selected_slot,incoming,true).is_empty()
+	var exceptional=not manager.eligibility(side,selected_slot,incoming,true,false).is_empty()
 	exception_button.disabled=exceptional; exception_button.visible=not exceptional and confirm_button.disabled
 func choose_slot(slot: int) -> void:
 	selected_slot=slot; zone=1; incoming=""; bench_cursor=0; update_detail()
@@ -137,15 +140,19 @@ func apply(exceptional: bool) -> void:
 	if incoming.is_empty() or zone!=2: return
 	if game.network_match() and not game.online_session.authority():
 		game.online_session.request_substitution(selected_slot,incoming,exceptional); status.text=tr("Richiesta inviata all'host…"); return
-	var reason: String=manager.substitute(side,selected_slot,incoming,exceptional)
+	var reason: String=manager.request_change(side,selected_slot,incoming,exceptional)
 	if not reason.is_empty(): status.text=tr(reason); return
-	incoming=""; zone=0; refresh(); rows[selected_slot].grab_focus()
+	incoming=""; zone=0; close(); game.request_pause(false)
 func navigate(direction: int) -> void:
 	var focus=get_viewport().gui_get_focus_owner()
 	var list=rows if zone==0 else candidates
 	if zone==2:
-		if direction<0 and not candidates.is_empty(): candidates[bench_cursor].grab_focus()
-		elif direction>0 and not confirm_button.disabled: confirm_button.grab_focus()
+		var cursor=candidates.find(focus)
+		if cursor>=0:
+			if cursor+direction>=candidates.size() and not confirm_button.disabled: confirm_button.grab_focus()
+			else: candidates[clampi(cursor+direction,0,candidates.size()-1)].grab_focus()
+		elif direction<0 and not candidates.is_empty(): candidates[bench_cursor].grab_focus()
+		elif not confirm_button.disabled: confirm_button.grab_focus()
 		return
 	var index=list.find(focus)
 	if index<0:

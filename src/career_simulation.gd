@@ -41,8 +41,9 @@ static func play(manager,fixture: Dictionary) -> Dictionary:
 	var duration:=0.0; var total_points:=0
 	var detailed: bool=manager.state.options.simulation_detail in [1,"detailed","dettagliata"]
 	var point_log: Array=[]
-	while maxi(sets[0],sets[1])<3:
-		var points: Array=[0,0]; var target:=15 if set_scores.size()==4 else 25
+	var best_of: int=manager.best_of()
+	while maxi(sets[0],sets[1])<int(best_of/2)+1:
+		var points: Array=[0,0]; var target:=15 if set_scores.size()==best_of-1 else 25
 		var serving: int=manager.rng.randi_range(0,1)
 		var shape: float=manager.rng.randf_range(-.075,.075)
 		for squad in teams:

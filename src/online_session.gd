@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF067"
+const PROTOCOL="SF069"
 const PORT=26761
 var game
 var menu
@@ -253,19 +253,30 @@ func management_state(value: Dictionary) -> void:
 func request_substitution(slot: int,incoming: String,exceptional: bool=false) -> void:
 	if not playing: return
 	if authority():
-		var reason: String=game.match_management.substitute(0,slot,incoming,exceptional)
+		var reason: String=game.match_management.request_change(0,slot,incoming,exceptional)
 		if not reason.is_empty(): game.notice(reason)
 	else: substitution_request.rpc_id(1,slot,incoming,exceptional)
 
 @rpc("any_peer","call_remote","reliable",0)
 func substitution_request(slot: int,incoming: String,exceptional: bool) -> void:
 	if not authority() or not playing or multiplayer.get_remote_sender_id()!=guest: return
-	var reason: String=game.match_management.substitute(1,slot,incoming,exceptional)
-	if not reason.is_empty(): substitution_reply.rpc_id(guest,reason)
+	var reason: String=game.match_management.request_change(1,slot,incoming,exceptional)
+	substitution_reply.rpc_id(guest,reason)
 
 @rpc("authority","call_remote","reliable",0)
 func substitution_reply(reason: String) -> void:
-	if playing and local_side==1 and game.match_management.menu.opened: game.match_management.menu.status.text=reason
+	if playing and local_side==1 and game.match_management.menu.opened:
+		if reason.is_empty(): game.match_management.menu.close(); pause_request(false)
+		else: game.match_management.menu.status.text=reason
+
+@rpc("authority","call_remote","reliable",0)
+func substitution_presentation(side: int,slot: int,outgoing: String,incoming: String,seat_slot: int=-1) -> void:
+	if playing and local_side==1 and side in [0,1] and slot>=0 and slot<6:
+		game.substitution_scene.enqueue(side,slot,game.match_management.identity(outgoing),game.match_management.identity(incoming),seat_slot)
+
+@rpc("authority","call_remote","reliable",0)
+func substitution_finished() -> void:
+	if playing and local_side==1: game.substitution_scene.finish()
 
 func peer_left(id: int) -> void:
 	if active and authority() and id==guest: leave("L'avversario si è disconnesso.")

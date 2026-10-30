@@ -1,0 +1,90 @@
+[
+  {
+    "away": false,
+    "best_of": 3,
+    "deciding": false,
+    "points": 3,
+    "returned_to_career": true,
+    "sets": [
+      2,
+      0
+    ]
+  },
+  {
+    "away": false,
+    "best_of": 3,
+    "deciding": true,
+    "points": 2,
+    "returned_to_career": true,
+    "sets": [
+      2,
+      1
+    ]
+  },
+  {
+    "away": true,
+    "best_of": 3,
+    "deciding": false,
+    "points": 3,
+    "returned_to_career": true,
+    "sets": [
+      0,
+      2
+    ]
+  },
+  {
+    "away": true,
+    "best_of": 3,
+    "deciding": true,
+    "points": 2,
+    "returned_to_career": true,
+    "sets": [
+      1,
+      2
+    ]
+  },
+  {
+    "away": false,
+    "best_of": 5,
+    "deciding": false,
+    "points": 3,
+    "returned_to_career": true,
+    "sets": [
+      3,
+      0
+    ]
+  },
+  {
+    "away": false,
+    "best_of": 5,
+    "deciding": true,
+    "points": 2,
+    "returned_to_career": true,
+    "sets": [
+      3,
+      2
+    ]
+  },
+  {
+    "away": true,
+    "best_of": 5,
+    "deciding": false,
+    "points": 3,
+    "returned_to_career": true,
+    "sets": [
+      0,
+      3
+    ]
+  },
+  {
+    "away": true,
+    "best_of": 5,
+    "deciding": true,
+    "points": 2,
+    "returned_to_career": true,
+    "sets": [
+      2,
+      3
+    ]
+  }
+]

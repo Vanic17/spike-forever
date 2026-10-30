@@ -127,8 +127,10 @@ static func later_schedule(year: int,seed_value: int,team_ids: Array) -> Array:
 	return fixtures
 
 static func points_for_score(sets_for: int,sets_against: int) -> int:
-	if sets_for==3: return 2 if sets_against==2 else 3
-	return 1 if sets_for==2 and sets_against==3 else 0
+	var winning_sets:=maxi(sets_for,sets_against)
+	if winning_sets not in [2,3]: return 0
+	var deciding:=mini(sets_for,sets_against)==winning_sets-1
+	return (2 if deciding else 3) if sets_for>sets_against else (1 if deciding else 0)
 
 static func ratio(numerator: float,denominator: float) -> float:
 	return numerator/denominator if denominator>0 else (1000000.0 if numerator>0 else 0.0)

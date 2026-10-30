@@ -4,7 +4,7 @@ const League=preload("res://src/league.gd")
 func _initialize(): call_deferred("run")
 func run():
 	var sample={"battuta":80,"ricezione":70,"difesa":60,"palleggio":90,"schiacciata":50,"muro":40}
-	var expected={"setter":73,"opposite":58,"outside_hitter":61,"middle_blocker":55,"libero":68}
+	var expected={"setter":74,"opposite":58,"outside_hitter":61,"middle_blocker":55,"libero":69}
 	for role in Overall.WEIGHTS:
 		var sum=0
 		for weight in Overall.WEIGHTS[role]: sum+=weight

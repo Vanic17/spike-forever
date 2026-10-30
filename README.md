@@ -1,4 +1,8 @@
-﻿# Spike Forever
+# Spike Forever
+
+**Versione 0.69.0:** vere animazioni cinematiche di panchina e allenatore; sostituzioni con percorsi liberi, posti stabili e cinque sincronizzato; conferma raggiungibile anche sulle ultime riserve e cambi programmabili durante lo scambio. Include tutte le novità della 0.68. [Cause, correzioni e verifiche](docs/RELEASE_NOTES_69.md).
+
+**Patch locale 0.68.0, non pubblicata:** carriera ripulita e formato a tre/cinque set, nuovi pesi overall, tre telecamere, replay sui punti in sovraccarico, palla V200W, panchine e tavolo animati, scena delle sostituzioni. [Dettagli](docs/RELEASE_NOTES_68.md).
 
 **Versione 0.67.0:** overall automatico con i pesi per ruolo forniti dall’utente, più terzi tocchi attaccabili e punto garantito nella finestra verde anche con database attivo. [Dettagli e verifiche](docs/RELEASE_NOTES_67.md).
 
@@ -18,7 +22,7 @@ Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.67.0 (protocollo SF067).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono usare la 0.69.0, protocollo SF069.
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 

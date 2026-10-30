@@ -29,10 +29,10 @@ func _ready() -> void:
 	surface.hide()
 func _process(_dt: float) -> void:
 	substitution_button.disabled=not game.match_management.active
-	var wanted: bool=game.started and game.paused and not game.match_finished and (game.tutorial==null or not game.tutorial.active)
+	var wanted: bool=game.started and game.paused and not game.match_finished and (game.tutorial==null or not game.tutorial.active) and not (game.substitution_scene!=null and game.substitution_scene.active)
 	if surface.visible==wanted: return
 	surface.visible=wanted
-	if wanted: resume_button.grab_focus()
+	if wanted and not game.match_management.menu.opened: resume_button.grab_focus()
 func _input(event: InputEvent) -> void:
 	if game.match_management!=null and game.match_management.menu.opened: return
 	if surface!=null and surface.visible and event.is_action_pressed("ui_cancel"):

@@ -28,6 +28,8 @@ func run():
 		await joy(JOY_BUTTON_A); assert(ui.confirm_button.has_focus())
 		assert(Rect2(Vector2.ZERO,Vector2(size)).encloses(ui.confirm_button.get_global_rect()),"Confirm must remain visible at TV resolutions")
 		await joy(JOY_BUTTON_A); assert(m.counts[0]>0 and ui.zone==0)
+		assert(not ui.opened and not g.paused,"Confirmation resumes into the change presentation")
+		g.paused=true; ui.open()
 		for i in 5: await joy(JOY_BUTTON_DPAD_DOWN)
 		assert(ui.rows[5].has_focus(),"Controller reaches last court slot")
 		assert(ui.left_scroll.get_global_rect().intersects(ui.rows[5].get_global_rect()))

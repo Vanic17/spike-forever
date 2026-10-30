@@ -1,0 +1,1069 @@
+{
+  "formula": "round(sum(skill * role_weight) / 100)",
+  "keys": [
+    "battuta",
+    "ricezione",
+    "difesa",
+    "palleggio",
+    "schiacciata",
+    "muro"
+  ],
+  "weights": {
+    "setter": [
+      15,
+      0,
+      10,
+      50,
+      5,
+      20
+    ],
+    "opposite": [
+      20,
+      0,
+      15,
+      5,
+      40,
+      20
+    ],
+    "outside_hitter": [
+      15,
+      20,
+      15,
+      5,
+      30,
+      15
+    ],
+    "middle_blocker": [
+      15,
+      5,
+      5,
+      5,
+      35,
+      35
+    ],
+    "libero": [
+      0,
+      45,
+      40,
+      15,
+      0,
+      0
+    ]
+  },
+  "players": [
+    {
+      "id": "allianz-milano-01",
+      "role": "outside_hitter",
+      "before": 77,
+      "after": 77
+    },
+    {
+      "id": "allianz-milano-02",
+      "role": "outside_hitter",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "allianz-milano-03",
+      "role": "libero",
+      "before": 82,
+      "after": 81
+    },
+    {
+      "id": "allianz-milano-04",
+      "role": "setter",
+      "before": 75,
+      "after": 77
+    },
+    {
+      "id": "allianz-milano-05",
+      "role": "middle_blocker",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "allianz-milano-06",
+      "role": "middle_blocker",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "allianz-milano-07",
+      "role": "middle_blocker",
+      "before": 66,
+      "after": 66
+    },
+    {
+      "id": "allianz-milano-08",
+      "role": "opposite",
+      "before": 75,
+      "after": 76
+    },
+    {
+      "id": "allianz-milano-09",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "allianz-milano-10",
+      "role": "middle_blocker",
+      "before": 84,
+      "after": 84
+    },
+    {
+      "id": "allianz-milano-11",
+      "role": "setter",
+      "before": 68,
+      "after": 70
+    },
+    {
+      "id": "allianz-milano-12",
+      "role": "outside_hitter",
+      "before": 77,
+      "after": 77
+    },
+    {
+      "id": "allianz-milano-13",
+      "role": "opposite",
+      "before": 69,
+      "after": 70
+    },
+    {
+      "id": "allianz-milano-14",
+      "role": "libero",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "allianz-milano-15",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "cisterna-volley-01",
+      "role": "setter",
+      "before": 67,
+      "after": 69
+    },
+    {
+      "id": "cisterna-volley-02",
+      "role": "outside_hitter",
+      "before": 79,
+      "after": 79
+    },
+    {
+      "id": "cisterna-volley-03",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "cisterna-volley-04",
+      "role": "middle_blocker",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "cisterna-volley-05",
+      "role": "opposite",
+      "before": 77,
+      "after": 78
+    },
+    {
+      "id": "cisterna-volley-19",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "cisterna-volley-06",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "cisterna-volley-07",
+      "role": "setter",
+      "before": 74,
+      "after": 76
+    },
+    {
+      "id": "cisterna-volley-08",
+      "role": "libero",
+      "before": 82,
+      "after": 81
+    },
+    {
+      "id": "cisterna-volley-09",
+      "role": "opposite",
+      "before": 70,
+      "after": 72
+    },
+    {
+      "id": "cisterna-volley-10",
+      "role": "middle_blocker",
+      "before": 76,
+      "after": 76
+    },
+    {
+      "id": "cisterna-volley-11",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "cisterna-volley-12",
+      "role": "middle_blocker",
+      "before": 68,
+      "after": 68
+    },
+    {
+      "id": "cisterna-volley-13",
+      "role": "libero",
+      "before": 85,
+      "after": 84
+    },
+    {
+      "id": "cucine-lube-civitanova-01",
+      "role": "setter",
+      "before": 81,
+      "after": 83
+    },
+    {
+      "id": "cucine-lube-civitanova-02",
+      "role": "middle_blocker",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "cucine-lube-civitanova-03",
+      "role": "outside_hitter",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "cucine-lube-civitanova-04",
+      "role": "libero",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "cucine-lube-civitanova-05",
+      "role": "libero",
+      "before": 89,
+      "after": 88
+    },
+    {
+      "id": "cucine-lube-civitanova-06",
+      "role": "middle_blocker",
+      "before": 69,
+      "after": 69
+    },
+    {
+      "id": "cucine-lube-civitanova-07",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "cucine-lube-civitanova-21",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "cucine-lube-civitanova-08",
+      "role": "outside_hitter",
+      "before": 83,
+      "after": 83
+    },
+    {
+      "id": "cucine-lube-civitanova-09",
+      "role": "setter",
+      "before": 69,
+      "after": 71
+    },
+    {
+      "id": "cucine-lube-civitanova-10",
+      "role": "middle_blocker",
+      "before": 77,
+      "after": 77
+    },
+    {
+      "id": "cucine-lube-civitanova-11",
+      "role": "opposite",
+      "before": 74,
+      "after": 75
+    },
+    {
+      "id": "cucine-lube-civitanova-12",
+      "role": "middle_blocker",
+      "before": 68,
+      "after": 68
+    },
+    {
+      "id": "cucine-lube-civitanova-13",
+      "role": "outside_hitter",
+      "before": 83,
+      "after": 83
+    },
+    {
+      "id": "acqua-santanna-cuneo-01",
+      "role": "setter",
+      "before": 68,
+      "after": 70
+    },
+    {
+      "id": "acqua-santanna-cuneo-02",
+      "role": "libero",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "acqua-santanna-cuneo-03",
+      "role": "libero",
+      "before": 78,
+      "after": 77
+    },
+    {
+      "id": "acqua-santanna-cuneo-04",
+      "role": "setter",
+      "before": 68,
+      "after": 70
+    },
+    {
+      "id": "acqua-santanna-cuneo-05",
+      "role": "opposite",
+      "before": 70,
+      "after": 72
+    },
+    {
+      "id": "acqua-santanna-cuneo-06",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "acqua-santanna-cuneo-07",
+      "role": "middle_blocker",
+      "before": 67,
+      "after": 67
+    },
+    {
+      "id": "acqua-santanna-cuneo-08",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "acqua-santanna-cuneo-09",
+      "role": "opposite",
+      "before": 77,
+      "after": 78
+    },
+    {
+      "id": "acqua-santanna-cuneo-10",
+      "role": "outside_hitter",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "acqua-santanna-cuneo-11",
+      "role": "outside_hitter",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "acqua-santanna-cuneo-12",
+      "role": "middle_blocker",
+      "before": 74,
+      "after": 74
+    },
+    {
+      "id": "acqua-santanna-cuneo-13",
+      "role": "outside_hitter",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "acqua-santanna-cuneo-14",
+      "role": "middle_blocker",
+      "before": 74,
+      "after": 74
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-01",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-02",
+      "role": "outside_hitter",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-03",
+      "role": "setter",
+      "before": 76,
+      "after": 78
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-04",
+      "role": "opposite",
+      "before": 71,
+      "after": 72
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-05",
+      "role": "libero",
+      "before": 86,
+      "after": 85
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-06",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-07",
+      "role": "middle_blocker",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-08",
+      "role": "middle_blocker",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-09",
+      "role": "outside_hitter",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-10",
+      "role": "setter",
+      "before": 70,
+      "after": 72
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-11",
+      "role": "libero",
+      "before": 82,
+      "after": 80
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-12",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-13",
+      "role": "outside_hitter",
+      "before": 77,
+      "after": 77
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-14",
+      "role": "opposite",
+      "before": 78,
+      "after": 79
+    },
+    {
+      "id": "itas-trentino-01",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "itas-trentino-02",
+      "role": "setter",
+      "before": 68,
+      "after": 70
+    },
+    {
+      "id": "itas-trentino-03",
+      "role": "outside_hitter",
+      "before": 87,
+      "after": 87
+    },
+    {
+      "id": "itas-trentino-04",
+      "role": "setter",
+      "before": 77,
+      "after": 79
+    },
+    {
+      "id": "itas-trentino-05",
+      "role": "libero",
+      "before": 82,
+      "after": 81
+    },
+    {
+      "id": "itas-trentino-06",
+      "role": "opposite",
+      "before": 80,
+      "after": 81
+    },
+    {
+      "id": "itas-trentino-07",
+      "role": "middle_blocker",
+      "before": 68,
+      "after": 68
+    },
+    {
+      "id": "itas-trentino-08",
+      "role": "libero",
+      "before": 90,
+      "after": 89
+    },
+    {
+      "id": "itas-trentino-09",
+      "role": "outside_hitter",
+      "before": 82,
+      "after": 82
+    },
+    {
+      "id": "itas-trentino-10",
+      "role": "opposite",
+      "before": 69,
+      "after": 71
+    },
+    {
+      "id": "itas-trentino-11",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "itas-trentino-12",
+      "role": "middle_blocker",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "itas-trentino-13",
+      "role": "middle_blocker",
+      "before": 76,
+      "after": 76
+    },
+    {
+      "id": "itas-trentino-14",
+      "role": "middle_blocker",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "pallavolo-padova-01",
+      "role": "opposite",
+      "before": 77,
+      "after": 78
+    },
+    {
+      "id": "pallavolo-padova-02",
+      "role": "outside_hitter",
+      "before": 74,
+      "after": 74
+    },
+    {
+      "id": "pallavolo-padova-03",
+      "role": "middle_blocker",
+      "before": 69,
+      "after": 69
+    },
+    {
+      "id": "pallavolo-padova-04",
+      "role": "setter",
+      "before": 70,
+      "after": 73
+    },
+    {
+      "id": "pallavolo-padova-05",
+      "role": "libero",
+      "before": 84,
+      "after": 83
+    },
+    {
+      "id": "pallavolo-padova-06",
+      "role": "middle_blocker",
+      "before": 74,
+      "after": 74
+    },
+    {
+      "id": "pallavolo-padova-07",
+      "role": "middle_blocker",
+      "before": 76,
+      "after": 76
+    },
+    {
+      "id": "pallavolo-padova-08",
+      "role": "libero",
+      "before": 82,
+      "after": 81
+    },
+    {
+      "id": "pallavolo-padova-09",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "pallavolo-padova-10",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "pallavolo-padova-11",
+      "role": "outside_hitter",
+      "before": 75,
+      "after": 75
+    },
+    {
+      "id": "pallavolo-padova-12",
+      "role": "setter",
+      "before": 74,
+      "after": 76
+    },
+    {
+      "id": "pallavolo-padova-13",
+      "role": "opposite",
+      "before": 71,
+      "after": 72
+    },
+    {
+      "id": "pallavolo-padova-14",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "rana-verona-01",
+      "role": "middle_blocker",
+      "before": 68,
+      "after": 68
+    },
+    {
+      "id": "rana-verona-02",
+      "role": "middle_blocker",
+      "before": 74,
+      "after": 74
+    },
+    {
+      "id": "rana-verona-03",
+      "role": "libero",
+      "before": 85,
+      "after": 84
+    },
+    {
+      "id": "rana-verona-04",
+      "role": "setter",
+      "before": 66,
+      "after": 68
+    },
+    {
+      "id": "rana-verona-05",
+      "role": "middle_blocker",
+      "before": 76,
+      "after": 76
+    },
+    {
+      "id": "rana-verona-06",
+      "role": "libero",
+      "before": 81,
+      "after": 80
+    },
+    {
+      "id": "rana-verona-08",
+      "role": "outside_hitter",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "rana-verona-09",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "rana-verona-10",
+      "role": "setter",
+      "before": 81,
+      "after": 83
+    },
+    {
+      "id": "rana-verona-24",
+      "role": "opposite",
+      "before": 72,
+      "after": 74
+    },
+    {
+      "id": "rana-verona-11",
+      "role": "outside_hitter",
+      "before": 69,
+      "after": 69
+    },
+    {
+      "id": "rana-verona-12",
+      "role": "middle_blocker",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "rana-verona-14",
+      "role": "outside_hitter",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "rana-verona-13",
+      "role": "opposite",
+      "before": 83,
+      "after": 84
+    },
+    {
+      "id": "sir-susa-scai-perugia-01",
+      "role": "outside_hitter",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "sir-susa-scai-perugia-02",
+      "role": "setter",
+      "before": 83,
+      "after": 85
+    },
+    {
+      "id": "sir-susa-scai-perugia-03",
+      "role": "opposite",
+      "before": 82,
+      "after": 84
+    },
+    {
+      "id": "sir-susa-scai-perugia-04",
+      "role": "middle_blocker",
+      "before": 79,
+      "after": 79
+    },
+    {
+      "id": "sir-susa-scai-perugia-05",
+      "role": "setter",
+      "before": 67,
+      "after": 69
+    },
+    {
+      "id": "sir-susa-scai-perugia-06",
+      "role": "libero",
+      "before": 83,
+      "after": 83
+    },
+    {
+      "id": "sir-susa-scai-perugia-07",
+      "role": "middle_blocker",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "sir-susa-scai-perugia-08",
+      "role": "opposite",
+      "before": 73,
+      "after": 75
+    },
+    {
+      "id": "sir-susa-scai-perugia-09",
+      "role": "outside_hitter",
+      "before": 83,
+      "after": 83
+    },
+    {
+      "id": "sir-susa-scai-perugia-10",
+      "role": "outside_hitter",
+      "before": 83,
+      "after": 83
+    },
+    {
+      "id": "sir-susa-scai-perugia-11",
+      "role": "middle_blocker",
+      "before": 81,
+      "after": 81
+    },
+    {
+      "id": "sir-susa-scai-perugia-12",
+      "role": "libero",
+      "before": 88,
+      "after": 88
+    },
+    {
+      "id": "sir-susa-scai-perugia-13",
+      "role": "outside_hitter",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "sir-susa-scai-perugia-14",
+      "role": "middle_blocker",
+      "before": 67,
+      "after": 67
+    },
+    {
+      "id": "tinet-prata-di-pordenone-01",
+      "role": "middle_blocker",
+      "before": 75,
+      "after": 75
+    },
+    {
+      "id": "tinet-prata-di-pordenone-02",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "tinet-prata-di-pordenone-03",
+      "role": "setter",
+      "before": 76,
+      "after": 78
+    },
+    {
+      "id": "tinet-prata-di-pordenone-04",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "tinet-prata-di-pordenone-05",
+      "role": "outside_hitter",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "tinet-prata-di-pordenone-06",
+      "role": "setter",
+      "before": 69,
+      "after": 71
+    },
+    {
+      "id": "tinet-prata-di-pordenone-07",
+      "role": "libero",
+      "before": 81,
+      "after": 80
+    },
+    {
+      "id": "tinet-prata-di-pordenone-08",
+      "role": "opposite",
+      "before": 73,
+      "after": 75
+    },
+    {
+      "id": "tinet-prata-di-pordenone-09",
+      "role": "middle_blocker",
+      "before": 75,
+      "after": 75
+    },
+    {
+      "id": "tinet-prata-di-pordenone-10",
+      "role": "libero",
+      "before": 80,
+      "after": 79
+    },
+    {
+      "id": "tinet-prata-di-pordenone-11",
+      "role": "outside_hitter",
+      "before": 76,
+      "after": 76
+    },
+    {
+      "id": "tinet-prata-di-pordenone-26",
+      "role": "outside_hitter",
+      "before": 72,
+      "after": 72
+    },
+    {
+      "id": "tinet-prata-di-pordenone-12",
+      "role": "outside_hitter",
+      "before": 75,
+      "after": 75
+    },
+    {
+      "id": "tinet-prata-di-pordenone-13",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "valsa-group-modena-01",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "valsa-group-modena-02",
+      "role": "setter",
+      "before": 74,
+      "after": 75
+    },
+    {
+      "id": "valsa-group-modena-03",
+      "role": "libero",
+      "before": 89,
+      "after": 88
+    },
+    {
+      "id": "valsa-group-modena-04",
+      "role": "middle_blocker",
+      "before": 75,
+      "after": 75
+    },
+    {
+      "id": "valsa-group-modena-05",
+      "role": "opposite",
+      "before": 68,
+      "after": 69
+    },
+    {
+      "id": "valsa-group-modena-06",
+      "role": "outside_hitter",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "valsa-group-modena-07",
+      "role": "outside_hitter",
+      "before": 71,
+      "after": 71
+    },
+    {
+      "id": "valsa-group-modena-08",
+      "role": "setter",
+      "before": 71,
+      "after": 73
+    },
+    {
+      "id": "valsa-group-modena-09",
+      "role": "middle_blocker",
+      "before": 68,
+      "after": 68
+    },
+    {
+      "id": "valsa-group-modena-10",
+      "role": "libero",
+      "before": 83,
+      "after": 82
+    },
+    {
+      "id": "valsa-group-modena-11",
+      "role": "outside_hitter",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "valsa-group-modena-12",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    },
+    {
+      "id": "valsa-group-modena-13",
+      "role": "middle_blocker",
+      "before": 80,
+      "after": 80
+    },
+    {
+      "id": "valsa-group-modena-14",
+      "role": "opposite",
+      "before": 78,
+      "after": 79
+    },
+    {
+      "id": "vero-volley-monza-01",
+      "role": "outside_hitter",
+      "before": 77,
+      "after": 77
+    },
+    {
+      "id": "vero-volley-monza-02",
+      "role": "opposite",
+      "before": 74,
+      "after": 75
+    },
+    {
+      "id": "vero-volley-monza-03",
+      "role": "setter",
+      "before": 66,
+      "after": 68
+    },
+    {
+      "id": "vero-volley-monza-04",
+      "role": "libero",
+      "before": 82,
+      "after": 81
+    },
+    {
+      "id": "vero-volley-monza-05",
+      "role": "opposite",
+      "before": 72,
+      "after": 74
+    },
+    {
+      "id": "vero-volley-monza-06",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "vero-volley-monza-07",
+      "role": "setter",
+      "before": 71,
+      "after": 73
+    },
+    {
+      "id": "vero-volley-monza-08",
+      "role": "middle_blocker",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "vero-volley-monza-09",
+      "role": "middle_blocker",
+      "before": 67,
+      "after": 67
+    },
+    {
+      "id": "vero-volley-monza-10",
+      "role": "middle_blocker",
+      "before": 78,
+      "after": 78
+    },
+    {
+      "id": "vero-volley-monza-11",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "vero-volley-monza-12",
+      "role": "libero",
+      "before": 85,
+      "after": 84
+    },
+    {
+      "id": "vero-volley-monza-13",
+      "role": "outside_hitter",
+      "before": 73,
+      "after": 73
+    },
+    {
+      "id": "vero-volley-monza-14",
+      "role": "middle_blocker",
+      "before": 70,
+      "after": 70
+    }
+  ]
+}

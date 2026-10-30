@@ -67,7 +67,7 @@ func mark_shot(kind: String,team: int,perfect: bool=false) -> void:
 		for row in frames:
 			if row.get("serving",false) and float(row.time)>=game.clock_time-2.5:
 				start=float(row.time)-.12; break
-	candidate={"kind":kind,"team":team,"perfect":perfect,"start":start}; capture(true)
+	candidate={"kind":kind,"team":team,"perfect":perfect,"overcharged":kind=="attack" and game.last_power>1.000001,"start":start}; capture(true)
 	if kind=="attack": last_attack=candidate.duplicate()
 	elif kind not in ["monster"]: last_attack.clear()
 
@@ -78,10 +78,10 @@ func mark_set() -> void: set_started=game.clock_time
 func on_point(team: int) -> void:
 	if not allowed() or frames.size()<3 or candidate.is_empty(): return
 	if candidate.team!=team:
-		if candidate.kind=="monster" and not last_attack.is_empty() and last_attack.team==team and last_attack.perfect: candidate=last_attack
+		if candidate.kind=="monster" and not last_attack.is_empty() and last_attack.team==team and (last_attack.perfect or last_attack.get("overcharged",false)): candidate=last_attack
 		else: return
 	var kind: String=candidate.kind
-	if kind=="attack" and not candidate.perfect: return
+	if kind=="attack" and not candidate.perfect and not candidate.get("overcharged",false): return
 	if kind not in ["attack","serve","monster"]: return
 	serial+=1; queue(kind,serial,float(candidate.get("start",game.clock_time-3.0)))
 	if game.network_match() and game.online_session.authority(): game.online_session.replay_notice.rpc_id(game.online_session.guest,kind,serial,segment_start)

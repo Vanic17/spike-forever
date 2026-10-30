@@ -1,0 +1,9 @@
+{
+  "extra_match_animation_trees": 0,
+  "mean_update_usec": 182.821,
+  "measurement": "CPU sideline pose update, not rendered FPS",
+  "officials": 3,
+  "samples": 1000,
+  "team_actors": 18,
+  "update_hz": 30
+}

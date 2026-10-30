@@ -1,0 +1,54 @@
+﻿[
+    {
+        "pass":  true,
+        "test":  "Test-Overall68"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-Patch68"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-CareerFormat68"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-CareerRules66"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-CareerIntegration66"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-CareerUI66"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-MatchManagementUI66"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-Replay65"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-ReplayEvents65"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-GreenAttack67"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-Recovery67"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-Arena61"
+    },
+    {
+        "pass":  true,
+        "test":  "Test-MatchSetup49"
+    }
+]

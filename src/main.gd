@@ -74,6 +74,7 @@ var attack_tip:=false
 var overpass_attack_team:=-1
 var receive_offset:=0.0
 var replay
+var substitution_scene
 var timing_results: Array=[{},{}]
 const TimingResult=preload("res://src/timing_result.gd")
 var receive_feedback:=""
@@ -311,6 +312,7 @@ func _ready() -> void:
 	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; add_child(online_session)
 	tutorial=preload("res://src/tutorial_mode.gd").new(); tutorial.game=self; add_child(tutorial)
 	replay=preload("res://src/match_replay.gd").new(); replay.name="MatchReplay"; replay.game=self; add_child(replay)
+	substitution_scene=preload("res://src/substitution_scene.gd").new(); substitution_scene.name="SubstitutionScene"; substitution_scene.game=self; add_child(substitution_scene)
 	if not self_test:
 		var start_menu=preload("res://src/start_menu.gd").new()
 		start_menu.game=self
@@ -424,6 +426,7 @@ func update_camera(dt: float) -> void:
 	camera.look_at(camera_focus)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if substitution_scene!=null and substitution_scene.handle_input(event): get_viewport().set_input_as_handled(); return
 	if replay!=null and replay.handle_input(event): get_viewport().set_input_as_handled(); return
 	if network_match():
 		online_session.capture_input(event)
@@ -449,7 +452,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else: reset_rally()
 			KEY_F5: difficulty = (difficulty + 1) % 3
 			KEY_C:
-				camera_mode = (camera_mode + 1) % 4
+				camera_mode = preload("res://src/view_controls.gd").next_camera(camera_mode)
 				set_camera()
 			KEY_R:
 				match_finished=false; paused=false
@@ -472,7 +475,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			paused = not paused
 	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y and event.pressed and started:
-		camera_mode=(camera_mode+1)%4
+		camera_mode=preload("res://src/view_controls.gd").next_camera(camera_mode)
 		set_camera()
 	if not started or paused or gallery:
 		return
@@ -839,6 +842,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	return backup
 
 func return_to_main_menu() -> void:
+	if substitution_scene!=null: substitution_scene.cancel()
 	if replay!=null: replay.reset()
 	match_management.suspend()
 	if network_match(): online_session.leave("Partita terminata" if match_finished else "Partita chiusa")
@@ -1686,7 +1690,7 @@ func _physics_process(dt: float) -> void:
 
 func _process(_dt: float) -> void:
 	if match_audio and match_audio.has_method("update_match_state"): match_audio.update_match_state(started,phase,paused and phase!="POINT")
-	if camera and not self_test and not (replay!=null and replay.active): update_camera(_dt)
+	if camera and not self_test and not (replay!=null and replay.active) and not (substitution_scene!=null and substitution_scene.active): update_camera(_dt)
 	if started and not (tutorial!=null and tutorial.active) and not gallery:
 		marker.hide()
 		for player in players:
@@ -1696,6 +1700,7 @@ func _process(_dt: float) -> void:
 		get_tree().quit()
 
 func step(dt: float) -> void:
+	if substitution_scene!=null and substitution_scene.active: return
 	if replay!=null and replay.active: return
 	# Substep to the exact contact event; never validate an overshot ball.
 	if phase == "SERVE" and toss_active:

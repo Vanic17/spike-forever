@@ -99,7 +99,7 @@ func show_page(next: String,arg=""):
 	title_box.add_theme_constant_override("separation",3)
 	var title=UI.heading(title_box,"CAMPIONATO / SUPERLEGA" if id.is_empty() else name_of(id),35); title.autowrap_mode=TextServer.AUTOWRAP_OFF; title.clip_text=true
 	UI.label(title_box,"MASTER LEAGUE  ·  "+season()+"  ·  "+manager.state.get("date","Nuova carriera"),19,UI.MUTED)
-	if not manager.state.is_empty(): UI.label(title_box,"%d incontri disputati   ·   Salvataggio locale / Slot %d"%[manager.state.get("results",{}).size(),int(manager.state.get("slot",1))],16,UI.GOLD)
+	if not manager.state.is_empty(): UI.label(title_box,"%d incontri · Slot %d"%[manager.state.get("results",{}).size(),int(manager.state.get("slot",1))],16,UI.GOLD)
 	if not manager.state.is_empty():
 		var save=UI.button(header,"SALVA",func(): toast("Carriera salvata" if manager.save() else manager.error),"save"); save.size_flags_horizontal=Control.SIZE_SHRINK_END; save.size_flags_vertical=Control.SIZE_SHRINK_CENTER; save.custom_minimum_size=Vector2(128,54)
 	var back_button=UI.button(header,"INDIETRO",back,"back"); back_button.size_flags_horizontal=Control.SIZE_SHRINK_END; back_button.size_flags_vertical=Control.SIZE_SHRINK_CENTER; back_button.custom_minimum_size=Vector2(148,54)
@@ -147,7 +147,7 @@ func entry():
 	var row=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
 	var hero=UI.card(row,1100); image(hero,"arena",420); UI.label(hero,"LA TUA SQUADRA. LA TUA STORIA.",24,UI.GOLD); UI.heading(hero,"UNA STAGIONE DA VIVERE",57)
 	UI.wrap(hero,"Dodici club, un calendario autentico, sei fondamentali. Gestisci la rosa, preparati alle coppe e porta la tua squadra fino all'ultimo pallone.",25,UI.MUTED)
-	var choices=UI.card(row,650); UI.heading(choices,"MASTER LEAGUE",42); UI.wrap(choices,"Il campionato parte senza risultati preassegnati. I tuoi progressi restano salvati su questo PC.",25,UI.MUTED)
+	var choices=UI.card(row,650); UI.heading(choices,"MASTER LEAGUE",42)
 	UI.button(choices,"NUOVA CARRIERA  →",func(): push("new"),"new")
 	var all=manager.list_saves(); var continue_button=UI.button(choices,"CONTINUA  →",func():
 		if not manager.state.is_empty(): show_tab(0)
@@ -155,7 +155,7 @@ func entry():
 		else: toast(manager.error),"continue")
 	continue_button.disabled=all.is_empty() and manager.state.is_empty()
 	UI.button(choices,"CARICA SALVATAGGIO",func(): push("saves"),"load")
-	UI.wrap(choices,"SUPERLEGA 2026/27\n132 incontri ufficiali · Coppa Italia · Supercoppa · Playoff · Play Out\n\nNessuna retrocessione: tutti i dodici club partecipano anche alla stagione seguente.",23,UI.MUTED)
+	UI.label(choices,"SUPERLEGA 2026/27",23,UI.GOLD)
 func new_career_screen():
 	var row=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
 	var preview=UI.card(row,790); var badge=UI.badge(preview,host.clubs.db.teams[0].id,110); var name=UI.heading(preview,"",42)
@@ -168,12 +168,13 @@ func new_career_screen():
 		var t=teams[team_pick.selected]; badge.texture=UI.Brand.logo(t.id,true); name.text=t.name; kit.show_kit(t.id,"home")
 		var rating=0.0
 		for p in t.roster: rating+=float(p.ratings.get("generale",0))
-		summary.text="%d giocatori · valore medio %.0f\nPalazzetto: arena virtuale Spike Forever\nObiettivo: migliorare il piazzamento e conquistare i playoff."%[t.roster.size(),rating/maxi(1,t.roster.size())]
+		summary.text="%d giocatori · OVR %.0f"%[t.roster.size(),rating/maxi(1,t.roster.size())]
 	team_pick.item_selected.connect(refresh); refresh.call(0)
 	UI.label(form,"SLOT DI SALVATAGGIO"); var slot=UI.picker(form,["Slot 1","Slot 2","Slot 3","Slot 4","Slot 5","Slot 6"])
 	UI.label(form,"DIFFICOLTÀ"); var difficulty=UI.picker(form,["Accessibile","Normale","Impegnativa"],1)
 	var controls=options_controls(form,{"stats":true,"fatigue":true,"injuries":true,"autosave":true})
-	UI.wrap(form,"Partite al meglio dei 5: set a 25, set decisivo a 15, sempre con due punti di vantaggio.",21,UI.MUTED)
+	UI.label(form,"FORMATO PARTITA",20,UI.GOLD)
+	var match_format=UI.picker(form,["Meglio dei 5","Meglio dei 3"])
 	var coach_text=LineEdit.new(); form.add_child(coach_text); coach_text.hide()
 	var coach_button=UI.button(form,"ALLENATORE · facoltativo",func():
 		edit_text(coach_text.text,func(value):
@@ -181,7 +182,7 @@ func new_career_screen():
 			for b in UI.controls(page):
 				if b.get_meta("focus_key","")=="coach": b.text=str(TranslationServer.translate("ALLENATORE · "))+value; b.grab_focus()),"coach")
 	UI.button(form,"INIZIA LA CARRIERA",func():
-		var opts=read_options(controls); opts.difficulty=difficulty.selected; opts.coach_name=coach_text.text
+		var opts=read_options(controls); opts.difficulty=difficulty.selected; opts.coach_name=coach_text.text; opts.best_of=3 if match_format.selected==1 else 5
 		var create=func():
 			if manager.new_career(teams[team_pick.selected].id,opts,slot.selected+1): stack.clear(); show_tab(0)
 			else: toast(manager.error)
@@ -190,7 +191,7 @@ func new_career_screen():
 		else: create.call(),"create")
 func options_controls(parent: Node,options: Dictionary) -> Dictionary:
 	var fields={}
-	for entry in [["stats","VALORI GIOCATORI",["Disattivati · originale","Attivi · database"]],["fatigue","AFFATICAMENTO",["OFF","ON"]],["injuries","INFORTUNI SIMULATI",["OFF","ON"]],["autosave","SALVATAGGIO AUTOMATICO",["OFF","ON"]],["auto_subs","SOSTITUZIONI AUTOMATICHE",["OFF","ON"]]]:
+	for entry in [["stats","VALORI GIOCATORI",["OFF","ON"]],["fatigue","AFFATICAMENTO",["OFF","ON"]],["injuries","INFORTUNI",["OFF","ON"]],["autosave","SALVATAGGIO AUTOMATICO",["OFF","ON"]],["auto_subs","SOSTITUZIONI AUTOMATICHE",["OFF","ON"]]]:
 		UI.label(parent,entry[1],20,UI.MUTED); fields[entry[0]]=UI.picker(parent,entry[2],1 if options.get(entry[0],options.get("use_player_stats",false) if entry[0]=="stats" else entry[0] in ["fatigue","autosave"]) else 0)
 	UI.label(parent,"NOTIZIE",20,UI.MUTED); fields.news_frequency=UI.picker(parent,["Essenziali","Normali","Tutte"],int(options.get("news_frequency",1)))
 	UI.label(parent,"INFORTUNI · INTENSITÀ",20,UI.MUTED); fields.injury_intensity=UI.picker(parent,["Bassa","Normale"],int(options.get("injury_intensity",0)))
@@ -214,7 +215,7 @@ func home_screen():
 	var row=HBoxContainer.new(); page.add_child(row)
 	var hero=UI.card(row,1065,420); image(hero,"arena",218)
 	var news=manager.state.get("news",[]); UI.label(hero,"DENTRO LA TUA STAGIONE",20,UI.GOLD)
-	UI.heading(hero,str(news[0].get("title","LA STAGIONE È NELLE TUE MANI")) if not news.is_empty() else "LA STAGIONE È NELLE TUE MANI",37)
+	UI.heading(hero,clean_copy(str(news[0].get("title","LA STAGIONE È NELLE TUE MANI"))) if not news.is_empty() else "LA STAGIONE È NELLE TUE MANI",37)
 	UI.wrap(hero,str(news[0].get("subtitle",news[0].get("summary","Preparazione, scelte, risultati. Ogni giornata conta."))) if not news.is_empty() else "Prepara la formazione e comincia la tua storia in SuperLega.",22,UI.MUTED)
 	var match_card=UI.card(row,720,420); UI.label(match_card,"MATCH CENTER",22,UI.GOLD)
 	var fixture=manager.next_fixture()
@@ -237,7 +238,7 @@ func home_screen():
 	var bottom=HBoxContainer.new(); bottom.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(bottom)
 	var feed=UI.card(bottom,590); UI.heading(feed,"ULTIME NOTIZIE",30)
 	for i in mini(3,news.size()):
-		var article=news[i]; UI.button(feed,str(article.get("title","Notizia")),func(): push("article",str(article.get("id",""))),"news-"+str(article.get("id",i)))
+		var article=news[i]; UI.button(feed,clean_copy(str(article.get("title","Notizia"))),func(): push("article",str(article.get("id",""))),"news-"+str(article.get("id",i)))
 	var table=UI.card(bottom,590); UI.heading(table,"LA CORSA IN CLASSIFICA",30)
 	for line in manager.standings().slice(0,5):
 		var id=str(line.get("team_id",line.get("id",line.get("club_id","")))); var b=UI.button(table,"%s   %s   %s PT"%[str(line.get("position","")),short(id),str(line.get("points",0))],func(): push("team",id),"club-"+id); UI.compact(b)
@@ -316,8 +317,6 @@ func competitions_screen():
 	var info=manager.state.get("competitions",{}).get(selected_comp,{})
 	var champion=str(info.get("champion",""))
 	UI.label(page,"Campione: "+name_of(champion) if not champion.is_empty() else "Competizione in corso" if info.get("status","waiting")!="waiting" else "Qualificazioni in attesa dei risultati previsti",24,UI.GOLD)
-	var rules_text={"regular":"22 giornate · 3/2/1 punti secondo il risultato","playoff":"Prime otto · quarti, semifinali e finale al meglio delle cinque","cup":"Prime otto al termine dell'andata · quarti e Final Four · sede 2027 non ancora ufficializzata","supercup":"Supercoppa 2026: semifinali e finale a Parma, 14–15 novembre. Dalle stagioni seguenti qualificazioni dai risultati del salvataggio.","fifth":"Percorso condizionato dai playoff: quattro eliminate ai quarti, oppure girone a tre e finale con una semifinalista Scudetto.","playout":"Tre o quattro squadre secondo il distacco 9ª–12ª. Bonus regolamentari. Nessuna retrocessione in Spike Forever."}
-	UI.wrap(page,rules_text.get(selected_comp,""),22,UI.MUTED)
 	var list=UI.scroll(page)
 	var matches=state_fixtures().filter(func(f): return f.competition==selected_comp)
 	var series=info.get("series",[])
@@ -358,7 +357,7 @@ func competitions_screen():
 		for f in matches:
 			if selected_comp!="fifth" or f.get("stage","")=="group": fixture_button(list,f)
 	if matches.is_empty():
-		UI.wrap(list,"Il tabellone verrà composto dai risultati e dai criteri regolamentari della tua stagione. Nessuna qualificata viene inventata in anticipo.",26,UI.MUTED)
+		UI.label(list,"Tabellone in attesa",26,UI.MUTED)
 		UI.button(list,"TORNA ALLA STAGIONE",func(): show_tab(0),"home")
 func squad_screen(team_id: String):
 	var team=manager.team(team_id); UI.heading(page,"ROSA / "+team.get("name",""),40)
@@ -419,7 +418,7 @@ func modal_input(event):
 	for pair in [["ui_left",Vector2.LEFT],["ui_right",Vector2.RIGHT],["ui_up",Vector2.UP],["ui_down",Vector2.DOWN]]:
 		if event.is_action_pressed(pair[0]): UI.navigate(modal,pair[1]); modal.set_input_as_handled(); return
 func team_screen(id: String):
-	var row=HBoxContainer.new(); page.add_child(row); UI.badge(row,id,100); var col=VBoxContainer.new(); row.add_child(col); UI.heading(col,name_of(id),43); UI.label(col,"Allenatore virtuale · SuperLega · "+season(),23,UI.MUTED)
+	var row=HBoxContainer.new(); page.add_child(row); UI.badge(row,id,100); var col=VBoxContainer.new(); row.add_child(col); UI.heading(col,name_of(id),43); UI.label(col,"SuperLega · "+season(),23,UI.MUTED)
 	UI.button(row,"APRI LA ROSA",func(): push("roster-team",id),"roster-link")
 	var panels=HBoxContainer.new(); panels.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(panels)
 	var roster=UI.card(panels,1000); UI.heading(roster,"I PROTAGONISTI",31); var list=UI.scroll(roster)
@@ -451,7 +450,7 @@ func player_screen(id: String):
 	var portrait=load("res://src/career_portrait.gd").new(); portrait.game=game; portrait.identity=p; portrait.kit=Kits.selection(team_id,"home",p.role=="libero"); profile.add_child(portrait)
 	UI.label(profile,role(p.role)+" / #"+str(int(p.jersey_number)),24,UI.GOLD); UI.heading(profile,p.name,49); UI.wrap(profile,name_of(team_id),27,UI.MUTED)
 	var c=manager.player_condition(id); UI.meter(profile,"CONDIZIONE · %d%%"%(100-int(c.fatigue)),100-float(c.fatigue)); UI.label(profile,"FORMA  %+d"%int(c.get("form",0)),29)
-	UI.wrap(profile,"Infortunio simulato: "+str(c.injury_kind)+" · rientro "+str(c.injury_until) if not str(c.get("injury_until","")).is_empty() else "Disponibile per la prossima convocazione.",23,UI.MUTED)
+	UI.label(profile,str(c.injury_kind)+" · "+str(c.injury_until) if not str(c.get("injury_until","")).is_empty() else "Disponibile",23,UI.MUTED)
 	UI.button(profile,"SCHEDA SQUADRA",func(): push("team",team_id),"club-"+team_id)
 	var detail=UI.card(row,1090); UI.heading(detail,"I SEI FONDAMENTALI",36)
 	var skills=GridContainer.new(); skills.columns=2; skills.add_theme_constant_override("h_separation",30); skills.add_theme_constant_override("v_separation",15); detail.add_child(skills)
@@ -494,12 +493,11 @@ func stats_screen():
 	var match_ids=[""]+matches.map(func(f): return str(f.id))
 	var match_pick=UI.picker(extra,["Tutti gli incontri"]+matches.map(func(f): return f.scheduled_date+" · "+short(f.home)+"–"+short(f.away)),maxi(0,match_ids.find(selected_stats_match)))
 	match_pick.item_selected.connect(func(i): selected_stats_match=match_ids[i]; show_page(view))
-	UI.wrap(page,"Le partite giocate usano eventi misurati; le simulate producono stime dichiarate. I dati non misurabili restano non disponibili. Le percentuali richiedono un numero minimo di tentativi.",21,UI.MUTED)
 	var list=UI.scroll(page); var leaders=manager.leaders(sort_stat,{"competition":selected_stats_comp,"team_id":filter_team,"season":selected_stats_season,"role":selected_stats_role,"match_id":selected_stats_match})
 	if leaders.is_empty(): UI.wrap(list,"Nessun dato disponibile per questo filtro. I numeri inizieranno ad apparire dopo le prime partite.",26,UI.MUTED)
 	for line in leaders:
 		var id=str(line.get("player_id",line.get("id",""))); var p=manager.player(id)
-		UI.table_row(list,[role(p.get("role","")),p.get("name",id),short(str(line.get("team_id",""))),"%.1f"%float(line.get("value",0)),str(line.get("stats_source",""))],[55,650,100,160,390],func(): push("player",id),"leader-"+id)
+		UI.table_row(list,[role(p.get("role","")),p.get("name",id),short(str(line.get("team_id",""))),"%.1f"%float(line.get("value",0))],[55,650,100,160],func(): push("player",id),"leader-"+id)
 func news_screen():
 	UI.heading(page,"DENTRO IL CAMPIONATO",42)
 	var toolbar=HBoxContainer.new(); page.add_child(toolbar)
@@ -522,7 +520,7 @@ func news_screen():
 		var photo=image(h,"ball" if category in ["injury","return","recovery"] else ("net" if category in ["record","award"] else "arena"),145); photo.custom_minimum_size.x=285
 		var text=VBoxContainer.new(); text.size_flags_horizontal=Control.SIZE_EXPAND_FILL; h.add_child(text)
 		UI.label(text,str(item.get("date",manager.state.date))+"   /   "+category.to_upper(),19,UI.GOLD)
-		UI.button(text,str(item.get("title","Notizia")),func(): push("article",str(item.get("id",""))),"article-"+str(item.get("id",count)))
+		UI.button(text,clean_copy(str(item.get("title","Notizia"))),func(): push("article",str(item.get("id",""))),"article-"+str(item.get("id",count)))
 		UI.wrap(text,str(item.get("subtitle",item.get("summary",""))),22,UI.MUTED)
 	if count==0: UI.wrap(row,"Nessuna notizia per questo filtro.",25,UI.MUTED)
 	var pages=HBoxContainer.new(); page.add_child(pages)
@@ -541,15 +539,21 @@ func edit_text(initial: String,action: Callable):
 	keyboard.confirmed.connect(handlers.accept,CONNECT_ONE_SHOT); keyboard.canceled.connect(handlers.cancel,CONNECT_ONE_SHOT)
 func search_news():
 	edit_text(news_query,func(value): news_query=value; news_page=0; show_page("notizie",argument))
+func clean_copy(text: String) -> String:
+	text=text.replace("indisponibilità simulata","indisponibile")
+	# Old saves retain their complete audit data; editorial UI uses concise copy.
+	for sentence in ["Statistiche stimate dal simulatore.","Statistiche dei contatti realmente registrati in campo.","Dato stimato dal simulatore.","Dato misurato durante la partita giocata.","Commento simulato, non una dichiarazione reale.","Nessun risultato futuro è incluso.","Non è una notizia sull'atleta reale.","Nessun riferimento a un infortunio reale."]:
+		text=text.replace(sentence,"")
+	return text.replace("Analisi virtuale basata sui set disputati: ","").replace("Commento virtuale: ","").replace("Lo staff virtuale","Lo staff").replace("Evento virtuale della carriera: assenza ","Assenza ").replace("Rientro dalla simulazione dell'indisponibilità.","Rientro in squadra.").replace("Riconoscimento virtuale della stagione ","Stagione ").replace("Etichetta sportiva della carriera. ","").strip_edges()
+
 func article_screen(id: String):
 	var matches=manager.state.get("news",[]).filter(func(n): return str(n.get("id",""))==id)
 	if matches.is_empty(): UI.wrap(page,"Articolo non disponibile."); return
 	var article=matches[0]; var row=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
 	var art=UI.card(row,780); image(art,"net" if article.get("category")=="record" else "arena",420)
 	UI.label(art,str(article.get("date",""))+" / "+str(article.get("category","")).to_upper(),22,UI.GOLD)
-	var copy=UI.card(row,990); var scroll=UI.scroll(copy); UI.heading(scroll,article.get("title",""),43)
-	UI.wrap(scroll,article.get("subtitle",article.get("summary","")),27,UI.GOLD); UI.wrap(scroll,article.get("body",""),26)
-	UI.wrap(scroll,"Contenuto generato dai risultati della carriera. Eventuali dichiarazioni sono commenti virtuali, non dichiarazioni reali.",21,UI.MUTED)
+	var copy=UI.card(row,990); var scroll=UI.scroll(copy); UI.heading(scroll,clean_copy(article.get("title","")),43)
+	UI.wrap(scroll,article.get("subtitle",article.get("summary","")),27,UI.GOLD); UI.wrap(scroll,clean_copy(article.get("body","")),26)
 	var involved=article.get("clubs",article.get("teams",[])).duplicate()
 	if involved.is_empty() and not str(article.get("club_id","")).is_empty(): involved.append(article.club_id)
 	for team_id in involved:
@@ -558,7 +562,6 @@ func article_screen(id: String):
 		var pid=str(player_id); UI.button(scroll,"GIOCATORE / "+manager.player(pid).get("name",pid),func(): push("player",pid))
 func archive_screen():
 	UI.heading(page,"UNA STORIA CHE RIMANE",43)
-	UI.wrap(page,"Albo d'oro, premi e risultati congelati a fine stagione. Le qualificazioni europee sono riconoscimenti: nessuna coppa europea viene simulata.",22,UI.MUTED)
 	var archives=manager.state.get("archives",[])
 	if archives.is_empty():
 		UI.wrap(page,"L'archivio inizierà al termine della prima stagione.",26,UI.MUTED); UI.button(page,"TORNA ALLA STAGIONE",func(): show_tab(0)); return
@@ -593,8 +596,9 @@ func archive_screen():
 	for f in data.get("fixtures",[]): fixture_button(list,f)
 func options_screen():
 	UI.heading(page,"LE REGOLE DELLA TUA CARRIERA",42); var row=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
-	var explanation=UI.card(row,760); image(explanation,"court",300); UI.heading(explanation,"SCELTE TRASPARENTI",37)
-	UI.wrap(explanation,"Con la fatica disattivata non si applicano penalità nascoste di condizione. Con i valori giocatori disattivati resta il percorso originale delle abilità.\n\nGli infortuni sono eventi simulati della carriera e non fatti reali.\n\nI salvataggi restano in locale e non vengono sostituiti dagli aggiornamenti.",25,UI.MUTED)
+	var explanation=UI.card(row,760); image(explanation,"court",300); UI.heading(explanation,"LA TUA STAGIONE",37)
+	UI.label(explanation,"SUPERLEGA · "+season(),25,UI.GOLD)
+	UI.label(explanation,"Meglio dei %d"%manager.best_of(),25,UI.MUTED)
 	var card=UI.card(row,1015); var scroll=UI.scroll(card); var controls=options_controls(scroll,manager.state.options)
 	dirty_options=false
 	UI.button(scroll,"APPLICA E SALVA",func():
@@ -627,7 +631,7 @@ func launch_match():
 		if squad.size()!=7: toast("Formazione non disponibile: controlla ruoli e indisponibili."); return
 		game.team_names[side]=t.name
 		for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],Kits.selection(t.id,chosen_kits[side]),Kits.selection(t.id,chosen_kits[side],true))
-	game.use_player_stats=bool(manager.state.options.get("use_player_stats",false)); game.match_best_of=5; game.match_points=25; game.difficulty=int(manager.state.options.get("difficulty",1))
+	game.use_player_stats=bool(manager.state.options.get("use_player_stats",false)); game.match_best_of=manager.best_of(); game.match_points=25; game.difficulty=int(manager.state.options.get("difficulty",1))
 	if game.get("match_management")!=null:
 		var options=manager.state.options.duplicate(true); options.date=manager.state.date; options.career_form=true
 		if not game.match_management.configure_rosters(teams,squads,manager.state.conditions,options): toast("Rosa insufficiente o giocatori indisponibili: correggi la formazione."); return
@@ -660,11 +664,10 @@ func result_screen(id: String):
 	UI.heading(row,name_of(fixture.away),38); UI.badge(row,fixture.away,115)
 	var buttons=HBoxContainer.new(); page.add_child(buttons); UI.button(buttons,"SCHEDA CASA",func(): push("team",str(fixture.home))); UI.button(buttons,"SCHEDA OSPITI",func(): push("team",str(fixture.away)))
 	if result.is_empty():
-		UI.wrap(page,"Incontro ancora da disputare. Nessun risultato reale è stato importato.",27,UI.MUTED)
+		UI.label(page,"Incontro da disputare",27,UI.MUTED)
 		if fixture.home==club() or fixture.away==club(): UI.button(page,"TORNA AL MATCH CENTER",func(): show_tab(0),"match-center")
 		return
 	UI.label(page,"PARZIALI   "+"   /   ".join(result.get("set_scores",[]).map(func(s): return "%d–%d"%[s[0],s[1]])),31,UI.GOLD)
-	UI.label(page,"Eventi misurati dal gameplay" if result.get("stats_source","")=="measured" else "Tabellino stimato dal simulatore",22,UI.MUTED)
 	var mvp=str(result.get("mvp",""))
 	if not mvp.is_empty(): UI.button(page,"MVP / "+manager.player(mvp).get("name",mvp),func(): push("player",mvp),"mvp")
 	var list=UI.scroll(page)
