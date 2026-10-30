@@ -1,0 +1,65 @@
+{
+  "contact_samples": 20000,
+  "extra_visible_replay_seconds": 1.05,
+  "monster_relative_drop_pct": 43.9630271519353,
+  "monsters_converted_to_playable_touches": 2283,
+  "new_contacts": {
+    "block_tool": 4782,
+    "block_touch": 12308,
+    "stuff_block": 2910
+  },
+  "new_zoom_seconds": 0.3456,
+  "old_contacts": {
+    "block_tool": 4782,
+    "block_touch": 10025,
+    "stuff_block": 5193
+  },
+  "old_zoom_seconds": 0.252,
+  "physics_and_camera_restore": true,
+  "recorded_post_point_seconds": 0.999999999999996,
+  "sealed_monsters_still_score": true,
+  "stats_curve": [
+    {
+      "after": 0.025,
+      "before": 0.03,
+      "stat": 0.0
+    },
+    {
+      "after": 0.08,
+      "before": 0.1,
+      "stat": 55.0
+    },
+    {
+      "after": 0.13,
+      "before": 0.16,
+      "stat": 65.0
+    },
+    {
+      "after": 0.18,
+      "before": 0.23,
+      "stat": 75.0
+    },
+    {
+      "after": 0.24,
+      "before": 0.3,
+      "stat": 85.0
+    },
+    {
+      "after": 0.32,
+      "before": 0.4,
+      "stat": 90.0
+    },
+    {
+      "after": 0.4,
+      "before": 0.5,
+      "stat": 95.0
+    },
+    {
+      "after": 0.44,
+      "before": 0.55,
+      "stat": 99.0
+    }
+  ],
+  "tools_unchanged": true,
+  "transition_seconds": 1.08
+}

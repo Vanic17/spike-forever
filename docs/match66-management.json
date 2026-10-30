@@ -1,0 +1,13 @@
+{
+  "exceptional_injury": true,
+  "fatigue_off_neutral": true,
+  "identity_propagation": true,
+  "libero_separate": true,
+  "live_ball_rejected": true,
+  "measured_result_once": true,
+  "moderate_caps": true,
+  "new_set_reset": true,
+  "paired_reentry": true,
+  "rule_source": "https://www.fivb.com/wp-content/uploads/2025/01/FIVB-Volleyball_Rules2025_2028-EN-1.pdf",
+  "six_substitutions": true
+}

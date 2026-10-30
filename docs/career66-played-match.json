@@ -1,0 +1,50 @@
+[
+  {
+    "away": false,
+    "measured_kills": 3,
+    "post_match_home_flow": true,
+    "recorded_once": true,
+    "set_scores": [
+      [
+        25,
+        23
+      ],
+      [
+        25,
+        23
+      ],
+      [
+        25,
+        23
+      ]
+    ],
+    "sets": [
+      3,
+      0
+    ]
+  },
+  {
+    "away": true,
+    "measured_kills": 3,
+    "post_match_home_flow": true,
+    "recorded_once": true,
+    "set_scores": [
+      [
+        23,
+        25
+      ],
+      [
+        23,
+        25
+      ],
+      [
+        23,
+        25
+      ]
+    ],
+    "sets": [
+      0,
+      3
+    ]
+  }
+]

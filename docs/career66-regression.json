@@ -1,0 +1,77 @@
+﻿[
+    {
+        "pass":  true,
+        "elapsed_seconds":  0.33,
+        "test":  "Test-CareerRules66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  0.4,
+        "test":  "Test-CareerIntegration66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  6.76,
+        "test":  "Test-MatchManagement66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  8.7,
+        "test":  "Test-MatchManagementUI66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  12.59,
+        "test":  "Test-CareerUI66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.32,
+        "test":  "Test-CareerPlayed66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  6.3,
+        "test":  "Test-OnlineUI66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  6.03,
+        "test":  "Test-ReplayBalance66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  5.94,
+        "test":  "Test-Replay65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.04,
+        "test":  "Test-ReplayEvents65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  5.75,
+        "test":  "Test-Gameplay65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  9.16,
+        "test":  "Test-HighRecovery65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  10.83,
+        "test":  "Test-TutorialUI60"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  9.34,
+        "test":  "Test-TutorialFlow60"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  5.75,
+        "test":  "Test-FirstAttack64"
+    }
+]

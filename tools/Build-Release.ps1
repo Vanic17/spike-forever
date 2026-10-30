@@ -4,6 +4,11 @@ $root=Split-Path $PSScriptRoot
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_66.md','docs/CAREER_AUDIT_66.md','docs/CAREER_DATA_66.md','docs/CAREER_BACKEND_66.md','docs/MATCH_MANAGEMENT_66.md','docs/REPLAY_BALANCE_66.md','docs/baseline-v65/block_response.gd','docs/baseline-v65/player_stats_v1.json')
+foreach($pattern66 in @('career66-*','match66-*','replay66-*','online66-*','online-replay66-*')){
+ foreach($report66 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern66){$files+='docs/'+$report66.Name}
+}
+foreach($tool66 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*66.*'){$files+='tools/'+$tool66.Name}
 $files+=@('docs/REVISION_28.md','docs/RELEASE_NOTES_28.md')
 $files+='docs/RELEASE_NOTES_29.md'
 $files+='docs/RELEASE_NOTES_30.md'
@@ -114,7 +119,7 @@ foreach($taskTool in @('Build-Motion41.gd','Test-Motion41.gd','Test-MotionGamepl
 foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANIMATION_18.md','REVISION_20.md','REVISION_21.md','REVISION_22.md','REVISION_23.md','REVISION_24.md','REVISION_25.md','REVISION_26.md','REVISION_26_1.md','ANIMATION_24.md','ANIMATION_26.md','v26-rotation-audit.md','STRONG_SPIKES_V24.md','SPECIFICA_ROTazioni_5-1.md')){
  if(Test-Path (Join-Path $root ('docs/'+$name))){$files+='docs/'+$name}
 }
-foreach($folder in @('src','licenses','assets/ui','assets/active','assets/art','assets/arena_source','assets/mesh_source','assets/audio','assets/gameplay')){
+foreach($folder in @('src','data','licenses','assets/ui','assets/active','assets/art','assets/arena_source','assets/mesh_source','assets/audio','assets/gameplay')){
  foreach($file in Get-ChildItem -LiteralPath (Join-Path $root $folder) -File -Recurse){
   if($file.Extension -in @('.import','.uid') -or $file.Name -eq 'native_stage1.res'){continue}
   $files+=$file.FullName.Substring($root.Length+1).Replace('\','/')

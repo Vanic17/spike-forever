@@ -1,4 +1,4 @@
-param([string]$Repository='Vanic17/spike-forever',[string]$Package='')
+﻿param([string]$Repository='Vanic17/spike-forever',[string]$Package='',[switch]$Phased)
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 $gh=Join-Path $root 'tools/github/bin/gh.exe'
@@ -116,6 +116,23 @@ if($seed){
 }
 Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'fetch','origin','main') -AllowFailure
 if($script:LastNativeExit -eq 0){Native $git @('-C',$stage,'reset','--mixed','origin/main')}
+if($Phased){
+ $phases=@(
+  @{Title='Import verified SuperLega calendar and competition rules'; Paths=@('data','src/career_rules.gd','tools/Build-CareerData66.py','tools/Test-CareerRules66.gd','docs/CAREER_DATA_66.md','docs/career66-calendar-validation.json','docs/career66-rules-tests.json')},
+  @{Title='Add persistent career simulation, statistics and safe saves'; Paths=@('src/career_manager.gd','src/career_save.gd','src/career_simulation.gd','tools/Test-CareerEngine66.gd','tools/Test-CareerIntegration66.gd','docs/CAREER_BACKEND_66.md','docs/career66-engine.json','docs/career66-integration.json')},
+  @{Title='Integrate legal substitutions and bounded match fatigue'; Paths=@('src/main.gd','src/match_management.gd','src/online_session.gd','src/online_state.gd','src/pause_menu.gd','src/substitution_menu.gd','src/career_widgets.gd','src/career_locale.gd','assets/ui/en66_career.tsv','assets/gameplay/match_management_v1.json','assets/ui/en66_match.tsv','tools/Test-MatchManagement66.gd','tools/Test-MatchManagementUI66.gd','tools/Test-OnlineSubstitutions66.gd','docs/MATCH_MANAGEMENT_66.md')},
+  @{Title='Add career dashboard, competition brackets and controller flows'; Paths=@('src/career_widgets.gd','src/career_locale.gd','src/career_menu.gd','src/career_portrait.gd','src/play_hub.gd','src/start_menu.gd','src/club_menu.gd','src/online_menu.gd','assets/ui/career66','assets/ui/en66_career.tsv','tools/Test-CareerUI66.gd','tools/Test-CareerPlayed66.gd','tools/Capture-CareerUI66.gd','tools/Capture-CareerAssets66.gd')},
+  @{Title='Extend replay tail and rebalance monster blocks'; Paths=@('src/match_replay.gd','src/replay_transition.gd','src/block_response.gd','assets/gameplay/player_stats_v1.json','docs/baseline-v65','tools/Test-ReplayBalance66.gd','tools/Test-Replay65.gd','tools/Test-ReplayEvents65.gd','tools/Test-OnlineReplay65.gd','tools/Capture-Broadcast65.gd','docs/REPLAY_BALANCE_66.md')}
+ )
+ foreach($phase in $phases){
+  $paths=@($phase.Paths | Where-Object {Test-Path -LiteralPath (Join-Path $stage $_)})
+  if($paths.Count -eq 0){continue}
+  Native $git (@('-C',$stage,'add','--all','--')+$paths)
+  Native $git @('-C',$stage,'diff','--cached','--quiet') -AllowFailure
+  if($script:LastNativeExit -eq 1){Native $git @('-C',$stage,'commit','-m',($tag+': '+$phase.Title))}
+  elseif($script:LastNativeExit -ne 0){throw 'Cannot inspect staged phase'}
+ }
+}
 Native $git @('-C',$stage,'add','--all')
 Native $git @('-C',$stage,'commit','-m',('Spike Forever '+$tag))
 Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'push','origin','main')
@@ -129,3 +146,4 @@ if($script:LastNativeExit -eq 0){
 }
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)
+

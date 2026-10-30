@@ -1,0 +1,9 @@
+{
+  "count": 2,
+  "full_bench": true,
+  "guest_paired_reentry": true,
+  "guest_substitution": true,
+  "home": true,
+  "identity_synchronized": true,
+  "role": "guest"
+}

@@ -1,0 +1,159 @@
+{
+  "abandon_keeps_pending": true,
+  "controller_back": true,
+  "formation_modal": true,
+  "gameplay_launch": true,
+  "layouts": [
+    {
+      "size": "(1920, 1080)",
+      "targets": 13,
+      "view": "home"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 13,
+      "view": "calendario"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 12,
+      "view": "classifica"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 145,
+      "view": "competizioni"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 16,
+      "view": "rosa"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 6,
+      "view": "statistiche"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 5,
+      "view": "notizie"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 1,
+      "view": "archivio"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 10,
+      "view": "impostazioni"
+    },
+    {
+      "size": "(1920, 1080)",
+      "targets": 19,
+      "view": "prematch"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 13,
+      "view": "home"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 13,
+      "view": "calendario"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 12,
+      "view": "classifica"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 145,
+      "view": "competizioni"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 16,
+      "view": "rosa"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 6,
+      "view": "statistiche"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 5,
+      "view": "notizie"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 1,
+      "view": "archivio"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 10,
+      "view": "impostazioni"
+    },
+    {
+      "size": "(1280, 720)",
+      "targets": 19,
+      "view": "prematch"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 13,
+      "view": "home"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 13,
+      "view": "calendario"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 12,
+      "view": "classifica"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 145,
+      "view": "competizioni"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 16,
+      "view": "rosa"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 6,
+      "view": "statistiche"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 5,
+      "view": "notizie"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 1,
+      "view": "archivio"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 10,
+      "view": "impostazioni"
+    },
+    {
+      "size": "(1600, 900)",
+      "targets": 19,
+      "view": "prematch"
+    }
+  ],
+  "team_navigation": true
+}

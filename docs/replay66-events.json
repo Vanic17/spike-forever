@@ -1,0 +1,25 @@
+[
+  {
+    "clip_seconds": 2.96666666666666,
+    "kind": "jump_ace",
+    "score": [
+      1,
+      0
+    ]
+  },
+  {
+    "clip_seconds": 2.06666666666666,
+    "kind": "float_ace",
+    "score": [
+      2,
+      0
+    ]
+  },
+  {
+    "kind": "perfect_attack",
+    "score": [
+      3,
+      0
+    ]
+  }
+]

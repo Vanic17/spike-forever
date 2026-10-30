@@ -1,0 +1,13 @@
+{
+  "circle_returns_to_pause": true,
+  "confirm_visible": true,
+  "controller_accept": true,
+  "controller_reaches_last_slot": true,
+  "explicit_three_steps": true,
+  "scroll_never_selects": true,
+  "sizes": [
+    "1920x1080",
+    "1280x720",
+    "1024x600"
+  ]
+}
