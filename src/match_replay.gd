@@ -2,6 +2,8 @@ extends Node
 ## Presentation-only playback of rendered poses. No gameplay/RNG state is rewound.
 const FPS:=30.0
 const MAX_FRAMES:=540
+const TRANSITION_SECONDS:=1.08
+const POINT_TAIL_SECONDS:=1.0
 const Brand=preload("res://src/league_branding.gd")
 var game
 var testing:=false
@@ -41,7 +43,7 @@ func reset() -> void:
 
 func capture(force: bool=false) -> void:
 	if not allowed() or active or game.paused: return
-	if game.phase=="POINT" and game.phase_time>.16: return
+	if game.phase=="POINT" and game.phase_time>POINT_TAIL_SECONDS: return
 	if not force and game.clock_time<next_sample: return
 	var began:=Time.get_ticks_usec()
 	next_sample=game.clock_time+1.0/FPS
@@ -86,7 +88,7 @@ func on_point(team: int) -> void:
 
 func queue(kind: String,token: int,start: float=-1.0) -> void:
 	if token==last_token or active: return
-	last_token=token; segment_start=start; pending={"kind":kind,"left":.65}
+	last_token=token; segment_start=start; pending={"kind":kind,"left":POINT_TAIL_SECONDS+.08}
 
 func _process(dt: float) -> void: advance(dt)
 
@@ -95,13 +97,13 @@ func advance(dt: float) -> void:
 		if not game.started: finish(); return
 		if game.paused: return
 		elapsed+=dt
-		if state=="IN" and elapsed>=.9:
+		if state=="IN" and elapsed>=TRANSITION_SECONDS:
 			state="PLAY"; elapsed=0; play_time=float(clip[0].time); show_frame(play_time); overlay.hide()
 		elif state=="PLAY":
 			play_time+=dt*.8
 			show_frame(play_time)
 			if play_time>=float(clip[-1].time): begin_exit()
-		elif state=="OUT" and elapsed>=.9:
+		elif state=="OUT" and elapsed>=TRANSITION_SECONDS:
 			if not game.network_match() or game.online_session.authority(): finish()
 		if active and state in ["IN","OUT"]: overlay.queue_redraw()
 		return
@@ -116,7 +118,7 @@ func begin() -> bool:
 	clip=frames.duplicate(); cursor=0
 	# Replays show the decisive approach and finish; bounded memory also
 	# handles a long rally without creating a second match simulation.
-	var start_time: float=maxf(float(clip[0].time),maxf(segment_start,float(clip[-1].time)-5.5))
+	var start_time: float=maxf(float(clip[0].time),maxf(segment_start,float(clip[-1].time)-6.35))
 	while clip.size()>3 and float(clip[1].time)<start_time: clip.pop_front()
 	saved={"players":[],"ball":game.ball.transform,"shadow":game.shadow.transform,"marker":game.marker.visible,"camera":game.camera.transform,"fov":game.camera.fov,"projection":game.camera.projection,"focus":game.camera_focus}
 	for p in game.players:

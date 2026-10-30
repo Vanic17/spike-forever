@@ -16,13 +16,13 @@ func run():
 	var before:=fingerprint(g); var camera: Transform3D=g.camera.transform; var mode: int=g.camera_mode; var visual_ball: Transform3D=g.ball.transform
 	assert(replay.begin())
 	g.step(.1); assert(fingerprint(g)==before,"Replay must freeze simulation, RNG and contacts")
-	replay.advance(.91); replay.advance(.15)
+	replay.advance(replay.TRANSITION_SECONDS+.01); replay.advance(.15)
 	assert(replay.state=="PLAY")
 	assert(g.camera.position==preload("res://src/view_controls.gd").origin(2),"Playback camera must be lateral independently of the live mode")
 	assert(g.camera_mode==mode)
 	assert(g.ball.transform!=visual_ball)
 	assert(g.scores==before[7] and g.rng.state==before[6])
-	replay.begin_exit(); replay.advance(.91)
+	replay.begin_exit(); replay.advance(replay.TRANSITION_SECONDS+.01)
 	assert(not replay.active and g.camera.transform==camera and g.ball.transform==visual_ball)
 	assert(fingerprint(g)==before,"Every simulated field and avatar state must be restored exactly")
 	for i in 12:
@@ -41,5 +41,5 @@ func run():
 		g.clock_time=10+i/30.0; replay.capture(true)
 	assert(replay.frames.size()==replay.MAX_FRAMES)
 	var report={"poses_recorded":replay.frames.size(),"extra_players":g.players.size()-initial,"state_rng_and_pose_restore":true,"lateral_camera":true,"six_trigger_cases":true,"mean_capture_usec":float(replay.capture_usec)/maxi(1,replay.captures)}
-	FileAccess.open("res://docs/replay65-tests.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
-	print("REPLAY65 PASS ",JSON.stringify(report)); g.free(); quit()
+	FileAccess.open("res://docs/replay66-state-tests.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+	print("REPLAY66 STATE PASS ",JSON.stringify(report)); g.free(); quit()

@@ -17,10 +17,10 @@ func run():
 		g.press_action("alternate" if floating else "action"); g.charge_start=g.clock_time-g.charge_seconds("serve"); g.release_action()
 		simulate(g,1200)
 		assert(g.phase=="POINT" and g.scores[0]>0 and g.replay.pending.kind=="serve","Actual perfect service must generate an ace replay")
-		var end_time: float=g.clock_time; g.replay.advance(.66); assert(g.replay.active)
+		var end_time: float=g.clock_time; g.replay.advance(g.replay.POINT_TAIL_SECONDS+.09); assert(g.replay.active)
 		var length: float=float(g.replay.clip[-1].time)-float(g.replay.clip[0].time)
 		assert(length<3.5 and float(g.replay.clip[0].time)>=g.replay.segment_start-.04)
-		g.replay.advance(.91); g.replay.request_skip(); g.replay.advance(.91)
+		g.replay.advance(g.replay.TRANSITION_SECONDS+.01); g.replay.request_skip(); g.replay.advance(g.replay.TRANSITION_SECONDS+.01)
 		assert(not g.replay.active and g.clock_time==end_time)
 		rows.append({"kind":"float_ace" if floating else "jump_ace","clip_seconds":length,"score":g.scores.duplicate()})
 	g.server=1; g.reset_rally(); g.possession=0; g.hitter=0; g.setter=5; g.out_of_system=1
@@ -36,6 +36,6 @@ func run():
 	g.replay.candidate={"kind":"monster","team":1,"perfect":false,"start":0}
 	g.replay.last_attack={"kind":"attack","team":0,"perfect":true,"start":0}; g.replay.on_point(0)
 	assert(g.replay.pending.kind=="attack")
-	FileAccess.open("res://docs/replay65-events.json",FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))
-	print("REPLAY EVENTS65 PASS physical jump/float aces and perfect spike / short decisive clips / blocked-out fallback")
+	FileAccess.open("res://docs/replay66-events.json",FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))
+	print("REPLAY EVENTS66 PASS physical jump/float aces and perfect spike / short decisive clips / blocked-out fallback")
 	g.free(); quit()

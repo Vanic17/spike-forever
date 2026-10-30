@@ -3,9 +3,9 @@ var replay
 func _ready() -> void: mouse_filter=Control.MOUSE_FILTER_IGNORE
 func _draw() -> void:
 	if replay==null or not replay.active: return
-	var progress:=clampf(replay.elapsed/.9,0,1)
+	var progress:=clampf(replay.elapsed/replay.TRANSITION_SECONDS,0,1)
 	var settle:=smoothstep(0,.45,progress)
-	var zoom:=smoothstep(.72,1.0,progress)
+	var zoom:=smoothstep(.68,1.0,progress)
 	var height:=lerpf(size.y*.24,size.y*.48,settle)*lerpf(1,20,zoom)
 	var center:=Vector2(size.x*.5,lerpf(size.y*1.45,size.y*.5,settle))
 	# Reference: tilted crest rises, turns front-on, then zooms through frame.

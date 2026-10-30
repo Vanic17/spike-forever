@@ -4,7 +4,7 @@ var menu
 func _initialize(): call_deferred("run")
 func shot(name: String):
 	await process_frame; await process_frame; await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_png("res://docs/broadcast65-"+name+".png")
+	root.get_texture().get_image().save_png("res://docs/broadcast66-"+name+".png")
 func run():
 	root.mode=Window.MODE_WINDOWED; root.size=Vector2i(1920,1080); root.content_scale_size=root.size
 	g=load("res://src/main.tscn").instantiate(); root.add_child(g); g.set_physics_process(false); g.self_test=true; g.replay.set_process(false)
@@ -28,5 +28,5 @@ func run():
 	for i in 45:
 		g.clock_time=i/30.0; g.ball_pos=Vector3(0,2+sin(i*.1),3-i*.1); g.replay.capture(true)
 	g.replay.begin(); g.replay.elapsed=.5; g.replay.overlay.queue_redraw(); await shot("transition")
-	g.replay.advance(.5); g.replay.advance(.2); await shot("replay")
-	g.replay.finish(); print("BROADCAST65 CAPTURE PASS"); g.free(); quit()
+	g.replay.advance(g.replay.TRANSITION_SECONDS); g.replay.advance(.2); await shot("replay")
+	g.replay.finish(); print("BROADCAST66 CAPTURE PASS"); g.free(); quit()

@@ -36,8 +36,8 @@ func _process(dt):
 			if seen!=3 or finished!=3 or g.started:
 				push_error("Unexpected end role="+role+" seen="+str(seen)+" restored="+str(finished)); quit(1); return false
 			var report={"role":role,"replays":seen,"restored":finished,"guest_skip":true,"lateral":true,"frozen_simulation":true,"home":true}
-			FileAccess.open("res://docs/online-replay65-"+role+".json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
-			print("ONLINE REPLAY65 PASS ",JSON.stringify(report)); quit()
+			FileAccess.open("res://docs/online-replay66-"+role+".json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+			print("ONLINE REPLAY66 PASS ",JSON.stringify(report)); quit()
 		return false
 	if began<0: began=age
 	if role=="host" and not was_active and not g.replay.active and g.replay.pending.is_empty() and age-began>next_event and sent<3:
