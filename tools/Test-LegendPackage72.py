@@ -29,7 +29,7 @@ with zipfile.ZipFile(args.package) as bundle:
         assert "roster-overrides" not in name, "Personal database overrides leaked"
     manifest = json.loads(bundle.read("release-manifest.json"))
     version = json.loads(bundle.read("version.json"))["version"]
-    assert manifest["version"] == version == "0.72.0"
+    assert manifest["version"] == version and version.startswith("0.72.")
     assert set(names) == set(manifest["files"]) | {"release-manifest.json"}
     for name, expected in manifest["files"].items():
         digest = hashlib.sha256()

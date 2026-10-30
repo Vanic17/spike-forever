@@ -422,7 +422,8 @@ func attempt_manual(kind: String, power: float) -> bool:
 		if not floating and heights[i] < 0.20: return false
 		var action := "float" if floating else "power"
 		if physical_gap(i, action) > 0.64: return false
-		if absf(game.players[i].position.x) > 4.5 or game.players[i].position.z < 9.10:
+		var feet: Vector3=jump_origin[i] if heights[i]>.015 else game.players[i].position
+		if absf(feet.x) > 4.5 or feet.z < 9.10:
 			performance.errors += 1; award(1, "FALLO DI PIEDE"); return false
 		serve_ball(i, power, floating); return true
 	if not live or game.possession != 0 or game.ball_pos.z < -0.15 or last_actor == i: return false

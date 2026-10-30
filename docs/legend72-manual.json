@@ -26,7 +26,7 @@
 		"high": 140,
 		"low": 70
 	},
-	"checks": 172,
+	"checks": 180,
 	"difficulty_means": [
 		0.688452422618866,
 		0.783639495670795,
@@ -69,6 +69,7 @@
 		"sideout": true,
 		"tie_break_15": true
 	},
+	"service_takeoff": true,
 	"set_distribution": {
 		"0": 127,
 		"1": 41,

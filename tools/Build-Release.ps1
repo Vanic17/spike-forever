@@ -8,6 +8,7 @@ $files+='docs/RELEASE_NOTES_69.md'
 $files+='docs/RELEASE_NOTES_70.md'
 $files+='docs/RELEASE_NOTES_71.md'
 $files+='docs/RELEASE_NOTES_72.md'
+$files+='docs/RELEASE_NOTES_72_1.md'
 foreach($report72 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'legend72-*'){
  if($report72.Extension -in @('.md','.json','.png')){$files+='docs/'+$report72.Name}
 }

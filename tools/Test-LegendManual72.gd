@@ -253,6 +253,19 @@ func test_block_rating_and_overcharge() -> void:
 	report.block_attribute={"low":counts[0],"high":counts[1]}
 	report.overcharge_serve_seconds=speeds
 
+func test_service_takeoff() -> void:
+	var cases: Array=[{"takeoff":9.4,"contact":8.8,"height":.8,"float":false,"legal":true},{"takeoff":8.8,"contact":9.4,"height":.8,"float":false,"legal":false},{"takeoff":9.4,"contact":8.8,"height":0.0,"float":true,"legal":false}]
+	for sample in cases:
+		restart("OH"); game.phase="SERVE"; game.server=0
+		legend.actor=0; legend.service_toss=true
+		legend.jump_origin[0]=Vector3(1.2,0,sample.takeoff); legend.heights[0]=sample.height
+		game.players[0].position=Vector3(1.2,sample.height,sample.contact)
+		game.ball_pos=legend.hand_point(0,"float" if sample.float else "power")
+		var hit: bool=legend.attempt_manual("alternate" if sample.float else "action",.85)
+		check(hit==sample.legal,"service judges the last ground contact, including a legal forward jump")
+		if not sample.legal: check(game.phase=="POINT" and game.point_reason=="FALLO DI PIEDE","illegal takeoff and standing inside the court remain foot faults")
+	report.service_takeoff=true
+
 func test_input_and_gap() -> void:
 	restart()
 	var motion := InputEventJoypadMotion.new()
@@ -478,6 +491,7 @@ func run() -> void:
 	test_motion_and_jump()
 	test_set_distribution()
 	test_block_rating_and_overcharge()
+	test_service_takeoff()
 	test_input_and_gap()
 	test_ai_rallies()
 	test_manual_contacts()
