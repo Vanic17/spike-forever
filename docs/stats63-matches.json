@@ -1,20 +1,6 @@
 [
   {
-    "contacts": 262,
-    "returned_home": true,
-    "scores": [
-      15,
-      13
-    ],
-    "sets": [
-      1,
-      0
-    ],
-    "stats": false,
-    "steps": 31354
-  },
-  {
-    "contacts": 216,
+    "contacts": 292,
     "returned_home": true,
     "scores": [
       15,
@@ -24,7 +10,21 @@
       1,
       0
     ],
+    "stats": false,
+    "steps": 30037
+  },
+  {
+    "contacts": 225,
+    "returned_home": true,
+    "scores": [
+      11,
+      15
+    ],
+    "sets": [
+      0,
+      1
+    ],
     "stats": true,
-    "steps": 25137
+    "steps": 26241
   }
 ]

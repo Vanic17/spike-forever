@@ -36,7 +36,7 @@
             "palleggio": 59,
             "schiacciata": 85,
             "muro": 68,
-            "generale": 79,
+            "generale": 77,
             "difesa": 71
           },
           "ratings_metadata": {
@@ -110,7 +110,7 @@
             "palleggio": 56,
             "schiacciata": 75,
             "muro": 59,
-            "generale": 72,
+            "generale": 71,
             "difesa": 72
           },
           "ratings_metadata": {
@@ -184,7 +184,7 @@
             "palleggio": 71,
             "schiacciata": 35,
             "muro": 28,
-            "generale": 80,
+            "generale": 82,
             "difesa": 78
           },
           "ratings_metadata": {
@@ -258,7 +258,7 @@
             "palleggio": 91,
             "schiacciata": 56,
             "muro": 55,
-            "generale": 79,
+            "generale": 75,
             "difesa": 72
           },
           "ratings_metadata": {
@@ -323,7 +323,7 @@
             "palleggio": 47,
             "schiacciata": 75,
             "muro": 82,
-            "generale": 76,
+            "generale": 73,
             "difesa": 58
           },
           "ratings_metadata": {
@@ -388,7 +388,7 @@
             "palleggio": 43,
             "schiacciata": 76,
             "muro": 81,
-            "generale": 75,
+            "generale": 71,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -453,7 +453,7 @@
             "palleggio": 45,
             "schiacciata": 69,
             "muro": 73,
-            "generale": 69,
+            "generale": 66,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -518,7 +518,7 @@
             "palleggio": 47,
             "schiacciata": 85,
             "muro": 68,
-            "generale": 78,
+            "generale": 75,
             "difesa": 65
           },
           "ratings_metadata": {
@@ -672,7 +672,7 @@
             "palleggio": 47,
             "schiacciata": 88,
             "muro": 91,
-            "generale": 87,
+            "generale": 84,
             "difesa": 61
           },
           "ratings_metadata": {
@@ -758,7 +758,7 @@
             "palleggio": 80,
             "schiacciata": 53,
             "muro": 51,
-            "generale": 71,
+            "generale": 68,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -832,7 +832,7 @@
             "palleggio": 60,
             "schiacciata": 82,
             "muro": 65,
-            "generale": 79,
+            "generale": 77,
             "difesa": 71
           },
           "ratings_metadata": {
@@ -914,7 +914,7 @@
             "palleggio": 44,
             "schiacciata": 76,
             "muro": 62,
-            "generale": 71,
+            "generale": 69,
             "difesa": 66
           },
           "ratings_metadata": {
@@ -979,7 +979,7 @@
             "palleggio": 67,
             "schiacciata": 33,
             "muro": 23,
-            "generale": 73,
+            "generale": 81,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -1053,7 +1053,7 @@
             "palleggio": 51,
             "schiacciata": 79,
             "muro": 66,
-            "generale": 73,
+            "generale": 72,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -1174,7 +1174,7 @@
             "palleggio": 83,
             "schiacciata": 50,
             "muro": 45,
-            "generale": 71,
+            "generale": 67,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -1239,7 +1239,7 @@
             "palleggio": 57,
             "schiacciata": 86,
             "muro": 69,
-            "generale": 80,
+            "generale": 79,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -1378,7 +1378,7 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 80,
-            "generale": 75,
+            "generale": 71,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -1443,7 +1443,7 @@
             "palleggio": 52,
             "schiacciata": 88,
             "muro": 67,
-            "generale": 80,
+            "generale": 77,
             "difesa": 65
           },
           "ratings_metadata": {
@@ -1517,7 +1517,7 @@
             "palleggio": 47,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -1563,7 +1563,7 @@
             "palleggio": 58,
             "schiacciata": 77,
             "muro": 63,
-            "generale": 74,
+            "generale": 73,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -1637,7 +1637,7 @@
             "palleggio": 86,
             "schiacciata": 62,
             "muro": 59,
-            "generale": 77,
+            "generale": 74,
             "difesa": 68
           },
           "ratings_metadata": {
@@ -1711,7 +1711,7 @@
             "palleggio": 60,
             "schiacciata": 29,
             "muro": 27,
-            "generale": 74,
+            "generale": 82,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -1776,7 +1776,7 @@
             "palleggio": 42,
             "schiacciata": 81,
             "muro": 62,
-            "generale": 73,
+            "generale": 70,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -1841,7 +1841,7 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 83,
-            "generale": 80,
+            "generale": 76,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -1997,7 +1997,7 @@
             "palleggio": 39,
             "schiacciata": 69,
             "muro": 81,
-            "generale": 73,
+            "generale": 68,
             "difesa": 54
           },
           "ratings_metadata": {
@@ -2071,7 +2071,7 @@
             "palleggio": 66,
             "schiacciata": 38,
             "muro": 31,
-            "generale": 77,
+            "generale": 85,
             "difesa": 88
           },
           "ratings_metadata": {
@@ -2192,7 +2192,7 @@
             "palleggio": 90,
             "schiacciata": 71,
             "muro": 68,
-            "generale": 83,
+            "generale": 81,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -2266,7 +2266,7 @@
             "palleggio": 48,
             "schiacciata": 86,
             "muro": 89,
-            "generale": 84,
+            "generale": 80,
             "difesa": 60
           },
           "ratings_metadata": {
@@ -2348,7 +2348,7 @@
             "palleggio": 60,
             "schiacciata": 88,
             "muro": 70,
-            "generale": 81,
+            "generale": 80,
             "difesa": 78
           },
           "ratings_metadata": {
@@ -2430,7 +2430,7 @@
             "palleggio": 67,
             "schiacciata": 30,
             "muro": 22,
-            "generale": 75,
+            "generale": 81,
             "difesa": 83
           },
           "ratings_metadata": {
@@ -2504,7 +2504,7 @@
             "palleggio": 76,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 85,
+            "generale": 89,
             "difesa": 86
           },
           "ratings_metadata": {
@@ -2586,7 +2586,7 @@
             "palleggio": 43,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 72,
+            "generale": 69,
             "difesa": 59
           },
           "ratings_metadata": {
@@ -2734,7 +2734,7 @@
             "palleggio": 55,
             "schiacciata": 76,
             "muro": 61,
-            "generale": 73,
+            "generale": 72,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -2789,7 +2789,7 @@
             "palleggio": 58,
             "schiacciata": 95,
             "muro": 72,
-            "generale": 84,
+            "generale": 83,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -2875,7 +2875,7 @@
             "palleggio": 81,
             "schiacciata": 55,
             "muro": 52,
-            "generale": 72,
+            "generale": 69,
             "difesa": 69
           },
           "ratings_metadata": {
@@ -2949,7 +2949,7 @@
             "palleggio": 52,
             "schiacciata": 83,
             "muro": 85,
-            "generale": 81,
+            "generale": 77,
             "difesa": 54
           },
           "ratings_metadata": {
@@ -3027,7 +3027,7 @@
             "palleggio": 51,
             "schiacciata": 82,
             "muro": 67,
-            "generale": 76,
+            "generale": 74,
             "difesa": 65
           },
           "ratings_metadata": {
@@ -3101,7 +3101,7 @@
             "palleggio": 42,
             "schiacciata": 71,
             "muro": 76,
-            "generale": 71,
+            "generale": 68,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -3166,7 +3166,7 @@
             "palleggio": 62,
             "schiacciata": 89,
             "muro": 74,
-            "generale": 85,
+            "generale": 83,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -3299,7 +3299,7 @@
             "palleggio": 79,
             "schiacciata": 51,
             "muro": 52,
-            "generale": 70,
+            "generale": 68,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -3364,7 +3364,7 @@
             "palleggio": 67,
             "schiacciata": 42,
             "muro": 31,
-            "generale": 75,
+            "generale": 81,
             "difesa": 84
           },
           "ratings_metadata": {
@@ -3438,7 +3438,7 @@
             "palleggio": 61,
             "schiacciata": 33,
             "muro": 24,
-            "generale": 69,
+            "generale": 78,
             "difesa": 84
           },
           "ratings_metadata": {
@@ -3503,7 +3503,7 @@
             "palleggio": 80,
             "schiacciata": 52,
             "muro": 52,
-            "generale": 71,
+            "generale": 68,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -3577,7 +3577,7 @@
             "palleggio": 47,
             "schiacciata": 80,
             "muro": 63,
-            "generale": 72,
+            "generale": 70,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -3651,7 +3651,7 @@
             "palleggio": 40,
             "schiacciata": 75,
             "muro": 80,
-            "generale": 74,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -3716,7 +3716,7 @@
             "palleggio": 42,
             "schiacciata": 71,
             "muro": 74,
-            "generale": 70,
+            "generale": 67,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -3855,7 +3855,7 @@
             "palleggio": 50,
             "schiacciata": 88,
             "muro": 71,
-            "generale": 80,
+            "generale": 77,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -3929,7 +3929,7 @@
             "palleggio": 57,
             "schiacciata": 86,
             "muro": 70,
-            "generale": 79,
+            "generale": 78,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -4015,7 +4015,7 @@
             "palleggio": 65,
             "schiacciata": 85,
             "muro": 65,
-            "generale": 79,
+            "generale": 78,
             "difesa": 78
           },
           "ratings_metadata": {
@@ -4089,7 +4089,7 @@
             "palleggio": 45,
             "schiacciata": 77,
             "muro": 85,
-            "generale": 78,
+            "generale": 74,
             "difesa": 59
           },
           "ratings_metadata": {
@@ -4237,7 +4237,7 @@
             "palleggio": 45,
             "schiacciata": 80,
             "muro": 82,
-            "generale": 78,
+            "generale": 74,
             "difesa": 53
           },
           "ratings_metadata": {
@@ -4366,7 +4366,7 @@
             "palleggio": 47,
             "schiacciata": 76,
             "muro": 79,
-            "generale": 74,
+            "generale": 70,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -4514,7 +4514,7 @@
             "palleggio": 87,
             "schiacciata": 62,
             "muro": 59,
-            "generale": 78,
+            "generale": 76,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -4596,7 +4596,7 @@
             "palleggio": 42,
             "schiacciata": 78,
             "muro": 67,
-            "generale": 73,
+            "generale": 71,
             "difesa": 65
           },
           "ratings_metadata": {
@@ -4670,7 +4670,7 @@
             "palleggio": 71,
             "schiacciata": 35,
             "muro": 27,
-            "generale": 79,
+            "generale": 86,
             "difesa": 88
           },
           "ratings_metadata": {
@@ -4744,7 +4744,7 @@
             "palleggio": 52,
             "schiacciata": 72,
             "muro": 65,
-            "generale": 69,
+            "generale": 70,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -4818,7 +4818,7 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 79,
-            "generale": 75,
+            "generale": 72,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -4892,7 +4892,7 @@
             "palleggio": 46,
             "schiacciata": 84,
             "muro": 87,
-            "generale": 82,
+            "generale": 78,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -4974,7 +4974,7 @@
             "palleggio": 63,
             "schiacciata": 84,
             "muro": 66,
-            "generale": 79,
+            "generale": 78,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -5039,7 +5039,7 @@
             "palleggio": 81,
             "schiacciata": 54,
             "muro": 54,
-            "generale": 72,
+            "generale": 70,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -5113,7 +5113,7 @@
             "palleggio": 60,
             "schiacciata": 35,
             "muro": 25,
-            "generale": 73,
+            "generale": 82,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -5178,7 +5178,7 @@
             "palleggio": 42,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73,
+            "generale": 70,
             "difesa": 58
           },
           "ratings_metadata": {
@@ -5260,7 +5260,7 @@
             "palleggio": 56,
             "schiacciata": 84,
             "muro": 67,
-            "generale": 78,
+            "generale": 77,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -5334,7 +5334,7 @@
             "palleggio": 49,
             "schiacciata": 88,
             "muro": 70,
-            "generale": 80,
+            "generale": 78,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -5463,7 +5463,7 @@
             "palleggio": 58,
             "schiacciata": 73,
             "muro": 64,
-            "generale": 69,
+            "generale": 70,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -5528,7 +5528,7 @@
             "palleggio": 82,
             "schiacciata": 48,
             "muro": 46,
-            "generale": 71,
+            "generale": 68,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -5593,7 +5593,7 @@
             "palleggio": 69,
             "schiacciata": 94,
             "muro": 83,
-            "generale": 89,
+            "generale": 87,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -5667,7 +5667,7 @@
             "palleggio": 89,
             "schiacciata": 62,
             "muro": 61,
-            "generale": 80,
+            "generale": 77,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -5749,7 +5749,7 @@
             "palleggio": 64,
             "schiacciata": 34,
             "muro": 24,
-            "generale": 75,
+            "generale": 82,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -5814,7 +5814,7 @@
             "palleggio": 50,
             "schiacciata": 91,
             "muro": 73,
-            "generale": 83,
+            "generale": 80,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -5896,7 +5896,7 @@
             "palleggio": 39,
             "schiacciata": 69,
             "muro": 78,
-            "generale": 71,
+            "generale": 68,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -5961,7 +5961,7 @@
             "palleggio": 75,
             "schiacciata": 35,
             "muro": 27,
-            "generale": 84,
+            "generale": 90,
             "difesa": 90
           },
           "ratings_metadata": {
@@ -6047,7 +6047,7 @@
             "palleggio": 63,
             "schiacciata": 88,
             "muro": 74,
-            "generale": 83,
+            "generale": 82,
             "difesa": 80
           },
           "ratings_metadata": {
@@ -6129,7 +6129,7 @@
             "palleggio": 50,
             "schiacciata": 76,
             "muro": 67,
-            "generale": 71,
+            "generale": 69,
             "difesa": 66
           },
           "ratings_metadata": {
@@ -6259,7 +6259,7 @@
             "palleggio": 47,
             "schiacciata": 87,
             "muro": 90,
-            "generale": 85,
+            "generale": 81,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -6341,7 +6341,7 @@
             "palleggio": 48,
             "schiacciata": 80,
             "muro": 86,
-            "generale": 80,
+            "generale": 76,
             "difesa": 58
           },
           "ratings_metadata": {
@@ -6423,7 +6423,7 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 79,
-            "generale": 74,
+            "generale": 71,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -6552,7 +6552,7 @@
             "palleggio": 49,
             "schiacciata": 86,
             "muro": 72,
-            "generale": 80,
+            "generale": 77,
             "difesa": 64
           },
           "ratings_metadata": {
@@ -6626,7 +6626,7 @@
             "palleggio": 55,
             "schiacciata": 81,
             "muro": 63,
-            "generale": 75,
+            "generale": 74,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -6700,7 +6700,7 @@
             "palleggio": 47,
             "schiacciata": 71,
             "muro": 81,
-            "generale": 73,
+            "generale": 69,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -6765,7 +6765,7 @@
             "palleggio": 85,
             "schiacciata": 52,
             "muro": 50,
-            "generale": 73,
+            "generale": 70,
             "difesa": 71
           },
           "ratings_metadata": {
@@ -6830,7 +6830,7 @@
             "palleggio": 70,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 77,
+            "generale": 84,
             "difesa": 86
           },
           "ratings_metadata": {
@@ -6904,7 +6904,7 @@
             "palleggio": 53,
             "schiacciata": 75,
             "muro": 82,
-            "generale": 77,
+            "generale": 74,
             "difesa": 54
           },
           "ratings_metadata": {
@@ -6978,7 +6978,7 @@
             "palleggio": 51,
             "schiacciata": 79,
             "muro": 87,
-            "generale": 80,
+            "generale": 76,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -7052,7 +7052,7 @@
             "palleggio": 62,
             "schiacciata": 30,
             "muro": 23,
-            "generale": 74,
+            "generale": 82,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -7329,7 +7329,7 @@
             "palleggio": 85,
             "schiacciata": 59,
             "muro": 58,
-            "generale": 76,
+            "generale": 74,
             "difesa": 71
           },
           "ratings_metadata": {
@@ -7394,7 +7394,7 @@
             "palleggio": 46,
             "schiacciata": 79,
             "muro": 63,
-            "generale": 73,
+            "generale": 71,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -7459,7 +7459,7 @@
             "palleggio": 42,
             "schiacciata": 75,
             "muro": 78,
-            "generale": 74,
+            "generale": 70,
             "difesa": 53
           },
           "ratings_metadata": {
@@ -7580,7 +7580,7 @@
             "palleggio": 43,
             "schiacciata": 74,
             "muro": 73,
-            "generale": 71,
+            "generale": 68,
             "difesa": 53
           },
           "ratings_metadata": {
@@ -7654,7 +7654,7 @@
             "palleggio": 53,
             "schiacciata": 75,
             "muro": 85,
-            "generale": 78,
+            "generale": 74,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -7736,7 +7736,7 @@
             "palleggio": 72,
             "schiacciata": 35,
             "muro": 28,
-            "generale": 80,
+            "generale": 85,
             "difesa": 83
           },
           "ratings_metadata": {
@@ -7810,7 +7810,7 @@
             "palleggio": 79,
             "schiacciata": 54,
             "muro": 45,
-            "generale": 69,
+            "generale": 66,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -7875,7 +7875,7 @@
             "palleggio": 45,
             "schiacciata": 82,
             "muro": 84,
-            "generale": 80,
+            "generale": 76,
             "difesa": 58
           },
           "ratings_metadata": {
@@ -7949,7 +7949,7 @@
             "palleggio": 67,
             "schiacciata": 30,
             "muro": 26,
-            "generale": 74,
+            "generale": 81,
             "difesa": 83
           },
           "ratings_metadata": {
@@ -8023,7 +8023,7 @@
             "palleggio": 55,
             "schiacciata": 94,
             "muro": 74,
-            "generale": 82,
+            "generale": 81,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -8179,7 +8179,7 @@
             "palleggio": 94,
             "schiacciata": 65,
             "muro": 66,
-            "generale": 84,
+            "generale": 81,
             "difesa": 69
           },
           "ratings_metadata": {
@@ -8261,7 +8261,7 @@
             "palleggio": 51,
             "schiacciata": 80,
             "muro": 65,
-            "generale": 74,
+            "generale": 72,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -8307,7 +8307,7 @@
             "palleggio": 54,
             "schiacciata": 73,
             "muro": 59,
-            "generale": 68,
+            "generale": 69,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -8372,7 +8372,7 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 87,
-            "generale": 82,
+            "generale": 78,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -8446,7 +8446,7 @@
             "palleggio": 59,
             "schiacciata": 90,
             "muro": 71,
-            "generale": 81,
+            "generale": 80,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -8532,7 +8532,7 @@
             "palleggio": 50,
             "schiacciata": 93,
             "muro": 74,
-            "generale": 86,
+            "generale": 83,
             "difesa": 73
           },
           "ratings_metadata": {
@@ -8712,7 +8712,7 @@
             "palleggio": 58,
             "schiacciata": 86,
             "muro": 67,
-            "generale": 83,
+            "generale": 81,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -8781,7 +8781,7 @@
             "palleggio": 95,
             "schiacciata": 72,
             "muro": 72,
-            "generale": 87,
+            "generale": 83,
             "difesa": 69
           },
           "ratings_metadata": {
@@ -8863,7 +8863,7 @@
             "palleggio": 52,
             "schiacciata": 94,
             "muro": 78,
-            "generale": 86,
+            "generale": 82,
             "difesa": 68
           },
           "ratings_metadata": {
@@ -8949,7 +8949,7 @@
             "palleggio": 47,
             "schiacciata": 85,
             "muro": 89,
-            "generale": 84,
+            "generale": 79,
             "difesa": 59
           },
           "ratings_metadata": {
@@ -9014,7 +9014,7 @@
             "palleggio": 79,
             "schiacciata": 55,
             "muro": 49,
-            "generale": 70,
+            "generale": 67,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -9079,7 +9079,7 @@
             "palleggio": 73,
             "schiacciata": 38,
             "muro": 33,
-            "generale": 77,
+            "generale": 83,
             "difesa": 86
           },
           "ratings_metadata": {
@@ -9153,7 +9153,7 @@
             "palleggio": 47,
             "schiacciata": 83,
             "muro": 88,
-            "generale": 82,
+            "generale": 78,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -9227,7 +9227,7 @@
             "palleggio": 47,
             "schiacciata": 82,
             "muro": 69,
-            "generale": 75,
+            "generale": 73,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -9292,7 +9292,7 @@
             "palleggio": 65,
             "schiacciata": 88,
             "muro": 76,
-            "generale": 84,
+            "generale": 83,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -9366,7 +9366,7 @@
             "palleggio": 59,
             "schiacciata": 91,
             "muro": 76,
-            "generale": 84,
+            "generale": 83,
             "difesa": 79
           },
           "ratings_metadata": {
@@ -9448,7 +9448,7 @@
             "palleggio": 47,
             "schiacciata": 86,
             "muro": 93,
-            "generale": 86,
+            "generale": 81,
             "difesa": 59
           },
           "ratings_metadata": {
@@ -9534,7 +9534,7 @@
             "palleggio": 73,
             "schiacciata": 34,
             "muro": 26,
-            "generale": 85,
+            "generale": 88,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -9677,7 +9677,7 @@
             "palleggio": 44,
             "schiacciata": 71,
             "muro": 74,
-            "generale": 70,
+            "generale": 67,
             "difesa": 54
           },
           "ratings_metadata": {
@@ -9798,7 +9798,7 @@
             "palleggio": 53,
             "schiacciata": 76,
             "muro": 87,
-            "generale": 79,
+            "generale": 75,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -9880,7 +9880,7 @@
             "palleggio": 47,
             "schiacciata": 74,
             "muro": 79,
-            "generale": 74,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -9945,7 +9945,7 @@
             "palleggio": 90,
             "schiacciata": 54,
             "muro": 59,
-            "generale": 79,
+            "generale": 76,
             "difesa": 72
           },
           "ratings_metadata": {
@@ -10010,7 +10010,7 @@
             "palleggio": 45,
             "schiacciata": 76,
             "muro": 75,
-            "generale": 73,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -10075,7 +10075,7 @@
             "palleggio": 59,
             "schiacciata": 75,
             "muro": 64,
-            "generale": 70,
+            "generale": 71,
             "difesa": 75
           },
           "ratings_metadata": {
@@ -10140,7 +10140,7 @@
             "palleggio": 84,
             "schiacciata": 49,
             "muro": 49,
-            "generale": 72,
+            "generale": 69,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -10205,7 +10205,7 @@
             "palleggio": 68,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 75,
+            "generale": 81,
             "difesa": 83
           },
           "ratings_metadata": {
@@ -10279,7 +10279,7 @@
             "palleggio": 46,
             "schiacciata": 84,
             "muro": 65,
-            "generale": 76,
+            "generale": 73,
             "difesa": 67
           },
           "ratings_metadata": {
@@ -10344,7 +10344,7 @@
             "palleggio": 45,
             "schiacciata": 80,
             "muro": 81,
-            "generale": 78,
+            "generale": 75,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -10418,7 +10418,7 @@
             "palleggio": 67,
             "schiacciata": 34,
             "muro": 25,
-            "generale": 71,
+            "generale": 80,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -10483,7 +10483,7 @@
             "palleggio": 57,
             "schiacciata": 82,
             "muro": 64,
-            "generale": 77,
+            "generale": 76,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -10548,7 +10548,7 @@
             "palleggio": 60,
             "schiacciata": 76,
             "muro": 67,
-            "generale": 73,
+            "generale": 72,
             "difesa": 71
           },
           "ratings_metadata": {
@@ -10601,7 +10601,7 @@
             "palleggio": 59,
             "schiacciata": 83,
             "muro": 66,
-            "generale": 76,
+            "generale": 75,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -10846,7 +10846,7 @@
             "palleggio": 57,
             "schiacciata": 80,
             "muro": 60,
-            "generale": 74,
+            "generale": 73,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -10928,7 +10928,7 @@
             "palleggio": 85,
             "schiacciata": 60,
             "muro": 57,
-            "generale": 76,
+            "generale": 74,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -11010,7 +11010,7 @@
             "palleggio": 75,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 83,
+            "generale": 89,
             "difesa": 89
           },
           "ratings_metadata": {
@@ -11084,7 +11084,7 @@
             "palleggio": 49,
             "schiacciata": 82,
             "muro": 80,
-            "generale": 78,
+            "generale": 75,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -11166,7 +11166,7 @@
             "palleggio": 45,
             "schiacciata": 75,
             "muro": 64,
-            "generale": 70,
+            "generale": 68,
             "difesa": 66
           },
           "ratings_metadata": {
@@ -11231,7 +11231,7 @@
             "palleggio": 62,
             "schiacciata": 87,
             "muro": 70,
-            "generale": 82,
+            "generale": 80,
             "difesa": 77
           },
           "ratings_metadata": {
@@ -11361,7 +11361,7 @@
             "palleggio": 84,
             "schiacciata": 56,
             "muro": 53,
-            "generale": 74,
+            "generale": 71,
             "difesa": 66
           },
           "ratings_metadata": {
@@ -11435,7 +11435,7 @@
             "palleggio": 42,
             "schiacciata": 72,
             "muro": 76,
-            "generale": 72,
+            "generale": 68,
             "difesa": 53
           },
           "ratings_metadata": {
@@ -11509,7 +11509,7 @@
             "palleggio": 67,
             "schiacciata": 34,
             "muro": 30,
-            "generale": 76,
+            "generale": 83,
             "difesa": 86
           },
           "ratings_metadata": {
@@ -11574,7 +11574,7 @@
             "palleggio": 61,
             "schiacciata": 86,
             "muro": 68,
-            "generale": 82,
+            "generale": 80,
             "difesa": 78
           },
           "ratings_metadata": {
@@ -11660,7 +11660,7 @@
             "palleggio": 40,
             "schiacciata": 73,
             "muro": 81,
-            "generale": 74,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {
@@ -11725,7 +11725,7 @@
             "palleggio": 48,
             "schiacciata": 86,
             "muro": 89,
-            "generale": 84,
+            "generale": 80,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -11799,7 +11799,7 @@
             "palleggio": 48,
             "schiacciata": 90,
             "muro": 70,
-            "generale": 81,
+            "generale": 78,
             "difesa": 68
           },
           "ratings_metadata": {
@@ -11924,7 +11924,7 @@
             "palleggio": 65,
             "schiacciata": 85,
             "muro": 70,
-            "generale": 78,
+            "generale": 77,
             "difesa": 72
           },
           "ratings_metadata": {
@@ -12006,7 +12006,7 @@
             "palleggio": 49,
             "schiacciata": 82,
             "muro": 74,
-            "generale": 77,
+            "generale": 74,
             "difesa": 63
           },
           "ratings_metadata": {
@@ -12080,7 +12080,7 @@
             "palleggio": 78,
             "schiacciata": 50,
             "muro": 50,
-            "generale": 68,
+            "generale": 66,
             "difesa": 70
           },
           "ratings_metadata": {
@@ -12145,7 +12145,7 @@
             "palleggio": 68,
             "schiacciata": 31,
             "muro": 26,
-            "generale": 74,
+            "generale": 82,
             "difesa": 85
           },
           "ratings_metadata": {
@@ -12210,7 +12210,7 @@
             "palleggio": 47,
             "schiacciata": 81,
             "muro": 68,
-            "generale": 74,
+            "generale": 72,
             "difesa": 66
           },
           "ratings_metadata": {
@@ -12284,7 +12284,7 @@
             "palleggio": 57,
             "schiacciata": 77,
             "muro": 63,
-            "generale": 74,
+            "generale": 73,
             "difesa": 74
           },
           "ratings_metadata": {
@@ -12358,7 +12358,7 @@
             "palleggio": 82,
             "schiacciata": 58,
             "muro": 55,
-            "generale": 74,
+            "generale": 71,
             "difesa": 69
           },
           "ratings_metadata": {
@@ -12432,7 +12432,7 @@
             "palleggio": 49,
             "schiacciata": 76,
             "muro": 81,
-            "generale": 76,
+            "generale": 73,
             "difesa": 60
           },
           "ratings_metadata": {
@@ -12514,7 +12514,7 @@
             "palleggio": 47,
             "schiacciata": 72,
             "muro": 73,
-            "generale": 70,
+            "generale": 67,
             "difesa": 56
           },
           "ratings_metadata": {
@@ -12579,7 +12579,7 @@
             "palleggio": 45,
             "schiacciata": 79,
             "muro": 92,
-            "generale": 83,
+            "generale": 78,
             "difesa": 55
           },
           "ratings_metadata": {
@@ -12657,7 +12657,7 @@
             "palleggio": 55,
             "schiacciata": 78,
             "muro": 64,
-            "generale": 74,
+            "generale": 73,
             "difesa": 76
           },
           "ratings_metadata": {
@@ -12722,7 +12722,7 @@
             "palleggio": 71,
             "schiacciata": 34,
             "muro": 27,
-            "generale": 78,
+            "generale": 85,
             "difesa": 86
           },
           "ratings_metadata": {
@@ -12870,7 +12870,7 @@
             "palleggio": 46,
             "schiacciata": 76,
             "muro": 76,
-            "generale": 73,
+            "generale": 70,
             "difesa": 57
           },
           "ratings_metadata": {

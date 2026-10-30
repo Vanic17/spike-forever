@@ -19,7 +19,7 @@ func _draw() -> void:
 	caption(Vector2(size.x/2,91),role,12,muted)
 	draw_circle(Vector2(size.x/2,145),35,Color("26374b"))
 	draw_arc(Vector2(size.x/2,145),35,-PI/2,TAU-PI/2,64,gold,2,true)
-	caption(Vector2(size.x/2,155),str(int(ratings.get("generale",0))),30,gold)
+	caption(Vector2(size.x/2,155),str(preload("res://src/player_overall.gd").calculate(ratings,str(player.get("role","outside_hitter")))),30,gold)
 	var radius=minf(102,(size.x-130)/2)
 	var centre=Vector2(size.x/2,340)
 	for ring in range(1,5):

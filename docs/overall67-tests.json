@@ -1,0 +1,56 @@
+{
+  "all_zero_and_99": true,
+  "career_migration": true,
+  "database_players": 169,
+  "local_edits_preserved": true,
+  "online_recomputed": true,
+  "sample_expected": {
+    "libero": 68,
+    "middle_blocker": 55,
+    "opposite": 58,
+    "outside_hitter": 61,
+    "setter": 73
+  },
+  "weights": {
+    "libero": [
+      0,
+      45,
+      45,
+      10,
+      0,
+      0
+    ],
+    "middle_blocker": [
+      15,
+      5,
+      5,
+      5,
+      35,
+      35
+    ],
+    "opposite": [
+      20,
+      5,
+      10,
+      5,
+      40,
+      20
+    ],
+    "outside_hitter": [
+      15,
+      20,
+      15,
+      5,
+      30,
+      15
+    ],
+    "setter": [
+      15,
+      5,
+      10,
+      45,
+      5,
+      20
+    ]
+  }
+}

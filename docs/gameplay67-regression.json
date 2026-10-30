@@ -1,0 +1,77 @@
+﻿[
+    {
+        "pass":  true,
+        "elapsed_seconds":  0.43,
+        "test":  "Test-Overall67"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.69,
+        "test":  "Test-GreenAttack67"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  11.19,
+        "test":  "Test-Recovery67"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  6.03,
+        "test":  "Test-PlayerStats63"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  8.24,
+        "test":  "Test-StatsRelease63"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.41,
+        "test":  "Test-StatsUI63"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  229.05,
+        "test":  "Test-StatsMatch63"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  0.4,
+        "test":  "Test-CareerIntegration66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  14.36,
+        "test":  "Test-CareerUI66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  9.16,
+        "test":  "Test-CareerPlayed66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  10.46,
+        "test":  "Test-MatchManagementUI66"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.23,
+        "test":  "Test-Replay65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  5.94,
+        "test":  "Test-Gameplay65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  9.91,
+        "test":  "Test-HighRecovery65"
+    },
+    {
+        "pass":  true,
+        "elapsed_seconds":  7.79,
+        "test":  "Test-MatchSetup49"
+    }
+]

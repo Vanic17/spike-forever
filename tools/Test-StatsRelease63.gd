@@ -1,4 +1,4 @@
-extends SceneTree
+﻿extends SceneTree
 func _initialize(): call_deferred("run")
 func run():
 	var g=load("res://src/main.tscn").instantiate(); root.add_child(g); g.set_process(false); g.set_physics_process(false); g.started=true; g.self_test=true; g.demo=false
@@ -34,8 +34,9 @@ func run():
 		g.ball_pos=g.Tactics.world(0,-3.4,1.05); g.ball_pos.y=g.players[0].contact_local("attack").y
 		var p=g.players[0]; p.rotation.y=PI; p.position=p.stance_for_contact("attack",g.ball_pos); p.blend_left=0; p.prepare_contact("attack",0); p.apply_pose(0)
 		g.attack_ball()
-		assert(g.phase=="CPU_RECEIVE" and g.winner_team==(-1 if enabled else 0),"Perfect stats attack remains physically defendable")
+		assert(g.phase=="CPU_RECEIVE" and g.winner_team==0,"Green attack wins with database ON or OFF")
 		rows.append({"stats":enabled,"attack100_winner_flag":g.winner_team})
-	FileAccess.open("res://docs/stats63-release.json",FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))
-	print("STATS RELEASE63 PASS real jump/float gold / real attack gold / actual set event / held and released buffering")
+	FileAccess.open("res://docs/stats67-release.json",FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))
+	print("STATS RELEASE67 PASS real jump/float gold / real attack gold / actual set event / held and released buffering")
 	g.free(); quit()
+

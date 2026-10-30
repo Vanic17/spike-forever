@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF066"
+const PROTOCOL="SF067"
 const PORT=26761
 var game
 var menu
@@ -162,6 +162,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			var raw=p.get("ratings",{}).get(key,base.ratings.get(key,85))
 			if not (raw is float or raw is int) or not is_finite(float(raw)): return {}
 			values[key]=clampf(float(raw),0,99)
+		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.role))
 		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
 	var bench: Array=[]
 	var provided=value.get("bench",club.roster)
@@ -179,6 +180,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			var rating=p.get("ratings",{}).get(key,original.ratings.get(key,85))
 			if not (rating is int or rating is float) or not is_finite(float(rating)): return {}
 			values[key]=clampf(float(rating),0,99)
+		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.get("role",original.role)))
 		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
 	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean,"bench":bench}
 

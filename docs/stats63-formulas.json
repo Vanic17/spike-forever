@@ -2,76 +2,76 @@
   "bar_window_independent": true,
   "baseline_broad_contacts_10000": {
     "block_tool": 2710,
-    "block_touch": 5090,
-    "stuff_block": 2200
+    "block_touch": 6001,
+    "stuff_block": 1289
   },
   "block_distributions": [
     {
       "actual": {
-        "block_tool": 594,
-        "block_touch": 311,
-        "stuff_block": 95
+        "block_tool": 611,
+        "block_touch": 314,
+        "stuff_block": 75
       },
       "baseline_same_contacts": {
         "block_tool": 0,
-        "block_touch": 415,
-        "stuff_block": 585
+        "block_touch": 650,
+        "stuff_block": 350
       },
       "samples": 1000,
       "stat": 55
     },
     {
       "actual": {
-        "block_tool": 455,
-        "block_touch": 302,
-        "stuff_block": 243
+        "block_tool": 505,
+        "block_touch": 309,
+        "stuff_block": 186
       },
       "baseline_same_contacts": {
         "block_tool": 0,
-        "block_touch": 415,
-        "stuff_block": 585
+        "block_touch": 650,
+        "stuff_block": 350
       },
       "samples": 1000,
       "stat": 75
     },
     {
       "actual": {
-        "block_tool": 391,
-        "block_touch": 307,
-        "stuff_block": 302
+        "block_tool": 442,
+        "block_touch": 304,
+        "stuff_block": 254
       },
       "baseline_same_contacts": {
         "block_tool": 0,
-        "block_touch": 415,
-        "stuff_block": 585
+        "block_touch": 650,
+        "stuff_block": 350
       },
       "samples": 1000,
       "stat": 85
     },
     {
       "actual": {
-        "block_tool": 211,
-        "block_touch": 274,
-        "stuff_block": 515
+        "block_tool": 305,
+        "block_touch": 289,
+        "stuff_block": 406
       },
       "baseline_same_contacts": {
         "block_tool": 0,
-        "block_touch": 415,
-        "stuff_block": 585
+        "block_touch": 650,
+        "stuff_block": 350
       },
       "samples": 1000,
       "stat": 95
     },
     {
       "actual": {
-        "block_tool": 157,
-        "block_touch": 282,
-        "stuff_block": 561
+        "block_tool": 275,
+        "block_touch": 274,
+        "stuff_block": 451
       },
       "baseline_same_contacts": {
         "block_tool": 0,
-        "block_touch": 415,
-        "stuff_block": 585
+        "block_touch": 650,
+        "stuff_block": 350
       },
       "samples": 1000,
       "stat": 99

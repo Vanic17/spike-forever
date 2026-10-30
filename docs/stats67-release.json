@@ -1,0 +1,58 @@
+[
+  {
+    "power": 1.0,
+    "serve": "jump",
+    "stats": false,
+    "winner_flag": 0
+  },
+  {
+    "power": 1.0,
+    "serve": "float",
+    "stats": false,
+    "winner_flag": 0
+  },
+  {
+    "flight": 1.1977778024496,
+    "power_at_set_release": 0.727272727272727,
+    "pre_released": false,
+    "stats": false
+  },
+  {
+    "flight": 1.1977778024496,
+    "power_at_set_release": 0.7,
+    "pre_released": true,
+    "stats": false
+  },
+  {
+    "attack100_winner_flag": 0,
+    "stats": false
+  },
+  {
+    "power": 1.0,
+    "serve": "jump",
+    "stats": true,
+    "winner_flag": -1
+  },
+  {
+    "power": 1.0,
+    "serve": "float",
+    "stats": true,
+    "winner_flag": -1
+  },
+  {
+    "flight": 1.1977778024496,
+    "power_at_set_release": 0.0,
+    "pre_released": false,
+    "stats": true
+  },
+  {
+    "flight": 1.1977778024496,
+    "power_at_set_release": 0.0,
+    "pre_released": true,
+    "stats": true
+  },
+  {
+    "attack100_winner_flag": 0,
+    "stats": true
+  }
+]

@@ -1,5 +1,7 @@
 ﻿# Spike Forever
 
+**Versione 0.67.0:** overall automatico con i pesi per ruolo forniti dall’utente, più terzi tocchi attaccabili e punto garantito nella finestra verde anche con database attivo. [Dettagli e verifiche](docs/RELEASE_NOTES_67.md).
+
 **Versione 0.66.0:** Campionato Master League con calendario ufficiale, coppe, salvataggi e UI dedicata. Sostituzioni regolamentari, fatica opzionale, menu Gioca con Esibizione/Online/Campionato. Classifica allineata, sostituzioni a tre passaggi, replay più lunghi e monster block riequilibrati. [Novità e verifiche](docs/RELEASE_NOTES_66.md) · [Audit](docs/CAREER_AUDIT_66.md).
 
 **Versione 0.65.0:** loghi ufficiali dei 12 club, scoreboard televisivo in alto a sinistra, logo SuperLega in alto a destra e replay brevi laterali con transizioni. Fischi variati, attacchi più tesi, muro CPU a tre limitato ai recuperi con alzata alta e terzi tocchi più vari. [Novità](docs/RELEASE_NOTES_65.md) · [Implementazione e verifiche](docs/BROADCAST_REPLAY_65.md).
@@ -16,7 +18,7 @@ Restano le correzioni di [recuperi e preparazione del centrale della 0.57](docs/
 
 La 0.52.0 introduce correzioni delle alzate, difese variabili e muri più incisivi: [dettagli](docs/RELEASE_NOTES_52.md).
 
-Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.66.0 (protocollo SF066).
+Online 6v6: [istruzioni e collegamento tramite codice](docs/RELEASE_NOTES_51.md). Entrambi i giocatori devono aggiornare alla 0.67.0 (protocollo SF067).
 
 **Versione 0.50.0:** rincorsa principale di banda, opposto e pipe con il gesto completo di corsa e schiacciata; apertura e avvio anticipati prima del tocco del palleggiatore. Stacco legale fuori dai tre metri e contatto/atterraggio dentro per la seconda linea. Pipe veloce più bassa e immediata, stessa curva di potenza per tutti gli attacchi. [Dettagli e video](docs/RELEASE_NOTES_50.md).
 
@@ -176,5 +178,6 @@ Nel rigioco le bande cominciano ad aprirsi prima dell'alzata. I percorsi di usci
 - I riferimenti delle animazioni originali attive sono in `assets/active/sources.json`; l'inventario completo è in `docs/animation-inventory.csv`.
 
 I test automatici inviano gli stessi eventi gestiti dai controller. La verifica fisica dei singoli modelli di controller rimane una prova manuale.
+
 
 

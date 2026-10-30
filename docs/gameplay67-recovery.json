@@ -1,0 +1,103 @@
+{
+  "high_net_rebound_attacks": 4,
+  "libero_and_low_saves_remain_bump": true,
+  "poor_sets": [
+    {
+      "direction": 0,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": false,
+      "team": 0
+    },
+    {
+      "direction": 2,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": false,
+      "team": 0
+    },
+    {
+      "direction": 3,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": false,
+      "team": 0
+    },
+    {
+      "direction": 0,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.733062326908112,
+      "stats": false,
+      "team": 1
+    },
+    {
+      "direction": 2,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.733062326908112,
+      "stats": false,
+      "team": 1
+    },
+    {
+      "direction": 3,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.733062326908112,
+      "stats": false,
+      "team": 1
+    },
+    {
+      "direction": 0,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": true,
+      "team": 0
+    },
+    {
+      "direction": 2,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": true,
+      "team": 0
+    },
+    {
+      "direction": 3,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.5976,
+      "stats": true,
+      "team": 0
+    },
+    {
+      "direction": 0,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.788574078083038,
+      "stats": true,
+      "team": 1
+    },
+    {
+      "direction": 2,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.788574078083038,
+      "stats": true,
+      "team": 1
+    },
+    {
+      "direction": 3,
+      "kind": "spike",
+      "poor_quality": 0.2,
+      "power": 0.788574078083038,
+      "stats": true,
+      "team": 1
+    }
+  ],
+  "real_trajectory_preserved": true
+}

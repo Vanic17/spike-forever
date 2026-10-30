@@ -273,9 +273,11 @@ func edit_player(index: int) -> void:
 		label(fields,{"hair_style":"Capelli · taglio","hair_color":"Capelli · colore","beard":"Barba","skin_tone":"Carnagione"}[key])
 		var values={"hair_style":["Non specificato","corti","rasati","sfumati","mossi","ricci","afro","frangia","riga","lunghi","treccine","pelato"],"hair_color":["Non specificato","nero","marrone","castano chiaro","biondo","rosso","grigio"],"beard":["Non specificato","nessuna","corta","piena"],"skin_tone":["Non specificato","chiara","olivastra","ambrata","scura","ebano","rosa","nero"]}[key]
 		var field=picker(fields,values); field.select(maxi(0,values.find(current.appearance.get(key)))); inputs[key]=field
-	label(fields,"VALORI  /  SOLO DATABASE · nessun effetto sul gameplay")
+	label(fields,"VALORI / APPLICATI CON DATABASE ATTIVO")
+	label(fields,"Overall automatico · calcolato dai sei fondamentali e dal ruolo")
 	for key in current.ratings:
-		label(fields,key.capitalize()); var value=SpinBox.new(); value.min_value=0; value.max_value=100 if key=="generale" else 99; value.value=current.ratings[key]; fields.add_child(value); inputs["rating_"+key]=value
+		if key=="generale": continue
+		label(fields,key.capitalize()); var value=SpinBox.new(); value.min_value=0; value.max_value=99; value.value=current.ratings[key]; fields.add_child(value); inputs["rating_"+key]=value
 		var skill: String=key
 		value.value_changed.connect(func(v): player_card.ratings[skill]=int(v); player_card.queue_redraw())
 	button(fields,"SALVA MODIFICHE",save_player)
@@ -288,7 +290,8 @@ func save_player() -> void:
 	current.serve_preference="float" if inputs.serve_preference.selected==1 else "jump"
 	for key in ["hair_style","hair_color","beard","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
 	current.appearance.hair_length="pelato" if current.appearance.hair_style=="pelato" else ("lunghi" if current.appearance.hair_style=="lunghi" else "corti")
-	for key in current.ratings: current.ratings[key]=int(inputs["rating_"+key].value)
+	for key in current.ratings:
+		if key!="generale": current.ratings[key]=int(inputs["rating_"+key].value)
 	message.text="Salvato in locale ✓" if db.save(current)==OK else "Salvataggio non riuscito: riprova."
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])
 func match_setup() -> void:

@@ -52,7 +52,7 @@ static func green_low(game,serve: bool) -> float:
 	return curve("serve_green_low",rating(game,game.server_index(game.server),"battuta")) if serve else float(settings().attack_green_low[game.stats_set_grade])
 
 static func perfect(power: float,low: float) -> bool:
-	return power>=low and power<=1.0
+	return power>=low-.000001 and power<=1.000001
 
 static func ai_power(game,index: int,key: String) -> float:
 	var value:=rating(game,index,key)

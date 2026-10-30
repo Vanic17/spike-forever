@@ -1339,6 +1339,7 @@ func set_ball(contact_override: String = "") -> void:
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
 	if out_of_system<0:
 		hitter_action="attack" if preload("res://src/recovery_delivery.gd").can_spike(self,hitter,q,set_origin) else "receive"
+		if hitter_action=="receive": log_rally_event("third_touch_free_ball_choice",{"hitter":hitter,"quality":q,"origin":set_origin,"role":Tactics.role(hitter,rotations[possession],possession==server)})
 		target=preload("res://src/recovery_delivery.gd").contact(self,hitter,target,set_origin)
 	var late_middle: bool=destination==1 and middle_decoy.late_recipient==hitter
 	if late_middle: hitter_action="receive"
@@ -1491,7 +1492,8 @@ func attack_ball() -> void:
 	target.x=clampf(target.x,-4.25,4.25); target.z=s*clampf(absf(target.z),2.8,8.8)
 	if tutorial!=null and tutorial.active and tutorial.category=="block":
 		target=tutorial.coach_attack_target(); soft=false
-	winner_team=attacker if not use_player_stats and Timing.winning_power(requested_power) and hitter_action=="attack" else -1
+	var winning_attack: bool=PlayerStats.perfect(requested_power,PlayerStats.green_low(self,false)) if use_player_stats else Timing.winning_power(requested_power)
+	winner_team=attacker if winning_attack and hitter_action=="attack" else -1
 	var tired_attack: float=0.0 if automatic_overpass or hitter_action!="attack" else match_management.risk(hitter)*(1.0-smoothstep(.90,1.0,requested_power))
 	if (requested_power > 1.00001 and rng.randf()<Timing.attack_risk(requested_power,attack_tip)) or (tired_attack>0 and rng.randf()<tired_attack):
 		target.z = s * (10.8 + minf(requested_power - 1, 2) * 4)
@@ -1928,6 +1930,7 @@ func resume_deflection(kind: String) -> void:
 		return
 	possession = 0 if interception.point.z>0 else 1
 	touches[possession] = 0 if kind in ["block","tip"] else touches[possession]
+	if kind=="net" and preload("res://src/recovery_delivery.gd").prepare_third_attack(self): return
 	set_phase("RECEIVE" if possession==0 else "CPU_RECEIVE")
 	incoming_kind = kind
 	incoming_power = clampf(ball_vel.length()/35.0,0,1)

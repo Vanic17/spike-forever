@@ -4,6 +4,11 @@ $root=Split-Path $PSScriptRoot
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_67.md')
+foreach($pattern67 in @('overall67-*','gameplay67-*','stats67-*','online67-*')){
+ foreach($report67 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern67){$files+='docs/'+$report67.Name}
+}
+foreach($tool67 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*67.*'){$files+='tools/'+$tool67.Name}
 $files+=@('docs/RELEASE_NOTES_66.md','docs/CAREER_AUDIT_66.md','docs/CAREER_DATA_66.md','docs/CAREER_BACKEND_66.md','docs/MATCH_MANAGEMENT_66.md','docs/REPLAY_BALANCE_66.md','docs/baseline-v65/block_response.gd','docs/baseline-v65/player_stats_v1.json')
 foreach($pattern66 in @('career66-*','match66-*','replay66-*','online66-*','online-replay66-*')){
  foreach($report66 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern66){$files+='docs/'+$report66.Name}

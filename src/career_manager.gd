@@ -79,6 +79,7 @@ func load_career(slot: int) -> bool:
 	var value: Dictionary=repository.read(slot)
 	if value.is_empty(): error=repository.error; return false
 	state=value; state.slot=slot; rng.seed=int(state.seed); rng.state=int(str(state.rng_state)); error=""
+	preload("res://src/player_overall.gd").refresh_teams(state.get("teams",[]))
 	state["schema"]=1
 	for key in ["news_ids","stats_by_comp","records"]:
 		if not state.has(key): state[key]={}
