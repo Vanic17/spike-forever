@@ -1,0 +1,148 @@
+{
+  "backup_recovery": true,
+  "duplicate_guard": true,
+  "initial_results_empty": true,
+  "save_reload": true,
+  "seasons": [
+    {
+      "champions": {
+        "cup": "pallavolo-padova",
+        "fifth": "valsa-group-modena",
+        "playoff": "allianz-milano",
+        "playout": "gas-sales-bluenergy-piacenza",
+        "regular": "sir-susa-scai-perugia",
+        "supercup": "cucine-lube-civitanova"
+      },
+      "fifth_mode": "bracket",
+      "matches": 188,
+      "playout_teams": 4,
+      "season": "2026/27"
+    },
+    {
+      "champions": {
+        "cup": "valsa-group-modena",
+        "fifth": "cisterna-volley",
+        "playoff": "valsa-group-modena",
+        "playout": "tinet-prata-di-pordenone",
+        "regular": "itas-trentino",
+        "supercup": "cucine-lube-civitanova"
+      },
+      "fifth_mode": "bracket",
+      "matches": 183,
+      "playout_teams": 3,
+      "season": "2027/28"
+    },
+    {
+      "champions": {
+        "cup": "pallavolo-padova",
+        "fifth": "valsa-group-modena",
+        "playoff": "tinet-prata-di-pordenone",
+        "playout": "allianz-milano",
+        "regular": "vero-volley-monza",
+        "supercup": "itas-trentino"
+      },
+      "fifth_mode": "group",
+      "matches": 191,
+      "playout_teams": 4,
+      "season": "2028/29"
+    },
+    {
+      "champions": {
+        "cup": "cisterna-volley",
+        "fifth": "cucine-lube-civitanova",
+        "playoff": "valsa-group-modena",
+        "playout": "cisterna-volley",
+        "regular": "valsa-group-modena",
+        "supercup": "cisterna-volley"
+      },
+      "fifth_mode": "bracket",
+      "matches": 184,
+      "playout_teams": 3,
+      "season": "2029/30"
+    },
+    {
+      "champions": {
+        "cup": "cucine-lube-civitanova",
+        "fifth": "pallavolo-padova",
+        "playoff": "cucine-lube-civitanova",
+        "playout": "rana-verona",
+        "regular": "itas-trentino",
+        "supercup": "cisterna-volley"
+      },
+      "fifth_mode": "group",
+      "matches": 191,
+      "playout_teams": 4,
+      "season": "2030/31"
+    },
+    {
+      "champions": {
+        "cup": "acqua-santanna-cuneo",
+        "fifth": "vero-volley-monza",
+        "playoff": "gas-sales-bluenergy-piacenza",
+        "playout": "sir-susa-scai-perugia",
+        "regular": "itas-trentino",
+        "supercup": "itas-trentino"
+      },
+      "fifth_mode": "bracket",
+      "matches": 190,
+      "playout_teams": 4,
+      "season": "2031/32"
+    },
+    {
+      "champions": {
+        "cup": "tinet-prata-di-pordenone",
+        "fifth": "sir-susa-scai-perugia",
+        "playoff": "acqua-santanna-cuneo",
+        "playout": "pallavolo-padova",
+        "regular": "vero-volley-monza",
+        "supercup": "gas-sales-bluenergy-piacenza"
+      },
+      "fifth_mode": "bracket",
+      "matches": 191,
+      "playout_teams": 4,
+      "season": "2032/33"
+    },
+    {
+      "champions": {
+        "cup": "valsa-group-modena",
+        "fifth": "itas-trentino",
+        "playoff": "cisterna-volley",
+        "playout": "rana-verona",
+        "regular": "gas-sales-bluenergy-piacenza",
+        "supercup": "tinet-prata-di-pordenone"
+      },
+      "fifth_mode": "group",
+      "matches": 185,
+      "playout_teams": 3,
+      "season": "2033/34"
+    },
+    {
+      "champions": {
+        "cup": "allianz-milano",
+        "fifth": "allianz-milano",
+        "playoff": "rana-verona",
+        "playout": "cisterna-volley",
+        "regular": "sir-susa-scai-perugia",
+        "supercup": "acqua-santanna-cuneo"
+      },
+      "fifth_mode": "bracket",
+      "matches": 189,
+      "playout_teams": 4,
+      "season": "2034/35"
+    },
+    {
+      "champions": {
+        "cup": "allianz-milano",
+        "fifth": "vero-volley-monza",
+        "playoff": "cucine-lube-civitanova",
+        "playout": "valsa-group-modena",
+        "regular": "pallavolo-padova",
+        "supercup": "allianz-milano"
+      },
+      "fifth_mode": "bracket",
+      "matches": 184,
+      "playout_teams": 3,
+      "season": "2035/36"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "cpu_lineups": 12,
+  "daily_recovery": true,
+  "detailed_timeline": true,
+  "duplicate_guard": true,
+  "failures": 0,
+  "fatigue_cap": true,
+  "injury_availability": true,
+  "measured_result": true,
+  "off_neutrality": true,
+  "unknown_stats_not_fabricated": true
+}
