@@ -1,0 +1,38 @@
+[
+  {
+    "test": "Test-Overall68",
+    "passed": true
+  },
+  {
+    "test": "Test-GreenAttack67",
+    "passed": true
+  },
+  {
+    "test": "Test-Replay65",
+    "passed": true
+  },
+  {
+    "test": "Test-Substitution69",
+    "passed": true
+  },
+  {
+    "test": "Test-Arena61",
+    "passed": true
+  },
+  {
+    "test": "Test-Arenas70",
+    "passed": true
+  },
+  {
+    "test": "Test-CareerArena70",
+    "passed": true
+  },
+  {
+    "test": "Test-OnlineArena70-host",
+    "passed": true
+  },
+  {
+    "test": "Test-OnlineArena70-guest",
+    "passed": true
+  }
+]

@@ -1,0 +1,142 @@
+{
+	"bounded_nodes": {
+		"acqua-santanna-cuneo": 34,
+		"allianz-milano": 34,
+		"cisterna-volley": 36,
+		"cucine-lube-civitanova": 34,
+		"gas-sales-bluenergy-piacenza": 34,
+		"itas-trentino": 34,
+		"pallavolo-padova": 34,
+		"rana-verona": 34,
+		"sir-susa-scai-perugia": 36,
+		"tinet-prata-di-pordenone": 34,
+		"valsa-group-modena": 36,
+		"vero-volley-monza": 34
+	},
+	"clubs": [
+		{
+			"club": "allianz-milano",
+			"floor_marks": 12,
+			"profile_switch_us": 60951,
+			"sponsors": [
+				"allianz",
+				"joma"
+			]
+		},
+		{
+			"club": "cisterna-volley",
+			"floor_marks": 14,
+			"profile_switch_us": 60334,
+			"sponsors": [
+				"conit",
+				"gesa",
+				"marini",
+				"mizuno"
+			]
+		},
+		{
+			"club": "cucine-lube-civitanova",
+			"floor_marks": 12,
+			"profile_switch_us": 58064,
+			"sponsors": [
+				"lube",
+				"joma"
+			]
+		},
+		{
+			"club": "acqua-santanna-cuneo",
+			"floor_marks": 12,
+			"profile_switch_us": 41910,
+			"sponsors": [
+				"santanna",
+				"banca-alpi",
+				"macron"
+			]
+		},
+		{
+			"club": "gas-sales-bluenergy-piacenza",
+			"floor_marks": 12,
+			"profile_switch_us": 54173,
+			"sponsors": [
+				"gas-sales",
+				"bluenergy",
+				"macron"
+			]
+		},
+		{
+			"club": "itas-trentino",
+			"floor_marks": 12,
+			"profile_switch_us": 40642,
+			"sponsors": [
+				"itas",
+				"trentino",
+				"errea"
+			]
+		},
+		{
+			"club": "pallavolo-padova",
+			"floor_marks": 12,
+			"profile_switch_us": 65867,
+			"sponsors": [
+				"kioene",
+				"joma"
+			]
+		},
+		{
+			"club": "rana-verona",
+			"floor_marks": 12,
+			"profile_switch_us": 53952,
+			"sponsors": [
+				"rana",
+				"airone",
+				"joma"
+			]
+		},
+		{
+			"club": "sir-susa-scai-perugia",
+			"floor_marks": 14,
+			"profile_switch_us": 79957,
+			"sponsors": [
+				"sir",
+				"susa",
+				"vim",
+				"suntory",
+				"joma"
+			]
+		},
+		{
+			"club": "tinet-prata-di-pordenone",
+			"floor_marks": 12,
+			"profile_switch_us": 66970,
+			"sponsors": [
+				"tinet",
+				"joma"
+			]
+		},
+		{
+			"club": "valsa-group-modena",
+			"floor_marks": 14,
+			"profile_switch_us": 52965,
+			"sponsors": [
+				"valsa",
+				"bper",
+				"daken",
+				"errea"
+			]
+		},
+		{
+			"club": "vero-volley-monza",
+			"floor_marks": 12,
+			"profile_switch_us": 52041,
+			"sponsors": [
+				"homcom",
+				"bcc-carate",
+				"freddy"
+			]
+		}
+	],
+	"collision_nodes_unchanged": 0,
+	"exhibition_left_home": "allianz-milano",
+	"passed": true,
+	"rng_unchanged": true
+}

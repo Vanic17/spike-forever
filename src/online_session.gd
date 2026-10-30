@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF069"
+const PROTOCOL="SF070"
 const PORT=26761
 var game
 var menu
@@ -232,6 +232,7 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 	var management_teams: Array=[]
 	for choice in selected: management_teams.append({"id":choice.club,"roster":choice.roster+choice.get("bench",[])})
 	game.match_management.configure_rosters(management_teams,[selected[0].roster,selected[1].roster],{},{"fatigue":use_fatigue,"injuries":false})
+	game.set_home_club(str(selected[0].club),0)
 	game.rotations=[selected[0].rotation,selected[1].rotation]; game.scores=[0,0]; game.sets=[0,0]
 	game.server=0; game.paused=false; game.match_finished=false; game.started=true
 	for wall in game.manual_walls: wall.reset()

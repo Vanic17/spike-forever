@@ -112,5 +112,5 @@ static func render(session,dt: float) -> void:
 		if g.match_audio: g.match_audio.contact("attack" if g.phase in ["RECEIVE","CPU_RECEIVE"] else "receive",g.ball_pos,.7)
 		session.last_contact=g.test_contacts
 	if g.scores!=session.last_scores:
-		if g.match_audio: g.match_audio.point_event(g.scores[0]>session.last_scores[0])
+		if g.match_audio: g.match_audio.point_event(g.scores[g.home_team]>session.last_scores[g.home_team])
 		session.last_scores=g.scores.duplicate()

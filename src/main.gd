@@ -18,6 +18,13 @@ const AnimationVariety = preload("res://src/animation_variety.gd")
 var rotation_context=preload("res://src/rotation_context.gd").new()
 var online_session
 var input_team:=0
+var home_club_id := ""
+var home_team := 0
+
+func set_home_club(club: String, side: int = 0) -> void:
+	if not preload("res://src/arena_branding.gd").apply(arena_visuals, club): return
+	home_club_id = club
+	home_team = clampi(side, 0, 1)
 
 func network_match() -> bool:
 	return online_session!=null and online_session.playing
@@ -1678,8 +1685,8 @@ func award(team: int, reason: String) -> void:
 	test_rallies = 0
 	if replay!=null: replay.on_point(team)
 	if match_audio:
-		match_audio.point_event(team==0)
-	if team==0 and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
+		match_audio.point_event(team==home_team)
+	if team==home_team and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
 
 func _physics_process(dt: float) -> void:
 	if network_match() and not online_session.authority(): return

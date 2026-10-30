@@ -1,0 +1,1216 @@
+{
+  "home_selection": "exhibition left; online host; career fixture.home",
+  "universal_floor": [
+    "Credem Banca",
+    "Del Monte"
+  ],
+  "artwork": {
+    "sir": {
+      "path": "assets/art/arenas70/marks/sir.png",
+      "width": 382,
+      "height": 191,
+      "background": "#ffffff",
+      "sha256": "4652fc0bcb393cef230d623ed850d368747d0c97af63be0aff7b30255d7b6195",
+      "source": "https://www.sirsafetyperugia.it/assets/img/sponsor/sir_rev.png"
+    },
+    "susa": {
+      "path": "assets/art/arenas70/marks/susa.png",
+      "width": 353,
+      "height": 176,
+      "background": "#ffffff",
+      "sha256": "c8275be05ef794e37a0b7548d109028acdbb1aab7359ad4686f8268b22b2d605",
+      "source": "https://www.sirsafetyperugia.it/assets/img/sponsor/susa.png"
+    },
+    "vim": {
+      "path": "assets/art/arenas70/marks/vim.png",
+      "width": 2048,
+      "height": 1024,
+      "background": "#ffffff",
+      "sha256": "ae6e7804ef5575f186419d4dd6d701a5d1412c53179a635426fe84d1ad1caca6",
+      "source": "https://monettispa.it/wp-content/uploads/2021/12/vim_logo.svg"
+    },
+    "itas": {
+      "path": "assets/art/arenas70/marks/itas.png",
+      "width": 154,
+      "height": 77,
+      "background": "#ffffff",
+      "sha256": "ec3b071d096304ec6910cd984ae15d98aaed3eaf6448615feae103189abb9976",
+      "source": "https://www.trentinovolley.it/wp-content/uploads/2025/02/itamutua.jpg"
+    },
+    "trentino": {
+      "path": "assets/art/arenas70/marks/trentino.png",
+      "width": 170,
+      "height": 85,
+      "background": "#ffffff",
+      "sha256": "a48f7ce43577144aa91c84b2d5a0743ba006d29b02e505d55087c37b69acf17d",
+      "source": "https://www.trentinovolley.it/wp-content/uploads/2025/02/trentino.jpg"
+    },
+    "errea": {
+      "path": "assets/art/arenas70/marks/errea.png",
+      "width": 190,
+      "height": 95,
+      "background": "#ffffff",
+      "sha256": "1665d04af58b4e0ce7ec9ed1817001cad2252b39cd3591b9a90a97b6ac07ea70",
+      "source": "https://www.trentinovolley.it/wp-content/uploads/2025/02/errea.jpg"
+    },
+    "lube": {
+      "path": "assets/art/arenas70/marks/lube.png",
+      "width": 1304,
+      "height": 652,
+      "background": "#ffffff",
+      "sha256": "dbfbe841a1d55e761509862826befafa26e7966ed3248bc4857be42e16666768",
+      "source": "https://www.lubevolley.it/public/images/2025-09-15/cucinelube.png"
+    },
+    "gas-sales": {
+      "path": "assets/art/arenas70/marks/gas-sales.png",
+      "width": 2048,
+      "height": 1024,
+      "background": "#ffffff",
+      "sha256": "6431d0dd65432e91e6bc720435433238160901c77cb142afa9d6ed4fa679a0bb",
+      "source": "https://www.gassalesenergia.it/wp-content/uploads/2026/08/logo-gassales-color.svg"
+    },
+    "bluenergy": {
+      "path": "assets/art/arenas70/marks/bluenergy.png",
+      "width": 269,
+      "height": 134,
+      "background": "#142b4a",
+      "sha256": "23c51819ddc72e17615ce100d84fa2c4a867dc94d9a72e62d878ee6ac25b97dd",
+      "source": "https://www.gassalespiacenza.it/wp-content/uploads/2026/07/bluenergy-logo.png"
+    },
+    "allianz": {
+      "path": "assets/art/arenas70/marks/allianz.png",
+      "width": 537,
+      "height": 268,
+      "background": "#142b4a",
+      "sha256": "07874f353e6f504bb912b3ab92aa49a9a42f1277eee4e250b5ffb6cce6d22097",
+      "source": "https://cisternavolley.it/wp-content/uploads/2025/01/ALLIANZ.png"
+    },
+    "homcom": {
+      "path": "assets/art/arenas70/marks/homcom.png",
+      "width": 368,
+      "height": 184,
+      "background": "#ffffff",
+      "sha256": "7c94edf87ccd0bb437f2ab7919c0377da623cecc98fef99388a196b728560fed",
+      "source": "https://cdn.verovolley.com/wp-content/uploads/elementor/thumbs/logo-HOMCOM-by-Aosom-rspugaiorq5jzpskye75o39qcsxkpopavc429wcbm8.png"
+    },
+    "bcc-carate": {
+      "path": "assets/art/arenas70/marks/bcc-carate.png",
+      "width": 322,
+      "height": 161,
+      "background": "#ffffff",
+      "sha256": "54d5e3d07181fc45b82133da8ef98ad9408c5f75b7de64bcd22a7ee70a03d5fd",
+      "source": "https://cdn.verovolley.com/wp-content/uploads/elementor/thumbs/LOGO_BCC_CARATE-E-TREVIGLIO_SPEC1_COLORE_RGB-r8spvi87hq6i3kpgja0mj3a7by19m3qp9t1p745aw4.png"
+    },
+    "freddy": {
+      "path": "assets/art/arenas70/marks/freddy.png",
+      "width": 1891,
+      "height": 946,
+      "background": "#ffffff",
+      "sha256": "24c346f17696090c9a0fd25897cb2b372254adaf8cb57c78889d7a4303ceeffa",
+      "source": "https://cdn.verovolley.com/wp-content/uploads/2025/07/FREDDY_NEW_LOGO_pos-.png"
+    },
+    "rana": {
+      "path": "assets/art/arenas70/marks/rana.png",
+      "width": 336,
+      "height": 168,
+      "background": "#ffffff",
+      "sha256": "30e97f6d682e4e4b93b4cbc973bef76bd6795948c1704eefd4ad1af7cbd4525b",
+      "source": "https://www.veronavolley.it/public/img/giovanni-rana-verona-volley-200453.png"
+    },
+    "airone": {
+      "path": "assets/art/arenas70/marks/airone.png",
+      "width": 434,
+      "height": 217,
+      "background": "#ffffff",
+      "sha256": "dc2472ed727ef7f7b7fd452699788c463a0f2028e350dd93000f4c08064713fe",
+      "source": "https://www.veronavolley.it/public/img/logo-sito-partner-airone-191084.jpg"
+    },
+    "valsa": {
+      "path": "assets/art/arenas70/marks/valsa.png",
+      "width": 799,
+      "height": 400,
+      "background": "#ffffff",
+      "sha256": "398a8f21d39ef6cd268b76fbcc9e9540e27bce59e18d085e4f7db031461fd740",
+      "source": "https://www.modenavolley.it/wp/wp-content/uploads/2022/10/ValsaGroup_Logo.jpg"
+    },
+    "bper": {
+      "path": "assets/art/arenas70/marks/bper.png",
+      "width": 238,
+      "height": 119,
+      "background": "#ffffff",
+      "sha256": "8e1fa39a7fec3372e902447a0ef1fe95b18a22bf71f470e9909eecc4b50654a4",
+      "source": "https://www.modenavolley.it/wp/wp-content/uploads/2022/10/BPER.jpg"
+    },
+    "daken": {
+      "path": "assets/art/arenas70/marks/daken.png",
+      "width": 1877,
+      "height": 938,
+      "background": "#ffffff",
+      "sha256": "42707361f114a207bf865d43362c230fd01d4d9d73c469d611eff29ac7e5cdcc",
+      "source": "https://daken.it/wp-content/uploads/2025/08/Logo_Daken_Nero-01.svg"
+    },
+    "kioene": {
+      "path": "assets/art/arenas70/marks/kioene.png",
+      "width": 2048,
+      "height": 1024,
+      "background": "#ffffff",
+      "sha256": "394c375da43619bc4d596226ba53b7a81eeb3fc6c288698bbb9cbe0ee37bad78",
+      "source": "https://www.pallavolopadova.com/wp-content/uploads/2021/09/KIOENE_LOGO_RGB.png"
+    },
+    "conit": {
+      "path": "assets/art/arenas70/marks/conit.png",
+      "width": 758,
+      "height": 379,
+      "background": "#142b4a",
+      "sha256": "91ffcd1cee453b98b44fc453af9d0b0bc42e09b44678fb1ea71fb0b446f756b4",
+      "source": "https://cisternavolley.it/wp-content/uploads/2025/01/CONIT.png"
+    },
+    "gesa": {
+      "path": "assets/art/arenas70/marks/gesa.png",
+      "width": 720,
+      "height": 360,
+      "background": "#142b4a",
+      "sha256": "39fa65bb56c869a74e879fa941c9af30490f7f9c7708e95d285315f6e308c4d8",
+      "source": "https://cisternavolley.it/wp-content/uploads/2025/01/GESA.png"
+    },
+    "marini": {
+      "path": "assets/art/arenas70/marks/marini.png",
+      "width": 768,
+      "height": 384,
+      "background": "#142b4a",
+      "sha256": "67a02f488677c10240662e0bae59f33d8083ea8db13ae15a4f8f7c02ad262b65",
+      "source": "https://cisternavolley.it/wp-content/uploads/2025/01/MARINI.png"
+    },
+    "mizuno": {
+      "path": "assets/art/arenas70/marks/mizuno.png",
+      "width": 2048,
+      "height": 1024,
+      "background": "#ffffff",
+      "sha256": "fcc4ffe843a1c9e2dfdba694523900d9f59acb2c714fbee815a5079c7dc770cb",
+      "source": "https://emea.mizuno.com/on/demandware.static/-/Library-Sites-sharedLibrary_Mizuno/default/dw5ad15025/Campaigns2025/120th-logo.svg"
+    },
+    "santanna": {
+      "path": "assets/art/arenas70/marks/santanna.png",
+      "width": 442,
+      "height": 221,
+      "background": "#ffffff",
+      "sha256": "0848991617f473604bc33ff8aa5d47a2355156749de6dccabf4518126827f835",
+      "source": "https://cuneovolley.it/storage/images/desktop/202610141523035455_logo-acqua-santanna.png"
+    },
+    "macron": {
+      "path": "assets/art/arenas70/marks/macron.png",
+      "width": 350,
+      "height": 175,
+      "background": "#ffffff",
+      "sha256": "8fe5f66e8b4ed43b2a604d9850b4d901de84cefe6a3e551af1d8f2916048a711",
+      "source": "https://cuneovolley.it/storage/images/desktop/202610141525042638_macron.png"
+    },
+    "tinet": {
+      "path": "assets/art/arenas70/marks/tinet.png",
+      "width": 2048,
+      "height": 1024,
+      "background": "#ffffff",
+      "sha256": "821bc6becb0270e00711091b8d17d10885ecbd4e0fecf917fed0d9b6a8319d81",
+      "source": "https://volleyprata.it/wp-content/uploads/2023/09/tinet.svg"
+    },
+    "joma": {
+      "path": "assets/art/arenas70/marks/joma.png",
+      "width": 2036,
+      "height": 1018,
+      "background": "#ffffff",
+      "sha256": "0a373317e9b4ae93b5138f4b0d3339e3871866a1552b785012cbd59407b380eb",
+      "source": "https://www.joma-sport.com/it_IT/"
+    },
+    "suntory": {
+      "path": "assets/art/arenas70/marks/suntory.png",
+      "width": 2035,
+      "height": 1018,
+      "background": "#ffffff",
+      "sha256": "2fc5309096aac97db656cc21bb190045e9bc8ae731e8738664c8395fbf4fc105",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/3/34/SUNTORY_logo.svg"
+    },
+    "banca-alpi": {
+      "path": "assets/art/arenas70/marks/banca-alpi.png",
+      "width": 352,
+      "height": 176,
+      "background": "#ffffff",
+      "sha256": "a81ae8c3bf11ceffaacd7797f9cd6b609d1d38f32ab5df5f3cef6c70e4eea7a5",
+      "source": "https://www.wownature.eu/wp-content/uploads/2023/07/logo-banca-alpi-marittime.jpeg"
+    }
+  },
+  "clubs": {
+    "allianz-milano": {
+      "reference": "milano.png",
+      "free_zone": "#174a99",
+      "court": "#baa887",
+      "attack_zone": "#b8a381",
+      "sponsors": [
+        "allianz",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "allianz",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "allianz",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "allianz",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "allianz",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "allianz",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "allianz",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "cisterna-volley": {
+      "reference": "cisterna 2.png",
+      "free_zone": "#075596",
+      "court": "#bda37d",
+      "attack_zone": "#bba17a",
+      "sponsors": [
+        "conit",
+        "gesa",
+        "marini",
+        "mizuno"
+      ],
+      "floor": [
+        {
+          "mark": "conit",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "conit",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "gesa",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "gesa",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "conit",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "conit",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "mizuno",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "mizuno",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "marini",
+          "x": -6.5,
+          "z": -10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        },
+        {
+          "mark": "marini",
+          "x": -6.5,
+          "z": 10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        }
+      ]
+    },
+    "cucine-lube-civitanova": {
+      "reference": "civitanova.png",
+      "free_zone": "#235bb4",
+      "court": "#b7a79c",
+      "attack_zone": "#b2a398",
+      "sponsors": [
+        "lube",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "lube",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "lube",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "lube",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "lube",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "lube",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "lube",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "acqua-santanna-cuneo": {
+      "reference": "cuneo.png",
+      "free_zone": "#075c9f",
+      "court": "#b6ac92",
+      "attack_zone": "#b2a68e",
+      "sponsors": [
+        "santanna",
+        "banca-alpi",
+        "macron"
+      ],
+      "floor": [
+        {
+          "mark": "santanna",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "santanna",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "banca-alpi",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "banca-alpi",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "santanna",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "santanna",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "macron",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "macron",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "gas-sales-bluenergy-piacenza": {
+      "reference": "piacenza.jpeg",
+      "free_zone": "#218bad",
+      "court": "#b76c51",
+      "attack_zone": "#bd7959",
+      "sponsors": [
+        "gas-sales",
+        "bluenergy",
+        "macron"
+      ],
+      "floor": [
+        {
+          "mark": "gas-sales",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "gas-sales",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "bluenergy",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "bluenergy",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "gas-sales",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "gas-sales",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "macron",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "macron",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "itas-trentino": {
+      "reference": "trentino.png",
+      "free_zone": "#2765aa",
+      "court": "#b79688",
+      "attack_zone": "#b28c80",
+      "sponsors": [
+        "itas",
+        "trentino",
+        "errea"
+      ],
+      "floor": [
+        {
+          "mark": "itas",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "itas",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "trentino",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "trentino",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "itas",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "itas",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "errea",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "errea",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "pallavolo-padova": {
+      "reference": "padova1.png",
+      "free_zone": "#07509a",
+      "court": "#baaa84",
+      "attack_zone": "#b2a17b",
+      "sponsors": [
+        "kioene",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "kioene",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "kioene",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "kioene",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "kioene",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "kioene",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "kioene",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "rana-verona": {
+      "reference": "verona.png",
+      "free_zone": "#075795",
+      "court": "#b9a479",
+      "attack_zone": "#b5a378",
+      "sponsors": [
+        "rana",
+        "airone",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "rana",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "rana",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "airone",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "airone",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "rana",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "rana",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "sir-susa-scai-perugia": {
+      "reference": "perugia.jpg",
+      "free_zone": "#29868b",
+      "court": "#29864b",
+      "attack_zone": "#c9c5b5",
+      "sponsors": [
+        "sir",
+        "susa",
+        "vim",
+        "suntory",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "sir",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "sir",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "susa",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "susa",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "sir",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "sir",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "vim",
+          "x": -6.5,
+          "z": -10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        },
+        {
+          "mark": "vim",
+          "x": -6.5,
+          "z": 10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        }
+      ],
+      "second_half": "#a33e54"
+    },
+    "tinet-prata-di-pordenone": {
+      "reference": "prata.png",
+      "free_zone": "#155ba9",
+      "court": "#b2a481",
+      "attack_zone": "#aea080",
+      "sponsors": [
+        "tinet",
+        "joma"
+      ],
+      "floor": [
+        {
+          "mark": "tinet",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "tinet",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "tinet",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "tinet",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "tinet",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "tinet",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "joma",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    },
+    "valsa-group-modena": {
+      "reference": "modena.png",
+      "free_zone": "#195491",
+      "court": "#b29c78",
+      "attack_zone": "#b9a27d",
+      "sponsors": [
+        "valsa",
+        "bper",
+        "daken",
+        "errea"
+      ],
+      "floor": [
+        {
+          "mark": "valsa",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "valsa",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "bper",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "bper",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "valsa",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "valsa",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "errea",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "errea",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "daken",
+          "x": -6.5,
+          "z": -10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        },
+        {
+          "mark": "daken",
+          "x": -6.5,
+          "z": 10.5,
+          "width": 2.6,
+          "height": 1.3,
+          "yaw": 90
+        }
+      ]
+    },
+    "vero-volley-monza": {
+      "reference": "monza.png",
+      "free_zone": "#215caa",
+      "court": "#b1a28a",
+      "attack_zone": "#b5a58d",
+      "sponsors": [
+        "homcom",
+        "bcc-carate",
+        "freddy"
+      ],
+      "floor": [
+        {
+          "mark": "homcom",
+          "x": 0,
+          "z": -1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "homcom",
+          "x": 0,
+          "z": 1.55,
+          "width": 2.65,
+          "height": 1.325,
+          "yaw": 90
+        },
+        {
+          "mark": "bcc-carate",
+          "x": 6.65,
+          "z": -5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "bcc-carate",
+          "x": 6.65,
+          "z": 5.8,
+          "width": 3.25,
+          "height": 1.625,
+          "yaw": 90
+        },
+        {
+          "mark": "homcom",
+          "x": 0,
+          "z": -10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "homcom",
+          "x": 0,
+          "z": 10.3,
+          "width": 3.8,
+          "height": 1.9,
+          "yaw": 90
+        },
+        {
+          "mark": "freddy",
+          "x": -6.5,
+          "z": -6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        },
+        {
+          "mark": "freddy",
+          "x": -6.5,
+          "z": 6,
+          "width": 2.5,
+          "height": 1.25,
+          "yaw": 90
+        }
+      ]
+    }
+  }
+}

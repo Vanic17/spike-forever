@@ -308,7 +308,7 @@ func match_setup() -> void:
 	for side in 2:
 		var frame=PanelContainer.new(); frame.size_flags_horizontal=Control.SIZE_EXPAND_FILL; row.add_child(frame)
 		var card=VBoxContainer.new(); card.add_theme_constant_override("separation",8); frame.add_child(card)
-		label(card,"LA TUA SQUADRA" if side==0 else "AVVERSARIA")
+		label(card,"LA TUA SQUADRA · CASA" if side==0 else "AVVERSARIA · OSPITI")
 		var team_row=HBoxContainer.new(); card.add_child(team_row)
 		var emblem=Branding.emblem(team_row,db.teams[side].id,74,54)
 		var p=picker(team_row,db.teams.map(func(t): return t.name)); p.size_flags_horizontal=Control.SIZE_EXPAND_FILL; p.select(side); picks.append(p)
@@ -356,6 +356,7 @@ func match_setup() -> void:
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],chosen_kit,chosen_libero)
 		if game.get("match_management")!=null:
 			if not game.match_management.configure_rosters(teams,squads,{}, {"fatigue":settings_fatigue.selected==0,"injuries":false}): error.text="Rosa non disponibile per iniziare la partita."; error.show(); return
+		game.set_home_club(str(teams[0].id),0)
 		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.match_finished=false; game.reset_rally(); game.started=true; hide(); music.stop())
 	var back: Control=body.get_child(0).get_child(1)
 	for side in 2:

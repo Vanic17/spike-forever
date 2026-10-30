@@ -5,6 +5,9 @@ $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
 $files+='docs/RELEASE_NOTES_69.md'
+$files+='docs/RELEASE_NOTES_70.md'
+foreach($report70 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'arena70-*'){$files+='docs/'+$report70.Name}
+foreach($tool70 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*70.*'){$files+='tools/'+$tool70.Name}
 foreach($pattern69 in @('sideline69-*','substitution69-*')){
  foreach($report69 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern69){$files+='docs/'+$report69.Name}
 }

@@ -636,6 +636,7 @@ func launch_match():
 		var options=manager.state.options.duplicate(true); options.date=manager.state.date; options.career_form=true
 		if not game.match_management.configure_rosters(teams,squads,manager.state.conditions,options): toast("Rosa insufficiente o giocatori indisponibili: correggi la formazione."); return
 		if not game.match_management.match_completed.is_connected(match_completed): game.match_management.match_completed.connect(match_completed)
+	game.set_home_club(str(fixture.home),1 if away else 0)
 	game.scores=[0,0]; game.sets=[0,0]; game.rotations=[manager.state.lineups[ids[0]].rotation,manager.state.lineups[ids[1]].rotation]; game.server=1 if away else 0
 	game.paused=false; game.match_finished=false; game.demo=false; game.gallery=false; game.camera_mode=0; game.set_camera(); game.reset_rally(); game.started=true
 	active_fixture=fixture.duplicate(true); pending_post.clear(); hide(); host.play_hub.hide(); host.clubs.hide(); host.clubs.music.stop()

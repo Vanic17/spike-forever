@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.70.0:** dodici campi con grafica e sponsor della squadra di casa, loghi originali sui LED e sul pavimento, campo tricolore di Perugia e Del Monte su tutti i campi. Casa = squadra a sinistra in esibizione, host in online, calendario in carriera. [Novità e verifiche](docs/RELEASE_NOTES_70.md).
+
 **Versione 0.69.0:** vere animazioni cinematiche di panchina e allenatore; sostituzioni con percorsi liberi, posti stabili e cinque sincronizzato; conferma raggiungibile anche sulle ultime riserve e cambi programmabili durante lo scambio. Include tutte le novità della 0.68. [Cause, correzioni e verifiche](docs/RELEASE_NOTES_69.md).
 
 **Patch locale 0.68.0, non pubblicata:** carriera ripulita e formato a tre/cinque set, nuovi pesi overall, tre telecamere, replay sui punti in sovraccarico, palla V200W, panchine e tavolo animati, scena delle sostituzioni. [Dettagli](docs/RELEASE_NOTES_68.md).

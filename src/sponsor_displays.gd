@@ -14,6 +14,10 @@ var panels: Array[ShaderMaterial] = []
 var logos: Array[Texture2D] = []
 var court_marks: Array[MeshInstance3D] = []
 var led_shader: Shader
+var source_rows: Array = []
+var club_marks: Array[MeshInstance3D] = []
+var club_id := ""
+var artwork_cache: Dictionary = {}
 
 func original_region(file: String, region: Rect2i) -> Texture2D:
 	var image := Image.load_from_file("res://assets/art/sponsors/"+file)
@@ -22,7 +26,9 @@ func original_region(file: String, region: Rect2i) -> Texture2D:
 	return preload("res://src/texture_quality.gd").create(image,"res://assets/art/sponsors/"+file,region)
 
 func _ready() -> void:
-	for source in SOURCES: logos.append(original_region(source.file,source.region))
+	for source in SOURCES:
+		logos.append(original_region(source.file,source.region))
+		source_rows.append({"ratio":float(source.region.size.x)/source.region.size.y,"background":source.background})
 	led_shader=Shader.new()
 	led_shader.code="""shader_type spatial;
 render_mode unshaded, cull_back;
@@ -81,7 +87,58 @@ void fragment(){
 		decal.material_override=material
 		decal.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		add_child(decal); court_marks.append(decal)
+	# Del Monte is fixed on both near-side free zones in every home profile.
+	for side in [-1,1]:
+		var mark := floor_mark(logos[1],Vector3(5.5,0.033,side*1.65),Vector2(2.1,2.1*850.0/1108.0),PI/2)
+		mark.name = "DelMonteCourt" + str(side)
 	apply_cycle()
+
+func floor_mark(texture: Texture2D, at: Vector3, size: Vector2, angle: float) -> MeshInstance3D:
+	var node := MeshInstance3D.new()
+	var plane := PlaneMesh.new(); plane.size = size; node.mesh = plane
+	node.position = at; node.rotation.y = angle
+	var material := StandardMaterial3D.new()
+	material.albedo_texture = texture; material.albedo_color = Color.WHITE
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.roughness = .55; material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+	node.material_override = material; node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(node)
+	return node
+
+func club_texture(key: String) -> Texture2D:
+	if artwork_cache.has(key): return artwork_cache[key]
+	var row: Dictionary = preload("res://src/arena_profiles.gd").artwork(key)
+	if row.is_empty(): return null
+	var path: String = "res://" + str(row.path)
+	var image := Image.load_from_file(path)
+	if image == null or image.is_empty(): return null
+	artwork_cache[key] = preload("res://src/texture_quality.gd").create(image,path)
+	return artwork_cache[key]
+
+func set_club(club: String) -> void:
+	if club_id == club: return
+	var profile: Dictionary = preload("res://src/arena_profiles.gd").profile(club)
+	if profile.is_empty(): return
+	for mark in club_marks:
+		remove_child(mark); mark.queue_free()
+	club_marks.clear(); logos.clear(); source_rows.clear(); artwork_cache.clear()
+	# League partners stay in rotation alongside the home club's sponsors.
+	for key in profile.sponsors:
+		var texture := club_texture(str(key))
+		if texture == null: continue
+		var artwork: Dictionary = preload("res://src/arena_profiles.gd").artwork(str(key))
+		logos.append(texture); source_rows.append({"ratio":float(texture.get_width())/texture.get_height(),"background":Color(artwork.get("background","#ffffff"))})
+	for source in SOURCES:
+		logos.append(original_region(source.file,source.region))
+		source_rows.append({"ratio":float(source.region.size.x)/source.region.size.y,"background":source.background})
+	for placement in profile.floor:
+		var texture := club_texture(str(placement.mark))
+		if texture == null: continue
+		var node := floor_mark(texture,Vector3(placement.x,.034,placement.z),Vector2(placement.width,placement.height),float(placement.get("yaw",90))*PI/180)
+		node.name = "HomeSponsor_"+str(placement.mark)
+		club_marks.append(node)
+	club_id = club; cycle = 0; elapsed = 0; apply_cycle()
+	for material in panels: material.set_shader_parameter("transition",0.0)
 
 func add_panel(at: Vector3,size: Vector2,angle: float) -> void:
 	var node:=MeshInstance3D.new()
@@ -99,10 +156,10 @@ func apply_cycle() -> void:
 		var material:=panels[i]
 		material.set_shader_parameter("logo_a",logos[a])
 		material.set_shader_parameter("logo_b",logos[b])
-		material.set_shader_parameter("ratio_a",float(SOURCES[a].region.size.x)/SOURCES[a].region.size.y)
-		material.set_shader_parameter("ratio_b",float(SOURCES[b].region.size.x)/SOURCES[b].region.size.y)
-		material.set_shader_parameter("background_a",SOURCES[a].background)
-		material.set_shader_parameter("background_b",SOURCES[b].background)
+		material.set_shader_parameter("ratio_a",source_rows[a].ratio)
+		material.set_shader_parameter("ratio_b",source_rows[b].ratio)
+		material.set_shader_parameter("background_a",source_rows[a].background)
+		material.set_shader_parameter("background_b",source_rows[b].background)
 
 func _process(dt: float) -> void:
 	elapsed+=dt

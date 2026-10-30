@@ -7,6 +7,11 @@ var marker: MeshInstance3D
 var camera: Camera3D
 var dynamic_net
 var sponsors
+var home_club_id := ""
+var free_zone_material: StandardMaterial3D
+var court_material: StandardMaterial3D
+var attack_zone_material: StandardMaterial3D
+var home_half: MeshInstance3D
 var crowd_materials: Array[ShaderMaterial] = []
 var crowd_excitement := 0.0
 var crowd_instance_count := 0
@@ -97,14 +102,19 @@ void fragment(){
 	# Broadcast reference: muted wood/beige and a deeper blue free zone.
 	# Adjust the surface pigments, retaining the lighting on players and logos.
 	var free_zone := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("07518f"), 0.38)
+	free_zone_material = free_zone
 	free_zone.uv1_scale = Vector3(8, 8, 8)
 	box(Vector3(0, -0.014, 0), Vector3(20.5, 0.03, 29), free_zone)
 	var court := Assets.material("", "T_Ground_Taraflex_Normal.png", Color("b09a79"), 0.37)
+	court_material = court
 	court.uv1_scale = Vector3(5, 8, 5)
 	box(Vector3(0, 0.008, 0), Vector3(9, 0.015, 18), court)
 	var attack_zone:=Assets.material("", "T_Ground_Taraflex_Normal.png", Color("b19f77"),0.37)
+	attack_zone_material = attack_zone
 	attack_zone.uv1_scale=Vector3(5,3,5)
 	box(Vector3(0,0.017,0),Vector3(9,0.004,6),attack_zone)
+	home_half = box(Vector3(0,0.019,6),Vector3(9,0.003,6),solid(Color.WHITE,0.37))
+	home_half.visible = false
 	var white := solid(Color("efeee6"), 0.45)
 	for x in [-4.5, 4.5]: box(Vector3(x, 0.022, 0), Vector3(0.05, 0.006, 18.05), white)
 	for z in [-9, -3, 0, 3, 9]: box(Vector3(0, 0.023, z), Vector3(9.04, 0.006, 0.05), white)
