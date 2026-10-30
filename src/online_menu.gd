@@ -12,6 +12,7 @@ var own_team: OptionButton
 var own_kit: OptionButton
 var format: OptionButton
 var stats_pick: OptionButton
+var fatigue_pick: OptionButton
 var target: OptionButton
 var create: Button
 var join: Button
@@ -46,10 +47,14 @@ func _ready() -> void:
 	scope.item_selected.connect(func(_index): if session.authority(): session.update_code(lan_mode()))
 	host.clubs.button(invitation,"COPIA CODICE",func(): if not session.room_code.is_empty(): DisplayServer.clipboard_set(session.room_code))
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",16); body.add_child(settings)
-	host.clubs.label(settings,"FORMATO (HOST)"); format=host.clubs.picker(settings,["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2)
-	host.clubs.label(settings,"PUNTI"); target=host.clubs.picker(settings,["25","15"])
-	host.clubs.label(settings,"VALORI GIOCATORI"); stats_pick=host.clubs.picker(settings,["Disattivati · originale","Attivi · database V1"])
-	format.item_selected.connect(settings_changed); target.item_selected.connect(settings_changed); stats_pick.item_selected.connect(settings_changed)
+	var columns=[]
+	for title in ["FORMATO (HOST)","PUNTI","VALORI GIOCATORI","AFFATICAMENTO"]:
+		var column=VBoxContainer.new(); column.size_flags_horizontal=SIZE_EXPAND_FILL; settings.add_child(column); host.clubs.label(column,title); columns.append(column)
+	format=host.clubs.picker(columns[0],["1 set","Meglio dei 3","Meglio dei 5"]); format.select(2)
+	target=host.clubs.picker(columns[1],["25","15"])
+	stats_pick=host.clubs.picker(columns[2],["Disattivati · originale","Attivi · database V1"])
+	fatigue_pick=host.clubs.picker(columns[3],["OFF","ON"]); fatigue_pick.select(1)
+	for field in [format,target,stats_pick,fatigue_pick]: field.item_selected.connect(settings_changed)
 	var cards=HBoxContainer.new(); cards.size_flags_vertical=SIZE_EXPAND_FILL; cards.add_theme_constant_override("separation",22); body.add_child(cards)
 	var own=VBoxContainer.new(); own.size_flags_horizontal=SIZE_EXPAND_FILL; cards.add_child(own)
 	host.clubs.label(own,"LA TUA SQUADRA")
@@ -74,6 +79,8 @@ func _ready() -> void:
 	changed_choice(); hide()
 
 func open() -> void:
+	if host.get("play_hub")!=null: host.play_hub.hide()
+	if host.get("career_menu")!=null: host.career_menu.hide()
 	host.clubs.hide(); host.overlay.hide(); show(); refresh(); create.grab_focus() if not session.active else own_team.grab_focus()
 
 func lan_mode() -> bool: return scope.selected==1
@@ -84,7 +91,9 @@ func edit_code() -> void:
 
 func back() -> void:
 	if session.active: session.leave("Stanza chiusa")
-	hide(); host.online.grab_focus()
+	hide()
+	if host.get("play_hub")!=null: host.play_hub.show()
+	host.online.grab_focus()
 
 func open_formation() -> void:
 	host.clubs.show_match_formation(0,host.clubs.db.teams[own_team.selected],formation)
@@ -93,7 +102,8 @@ func open_formation() -> void:
 func choice() -> Dictionary:
 	var club: Dictionary=host.clubs.db.teams[own_team.selected]
 	var roster: Array=host.clubs.match_rosters[0] if not host.clubs.match_rosters[0].is_empty() else host.clubs.db.lineup(club)
-	return {"club":club.id,"kit":"home" if own_kit.selected==0 else "away","roster":roster,"rotation":host.clubs.match_rotations[0]}
+	var ids: Array=roster.map(func(p): return str(p.id))
+	return {"club":club.id,"kit":"home" if own_kit.selected==0 else "away","roster":roster,"bench":club.roster.filter(func(p): return not str(p.id) in ids),"rotation":host.clubs.match_rotations[0]}
 
 func changed_choice() -> void:
 	if updating: return
@@ -103,7 +113,7 @@ func changed_choice() -> void:
 
 func settings_changed(_index: int) -> void:
 	if updating or (session.active and not session.authority()): return
-	session.best_of=[1,3,5][format.selected]; session.points=[25,15][target.selected]; session.use_player_stats=stats_pick.selected==1
+	session.best_of=[1,3,5][format.selected]; session.points=[25,15][target.selected]; session.use_player_stats=stats_pick.selected==1; session.use_fatigue=fatigue_pick.selected==1
 	session.ready_flags=[false,false]
 	if session.authority(): session.broadcast_lobby()
 
@@ -114,8 +124,8 @@ func refresh() -> void:
 	updating=true; info.text=session.info
 	create.disabled=session.active or session.closing; join.disabled=session.active or session.closing; code.editable=not session.active
 	if session.authority(): code.text=session.room_code
-	format.disabled=session.active and not session.authority(); target.disabled=format.disabled; stats_pick.disabled=format.disabled
-	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points)); stats_pick.select(1 if session.use_player_stats else 0)
+	format.disabled=session.active and not session.authority(); target.disabled=format.disabled; stats_pick.disabled=format.disabled; fatigue_pick.disabled=format.disabled
+	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points)); stats_pick.select(1 if session.use_player_stats else 0); fatigue_pick.select(1 if session.use_fatigue else 0)
 	confirm.disabled=not session.active or (session.local_side==1 and session.guest==0)
 	confirm.text="ANNULLA PRONTO" if session.ready_flags[session.local_side] else "CONFERMA / PRONTO"
 	var locked: bool=session.active and session.ready_flags[session.local_side]

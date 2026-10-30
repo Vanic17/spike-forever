@@ -10,6 +10,8 @@ var play: Button
 var updates: Button
 var online: Button
 var online_menu
+var play_hub
+var career_menu
 var settings_button: Button
 var tutorial_button: Button
 var settings_menu
@@ -69,12 +71,18 @@ func _ready() -> void:
 	edit.pressed.connect(clubs.editor)
 	play.pressed.connect(clubs.match_setup)
 	updates.pressed.connect(show_updates)
-	var navigation: Array=[play,online,tutorial_button,updates,edit,settings_button]
+	play.pressed.disconnect(clubs.match_setup)
+	career_menu=preload("res://src/career_menu.gd").new(); career_menu.host=self; career_menu.game=game; add_child(career_menu)
+	var old_online=online
+	play_hub=preload("res://src/play_hub.gd").new(); play_hub.host=self; play_hub.game=game; add_child(play_hub)
+	old_online.queue_free()
+	play.pressed.connect(play_hub.open)
+	var navigation: Array=[play,tutorial_button,updates,edit,settings_button]
 	for i in navigation.size():
 		navigation[i].focus_neighbor_left=navigation[i].get_path_to(navigation[i-1 if i%3>0 else i])
-		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[i+1 if i%3<2 else i])
+		navigation[i].focus_neighbor_right=navigation[i].get_path_to(navigation[i+1 if i%3<2 and i+1<navigation.size() else i])
 		navigation[i].focus_neighbor_top=navigation[i].get_path_to(navigation[i-3 if i>=3 else i])
-		navigation[i].focus_neighbor_bottom=navigation[i].get_path_to(navigation[i+3 if i<3 else i])
+		navigation[i].focus_neighbor_bottom=navigation[i].get_path_to(navigation[mini(i+3,navigation.size()-1) if i<3 else i])
 	version_label=Label.new()
 	var version=JSON.parse_string(FileAccess.get_file_as_string("res://version.json")).version
 	installed_version=str(version)
@@ -286,9 +294,9 @@ func layout() -> void:
 	var size:=panel.size
 	var scale:=minf(size.x/1672.0,size.y/941.0)
 	var origin: Vector2=(size-Vector2(1672,941)*scale)*0.5
-	var buttons: Array=[play,online,tutorial_button,updates,edit,settings_button]
+	var buttons: Array=[play,tutorial_button,updates,edit,settings_button]
 	for i in buttons.size():
-		buttons[i].position=origin+Vector2(150+(i%3)*466,766+(i/3)*74)*scale
+		buttons[i].position=origin+Vector2((150+(i%3)*466) if i<3 else (383+(i-3)*466),766+(i/3)*74)*scale
 		buttons[i].size=Vector2(440,64)*scale
 		buttons[i].add_theme_font_size_override("font_size",maxi(13,int(29*scale)))
 	version_label.position=Vector2(18,size.y-30)
@@ -322,9 +330,10 @@ func _process(_dt: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if client==null: return
+	if (play_hub!=null and play_hub.visible) or (career_menu!=null and career_menu.visible): return
 	if game.tutorial!=null and game.tutorial.menu.visible: return
 	if not game.started and event.is_action_pressed("start"):
-		if not clubs.visible and not online_menu.visible and not settings_menu.visible and not game.tutorial.menu.visible: clubs.match_setup()
+		if not clubs.visible and not online_menu.visible and not settings_menu.visible and not game.tutorial.menu.visible: play_hub.open()
 		get_viewport().set_input_as_handled()
 		return
 	if update_prompt!=null and update_prompt.visible:

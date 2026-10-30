@@ -36,6 +36,7 @@ func enter_details() -> void:
 	inputs.name.grab_focus()
 	editor_scroll.ensure_control_visible(inputs.name)
 var settings_stats: OptionButton
+var settings_fatigue: OptionButton
 var settings_format: OptionButton
 var settings_points: OptionButton
 
@@ -55,7 +56,10 @@ func go_back() -> void:
 	elif lineup_open:
 		lineup_open=false; edit_player(player_pick.get_selected_items()[0])
 	else:
-		hide(); host.play.grab_focus()
+		var exhibition=is_instance_valid(body) and body.get_child_count()>0 and str(body.get_child(0).get_child(0).text).begins_with("GIOCA")
+		hide()
+		if exhibition and host.get("play_hub")!=null: host.play_hub.open()
+		else: host.edit.grab_focus()
 
 func focus_editor_step(backwards: bool) -> bool:
 	if not is_instance_valid(fields): return false
@@ -288,6 +292,7 @@ func save_player() -> void:
 	message.text="Salvato in locale ✓" if db.save(current)==OK else "Salvataggio non riuscito: riprova."
 	player_pick.set_item_text(player_pick.get_selected_items()[0],"%d   %s  ·  %s"%[current.jersey_number,current.name,current.role])
 func match_setup() -> void:
+	if host.get("play_hub")!=null: host.play_hub.hide()
 	match_rosters=[[],[]]
 	match_rotations=[0,0]
 	lineup_open=false
@@ -327,6 +332,8 @@ func match_setup() -> void:
 	label(points_box,"PUNTI PER SET"); var points=picker(points_box,["25","15"]); settings_points=points
 	var stats_box=VBoxContainer.new(); stats_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(stats_box)
 	label(stats_box,"VALORI GIOCATORI"); settings_stats=picker(stats_box,["Disattivati · originale","Attivi · database V1"])
+	var fatigue_box=VBoxContainer.new(); fatigue_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(fatigue_box)
+	label(fatigue_box,"AFFATICAMENTO"); settings_fatigue=picker(fatigue_box,["Attivo","Disattivato"])
 	var error=Label.new(); body.add_child(error); error.hide()
 	setup_start=button(body,"SCENDI IN CAMPO",func():
 		for side in 2:
@@ -334,14 +341,18 @@ func match_setup() -> void:
 				error.text="Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L."; error.show(); return
 		game.use_player_stats=settings_stats.selected==1
 		game.match_best_of=[1,3,5][format.selected]; game.match_points=[25,15][points.selected]
+		var teams: Array=[]; var squads: Array=[]
 		for side in 2:
 			var t=db.teams[picks[side].selected]; game.team_names[side]=t.name
 			var squad: Array=match_rosters[side] if not match_rosters[side].is_empty() else db.lineup(t)
+			teams.append(t); squads.append(squad)
 			var variant := "home" if kits[side].selected==0 else "away"
 			var club_kits = preload("res://src/club_kits.gd")
 			var chosen_kit: Dictionary = club_kits.selection(t.id,variant)
 			var chosen_libero: Dictionary = club_kits.selection(t.id,variant,true)
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],chosen_kit,chosen_libero)
+		if game.get("match_management")!=null:
+			if not game.match_management.configure_rosters(teams,squads,{}, {"fatigue":settings_fatigue.selected==0,"injuries":false}): error.text="Rosa non disponibile per iniziare la partita."; error.show(); return
 		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.match_finished=false; game.reset_rally(); game.started=true; hide(); music.stop())
 	var back: Control=body.get_child(0).get_child(1)
 	for side in 2:
@@ -359,9 +370,13 @@ func match_setup() -> void:
 	format.focus_neighbor_right=format.get_path_to(points)
 	points.focus_neighbor_right=points.get_path_to(settings_stats)
 	settings_stats.focus_neighbor_left=settings_stats.get_path_to(points)
+	settings_stats.focus_neighbor_right=settings_stats.get_path_to(settings_fatigue)
 	settings_stats.focus_neighbor_top=settings_stats.get_path_to(formation_buttons[1])
 	settings_stats.focus_neighbor_bottom=settings_stats.get_path_to(setup_start)
 	settings_stats.focus_next=settings_stats.get_path_to(setup_start)
+	settings_fatigue.focus_neighbor_left=settings_fatigue.get_path_to(settings_stats)
+	settings_fatigue.focus_neighbor_bottom=settings_fatigue.get_path_to(setup_start)
+	settings_fatigue.focus_neighbor_top=settings_fatigue.get_path_to(formation_buttons[1])
 	picks[0].grab_focus()
 
 func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:

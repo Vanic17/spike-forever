@@ -1,0 +1,14 @@
+{
+  "credit": "Spike Forever",
+  "fallback": "native gradient",
+  "images": [
+    "arena",
+    "net",
+    "stands",
+    "court",
+    "ball"
+  ],
+  "license": "Project assets; existing third-party terms in licenses/",
+  "remote_required": false,
+  "source": "Internal Godot arena renders from Spike Forever 0.66"
+}
