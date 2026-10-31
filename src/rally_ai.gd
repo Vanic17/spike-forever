@@ -77,7 +77,7 @@ static func target(game, index: int, team: int) -> Vector3:
 			if _role(game,index,team)=="S": return receiving_setter_base(game,index,team)
 			# The receiver has a separate contact assignment in main.gd. All
 			# other passers retain the actual six-rotation reception formation.
-			return Tactics.serve_position(index,team,game.rotations[team],false)
+			return Tactics.serve_position_for(game,index,team,game.rotations[team],false)
 		if _role(game,index,team)=="S": return receiving_setter_base(game,index,team)
 		return defensive_base(game,index,team)
 	if own and setting: return opening(game,index,team)
@@ -91,7 +91,7 @@ static func target(game, index: int, team: int) -> Vector3:
 	return defensive_base(game,index,team)
 
 static func _role(game, index: int, team: int) -> String:
-	return Tactics.role(index,game.rotations[team],team==game.server)
+	return Tactics.role_for(game,index)
 
 static func receiving_setter_base(game, index: int, team: int) -> Vector3:
 	# Read the usual zone-3 first pass, using the upcoming setting pose.
@@ -108,7 +108,7 @@ static func _destination(game, index: int) -> Vector3:
 	return destination if destination is Vector3 else game.players[index].position
 
 static func defensive_base(game, index: int, team: int) -> Vector3:
-	var point:=Tactics.home(index,team,game.rotations[team],team==game.server,false)
+	var point:=Tactics.home_for(game,index,team,game.rotations[team],team==game.server,false)
 	var wing:=Tactics.wing_for(game,index)
 	# A new dig is still the same rally. Its first read must not briefly
 	# reverse a pin toward the old specialist side before opening begins.
@@ -170,6 +170,10 @@ static func opening(game, index: int, team: int) -> Vector3:
 		# In particular L does not cross to the left in P1/P5/P4/P2, and the
 		# back-row OH keeps the diagram's preparation side until selected.
 		var anchor:=Tactics.Layout.first_attack(index,rotation)
+		# A reserve opposite occupies the original setter's legal slot. His
+		# attack job is a pin approach, never the old setter contact anchor.
+		if role=="OPP" and Tactics.ROLES[index%6]=="S" and front:
+			return Tactics.world(team,Tactics.wing_for(game,index)*float(p.wing_width),float(p.wing_depth))
 		return Tactics.world(team,anchor.x,anchor.z)
 	if role=="L":
 		# All six attack diagrams leave L on the left, outside the pipe lane.

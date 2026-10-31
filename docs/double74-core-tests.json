@@ -1,0 +1,70 @@
+{
+	"atomic_entry_and_return": true,
+	"checks": 150,
+	"cpu_entry_and_return": true,
+	"failures": [],
+	"paired_queue": true,
+	"rotations": [
+		{
+			"entry": false,
+			"rotation": 0,
+			"side": 0
+		},
+		{
+			"entry": false,
+			"rotation": 1,
+			"side": 0
+		},
+		{
+			"entry": false,
+			"rotation": 2,
+			"side": 0
+		},
+		{
+			"entry": true,
+			"rotation": 3,
+			"side": 0
+		},
+		{
+			"entry": true,
+			"rotation": 4,
+			"side": 0
+		},
+		{
+			"entry": true,
+			"rotation": 5,
+			"side": 0
+		},
+		{
+			"entry": false,
+			"rotation": 0,
+			"side": 1
+		},
+		{
+			"entry": false,
+			"rotation": 1,
+			"side": 1
+		},
+		{
+			"entry": false,
+			"rotation": 2,
+			"side": 1
+		},
+		{
+			"entry": true,
+			"rotation": 3,
+			"side": 1
+		},
+		{
+			"entry": true,
+			"rotation": 4,
+			"side": 1
+		},
+		{
+			"entry": true,
+			"rotation": 5,
+			"side": 1
+		}
+	],
+	"source": "v66 match_management eligibility/count/pair system"
+}

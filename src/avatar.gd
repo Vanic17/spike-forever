@@ -205,7 +205,7 @@ func set_libero(value: bool) -> void:
 		jersey_number.modulate = Color("182d52") if (team == 0) == value else Color.WHITE
 
 func role_label() -> String:
-	return "L" if libero_active else ["OH1","MB1","OPP","OH2","MB2","S"][number-1]
+	return "L" if libero_active else str(get_meta("tactical_role",["OH1","MB1","OPP","OH2","MB2","S"][number-1]))
 
 func set_roster_identity(player: Dictionary,libero: Dictionary,kit: Dictionary,contrast: Dictionary) -> void:
 	roster_identity=player; libero_identity=libero; kit_identity=kit; libero_kit=contrast

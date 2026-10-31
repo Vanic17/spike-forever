@@ -50,11 +50,11 @@ func _draw() -> void:
 	preload("res://src/broadcast_scoreboard.gd").draw(self,game,size)
 	if game.legend_match!=null and game.legend_match.active:
 		preload("res://src/legend_hud.gd").draw(self,game,size,pad,ps)
-		return
 	if game.replay!=null and game.replay.active: return
 	draw_timing_result()
 	var phase: String=game.display_phase()
-	if (phase=="SERVE" and game.server==game.local_team()) or phase=="ATTACK": draw_power_bar()
+	var owns_bar: bool=not game.legend_controls_enabled() or game.legend_match.owns(game.legend_match.action_actor(game.local_team()))
+	if owns_bar and ((phase=="SERVE" and game.server==game.local_team()) or phase=="ATTACK"): draw_power_bar()
 
 func draw_timing_result() -> void:
 	var result: Dictionary=game.timing_results[game.local_team()]
@@ -123,7 +123,7 @@ func draw_contact(cx: float, y: float) -> void:
 	elif game.display_phase() == "SET":
 		var target: String = ["ZONA 4", "CENTRO", "ZONA 2", "PIPE"][game.planned_direction]
 		text(Vector2(cx - 229, y + 21), primary + " primo tempo   " + alternate + " 7   " + dump_button + " seconda" if game.planned_direction==1 else primary + " normale   " + alternate + " veloce   " + dump_button + " seconda", 13)
-		text(Vector2(cx - 229, y + 48), "LS · " + target + ("  " + game.players[game.planned_hitter].role_label() if game.planned_hitter >= 0 else ""), 13, GREEN if game.armed else WHITE)
+		text(Vector2(cx - 229, y + 48), "LS · " + target + ("  " + game.Tactics.role_for(game,game.planned_hitter) if game.planned_hitter >= 0 else ""), 13, GREEN if game.armed else WHITE)
 		text(Vector2(cx - 229, y + 66), "Qualità ricezione %d%%" % roundi(game.pass_quality * 100), 11, MUTED)
 	else:
 		if game.display_phase()=="CPU_ATTACK" and game.hitter_action=="receive":

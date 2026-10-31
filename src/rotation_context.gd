@@ -40,6 +40,12 @@ func capture(game, serving_team: int) -> Dictionary:
 	var roster: Array=[]
 	for index in range(receiving_team*6,receiving_team*6+6):
 		var identity:=Model.state(index,game.rotations[receiving_team],false)
+		# Preserve the registered rotation slot while reporting the actual
+		# athlete and tactical role after an ordinary or double substitution.
+		identity.role=game.Tactics.role_for(game,index)
+		if game.match_management.active:
+			identity.player_id=game.match_management.actor_id(index)
+			identity.starter_id=str(game.match_management.starters[receiving_team][index%6])
 		by_zone[identity.rotation_slot]=index
 		contacts[index]=feet(game,index)
 		roster.append(identity)

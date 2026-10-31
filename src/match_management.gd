@@ -2,6 +2,7 @@ extends Node
 ## Indoor substitutions and measured match events. Tactical slots never move.
 signal match_completed(result: Dictionary)
 const RULE_SOURCE="https://www.fivb.com/wp-content/uploads/2025/01/FIVB-Volleyball_Rules2025_2028-EN-1.pdf"
+const DoubleChange=preload("res://src/double_substitution.gd")
 static var translation_installed:=false
 var game
 var active:=false
@@ -27,6 +28,8 @@ var measured: Dictionary={}
 var set_scores: Array=[]
 var substitutions: Array=[]
 var queued_changes: Array=[]
+var double_changes: Array=[{},{}]
+var double_coach_stamp: Array=["",""]
 var last_result: Dictionary={}
 var last_point: Dictionary={}
 var completed:=false
@@ -78,6 +81,7 @@ func configure_rosters(teams: Array,lineups: Array,initial_conditions: Dictionar
 	active=true; completed=false; running_seconds=0; served_by=-1; injury_count=0; excluded.clear(); measured.clear(); set_scores.clear(); substitutions.clear(); last_result.clear(); last_attack.clear(); last_block.clear(); last_point.clear()
 	between_sets=true
 	queued_changes.clear()
+	double_changes=[{},{}]; double_coach_stamp=["",""]
 	injury_events.clear()
 	jump_flags=[false,false,false,false,false,false,false,false,false,false,false,false]
 	random.seed=int(options.get("seed",194260))+int(hash(str(current)+date))
@@ -153,6 +157,12 @@ func tick(dt: float) -> void:
 	if not active or completed or game.paused or not game.started: return
 	if game.network_match() and not game.online_session.authority(): return
 	apply_queued_changes()
+	if dead_ball():
+		for side in 2:
+			var stamp:=str(game.scores)+str(game.rotations)+str(counts)+str(between_sets)+str(double_changes[side])
+			if double_coach_stamp[side]!=stamp:
+				double_coach_stamp[side]=stamp
+				DoubleChange.coach(self,side)
 	if game.phase in ["POINT","SERVE"]: return
 	running_seconds+=dt
 	for i in 12:
@@ -220,6 +230,9 @@ func point(side: int,reason: String) -> void:
 
 func start_set() -> void:
 	if not active: return
+	DoubleChange.new_set(self)
+	sync_role_labels()
+	double_coach_stamp=["",""]
 	starters=current.duplicate(true); counts=[0,0]; pairs=[{},{}]; left_once=[[],[]]; returned=[[],[]]; used_subs=[[],[]]
 	between_sets=true
 
@@ -244,8 +257,12 @@ func dead_ball() -> bool:
 func bench(side: int) -> Array:
 	return rosters[side].filter(func(p): return not str(p.id) in current[side] and str(p.id)!=str(libero_ids[side]))
 
-func eligibility(side: int,slot: int,incoming: String,exceptional: bool=false,require_dead_ball: bool=true) -> String:
+func eligibility(side: int,slot: int,incoming: String,exceptional: bool=false,require_dead_ball: bool=true,paired: bool=false) -> String:
 	if not active or side<0 or side>1 or slot<0 or slot>5: return "Formazione non disponibile."
+	if not paired and not exceptional and DoubleChange.active(self,side) and slot in [2,5]: return "Usa il rientro del doppio cambio per questa coppia."
+	if not paired and not exceptional and not between_sets:
+		var return_budget:=2 if DoubleChange.active(self,side) or DoubleChange.pending(self,side) else 0
+		if counts[side]+DoubleChange.reserved(self,side)+1+return_budget>6: return "Due cambi sono riservati al rientro del doppio cambio." if return_budget>0 else "Raggiunto il limite di sei sostituzioni ordinarie in questo set."
 	if require_dead_ball and not dead_ball(): return "Le sostituzioni si effettuano a palla ferma, prima della battuta."
 	if game.players[side*6+slot].libero_active and not between_sets: return "Attendi il rientro del centrale al posto del libero."
 	var person:=identity(incoming)
@@ -257,7 +274,7 @@ func eligibility(side: int,slot: int,incoming: String,exceptional: bool=false,re
 	if exceptional:
 		if not unavailable(outgoing): return "La sostituzione eccezionale richiede un giocatore impossibilitato a continuare."
 		for possible in bench(side):
-			if eligibility(side,slot,str(possible.id),false,require_dead_ball).is_empty(): return "È disponibile una sostituzione ordinaria."
+			if eligibility(side,slot,str(possible.id),false,require_dead_ball,paired or (DoubleChange.active(self,side) and slot in [2,5])).is_empty(): return "È disponibile una sostituzione ordinaria."
 		for index in 6:
 			if game.players[side*6+index].libero_active and incoming==str(current[side][index]): return "Il sostituito regolare del libero non può entrare eccezionalmente."
 		return ""
@@ -274,11 +291,15 @@ func eligibility(side: int,slot: int,incoming: String,exceptional: bool=false,re
 func request_change(side: int,slot: int,incoming: String,exceptional: bool=false) -> String:
 	var reason:=eligibility(side,slot,incoming,exceptional,false)
 	if not reason.is_empty(): return reason
+	for pending_change in queued_changes:
+		if int(pending_change.side)==side and bool(pending_change.get("double",false)) and (slot in [2,5] or incoming in [str(pending_change.get("opposite","")),str(pending_change.get("setter",""))]): return "Esiste già un cambio programmato per questa coppia."
 	if dead_ball(): return substitute(side,slot,incoming,exceptional)
 	for change in queued_changes:
+		if bool(change.get("double",false)): continue
 		if int(change.side)==side and (int(change.slot)==slot or str(change["in"])==incoming): return "Esiste già un cambio programmato per questo giocatore."
-	var reserved:=queued_changes.filter(func(c): return int(c.side)==side).size()
-	if not exceptional and counts[side]+reserved>=6: return "Raggiunto il limite di sei sostituzioni ordinarie in questo set."
+	var reserved:=DoubleChange.reserved(self,side)
+	var return_budget:=2 if DoubleChange.active(self,side) or DoubleChange.pending(self,side) else 0
+	if not exceptional and counts[side]+reserved+return_budget>=6: return "Raggiunto il limite di sei sostituzioni ordinarie in questo set."
 	queued_changes.append({"side":side,"slot":slot,"in":incoming,"out":str(current[side][slot]),"exceptional":exceptional})
 	if game.network_match() and game.online_session.authority(): game.online_session.broadcast_management()
 	return ""
@@ -287,6 +308,12 @@ func apply_queued_changes() -> void:
 	if queued_changes.is_empty() or not dead_ball(): return
 	var changes:=queued_changes.duplicate(true); queued_changes.clear()
 	for change in changes:
+		if bool(change.get("double",false)):
+			var pair_side: int=int(change.side)
+			if [str(current[pair_side][5]),str(current[pair_side][2])]!=change["out"]: continue
+			var pair_error:=double_change(pair_side,str(change.opposite),str(change.setter),bool(change.returning))
+			if not pair_error.is_empty(): game.notice(pair_error)
+			continue
 		if str(current[int(change.side)][int(change.slot)])!=str(change["out"]): continue
 		var reason:=substitute(int(change.side),int(change.slot),str(change["in"]),bool(change.exceptional))
 		if not reason.is_empty(): game.notice(reason)
@@ -295,6 +322,14 @@ func substitute(side: int,slot: int,incoming: String,exceptional: bool=false) ->
 	var error:=eligibility(side,slot,incoming,exceptional)
 	if not error.is_empty(): return error
 	var outgoing: String=current[side][slot]
+	commit_change(side,slot,incoming,exceptional)
+	update_condition_vector()
+	broadcast_management()
+	present_change(side,slot,outgoing,incoming)
+	return ""
+
+func commit_change(side: int,slot: int,incoming: String,exceptional: bool=false,kind: String="") -> void:
+	var outgoing: String=current[side][slot]
 	if exceptional: excluded.append(outgoing)
 	elif between_sets: pass
 	else:
@@ -302,16 +337,52 @@ func substitute(side: int,slot: int,incoming: String,exceptional: bool=false) ->
 		if outgoing==str(starters[side][slot]): left_once[side].append(outgoing); used_subs[side].append(incoming); pairs[side][outgoing]=incoming
 		else: returned[side].append(incoming)
 	current[side][slot]=incoming
+	# An injury must still be replaceable under the original exceptional
+	# substitution rules. Keep the tactical pair tied to the actual reserve
+	# occupying its slot; ordinary single changes cannot break this pair.
+	if exceptional and DoubleChange.active(self,side) and slot in [2,5]:
+		double_changes[side]["reserve_setter" if slot==2 else "reserve_opposite"]=incoming
 	if between_sets: starters[side]=current[side].duplicate()
 	var player=game.players[side*6+slot]
 	player.set_roster_identity(identity(incoming),identity(libero_ids[side]),player.kit_identity,player.libero_kit)
 	player.motion_lock=0; player.reach_weight=0; player.contact_scheduled=false
-	substitutions.append({"set":game.sets[0]+game.sets[1]+1,"side":side,"slot":slot,"out":outgoing,"in":incoming,"exceptional":exceptional,"pre_set":between_sets})
-	update_condition_vector()
+	var event: Dictionary={"set":game.sets[0]+game.sets[1]+1,"side":side,"slot":slot,"out":outgoing,"in":incoming,"exceptional":exceptional,"pre_set":between_sets}
+	if not kind.is_empty(): event["double_change"]=kind
+	substitutions.append(event)
+
+func broadcast_management() -> void:
 	if game.network_match() and game.online_session.authority(): game.online_session.broadcast_management()
+
+func present_change(side: int,slot: int,outgoing: String,incoming: String) -> void:
 	if game.substitution_scene!=null:
 		game.substitution_scene.enqueue(side,slot,identity(outgoing),identity(incoming))
-	return ""
+
+func setter_slot(side: int) -> int:
+	return 2 if DoubleChange.active(self,side) else 5
+
+func opposite_slot(side: int) -> int:
+	return 5 if DoubleChange.active(self,side) else 2
+
+func sync_role_labels() -> void:
+	# Display metadata follows tactical responsibility without changing the
+	# identity's professional role, stats, rotation slot or animation state.
+	for side in 2:
+		for slot in [2,5]:
+			var player=game.players[side*6+slot]
+			if DoubleChange.active(self,side): player.set_meta("tactical_role","S" if slot==2 else "OPP")
+			elif player.has_meta("tactical_role"): player.remove_meta("tactical_role")
+
+func double_options(side: int,role: String) -> Array:
+	return DoubleChange.options(self,side,role)
+
+func double_eligibility(side: int,opposite_id: String="",setter_id: String="",returning: bool=false,require_dead_ball: bool=true) -> String:
+	return DoubleChange.validate(self,side,opposite_id,setter_id,returning,require_dead_ball)
+
+func request_double_change(side: int,opposite_id: String="",setter_id: String="",returning: bool=false) -> String:
+	return DoubleChange.request(self,side,opposite_id,setter_id,returning)
+
+func double_change(side: int,opposite_id: String="",setter_id: String="",returning: bool=false) -> String:
+	return DoubleChange.commit(self,side,opposite_id,setter_id,returning)
 
 func auto_changes() -> void:
 	if not active or not game.started: return
@@ -334,13 +405,16 @@ func auto_changes() -> void:
 	game.phase=phase_before
 
 func export_state() -> Dictionary:
-	return {"active":active,"current":current.duplicate(true),"starters":starters.duplicate(true),"counts":counts.duplicate(),"pairs":pairs.duplicate(true),"left_once":left_once.duplicate(true),"returned":returned.duplicate(true),"used_subs":used_subs.duplicate(true),"excluded":excluded.duplicate(),"conditions":conditions.duplicate(true),"libero":libero_ids.duplicate(),"fatigue":fatigue_enabled,"injuries":injuries_enabled,"between_sets":between_sets,"queued_changes":queued_changes.duplicate(true)}
+	return {"active":active,"current":current.duplicate(true),"starters":starters.duplicate(true),"counts":counts.duplicate(),"pairs":pairs.duplicate(true),"left_once":left_once.duplicate(true),"returned":returned.duplicate(true),"used_subs":used_subs.duplicate(true),"excluded":excluded.duplicate(),"conditions":conditions.duplicate(true),"libero":libero_ids.duplicate(),"fatigue":fatigue_enabled,"injuries":injuries_enabled,"between_sets":between_sets,"queued_changes":queued_changes.duplicate(true),"double_changes":double_changes.duplicate(true)}
 
 func import_state(value: Dictionary) -> void:
 	if value.is_empty() or value.get("current",[]).size()!=2: return
 	active=bool(value.active); current=value.current.duplicate(true); starters=value.starters.duplicate(true); counts=value.counts.duplicate(); pairs=value.pairs.duplicate(true); left_once=value.left_once.duplicate(true); returned=value.returned.duplicate(true); used_subs=value.used_subs.duplicate(true); excluded=value.excluded.duplicate(); conditions=value.conditions.duplicate(true); libero_ids=value.libero.duplicate(); fatigue_enabled=bool(value.fatigue); injuries_enabled=bool(value.injuries)
 	between_sets=bool(value.get("between_sets",false))
 	queued_changes=value.get("queued_changes",[]).duplicate(true)
+	double_changes=value.get("double_changes",[{},{}]).duplicate(true)
+	double_coach_stamp=["",""]
+	sync_role_labels()
 	for side in 2:
 		for slot in 6:
 			var player=game.players[side*6+slot]

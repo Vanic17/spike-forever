@@ -182,7 +182,7 @@ func update(game) -> void:
 
 func prepare_real(game, dt: float) -> void:
 	if index<0 or not real_attack or game.phase not in ["SET","CPU_SET"]: return
-	if game.possession==0 and not game.armed: return
+	if game.possession==0 and not game.armed and game.human_team(0): return
 	var player=game.players[index]
 	var point: Vector3=AI.attack_contact(game,1,index,game.flight_target)
 	point.y=player.contact_local("attack").y

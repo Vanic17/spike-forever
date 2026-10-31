@@ -1,0 +1,16 @@
+{
+	"avatars": 12,
+	"cameras": [
+		0,
+		2,
+		3
+	],
+	"checks": 12,
+	"clips": 137,
+	"controlled_player": "Marco Riva",
+	"failures": [],
+	"guide": "(3.4, 0.045, 0.68)",
+	"manual_distance": 1.05748891830444,
+	"native": true,
+	"recommended": "(3.4, 0.0, 0.68)"
+}

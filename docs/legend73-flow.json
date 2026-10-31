@@ -1,0 +1,8 @@
+{
+	"abandon": true,
+	"checks": 16,
+	"failures": [],
+	"result_once": true,
+	"save_reload": true,
+	"shared_stats": true
+}

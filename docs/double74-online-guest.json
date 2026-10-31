@@ -1,0 +1,10 @@
+{
+	"checks": 128,
+	"count": 4,
+	"entry_and_return": true,
+	"host_untouched": true,
+	"identity_and_role_synchronized": true,
+	"invalid_pair_atomic": true,
+	"role": "guest",
+	"second_use_rejected": true
+}

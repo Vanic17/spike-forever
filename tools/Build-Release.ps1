@@ -9,6 +9,15 @@ $files+='docs/RELEASE_NOTES_70.md'
 $files+='docs/RELEASE_NOTES_71.md'
 $files+='docs/RELEASE_NOTES_72.md'
 $files+='docs/RELEASE_NOTES_72_1.md'
+$files+='docs/RELEASE_NOTES_73.md'
+foreach($report74 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'double74-*'){
+ if($report74.Extension -in @('.md','.json','.png')){$files+='docs/'+$report74.Name}
+}
+foreach($tool74 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*74.*'){$files+='tools/'+$tool74.Name}
+foreach($report73 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'legend73-*'){
+ if($report73.Extension -in @('.md','.json','.png')){$files+='docs/'+$report73.Name}
+}
+foreach($tool73 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*73.*'){$files+='tools/'+$tool73.Name}
 foreach($report72 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'legend72-*'){
  if($report72.Extension -in @('.md','.json','.png')){$files+='docs/'+$report72.Name}
 }

@@ -1,0 +1,93 @@
+{
+	"cases": [
+		{
+			"device": 0,
+			"last_reserves": false,
+			"phase": "SERVE",
+			"resolution": "(1280, 720)",
+			"substitutions": 4
+		},
+		{
+			"device": 0,
+			"last_reserves": true,
+			"phase": "SERVE",
+			"resolution": "(1280, 720)",
+			"substitutions": 4
+		},
+		{
+			"device": 0,
+			"last_reserves": false,
+			"phase": "SET",
+			"resolution": "(1280, 720)",
+			"substitutions": 4
+		},
+		{
+			"device": 0,
+			"last_reserves": true,
+			"phase": "SET",
+			"resolution": "(1280, 720)",
+			"substitutions": 4
+		},
+		{
+			"device": 3,
+			"last_reserves": false,
+			"phase": "SERVE",
+			"resolution": "(1920, 1080)",
+			"substitutions": 4
+		},
+		{
+			"device": 3,
+			"last_reserves": true,
+			"phase": "SERVE",
+			"resolution": "(1920, 1080)",
+			"substitutions": 4
+		},
+		{
+			"device": 3,
+			"last_reserves": false,
+			"phase": "SET",
+			"resolution": "(1920, 1080)",
+			"substitutions": 4
+		},
+		{
+			"device": 3,
+			"last_reserves": true,
+			"phase": "SET",
+			"resolution": "(1920, 1080)",
+			"substitutions": 4
+		},
+		{
+			"device": 7,
+			"last_reserves": false,
+			"phase": "SERVE",
+			"resolution": "(2560, 1440)",
+			"substitutions": 4
+		},
+		{
+			"device": 7,
+			"last_reserves": true,
+			"phase": "SERVE",
+			"resolution": "(2560, 1440)",
+			"substitutions": 4
+		},
+		{
+			"device": 7,
+			"last_reserves": false,
+			"phase": "SET",
+			"resolution": "(2560, 1440)",
+			"substitutions": 4
+		},
+		{
+			"device": 7,
+			"last_reserves": true,
+			"phase": "SET",
+			"resolution": "(2560, 1440)",
+			"substitutions": 4
+		}
+	],
+	"checks": 297,
+	"failures": [],
+	"native_input": true,
+	"no_action_mappings_required": true,
+	"pair_confirmations": 24
+}

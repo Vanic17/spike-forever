@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF072"
+const PROTOCOL="SF073"
 const PORT=26761
 var game
 var menu
@@ -249,7 +249,10 @@ func management_state(value: Dictionary) -> void:
 	if not playing or local_side!=1: return
 	game.match_management.import_state(value)
 	if game.match_management.menu.opened:
-		game.match_management.menu.incoming=""; game.match_management.menu.zone=0; game.match_management.menu.refresh(); game.match_management.menu.rows[game.match_management.menu.selected_slot].grab_focus()
+		var substitutions=game.match_management.menu
+		substitutions.incoming=""; substitutions.zone=0; substitutions.refresh()
+		if substitutions.double_mode: substitutions.focus_double_body()
+		elif not substitutions.rows.is_empty(): substitutions.rows[clampi(substitutions.selected_slot,0,substitutions.rows.size()-1)].grab_focus()
 
 func request_substitution(slot: int,incoming: String,exceptional: bool=false) -> void:
 	if not playing: return
@@ -262,6 +265,21 @@ func request_substitution(slot: int,incoming: String,exceptional: bool=false) ->
 func substitution_request(slot: int,incoming: String,exceptional: bool) -> void:
 	if not authority() or not playing or multiplayer.get_remote_sender_id()!=guest: return
 	var reason: String=game.match_management.request_change(1,slot,incoming,exceptional)
+	substitution_reply.rpc_id(guest,reason)
+
+func request_double_substitution(opposite_id: String,setter_id: String,returning: bool=false) -> void:
+	if not playing: return
+	if authority():
+		var reason: String=game.match_management.request_double_change(0,opposite_id,setter_id,returning)
+		if not reason.is_empty(): game.notice(reason)
+	else: double_substitution_request.rpc_id(1,opposite_id,setter_id,returning)
+
+@rpc("any_peer","call_remote","reliable",0)
+func double_substitution_request(opposite_id: String,setter_id: String,returning: bool) -> void:
+	# The guest can request its own pair only. The host revalidates both
+	# identities, the rotation and all four entry/return substitution slots.
+	if not authority() or not playing or multiplayer.get_remote_sender_id()!=guest: return
+	var reason: String=game.match_management.request_double_change(1,opposite_id,setter_id,returning)
 	substitution_reply.rpc_id(guest,reason)
 
 @rpc("authority","call_remote","reliable",0)

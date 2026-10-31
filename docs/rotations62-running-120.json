@@ -64,19 +64,19 @@
     "contact": 2.76674580574036,
     "contacts": 3,
     "direction": 3,
-    "early_run_frames": 99,
+    "early_run_frames": 104,
     "emergency": false,
     "ok": true,
     "quick": false,
     "rotation": 0,
-    "run_frames": 101,
+    "run_frames": 106,
     "set_seconds": 1.02165727223519,
     "takeoff": 3.80368304252625,
     "team": 0
   },
   {
     "back": true,
-    "contact": 2.56035375595093,
+    "contact": 2.56035137176514,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 100,
@@ -86,7 +86,7 @@
     "rotation": 0,
     "run_frames": 104,
     "set_seconds": 0.778015070755039,
-    "takeoff": 3.6053569316864,
+    "takeoff": 3.60512661933899,
     "team": 0
   },
   {
@@ -151,7 +151,7 @@
   },
   {
     "back": true,
-    "contact": 2.76701307296753,
+    "contact": 2.76706075668335,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 106,
@@ -159,14 +159,14 @@
     "ok": true,
     "quick": false,
     "rotation": 1,
-    "run_frames": 106,
+    "run_frames": 109,
     "set_seconds": 1.02165738255568,
-    "takeoff": 3.82088613510132,
+    "takeoff": 3.82394766807556,
     "team": 0
   },
   {
     "back": true,
-    "contact": 2.56042504310608,
+    "contact": 2.5604419708252,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 106,
@@ -174,9 +174,9 @@
     "ok": true,
     "quick": true,
     "rotation": 1,
-    "run_frames": 136,
+    "run_frames": 111,
     "set_seconds": 0.778015454415206,
-    "takeoff": 3.61279535293579,
+    "takeoff": 3.61460304260254,
     "team": 0
   },
   {
@@ -401,7 +401,7 @@
     "rotation": 4,
     "run_frames": 114,
     "set_seconds": 1.12165682696927,
-    "takeoff": 3.4275336265564,
+    "takeoff": 3.42753410339355,
     "team": 0
   },
   {
@@ -416,12 +416,12 @@
     "rotation": 4,
     "run_frames": 146,
     "set_seconds": 0.919731041883795,
-    "takeoff": 3.42234325408936,
+    "takeoff": 3.42234349250793,
     "team": 0
   },
   {
     "back": true,
-    "contact": 2.76701974868774,
+    "contact": 2.76692771911621,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 104,
@@ -431,12 +431,12 @@
     "rotation": 4,
     "run_frames": 104,
     "set_seconds": 1.02165727223519,
-    "takeoff": 3.82133769989014,
+    "takeoff": 3.81541728973389,
     "team": 0
   },
   {
     "back": true,
-    "contact": 2.56045866012573,
+    "contact": 2.56046390533447,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 104,
@@ -446,7 +446,7 @@
     "rotation": 4,
     "run_frames": 104,
     "set_seconds": 0.778015070755039,
-    "takeoff": 3.61649060249329,
+    "takeoff": 3.61705803871155,
     "team": 0
   },
   {
@@ -541,7 +541,7 @@
   },
   {
     "back": false,
-    "contact": 1.15237820148468,
+    "contact": 1.15237832069397,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 35,
@@ -551,12 +551,12 @@
     "rotation": 0,
     "run_frames": 50,
     "set_seconds": 1.33445804635584,
-    "takeoff": 1.70828902721405,
+    "takeoff": 1.70835018157959,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.1621698141098,
+    "contact": 1.1560218334198,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 35,
@@ -564,9 +564,9 @@
     "ok": true,
     "quick": true,
     "rotation": 0,
-    "run_frames": 78,
-    "set_seconds": 1.18164408503514,
-    "takeoff": 1.70819997787476,
+    "run_frames": 81,
+    "set_seconds": 1.18655253243795,
+    "takeoff": 1.7086592912674,
     "team": 1
   },
   {
@@ -581,12 +581,12 @@
     "rotation": 0,
     "run_frames": 104,
     "set_seconds": 1.33412844889163,
-    "takeoff": 1.47534012794495,
+    "takeoff": 1.47532343864441,
     "team": 1
   },
   {
     "back": false,
-    "contact": 0.923566043376923,
+    "contact": 0.919524431228638,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 90,
@@ -595,13 +595,13 @@
     "quick": true,
     "rotation": 0,
     "run_frames": 104,
-    "set_seconds": 1.21526236334613,
-    "takeoff": 1.47826862335205,
+    "set_seconds": 1.21245955239168,
+    "takeoff": 1.47554337978363,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.75413465499878,
+    "contact": 2.75412774085999,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 116,
@@ -611,12 +611,12 @@
     "rotation": 0,
     "run_frames": 116,
     "set_seconds": 1.23445804635584,
-    "takeoff": 3.80453705787659,
+    "takeoff": 3.80260372161865,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.57648253440857,
+    "contact": 2.57642865180969,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 112,
@@ -626,7 +626,7 @@
     "rotation": 0,
     "run_frames": 112,
     "set_seconds": 0.991114064516253,
-    "takeoff": 3.6099259853363,
+    "takeoff": 3.60773396492004,
     "team": 1
   },
   {
@@ -641,12 +641,12 @@
     "rotation": 1,
     "run_frames": 99,
     "set_seconds": 1.33395314362582,
-    "takeoff": 1.70788729190826,
+    "takeoff": 1.70789754390717,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.16042459011078,
+    "contact": 1.16042685508728,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 83,
@@ -654,14 +654,14 @@
     "ok": true,
     "quick": true,
     "rotation": 1,
-    "run_frames": 97,
+    "run_frames": 98,
     "set_seconds": 1.17231587571572,
-    "takeoff": 1.70736193656921,
+    "takeoff": 1.70748341083527,
     "team": 1
   },
   {
     "back": false,
-    "contact": 0.915606498718262,
+    "contact": 0.915149807929993,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 55,
@@ -669,14 +669,14 @@
     "ok": true,
     "quick": false,
     "rotation": 1,
-    "run_frames": 55,
-    "set_seconds": 1.33477069155868,
-    "takeoff": 1.4668892621994,
+    "run_frames": 70,
+    "set_seconds": 1.33445804635584,
+    "takeoff": 1.464026927948,
     "team": 1
   },
   {
     "back": false,
-    "contact": 0.923949778079987,
+    "contact": 0.921538710594177,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 38,
@@ -684,14 +684,14 @@
     "ok": true,
     "quick": true,
     "rotation": 1,
-    "run_frames": 111,
-    "set_seconds": 1.44079987497076,
-    "takeoff": 1.45842063426971,
+    "run_frames": 112,
+    "set_seconds": 1.44737266288536,
+    "takeoff": 1.45893633365631,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.75250482559204,
+    "contact": 2.75249886512756,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 115,
@@ -701,27 +701,27 @@
     "rotation": 1,
     "run_frames": 115,
     "set_seconds": 1.23395314362582,
-    "takeoff": 3.82584023475647,
+    "takeoff": 3.82282137870789,
     "team": 1
   },
   {
     "back": true,
-    "contact": 4.2698221206665,
+    "contact": 2.57659816741943,
     "contacts": 3,
     "direction": 3,
-    "early_run_frames": 105,
-    "emergency": true,
+    "early_run_frames": 112,
+    "emergency": false,
     "ok": true,
     "quick": true,
     "rotation": 1,
-    "run_frames": 107,
-    "set_seconds": 1.23085803023239,
-    "takeoff": 5.29188394546509,
+    "run_frames": 113,
+    "set_seconds": 0.991113761776388,
+    "takeoff": 3.61466526985168,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.15744245052338,
+    "contact": 1.15744256973267,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 87,
@@ -731,12 +731,12 @@
     "rotation": 2,
     "run_frames": 101,
     "set_seconds": 1.33736527390425,
-    "takeoff": 1.71026170253754,
+    "takeoff": 1.71027517318726,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.16042590141296,
+    "contact": 1.16042804718018,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 83,
@@ -744,14 +744,14 @@
     "ok": true,
     "quick": true,
     "rotation": 2,
-    "run_frames": 97,
+    "run_frames": 98,
     "set_seconds": 1.17231644137129,
-    "takeoff": 1.70737862586975,
+    "takeoff": 1.70749986171722,
     "team": 1
   },
   {
     "back": false,
-    "contact": 0.921387135982513,
+    "contact": 0.92138683795929,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 40,
@@ -761,12 +761,12 @@
     "rotation": 2,
     "run_frames": 54,
     "set_seconds": 1.3387305433196,
-    "takeoff": 1.47876620292664,
+    "takeoff": 1.47874450683594,
     "team": 1
   },
   {
     "back": false,
-    "contact": 0.925380229949951,
+    "contact": 0.920444548130035,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 33,
@@ -775,13 +775,13 @@
     "quick": true,
     "rotation": 2,
     "run_frames": 48,
-    "set_seconds": 1.22480125284628,
-    "takeoff": 1.47123742103577,
+    "set_seconds": 1.22143300556589,
+    "takeoff": 1.47578859329224,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.76369524002075,
+    "contact": 2.76366901397705,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 58,
@@ -791,12 +791,12 @@
     "rotation": 2,
     "run_frames": 58,
     "set_seconds": 1.23736527390425,
-    "takeoff": 3.80760335922241,
+    "takeoff": 3.80550456047058,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.57629728317261,
+    "contact": 2.57627964019775,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 72,
@@ -806,12 +806,12 @@
     "rotation": 2,
     "run_frames": 78,
     "set_seconds": 0.99111432743196,
-    "takeoff": 3.60235691070557,
+    "takeoff": 3.60164570808411,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.15744471549988,
+    "contact": 1.15744483470917,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 119,
@@ -821,12 +821,12 @@
     "rotation": 3,
     "run_frames": 133,
     "set_seconds": 1.33736527390425,
-    "takeoff": 1.71043884754181,
+    "takeoff": 1.7104514837265,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.16042876243591,
+    "contact": 1.16043090820313,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 113,
@@ -836,7 +836,7 @@
     "rotation": 3,
     "run_frames": 128,
     "set_seconds": 1.17231644137129,
-    "takeoff": 1.70754086971283,
+    "takeoff": 1.70766353607178,
     "team": 1
   },
   {
@@ -871,7 +871,7 @@
   },
   {
     "back": true,
-    "contact": 2.76368093490601,
+    "contact": 2.76366376876831,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 96,
@@ -881,12 +881,12 @@
     "rotation": 3,
     "run_frames": 96,
     "set_seconds": 1.23736527390425,
-    "takeoff": 3.80645489692688,
+    "takeoff": 3.80510210990906,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.57638597488403,
+    "contact": 2.57637739181519,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 100,
@@ -896,12 +896,12 @@
     "rotation": 3,
     "run_frames": 100,
     "set_seconds": 0.99111432743196,
-    "takeoff": 3.60596370697021,
+    "takeoff": 3.60561037063599,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.15744256973267,
+    "contact": 1.15744280815125,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 100,
@@ -911,12 +911,12 @@
     "rotation": 4,
     "run_frames": 114,
     "set_seconds": 1.33736527390425,
-    "takeoff": 1.71027326583862,
+    "takeoff": 1.71028602123261,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.16042530536652,
+    "contact": 1.16042757034302,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 94,
@@ -924,14 +924,14 @@
     "ok": true,
     "quick": true,
     "rotation": 4,
-    "run_frames": 108,
+    "run_frames": 109,
     "set_seconds": 1.17231644137129,
-    "takeoff": 1.70734596252441,
+    "takeoff": 1.70747005939484,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.37833476066589,
+    "contact": 2.37833499908447,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 116,
@@ -941,12 +941,12 @@
     "rotation": 4,
     "run_frames": 116,
     "set_seconds": 1.3387305433196,
-    "takeoff": 3.42916464805603,
+    "takeoff": 3.42916965484619,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.38354015350342,
+    "contact": 2.383540391922,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 108,
@@ -956,12 +956,12 @@
     "rotation": 4,
     "run_frames": 114,
     "set_seconds": 1.17401051970377,
-    "takeoff": 3.42753434181213,
+    "takeoff": 3.42754340171814,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.76392126083374,
+    "contact": 2.763911485672,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 122,
@@ -971,12 +971,12 @@
     "rotation": 4,
     "run_frames": 122,
     "set_seconds": 1.23736527390425,
-    "takeoff": 3.82555723190308,
+    "takeoff": 3.82479453086853,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.57670021057129,
+    "contact": 2.57669949531555,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 116,
@@ -986,12 +986,12 @@
     "rotation": 4,
     "run_frames": 116,
     "set_seconds": 0.99111432743196,
-    "takeoff": 3.61872553825378,
+    "takeoff": 3.61870169639587,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.15237832069397,
+    "contact": 1.15237843990326,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 94,
@@ -1001,12 +1001,12 @@
     "rotation": 5,
     "run_frames": 107,
     "set_seconds": 1.33445804635584,
-    "takeoff": 1.70835113525391,
+    "takeoff": 1.70836198329926,
     "team": 1
   },
   {
     "back": false,
-    "contact": 1.16042590141296,
+    "contact": 1.16042804718018,
     "contacts": 3,
     "direction": 0,
     "early_run_frames": 94,
@@ -1014,14 +1014,14 @@
     "ok": true,
     "quick": true,
     "rotation": 5,
-    "run_frames": 108,
+    "run_frames": 109,
     "set_seconds": 1.17231644137129,
-    "takeoff": 1.70737648010254,
+    "takeoff": 1.70750081539154,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.36580324172974,
+    "contact": 2.36580467224121,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 110,
@@ -1031,12 +1031,12 @@
     "rotation": 5,
     "run_frames": 225,
     "set_seconds": 1.33413051750108,
-    "takeoff": 3.45439171791077,
+    "takeoff": 3.4550187587738,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.3848397731781,
+    "contact": 2.38485765457153,
     "contacts": 3,
     "direction": 2,
     "early_run_frames": 109,
@@ -1046,12 +1046,12 @@
     "rotation": 5,
     "run_frames": 204,
     "set_seconds": 1.17401051970377,
-    "takeoff": 3.4966676235199,
+    "takeoff": 3.49762892723084,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.75459575653076,
+    "contact": 2.75459885597229,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 40,
@@ -1061,12 +1061,12 @@
     "rotation": 5,
     "run_frames": 108,
     "set_seconds": 1.23445804635584,
-    "takeoff": 3.93480753898621,
+    "takeoff": 3.9357168674469,
     "team": 1
   },
   {
     "back": true,
-    "contact": 2.58612036705017,
+    "contact": 2.55684733390808,
     "contacts": 3,
     "direction": 3,
     "early_run_frames": 42,
@@ -1074,9 +1074,9 @@
     "ok": true,
     "quick": true,
     "rotation": 5,
-    "run_frames": 89,
-    "set_seconds": 1.05644178420146,
-    "takeoff": 4.37575006484985,
+    "run_frames": 88,
+    "set_seconds": 1.06038709839366,
+    "takeoff": 4.38381290435791,
     "team": 1
   }
 ]

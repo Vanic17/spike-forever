@@ -1,0 +1,38 @@
+[
+    {
+        "test":  "Test-Substitution69",
+        "exit":  0
+    },
+    {
+        "test":  "Test-Arenas70",
+        "exit":  0
+    },
+    {
+        "test":  "Test-GreenAttack67",
+        "exit":  0
+    },
+    {
+        "test":  "Test-Replay65",
+        "exit":  0
+    },
+    {
+        "test":  "Test-CareerFormat68",
+        "exit":  0
+    },
+    {
+        "test":  "Test-Overall68",
+        "exit":  0
+    },
+    {
+        "test":  "Test-Arena61",
+        "exit":  0
+    },
+    {
+        "test":  "Test-MiddleClock64",
+        "exit":  0
+    },
+    {
+        "test":  "Test-RunningAttack62",
+        "exit":  0
+    }
+]

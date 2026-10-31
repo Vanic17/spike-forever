@@ -1,0 +1,30 @@
+﻿[
+    {
+        "exit":  0,
+        "test":  "Test-Substitution69"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-Rotations62"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-MiddleClock64"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-RunningAttack62"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-GreenAttack67"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-Replay65"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-CareerFormat68"
+    }
+]

@@ -1,7 +1,7 @@
 extends RefCounted
 ## Select a playable third touch from its height, performer and available space.
 static func can_spike(game,index: int,quality: float,origin: Vector3) -> bool:
-	var role: String=game.Tactics.role(index,game.rotations[game.possession],game.possession==game.server)
+	var role: String=game.Tactics.role_for(game,index)
 	if role=="L" or quality<.18: return false
 	if game.use_player_stats and game.PlayerStats.rating(game,index,"schiacciata")<45: return false
 	if role=="S" and quality<.60: return false

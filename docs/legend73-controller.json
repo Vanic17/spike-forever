@@ -1,0 +1,22 @@
+{
+	"(1280, 720)": {
+		"complete_flow": true,
+		"controller_edits": true,
+		"device": 0,
+		"overwrite": false
+	},
+	"(1920, 1080)": {
+		"complete_flow": true,
+		"controller_edits": true,
+		"device": 3,
+		"overwrite": true
+	},
+	"(2560, 1440)": {
+		"complete_flow": true,
+		"controller_edits": true,
+		"device": 7,
+		"overwrite": true
+	},
+	"checks": 170,
+	"failures": []
+}

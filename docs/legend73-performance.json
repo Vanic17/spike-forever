@@ -1,0 +1,52 @@
+{
+	"exhibition": {
+		"ai_reference": false,
+		"avatars": 12,
+		"clock_seconds": 12.0000000000002,
+		"contacts": 3,
+		"final_phase": "RECEIVE",
+		"manual": false,
+		"max_step_us": 5726,
+		"mean_step_us": 1148.44333333333,
+		"native": true,
+		"p95_step_us": 2685,
+		"points": 1,
+		"pose_trees": 12,
+		"samples": 600
+	},
+	"failures": [],
+	"legend": {
+		"ai_reference": false,
+		"avatars": 12,
+		"clock_seconds": 12.0000000000002,
+		"contacts": 5,
+		"final_phase": "POINT",
+		"manual": true,
+		"max_step_us": 5490,
+		"mean_step_us": 1491.39166666667,
+		"native": true,
+		"p95_step_us": 3211,
+		"points": 1,
+		"pose_trees": 12,
+		"samples": 600
+	},
+	"legend_ai_reference": {
+		"ai_reference": true,
+		"avatars": 12,
+		"clock_seconds": 12.0000000000002,
+		"contacts": 3,
+		"final_phase": "RECEIVE",
+		"manual": true,
+		"max_step_us": 6080,
+		"mean_step_us": 1148.065,
+		"native": true,
+		"p95_step_us": 2596,
+		"points": 1,
+		"pose_trees": 12,
+		"samples": 600
+	},
+	"matched_ai_ratio": 0.999670568566727,
+	"matched_ai_workload": true,
+	"mean_ratio": 1.29862016120372,
+	"scope": "Same stadium, player identities, initial rotation and twelve full native pose evaluations at 60 Hz. Legend manual leaves the user stationary, so its rally differs. The AI-reference sample keeps the adapter active with its test_ai_driver and uses exhibition demo inputs for matched-workload CPU comparison. CPU simulation/pose cost only; excludes stadium rendering, GPU and controller latency."
+}

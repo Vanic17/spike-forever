@@ -55,7 +55,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 		var side := 1.0 if team==0 else -1.0
 		for i in range(team*6,team*6+6):
 			if i==actor or not Tactics.front(i,game.rotations[team]): continue
-			var role := Tactics.role(i,game.rotations[team],team==game.server)
+			var role := Tactics.role_for(game,i)
 			if role=="S": continue
 			# The middle opens for his first-tempo steps while the serve is
 			# already travelling; otherwise he has to retreat after the pass.
@@ -74,7 +74,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 	if game.phase in ["RECEIVE","CPU_RECEIVE"] and game.incoming_kind!="serve":
 		for i in range(game.possession*6,game.possession*6+6):
 			if i==actor or i in blockers or Tactics.front(i,game.rotations[game.possession]): continue
-			if Tactics.ROLES[i%6]=="S": continue
+			if Tactics.role_for(game,i)=="S": continue
 			var read := 1.0-smoothstep(0.20,0.85,game.flight_left)
 			var offset: Vector3=game.flight_target-result[i]
 			result[i]+=Vector3(clampf(offset.x*0.12,-0.28,0.28),0,clampf(offset.z*0.08,-0.20,0.20))*read
@@ -97,7 +97,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				# Only actual wall members stay at the net. Preserve the shared
 				# coverage plan for every free front-row defender.
 				result[i].z=(1.0 if team==0 else -1.0)*3.05
-			if Tactics.role(i,game.rotations[team],team==game.server)=="L" and team==game.possession and game.phase in ["SET","CPU_SET"]:
+			if Tactics.role_for(game,i)=="L" and team==game.possession and game.phase in ["SET","CPU_SET"]:
 				if Tactics.first_ball(game):
 					var anchor:=Tactics.Layout.first_attack(i,game.rotations[team])
 					result[i]=Tactics.world(team,anchor.x,anchor.z)
@@ -263,7 +263,7 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				lane_sides[i]=signf(lateral)
 				var depth := maxf(anchor.z*side+0.85,minf(start.z*side,destination.z*side))
 				var waypoint := Vector3(anchor.x+signf(lateral)*maxf(1.6,minf(absf(destination.x-anchor.x),3.6)),0,side*depth)
-				if game.phase in ["RECEIVE","CPU_RECEIVE"] and Tactics.ROLES[i%6]=="S":
+				if game.phase in ["RECEIVE","CPU_RECEIVE"] and Tactics.role_for(game,i)=="S":
 					# Clear the passer sideways first. A diagonal shortcut from
 					# behind the passer could push the setter into his back and
 					# leave a perfect reception to an emergency middle setter.
@@ -498,7 +498,7 @@ func route_specialist_pins(game, result: Array[Vector3], actor: int, blockers: A
 		var start: Vector3=game.players[i].position
 		# P6's O opens on the net side of S before stepping off for his
 		# approach. A diagonal shortcut wedges him between S and C1.
-		if game.rotations[team]==1 and Tactics.ROLES[i%6]=="OPP" and start.x*side<2.40 and game.phase in ["RECEIVE","CPU_RECEIVE"]:
+		if game.rotations[team]==1 and Tactics.role_for(game,i)=="OPP" and start.x*side<2.40 and game.phase in ["RECEIVE","CPU_RECEIVE"]:
 			result[i]=Tactics.world(team,2.75,.45)
 			continue
 		if not pin_routes.has(i) and start.x*side*wing< -0.6:

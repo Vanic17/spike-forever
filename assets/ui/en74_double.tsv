@@ -1,0 +1,32 @@
+CAMBIO SINGOLO	SINGLE SUBSTITUTION
+DOPPIO CAMBIO	DOUBLE SUBSTITUTION
+RIENTRO TITOLARI	RESTORE STARTERS
+OPPOSTO / AL POSTO DEL PALLEGGIATORE	OPPOSITE / REPLACES THE SETTER
+PALLEGGIATORE / AL POSTO DELL'OPPOSTO	SETTER / REPLACES THE OPPOSITE
+RIENTRA IL PALLEGGIATORE TITOLARE	STARTING SETTER RETURNS
+RIENTRA L'OPPOSTO TITOLARE	STARTING OPPOSITE RETURNS
+Nessun opposto di riserva disponibile.	No reserve opposite available.
+Nessun palleggiatore di riserva disponibile.	No reserve setter available.
+CONFERMA RIENTRO TITOLARI	CONFIRM STARTERS' RETURN
+CONFERMA DOPPIO CAMBIO	CONFIRM DOUBLE SUBSTITUTION
+RIENTRO DELLA DIAGONALE TITOLARE	RESTORE THE STARTING SETTER AND OPPOSITE
+ESCE: %s     →     RIENTRA: %s	OUT: %s     →     RETURNS: %s
+1  SCEGLI L'OPPOSTO     →     2  SCEGLI IL PALLEGGIATORE     →     3  CONFERMA	1  CHOOSE THE OPPOSITE     →     2  CHOOSE THE SETTER     →     3  CONFIRM
+ESCE: %s (S)     →     ENTRA: %s (OPP)	OUT: %s (S)     →     IN: %s (OPP)
+ESCE: %s (OPP)     →     ENTRA: %s (S)	OUT: %s (OPP)     →     IN: %s (S)
+2 cambi all'ingresso + 2 al rientro · Ordine di rotazione invariato	2 substitutions in + 2 on return · Rotation order unchanged
+Due sostituzioni con una sola conferma · %d / 6 dopo il cambio	Two substitutions, one confirmation · %d / 6 after the change
+Entrambi i cambi alla prossima palla ferma · Conferma unica	Both substitutions at the next dead ball · One confirmation
+Il doppio cambio si effettua durante il set, dopo la prima battuta.	Use the double substitution during the set, after the first serve.
+Nessun doppio cambio da far rientrare.	There is no active double substitution to reverse.
+La coppia del doppio cambio non è più in campo.	The double-substitution pair is no longer on court.
+Il doppio cambio è già attivo.	The double substitution is already active.
+Il palleggiatore deve essere in prima linea e l'opposto in seconda linea.	The setter must be front row and the opposite back row.
+Il doppio cambio richiede entrambi i titolari in campo.	Both starters must be on court for the double substitution.
+Scegli un opposto e un palleggiatore di riserva.	Choose a reserve opposite and setter.
+Le due riserve devono essere diverse.	Choose two different reserves.
+Esiste già un cambio programmato per questa coppia.	A substitution is already queued for this pair.
+Servono due cambi per il rientro.	Two substitutions are required to restore the starters.
+Servono quattro cambi disponibili: due all'ingresso e due al rientro.	Four substitutions must remain: two to enter and two to return.
+Usa il rientro del doppio cambio per questa coppia.	Use Restore starters for this pair.
+Due cambi sono riservati al rientro del doppio cambio.	Two substitutions are reserved for the starters' return.

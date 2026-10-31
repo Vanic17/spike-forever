@@ -4,6 +4,8 @@ const Access=preload("res://src/setter_access.gd")
 const VARIANTS=["dive_short","dive_v26_01","dive_v26_02","dive_v26_04","dive_v26_06"]
 
 static func proposal(game, index: int, maximum: float = .8) -> Dictionary:
+	var adapter=game.get("legend_match")
+	if is_instance_valid(adapter) and adapter.owns(index) and not adapter.allow_requested_recovery: return {}
 	if game.dive_motions.has(index): return {}
 	if game.player_recovery_seconds(index)>.10: return {}
 	var player=game.players[index]

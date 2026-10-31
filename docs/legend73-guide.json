@@ -1,0 +1,7 @@
+{
+	"checks": 16,
+	"failures": [],
+	"radius": 0.39,
+	"reuses_geometry": true,
+	"visual_only": true
+}

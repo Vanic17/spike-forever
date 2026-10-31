@@ -31,7 +31,14 @@ func network_match() -> bool:
 	return online_session!=null and online_session.playing
 
 func cpu_team(team: int) -> bool:
+	if legend_controls_enabled(): return legend_match.cpu_team(team)
 	return team==1 and not network_match()
+
+func legend_controls_enabled() -> bool:
+	return legend_match!=null and legend_match.enabled()
+
+func legend_controls(index: int) -> bool:
+	return legend_controls_enabled() and legend_match.owns(index)
 
 func human_team(team: int) -> bool:
 	return not cpu_team(team)
@@ -538,6 +545,7 @@ func stick(_right: bool = false) -> Vector2:
 	return result.limit_length()
 
 func read_controls(dt: float = 1.0/120.0) -> void:
+	if legend_controls_enabled(): legend_match.apply_controls(dt); return
 	if network_match():
 		online_session.apply_controls(dt)
 		return
@@ -703,6 +711,13 @@ func set_phase(value: String) -> void:
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	var continuous: bool=legend_controls_enabled() and not legend_match.initial_placement
+	var previous_roots: Array[Vector3]=[]
+	var previous_movement: Array[Dictionary]=[]
+	if continuous:
+		for player in players:
+			previous_roots.append(player.position)
+			previous_movement.append({"velocity":player.velocity,"acceleration":player.acceleration,"yaw":player.rotation.y})
 	if replay!=null: replay.reset()
 	timing_results=[{},{}]
 	terminal_cpu_block=false
@@ -745,7 +760,7 @@ func reset_rally() -> void:
 		p.setting_yaw = PI if i<6 else 0.0
 		p.play("idle", 1, true)
 		for action in ["receive","set","fast_set","attack","dive"]: p.select_variant(action)
-		var base: Vector3 = Tactics.serve_position(i, int(i / 6), rotations[int(i / 6)], int(i / 6) == server)
+		var base: Vector3 = Tactics.serve_position_for(self,i, int(i / 6), rotations[int(i / 6)], int(i / 6) == server)
 		p.position = base
 		p.target = base
 		p.velocity = Vector3.ZERO
@@ -786,6 +801,16 @@ func reset_rally() -> void:
 	marker.visible = false
 	log_rally_event("formation", {"server":server,"rotation":rotations.duplicate()})
 	if match_management!=null and match_management.active: match_management.update_condition_vector()
+	if legend_controls_enabled():
+		if continuous:
+			for i in 12:
+				legend_match.return_positions[i]=players[i].position
+				players[i].position=previous_roots[i]
+				players[i].velocity=previous_movement[i].velocity
+				players[i].acceleration=previous_movement[i].acceleration
+				players[i].rotation.y=previous_movement[i].yaw
+			ball_pos=serving.current_hand(true)+Vector3(0,.11,0)
+		legend_match.on_reset()
 
 func log_rally_event(kind: String, details: Dictionary = {}) -> void:
 	var event := {"kind":kind,"time":clock_time,"rally":rally_serial,"team":possession}
@@ -801,7 +826,7 @@ func choose_receiver(team: int, point: Vector3, serve_receive: bool = false) -> 
 	var best := -1
 	var score := INF
 	for i in range(team * 6, team * 6 + 6):
-		var r := Tactics.role(i, rotations[team], team == server)
+		var r := Tactics.role_for(self,i)
 		var stance: Vector3 = players[i].stance_for_contact("receive", point)
 		var cost: float = players[i].position.distance_to(stance)
 		if player_recovery_seconds(i) > maxf(0.05, flight_left - 0.2): cost += 50.0
@@ -824,7 +849,7 @@ func choose_receiver(team: int, point: Vector3, serve_receive: bool = false) -> 
 	return best
 
 func choose_setter(team: int, point: Vector3, available: float) -> int:
-	var designated := team * 6 + 5
+	var designated := Tactics.designated_setter(self,team)
 	var libero := -1
 	for i in range(team*6,team*6+6):
 		if i!=receiver and Tactics.libero(i,rotations[team],team==server): libero=i
@@ -991,6 +1016,7 @@ func release_serve_toss() -> void:
 	toss_velocity = (point - toss_origin) / serve_toss_duration + Vector3(0, G * serve_toss_duration * 0.5, 0)
 
 func validate_contact(index: int, action: String) -> bool:
+	if legend_controls(index) and not legend_match.contact_allowed(index,action): return false
 	var player = players[index]
 	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else 0.35):
 		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"stance","expected":player.contact_world(action),"ball":ball_pos,"yaw":player.rotation.y,"stance":player.stance_for_contact(action,ball_pos)})
@@ -1008,7 +1034,7 @@ func validate_contact(index: int, action: String) -> bool:
 		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"palm","gap":distance,"hand":actual,"ball":ball_pos,"yaw":player.rotation.y,"lean":player.body_lean})
 		return false
 	max_contact_gap = maxf(max_contact_gap, distance)
-	contact_log.append({"action":action,"variant":player.variant_names.get(action,action), "player":index, "role":Tactics.role(index, rotations[int(index / 6)], int(index / 6) == server), "rotation":rotations[int(index / 6)], "gap":distance, "ball":ball_pos, "hands":actual, "time":clock_time})
+	contact_log.append({"action":action,"variant":player.variant_names.get(action,action), "player":index, "role":Tactics.role_for(self,index), "rotation":rotations[int(index / 6)], "gap":distance, "ball":ball_pos, "hands":actual, "time":clock_time})
 	if contact_log.size() > 2048: contact_log.pop_front()
 	if match_audio:
 		var sound := "serve" if action in ["float","power"] else ("receive" if action in ["receive","recovery","dive"] else ("set" if action in ["set","fast_set","dump"] else action))
@@ -1180,8 +1206,8 @@ func receive_ball() -> void:
 	seconds=preload("res://src/setter_access.gd").pass_seconds(self,target,seconds)
 	setter = choose_setter(possession,target,seconds)
 	players[setter].setting_yaw = -PI/2 if possession==0 else PI/2
-	out_of_system = RallyAI.system_quality(target,Tactics.ROLES[setter%6]=="S")
-	if Tactics.role(setter,rotations[possession],possession==server) not in ["S","L"]: out_of_system=-1
+	out_of_system = RallyAI.system_quality(target,Tactics.role_for(self,setter)=="S")
+	if Tactics.role_for(self,setter) not in ["S","L"]: out_of_system=-1
 	if q < 0.32: out_of_system = -1
 	setter_action = "receive" if out_of_system < 0 else "set"
 	target.y = contact_height(setter_action)
@@ -1210,6 +1236,7 @@ func receive_ball() -> void:
 	players[setter].target=players[setter].stance_for_contact(actual_action,actual_target)
 
 func queue_recovery(anticipate: bool = false) -> bool:
+	if legend_controls(receiver) and not legend_match.allow_requested_recovery: return false
 	var action := "dive" if anticipate else "recovery"
 	var recovery := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height(action),flight_gravity)
 	if recovery.is_empty() or recovery.seconds <= 0.005 or recovery.seconds > (0.45 if anticipate else 0.18): return false
@@ -1369,11 +1396,11 @@ func set_ball(contact_override: String = "") -> void:
 	hitter_action = "receive" if out_of_system < 0 and (q < 0.22 or absf(ball_pos.z)>8.0 or absf(ball_pos.x)>5.7) else "attack"
 	if out_of_system<0:
 		hitter_action="attack" if preload("res://src/recovery_delivery.gd").can_spike(self,hitter,q,set_origin) else "receive"
-		if hitter_action=="receive": log_rally_event("third_touch_free_ball_choice",{"hitter":hitter,"quality":q,"origin":set_origin,"role":Tactics.role(hitter,rotations[possession],possession==server)})
+		if hitter_action=="receive": log_rally_event("third_touch_free_ball_choice",{"hitter":hitter,"quality":q,"origin":set_origin,"role":Tactics.role_for(self,hitter)})
 		target=preload("res://src/recovery_delivery.gd").contact(self,hitter,target,set_origin)
 	var late_middle: bool=destination==1 and middle_decoy.late_recipient==hitter
 	if late_middle: hitter_action="receive"
-	if cpu_team(possession) and hitter_action=="attack" and destination!=1 and absf(target.z)<3.0 and q>.55 and rng.randf()<.09:
+	if cpu_team(possession) and not legend_controls(hitter) and hitter_action=="attack" and destination!=1 and absf(target.z)<3.0 and q>.55 and rng.randf()<.09:
 		attack_tip=true
 		players[hitter].select_variant("attack",preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial))
 	if hitter_action == "receive": target.z = s*4.6
@@ -1447,7 +1474,7 @@ func set_ball(contact_override: String = "") -> void:
 	if possession == 1 or network_match(): block_count = manual_wall.members(self).size() if human_wall() else 2
 	if hitter_action == "receive": block_count = 0
 	blocking_team = 1 - possession
-	play_log.append({"attack_id":attack_serial, "setter":setter, "hitter":hitter, "role":Tactics.ROLES[hitter % 6], "direction":destination, "target":target, "quick":fast_set, "flight_s":flight, "time":clock_time})
+	play_log.append({"attack_id":attack_serial, "setter":setter, "hitter":hitter, "role":Tactics.role_for(self,hitter), "direction":destination, "target":target, "quick":fast_set, "flight_s":flight, "time":clock_time})
 	log_rally_event("free_ball_preparation" if hitter_action=="receive" else ("quick_set" if fast_set else ("emergency_set" if out_of_system<0 else "high_set")),{"hitter":hitter,"setter":setter,"direction":destination,"seconds":flight,"system":out_of_system})
 	if possession == 1: selected = manual_wall.line(self)[1] if human_wall() else (blocking_players(0)[1] if block_count>=2 else nearest(0,Vector3(0,0,5)))
 	notice((players[hitter].role_label()+" · ") + (["ZONA 4", "ZONA 3", "ZONA 2", "PIPE · ZONA 6"][destination]) + (" / VELOCE" if fast_set else " / ALTA"), 0.8)
@@ -1614,6 +1641,7 @@ func prepare_overpass_attack() -> bool:
 	armed=true
 	input_quality=1.0
 	charge=1.0
+	if legend_controls(hitter): armed=false
 	flight_target = contact.point
 	flight_left = contact.seconds
 	attack_serial += 1
@@ -1630,6 +1658,7 @@ func prepare_overpass_attack() -> bool:
 	return true
 
 func register_touch(index: int) -> void:
+	if legend_controls_enabled(): legend_match.on_touch(index)
 	touches[possession] += 1
 	if replay!=null and touches[possession]>=2: replay.clear_shot()
 	last_touch = possession
@@ -1657,6 +1686,7 @@ func miss_contact() -> void:
 	var missing_input := human_team(possession) and not armed
 	var poor_timing := human_team(possession) and armed and input_quality < 0.16
 	var actor: int=receiver if phase in ["RECEIVE","CPU_RECEIVE"] else (setter if phase in ["SET","CPU_SET"] else hitter)
+	if legend_controls_enabled(): legend_match.on_missed(actor)
 	if network_match(): log_rally_event("online_miss",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"hands":players[actor].current_hand(false),"ball":ball_pos,"target":flight_target})
 	log_rally_event("missed_contact",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"ball":ball_pos,"target":flight_target,"action":setter_action if phase in ["SET","CPU_SET"] else "","variant":players[actor].variant_names.duplicate()})
 	finish_contact_attempt(actor)
@@ -1668,6 +1698,7 @@ func miss_contact() -> void:
 
 func award(team: int, reason: String) -> void:
 	if phase == "POINT": return
+	if legend_controls_enabled(): legend_match.on_point(team,reason)
 	if tutorial!=null and tutorial.active:
 		tutorial.on_point(team,reason)
 		return
@@ -1726,9 +1757,6 @@ func _process(_dt: float) -> void:
 		get_tree().quit()
 
 func step(dt: float) -> void:
-	if legend_match!=null and legend_match.active:
-		if started and not paused:legend_match.step(dt)
-		return
 	if substitution_scene!=null and substitution_scene.active: return
 	if replay!=null and replay.active: return
 	# Substep to the exact contact event; never validate an overshot ball.
@@ -1748,6 +1776,7 @@ func step(dt: float) -> void:
 		for p in players: p.tick(dt, false)
 		return
 	if not started or paused: return
+	if legend_controls_enabled(): legend_match.before_step(dt)
 	match_management.tick(dt)
 	if tutorial!=null and tutorial.active and tutorial.before_step(dt): return
 	clock_time += dt
@@ -1788,7 +1817,7 @@ func step(dt: float) -> void:
 					if serve_pending: serve_ball(server, serve_power)
 		else:
 			ball_pos = serving.current_hand(true) + Vector3(0, 0.11, 0)
-		if cpu_team(server) and phase_time > 0.65 and not toss_active and not serve_adjusting:
+		if cpu_team(server) and phase_time > 0.65 and not toss_active and not serve_adjusting and (not legend_controls_enabled() or legend_match.cpu_serve_ready()):
 			serve_type = 0 if serving.roster_identity.get("serve_preference","jump")=="float" else 1
 			serve_power = PlayerStats.ai_power(self,server_index(server),"battuta") if use_player_stats else rng.randf_range(0.55,1.08)
 			begin_serve_toss()
@@ -1984,9 +2013,11 @@ func resume_deflection(kind: String) -> void:
 	cpu_defense.prepare(self)
 
 func human_wall() -> bool:
+	if legend_controls_enabled(): return false
 	return not demo and (phase in ["CPU_RECEIVE","CPU_SET","CPU_ATTACK"] or (network_match() and phase in ["RECEIVE","SET","ATTACK"]))
 
 func manual_wall_active() -> bool:
+	if legend_controls_enabled(): return false
 	# The opponent's hit immediately switches to our RECEIVE phase. Preserve
 	# the actual chosen hands through that flight and the contact at the net.
 	return human_wall() or (not demo and blocking_team==0 and not manual_wall.jumped.is_empty() and clock_time-block_time<0.85)
@@ -2004,7 +2035,7 @@ func blocking_players(team: int) -> Array[int]:
 	if block_rosters.has(team):
 		var result: Array[int] = []
 		for i in mini(count, block_rosters[team].size()): result.append(block_rosters[team][i])
-		return result
+		return legend_block_members(team,result)
 	var candidates: Array[int] = []
 	for i in range(team * 6, team * 6 + 6):
 		if Tactics.front(i, rotations[team]): candidates.append(i)
@@ -2023,7 +2054,18 @@ func blocking_players(team: int) -> Array[int]:
 	order.sort_custom(func(a, b): return players[a].position.x < players[b].position.x)
 	block_orders[team] = order
 	candidates.resize(mini(count, candidates.size()))
-	return candidates
+	return legend_block_members(team,candidates)
+
+func legend_block_members(team: int, members: Array[int]) -> Array[int]:
+	if not legend_controls_enabled() or team!=0: return members
+	var index: int=legend_match.controlled_index
+	if not legend_controls(index) or legend_match.source_motion.is_empty() or legend_match.source_motion.action!="block": return members
+	if not Tactics.front(index,rotations[team]) or absf(players[index].position.z)>1.65: return members
+	if not index in members: members.append(index)
+	if not block_orders.has(team): block_orders[team]=members.duplicate()
+	elif not index in block_orders[team]: block_orders[team].append(index)
+	block_orders[team].sort_custom(func(a,b): return players[a].position.x<players[b].position.x)
+	return members
 
 func blocking_target(index: int, team: int) -> Vector3:
 	if team==wall_team() and manual_wall_active(): return manual_wall.target(self,index)
@@ -2050,7 +2092,7 @@ func waiting_wall_target(index: int) -> Vector3:
 	return manual_wall.waiting(self,index)
 
 func request_block_jump(index: int, contact_in: float) -> bool:
-	if phase not in (["ATTACK","CPU_ATTACK","SET","CPU_SET","RECEIVE","CPU_RECEIVE"] if network_match() else ["ATTACK", "CPU_ATTACK","CPU_SET","CPU_RECEIVE"]): return false
+	if phase not in (["ATTACK","CPU_ATTACK","SET","CPU_SET","RECEIVE","CPU_RECEIVE"] if network_match() or legend_controls_enabled() else ["ATTACK", "CPU_ATTACK","CPU_SET","CPU_RECEIVE"]): return false
 	var jump_id := wall_attack_id() if index<6 else attack_serial
 	if block_jumps.get(index, -1) == jump_id: return false
 	var p = players[index]
@@ -2111,9 +2153,12 @@ func move_players(dt: float) -> void:
 		elif i==middle_decoy.index and not middle_decoy.real_attack: nominal.append(middle_decoy.target)
 		elif i in blockers: nominal.append(blocking_target(i,team))
 		elif phase=="SERVE":
-			var ready: Vector3=Tactics.serve_position(i,team,rotations[team],team==server) if i!=server_index(server) else players[i].position
+			var ready: Vector3=Tactics.serve_position_for(self,i,team,rotations[team],team==server) if i!=server_index(server) else players[i].position
+			if legend_controls_enabled() and legend_match.return_positions.has(i): ready=legend_match.return_positions[i]
 			nominal.append(ready)
-		elif phase=="POINT" and point_formation.size()==12: nominal.append(point_formation[i])
+		elif phase=="POINT" and point_formation.size()==12:
+			var ready: Vector3=Tactics.serve_position_for(self,i,team,rotations[team],team==server)
+			nominal.append(ready if legend_controls_enabled() and phase_time>1.8 else point_formation[i])
 		elif phase=="LOOSE": nominal.append(players[i].target)
 		elif human_wall() and team==wall_team() and Tactics.front(i,rotations[team]): nominal.append(waiting_wall_target(i))
 		else: nominal.append(tactical_target(i,Tactics.slot(i,rotations[team]),team,1.0 if team==0 else -1.0))
@@ -2157,6 +2202,10 @@ func move_players(dt: float) -> void:
 		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
 		p.reach_weight = maxf(0, p.reach_weight - dt * 5)
 		p.motion_lock = maxf(0, p.motion_lock - dt)
+		if legend_controls(i):
+			legend_match.move_controlled(dt,blocking_target(i,int(i/6)) if i in blockers else team_targets[i],blockers)
+			traffic_footprints[i]=compute_footprint_points(i)
+			continue
 		if serve_motion_active and i == serve_motion_player:
 			advance_serve_body(dt)
 			traffic_footprints[i] = compute_footprint_points(i)
@@ -2171,9 +2220,11 @@ func move_players(dt: float) -> void:
 			continue
 		var side := 1.0 if i < 6 else -1.0
 		var zone := Tactics.slot(i, rotations[int(i / 6)])
-		var base: Vector3 = Tactics.serve_position(i, int(i / 6), rotations[int(i / 6)],int(i / 6)==server)
+		var base: Vector3 = Tactics.serve_position_for(self,i, int(i / 6), rotations[int(i / 6)],int(i / 6)==server)
 		var team := int(i / 6)
 		var serving_player := phase == "SERVE" and i == server_index(server)
+		var minimum_depth:=9.3 if serving_player else .25
+		if legend_controls_enabled() and serving_player: minimum_depth=minf(minimum_depth,maxf(.25,absf(p.position.z)))
 		var depth_limit := 13.5 if serving_player else (11.5 if i==action_actor else 10.5)
 		var width_limit := 4.35 if serving_player else (7.0 if i==action_actor else 5.7)
 		# Return from a save outside the sidelines by running, never by clamping
@@ -2181,12 +2232,13 @@ func move_players(dt: float) -> void:
 		depth_limit = maxf(depth_limit, absf(p.position.z))
 		width_limit = maxf(width_limit, absf(p.position.x))
 		var preparing_hitter := phase in ["SET", "CPU_SET"] and i == planned_hitter
-		var preparing_front: bool=team==possession and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"] and i!=action_actor and Tactics.role(i,rotations[team],team==server) not in ["S","L"] and (Tactics.front(i,rotations[team]) or phase in ["SET","CPU_SET"])
-		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i%6==5 and i!=action_actor
-		var preparing_middle: bool=preparing_front and Tactics.role(i,rotations[team],team==server).begins_with("MB")
+		var preparing_front: bool=team==possession and phase in ["RECEIVE","CPU_RECEIVE","SET","CPU_SET"] and i!=action_actor and Tactics.role_for(self,i) not in ["S","L"] and (Tactics.front(i,rotations[team]) or phase in ["SET","CPU_SET"])
+		var preparing_setter: bool=phase in ["RECEIVE","CPU_RECEIVE"] and team==possession and i==Tactics.designated_setter(self,team) and i!=action_actor
+		var preparing_middle: bool=preparing_front and Tactics.role_for(self,i).begins_with("MB")
 		var preparing_decoy: bool=i==middle_decoy.index and not middle_decoy.real_attack
 		var landing_active: bool=i!=action_actor and not i in blockers and attack_run.landing(i,clock_time)
 		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or landing_active or court_shape.setter_yields.has(i)
+		if legend_controls_enabled() and phase=="POINT" and phase_time>1.8: urgent=true
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
 		if preparing_setter: assignment="approach"
@@ -2199,7 +2251,7 @@ func move_players(dt: float) -> void:
 		if not p.steering_ready:
 			p.intent.reset(p.position)
 			p.steering_ready = true
-		p.intent.observe(phase + ":" + str(shot_serial), Tactics.role(i, rotations[team], team == server), assignment, clock_time)
+		p.intent.observe(phase + ":" + str(shot_serial), Tactics.role_for(self,i), assignment, clock_time)
 		if assignment=="approach" and preparing_middle and not p.intent.reacted:
 			p.intent.delay=minf(p.intent.delay,0.008+p.intent.individuality*0.025)
 			p.intent.react_at=clock_time+maxf(0,p.intent.delay-p.intent.cue_age)
@@ -2212,7 +2264,8 @@ func move_players(dt: float) -> void:
 			# Travel laterally behind the net lane, then step in beside the lead.
 			if team==wall_team() and human_wall(): p.target=manual_wall_route(i,p.target)
 			elif absf(p.position.x - p.target.x) > 0.8: p.target.z = side * 1.20
-			if not network_match() and phase == "ATTACK" and hitter_action=="attack" and team == 1 and flight_left < 0.34 and can_jump_block(i, team):
+			var ai_wall: bool=(phase in ["ATTACK","CPU_ATTACK"] and not legend_controls(i)) if legend_controls_enabled() else (phase=="ATTACK" and team==1)
+			if not network_match() and ai_wall and hitter_action=="attack" and flight_left < 0.34 and can_jump_block(i, team):
 				if request_block_jump(i, flight_left + 0.08):
 					if block_time < 0: block_time = clock_time
 					block_quality = 0.85
@@ -2289,6 +2342,10 @@ func move_players(dt: float) -> void:
 				p.target=serve_adjust_target
 				desired=(serve_adjust_target-p.position)*5.0
 				desired=desired.limit_length(2.5)
+			elif legend_controls_enabled() and legend_match.return_positions.has(i) and p.position.distance_to(legend_match.return_positions[i])>.05:
+				p.target=legend_match.return_positions[i]
+				desired=(p.target-p.position)*4.0
+				desired=desired.limit_length(Reference.run_speed())
 			else:
 				desired=Vector3(serve_move.x,0,serve_move.y)*2.8
 				p.target=p.position+desired*.15
@@ -2312,11 +2369,11 @@ func move_players(dt: float) -> void:
 		for projection in 3:
 			var bounded: Vector3 = p.position + safe_step
 			bounded.x = clampf(bounded.x, -width_limit, width_limit)
-			bounded.z = clampf(bounded.z, 9.3 if serving_player else 0.25, depth_limit) if i < 6 else clampf(bounded.z, -depth_limit, -9.3 if serving_player else -0.25)
+			bounded.z = clampf(bounded.z, minimum_depth, depth_limit) if i < 6 else clampf(bounded.z, -depth_limit, -minimum_depth)
 			safe_step = collision_safe_step(i, bounded - p.position)
 		var endpoint: Vector3 = p.position + safe_step
 		endpoint.x = clampf(endpoint.x, -width_limit, width_limit)
-		endpoint.z = clampf(endpoint.z, 9.3 if serving_player else 0.25, depth_limit) if i < 6 else clampf(endpoint.z, -depth_limit, -9.3 if serving_player else -0.25)
+		endpoint.z = clampf(endpoint.z, minimum_depth, depth_limit) if i < 6 else clampf(endpoint.z, -depth_limit, -minimum_depth)
 		safe_step = endpoint - p.position
 		for other in range(team * 6, team * 6 + 6):
 			if other != i and endpoint.distance_to(players[other].position) < Tactics.BODY_SPACE - 0.0001 and endpoint.distance_squared_to(players[other].position)<=p.position.distance_squared_to(players[other].position)+0.000001:
@@ -2333,7 +2390,7 @@ func move_players(dt: float) -> void:
 		travel[i] += p.velocity.length() * dt
 		if i != action_actor and not i in blockers and phase not in ["SERVE", "POINT", "LOOSE"]: support_travel[i] += p.velocity.length() * dt
 		p.position.x = clampf(p.position.x, -width_limit, width_limit)
-		p.position.z = clampf(p.position.z, 9.3 if serving_player else 0.25, depth_limit) if i < 6 else clampf(p.position.z, -depth_limit, -9.3 if serving_player else -0.25)
+		p.position.z = clampf(p.position.z, minimum_depth, depth_limit) if i < 6 else clampf(p.position.z, -depth_limit, -minimum_depth)
 		var facing := PI if team == 0 else 0.0
 		if i==action_actor and action=="attack" and not attack_run.flying(i) and flight_left>0.42 and p.velocity.length()>1.25:
 			facing=lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),smoothstep(0.45,1.35,movement.length()))
@@ -2361,7 +2418,7 @@ func move_players(dt: float) -> void:
 		p.ready_stance = (team == possession and phase in ["RECEIVE", "CPU_RECEIVE"] and (zone >= 3 or i == receiver)) or (team != possession and phase in ["ATTACK", "CPU_ATTACK"])
 		p.block_ready_stance = team != possession and zone < 3 and absf(p.target.z)<2.0 and phase in ["RECEIVE", "CPU_RECEIVE", "SET", "CPU_SET", "ATTACK", "CPU_ATTACK"]
 		if phase == "SERVE":
-			var receiving_role:=Tactics.role(i,rotations[team],team==server)
+			var receiving_role:=Tactics.role_for(self,i)
 			p.ready_stance=team!=server and (receiving_role.begins_with("OH") or receiving_role=="L")
 		# Wings waiting to approach and setters waiting to penetrate stand tall;
 		# only passers and floor defenders stay in the low defensive posture.
@@ -2388,8 +2445,9 @@ func move_players(dt: float) -> void:
 		if p.velocity.length() > 1.8 and p.step_cooldown <= 0 and not self_test:
 			if match_audio: match_audio.movement(p.position, p.velocity.length(), p.velocity.x)
 			p.step_cooldown = 0.32 + float(i % 3) * 0.025
-	middle_decoy.prepare_real(self,dt)
-	middle_decoy.try_jump(self)
+	if not legend_controls(middle_decoy.index):
+		middle_decoy.prepare_real(self,dt)
+		middle_decoy.try_jump(self)
 	for team in 2:
 		for a in range(team * 6, team * 6 + 6):
 			for b in range(a + 1, team * 6 + 6):

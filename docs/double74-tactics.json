@@ -1,0 +1,78 @@
+{
+	"actual_set_contacts": 49,
+	"all_rotations_second_touch": 12,
+	"career_played_result_save_reload": true,
+	"cases": [
+		{
+			"front": [
+				3,
+				4,
+				5
+			],
+			"pipe": 0,
+			"rotation": 3,
+			"setter": 2,
+			"side": 0
+		},
+		{
+			"front": [
+				0,
+				4,
+				5
+			],
+			"pipe": 3,
+			"rotation": 4,
+			"setter": 2,
+			"side": 0
+		},
+		{
+			"front": [
+				0,
+				1,
+				5
+			],
+			"pipe": 3,
+			"rotation": 5,
+			"setter": 2,
+			"side": 0
+		},
+		{
+			"front": [
+				9,
+				10,
+				11
+			],
+			"pipe": 6,
+			"rotation": 3,
+			"setter": 8,
+			"side": 1
+		},
+		{
+			"front": [
+				6,
+				10,
+				11
+			],
+			"pipe": 9,
+			"rotation": 4,
+			"setter": 8,
+			"side": 1
+		},
+		{
+			"front": [
+				6,
+				7,
+				11
+			],
+			"pipe": 9,
+			"rotation": 5,
+			"setter": 8,
+			"side": 1
+		}
+	],
+	"checks": 537,
+	"failures": [],
+	"imports_restore_roles": true,
+	"native_source_clips": 137,
+	"same_regulatory_slots": true
+}

@@ -1,0 +1,52 @@
+{
+	"checks": 27,
+	"failures": [],
+	"manual": {
+		"animation_trees": 12,
+		"controlled": 0,
+		"legacy_step_calls": 0,
+		"maximum_step": 0.0318813323974609
+	},
+	"native_pose": {
+		"avatars_per_scene": 12,
+		"career": {
+			"mean_us": 6896.7,
+			"p95_us": 8562
+		},
+		"exhibition": {
+			"mean_us": 6938.575,
+			"p95_us": 8606
+		},
+		"mismatch": {
+
+		},
+		"samples": 120,
+		"scope": "CPU shared simulation plus twelve complete native poses at 60 Hz; no stadium renderer/GPU FPS"
+	},
+	"parity": {
+		"contacts": 5,
+		"initial_difference": {
+
+		},
+		"legacy_step_calls": 0,
+		"mismatch": {
+
+		},
+		"native_source_clips": 137,
+		"phases": [
+			"SERVE",
+			"CPU_RECEIVE",
+			"CPU_SET",
+			"CPU_ATTACK",
+			"RECEIVE",
+			"LOOSE",
+			"POINT",
+			"SET",
+			"ATTACK"
+		],
+		"points": 1,
+		"seconds": 14.9999999999998,
+		"ticks": 1800,
+		"wall_clock_ms": 4554.317
+	}
+}

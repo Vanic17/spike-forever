@@ -1,0 +1,479 @@
+{
+	"attack_variant": "attack_pin_right",
+	"block_hands": "(3.945363, 3.244252, 0.120038)",
+	"buffered_attacks": [
+		{
+			"alternate": false,
+			"charge": 0.455757575757576,
+			"hitter": 0,
+			"setter": 5,
+			"variant": "attack_pin_right"
+		},
+		{
+			"alternate": true,
+			"charge": 0.455757575757576,
+			"hitter": 0,
+			"setter": 5,
+			"variant": "attack_tip_3"
+		}
+	],
+	"checks": 322,
+	"continuity": {
+		"ai_service_started": true,
+		"contacts": 5,
+		"largest_step": {
+			"after": "(-1.455127, 0.0, 6.01426)",
+			"before": "(-1.486959, 0.0, 6.041352)",
+			"frame": 1116,
+			"phase": "SET",
+			"player": 4
+		},
+		"maximum_step": 0.0418001599609852,
+		"points": 0,
+		"reset_jump": 0.0,
+		"ticks": 1500
+	},
+	"failures": [],
+	"manual_dive_max_step": 0.0457640066742897,
+	"native_clips": 137,
+	"receive_timing": 0.935483870967742,
+	"replay_release_cache": true,
+	"role_cases": [
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 0,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 0,
+			"serving": true
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 1,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 1,
+			"serving": true
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 2,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 2,
+			"serving": true
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 3,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 3,
+			"serving": true
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 4,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 4,
+			"serving": true
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 5,
+			"serving": false
+		},
+		{
+			"index": 0,
+			"manual": true,
+			"role": "OH",
+			"rotation": 5,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 0,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 0,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 1,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 1,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "MB",
+			"rotation": 2,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 2,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "MB",
+			"rotation": 3,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "MB",
+			"rotation": 3,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "MB",
+			"rotation": 4,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "MB",
+			"rotation": 4,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 5,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "MB",
+			"rotation": 5,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 0,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 0,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 1,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 1,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 2,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 2,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 3,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 3,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 4,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 4,
+			"serving": true
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 5,
+			"serving": false
+		},
+		{
+			"index": 2,
+			"manual": true,
+			"role": "OPP",
+			"rotation": 5,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 0,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 0,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 1,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 1,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 2,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 2,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 3,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 3,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 4,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 4,
+			"serving": true
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 5,
+			"serving": false
+		},
+		{
+			"index": 5,
+			"manual": true,
+			"role": "S",
+			"rotation": 5,
+			"serving": true
+		},
+		{
+			"index": 4,
+			"manual": true,
+			"role": "L",
+			"rotation": 0,
+			"serving": false
+		},
+		{
+			"index": 4,
+			"manual": true,
+			"role": "L",
+			"rotation": 0,
+			"serving": true
+		},
+		{
+			"index": 4,
+			"manual": true,
+			"role": "L",
+			"rotation": 1,
+			"serving": false
+		},
+		{
+			"index": 4,
+			"manual": true,
+			"role": "L",
+			"rotation": 1,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "L",
+			"rotation": 2,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": false,
+			"role": "L",
+			"rotation": 2,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "L",
+			"rotation": 3,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "L",
+			"rotation": 3,
+			"serving": true
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "L",
+			"rotation": 4,
+			"serving": false
+		},
+		{
+			"index": 1,
+			"manual": true,
+			"role": "L",
+			"rotation": 4,
+			"serving": true
+		},
+		{
+			"index": 4,
+			"manual": true,
+			"role": "L",
+			"rotation": 5,
+			"serving": false
+		},
+		{
+			"index": 4,
+			"manual": false,
+			"role": "L",
+			"rotation": 5,
+			"serving": true
+		}
+	],
+	"sets": [
+		{
+			"action": "set",
+			"hitter": 2,
+			"quick": false,
+			"seconds": 1.245,
+			"variant": "set_left_front"
+		},
+		{
+			"action": "fast_set",
+			"hitter": 2,
+			"quick": true,
+			"seconds": 1.24020879075628,
+			"variant": "fast_set_v26_02"
+		}
+	]
+}

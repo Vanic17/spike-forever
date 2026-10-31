@@ -17,7 +17,7 @@
 		{
 			"club": "allianz-milano",
 			"floor_marks": 10,
-			"profile_switch_us": 62870,
+			"profile_switch_us": 61770,
 			"sponsors": [
 				"allianz",
 				"joma"
@@ -26,7 +26,7 @@
 		{
 			"club": "cisterna-volley",
 			"floor_marks": 12,
-			"profile_switch_us": 60665,
+			"profile_switch_us": 62200,
 			"sponsors": [
 				"conit",
 				"gesa",
@@ -37,7 +37,7 @@
 		{
 			"club": "cucine-lube-civitanova",
 			"floor_marks": 10,
-			"profile_switch_us": 58063,
+			"profile_switch_us": 59355,
 			"sponsors": [
 				"lube",
 				"joma"
@@ -46,7 +46,7 @@
 		{
 			"club": "acqua-santanna-cuneo",
 			"floor_marks": 10,
-			"profile_switch_us": 41850,
+			"profile_switch_us": 41785,
 			"sponsors": [
 				"santanna",
 				"banca-alpi",
@@ -56,7 +56,7 @@
 		{
 			"club": "gas-sales-bluenergy-piacenza",
 			"floor_marks": 10,
-			"profile_switch_us": 54073,
+			"profile_switch_us": 55510,
 			"sponsors": [
 				"gas-sales",
 				"bluenergy",
@@ -66,7 +66,7 @@
 		{
 			"club": "itas-trentino",
 			"floor_marks": 10,
-			"profile_switch_us": 40714,
+			"profile_switch_us": 42225,
 			"sponsors": [
 				"itas",
 				"trentino",
@@ -76,7 +76,7 @@
 		{
 			"club": "pallavolo-padova",
 			"floor_marks": 10,
-			"profile_switch_us": 65732,
+			"profile_switch_us": 67228,
 			"sponsors": [
 				"kioene",
 				"joma"
@@ -85,7 +85,7 @@
 		{
 			"club": "rana-verona",
 			"floor_marks": 10,
-			"profile_switch_us": 53929,
+			"profile_switch_us": 55459,
 			"sponsors": [
 				"rana",
 				"airone",
@@ -95,7 +95,7 @@
 		{
 			"club": "sir-susa-scai-perugia",
 			"floor_marks": 12,
-			"profile_switch_us": 79429,
+			"profile_switch_us": 82555,
 			"sponsors": [
 				"sir",
 				"susa",
@@ -107,7 +107,7 @@
 		{
 			"club": "tinet-prata-di-pordenone",
 			"floor_marks": 10,
-			"profile_switch_us": 66740,
+			"profile_switch_us": 67686,
 			"sponsors": [
 				"tinet",
 				"joma"
@@ -116,7 +116,7 @@
 		{
 			"club": "valsa-group-modena",
 			"floor_marks": 12,
-			"profile_switch_us": 52967,
+			"profile_switch_us": 55462,
 			"sponsors": [
 				"valsa",
 				"bper",
@@ -127,7 +127,7 @@
 		{
 			"club": "vero-volley-monza",
 			"floor_marks": 10,
-			"profile_switch_us": 51855,
+			"profile_switch_us": 53257,
 			"sponsors": [
 				"homcom",
 				"bcc-carate",

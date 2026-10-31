@@ -62,7 +62,7 @@ static func current_contact_reachable(game, action: String, known_route: float =
 	game.set_meta("second_touch_arrival57",{"key":key,"reachable":reachable})
 	return reachable
 static func pass_seconds(game, point: Vector3, ordinary: float, contact_index: int = -1, action: String = "set") -> float:
-	var index: int=game.possession*6+5 if contact_index<0 else contact_index
+	var index: int=game.Tactics.designated_setter(game,game.possession) if contact_index<0 else contact_index
 	if index==game.receiver: return ordinary
 	var player=game.players[index]
 	var yaw: float=-PI/2 if game.possession==0 else PI/2
@@ -86,7 +86,7 @@ static func pass_seconds(game, point: Vector3, ordinary: float, contact_index: i
 static func clear_target(game, point: Vector3, contact_index: int = -1, action: String = "set") -> Vector3:
 	var bodies: Dictionary=game.court_shape.recovering_bodies(game)
 	var team: int=game.possession
-	var actor: int=team*6+5 if contact_index<0 else contact_index
+	var actor: int=game.Tactics.designated_setter(game,team) if contact_index<0 else contact_index
 	bodies.erase(actor)
 	# Standing passers and landing blockers also occupy the contact footprint.
 	# Reserve a free endpoint before launch, rather than asking the setter to

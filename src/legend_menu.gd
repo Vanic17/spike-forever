@@ -44,6 +44,7 @@ var name_input: LineEdit
 var attribute_values: Dictionary={}
 var attribute_buttons: Dictionary={}
 var saved_focus:=""
+var popup_owner: OptionButton
 
 class PortraitRadar:
 	extends Control
@@ -94,6 +95,7 @@ class PortraitRadar:
 
 func _ready():
 	auto_translate_mode=Node.AUTO_TRANSLATE_MODE_DISABLED
+	ensure_controller_bindings()
 	Locale.ensure(); set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); theme=UI.theme()
 	var bg:=ColorRect.new(); bg.color=Color("091422"); bg.mouse_filter=Control.MOUSE_FILTER_IGNORE; add_child(bg); bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	frame=Control.new(); frame.size=Vector2(1920,1080); add_child(frame)
@@ -112,6 +114,118 @@ func label(parent: Node,value: String,px: int=21,color: Color=UI.INK) -> Label: 
 func text_block(parent: Node,value: String,px: int=21,color: Color=UI.INK) -> Label: return UI.wrap(parent,_t(value),px,color)
 func heading(parent: Node,value: String,px: int=38) -> Label: return UI.heading(parent,_t(value),px)
 func button(parent: Node,value: String,callback: Callable,key: String="") -> Button: return UI.button(parent,_t(value),callback,key)
+func controller_controls(scope: Node) -> Array:
+	var all: Array=UI.controls(scope)
+	if scope==self and is_instance_valid(name_input) and name_input.is_visible_in_tree() and name_input.focus_mode==Control.FOCUS_ALL: all.append(name_input)
+	if scope is ConfirmationDialog:
+		var cancel=scope.get_cancel_button()
+		if cancel.is_visible_in_tree() and not cancel.disabled and cancel not in all: all.append(cancel)
+	return all
+func ensure_controller_bindings():
+	# These are UI actions only. Gameplay mappings remain unchanged.
+	for binding in [["ui_accept",JOY_BUTTON_A],["ui_cancel",JOY_BUTTON_B],["ui_left",JOY_BUTTON_DPAD_LEFT],["ui_right",JOY_BUTTON_DPAD_RIGHT],["ui_up",JOY_BUTTON_DPAD_UP],["ui_down",JOY_BUTTON_DPAD_DOWN]]:
+		if not InputMap.has_action(binding[0]): InputMap.add_action(binding[0])
+		var button_event:=InputEventJoypadButton.new(); button_event.device=-1; button_event.button_index=binding[1]
+		if not InputMap.action_has_event(binding[0],button_event): InputMap.action_add_event(binding[0],button_event)
+	for binding in [["ui_left",JOY_AXIS_LEFT_X,-1.0],["ui_right",JOY_AXIS_LEFT_X,1.0],["ui_up",JOY_AXIS_LEFT_Y,-1.0],["ui_down",JOY_AXIS_LEFT_Y,1.0]]:
+		var axis_event:=InputEventJoypadMotion.new(); axis_event.device=-1; axis_event.axis=binding[1]; axis_event.axis_value=binding[2]
+		if not InputMap.action_has_event(binding[0],axis_event): InputMap.action_add_event(binding[0],axis_event)
+func controller_scope() -> Node:
+	if is_instance_valid(popup_owner) and popup_owner.get_popup().visible: return popup_owner.get_popup()
+	if is_instance_valid(keyboard) and keyboard.visible: return keyboard
+	if is_instance_valid(modal) and modal.visible: return modal
+	return self
+func repair_controller_focus(scope: Node) -> Control:
+	var owner=scope.get_viewport().gui_get_focus_owner()
+	var all:=controller_controls(scope)
+	if owner in all or (owner is LineEdit and scope.is_ancestor_of(owner) and owner.focus_mode!=Control.FOCUS_NONE):
+		return owner
+	if all.is_empty(): return null
+	var selected=all[0]; var distance:=INF
+	if owner!=null and scope.is_ancestor_of(owner):
+		var center: Vector2=owner.get_global_rect().get_center()
+		for control in all:
+			var score: float=control.get_global_rect().get_center().distance_squared_to(center)
+			if score<distance: selected=control; distance=score
+	selected.grab_focus(); return selected
+func controller_navigate(scope: Node,direction: Vector2):
+	if scope is PopupMenu:
+		var item: int=scope.get_focused_item()
+		if absf(direction.y)>.5 and scope.item_count>0: scope.set_focused_item(clampi(item+int(signf(direction.y)),0,scope.item_count-1))
+		return
+	var owner=repair_controller_focus(scope)
+	if owner==null: return
+	var best=null; var cost:=INF; var center: Vector2=owner.get_global_rect().get_center()
+	for candidate in controller_controls(scope):
+		if candidate==owner: continue
+		var delta: Vector2=candidate.get_global_rect().get_center()-center; var forward: float=delta.dot(direction)
+		if forward<3: continue
+		var score: float=forward+absf(delta.cross(direction))*3.5
+		if score<cost: best=candidate; cost=score
+	if best!=null: best.grab_focus()
+func controller_event(scope: Node,event: InputEvent) -> bool:
+	# Dialogs and selectors have their own native viewport. Their explicit
+	# focus graph below uses Godot's single GUI event path, avoiding doubles.
+	if scope is Window: return false
+	if event is InputEventJoypadMotion:
+		if event.axis not in [JOY_AXIS_LEFT_X,JOY_AXIS_LEFT_Y]: return false
+		if absf(event.axis_value)<.25 and ((event.axis==JOY_AXIS_LEFT_X and absf(held_direction.x)>.1) or (event.axis==JOY_AXIS_LEFT_Y and absf(held_direction.y)>.1)):
+			held_direction=Vector2.ZERO; axis_wait=0.0
+		if absf(event.axis_value)>.55 and axis_wait<=0:
+			var direction:=Vector2(signf(event.axis_value),0) if event.axis==JOY_AXIS_LEFT_X else Vector2(0,signf(event.axis_value))
+			controller_navigate(scope,direction); axis_wait=.32; held_direction=direction
+		consume_controller_event(scope); return true
+	if not event is InputEventJoypadButton: return false
+	var directions: Dictionary={JOY_BUTTON_DPAD_LEFT:Vector2.LEFT,JOY_BUTTON_DPAD_RIGHT:Vector2.RIGHT,JOY_BUTTON_DPAD_UP:Vector2.UP,JOY_BUTTON_DPAD_DOWN:Vector2.DOWN}
+	if event.button_index in directions:
+		if event.pressed: controller_navigate(scope,directions[event.button_index]); axis_wait=.32
+		consume_controller_event(scope); return true
+	if event.button_index==JOY_BUTTON_A:
+		# Activate once on press. Depending on the native popup window and
+		# focus, Godot's default release event could reach another viewport.
+		consume_controller_event(scope)
+		if not event.pressed: return true
+		var owner=repair_controller_focus(scope)
+		if owner is LineEdit and scope==self: open_keyboard(owner)
+		elif owner is OptionButton: owner.show_popup(); owner.get_popup().set_focused_item(owner.selected)
+		elif owner is BaseButton and not owner.disabled: owner.pressed.emit()
+		return true
+	if event.button_index==JOY_BUTTON_B:
+		consume_controller_event(scope)
+		if not event.pressed: return true
+		back()
+		return true
+	return false
+func consume_controller_event(scope: Node):
+	get_viewport().set_input_as_handled()
+	if is_instance_valid(scope): scope.get_viewport().set_input_as_handled()
+func bind_controller_popups(node: Node):
+	if node is OptionButton:
+		var option: OptionButton=node; var popup:=option.get_popup()
+		popup.about_to_popup.connect(func(): popup_owner=option; popup.set_focused_item(option.selected))
+		popup.popup_hide.connect(func():
+			if popup_owner==option: popup_owner=null
+			if is_instance_valid(option) and option.is_visible_in_tree(): option.grab_focus())
+	for child in node.get_children():
+		if not child is Window: bind_controller_popups(child)
+func wire_dialog_focus(dialog: Window):
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if not is_instance_valid(dialog) or not dialog.visible: return
+	var all:=controller_controls(dialog)
+	for index in all.size():
+		var control: Control=all[index]
+		control.focus_next=control.get_path_to(all[(index+1)%all.size()])
+		control.focus_previous=control.get_path_to(all[posmod(index-1,all.size())])
+		for pair in [[Vector2.LEFT,"focus_neighbor_left"],[Vector2.RIGHT,"focus_neighbor_right"],[Vector2.UP,"focus_neighbor_top"],[Vector2.DOWN,"focus_neighbor_bottom"]]:
+			var best: Control=control; var cost:=INF; var center: Vector2=control.get_global_rect().get_center()
+			for candidate in all:
+				if candidate==control: continue
+				var delta: Vector2=candidate.get_global_rect().get_center()-center; var forward: float=delta.dot(pair[0])
+				if forward<3: continue
+				var score: float=forward+absf(delta.cross(pair[0]))*3.5
+				if score<cost: best=candidate; cost=score
+			control.set(pair[1],control.get_path_to(best))
 func clear(node: Node):
 	for child in node.get_children(): node.remove_child(child); child.queue_free()
 func club_name(id: String) -> String:
@@ -124,6 +238,7 @@ func club_name(id: String) -> String:
 func role_label(role: String) -> String: return _t(ROLE_LABELS[maxi(0,Legend.ROLES.find(role))])
 
 func open():
+	ensure_controller_bindings()
 	for key in ["play_hub","clubs","online_menu","career_menu","overlay"]:
 		var node=host.get(key) if is_instance_valid(host) else null
 		if is_instance_valid(node): node.hide()
@@ -160,6 +275,7 @@ func show_tab(index: int):
 	tab_index=posmod(index,TABS.size()); show_page(VIEWS[tab_index])
 
 func show_page(next: String):
+	axis_wait=0.0; held_direction=Vector2.ZERO
 	var aliases={"create":"new","hub":"home","profilo":"profile","crescita":"growth","calendario":"calendar","classifica":"standings","mercato":"offers","offerte":"offers","storico":"history","salvataggi":"saves"}
 	view=str(aliases.get(next,next)); clear(header); clear(nav); clear(page); attribute_values.clear(); attribute_buttons.clear(); preview=null; budget_label=null; overall_label=null; show()
 	if manager.active() and view not in ["entry","new","clubs"]: UI.badge(header,str(manager.state.club_id),80)
@@ -188,6 +304,7 @@ func show_page(next: String):
 		"result": result_screen()
 		"help": help_screen()
 	hint.text=_t("LS / FRECCE: scegli   A / INVIO: conferma   B / ESC: indietro   L1 / R1: schede   RS: scorri   MENU / F5: salva")
+	bind_controller_popups(page)
 	call_deferred("focus_restore")
 
 func image(parent: Node,height: float=260):
@@ -232,8 +349,10 @@ func creation_screen():
 	label(form,"RUOLO",19,UI.MUTED); var roles:=UI.picker(form,ROLE_LABELS.map(func(value): return _t(value)),maxi(0,Legend.ROLES.find(str(draft.role)))); roles.set_meta("focus_key","role")
 	roles.item_selected.connect(func(index): draft.role=Legend.ROLES[index]; refresh_draft())
 	label(form,"MANO DOMINANTE",19,UI.MUTED); var hands:=UI.picker(form,[_t("Destra"),_t("Sinistra")],1 if draft.dominant_hand=="left" else 0)
+	hands.set_meta("focus_key","hand")
 	hands.item_selected.connect(func(index): draft.dominant_hand="left" if index==1 else "right"; refresh_draft())
 	label(form,"SERVIZIO PREFERITO",19,UI.MUTED); var serves:=UI.picker(form,[_t("Salto potente"),_t("Float")],1 if draft.get("serve_preference","jump")=="float" else 0)
+	serves.set_meta("focus_key","serve")
 	serves.item_selected.connect(func(index): draft.serve_preference="float" if index==1 else "jump")
 	appearance_controls(form,draft,false)
 	var skills:=UI.card(row,650); heading(skills,"IL TUO PUNTO DI PARTENZA",33); text_block(skills,"Distribuisci 300 punti. Ogni attributo parte da 30 e può arrivare a 65. Il ruolo determina il tuo OVR.",22,UI.MUTED)
@@ -289,14 +408,17 @@ func clubs_screen():
 		label(card,_t("FORZA SQUADRA · OVR %d")%roundi(float(club.strength)),23,UI.GOLD)
 		var kit=load("res://src/kit_preview.gd").new(); kit.custom_minimum_size.y=160; card.add_child(kit); kit.image.custom_minimum_size.y=110; kit.show_kit(club_id,"home")
 		text_block(card,"Contratto da titolare nel ruolo scelto. La tua crescita può portarti verso nuove squadre.",21,UI.MUTED)
-		var choose:=button(card,"CLUB SCELTO" if club_id==chosen_club else "SCEGLI QUESTO CLUB",func(): chosen_club=club_id; show_page("clubs"),"club-"+club_id)
+		var choose:=button(card,"CLUB SCELTO" if club_id==chosen_club else "SCEGLI QUESTO CLUB",func(): chosen_club=club_id; show_page("clubs"); call_deferred("focus_restore","club-"+club_id),"club-"+club_id)
 		if club_id==chosen_club: choose.add_theme_stylebox_override("normal",UI.surface(Color("3b5369"),12,14))
 	var settings:=HBoxContainer.new(); page.add_child(settings)
 	label(settings,"FORMATO",19,UI.MUTED); var format:=UI.picker(settings,[_t("Meglio dei 5"),_t("Meglio dei 3")],1 if chosen_best_of==3 else 0); format.item_selected.connect(func(index): chosen_best_of=3 if index==1 else 5)
+	format.set_meta("focus_key","match-format")
 	label(settings,"DIFFICOLTÀ",19,UI.MUTED); var difficulty:=UI.picker(settings,[_t("Accessibile"),_t("Normale"),_t("Impegnativa")],int(draft_options.difficulty)); difficulty.item_selected.connect(func(index): draft_options.difficulty=index)
+	difficulty.set_meta("focus_key","difficulty")
 	label(settings,"SLOT",19,UI.MUTED); var slots: Array=[]
 	for number in range(1,13): slots.append(_t("Slot %d")%number)
 	var slot:=UI.picker(settings,slots,chosen_slot-1); slot.item_selected.connect(func(index): chosen_slot=index+1)
+	slot.set_meta("focus_key","save-slot")
 	button(settings,"FIRMA E INIZIA",create_career,"create")
 
 func create_career():
@@ -484,11 +606,11 @@ func result_screen():
 func help_screen():
 	heading(page,"IL CAMPO È NELLE TUE MANI",43); var row:=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
 	var controls:=UI.card(row,1030); heading(controls,"CONTROLLI MANUALI",36)
-	for entry in [["LS / WASD","Movimento libero del tuo giocatore"],["RS / FRECCE","Mira di battuta, alzata e attacco"],["R1 / RB / R","Salto manuale"],["CROCE / A / SPAZIO","Tieni per caricare, rilascia al contatto"],["QUADRATO / X / Q","Battuta float e pallonetto"],["L1 / LB / F","Chiama la palla"],["L2 / LT / SHIFT","Scatto"],["R2 / RT / C","Tuffo difensivo"],["CERCHIO / B / E","Attacco di seconda e recupero"]]:
+	for entry in [["LS / WASD","Movimento libero del tuo giocatore"],["RS / FRECCE","Mira di battuta, alzata e attacco"],["R1 / RB / R","Salto in attacco e a muro"],["CROCE / A / SPAZIO","Bagher e alzata: premi. Servizio e attacco: tieni e rilascia."],["QUADRATO / X / Q","Float, alzata veloce e pallonetto"],["L1 / LB / F","Chiama la palla"],["L2 / LT / SHIFT","Scatto"],["R2 / RT / C","Tuffo difensivo"],["CERCHIO / B / E","Attacco di seconda"]]:
 		var line:=HBoxContainer.new(); controls.add_child(line); label(line,entry[0],22,UI.GOLD).custom_minimum_size.x=320; text_block(line,entry[1],23,UI.MUTED)
 	var role:=UI.card(row,770); heading(role,"GIOCA IL TUO RUOLO",37)
 	text_block(role,"Banda: ricevi e attacca dalle antenne.\nOpposto: cerca il punto sul lato destro.\nCentrale: salta a muro e prepara il primo tempo.\nPalleggiatore: costruisci l'attacco dei compagni.\nLibero: difendi e ricevi nella seconda linea.",26,UI.MUTED)
-	text_block(role,"Il salto richiede il tuo comando. Le azioni riescono soltanto quando il pallone è alla tua portata.",26,UI.GOLD)
+	text_block(role,"Fisica, timing e animazioni sono quelli dell'esibizione. Il cerchietto indica la posizione assegnata dall'IA: sei tu a raggiungerla. R1/RB comanda il salto in attacco e a muro; la battuta usa la sequenza completa dell'esibizione.",25,UI.GOLD)
 	button(role,"TORNA ALLA CARRIERA",func(): show_page("home" if manager.active() else "entry"),"help-back")
 
 func launch_match():
@@ -542,18 +664,18 @@ func on_match_abandoned():
 func toast(text: String):
 	saved_focus=focus_key(); modal=AcceptDialog.new(); modal.title=_t("DIVENTA UN MITO"); modal.dialog_text=_t(text); modal.theme=theme; add_child(modal)
 	var dialog:=modal; dialog.confirmed.connect(func(): dialog.queue_free(); modal=null; call_deferred("focus_restore",saved_focus)); dialog.canceled.connect(func(): dialog.queue_free(); modal=null; call_deferred("focus_restore",saved_focus))
-	dialog.popup_centered(Vector2i(780,270)); dialog.get_ok_button().grab_focus()
+	dialog.popup_centered(Vector2i(780,270)); dialog.get_ok_button().grab_focus(); wire_dialog_focus(dialog)
 
 func confirm(text: String,action: Callable):
 	saved_focus=focus_key(); var dialog:=ConfirmationDialog.new(); modal=dialog; dialog.title=_t("CONFERMA"); dialog.dialog_text=_t(text); dialog.ok_button_text=_t("CONFERMA"); dialog.cancel_button_text=_t("ANNULLA"); dialog.theme=theme; add_child(dialog)
 	dialog.confirmed.connect(func(): dialog.queue_free(); modal=null; action.call()); dialog.canceled.connect(func(): dialog.queue_free(); modal=null; call_deferred("focus_restore",saved_focus))
-	dialog.popup_centered(Vector2i(780,280)); dialog.get_cancel_button().grab_focus()
+	dialog.popup_centered(Vector2i(780,280)); dialog.get_cancel_button().grab_focus(); wire_dialog_focus(dialog)
 
 func open_keyboard(target: LineEdit):
 	keyboard_target=target
 	if keyboard==null:
 		keyboard=ConfirmationDialog.new(); keyboard.title=_t("IL TUO NOME"); keyboard.ok_button_text=_t("CONFERMA"); keyboard.cancel_button_text=_t("ANNULLA"); keyboard.theme=theme; add_child(keyboard)
-		var box:=VBoxContainer.new(); keyboard.add_child(box); keyboard_text=LineEdit.new(); keyboard_text.max_length=48; box.add_child(keyboard_text)
+		var box:=VBoxContainer.new(); keyboard.add_child(box); keyboard_text=LineEdit.new(); keyboard_text.max_length=48; keyboard_text.focus_mode=Control.FOCUS_CLICK; box.add_child(keyboard_text)
 		var grid:=GridContainer.new(); grid.columns=10; box.add_child(grid)
 		for character in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789àèéìòù'-":
 			var key: String=character; var b:=button(grid,key,func():
@@ -565,7 +687,7 @@ func open_keyboard(target: LineEdit):
 			if is_instance_valid(keyboard_target): keyboard_target.text=keyboard_text.text; keyboard_target.text_changed.emit(keyboard_text.text)
 			call_deferred("focus_restore","name"))
 		keyboard.canceled.connect(func(): call_deferred("focus_restore","name"))
-	keyboard_text.text=target.text; keyboard.popup_centered(Vector2i(850,640)); keyboard_text.get_parent().get_child(1).get_child(0).grab_focus()
+	keyboard_text.text=target.text; keyboard.popup_centered(Vector2i(850,640)); keyboard_text.get_parent().get_child(1).get_child(0).grab_focus(); wire_dialog_focus(keyboard)
 
 func _process(dt: float):
 	if game!=null and game.get("started")==false:
@@ -573,14 +695,13 @@ func _process(dt: float):
 		elif not active_fixture.is_empty(): on_match_abandoned()
 	if not visible: return
 	axis_wait=maxf(0,axis_wait-dt)
-	if is_instance_valid(modal) and modal.visible: return
-	if is_instance_valid(keyboard) and keyboard.visible: return
-	var owner:=get_viewport().gui_get_focus_owner()
-	if owner is OptionButton and owner.get_popup().visible: return
+	var scope:=controller_scope()
+	if scope is Window: return
+	var owner=repair_controller_focus(scope) if not scope is PopupMenu else null
 	var devices:=Input.get_connected_joypads()
 	if not devices.is_empty():
 		var device: int=devices[0]; var scroll_axis:=Input.get_joy_axis(device,JOY_AXIS_RIGHT_Y)
-		if absf(scroll_axis)>.25:
+		if scope==self and absf(scroll_axis)>.25:
 			var scroll=owner
 			while scroll!=null and not scroll is ScrollContainer: scroll=scroll.get_parent()
 			if scroll==null:
@@ -588,21 +709,21 @@ func _process(dt: float):
 				if not all.is_empty(): scroll=all[0]
 			if scroll is ScrollContainer: scroll.scroll_vertical+=roundi(scroll_axis*700*dt)
 		var axis:=Vector2(Input.get_joy_axis(device,JOY_AXIS_LEFT_X),Input.get_joy_axis(device,JOY_AXIS_LEFT_Y))
-		if axis.length()>.65 and axis_wait<=0:
+		if axis.length()>.55 and axis_wait<=0:
 			var direction:=Vector2(signf(axis.x),0) if absf(axis.x)>absf(axis.y) else Vector2(0,signf(axis.y))
-			UI.navigate(self,direction); axis_wait=.15 if direction==held_direction else .32; held_direction=direction
+			controller_navigate(scope,direction); axis_wait=.15 if direction==held_direction else .32; held_direction=direction
 		elif axis.length()<.25: held_direction=Vector2.ZERO
 
 func _input(event: InputEvent):
 	if not visible: return
+	if controller_event(controller_scope(),event): return
 	if is_instance_valid(keyboard) and keyboard.visible:
 		if event.is_action_pressed("ui_cancel"): keyboard.hide(); call_deferred("focus_restore","name"); get_viewport().set_input_as_handled()
 		return
 	if is_instance_valid(modal) and modal.visible: return
 	var owner:=get_viewport().gui_get_focus_owner()
 	if owner is OptionButton and owner.get_popup().visible: return
-	# Stick navigation is throttled in _process; analog jitter must not step twice.
-	if event is InputEventJoypadMotion: return
+	# Axis events and held-stick repeat share the same throttle.
 	if event.is_action_pressed("ui_cancel"): back(); get_viewport().set_input_as_handled(); return
 	if event is InputEventKey and event.pressed and event.physical_keycode==KEY_F5:
 		if manager.active(): toast("Carriera salvata." if manager.save() else manager.error)
@@ -616,4 +737,4 @@ func _input(event: InputEvent):
 		show_tab(tab_index+(-1 if event.physical_keycode==KEY_PAGEUP else 1)); get_viewport().set_input_as_handled(); return
 	if owner is LineEdit and event is InputEventKey: return
 	for pair in [["ui_left",Vector2.LEFT],["ui_right",Vector2.RIGHT],["ui_up",Vector2.UP],["ui_down",Vector2.DOWN]]:
-		if event.is_action_pressed(pair[0]): UI.navigate(self,pair[1]); axis_wait=.32; get_viewport().set_input_as_handled(); return
+		if event.is_action_pressed(pair[0]): controller_navigate(self,pair[1]); axis_wait=.32; get_viewport().set_input_as_handled(); return

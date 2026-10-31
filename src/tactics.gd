@@ -33,6 +33,40 @@ static func libero(index: int, rotation: int, serving: bool) -> bool:
 static func role(index: int, rotation: int, serving: bool) -> String:
 	return "L" if libero(index, rotation, serving) else ROLES[index % 6]
 
+static func designated_setter(game, team: int) -> int:
+	var manager=game.get("match_management")
+	return team*6+(manager.setter_slot(team) if manager!=null and manager.active else 5)
+
+static func double_active(game, team: int) -> bool:
+	return designated_setter(game,team)%6!=5
+
+static func role_for(game, index: int) -> String:
+	var team:=int(index/6)
+	var result:=role(index,game.rotations[team],team==game.server)
+	if result=="L" or not double_active(game,team): return result
+	if index%6==2: return "S"
+	if index%6==5: return "OPP"
+	return result
+
+static func serve_position_for(game, index: int, team: int, rotation: int, serving: bool=true) -> Vector3:
+	# A substitute inherits the same legal service-order slot. Never swap
+	# receiving diagram columns to make the new specialist look like S.
+	return serve_position(index,team,rotation,serving)
+
+static func home_for(game, index: int, team: int, rotation: int, serving: bool, attack: bool) -> Vector3:
+	if double_active(game,team) and attack:
+		if role_for(game,index)=="S": return setter_position(team)
+		return world(team,Layout.defense(index,rotation).x,Layout.defense(index,rotation).z)
+	return home(index,team,rotation,serving,attack)
+
+static func attack_wing_for(game, index: int, rotation: int, service_reception: bool=false) -> float:
+	if not double_active(game,int(index/6)): return attack_wing(index,rotation,service_reception)
+	if not front(index,rotation): return 0.0
+	var r:=role_for(game,index)
+	if not r.begins_with("OH") and r!="OPP": return 0.0
+	var wing:=-1.0 if r.begins_with("OH") else 1.0
+	return -wing if posmod(rotation,6)==0 else wing
+
 static func serve_position(index: int, team: int, rotation: int, serving: bool = true) -> Vector3:
 	# Receiving overlap constrains only the ready layout. The serving side
 	# starts in its defensive roles, except the actual Z1 server outside court.
@@ -61,12 +95,21 @@ static func wing_for(game, index: int) -> float:
 	var team:=int(index/6)
 	var lanes=game.get("rally_lanes")
 	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
-	return attack_wing(index,game.rotations[team],mirrored)
+	return attack_wing_for(game,index,game.rotations[team],mirrored)
 
 static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
 	var lanes=game.get("rally_lanes")
 	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
-	var primary:=attacker(team,game.rotations[team],direction,exclude,mirrored)
+	var primary:=-1
+	if not double_active(game,team): primary=attacker(team,game.rotations[team],direction,exclude,mirrored)
+	else:
+		for i in range(team*6,team*6+6):
+			if i==exclude: continue
+			var r:=role_for(game,i)
+			if direction==0 and attack_wing_for(game,i,game.rotations[team],mirrored)==-1.0: primary=i; break
+			if direction==1 and r.begins_with("MB") and front(i,game.rotations[team]): primary=i; break
+			if direction==2 and (attack_wing_for(game,i,game.rotations[team],mirrored)==1.0 or (r=="OPP" and not front(i,game.rotations[team]))): primary=i; break
+			if direction==3 and r.begins_with("OH") and not front(i,game.rotations[team]): primary=i; break
 	if primary>=0 or direction not in [0,2,3]: return primary
 	# An emergency second touch can be played by the normal opposite. Keep
 	# the requested pin/D lane with another eligible hitter, never silently
@@ -74,7 +117,8 @@ static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
 	var best:=-1; var cost:=INF
 	for i in range(team*6,team*6+6):
 		if i==exclude or libero(i,game.rotations[team],team==game.server): continue
-		if not (ROLES[i%6].begins_with("OH") or ROLES[i%6]=="OPP"): continue
+		var r:=role_for(game,i)
+		if not (r.begins_with("OH") or r=="OPP"): continue
 		if direction==0 and not front(i,game.rotations[team]): continue
 		if direction==3 and front(i,game.rotations[team]): continue
 		var point:=world(team,-3.4 if direction==0 else (3.4 if direction==2 else 0),3.4)
