@@ -1,0 +1,121 @@
+{
+	"checks": 207,
+	"controller_labels": {
+		"A": "Xbox A / PlayStation Cross",
+		"LB": "LB / L1",
+		"LT": "LT / L2",
+		"RB": "RB / R1",
+		"RT": "RT / R2",
+		"X": "Xbox X / PlayStation Square"
+	},
+	"devices": [
+		{
+			"device": 0,
+			"primary_charge": true,
+			"tip_charge": true
+		},
+		{
+			"device": 3,
+			"primary_charge": true,
+			"tip_charge": true
+		},
+		{
+			"device": 7,
+			"primary_charge": true,
+			"tip_charge": true
+		}
+	],
+	"dispatch": "Input.parse_input_event -> viewport -> main -> legend adapter",
+	"dives": [
+		{
+			"contacts": 0,
+			"far": false,
+			"maximum_step": 0.0505597144365311,
+			"starts": true
+		},
+		{
+			"contacts": 0,
+			"far": true,
+			"maximum_step": 0.0,
+			"starts": false
+		}
+	],
+	"early_dive_buffer": true,
+	"failures": [],
+	"first_touch_gestures": [
+		{
+			"action": "receive",
+			"button": 0,
+			"contact": {
+				"action": "receive",
+				"ball": "(-2.035877, 1.26195, 4.146618)",
+				"gap": 0.0,
+				"hands": "(-2.035877, 1.26195, 4.146618)",
+				"player": 0,
+				"role": "OH1",
+				"rotation": 0,
+				"time": 0.0,
+				"variant": "receive_squat"
+			},
+			"receptions": 1,
+			"sets": 0
+		},
+		{
+			"action": "set",
+			"button": 2,
+			"contact": {
+				"action": "receive",
+				"ball": "(-2.274745, 2.528788, 4.736393)",
+				"gap": 0.0,
+				"hands": "(-2.274745, 2.528788, 4.736393)",
+				"player": 0,
+				"role": "OH1",
+				"rotation": 0,
+				"time": 0.0,
+				"variant": "set"
+			},
+			"receptions": 1,
+			"sets": 0
+		}
+	],
+	"movement": {
+		"normal_speed": 4.28365802764893,
+		"sprint_speed": 4.68390226364136
+	},
+	"native_clips": 137,
+	"native_events": 143,
+	"pause_replay_releases": true,
+	"timing_same_actor": [
+		{
+			"actual_legend_offset": -0.06,
+			"legacy": 0.42,
+			"legend": 0.881818181818182,
+			"remaining": -0.06
+		},
+		{
+			"actual_legend_offset": 0.08,
+			"legacy": 0.935483870967742,
+			"legend": 1.0,
+			"remaining": 0.08
+		},
+		{
+			"actual_legend_offset": 0.25,
+			"legacy": 0.661290322580645,
+			"legend": 0.884210526315789,
+			"remaining": 0.25
+		},
+		{
+			"actual_legend_offset": 0.5,
+			"legacy": 0.258064516129032,
+			"legend": 0.621052631578947,
+			"remaining": 0.5
+		},
+		{
+			"actual_legend_offset": 0.8,
+			"legacy": 0.0,
+			"legend": 0.305263157894737,
+			"remaining": 0.8
+		}
+	],
+	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-inputs-frozen-data/Godot/app_userdata/Spike Forever/"
+}

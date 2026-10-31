@@ -35,6 +35,11 @@ var finished_sent:=false
 var initial_placement:=false
 var return_positions: Dictionary={}
 var buffered_stroke:=""
+var contact_assist=preload("res://src/legend_contact.gd").new()
+
+func _init() -> void: contact_assist.adapter=self
+func receive_contact_action() -> String: return contact_assist.gesture
+func contact_cue() -> Dictionary: return contact_assist.cue()
 
 func _input(event: InputEvent) -> void:
 	# Replay/dialog input can consume releases before _unhandled_input. Keep
@@ -99,6 +104,7 @@ func start(options: Dictionary) -> bool:
 	return true
 
 func stop() -> void:
+	contact_assist.reset()
 	if game!=null and active:
 		for key in saved_game: game.set(key,saved_game[key])
 		game.match_management.suspend()
@@ -161,18 +167,35 @@ func handle_input(event: InputEvent) -> bool:
 	return false
 
 func press(kind: String) -> void:
-	if not enabled() or game.paused or game.match_finished or not manual_available: return
-	if kind=="jump": jump(); return
+	if not enabled() or game.paused or game.match_finished: return
+	if not manual_available:
+		contact_assist.unavailable(kind,"IN PANCHINA \u00b7 ATTENDI IL TUO INGRESSO"); return
+	if kind=="jump":
+		if not jump():
+			var why: String="IL SERVIZIO USA IL SALTO DELLA BATTUTA" if game.phase=="SERVE" else ("IL LIBERO NON PUÒ MURARE" if role=="L" and game.possession!=0 else ("MURO SOLO IN PRIMA LINEA" if game.possession!=0 and not Tactics.front(controlled_index,game.rotations[0]) else "SALTO NON DISPONIBILE · ATTENDI IL RECUPERO"))
+			contact_assist.unavailable("jump",why)
+		return
 	if kind=="dive": dive(); return
-	if kind=="request": requested_set=true; call_for_set(); return
+	if kind=="request":
+		if role in ["S","L"]: contact_assist.unavailable("request","CHIAMATA RISERVATA AGLI ATTACCANTI"); return
+		requested_set=true; call_for_set(); contact_assist.put("command","request","armed","ALZATA CHIAMATA"); return
 	if kind not in ["action","alternate","dump"] or buttons.get(kind,false): return
 	buttons[kind]=true
 	if game.phase=="SET" and game.setter!=controlled_index and game.planned_hitter==controlled_index and kind in ["action","alternate"]:
 		buffered_stroke=kind; game.attack_buffer_start=game.clock_time; game.attack_buffer_power=-1.0
 		return
 	claim_contact()
-	if action_actor(0)!=controlled_index or game.phase=="POINT": return
-	apply_controls(0); game.input_team=0; game.press_action(kind)
+	if action_actor(0)!=controlled_index or game.phase=="POINT":
+		contact_assist.unavailable(kind,"PALLA NON DISPONIBILE \u00b7 SEGUI IL CERCHIETTO"); return
+	apply_controls(0); game.input_team=0
+	if game.phase=="RECEIVE" and kind in ["action","alternate"]:
+		contact_assist.receive(kind=="alternate"); return
+	if game.phase=="RECEIVE" and kind=="dump":
+		contact_assist.unavailable("dump","USA BAGHER O PALLEGGIO SUL PRIMO TOCCO"); return
+	game.press_action(kind)
+	if game.phase=="SET" and game.armed:
+		var action: String=game.second_touch_contact_action()
+		contact_assist.put("set",{"fast_set":"quick","receive":"receive","dive":"dive"}.get(action,action),"armed","SECONDA NON DISPONIBILE · ALZATA NORMALE" if kind=="dump" and not game.setter_dump else "ALZATA PREPARATA",game.input_quality)
 
 func release(kind: String) -> void:
 	buttons[kind]=false
@@ -209,6 +232,7 @@ func apply_controls(dt: float) -> void:
 func before_step(dt: float) -> void:
 	if not enabled(): return
 	sync_identity()
+	contact_assist.tick()
 	if manual_available and game.phase not in ["SERVE","POINT"]: active_minutes+=dt/60
 	energy=100.0-game.match_management.fatigue_for(controlled_index) if manual_available else minf(100,energy+dt*2)
 	if requested_set: call_for_set()
@@ -284,30 +308,20 @@ func jump() -> bool:
 	source_motion={"action":action,"last_root":p.action_root_motion(action,p.animation_time),"origin":p.position,"rally":game.rally_serial}
 	return true
 
-func claim_contact() -> void:
+func claim_contact(for_dive: bool=false) -> void:
 	if game.possession!=0 or game.phase not in ["RECEIVE","SET"] or last_contact_index==controlled_index or owns(action_actor(0)): return
 	var p=game.players[controlled_index]
 	var action: String="receive" if game.phase=="RECEIVE" else game.second_touch_contact_action()
 	var stance: Vector3=p.stance_for_contact(action,game.flight_target)
-	if Vector2(p.position.x-stance.x,p.position.z-stance.z).length()>maxf(.7,game.flight_left*game.Reference.run_speed()): return
+	var reach: float=.55+maxf(.2,game.flight_left)*7.2 if for_dive else maxf(.7,game.flight_left*game.Reference.run_speed())
+	if Vector2(p.position.x-stance.x,p.position.z-stance.z).length()>reach: return
 	if game.phase=="RECEIVE": game.receiver=controlled_index; game.select_receive_pose(controlled_index,game.flight_target)
 	else: game.setter=controlled_index
 	game.receive_deadline=game.clock_time+game.flight_left
 
 func dive() -> bool:
-	if not enabled() or game.paused or not manual_available or game.possession!=0 or game.phase not in ["RECEIVE","SET"]: return false
-	claim_contact()
-	if not owns(action_actor(0)): return false
-	allow_requested_recovery=true
-	var accepted:=false
-	if game.phase=="RECEIVE": accepted=game.queue_recovery(true)
-	else:
-		var plan: Dictionary=preload("res://src/contact_rescue.gd").proposal(game,controlled_index)
-		if not plan.is_empty():
-			game.setter_action="dive"; game.out_of_system=-1; preload("res://src/contact_rescue.gd").commit(game,plan,true); accepted=true
-	allow_requested_recovery=false
-	if accepted: game.armed=true; game.input_quality=maxf(game.input_quality,.6)
-	return accepted
+	if not enabled(): return false
+	return contact_assist.dive()
 
 func call_for_set() -> void:
 	if not requested_set or not manual_available or game.phase!="SET" or game.setter==controlled_index or role in ["S","L"]: return
@@ -327,6 +341,7 @@ func contact_allowed(index: int, action: String) -> bool:
 	return true
 
 func on_reset() -> void:
+	contact_assist.reset()
 	sync_identity(); source_motion.clear(); last_contact_index=-1; last_own_set=false; requested_set=false; buttons.clear(); buffered_stroke=""
 
 func cpu_serve_ready() -> bool:
@@ -341,7 +356,11 @@ func on_touch(index: int) -> void:
 	if game.phase in ["SET","CPU_SET"]: last_own_set=owns(index)
 
 func on_missed(index: int) -> void:
-	if owns(index): misses+=1
+	if owns(index):
+		misses+=1
+		var kind: String="receive" if game.phase=="RECEIVE" else ("set" if game.phase=="SET" else "command")
+		var action: String=("overhead" if receive_contact_action()=="set" else "receive") if game.phase=="RECEIVE" else (game.second_touch_contact_action() if game.phase=="SET" else "attack")
+		contact_assist.put(kind,action,"miss","TOCCO NON PREPARATO" if not game.armed else "PALLA FUORI PORTATA · CURA LA POSIZIONE",game.input_quality)
 
 func on_point(team: int, reason: String) -> void:
 	var management=game.match_management
@@ -365,4 +384,4 @@ func measured_performance(row: Dictionary) -> Dictionary:
 func hud_state() -> Dictionary:
 	var id: String=str(config.get("player_id",config.get("player",{}).get("id","")))
 	var row: Dictionary=game.match_management.measured.get(id,{}) if game!=null else {}
-	return {"active":active,"manual_available":manual_available,"player_name":str(config.get("player",{}).get("name","")),"name":str(config.get("player",{}).get("name","")),"role":role,"energy":energy,"performance":measured_performance(row),"power":game.current_charge() if game!=null else 0,"charging":game.charging if game!=null else false,"suggestion":"","context":game.phase if game!=null else "","feedback":"","feedback_left":0}
+	return {"active":active,"manual_available":manual_available,"player_name":str(config.get("player",{}).get("name","")),"name":str(config.get("player",{}).get("name","")),"role":role,"energy":energy,"performance":measured_performance(row),"power":game.current_charge() if game!=null else 0,"charging":game.charging if game!=null else false,"suggestion":"","context":game.phase if game!=null else "","feedback":str(contact_assist.feedback.get("feedback","")),"feedback_left":maxf(0,float(contact_assist.feedback.get("until",0))-game.clock_time)}

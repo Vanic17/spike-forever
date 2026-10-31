@@ -10,12 +10,12 @@
 	"native_pose": {
 		"avatars_per_scene": 12,
 		"career": {
-			"mean_us": 6896.7,
-			"p95_us": 8562
+			"mean_us": 6388.89166666667,
+			"p95_us": 8129
 		},
 		"exhibition": {
-			"mean_us": 6938.575,
-			"p95_us": 8606
+			"mean_us": 6445.725,
+			"p95_us": 8593
 		},
 		"mismatch": {
 
@@ -47,6 +47,6 @@
 		"points": 1,
 		"seconds": 14.9999999999998,
 		"ticks": 1800,
-		"wall_clock_ms": 4554.317
+		"wall_clock_ms": 4449.776
 	}
 }

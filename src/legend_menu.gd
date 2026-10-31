@@ -606,11 +606,13 @@ func result_screen():
 func help_screen():
 	heading(page,"IL CAMPO È NELLE TUE MANI",43); var row:=HBoxContainer.new(); row.size_flags_vertical=Control.SIZE_EXPAND_FILL; page.add_child(row)
 	var controls:=UI.card(row,1030); heading(controls,"CONTROLLI MANUALI",36)
-	for entry in [["LS / WASD","Movimento libero del tuo giocatore"],["RS / FRECCE","Mira di battuta, alzata e attacco"],["R1 / RB / R","Salto in attacco e a muro"],["CROCE / A / SPAZIO","Bagher e alzata: premi. Servizio e attacco: tieni e rilascia."],["QUADRATO / X / Q","Float, alzata veloce e pallonetto"],["L1 / LB / F","Chiama la palla"],["L2 / LT / SHIFT","Scatto"],["R2 / RT / C","Tuffo difensivo"],["CERCHIO / B / E","Attacco di seconda"]]:
-		var line:=HBoxContainer.new(); controls.add_child(line); label(line,entry[0],22,UI.GOLD).custom_minimum_size.x=320; text_block(line,entry[1],23,UI.MUTED)
+	for entry in [["LS / WASD","Movimento libero del tuo giocatore"],["RS / FRECCE","Mira di battuta, alzata e attacco"],["R1 / RB / R","Salto in attacco e a muro"],["CROCE / A / SPAZIO","Primo tocco: bagher con gli avambracci. Secondo: alzata normale. Servizio e attacco: tieni e rilascia."],["QUADRATO / X / Q","Primo tocco: palleggio sopra la testa. Secondo: alzata veloce. Anche float e pallonetto."],["L1 / LB / F","Chiama la palla"],["L2 / LT / SHIFT","Scatto"],["R2 / RT / C","Tuffo difensivo: premi una volta verso la palla bassa"],["CERCHIO / B / E","Attacco di seconda"]]:
+		var line:=HBoxContainer.new(); controls.add_child(line); label(line,entry[0],22,UI.GOLD).custom_minimum_size.x=320
+		text_block(line,entry[1],23,UI.MUTED).size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var role:=UI.card(row,770); heading(role,"GIOCA IL TUO RUOLO",37)
 	text_block(role,"Banda: ricevi e attacca dalle antenne.\nOpposto: cerca il punto sul lato destro.\nCentrale: salta a muro e prepara il primo tempo.\nPalleggiatore: costruisci l'attacco dei compagni.\nLibero: difendi e ricevi nella seconda linea.",26,UI.MUTED)
-	text_block(role,"Fisica, timing e animazioni sono quelli dell'esibizione. Il cerchietto indica la posizione assegnata dall'IA: sei tu a raggiungerla. R1/RB comanda il salto in attacco e a muro; la battuta usa la sequenza completa dell'esibizione.",25,UI.GOLD)
+	text_block(role,"In ricezione e difesa, avvicinati alla palla e premi una volta quando compare PREMI ORA. Un piccolo anticipo viene conservato fino al contatto. Il feedback distingue anticipo, buon tempo e ritardo.",24,UI.GOLD)
+	text_block(role,"Il bagher usa gli avambracci; il palleggio usa le mani sopra la testa. Per una palla bassa scegli il bagher o il tuffo. Il cerchietto a terra indica la posizione IA: raggiungila con LS / WASD.",23,UI.MUTED)
 	button(role,"TORNA ALLA CARRIERA",func(): show_page("home" if manager.active() else "entry"),"help-back")
 
 func launch_match():

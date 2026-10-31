@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.74.0:** ricezione più permissiva in Diventa un mito, bagher e palleggio sopra la testa distinti, indicazioni prima del contatto e tuffo preparabile in anticipo. Verificati comandi PlayStation/Xbox, tastiera e passaggio all'esibizione. [Novità e verifiche](docs/RELEASE_NOTES_74.md).
+
 **Versione 0.73.0:** Diventa un mito usa il motore dell'esibizione per palla, IA, animazioni, contatti e timing. Conferma controller corretta, posizione IA indicata da un cerchietto trasparente e rientri tra i punti senza teletrasporto. Include il doppio cambio palleggiatore-opposto, con coppia atomica, rientro titolari, allenatore CPU e Campionato. Carriere precedenti compatibili. [Novità e verifiche](docs/RELEASE_NOTES_73.md).
 
 **Versione 0.72.1:** include Diventa un mito e corregge il controllo del fallo di piede nel servizio manuale al salto: conta la posizione dello stacco. [Dettagli](docs/RELEASE_NOTES_72_1.md).

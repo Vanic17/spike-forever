@@ -36,7 +36,7 @@
 	"failures": [],
 	"manual_dive_max_step": 0.0457640066742897,
 	"native_clips": 137,
-	"receive_timing": 0.935483870967742,
+	"receive_timing": 1.0,
 	"replay_release_cache": true,
 	"role_cases": [
 		{

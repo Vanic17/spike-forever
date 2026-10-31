@@ -1,0 +1,18 @@
+﻿[
+    {
+        "exit":  0,
+        "test":  "Test-ManualReception56"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-DoubleChange74"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-GreenAttack67"
+    },
+    {
+        "exit":  0,
+        "test":  "Test-Substitution69"
+    }
+]

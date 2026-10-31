@@ -1860,7 +1860,7 @@ func step(dt: float) -> void:
 			if true:
 				match phase:
 					"RECEIVE", "CPU_RECEIVE":
-						if human_team(possession) and not armed and clock_time < receive_deadline + Timing.LATE_RECEIVE_SECONDS:
+						if human_team(possession) and not armed and clock_time < receive_deadline + (preload("res://src/legend_contact.gd").LATE_WINDOW if legend_controls(receiver) else Timing.LATE_RECEIVE_SECONDS):
 							pass # Small explicit late-input window; never auto-save.
 						else: receive_ball()
 					"SET", "CPU_SET": set_ball()

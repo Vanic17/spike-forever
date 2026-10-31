@@ -1,0 +1,365 @@
+{
+	"checks": 114,
+	"cue_and_power_overlap": false,
+	"cue_rectangle_1920x1080": [
+		660,
+		810,
+		600,
+		140
+	],
+	"failures": [],
+	"godot": "4.5.1-stable (official)",
+	"help_language": "en",
+	"help_only": false,
+	"hud_language": "it",
+	"isolated_user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-feedback-render/Godot/app_userdata/Spike Forever/",
+	"native": true,
+	"real_avatar_count": 12,
+	"screenshots": [
+		{
+			"cue": {
+				"action": "receive",
+				"armed": false,
+				"feedback": "",
+				"feedback_left": 0.0,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.12,
+				"status": "good",
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-ready-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "receive",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-result-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-ready-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.53333333333333,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-result-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-dive-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-help-en-720.png",
+			"size": [
+				1280,
+				720
+			]
+		},
+		{
+			"cue": {
+				"action": "receive",
+				"armed": false,
+				"feedback": "",
+				"feedback_left": 0.0,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.12,
+				"status": "good",
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-ready-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "receive",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-result-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-ready-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.53333333333333,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-result-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-dive-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-help-en-1080.png",
+			"size": [
+				1920,
+				1080
+			]
+		},
+		{
+			"cue": {
+				"action": "receive",
+				"armed": false,
+				"feedback": "",
+				"feedback_left": 0.0,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.12,
+				"status": "good",
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-ready-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"cue": {
+				"action": "receive",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-bagher-result-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.65,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-ready-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"cue": {
+				"action": "overhead",
+				"armed": true,
+				"feedback": "PERFETTA",
+				"feedback_left": 1.53333333333333,
+				"kind": "receive",
+				"quality": 1.0,
+				"seconds": 0.0,
+				"status": "good",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-overhead-result-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-dive-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		},
+		{
+			"cue": {
+				"action": "dive",
+				"armed": true,
+				"feedback": "TUFFO PREPARATO",
+				"feedback_left": 1.55,
+				"kind": "dive",
+				"quality": 0.65,
+				"seconds": 0.0,
+				"status": "armed",
+				"until": 1.65,
+				"visible": true
+			},
+			"path": "res://docs/legend75-feedback-help-en-1440.png",
+			"size": [
+				2560,
+				1440
+			]
+		}
+	],
+	"shared_power_rectangle_1920x1080": [
+		678,
+		966,
+		564,
+		78
+	]
+}

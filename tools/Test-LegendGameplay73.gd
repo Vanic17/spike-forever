@@ -67,10 +67,10 @@ func test_receive_and_recovery():
 	game.set_phase("RECEIVE"); game.possession=0; game.receiver=index; game.last_touch=1; game.incoming_kind="serve"; game.incoming_power=.8; game.touches=[0,0]
 	game.airborne=true; game.flight_target=p.contact_world("receive"); game.flight_left=.08; game.receive_deadline=game.clock_time+.08
 	game.ball_pos=game.flight_target; game.ball_vel=Vector3(0,-3,0)
-	var expected: float=minf(lerpf(1.0,game.Reference.receive_quality(game.ball_pos.distance_to(p.contact_world("receive")),game.difficulty_scale()),.825),game.timing.quality(.08,game.difficulty_scale()))
+	var expected: float=preload("res://src/legend_contact.gd").quality(.08,game.difficulty_scale())
 	var root_before: Vector3=p.position; var ball_before: Vector3=game.ball_pos
 	button(JOY_BUTTON_A)
-	check(game.armed and absf(game.input_quality-expected)<.00001,"Cross/A routes reception through the exhibition Timing quality")
+	check(game.armed and absf(game.input_quality-expected)<.00001,"Cross/A uses the manual career timing assistance before the shared contact")
 	check(game.ball_pos==ball_before and p.position==root_before,"reception input does not warp ball or body to an authored contact")
 	game.receive_ball()
 	check(game.phase=="SET" and game.match_management.measured.get(manager.state.profile.id,{}).get("receptions",0)==1,"real commanded native reception produces shared second touch and measured reception")
