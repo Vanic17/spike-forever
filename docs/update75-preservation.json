@@ -7,7 +7,7 @@
                            "controls.cfg"
                        ],
     "pass":  true,
-    "fixture":  "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\update75-427d3c41d11540049bbc38234d68b14c",
+    "fixture":  "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\update75-32831fb6d9264256885999ec683b5786",
     "cases":  [
                   {
                       "case":  "skip-versions",

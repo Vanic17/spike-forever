@@ -1,0 +1,36 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "changed-missing-only-and-personal-preservation",
+      "pass": true,
+      "downloaded_bytes": 161,
+      "full_bytes": 2099332
+    },
+    {
+      "case": "up-to-date-no-download",
+      "pass": true
+    },
+    {
+      "case": "unchanged-file-race-refused-before-install",
+      "pass": true
+    },
+    {
+      "case": "unsafe-index-path-refused",
+      "pass": true
+    },
+    {
+      "case": "bad-file-hash-never-installed-full-fallback",
+      "pass": true
+    },
+    {
+      "case": "personal-database-cannot-enter-index",
+      "pass": true
+    },
+    {
+      "case": "new-install-falls-back-before-any-range-transfer",
+      "pass": true
+    }
+  ],
+  "fixture": "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\selective76-823d6b01885b4ad49fbf56bef2ffee43"
+}

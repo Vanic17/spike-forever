@@ -1,0 +1,1447 @@
+{
+  "cases": [
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 0,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 0,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 0,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 0,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 0,
+      "seconds": 0.93,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 1,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 1,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 1,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 1,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 1,
+      "seconds": 0.93,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 2,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 2,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 2,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 2,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 2,
+      "seconds": 0.93,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(-1.0, 1.293384, 3.232051)",
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 3,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(-1.0, 1.293384, 3.232051)",
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 3,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(-0.562916, 2.528788, 1.825)",
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 3,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(2.0, 2.528788, 1.5)",
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 3,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 3,
+      "seconds": 0.93,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(0.0, 2.528788, 1.5)",
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 4,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(0.0, 2.528788, 1.5)",
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 4,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(0.0, 2.528788, 1.5)",
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 4,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(1.732051, 2.528788, 2.5)",
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 4,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 1,
+          "target": "(0.0, 2.528788, 1.5)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 4,
+      "seconds": 0.93,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.874220194012735
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.35,
+        "visible": true
+      },
+      "offset": 0.174220194012736,
+      "phase": "SET",
+      "rotation": 5,
+      "seconds": 0.65,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.899999999999999
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.375,
+        "visible": true
+      },
+      "offset": 0.175,
+      "phase": "SET",
+      "rotation": 5,
+      "seconds": 0.9,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.91
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.38333333333333,
+        "visible": true
+      },
+      "offset": 0.176666666666667,
+      "phase": "SET",
+      "rotation": 5,
+      "seconds": 0.91,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.930815711552152
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.172482378218819,
+      "phase": "SET",
+      "rotation": 5,
+      "seconds": 0.92,
+      "success": true
+    },
+    {
+      "armed": false,
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "serve",
+          "kind": "reception",
+          "quality": 1.0,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.93
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 1.0,
+          "rally": 1,
+          "setter": 5,
+          "target": "(-1.0, 2.528788, 3.232051)",
+          "team": 0,
+          "time": 0.93
+        }
+      ],
+      "feedback": {
+        "action": "receive",
+        "armed": true,
+        "feedback": "PERFETTA",
+        "kind": "receive",
+        "quality": 1.0,
+        "seconds": 0.0,
+        "status": "good",
+        "until": 2.40833333333333,
+        "visible": true
+      },
+      "offset": 0.171666666666667,
+      "phase": "SET",
+      "rotation": 5,
+      "seconds": 0.93,
+      "success": true
+    }
+  ],
+  "checks": 91,
+  "failures": [],
+  "pass": true
+}

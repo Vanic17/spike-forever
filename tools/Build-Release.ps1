@@ -12,6 +12,14 @@ $files+='docs/RELEASE_NOTES_72_1.md'
 $files+='docs/RELEASE_NOTES_73.md'
 $files+='docs/RELEASE_NOTES_74.md'
 $files+='docs/RELEASE_NOTES_75.md'
+$files+='docs/RELEASE_NOTES_76.md'
+$files+='tools/Download-SelectiveUpdate.ps1'
+foreach($pattern76 in @('defense76-*','reception76-*','selective76-*')){
+ foreach($report76 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern76){
+  if($report76.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report76.Name}
+ }
+}
+foreach($tool76 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*76.*'){$files+='tools/'+$tool76.Name}
 foreach($pattern75 in @('defense75-*','arcade75-*','update75-*')){
  foreach($report75 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern75){
   if($report75.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report75.Name}
@@ -188,4 +196,6 @@ try{
  $writer=[IO.StreamWriter]::new($entry.Open())
  try{$writer.Write(($manifest | ConvertTo-Json -Depth 8))}finally{$writer.Dispose()}
 }finally{$zip.Dispose()}
+& (Join-Path $root 'tools/python311/python.exe') (Join-Path $root 'tools/Build-UpdateIndex76.py') $zipPath (Join-Path $destination 'SpikeForever-UpdateIndex.json')
+if($LASTEXITCODE -ne 0){throw 'Selective update index generation failed'}
 Get-FileHash -LiteralPath $zipPath -Algorithm SHA256 | Format-List

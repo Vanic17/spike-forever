@@ -1,0 +1,14 @@
+{
+  "contacts": {
+    "0": "res://docs/defense76-receive_low76.png",
+    "1": "res://docs/defense76-receive_low_right76.png"
+  },
+  "fps": 60,
+  "frames": 318,
+  "method": "production Avatar, native AnimationTree, source root travel and final IK",
+  "pass": true,
+  "variants": [
+    "receive_low76",
+    "receive_low_right76"
+  ]
+}

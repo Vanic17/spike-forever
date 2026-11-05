@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75"]
-const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion75.res"
-const FORMAT := 3
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd")]
+const LIBRARY_PATH := "res://assets/active/native_motion76.res"
+const FORMAT := 4
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -69,6 +69,9 @@ static func author_clip(base, author, label: String):
 	if label=="dump_push54":
 		var contact_pose:=normalized(clip,clip.contact_time)
 		clip.contact_offset=contact_pose[clip.names.find("LeftHand")].origin
+	if label in ["receive_low76","receive_low_right76"]:
+		var contact_pose:=normalized(clip,clip.contact_time)
+		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
 	return clip
 
 static func signature(bank: Dictionary) -> String:

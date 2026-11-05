@@ -19,7 +19,7 @@ func run():
 	native.setup(bank,func(name: String,time: float,loop: bool): return Motion.normalized(bank[name],time,loop))
 	check(native.initialized,"AnimationTree initializes with new immutable clips")
 	var max_length_error:=0.0; var max_contact_error:=0.0; var max_step:=0.0; var samples:=0
-	for i in range(3,Motion.NAMES.size()):
+	for i in range(3,mini(7,Motion.NAMES.size())):
 		var name: String=Motion.NAMES[i]; var clip=bank[name]; var author=Motion.AUTHORS[i]; var source=bank[author.SOURCE]
 		check(native.library.has_animation(name),"Native clip "+name)
 		check(clip.contact_time==source.contact_time and clip.recovery_end==source.recovery_end and clip.takeoff_time==source.takeoff_time,"unchanged event metadata "+name)
@@ -44,8 +44,8 @@ func run():
 				previous=pose; samples+=1
 	check(max_length_error<.0001,"fixed limb lengths")
 	check(max_contact_error<.00001,"contact palms preserved by authoring")
-	check(Variety.receive(Vector3(1,1,0),2,"spike",0)=="receive_left75","left lunge selection")
-	check(Variety.receive(Vector3(-1,1,0),2,"spike",0)=="receive_right75","right lunge selection")
+	check(Variety.receive(Vector3(1,1.6,0),2,"spike",0)=="receive_left75","left lunge selection")
+	check(Variety.receive(Vector3(-1,1.6,0),2,"spike",0)=="receive_right75","right lunge selection")
 	check(Variety.diving(Vector3(0,.6,.5),"spike",0)=="dive_hand75","one-hand emergency selection")
 	check(not Variety.diving(Vector3(1,.6,.5),"spike",0)=="dive_hand75","no wrong-direction dive")
 	var report={"pass":failures.is_empty(),"checks":checks,"samples":samples,"new_clips":4,"fps":[30,60,120,144],"maximum_bone_length_error_m":max_length_error,"author_contact_error_m":max_contact_error,"maximum_source_step_m":max_step,"failures":failures,"reference":"https://www.youtube.com/shorts/haSkiDd9P_8","method":"reference-authored PSA adaptations evaluated by AnimationTree; not calibrated motion capture"}

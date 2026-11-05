@@ -48,14 +48,14 @@
 			"button": 0,
 			"contact": {
 				"action": "receive",
-				"ball": "(-2.035877, 1.26195, 4.146618)",
-				"gap": 0.0,
-				"hands": "(-2.035877, 1.26195, 4.146618)",
+				"ball": "(-2.035877, 1.293384, 4.146618)",
+				"gap": 0.0103748980909586,
+				"hands": "(-2.036917, 1.296037, 4.156594)",
 				"player": 0,
 				"role": "OH1",
 				"rotation": 0,
 				"time": 0.0,
-				"variant": "receive_squat"
+				"variant": "receive"
 			},
 			"receptions": 1,
 			"sets": 0
@@ -82,7 +82,7 @@
 		"normal_speed": 4.28365802764893,
 		"sprint_speed": 4.68390226364136
 	},
-	"native_clips": 141,
+	"native_clips": 143,
 	"native_events": 143,
 	"pause_replay_releases": true,
 	"timing_same_actor": [
@@ -117,5 +117,5 @@
 			"remaining": 0.8
 		}
 	],
-	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-patch-appdata/Godot/app_userdata/Spike Forever/"
+	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-reception76-appdata/Godot/app_userdata/Spike Forever/"
 }

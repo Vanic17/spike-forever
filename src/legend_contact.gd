@@ -67,7 +67,11 @@ func receive(overhead: bool=false) -> bool:
 			p.target=p.stance_for_contact("receive",hit.point)
 		else: fallback=true
 	else:
-		restore_gesture(); g.select_receive_pose(index,g.flight_target)
+		# The shared engine already selected the receiving performance for
+		# this flight (claim_contact does so when taking over from a teammate).
+		# Re-selecting after the player reached its stance could choose a new
+		# hand height/offset at the button press, moving the target away again.
+		restore_gesture()
 		preload("res://src/receive_access.gd").sync_performance(g,true)
 	var remaining: float=g.receive_deadline-g.clock_time
 	if remaining< -LATE_WINDOW:

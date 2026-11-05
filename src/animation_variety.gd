@@ -22,6 +22,10 @@ const SOURCES := {
 const CLIPS := ["receive_low", "receive_squat", "receive_step", "receive_left_step", "receive_right_step", "set_short_front", "set_short_back", "set_left_front", "set_left_back", "set_running_front", "attack_angle_left", "attack_angle_right", "attack_turn", "attack_pin_left", "attack_pin_right"]
 
 static func receive(local: Vector3, speed: float, incoming: String, serial: int) -> String:
+	# Low lateral hard-driven balls use the folded-knee support, never a
+	# generic forward dive or an upright reception in the opposite direction.
+	if incoming in ["spike","soft","block"] and local.x>.35 and local.y<1.45 and posmod(serial,3)==0: return "receive_low76"
+	if incoming in ["spike","soft","block"] and local.x<-.35 and local.y<1.45 and posmod(serial,3)==0: return "receive_low_right76"
 	# Choose a compatible support, never a random fall. The final platform
 	# preparation is authored from the short reference; old variants remain.
 	if incoming in ["spike","soft","block"] and posmod(serial,3)!=2:

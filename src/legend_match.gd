@@ -277,7 +277,11 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	if safe.length()+.001<displacement.length(): p.velocity=safe/maxf(.001,dt)
 	game.travel[controlled_index]+=safe.length()
 	var facing:=PI
-	if p.velocity.length()>2.0 and source_motion.is_empty(): facing=atan2(p.velocity.x,p.velocity.z)
+	# During serve reception keep the platform facing the server while the
+	# feet adjust laterally. Turning the whole body into the running direction
+	# rotated the contact offset ~90 degrees after a correctly timed command.
+	var serve_receive: bool=game.phase=="RECEIVE" and game.possession==0 and game.incoming_kind=="serve"
+	if p.velocity.length()>2.0 and source_motion.is_empty() and not serve_receive: facing=atan2(p.velocity.x,p.velocity.z)
 	if game.phase in ["SET","CPU_SET"] and game.setter==controlled_index and game.armed: facing=p.setting_yaw
 	if p.clip_name in ["dive","recovery"] and not p.looping: facing=p.dive_yaw
 	p.rotation.y=rotate_toward(p.rotation.y,facing,7*dt); p.look_target=game.ball_pos

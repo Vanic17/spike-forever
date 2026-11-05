@@ -106,6 +106,7 @@ func _ready() -> void:
 	update_prompt.canceled.connect(defer_update)
 	client.changed.connect(func(message):
 		status.text=message
+		if not client.busy and not client.downloading: download_bar.hide(); download_label.hide()
 		play.disabled=client.downloading
 		back.disabled=client.downloading
 		install_button.disabled=client.busy or history.get_selected_items().is_empty())

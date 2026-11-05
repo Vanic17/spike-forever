@@ -25,6 +25,9 @@ if(!$Package){
  $Package=Join-Path $root ($releaseDir+'/SpikeForever-Windows.zip')
 }
 $package=[IO.Path]::GetFullPath($Package)
+$releaseAssets=@($package)
+$updateIndex=Join-Path (Split-Path $package) 'SpikeForever-UpdateIndex.json'
+if(Test-Path -LiteralPath $updateIndex){$releaseAssets+=$updateIndex}
 Native $gh @('repo','view',$Repository,'--json','name') -AllowFailure | Out-Null
 if($script:LastNativeExit -ne 0){Native $gh @('repo','create',$Repository,'--public','--description','Spike Forever - Windows 6v6 volleyball and versioned updates')}
 $stage=Join-Path $root ('dist/source-'+$version+'-'+[guid]::NewGuid().ToString('N'))
@@ -139,12 +142,12 @@ Native $git @('-C',$stage,'-c','credential.helper=','-c',$helper,'push','origin'
 $existing=(Native $gh @('release','view',$tag,'--repo',$Repository,'--json','isDraft') -AllowFailure)
 if($script:LastNativeExit -eq 0){
  if(!($existing | ConvertFrom-Json).isDraft){throw ('Release already published; use a new version: '+$tag)}
- Native $gh @('release','upload',$tag,$package,'--repo',$Repository,'--clobber')
+ Native $gh (@('release','upload',$tag)+$releaseAssets+@('--repo',$Repository,'--clobber'))
  Native $gh @('release','edit',$tag,'--repo',$Repository,'--draft=false','--latest')
 }else{
  $notesArguments=@('--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
  if($NotesFile){$notesArguments=@('--notes-file',[IO.Path]::GetFullPath($NotesFile))}
- Native $gh (@('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag))+$notesArguments)
+ Native $gh (@('release','create',$tag)+$releaseAssets+@('--repo',$Repository,'--title',('Spike Forever '+$tag))+$notesArguments)
 }
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)

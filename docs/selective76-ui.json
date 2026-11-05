@@ -1,0 +1,32 @@
+{
+  "failures": [],
+  "fallbacks": 2,
+  "pass": true,
+  "progress_events": [
+    [
+      0,
+      0
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      10,
+      10
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "verified_installs": 1
+}

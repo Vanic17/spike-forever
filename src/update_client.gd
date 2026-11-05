@@ -14,9 +14,11 @@ var progress_elapsed:=0.0
 var retry_count:=0
 var request_url:=""
 var retry_pending:=false
+var selective
 const RETRY_LIMIT:=2
 
 func _process(dt: float) -> void:
+	if selective!=null and selective.running: return
 	if not downloading or http==null or retry_pending: return
 	progress_elapsed+=dt
 	if progress_elapsed<0.10: return
@@ -55,6 +57,13 @@ func _ready() -> void:
 	http.download_chunk_size=262144
 	add_child(http)
 	http.request_completed.connect(completed)
+	selective=preload("res://src/selective_update.gd").new(); add_child(selective)
+	selective.progress.connect(func(received,total): download_progress.emit(received,total))
+	selective.status.connect(func(message): changed.emit(message))
+	selective.prepared.connect(func(path,digest): package_path=path; install_package(digest))
+	selective.fallback.connect(func(_reason): changed.emit("Scansione non utilizzabile: download completo di ripiego."); download_full())
+	selective.failed.connect(fail)
+	selective.current.connect(func(): busy=false; downloading=false; changed.emit("Tutti i file della versione selezionata sono già aggiornati."))
 
 func check() -> void:
 	if busy: return
@@ -77,6 +86,11 @@ static func package_asset(release: Dictionary) -> Dictionary:
 		if asset.get("name","")=="SpikeForever-Windows.zip": return asset
 	return {}
 
+static func index_asset(release: Dictionary) -> Dictionary:
+	for asset in release.get("assets",[]):
+		if asset.get("name","")=="SpikeForever-UpdateIndex.json": return asset
+	return {}
+
 func install(release: Dictionary) -> void:
 	if busy: return
 	var probe_path:=ProjectSettings.globalize_path("res://.update-write-test")
@@ -95,6 +109,13 @@ func install(release: Dictionary) -> void:
 	if DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir().path_join("updates"))!=OK:
 		fail("Impossibile creare la cartella temporanea degli aggiornamenti.")
 		return
+	busy=true; downloading=true
+	var index:=index_asset(release)
+	if not index.is_empty() and selective.start(index,selected): return
+	download_full()
+
+func download_full() -> void:
+	var url: String=selected.browser_download_url
 	package_path=OS.get_user_data_dir().path_join("updates/package.zip")
 	http.download_file=package_path
 	# A full release is currently ~770 MB. Five minutes was a total timeout,
@@ -127,13 +148,7 @@ func completed(result: int, code: int, _headers: PackedStringArray, body: Packed
 		if FileAccess.get_sha256(package_path)!=String(selected.digest).trim_prefix("sha256:").to_lower():
 			fail("Verifica del download fallita: aggiornamento annullato.")
 			return
-		var script:=ProjectSettings.globalize_path("res://tools/Install-Update.ps1")
-		var args:=PackedStringArray(["-NoProfile","-ExecutionPolicy","Bypass","-WindowStyle","Hidden","-File",script,"-Archive",package_path,"-Destination",ProjectSettings.globalize_path("res://"),"-ExpectedHash",String(selected.digest).trim_prefix("sha256:"),"-WaitPid",str(OS.get_process_id())])
-		if OS.create_process("powershell.exe",args)<0:
-			fail("Impossibile avviare l'installazione. Nessun file modificato.")
-			return
-		changed.emit("Pacchetto verificato. Chiusura e installazione; il gioco verrà riavviato.")
-		get_tree().quit()
+		install_package(String(selected.digest).trim_prefix("sha256:"))
 		return
 	var parsed=JSON.parse_string(body.get_string_from_utf8())
 	if not parsed is Array:
@@ -149,6 +164,14 @@ func completed(result: int, code: int, _headers: PackedStringArray, body: Packed
 	retry_count=0
 	versions_loaded.emit(releases)
 	changed.emit("Nessuna patch pubblicata: la cronologia inizierà dalla prima release." if releases.is_empty() else "Seleziona la versione più recente oppure una precedente, poi premi Installa.")
+
+func install_package(digest: String) -> void:
+	var script:=ProjectSettings.globalize_path("res://tools/Install-Update.ps1")
+	var args:=PackedStringArray(["-NoProfile","-ExecutionPolicy","Bypass","-WindowStyle","Hidden","-File",script,"-Archive",package_path,"-Destination",ProjectSettings.globalize_path("res://"),"-ExpectedHash",digest,"-WaitPid",str(OS.get_process_id())])
+	if OS.create_process("powershell.exe",args)<0:
+		fail("Impossibile avviare l'installazione. Nessun file modificato."); return
+	changed.emit("File verificati. Chiusura e installazione; il gioco verrà riavviato.")
+	get_tree().quit()
 
 func fail(message: String) -> void:
 	busy=false

@@ -28,9 +28,12 @@ try {
   }
  } finally {$zip.Dispose()}
  $manifest=Get-Content -Raw -LiteralPath (Join-Path $stage 'release-manifest.json') | ConvertFrom-Json
+ $selective=$manifest.mode -eq 'file-scan'
  # A renamed Godot application silently selects a different AppData folder,
  # making existing careers/overrides look lost even without deleting them.
- $projectText=Get-Content -Raw -LiteralPath (Join-Path $stage 'project.godot')
+ $projectSource=Join-Path $stage 'project.godot'
+ if($selective -and !(Test-Path -LiteralPath $projectSource)){$projectSource=Join-Path $root 'project.godot'}
+ $projectText=Get-Content -Raw -LiteralPath $projectSource
  $installedProject=Join-Path $root 'project.godot'
  if(Test-Path -LiteralPath $installedProject){
   $installedText=Get-Content -Raw -LiteralPath $installedProject
@@ -46,8 +49,21 @@ try {
  }
  foreach($property in $manifest.files.PSObject.Properties){
   $relative=$property.Name
-  if(!$seen.ContainsKey($relative.ToLowerInvariant())){throw 'Manifest references missing file'}
+  # A selective payload lists the entire target version, including unchanged
+  # files. Verify those again after the game exits, before changing anything.
+  if($relative.StartsWith('/') -or $relative.Contains(':') -or $relative.Contains('\') -or $relative.Split('/') -contains '..' -or $relative.Split('/') -contains '' -or $relative -match '^(\.git|\.runtime|\.updates|user|userdata|saves|careers|legend72)(/|$)' -or $relative -match '(^|/)(roster-overrides\.json|settings\.cfg|legend-\d+\.json|career-\d+\.json)(\.|$)'){throw 'Unsafe manifest path'}
+  if(Test-Path -LiteralPath (Join-Path $root $relative) -PathType Container){throw 'Required file path is occupied by a directory'}
+  if(!$seen.ContainsKey($relative.ToLowerInvariant()) -and !$selective){throw 'Manifest references missing file'}
   $from=Join-Path $stage $relative
+  if(!$seen.ContainsKey($relative.ToLowerInvariant())){
+   $from=Join-Path $root $relative
+   if($relative -eq 'controls.cfg' -and (Test-Path -LiteralPath $from)){continue}
+   $probe=$from
+   while($probe.Length -ge $root.Length){
+    if((Test-Path -LiteralPath $probe) -and ((Get-Item -LiteralPath $probe).Attributes -band [IO.FileAttributes]::ReparsePoint)){throw 'Installation contains redirected file'}
+    $probe=Split-Path $probe
+   }
+  }
   if((Get-FileHash -LiteralPath $from -Algorithm SHA256).Hash -ne $property.Value){throw ('File verification failed: '+$relative)}
  }
  foreach($relative in $seen.Keys){
@@ -55,6 +71,7 @@ try {
  }
  foreach($property in $manifest.files.PSObject.Properties){
   $relative=$property.Name
+  if($selective -and !$seen.ContainsKey($relative.ToLowerInvariant())){continue}
   $target=Join-Path $root $relative
   if($relative -eq 'controls.cfg' -and (Test-Path -LiteralPath $target)){continue}
   # Refuse junctions/symlinks in the existing installation as well.

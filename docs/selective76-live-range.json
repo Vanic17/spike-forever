@@ -1,0 +1,11 @@
+﻿{
+    "scanned_files":  1699,
+    "downloaded_bytes":  44763,
+    "pass":  true,
+    "repaired_sha256":  "58e350b6254cd8dfc1422544f97ceb4840cf05a81431d822eedf3965e68ab051",
+    "controls_unchanged":  true,
+    "database_unchanged":  true,
+    "transport":  "Real GitHub/CDN HTTP range -\u003e SHA256 -\u003e transactional selective install",
+    "changed_files":  1,
+    "full_archive_bytes":  779336506
+}

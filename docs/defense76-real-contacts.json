@@ -1,0 +1,181 @@
+{
+  "cases": [
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.8, 0.568149, 4.8)",
+          "gap": 0.0267726220190525,
+          "hands": "(-0.812741, 0.576815, 4.821894)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.55,
+          "variant": "receive_low76"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "spike",
+          "kind": "dig",
+          "quality": 0.82104,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.55
+        }
+      ],
+      "fps": 60
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.8, 0.568149, 4.8)",
+          "gap": 0.0267726220190525,
+          "hands": "(-0.812741, 0.576815, 4.821894)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.55,
+          "variant": "receive_low76"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "spike",
+          "kind": "dig",
+          "quality": 0.82104,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.55
+        }
+      ],
+      "fps": 120
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(0.8, 0.579467, 4.8)",
+          "gap": 0.0208696126937866,
+          "hands": "(0.790489, 0.586412, 4.817229)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.55,
+          "variant": "receive_low_right76"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "spike",
+          "kind": "dig",
+          "quality": 0.82104,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.55
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 0.82104,
+          "rally": 1,
+          "setter": 5,
+          "target": "(1.401248, 2.528788, 3.401563)",
+          "team": 0,
+          "time": 0.55
+        }
+      ],
+      "fps": 60
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(0.8, 0.579467, 4.8)",
+          "gap": 0.0208696126937866,
+          "hands": "(0.790489, 0.586412, 4.817229)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.55,
+          "variant": "receive_low_right76"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "incoming": "spike",
+          "kind": "dig",
+          "quality": 0.82104,
+          "rally": 1,
+          "receiver": 0,
+          "recovery": false,
+          "team": 0,
+          "time": 0.55
+        },
+        {
+          "kind": "out_of_system",
+          "quality": 0.82104,
+          "rally": 1,
+          "setter": 5,
+          "target": "(1.401248, 2.528788, 3.401563)",
+          "team": 0,
+          "time": 0.55
+        }
+      ],
+      "fps": 120
+    }
+  ],
+  "checks": 21,
+  "failures": [],
+  "pass": true
+}

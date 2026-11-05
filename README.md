@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.76.0:** nuova difesa bassa laterale e speculare nell'AnimationTree originale; corretti orientamento e cambio d'intercetto al comando di ricezione in Diventa un mito. Aggiornamenti con scansione SHA256 e download dei soli file modificati, preservando salvataggi e modifiche personali. [Novità, verifiche e passaggio dal vecchio updater](docs/RELEASE_NOTES_76.md).
+
 **Versione 0.75.0:** quattro varianti di difesa adattate dal nuovo riferimento video, integrate nell'AnimationTree originale. Diventa un mito più permissivo nei contatti di bagher e attacco, nuovi giocatori a OVR 75. Aggiornamenti con ritentativi e diagnostica dettagliata, verifiche sui dati personali e download reale controllato. [Novità e verifiche](docs/RELEASE_NOTES_75.md).
 
 **Versione 0.74.0:** ricezione più permissiva in Diventa un mito, bagher e palleggio sopra la testa distinti, indicazioni prima del contatto e tuffo preparabile in anticipo. Verificati comandi PlayStation/Xbox, tastiera e passaggio all'esibizione. [Novità e verifiche](docs/RELEASE_NOTES_74.md).

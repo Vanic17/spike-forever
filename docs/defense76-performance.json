@@ -1,0 +1,17 @@
+{
+  "base": {
+    "mean_ms": 3.34039,
+    "p95_ms": 3.403,
+    "samples": 600
+  },
+  "limits": "CPU animation/skin only; no FPS or GPU claim; same 600-pose workload after 60 warmup frames",
+  "native": true,
+  "new": {
+    "mean_ms": 3.35838166666667,
+    "p95_ms": 3.429,
+    "samples": 600
+  },
+  "pass": true,
+  "players": 12,
+  "ratio": 1.00538609763131
+}
