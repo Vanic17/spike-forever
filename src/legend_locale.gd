@@ -5,7 +5,7 @@ static func ensure() -> void:
 	if installed: return
 	installed=true
 	var english:=Translation.new(); english.locale="en"
-	for path in ["res://assets/ui/en72_legend.tsv","res://assets/ui/en75_legend.tsv"]:
+	for path in ["res://assets/ui/en72_legend.tsv","res://assets/ui/en75_legend.tsv","res://assets/ui/en75_defense.tsv"]:
 		for line in FileAccess.get_file_as_string(path).split("\n",false):
 			var entry:=line.trim_suffix("\r").split("\t",true,1)
 			if entry.size()==2:

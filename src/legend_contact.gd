@@ -1,7 +1,9 @@
 extends RefCounted
 ## Manual-player input assistance only. Flights, contacts and native poses
 ## continue through main.gd; this helper never moves the ball or the athlete.
-const LATE_WINDOW:=.20
+const LATE_WINDOW:=.28
+const PERFECT_EARLY:=.23
+const PERFECT_LATE:=.075
 var adapter
 var gesture:="receive"
 var overhead_index:=-1
@@ -12,16 +14,16 @@ var pending_dive_key:=""
 
 static func quality(remaining: float,difficulty: float=1.0) -> float:
 	var scale:=clampf(difficulty,.85,1.25)
-	if remaining<-.035: return clampf(1.0-(-remaining-.035)/(LATE_WINDOW-.035)*.78,.12,1)
-	return clampf(1.0-maxf(0,remaining-.14*scale)/(.95*scale),0,1)
+	if remaining < -PERFECT_LATE: return clampf(1.0-(-remaining-PERFECT_LATE)/(LATE_WINDOW-PERFECT_LATE)*.65,.25,1)
+	return clampf(1.0-maxf(0,remaining-PERFECT_EARLY*scale)/(1.15*scale),.12,1)
 
 static func label(remaining: float,difficulty: float=1.0) -> String:
 	var scale:=clampf(difficulty,.85,1.25)
-	if remaining>.55*scale: return "MOLTO IN ANTICIPO"
-	if remaining>.28*scale: return "IN ANTICIPO"
-	if remaining>.14*scale: return "LEGGERMENTE IN ANTICIPO"
-	if remaining>=-.035: return "PERFETTA"
-	if remaining>=-.10: return "LEGGERMENTE IN RITARDO"
+	if remaining>.70*scale: return "MOLTO IN ANTICIPO"
+	if remaining>.42*scale: return "IN ANTICIPO"
+	if remaining>PERFECT_EARLY*scale: return "LEGGERMENTE IN ANTICIPO"
+	if remaining>=-PERFECT_LATE: return "PERFETTA"
+	if remaining>=-.16: return "LEGGERMENTE IN RITARDO"
 	return "IN RITARDO"
 
 func reset() -> void:
@@ -72,7 +74,7 @@ func receive(overhead: bool=false) -> bool:
 		unavailable("receive","TROPPO TARDI · PREPARA PRIMA IL TOCCO"); return false
 	if remaining<0:
 		var recovery: Dictionary=g.BallFlight.intercept(g.ball_pos,g.ball_vel,g.flight_spin,g.contact_height("recovery"),g.flight_gravity)
-		if recovery.is_empty() or recovery.seconds>.22 or recovery.seconds<=.001:
+		if recovery.is_empty() or recovery.seconds>.30 or recovery.seconds<=.001:
 			unavailable("receive","PALLA TROPPO BASSA · SERVE IL TUFFO"); return false
 		g.late_receive=true; g.recovery_action="recovery"; gesture="receive"
 		g.flight_target=recovery.point; g.flight_left=recovery.seconds
@@ -80,7 +82,7 @@ func receive(overhead: bool=false) -> bool:
 	var detail:=label(remaining,g.difficulty_scale())
 	g.receive_feedback=detail+" · %d%%"%roundi(g.input_quality*100); g.receive_feedback_left=2.4
 	g.TimingResult.put(g,0,"PALLEGGIO" if gesture=="set" else ("RICEZIONE" if g.incoming_kind=="serve" else "DIFESA"),g.input_quality,detail)
-	put("receive","overhead" if gesture=="set" else "receive","early" if remaining>.28 else ("late" if remaining<-.035 else "good"),"PALLA BASSA · BAGHER" if fallback else detail,g.input_quality)
+	put("receive","overhead" if gesture=="set" else "receive","early" if remaining>.42 else ("late" if remaining< -PERFECT_LATE else "good"),"PALLA BASSA · BAGHER" if fallback else detail,g.input_quality)
 	return true
 
 func dive_attempt() -> bool:
@@ -147,5 +149,5 @@ func cue() -> Dictionary:
 	var p=g.players[adapter.controlled_index]
 	var stance: Vector3=p.stance_for_contact("receive" if g.phase=="RECEIVE" else g.second_touch_contact_action(),g.flight_target)
 	var distance: float=Vector2(stance.x-p.position.x,stance.z-p.position.z).length()
-	var status: String="armed" if g.armed else ("move" if distance>.55 else ("good" if seconds<=.14*clampf(g.difficulty_scale(),.85,1.25) else "ready"))
+	var status: String="armed" if g.armed else ("move" if distance>.55 else ("good" if seconds<=PERFECT_EARLY*clampf(g.difficulty_scale(),.85,1.25) else "ready"))
 	return {"visible":true,"kind":"receive" if g.phase=="RECEIVE" else "set","action":action,"seconds":seconds,"status":status,"quality":g.input_quality if g.armed else quality(seconds,g.difficulty_scale()),"armed":g.armed,"feedback":"","feedback_left":0.0}

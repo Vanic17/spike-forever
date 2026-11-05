@@ -3,7 +3,7 @@
 		"complete_flow": true,
 		"controller_edits": true,
 		"device": 0,
-		"overwrite": false
+		"overwrite": true
 	},
 	"(1920, 1080)": {
 		"complete_flow": true,
@@ -17,6 +17,6 @@
 		"device": 7,
 		"overwrite": true
 	},
-	"checks": 170,
+	"checks": 173,
 	"failures": []
 }

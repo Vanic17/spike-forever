@@ -1,0 +1,43 @@
+﻿{
+    "personal_files":  [
+                           "roster-overrides.json",
+                           "legend72/legend-01.json",
+                           "settings.cfg",
+                           "careers/slot.json",
+                           "controls.cfg"
+                       ],
+    "pass":  true,
+    "fixture":  "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\update75-427d3c41d11540049bbc38234d68b14c",
+    "cases":  [
+                  {
+                      "case":  "skip-versions",
+                      "rejected":  false,
+                      "pass":  true
+                  },
+                  {
+                      "case":  "protect-roster",
+                      "rejected":  true,
+                      "pass":  true
+                  },
+                  {
+                      "case":  "protect-career",
+                      "rejected":  true,
+                      "pass":  true
+                  },
+                  {
+                      "case":  "protect-legend",
+                      "rejected":  true,
+                      "pass":  true
+                  },
+                  {
+                      "case":  "protect-settings",
+                      "rejected":  true,
+                      "pass":  true
+                  },
+                  {
+                      "case":  "protect-save-identity",
+                      "rejected":  true,
+                      "pass":  true
+                  }
+              ]
+}

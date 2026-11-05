@@ -1,0 +1,18 @@
+{
+  "contacts": {
+    "0": "res://docs/defense75-receive_front75.png",
+    "1": "res://docs/defense75-receive_left75.png",
+    "2": "res://docs/defense75-receive_right75.png",
+    "3": "res://docs/defense75-dive_hand75.png"
+  },
+  "fps": 60,
+  "frames": 659,
+  "method": "production Avatar, native AnimationTree, source root travel and final IK",
+  "pass": true,
+  "variants": [
+    "receive_front75",
+    "receive_left75",
+    "receive_right75",
+    "dive_hand75"
+  ]
+}

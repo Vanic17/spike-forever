@@ -11,6 +11,12 @@ $files+='docs/RELEASE_NOTES_72.md'
 $files+='docs/RELEASE_NOTES_72_1.md'
 $files+='docs/RELEASE_NOTES_73.md'
 $files+='docs/RELEASE_NOTES_74.md'
+$files+='docs/RELEASE_NOTES_75.md'
+foreach($pattern75 in @('defense75-*','arcade75-*','update75-*')){
+ foreach($report75 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern75){
+  if($report75.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report75.Name}
+ }
+}
 foreach($report75 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'legend75-*'){
  if($report75.Extension -in @('.md','.json','.png')){$files+='docs/'+$report75.Name}
 }

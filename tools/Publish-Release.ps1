@@ -1,4 +1,4 @@
-﻿param([string]$Repository='Vanic17/spike-forever',[string]$Package='',[switch]$Phased)
+﻿param([string]$Repository='Vanic17/spike-forever',[string]$Package='',[switch]$Phased,[string]$NotesFile='')
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 $gh=Join-Path $root 'tools/github/bin/gh.exe'
@@ -142,7 +142,9 @@ if($script:LastNativeExit -eq 0){
  Native $gh @('release','upload',$tag,$package,'--repo',$Repository,'--clobber')
  Native $gh @('release','edit',$tag,'--repo',$Repository,'--draft=false','--latest')
 }else{
- Native $gh @('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag),'--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
+ $notesArguments=@('--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
+ if($NotesFile){$notesArguments=@('--notes-file',[IO.Path]::GetFullPath($NotesFile))}
+ Native $gh (@('release','create',$tag,$package,'--repo',$Repository,'--title',('Spike Forever '+$tag))+$notesArguments)
 }
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)

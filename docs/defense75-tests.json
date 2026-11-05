@@ -1,0 +1,18 @@
+{
+  "author_contact_error_m": 0.0,
+  "checks": 496131,
+  "failures": [],
+  "fps": [
+    30,
+    60,
+    120,
+    144
+  ],
+  "maximum_bone_length_error_m": 0.00000351667404174805,
+  "maximum_source_step_m": 0.250148832798004,
+  "method": "reference-authored PSA adaptations evaluated by AnimationTree; not calibrated motion capture",
+  "new_clips": 4,
+  "pass": true,
+  "reference": "https://www.youtube.com/shorts/haSkiDd9P_8",
+  "samples": 3398
+}

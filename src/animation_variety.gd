@@ -22,6 +22,12 @@ const SOURCES := {
 const CLIPS := ["receive_low", "receive_squat", "receive_step", "receive_left_step", "receive_right_step", "set_short_front", "set_short_back", "set_left_front", "set_left_back", "set_running_front", "attack_angle_left", "attack_angle_right", "attack_turn", "attack_pin_left", "attack_pin_right"]
 
 static func receive(local: Vector3, speed: float, incoming: String, serial: int) -> String:
+	# Choose a compatible support, never a random fall. The final platform
+	# preparation is authored from the short reference; old variants remain.
+	if incoming in ["spike","soft","block"] and posmod(serial,3)!=2:
+		if local.x>.65: return "receive_left75"
+		if local.x<-.65: return "receive_right75"
+		if local.y<1.55: return "receive_front75"
 	var expanded := Expansion.receiving(local,speed,incoming,serial)
 	if not expanded.is_empty(): return expanded
 	# The root's lateral reach chooses the actual stepping performance. A low
@@ -58,4 +64,5 @@ static func blocking(local_velocity: Vector3, index: int, serial: int) -> String
 	return Expansion.blocking(local_velocity,index,serial)
 
 static func diving(local: Vector3, incoming: String, serial: int) -> String:
+	if incoming=="spike" and local.z>.15 and absf(local.x)<.65 and posmod(serial,3)==0: return "dive_hand75"
 	return Expansion.diving(local,incoming,serial)

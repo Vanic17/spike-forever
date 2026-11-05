@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54"]
-const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion41.res"
-const FORMAT := 2
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd")]
+const LIBRARY_PATH := "res://assets/active/native_motion75.res"
+const FORMAT := 3
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary

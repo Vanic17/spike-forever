@@ -1018,7 +1018,7 @@ func release_serve_toss() -> void:
 func validate_contact(index: int, action: String) -> bool:
 	if legend_controls(index) and not legend_match.contact_allowed(index,action): return false
 	var player = players[index]
-	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else 0.35):
+	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else (0.50 if legend_controls(index) and action in ["receive","attack"] else 0.35)):
 		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"stance","expected":player.contact_world(action),"ball":ball_pos,"yaw":player.rotation.y,"stance":player.stance_for_contact(action,ball_pos)})
 		return false
 	player.reach_target = ball_pos

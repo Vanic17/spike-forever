@@ -1,0 +1,31 @@
+{
+  "attack_cases": [
+    {
+      "allowed": true,
+      "offset": -0.28
+    },
+    {
+      "allowed": true,
+      "offset": -0.2
+    },
+    {
+      "allowed": true,
+      "offset": 0.0
+    },
+    {
+      "allowed": true,
+      "offset": 0.2
+    },
+    {
+      "allowed": true,
+      "offset": 0.28
+    },
+    {
+      "allowed": false,
+      "offset": 0.4
+    }
+  ],
+  "checks": 58,
+  "failures": [],
+  "pass": true
+}

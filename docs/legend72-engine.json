@@ -9,14 +9,14 @@
     {
       "champions": {
         "cup": "cisterna-volley",
-        "fifth": "allianz-milano",
+        "fifth": "cucine-lube-civitanova",
         "playoff": "cisterna-volley",
-        "playout": "gas-sales-bluenergy-piacenza",
+        "playout": "allianz-milano",
         "regular": "cisterna-volley",
         "supercup": "sir-susa-scai-perugia"
       },
       "fixtures": 181,
-      "player_matches": 28,
+      "player_matches": 27,
       "season": 2026
     },
     {
@@ -24,37 +24,37 @@
         "cup": "cisterna-volley",
         "fifth": "sir-susa-scai-perugia",
         "playoff": "cisterna-volley",
-        "playout": "gas-sales-bluenergy-piacenza",
+        "playout": "valsa-group-modena",
         "regular": "cisterna-volley",
         "supercup": "cisterna-volley"
       },
-      "fixtures": 178,
+      "fixtures": 187,
       "player_matches": 36,
       "season": 2027
     },
     {
       "champions": {
         "cup": "cisterna-volley",
-        "fifth": "cucine-lube-civitanova",
+        "fifth": "itas-trentino",
         "playoff": "cisterna-volley",
-        "playout": "pallavolo-padova",
+        "playout": "tinet-prata-di-pordenone",
         "regular": "cisterna-volley",
         "supercup": "cisterna-volley"
       },
-      "fixtures": 180,
+      "fixtures": 182,
       "player_matches": 36,
       "season": 2028
     },
     {
       "champions": {
         "cup": "cisterna-volley",
-        "fifth": "vero-volley-monza",
+        "fifth": "rana-verona",
         "playoff": "cisterna-volley",
-        "playout": "acqua-santanna-cuneo",
+        "playout": "allianz-milano",
         "regular": "cisterna-volley",
         "supercup": "cisterna-volley"
       },
-      "fixtures": 181,
+      "fixtures": 187,
       "player_matches": 36,
       "season": 2029
     }

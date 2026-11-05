@@ -90,6 +90,11 @@ func run():
 	check(xp_after>0 and int(m.state.skill_points)>0 and rep_after>0,"Real measured performance earns XP, spendable skills and reputation")
 	check(not m.complete_match(first),"Replay cannot claim a second reward")
 	check(int(m.state.xp)==xp_after and float(m.state.reputation)==rep_after and m.state.match_history.size()==history_after,"Duplicate match leaves XP, reputation and history unchanged")
+	# Starting at75 makes upgrades cost more than the former50-point preset.
+	# Earn the real required XP rather than injecting points into the fixture.
+	var productive_matches:=0
+	while int(m.state.skill_points)<m.attribute_cost("battuta") and productive_matches<8:
+		check(m.complete_match(result_for(m)),m.error); productive_matches+=1
 	var rating_before: int=m.state.profile.ratings.battuta; var skill_before: int=m.state.skill_points; var cost: int=m.attribute_cost("battuta")
 	check(m.upgrade_attribute("battuta"),m.error)
 	check(int(m.state.profile.ratings.battuta)==rating_before+1 and int(m.state.skill_points)==skill_before-cost,"Skill spending changes rating and consumes correct budget")

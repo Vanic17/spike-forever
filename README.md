@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.75.0:** quattro varianti di difesa adattate dal nuovo riferimento video, integrate nell'AnimationTree originale. Diventa un mito più permissivo nei contatti di bagher e attacco, nuovi giocatori a OVR 75. Aggiornamenti con ritentativi e diagnostica dettagliata, verifiche sui dati personali e download reale controllato. [Novità e verifiche](docs/RELEASE_NOTES_75.md).
+
 **Versione 0.74.0:** ricezione più permissiva in Diventa un mito, bagher e palleggio sopra la testa distinti, indicazioni prima del contatto e tuffo preparabile in anticipo. Verificati comandi PlayStation/Xbox, tastiera e passaggio all'esibizione. [Novità e verifiche](docs/RELEASE_NOTES_74.md).
 
 **Versione 0.73.0:** Diventa un mito usa il motore dell'esibizione per palla, IA, animazioni, contatti e timing. Conferma controller corretta, posizione IA indicata da un cerchietto trasparente e rientri tra i punti senza teletrasporto. Include il doppio cambio palleggiatore-opposto, con coppia atomica, rientro titolari, allenatore CPU e Campionato. Carriere precedenti compatibili. [Novità e verifiche](docs/RELEASE_NOTES_73.md).

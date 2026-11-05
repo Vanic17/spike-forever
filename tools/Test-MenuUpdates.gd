@@ -46,12 +46,13 @@ func run() -> void:
 	client.install(invalid)
 	assert(not client.downloading and not client.busy)
 	client.completed(HTTPRequest.RESULT_SUCCESS,404,PackedStringArray(),PackedByteArray())
-	assert(not client.busy and menu.status.text.contains("repository"))
+	assert(not client.busy and not menu.status.text.is_empty())
 	var buttons=menu.panel.find_children("*","Button",true,false)
 	var played:=false
 	for button in buttons:
 		if button.text=="GIOCA": button.pressed.emit(); played=true
-	assert(played and game.started and not menu.panel.visible)
+	assert(played and menu.play_hub.visible and not game.started)
+	menu.play_hub.hide()
 	game.started=false
 	menu.panel.show()
 	menu.play.grab_focus()
@@ -67,7 +68,7 @@ func run() -> void:
 	release.pressed=false
 	root.push_input(release,true)
 	await process_frame
-	assert(game.started,"Controller accept must activate the focused Play button")
+	assert(menu.play_hub.visible,"Controller accept must open the current Play mode hub")
 	print("MENU UPDATES PASS: play offline / latest and previous versions / draft exclusion / invalid package refusal / network failure preserves play")
 	game.free()
 	quit()

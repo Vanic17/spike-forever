@@ -335,7 +335,7 @@ func contact_allowed(index: int, action: String) -> bool:
 	if action=="attack":
 		var p=game.players[index]
 		if source_motion.is_empty() or source_motion.action!="attack" or p.clip_name!="attack": return false
-		if absf(p.animation_time-p.clips.attack.contact_time)>.18: return false
+		if absf(p.animation_time-p.clips.attack.contact_time)>.32: return false
 		if not Tactics.front(index,game.rotations[0]) and absf(source_motion.origin.z)<3: return false
 		if role=="L": return false
 	return true

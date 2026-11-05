@@ -355,7 +355,7 @@ func creation_screen():
 	serves.set_meta("focus_key","serve")
 	serves.item_selected.connect(func(index): draft.serve_preference="float" if index==1 else "jump")
 	appearance_controls(form,draft,false)
-	var skills:=UI.card(row,650); heading(skills,"IL TUO PUNTO DI PARTENZA",33); text_block(skills,"Distribuisci 300 punti. Ogni attributo parte da 30 e può arrivare a 65. Il ruolo determina il tuo OVR.",22,UI.MUTED)
+	var skills:=UI.card(row,650); heading(skills,"IL TUO PUNTO DI PARTENZA",33); text_block(skills,"Parti da OVR 75. Personalizza gli attributi tra 30 e 85 mantenendo OVR 75 e il budget di 480 punti.",22,UI.MUTED)
 	budget_label=label(skills,"",27,UI.GOLD); overall_label=label(skills,"",22,UI.MUTED)
 	for key in Legend.STAT_KEYS:
 		var stat_key: String=key; var line:=HBoxContainer.new(); skills.add_child(line); var title:=label(line,ATTRIBUTE_LABELS[key],21); title.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -385,8 +385,8 @@ func refresh_draft():
 	preview.update_player(draft)
 	var total:=0
 	for key in Legend.STAT_KEYS: total+=int(draft.ratings[key])
-	if is_instance_valid(budget_label): budget_label.text=_t("PUNTI RIMANENTI: %d / 300")%[Legend.INITIAL_BUDGET-total]
-	if is_instance_valid(overall_label): overall_label.text=_t("OVR %d · MASSIMO INIZIALE 65")%Overall.calculate(draft.ratings,str(draft.role))
+	if is_instance_valid(budget_label): budget_label.text=_t("PUNTI RIMANENTI: %d / %d")%[Legend.INITIAL_BUDGET-total,Legend.INITIAL_BUDGET]
+	if is_instance_valid(overall_label): overall_label.text=_t("OVR %d · OBIETTIVO INIZIALE 75")%Overall.calculate(draft.ratings,str(draft.role))
 	for key in attribute_values:
 		attribute_values[key].text=str(draft.ratings[key]); attribute_buttons[key][0].disabled=int(draft.ratings[key])<=Legend.INITIAL_MIN; attribute_buttons[key][1].disabled=int(draft.ratings[key])>=Legend.INITIAL_CAP or total>=Legend.INITIAL_BUDGET
 

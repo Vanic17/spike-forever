@@ -30,7 +30,7 @@
 		{
 			"contacts": 0,
 			"far": false,
-			"maximum_step": 0.0505597144365311,
+			"maximum_step": 0.0304838977754116,
 			"starts": true
 		},
 		{
@@ -82,14 +82,14 @@
 		"normal_speed": 4.28365802764893,
 		"sprint_speed": 4.68390226364136
 	},
-	"native_clips": 137,
+	"native_clips": 141,
 	"native_events": 143,
 	"pause_replay_releases": true,
 	"timing_same_actor": [
 		{
 			"actual_legend_offset": -0.06,
 			"legacy": 0.42,
-			"legend": 0.881818181818182,
+			"legend": 1.0,
 			"remaining": -0.06
 		},
 		{
@@ -101,21 +101,21 @@
 		{
 			"actual_legend_offset": 0.25,
 			"legacy": 0.661290322580645,
-			"legend": 0.884210526315789,
+			"legend": 0.982608695652174,
 			"remaining": 0.25
 		},
 		{
 			"actual_legend_offset": 0.5,
 			"legacy": 0.258064516129032,
-			"legend": 0.621052631578947,
+			"legend": 0.765217391304348,
 			"remaining": 0.5
 		},
 		{
 			"actual_legend_offset": 0.8,
 			"legacy": 0.0,
-			"legend": 0.305263157894737,
+			"legend": 0.504347826086957,
 			"remaining": 0.8
 		}
 	],
-	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-inputs-frozen-data/Godot/app_userdata/Spike Forever/"
+	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-patch-appdata/Godot/app_userdata/Spike Forever/"
 }

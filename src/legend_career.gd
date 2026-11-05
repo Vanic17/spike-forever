@@ -7,9 +7,10 @@ const Saves=preload("res://src/legend_save.gd")
 const League=preload("res://src/league.gd")
 const Overall=preload("res://src/player_overall.gd")
 const Simulation=preload("res://src/career_simulation.gd")
-const INITIAL_CAP:=65
+const INITIAL_CAP:=85
+const INITIAL_OVERALL:=75
 const INITIAL_MIN:=30
-const INITIAL_BUDGET:=300
+const INITIAL_BUDGET:=480
 const ATTRIBUTE_CAP:=99
 const XP_PER_POINT:=60
 const STAT_KEYS=["battuta","ricezione","difesa","palleggio","schiacciata","muro"]
@@ -34,7 +35,7 @@ func overall() -> int: return Overall.calculate(state.get("profile",{}).get("rat
 
 func default_profile() -> Dictionary:
 	var ratings: Dictionary={}
-	for key in STAT_KEYS: ratings[key]=50
+	for key in STAT_KEYS: ratings[key]=INITIAL_OVERALL
 	return {"name":"Il tuo nome","number":1,"jersey_number":1,"role":"outside_hitter","dominant_hand":"right","serve_preference":"jump","appearance":{"hair_style":"corti","hair_length":"corti","hair_color":"marrone","skin_tone":"olivastra","beard":"nessuna"},"ratings":ratings}
 
 func validate_profile(profile: Dictionary) -> String:
@@ -51,7 +52,7 @@ func validate_profile(profile: Dictionary) -> String:
 		if not _whole_number(value) or int(value)<INITIAL_MIN or int(value)>INITIAL_CAP: return "Ogni attributo iniziale deve essere tra %d e %d."%[INITIAL_MIN,INITIAL_CAP]
 		total+=int(value)
 	if total>INITIAL_BUDGET: return "Budget iniziale superato: massimo %d punti sui sei attributi."%INITIAL_BUDGET
-	if Overall.calculate(profile.ratings,str(profile.role))>INITIAL_CAP: return "Valutazione iniziale troppo alta."
+	if Overall.calculate(profile.ratings,str(profile.role))!=INITIAL_OVERALL: return "La valutazione iniziale deve essere 75. Ribilancia gli attributi."
 	if profile.has("appearance") and not profile.appearance is Dictionary: return "Aspetto non valido."
 	for key in APPEARANCE_OPTIONS:
 		if profile.get("appearance",{}).has(key) and str(profile.appearance[key]) not in APPEARANCE_OPTIONS[key]: return "Aspetto non valido: "+str(key)

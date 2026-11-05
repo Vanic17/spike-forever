@@ -4,14 +4,14 @@
 	"buffered_attacks": [
 		{
 			"alternate": false,
-			"charge": 0.455757575757576,
+			"charge": 0.363636363636364,
 			"hitter": 0,
 			"setter": 5,
 			"variant": "attack_pin_right"
 		},
 		{
 			"alternate": true,
-			"charge": 0.455757575757576,
+			"charge": 0.363636363636364,
 			"hitter": 0,
 			"setter": 5,
 			"variant": "attack_tip_3"
@@ -34,8 +34,8 @@
 		"ticks": 1500
 	},
 	"failures": [],
-	"manual_dive_max_step": 0.0457640066742897,
-	"native_clips": 137,
+	"manual_dive_max_step": 0.030483853071928,
+	"native_clips": 141,
 	"receive_timing": 1.0,
 	"replay_release_cache": true,
 	"role_cases": [
@@ -465,14 +465,14 @@
 			"action": "set",
 			"hitter": 2,
 			"quick": false,
-			"seconds": 1.245,
+			"seconds": 1.22342317635748,
 			"variant": "set_left_front"
 		},
 		{
 			"action": "fast_set",
 			"hitter": 2,
 			"quick": true,
-			"seconds": 1.24020879075628,
+			"seconds": 1.22342317635748,
 			"variant": "fast_set_v26_02"
 		}
 	]

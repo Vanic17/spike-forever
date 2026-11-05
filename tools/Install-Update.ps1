@@ -19,7 +19,7 @@ try {
    $name=$entry.FullName.Replace('\','/')
    if(!$name -or $name.EndsWith('/')){continue}
    if($name.StartsWith('/') -or $name.Contains(':') -or $name.Split('/') -contains '..' -or $seen.ContainsKey($name.ToLowerInvariant())){throw 'Unsafe or duplicate archive path'}
-   if($name -match '^(\.git|\.runtime|\.updates)(/|$)' -or (($entry.ExternalAttributes -shr 16) -band 61440) -eq 40960){throw 'Unsafe archive entry'}
+   if($name -match '^(\.git|\.runtime|\.updates|user|userdata|saves|careers|legend72)(/|$)' -or $name -match '(^|/)(roster-overrides\.json|settings\.cfg|legend-\d+\.json|career-\d+\.json)(\.|$)' -or (($entry.ExternalAttributes -shr 16) -band 61440) -eq 40960){throw 'Unsafe or personal-data archive entry'}
    $seen[$name.ToLowerInvariant()]=$true
    $path=[IO.Path]::GetFullPath((Join-Path $stage $name))
    if(!$path.StartsWith($stage+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Archive escaped staging'}
@@ -28,6 +28,19 @@ try {
   }
  } finally {$zip.Dispose()}
  $manifest=Get-Content -Raw -LiteralPath (Join-Path $stage 'release-manifest.json') | ConvertFrom-Json
+ # A renamed Godot application silently selects a different AppData folder,
+ # making existing careers/overrides look lost even without deleting them.
+ $projectText=Get-Content -Raw -LiteralPath (Join-Path $stage 'project.godot')
+ $installedProject=Join-Path $root 'project.godot'
+ if(Test-Path -LiteralPath $installedProject){
+  $installedText=Get-Content -Raw -LiteralPath $installedProject
+  foreach($setting in @('config/name','config/use_custom_user_dir','config/custom_user_dir_name')){
+   $pattern='(?m)^'+[regex]::Escape($setting)+'=(.*)$'
+   $oldValue=[regex]::Match($installedText,$pattern).Groups[1].Value.Trim()
+   $newValue=[regex]::Match($projectText,$pattern).Groups[1].Value.Trim()
+   if($oldValue -ne $newValue){throw ('Update changes the save-data identity: '+$setting)}
+  }
+ }
  foreach($required in @('project.godot','src/main.gd','version.json','Avvia Spike Forever.cmd')){
   if(!$manifest.files.PSObject.Properties[$required]){throw ('Missing required release file: '+$required)}
  }
