@@ -16,6 +16,7 @@
       ],
       "fps": 60,
       "queued": true,
+      "recovery_seconds": 1.01666666666667,
       "side": -1,
       "variant": "dive_slide77"
     },
@@ -35,6 +36,7 @@
       ],
       "fps": 60,
       "queued": true,
+      "recovery_seconds": 1.01666666666667,
       "side": 1,
       "variant": "dive_slide_right77"
     },
@@ -54,6 +56,7 @@
       ],
       "fps": 120,
       "queued": true,
+      "recovery_seconds": 1.025,
       "side": -1,
       "variant": "dive_slide77"
     },
@@ -73,11 +76,12 @@
       ],
       "fps": 120,
       "queued": true,
+      "recovery_seconds": 1.025,
       "side": 1,
       "variant": "dive_slide_right77"
     }
   ],
-  "checks": 21,
+  "checks": 25,
   "failures": [],
   "pass": true
 }

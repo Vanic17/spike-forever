@@ -17,6 +17,8 @@ var native_pose_pass := false
 var middle_ready:=false
 var middle_load:=0.0
 var middle_load_age:=0.0
+var pin_reference_load:=0.0
+var pin_reference_poses: Dictionary={}
 var wrist_tip_variant:=""
 var native_transition_influence := 0.35 if native_animation_enabled else 0.0
 var clips: Dictionary
@@ -528,6 +530,8 @@ func match_gait_time(action: String) -> float:
 func tick(dt: float, selected: bool, render_pose: bool = true) -> void:
 	middle_load=move_toward(middle_load,1.0 if middle_ready else 0.0,dt*7.0)
 	middle_load_age=middle_load_age+dt if middle_ready else 0.0
+	var reference_run: bool=variant_names.get("attack","") in ["attack_reference78","attack_reference_right78"] and intent.task=="approach" and looping and velocity.length()>1.25 and (global_basis.inverse()*velocity).z>.15
+	pin_reference_load=move_toward(pin_reference_load,1.0 if reference_run else 0.0,dt*7.0)
 	if indicator: indicator.visible = selected
 	step_cooldown = maxf(0, step_cooldown - dt)
 	idle_time += dt * (0.93 + intent.individuality * 0.15)
@@ -618,6 +622,12 @@ func apply_pose(_dt: float) -> void:
 		if leg_weight > 0 and clips.has(travel_animation_name):
 			var steps := travel_pose()
 			normalized = layer_legs(normalized, steps, leg_weight, clip.parents, clip.names)
+	# During the new pin approach, layer its backswing over the real running
+	# feet. The contact clip then continues through the existing crossfade.
+	if pin_reference_load>.001 and looping and variant_names.get("attack","") in ["attack_reference78","attack_reference_right78"]:
+		var prefix_key:=str([variant_names.attack,left_handed,native_animation_enabled])
+		if not pin_reference_poses.has(prefix_key):pin_reference_poses[prefix_key]=normalized_pose("source:"+str(variant_names.attack),clips.attack.contact_time*.28,false)
+		normalized=mix_upper_pose(normalized,pin_reference_poses[prefix_key],pin_reference_load*.72)
 	# A middle threatens the quick even before a high set can start its jump
 	# clip. Layer the original grounded backswing over the travelling feet.
 	if middle_load>0.001 and looping and source_clips.has("attack_v26_01"):

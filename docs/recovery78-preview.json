@@ -1,0 +1,14 @@
+{
+  "contacts": {
+    "0": "res://docs/recovery78-dive_slide77.png",
+    "1": "res://docs/recovery78-dive_slide_right77.png"
+  },
+  "fps": 60,
+  "frames": 498,
+  "method": "production Avatar, native AnimationTree, source root travel and final IK",
+  "pass": true,
+  "variants": [
+    "dive_slide77",
+    "dive_slide_right77"
+  ]
+}

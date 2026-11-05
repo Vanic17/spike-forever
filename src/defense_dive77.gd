@@ -5,7 +5,8 @@ static func shape(pose: Array[Transform3D], names: Array[String], parents: Array
 ## Bake a supported rise, bypassing the source's shoulder somersault entirely.
 ## Blend LOCAL joint rotations; never interpolate global limbs or a live rig.
 static func recovery_pose(reference: Array[Transform3D], hold: Array[Transform3D], standing: Array[Transform3D], names: Array[String], parents: Array[int], time: float, contact: float, duration: float) -> Array[Transform3D]:
-	var weight:=smoothstep(contact+.28,maxf(contact+.30,duration-.035),time)
+	# The omitted shoulder roll must not leave its three-second lock behind.
+	var weight:=smoothstep(contact+.20,minf(duration-.035,contact+1.08),time)
 	var result: Array[Transform3D]=[];result.resize(reference.size())
 	for bone in reference.size():
 		var parent: int=parents[bone]
@@ -19,4 +20,13 @@ static func recovery_pose(reference: Array[Transform3D], hold: Array[Transform3D
 		var q:=a.basis.get_rotation_quaternion().slerp(b.basis.get_rotation_quaternion(),weight).normalized()
 		var local:=Transform3D(Basis(q),origin)
 		result[bone]=result[parent]*local if parent>=0 and parent<bone else local
+	# Keep the supporting soles on a continuous floor path during the rise.
+	for side in ["Left","Right"]:
+		var foot:=names.find(side+"Foot")
+		if foot<0:continue
+		var target: Vector3=hold[foot].origin.lerp(standing[foot].origin,weight)
+		target.y=maxf(.055,target.y)
+		preload("res://src/defense_low76.gd").solve_leg(result,names,parents,side,target,0)
+		var turn: Quaternion=(hold[foot].basis.slerp(standing[foot].basis,weight)*result[foot].basis.inverse()).get_rotation_quaternion()
+		Shape._rotate_subtree(result,parents,foot,turn.get_axis(),turn.get_angle())
 	return result

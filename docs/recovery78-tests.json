@@ -1,0 +1,37 @@
+{
+  "cases": [
+    {
+      "hips_m": 0.980391979217529,
+      "name": "dive_slide77",
+      "old_recovery_end": 3.86694214876033,
+      "recovery_end": 2.22396694214876,
+      "rise_seconds": 1.1
+    },
+    {
+      "hips_m": 0.981246709823608,
+      "name": "dive_slide_right77",
+      "old_recovery_end": 3.50030313226807,
+      "recovery_end": 1.89272729517829,
+      "rise_seconds": 1.1
+    },
+    {
+      "hips_m": 0.980391979217529,
+      "name": "defense_miss77",
+      "old_recovery_end": 3.86694214876033,
+      "recovery_end": 2.22396694214876,
+      "rise_seconds": 1.1
+    },
+    {
+      "hips_m": 0.981246709823608,
+      "name": "defense_miss_right77",
+      "old_recovery_end": 3.50030313226807,
+      "recovery_end": 1.89272729517829,
+      "rise_seconds": 1.1
+    }
+  ],
+  "checks": 1048656,
+  "failures": [],
+  "limb_error_m": 0.00000112364796223119,
+  "palm_error_m": 0.000000376972877802473,
+  "pass": true
+}

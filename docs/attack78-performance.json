@@ -1,0 +1,18 @@
+{
+  "approaching_attackers": 2,
+  "base": {
+    "mean_ms": 2.501245,
+    "p95_ms": 3.58,
+    "samples": 600
+  },
+  "limits": "CPU animation/skinning only; no GPU or total FPS claim; cached upper-body pose and 600 measured frames",
+  "native": true,
+  "new": {
+    "mean_ms": 2.66205166666667,
+    "p95_ms": 3.88,
+    "samples": 600
+  },
+  "pass": true,
+  "players": 12,
+  "ratio": 1.06429064992301
+}

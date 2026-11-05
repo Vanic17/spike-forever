@@ -1333,7 +1333,7 @@ func plan_attack(direction: int, quick: bool) -> void:
 				# clips contain a large lateral reach which put an opposite's
 				# feet beyond the sideline before his hands reached the set.
 				variant="attack_pin_right" if planned_direction==2 else "attack_pin_left"
-			variant = preload("res://src/motion_prototypes.gd").attack_variant(variant,planned_direction,pass_quality)
+			variant = preload("res://src/motion_prototypes.gd").attack_variant(variant,planned_direction,pass_quality,shot_serial)
 			players[planned_hitter].select_variant("attack",variant)
 		players[setter].select_variant("set",AnimationVariety.setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial))
 		players[setter].select_variant("fast_set",AnimationVariety.fast_setting(planned_direction==2,players[setter].velocity.length(),pass_quality,shot_serial,players[setter].variant_names.get("set","set")))
@@ -2481,8 +2481,10 @@ func advance_dive_body(index: int, dt: float) -> void:
 	var motion: Dictionary = dive_motions[index]
 	var action: String = motion.action
 	var clip = player.clips[action]
+	var shortened: bool=player.variant_names.get(action,"") in ["dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77"]
+	var finish: float=minf(clip.duration,clip.recovery_end+.08) if shortened else clip.duration
 	motion.elapsed += dt
-	motion.source_time = minf(clip.duration, motion.start_time + motion.elapsed * 1.15)
+	motion.source_time = minf(finish, motion.start_time + motion.elapsed * 1.15)
 	if not motion.get("committed",true):
 		if motion.source_time<0:
 			# Walk/run into the plant while the ball is still too far away
@@ -2526,9 +2528,9 @@ func advance_dive_body(index: int, dt: float) -> void:
 	player.rotation.y = lerp_angle(motion.initial_yaw, motion.yaw, smoothstep(0, minf(0.18,motion.duration), motion.elapsed))
 	player.animation_time = motion.source_time
 	player.contact_scheduled = true
-	player.motion_lock = maxf(0, (clip.duration - motion.source_time) / 1.15)
+	player.motion_lock = maxf(0, (finish - motion.source_time) / 1.15)
 	travel[index] += player.position.distance_to(previous)
-	if motion.source_time >= clip.duration - 0.001:
+	if motion.source_time >= finish - 0.001:
 		dive_motions.erase(index)
 		player.motion_lock = 0
 		player.contact_scheduled = false

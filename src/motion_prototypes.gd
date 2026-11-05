@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77"]
-const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion77.res"
-const FORMAT := 5
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd")]
+const LIBRARY_PATH := "res://assets/active/native_motion78.res"
+const FORMAT := 6
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -74,6 +74,8 @@ static func author_clip(base, author, label: String):
 	if label in ["receive_low76","receive_low_right76","receive_slide77","receive_slide_right77"]:
 		var contact_pose:=normalized(clip,clip.contact_time)
 		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
+	if label in ["dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77"]:
+		clip.recovery_end=minf(base.recovery_end,clip.contact_time+1.10)
 	return clip
 
 static func signature(bank: Dictionary) -> String:
@@ -116,8 +118,11 @@ static func dive_variant(original: String, local_ball: Vector3, velocity: Vector
 		return NAMES[0]
 	return original
 
-static func attack_variant(original: String, direction: int, quality: float) -> String:
+static func attack_variant(original: String, direction: int, quality: float, serial: int = -1) -> String:
 	if not enabled or "--motion-dive-only" in OS.get_cmdline_user_args(): return original
+	if direction in [0,2,3] and quality>=.66 and serial>=0 and posmod(serial,3)==1:
+		if original=="attack_pin_left":return "attack_reference78"
+		if original=="attack_pin_right":return "attack_reference_right78"
 	# Replace only the matching source performance. Its unchanged contact,
 	# root travel and recovery metadata preserve the planned ball trajectory
 	# and actor deadline. Other approaches, middle attacks and tips stay intact.

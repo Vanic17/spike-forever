@@ -1,9 +1,9 @@
 {
-  "checks": 1025125,
+  "checks": 1025127,
   "failures": [],
   "maximum_contact_error_m": 0.000000303925247635561,
-  "maximum_limb_error_m": 0.000000640749931335449,
-  "maximum_step_m": 0.268534123897552,
+  "maximum_limb_error_m": 0.000000745058059692383,
+  "maximum_step_m": 0.261609464883804,
   "new_eligible_per_100": 20,
   "new_variants": 6,
   "pass": true,

@@ -28,6 +28,10 @@ func run():
 			while game.phase=="RECEIVE" and game.clock_time<limit:game.step(1.0/fps)
 			var contacts: Array=game.contact_log.filter(func(row):return int(row.player)==index and row.action=="dive")
 			check(not contacts.is_empty(),"new supported dive meets real ball at "+str(fps)+" Hz")
-			cases.append({"fps":fps,"side":side,"queued":queued,"variant":p.variant_names.get("dive",""),"contacts":contacts})
+			var recovery_elapsed:=0.0
+			while game.dive_motions.has(index) and recovery_elapsed<1.5:
+				game.advance_dive_body(index,1.0/fps);recovery_elapsed+=1.0/fps
+			check(not game.dive_motions.has(index) and recovery_elapsed<1.15,"new lateral recovery releases old roll lock within 1.15 seconds after contact")
+			cases.append({"fps":fps,"side":side,"queued":queued,"variant":p.variant_names.get("dive",""),"contacts":contacts,"recovery_seconds":recovery_elapsed})
 	FileAccess.open("res://docs/defense77-dive-contacts.json",FileAccess.WRITE).store_string(JSON.stringify({"pass":failures.is_empty(),"checks":checks,"cases":cases,"failures":failures},"  "))
 	print("DEFENSE DIVE77 ","PASS" if failures.is_empty() else "FAIL",failures);game.free();quit(0 if failures.is_empty() else 1)

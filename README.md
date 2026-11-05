@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.78.0:** risalita più rapida e sblocco delle nuove difese laterali; variante d'attacco con caricamento ampio già durante la rincorsa, per destri e mancini. [Novità e verifiche](docs/RELEASE_NOTES_78.md).
+
 **Versione 0.77.0:** sei varianti di difesa laterale, con bagher basso, recupero senza capriola e tentativo estremo soltanto dopo una mancata difesa. Le animazioni precedenti restano disponibili. [Novità e verifiche](docs/RELEASE_NOTES_77.md).
 
 **Versione 0.76.0:** nuova difesa bassa laterale e speculare nell'AnimationTree originale; corretti orientamento e cambio d'intercetto al comando di ricezione in Diventa un mito. Aggiornamenti con scansione SHA256 e download dei soli file modificati, preservando salvataggi e modifiche personali. [Novità, verifiche e passaggio dal vecchio updater](docs/RELEASE_NOTES_76.md).
