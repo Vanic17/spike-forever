@@ -1,4 +1,6 @@
-# Spike Forever 0.76.0
+# Spike Forever 0.76.1
+
+La verifica della release pubblica ha individuato anche una lettura transitoria vuota del file di progresso durante la sua sostituzione atomica su Windows. Il client ora attende il campionamento successivo senza errori di parsing nel log. È una correzione del monitoraggio: i file del gioco vengono comunque verificati prima di essere installati.
 
 ## Difesa bassa
 

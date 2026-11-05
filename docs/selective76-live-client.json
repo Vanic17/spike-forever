@@ -1,0 +1,9 @@
+{
+  "archive_digest": "sha256:e72c1a3cfd2e5981edd8f3e52541dc846ac360c95c2da97a5e3e0a077f309f20",
+  "index_digest": "sha256:4011848c9677e2b34a9ec9c2e2935c4b3993d532747604db6bc71855b3d7789b",
+  "installed": false,
+  "pass": true,
+  "progress_events": 66,
+  "result": "current",
+  "tag": "v0.76.0"
+}

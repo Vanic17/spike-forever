@@ -36,7 +36,10 @@ func _process(dt: float) -> void:
 	poll_elapsed=0
 	var path:=folder.path_join("state.json")
 	if FileAccess.file_exists(path):
-		var state=JSON.parse_string(FileAccess.get_file_as_string(path))
+		# Windows may briefly deny a read while the worker atomically replaces
+		# this file. Retry on the next tick without logging a parse error.
+		var parser:=JSON.new()
+		var state=parser.data if parser.parse(FileAccess.get_file_as_string(path))==OK else null
 		if state is Dictionary:
 			var message: String=str(state.get("message",""))
 			if state.get("status","")=="scan": message+=" · %d/%d"%[int(state.get("scanned",0)),int(state.get("files",0))]

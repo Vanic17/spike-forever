@@ -16,6 +16,10 @@ func run():
 	DirAccess.make_dir_recursive_absolute(reader.folder)
 	client.download_progress.connect(func(received,total): events.append([received,total]))
 	var failed: Array=[];reader.failed.connect(func(message): failed.append(message))
+	for incomplete in ["", "{"]:
+		FileAccess.open(reader.folder.path_join("state.json"),FileAccess.WRITE).store_string(incomplete)
+		reader.running=true; reader.elapsed=0; reader._process(.2)
+		check(reader.running and failed.is_empty() and events.is_empty(),"transient unreadable progress waits without changing download state")
 	var data:=FileAccess.open(reader.folder.path_join("selective.zip"),FileAccess.WRITE);data.store_string("verified-fixture");data.close()
 	var digest:=FileAccess.get_sha256(reader.folder.path_join("selective.zip"))
 	for state in [{"status":"scan","message":"Scansione","scanned":17,"files":100,"received":0,"total":0},{"status":"download","message":"Download","received":3,"total":10},{"status":"ready","message":"Pronto","received":10,"total":10,"package":reader.folder.path_join("selective.zip").replace("/","\\"),"sha256":digest}]:
