@@ -1690,6 +1690,7 @@ func miss_contact() -> void:
 	if network_match(): log_rally_event("online_miss",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"hands":players[actor].current_hand(false),"ball":ball_pos,"target":flight_target})
 	log_rally_event("missed_contact",{"phase":phase,"actor":actor,"armed":armed,"quality":input_quality,"root":players[actor].position,"ball":ball_pos,"target":flight_target,"action":setter_action if phase in ["SET","CPU_SET"] else "","variant":players[actor].variant_names.duplicate()})
 	finish_contact_attempt(actor)
+	preload("res://src/defense_visual77.gd").extreme_attempt(self,actor)
 	# No magnetic rescue: let gravity carry the missed ball to the floor.
 	phase = "LOOSE"
 	flight_left = 100

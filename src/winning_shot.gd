@@ -22,5 +22,6 @@ static func failed_save(game) -> void:
 	# attempt already owns its follow-through; a restart looked like a second
 	# backward bagher while the root continued chasing the obsolete marker.
 	game.finish_contact_attempt(game.receiver)
+	if not touched:preload("res://src/defense_visual77.gd").extreme_attempt(game,game.receiver)
 	game.log_rally_event("winning_shot_failed_save",{"defender":game.receiver,"touched":touched,"winner":game.winner_team})
 	game.phase="LOOSE"; game.flight_left=100; game.marker.visible=false

@@ -1,0 +1,10 @@
+from pathlib import Path
+p=Path('tools/Preview-Defense76.gd').read_text(encoding='utf-8-sig')
+p=p.replace('defense76','defense77')
+p=p.replace('const VARIANTS:=["receive_low76","receive_low_right76"]','const VARIANTS:=["receive_slide77","receive_slide_right77","dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77"]')
+p=p.replace('const SOURCES:=["receive_left_step","receive_right_step"]','const SOURCES:=["receive_left_step","receive_right_step","dive_v26_02","dive_v26_04","dive_v26_02","dive_v26_04"]')
+p=p.replace('stage>=2','stage>=6').replace('stage==3','stage>=2')
+p=p.replace('["DIFESA BASSA SINISTRA","DIFESA BASSA DESTRA"]','["BAGHER LATERALE SX","BAGHER LATERALE DX","RECUPERO SENZA CAPRIOLA SX","RECUPERO SENZA CAPRIOLA DX","TENTATIVO ESTREMO SX","TENTATIVO ESTREMO DX"]')
+p=p.replace('Stesso tempo del gesto; nuova altezza di contatto sincronizzata.','Contatto sincronizzato e risalita senza capriola. Ultimi due esempi: tentativi falliti.')
+p=p.replace('p.look_target=own_ball;', 'if stage>=4: own_ball+=Vector3(1.5,0,0)\n\t\tp.look_target=own_ball;')
+Path('tools/Preview-Defense77.gd').write_text(p,encoding='utf-8')

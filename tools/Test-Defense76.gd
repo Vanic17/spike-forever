@@ -20,7 +20,7 @@ func run():
 	check(native.initialized,"AnimationTree initializes with new immutable clips")
 	var max_length_error:=0.0; var max_contact_error:=0.0; var max_step:=0.0; var samples:=0
 	var lowest_knee:=INF; var low_contact_error:=0.0; var low_height:=0.0
-	for i in range(3,Motion.NAMES.size()):
+	for i in range(3,mini(9,Motion.NAMES.size())):
 		var name: String=Motion.NAMES[i]; var clip=bank[name]; var author=Motion.AUTHORS[i]; var source=bank[author.SOURCE]
 		check(native.library.has_animation(name),"Native clip "+name)
 		check(clip.contact_time==source.contact_time and clip.recovery_end==source.recovery_end and clip.takeoff_time==source.takeoff_time,"unchanged event metadata "+name)

@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-0.899946, 0.483329, 4.981717)",
+          "gap": 0.0849998816847801,
+          "hands": "(-0.858653, 0.483329, 5.056013)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.305659078072925,
+          "variant": "dive_slide77"
+        }
+      ],
+      "fps": 60,
+      "queued": true,
+      "side": -1,
+      "variant": "dive_slide77"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(0.900056, 0.477917, 4.981135)",
+          "gap": 0.0849996656179428,
+          "hands": "(0.919159, 0.477917, 5.06396)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.306476036067248,
+          "variant": "dive_slide_right77"
+        }
+      ],
+      "fps": 60,
+      "queued": true,
+      "side": 1,
+      "variant": "dive_slide_right77"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-0.899946, 0.483329, 4.981717)",
+          "gap": 0.0849998816847801,
+          "hands": "(-0.858653, 0.483329, 5.056013)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.305659078072925,
+          "variant": "dive_slide77"
+        }
+      ],
+      "fps": 120,
+      "queued": true,
+      "side": -1,
+      "variant": "dive_slide77"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(0.900056, 0.477917, 4.981135)",
+          "gap": 0.0849996656179428,
+          "hands": "(0.919159, 0.477917, 5.06396)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.306476036067248,
+          "variant": "dive_slide_right77"
+        }
+      ],
+      "fps": 120,
+      "queued": true,
+      "side": 1,
+      "variant": "dive_slide_right77"
+    }
+  ],
+  "checks": 21,
+  "failures": [],
+  "pass": true
+}

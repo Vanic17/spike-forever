@@ -1,0 +1,22 @@
+{
+  "contacts": {
+    "0": "res://docs/defense77-receive_slide77.png",
+    "1": "res://docs/defense77-receive_slide_right77.png",
+    "2": "res://docs/defense77-dive_slide77.png",
+    "3": "res://docs/defense77-dive_slide_right77.png",
+    "4": "res://docs/defense77-defense_miss77.png",
+    "5": "res://docs/defense77-defense_miss_right77.png"
+  },
+  "fps": 60,
+  "frames": 1314,
+  "method": "production Avatar, native AnimationTree, source root travel and final IK",
+  "pass": true,
+  "variants": [
+    "receive_slide77",
+    "receive_slide_right77",
+    "dive_slide77",
+    "dive_slide_right77",
+    "defense_miss77",
+    "defense_miss_right77"
+  ]
+}

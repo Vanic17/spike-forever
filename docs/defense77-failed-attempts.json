@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "ball_unchanged": true,
+      "root_unchanged": true,
+      "side": -1,
+      "variant": "defense_miss_right77"
+    },
+    {
+      "ball_unchanged": true,
+      "root_unchanged": true,
+      "side": 1,
+      "variant": "defense_miss77"
+    }
+  ],
+  "checks": 18,
+  "failures": [],
+  "pass": true
+}
