@@ -20,6 +20,11 @@ $files+='docs/RELEASE_NOTES_80.md'
 $files+='docs/RELEASE_NOTES_81.md'
 $files+='docs/RELEASE_NOTES_82.md'
 $files+='docs/RELEASE_NOTES_83.md'
+$files+='docs/RELEASE_NOTES_84.md'
+foreach($report84 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'fluidity84-*'){
+ if($report84.Extension -in @('.json','.png')){$files+='docs/'+$report84.Name}
+}
+foreach($tool84 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*84.*'){$files+='tools/'+$tool84.Name}
 $files+='docs/setter83-tests.json'
 $files+='tools/Validate-83.ps1'
 foreach($pattern82 in @('arena82-*','online82-*')){

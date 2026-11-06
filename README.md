@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.84.0:** raccordo visivo a ogni frame per palla, rotazione, giocatori e pose; telecamera sullo stesso tempo della palla e clock online monotono. Qualit? grafica e simulazione a 120 Hz mantenute. [Novit? e verifiche](docs/RELEASE_NOTES_84.md).
+
 **Versione 0.83.0:** finta di seconda con R2 + Croce/Quadrato (Xbox RT + A/X), alzata normale o veloce e fallback al gesto ordinario se non eseguibile. [Novit? e verifiche](docs/RELEASE_NOTES_83.md).
 
 **Versione 0.82.0:** database online separato anche scegliendo la stessa squadra, invito di 13 caratteri e incolla/unisciti; LED ACE e MONSTER BLOCK per la squadra di casa, sponsor CREDEM, pubblico con LOD e collisioni della palla con persone e arredi esterni. [Novità e verifiche](docs/RELEASE_NOTES_82.md).

@@ -104,6 +104,12 @@ var gait_change_age := 1.0
 var idle_time := 0.0
 var pending_pose_dt := 0.0
 var render_at_draw := false
+const PRESENTATION_FLOATS84: Array[StringName]=[&"animation_time",&"idle_time",&"blend_left",&"blend_source_time",&"travel_animation_time",&"travel_blend_source_time",&"travel_blend_left",&"middle_load",&"middle_load_age",&"pin_reference_load",&"reach_weight"]
+const PRESENTATION_VECTORS84: Array[StringName]=[&"body_lean",&"velocity",&"acceleration",&"reach_target",&"look_target"]
+var render_previous84: Dictionary={}
+var render_current84: Dictionary={}
+var render_alpha84:=1.0
+var render_pose_world84:=false
 const BLEND_TIME := 0.20
 
 func setup(bank: Dictionary, side: int, jersey: int, models: Dictionary = {}) -> void:
@@ -556,9 +562,93 @@ func tick(dt: float, selected: bool, render_pose: bool = true) -> void:
 func _process(_dt: float) -> void:
 	# Movement stays at 120 Hz; skinning uses the latest state once per drawn
 	# frame instead of calculating two poses that would never both be displayed.
-	if pending_pose_dt > 0:
+	if render_at_draw and not render_current84.is_empty():
+		draw_interpolated84(minf(_dt,.05))
+		pending_pose_dt=0.0
+	elif pending_pose_dt > 0:
 		apply_pose(pending_pose_dt)
 		pending_pose_dt = 0.0
+
+func presentation_state84() -> Dictionary:
+	return {"key":[clip_name,clips.get(clip_name),left_handed,blend_source_name,travel_animation_name,travel_blend_source_name],
+		"animation_time":animation_time,
+		"idle_time":idle_time,
+		"blend_left":blend_left,
+		"blend_source_time":blend_source_time,
+		"travel_animation_time":travel_animation_time,
+		"travel_blend_source_time":travel_blend_source_time,
+		"travel_blend_left":travel_blend_left,
+		"middle_load":middle_load,
+		"middle_load_age":middle_load_age,
+		"pin_reference_load":pin_reference_load,
+		"reach_weight":reach_weight,
+		"body_lean":body_lean,
+		"velocity":velocity,
+		"acceleration":acceleration,
+		"reach_target":reach_target,
+		"look_target":look_target}
+
+func draw_interpolated84(dt: float) -> void:
+	# Keep hot render-state accesses typed. Dynamic Object.get/set calls here
+	# ran hundreds of times per frame; these are the same values and math.
+	var key: Array=render_current84.get("key",[])
+	var compatible: bool=key.size()==6 and render_previous84.get("key",[])==key and clip_name==key[0] and clips.get(clip_name)==key[1] and left_handed==key[2] and blend_source_name==key[3] and travel_animation_name==key[4] and travel_blend_source_name==key[5]
+	if not compatible:
+		render_pose_world84=true;apply_pose(dt);render_pose_world84=false;return
+	var saved_animation_time: float=animation_time
+	var saved_idle_time: float=idle_time
+	var saved_blend_left: float=blend_left
+	var saved_blend_source_time: float=blend_source_time
+	var saved_travel_animation_time: float=travel_animation_time
+	var saved_travel_blend_source_time: float=travel_blend_source_time
+	var saved_travel_blend_left: float=travel_blend_left
+	var saved_middle_load: float=middle_load
+	var saved_middle_load_age: float=middle_load_age
+	var saved_pin_reference_load: float=pin_reference_load
+	var saved_reach_weight: float=reach_weight
+	var saved_body_lean: Vector2=body_lean
+	var saved_velocity: Vector3=velocity
+	var saved_acceleration: Vector3=acceleration
+	var saved_reach_target: Vector3=reach_target
+	var saved_look_target: Vector3=look_target
+	animation_time=lerpf(render_previous84.animation_time,render_current84.animation_time,render_alpha84)
+	idle_time=lerpf(render_previous84.idle_time,render_current84.idle_time,render_alpha84)
+	blend_left=lerpf(render_previous84.blend_left,render_current84.blend_left,render_alpha84)
+	blend_source_time=lerpf(render_previous84.blend_source_time,render_current84.blend_source_time,render_alpha84)
+	travel_animation_time=lerpf(render_previous84.travel_animation_time,render_current84.travel_animation_time,render_alpha84)
+	travel_blend_source_time=lerpf(render_previous84.travel_blend_source_time,render_current84.travel_blend_source_time,render_alpha84)
+	travel_blend_left=lerpf(render_previous84.travel_blend_left,render_current84.travel_blend_left,render_alpha84)
+	middle_load=lerpf(render_previous84.middle_load,render_current84.middle_load,render_alpha84)
+	middle_load_age=lerpf(render_previous84.middle_load_age,render_current84.middle_load_age,render_alpha84)
+	pin_reference_load=lerpf(render_previous84.pin_reference_load,render_current84.pin_reference_load,render_alpha84)
+	reach_weight=lerpf(render_previous84.reach_weight,render_current84.reach_weight,render_alpha84)
+	body_lean=render_previous84.body_lean.lerp(render_current84.body_lean,render_alpha84)
+	velocity=render_previous84.velocity.lerp(render_current84.velocity,render_alpha84)
+	acceleration=render_previous84.acceleration.lerp(render_current84.acceleration,render_alpha84)
+	reach_target=render_previous84.reach_target.lerp(render_current84.reach_target,render_alpha84)
+	look_target=render_previous84.look_target.lerp(render_current84.look_target,render_alpha84)
+	render_pose_world84=true
+	apply_pose(dt)
+	render_pose_world84=false
+	animation_time=saved_animation_time
+	idle_time=saved_idle_time
+	blend_left=saved_blend_left
+	blend_source_time=saved_blend_source_time
+	travel_animation_time=saved_travel_animation_time
+	travel_blend_source_time=saved_travel_blend_source_time
+	travel_blend_left=saved_travel_blend_left
+	middle_load=saved_middle_load
+	middle_load_age=saved_middle_load_age
+	pin_reference_load=saved_pin_reference_load
+	reach_weight=saved_reach_weight
+	body_lean=saved_body_lean
+	velocity=saved_velocity
+	acceleration=saved_acceleration
+	reach_target=saved_reach_target
+	look_target=saved_look_target
+
+func pose_world84() -> Transform3D:
+	return visual_root.global_transform if render_pose_world84 else global_transform
 
 func ensure_native_tree() -> void:
 	if pose_tree != null: return
@@ -648,11 +738,11 @@ func apply_pose(_dt: float) -> void:
 	# bounded arm IK. It never moves the actor, legs, ball or action clock.
 	if clip_name == "attack" and native_clip_name(clip_name) == "attack_adaptive41" and reach_action == "attack" and reach_weight > 0.001:
 		var context_weight := reach_weight * (1.0 - smoothstep(clip.contact_time + 0.04, clip.contact_time + 0.20, animation_time))
-		normalized = MotionPrototypes.Attack.adapt(normalized, clip.names, clip.parents, global_transform.affine_inverse() * reach_target, context_weight)
+		normalized = MotionPrototypes.Attack.adapt(normalized, clip.names, clip.parents, pose_world84().affine_inverse() * reach_target, context_weight)
 	if _dt > 0:
 		# A short shoulder turn accompanies a teammate's clearing sidestep.
 		# Keep the source support feet and all contact poses authoritative.
-		var local_travel: Vector3=global_basis.inverse()*velocity
+		var local_travel: Vector3=pose_world84().basis.inverse()*velocity
 		var turn_goal:=clampf(local_travel.x*0.10,-0.28,0.28) if intent.task=="yield" and looping else 0.0
 		yield_turn=lerpf(yield_turn,turn_goal,1.0-exp(-_dt*10.0))
 		if looping and absf(yield_turn)>0.001:
@@ -664,7 +754,7 @@ func apply_pose(_dt: float) -> void:
 		plant_feet(normalized, clip, _dt)
 		var head: int = clip.names.find("Head")
 		if head >= 0:
-			var sight := global_transform.affine_inverse() * look_target - normalized[head].origin
+			var sight := pose_world84().affine_inverse() * look_target - normalized[head].origin
 			var yaw := clampf(atan2(sight.x, maxf(0.5, sight.z)), -0.48, 0.48)
 			var pitch := clampf(-atan2(sight.y, maxf(0.5, Vector2(sight.x, sight.z).length())), -0.36, 0.32)
 			head_angles = head_angles.lerp(Vector2(yaw, pitch), 1.0 - exp(-_dt * (6.0 + intent.individuality * 3.0)))
@@ -678,7 +768,7 @@ func apply_pose(_dt: float) -> void:
 		solve_arm(normalized,"Left" if left_handed else "Right",power_transfer_from,clip.parents,1.5)
 		reach_weight=saved_reach
 	if reach_weight > 0.001 and reach_action in ["receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "float", "power", "block"]:
-		var point := global_transform.affine_inverse() * reach_target
+		var point := pose_world84().affine_inverse() * reach_target
 		if reach_action=="block":
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
 			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
@@ -698,7 +788,7 @@ func apply_pose(_dt: float) -> void:
 		for side in ["Left", "Right"]:
 			var shoulder: int = clip.names.find(side + "Arm")
 			var hand: int = clip.names.find(side + "Hand")
-			var delta := global_basis.inverse() * Vector3(hand_adjust * 0.23, 0, 0)
+			var delta := pose_world84().basis.inverse() * Vector3(hand_adjust * 0.23, 0, 0)
 			var pivot: Vector3 = normalized[shoulder].origin
 			var arm: Vector3 = normalized[hand].origin - pivot
 			var turn := Basis(Quaternion(arm.normalized(), (arm + delta).normalized()))
@@ -724,8 +814,8 @@ func apply_pose(_dt: float) -> void:
 		if i > 0:
 			var parent_idx: int = animation_bones[body.parents[i]]
 			if parent_idx >= 0: local = normalized[parent_idx].affine_inverse() * local
-		skeleton.set_bone_pose_position(i, local.origin)
-		skeleton.set_bone_pose_rotation(i, local.basis.get_rotation_quaternion())
+		skeleton.set_bone_pose_position(i,local.origin)
+		skeleton.set_bone_pose_rotation(i,local.basis.get_rotation_quaternion())
 	if jersey_number:
 		var spine: int = clip.names.find("Spine2")
 		jersey_number.position = normalized[spine].origin + Vector3(0, -0.05, -0.17)
@@ -855,7 +945,7 @@ func plant_feet(pose: Array[Transform3D], clip, _dt: float) -> void:
 		var foot: int = clip.names.find(side + "Foot")
 		var toe: int = clip.names.find(side + "ToeBase")
 		if hip < 0 or knee < 0 or foot < 0 or toe < 0: continue
-		var world := global_transform * pose[foot].origin
+		var world := pose_world84() * pose[foot].origin
 		var low: bool = pose[toe].origin.y < 0.105
 		var support: bool = low and not jumping and clip_name not in ["dive","recovery"]
 		if not support or (foot_planted[side_index] and world.distance_to(foot_anchors[side_index])>0.22): foot_planted[side_index]=false
@@ -865,7 +955,7 @@ func plant_feet(pose: Array[Transform3D], clip, _dt: float) -> void:
 			foot_planted[side_index] = true
 		foot_weights[side_index]=move_toward(foot_weights[side_index],1.0 if foot_planted[side_index] else 0.0,_dt*(9.0 if foot_planted[side_index] else 14.0))
 		if foot_weights[side_index]<0.001: continue
-		var goal: Vector3 = global_transform.affine_inverse() * foot_anchors[side_index]
+		var goal: Vector3 = pose_world84().affine_inverse() * foot_anchors[side_index]
 		# Fade ankle anchoring in and out. Releasing a planted foot used to drop
 		# a full 16cm correction in one frame, visibly teleporting the knee.
 		goal = pose[foot].origin + (goal - pose[foot].origin).limit_length(0.10)*foot_weights[side_index]

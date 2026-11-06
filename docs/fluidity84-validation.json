@@ -1,0 +1,30 @@
+{
+  "regressions": [
+    "PASS Test-Fluidity84",
+    "PASS Test-SetterPose81",
+    "PASS Test-Setter81",
+    "PASS Test-SecondSpike79",
+    "PASS Test-LegendSetter79",
+    "PASS Test-LegendInputs75",
+    "PASS Test-LegendServe81",
+    "PASS Test-Attack80",
+    "PASS Test-Defense80",
+    "PASS Test-Arena82",
+    "PASS Test-Replay65",
+    "PASS Test-ReplayEvents65",
+    "PASS Test-Bench71"
+  ],
+  "online_database": {
+    "host": "PASS",
+    "guest": "PASS"
+  },
+  "online_replay": {
+    "host": "PASS: 3 replays restored",
+    "guest": "PASS: 3 replays restored"
+  },
+  "online_substitutions": {
+    "host": "PASS",
+    "guest": "PASS"
+  },
+  "native_and_psa": "PASS"
+}

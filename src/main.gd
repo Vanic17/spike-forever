@@ -19,6 +19,7 @@ var rotation_context=preload("res://src/rotation_context.gd").new()
 var online_session
 var legend_match
 var input_team:=0
+var render_smoother=preload("res://src/render_smoother84.gd").new()
 var home_club_id := ""
 var home_team := 0
 
@@ -328,7 +329,7 @@ func _ready() -> void:
 		get_tree().quit()
 		return
 	self_test = "--self-test" in OS.get_cmdline_user_args() or "--fallback-test" in OS.get_cmdline_user_args() or "--rally-test" in OS.get_cmdline_user_args()
-	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; add_child(online_session)
+	online_session=preload("res://src/online_session.gd").new(); online_session.name="OnlineSession"; online_session.game=self; online_session.process_priority=-20; add_child(online_session)
 	tutorial=preload("res://src/tutorial_mode.gd").new(); tutorial.game=self; add_child(tutorial)
 	replay=preload("res://src/match_replay.gd").new(); replay.name="MatchReplay"; replay.game=self; add_child(replay)
 	substitution_scene=preload("res://src/substitution_scene.gd").new(); substitution_scene.name="SubstitutionScene"; substitution_scene.game=self; add_child(substitution_scene)
@@ -425,25 +426,27 @@ func set_camera() -> void:
 	camera.look_at(camera_focus)
 
 func update_camera(dt: float) -> void:
+	# Follow the sphere actually drawn on screen, on the same presentation clock.
+	var shown_ball: Vector3=ball.position
 	if network_match():
 		var side:=1.0 if local_team()==0 else -1.0
 		var eye:=Vector3(0,8.1 if camera_mode==3 else 9.8,18.4*side)
-		var focus:=Vector3(clampf(ball_pos.x*.09,-.4,.4),.7+maxf(0,ball_pos.y-3.2)*.04,0)
+		var focus:=Vector3(clampf(shown_ball.x*.09,-.4,.4),.7+maxf(0,shown_ball.y-3.2)*.04,0)
 		camera.position=camera.position.lerp(eye,1-exp(-3*dt)); camera_focus=camera_focus.lerp(focus,1-exp(-2.5*dt)); camera.look_at(camera_focus); return
 	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
 	if camera_mode==2:
-		var tv_focus:=Vector3(0,0.7+maxf(0,ball_pos.y-3.2)*0.04,clampf(ball_pos.z*0.06,-0.45,0.45))
-		if phase=="SERVE": tv_focus.z=clampf(ball_pos.z*0.15,-1.2,1.2)
+		var tv_focus:=Vector3(0,0.7+maxf(0,shown_ball.y-3.2)*0.04,clampf(shown_ball.z*0.06,-0.45,0.45))
+		if phase=="SERVE": tv_focus.z=clampf(shown_ball.z*0.15,-1.2,1.2)
 		camera_focus=camera_focus.lerp(tv_focus,1.0-exp(-2.5*dt))
 		camera.position=camera.position.lerp(origin,1.0-exp(-1.6*dt))
 		camera.look_at(camera_focus)
 		return
-	var focus := Vector3(clampf(ball_pos.x * 0.11, -0.5, 0.5), 0.7 + maxf(0, ball_pos.y - 3.2) * 0.04, -0.5)
+	var focus := Vector3(clampf(shown_ball.x * 0.11, -0.5, 0.5), 0.7 + maxf(0, shown_ball.y - 3.2) * 0.04, -0.5)
 	if phase == "SERVE" and server == 0:
 		origin = Vector3(0, 9.5 if camera_mode==3 else 11.2, 25.0 + maxf(0, players[server_index(0)].position.z - 10.0) * 0.8)
 		focus.z = 0.6
 	camera_focus = camera_focus.lerp(focus, 1.0 - exp(-2.5 * dt))
-	camera.position = camera.position.lerp(origin + Vector3(clampf(ball_pos.x * 0.08, -0.35, 0.35), 0, 0), 1.0 - exp(-1.6 * dt))
+	camera.position = camera.position.lerp(origin + Vector3(clampf(shown_ball.x * 0.08, -0.35, 0.35), 0, 0), 1.0 - exp(-1.6 * dt))
 	camera.look_at(camera_focus)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -1771,9 +1774,12 @@ func _physics_process(dt: float) -> void:
 	if self_test:
 		return
 	else:
+		render_smoother.before_tick(self)
 		step(dt)
+		render_smoother.after_tick(self)
 
 func _process(_dt: float) -> void:
+	if not self_test:render_smoother.draw(self)
 	if match_audio and match_audio.has_method("update_match_state"): match_audio.update_match_state(started,phase,paused and phase!="POINT")
 	if camera and not self_test and not (replay!=null and replay.active) and not (substitution_scene!=null and substitution_scene.active): update_camera(_dt)
 	if started and not (tutorial!=null and tutorial.active) and not gallery:

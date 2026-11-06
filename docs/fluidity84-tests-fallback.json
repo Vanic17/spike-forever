@@ -1,0 +1,51 @@
+{
+  "cadence": [
+    {
+      "fps": 60,
+      "maximum_step_error_m": 0.0,
+      "previous_repeated_frames": 0,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 90,
+      "maximum_step_error_m": 0.00000127156575518983,
+      "previous_repeated_frames": 0,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 120,
+      "maximum_step_error_m": 0.0,
+      "previous_repeated_frames": 0,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 144,
+      "maximum_step_error_m": 0.00000127156575521759,
+      "previous_repeated_frames": 23,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 165,
+      "maximum_step_error_m": 0.00000173395330255177,
+      "previous_repeated_frames": 44,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 240,
+      "maximum_step_error_m": 0.0,
+      "previous_repeated_frames": 119,
+      "repeated_ball_frames": 0
+    },
+    {
+      "fps": 360,
+      "maximum_step_error_m": 0.00000127156575520371,
+      "previous_repeated_frames": 239,
+      "repeated_ball_frames": 0
+    }
+  ],
+  "checks": 741,
+  "failures": [],
+  "online_maximum_visual_step_s": 0.00466666666666704,
+  "online_previous_clock_rewinds": 39,
+  "pass": true
+}

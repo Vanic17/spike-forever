@@ -22,6 +22,7 @@ var use_player_stats:=false
 var use_fatigue:=true
 var local_charge_release_seen:=-1.0
 var inputs: Array=[{},{}]
+var render_clock84:=-1.0
 var sequence:=0
 var last_sequence: Array=[-1,-1]
 var public_ip:=""
@@ -226,6 +227,9 @@ func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=
 	if local_side==1 and active: begin_local(selected,format,target,stats_enabled,fatigue_enabled)
 
 func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
+	render_clock84=-1.0
+	game.render_smoother.reset(game)
+	for athlete in game.players:athlete.render_at_draw=DisplayServer.get_name()!="headless";athlete.pending_pose_dt=0
 	State.setup(game)
 	use_player_stats=stats_enabled; game.use_player_stats=stats_enabled; use_fatigue=fatigue_enabled
 	choices=selected; best_of=format; points=target; playing=true; buffered.clear(); incoming_chunks.clear(); packet_age=0
@@ -318,6 +322,8 @@ func leave(reason: String="Stanza chiusa", tell: bool=true) -> void:
 	var transport=multiplayer.multiplayer_peer
 	var was_playing:=playing
 	active=false; playing=false; guest=0; ready_flags=[false,false]; buffered.clear(); local_charge_start=-1; local_charge_released=-1; info=reason
+	game.render_smoother.reset(game)
+	for athlete in game.players:athlete.render_at_draw=DisplayServer.get_name()!="headless";athlete.pending_pose_dt=0
 	http.cancel_request()
 	if mapper!=null and mapper.is_started(): mapper.wait_to_finish(); mapper=null
 	if upnp!=null and mapping_result.get("ok",false): upnp.delete_port_mapping(port,"UDP")

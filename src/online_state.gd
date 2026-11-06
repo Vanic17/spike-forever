@@ -80,10 +80,22 @@ static func capture(game) -> Dictionary:
 static func valid(value: Dictionary) -> bool:
 	return value.has("clock_time") and value.get("players",[]) is Array and value.players.size()==12 and value.get("ball_pos") is Vector3 and value.ball_pos.is_finite() and value.has("seq")
 
+static func presentation_time84(session,dt: float,now: float=-1.0) -> float:
+	var latest: Dictionary=session.buffered[-1]
+	var target: float=float(latest.clock_time)+maxf(0,(Time.get_ticks_msec()/1000.0 if now<0 else now)-float(latest.arrived))-.055
+	if session.render_clock84<0 or absf(target-session.render_clock84)>2:
+		session.render_clock84=target
+	else:
+		# Arrival jitter used to restart the visual clock on every packet,
+		# occasionally drawing the ball backwards. Steer its rate gently instead.
+		var advance: float=maxf(0,dt)
+		session.render_clock84=minf(float(latest.clock_time),session.render_clock84+advance+clampf(target-session.render_clock84-advance,-advance*.12,advance*.12))
+	return session.render_clock84
+
 static func render(session,dt: float) -> void:
 	if session.buffered.is_empty(): return
 	var latest: Dictionary=session.buffered[-1]
-	var time: float=float(latest.clock_time)+maxf(0,Time.get_ticks_msec()/1000.0-float(latest.arrived))-.055
+	var time: float=presentation_time84(session,dt)
 	var a: Dictionary=session.buffered[0]; var b: Dictionary=latest
 	for item in session.buffered:
 		if float(item.clock_time)<=time: a=item

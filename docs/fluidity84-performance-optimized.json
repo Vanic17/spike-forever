@@ -1,0 +1,28 @@
+{
+  "contacts": 16,
+  "fps_cap": 0,
+  "fraction_max": 1.0,
+  "fraction_min": 0.0,
+  "frame": {
+    "max_ms": 15.867,
+    "mean_ms": 8.86124601769912,
+    "p95_ms": 11.485,
+    "p99_ms": 13.524
+  },
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "label": "optimized",
+  "limits": "One local real-rendered 12s sample, 2s warmup, repeated receive-set-pipe. Not every gameplay case or other hardware.",
+  "moving_ball_frames": 198,
+  "physics_tick_cpu": {
+    "max_ms": 4.885,
+    "mean_ms": 1.82223064113239,
+    "p95_ms": 3.333,
+    "p99_ms": 4.361
+  },
+  "quality": "existing graphics settings; no preset/resolution reduction",
+  "renderer": "forward_plus",
+  "repeated_moving_ball_frames": 0,
+  "resolution": "(1920, 1080)",
+  "samples": 1130,
+  "vsync": false
+}

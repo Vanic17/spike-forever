@@ -24,3 +24,4 @@ environment/defaults/default_clear_color=Color(0.025, 0.045, 0.07, 1)
 
 [physics]
 common/physics_ticks_per_second=120
+common/physics_jitter_fix=0.0

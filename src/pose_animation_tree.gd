@@ -98,10 +98,11 @@ func sample(name: String, time: float, loop: bool) -> Array[Transform3D]:
 	tree.advance(0)
 	evaluations += 1
 	var result: Array[Transform3D] = []
+	result.resize(names.size())
 	for bone in names.size():
-		var local := rig.get_bone_pose(bone)
-		var parent := parents[bone]
-		result.append(result[parent] * local if parent >= 0 and parent < bone else local)
+		# The private rig has identity rests. Godot already caches this exact
+		# hierarchy in native code; do not rebuild all 145 joints in GDScript.
+		result[bone]=rig.get_bone_global_pose(bone)
 	var jump_phase: float = (time - float(animation.get_meta("contact_time", 0.0))) / 0.36
 	var jump_height: float = float(animation.get_meta("jump_boost", 0.0)) * maxf(0, 1.0 - jump_phase * jump_phase)
 	if jump_height > 0:
