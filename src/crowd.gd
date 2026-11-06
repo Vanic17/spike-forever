@@ -3,6 +3,16 @@ const PSK = preload("res://src/psk.gd")
 const Assets = preload("res://src/source_assets.gd")
 static var rigs: Dictionary = {}
 static var meshes: Dictionary = {}
+static var lod_meshes: Dictionary = {}
+static func render_mesh(variant: int) -> ArrayMesh:
+	if lod_meshes.has(variant):return lod_meshes[variant]
+	var original:=create(variant)
+	var path: String="res://assets/art/crowd82/crowd_%02d.res"%variant
+	if not FileAccess.file_exists(path):return original
+	var mesh: ArrayMesh=load(path).duplicate()
+	for surface in mesh.get_surface_count():mesh.surface_set_material(surface,original.surface_get_material(surface))
+	lod_meshes[variant]=mesh
+	return mesh
 
 static func rotate_chain(pose: Array[Transform3D], rig: RefCounted, joint: int, direction: Vector3, child: int) -> void:
 	var pivot := pose[joint].origin
@@ -20,7 +30,7 @@ static func rotate_chain(pose: Array[Transform3D], rig: RefCounted, joint: int, 
 static func create(variant: int) -> ArrayMesh:
 	if meshes.has(variant): return meshes[variant]
 	Assets.initialize()
-	var male:=variant>=4
+	var male: bool=(variant>=4 and variant<8) or variant in [9,11]
 	var source: String="Male_Public_Preview.psk" if male else "Female_Public_Preview.psk"
 	if not Assets.files.has(source): return null
 	if not rigs.has(source):
@@ -28,7 +38,7 @@ static func create(variant: int) -> ArrayMesh:
 		if not loaded.load_file(Assets.files[source]): return null
 		rigs[source]=loaded
 	var rig=rigs[source]
-	var gesture:=variant%4
+	var gesture: int=variant%4 if variant<8 else 4+int((variant-8)/2)
 	var rest: Array[Transform3D] = []
 	for i in rig.names.size():
 		rest.append(rest[rig.parents[i]] * rig.rest[i] if i > 0 else rig.rest[i])
@@ -52,6 +62,10 @@ static func create(variant: int) -> ArrayMesh:
 			upper=Vector3(-0.45,0.8,0.35); fore=Vector3(0.14,1,0.12)
 		elif gesture==3:
 			upper=Vector3(sign*0.5,0.8,0.35); fore=Vector3(-sign*0.12,0.9,0.3)
+		elif gesture==4:
+			upper=Vector3(sign*.18,-.6,.75);fore=Vector3(-sign*.9,.25,.2)
+		elif gesture==5:
+			upper=Vector3(sign*.15,-1,.15);fore=Vector3(-sign*.1,.05,.9)
 		rotate_chain(pose, rig, arm, upper, elbow)
 		rotate_chain(pose, rig, elbow, fore, hand)
 	var transforms: Array[Transform3D] = []

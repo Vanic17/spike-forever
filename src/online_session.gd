@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF081"
+const PROTOCOL="SF082"
 const PORT=26761
 var game
 var menu
@@ -60,6 +60,10 @@ func _ready() -> void:
 	http.request_completed.connect(public_address)
 
 func authority() -> bool: return active and local_side==0
+
+@rpc("authority","call_remote","reliable",0)
+func led_notice(kind: String,team: int) -> void:
+	if active and playing:game.arena_visuals.sponsors.celebrate(kind,team,game)
 
 func verify_join_later(id: int) -> void:
 	await get_tree().create_timer(8).timeout
@@ -151,6 +155,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 	for i in 7:
 		if not value.roster[i] is Dictionary: return {}
 		var p: Dictionary=value.roster[i]
+		if not p.get("appearance",{}) is Dictionary:return {}
 		if not club.roster.any(func(base): return base.id==p.get("id")) or p.get("id") in ids or not db.fits_slot(str(p.get("role","")),i): return {}
 		ids.append(p.id)
 		var base: Dictionary=club.roster.filter(func(item): return item.id==p.id)[0]
@@ -174,6 +179,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 		var matches_player: Array=club.roster.filter(func(p): return str(p.id)==id)
 		if matches_player.size()!=1 or bench.any(func(p): return str(p.id)==id): return {}
 		var p: Dictionary=raw.duplicate(true); var original: Dictionary=matches_player[0]
+		if not p.get("appearance",{}) is Dictionary:return {}
 		if not p.get("ratings",{}) is Dictionary or str(p.get("role",original.role)) not in ["outside_hitter","opposite","middle_blocker","setter","libero"]: return {}
 		var values: Dictionary={"generale":clampi(int(p.get("ratings",{}).get("generale",50)),0,100)}
 		for key in preload("res://src/player_stats_gameplay.gd").KEYS:
@@ -225,13 +231,15 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 	choices=selected; best_of=format; points=target; playing=true; buffered.clear(); incoming_chunks.clear(); packet_age=0
 	game.match_best_of=format; game.match_points=target; game.camera_mode=0; game.demo=false; game.gallery=false
 	var kits=load("res://src/club_kits.gd")
+	var squads: Array=[];var management_teams: Array=[]
 	for side in 2:
-		var selection: Dictionary=selected[side]; var squad: Array=selection.roster
+		var selection: Dictionary=selected[side]
+		var squad: Array=preload("res://src/online_rosters82.gd").players(selection.roster,side)
+		squads.append(squad)
+		management_teams.append({"id":selection.club,"roster":squad+preload("res://src/online_rosters82.gd").players(selection.get("bench",[]),side)})
 		game.team_names[side]=selection.name
 		for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],kits.selection(selection.club,selection.kit),kits.selection(selection.club,selection.kit,true))
-	var management_teams: Array=[]
-	for choice in selected: management_teams.append({"id":choice.club,"roster":choice.roster+choice.get("bench",[])})
-	game.match_management.configure_rosters(management_teams,[selected[0].roster,selected[1].roster],{},{"fatigue":use_fatigue,"injuries":false})
+	game.match_management.configure_rosters(management_teams,squads,{},{"fatigue":use_fatigue,"injuries":false})
 	game.set_home_club(str(selected[0].club),0)
 	game.rotations=[selected[0].rotation,selected[1].rotation]; game.scores=[0,0]; game.sets=[0,0]
 	game.server=0; game.paused=false; game.match_finished=false; game.started=true

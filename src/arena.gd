@@ -310,19 +310,27 @@ void fragment(){
 	vec3 shirt=COLOR.rgb*(0.45+lightness*0.65);
 	vec3 skin=tex*mix(vec3(0.72,0.60,0.51),vec3(1.0),person.z);
 	ALBEDO=mix(skin,shirt,clothing);
-	ROUGHNESS=0.88;
+	ROUGHNESS=mix(0.66,0.90,clothing);
+	SPECULAR=mix(0.26,0.10,clothing);
 }"""
 	var palette: Array[Color]=[Color("e5ddcc"),Color("dbc34a"),Color("1c4a85"),Color("daebeb"),Color("ab2f36"),Color("2f765b"),Color("777a81"),Color("e9a251"),Color("383e51"),Color("c2d2df")]
-	const VARIANTS:=8
+	const VARIANTS:=12
 	var groups: Array=[]
-	for variant in VARIANTS: groups.append([])
+	for variant in VARIANTS*4: groups.append([])
 	for i in crowd_positions.size():
 		var distribution:=fposmod(sin(float(i)*7.141)*5317.13,1.0)
 		var gender:=4 if fposmod(sin(float(i)*3.51)*1531.1,1.0)>.5 else 0
 		var pose:=0 if distribution<0.43 else (1 if distribution<0.77 else (2 if distribution<0.93 else 3))
-		groups[gender+pose].append(i)
-	for variant in VARIANTS:
-		var source_mesh := Crowd.create(variant)
+		var variant: int=gender+pose
+		if i%11==0:variant=8+(1 if gender>0 else 0)
+		elif i%13==0:variant=10+(1 if gender>0 else 0)
+		var at: Vector3=crowd_positions[i]
+		var sector: int=0 if at.x<-10 else (1 if at.x>10 else (2 if at.z<0 else 3))
+		groups[variant*4+sector].append(i)
+	for group in groups.size():
+		if groups[group].is_empty():continue
+		var variant: int=int(group/4)
+		var source_mesh := Crowd.render_mesh(variant)
 		if source_mesh == null: return false
 		var mesh: ArrayMesh=source_mesh.duplicate()
 		for surface in mesh.get_surface_count():
@@ -339,9 +347,9 @@ void fragment(){
 		instances.use_colors = true
 		instances.use_custom_data = true
 		instances.mesh = mesh
-		instances.instance_count = groups[variant].size()
+		instances.instance_count = groups[group].size()
 		var instance := 0
-		for spectator in groups[variant]:
+		for spectator in groups[group]:
 			var i: int=spectator
 			var p: Vector3 = crowd_positions[i]
 			var angle := 0.0 if p.z < -18 else (-PI / 2 if p.x > 0 else PI / 2)
@@ -356,6 +364,8 @@ void fragment(){
 		crowd_instance_count+=instance
 		node.multimesh = instances
 		node.set_meta("spectators",true)
+		node.lod_bias=.8
+		node.extra_cull_margin=.18
 		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		add_child(node)
 	return true

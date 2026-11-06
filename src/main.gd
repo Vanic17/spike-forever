@@ -97,6 +97,7 @@ var receive_feedback:=""
 var receive_feedback_left:=0.0
 var dynamic_net
 var arena_visuals: Node3D
+var arena_contacts
 var serve_fault_sequence:=0
 var planned_visual_key:=""
 const G := 9.81
@@ -411,6 +412,7 @@ func build_arena() -> void:
 	marker = arena.marker
 	camera = arena.camera
 	set_camera()
+	arena_contacts=preload("res://src/arena_ball82.gd").new();arena_contacts.game=self;add_child(arena_contacts)
 
 func set_camera() -> void:
 	if network_match():
@@ -1681,6 +1683,7 @@ func prepare_overpass_attack() -> bool:
 	return true
 
 func register_touch(index: int) -> void:
+	if has_meta("led_block82"):remove_meta("led_block82")
 	if legend_controls_enabled(): legend_match.on_touch(index)
 	touches[possession] += 1
 	if replay!=null and touches[possession]>=2: replay.clear_shot()
@@ -1722,6 +1725,7 @@ func miss_contact() -> void:
 
 func award(team: int, reason: String) -> void:
 	if phase == "POINT": return
+	var led_kind: String=preload("res://src/arena_events82.gd").point_kind(self,team)
 	if legend_controls_enabled(): legend_match.on_point(team,reason)
 	if tutorial!=null and tutorial.active:
 		tutorial.on_point(team,reason)
@@ -1761,6 +1765,7 @@ func award(team: int, reason: String) -> void:
 	if match_audio:
 		match_audio.point_event(team==home_team)
 	if team==home_team and is_instance_valid(arena_visuals) and arena_visuals.has_method("crowd_react"): arena_visuals.crowd_react()
+	preload("res://src/arena_events82.gd").show(self,led_kind,team)
 
 func _physics_process(dt: float) -> void:
 	if network_match() and not online_session.authority(): return
@@ -1887,6 +1892,11 @@ func step(dt: float) -> void:
 					marker.visible = false
 				else: resume_deflection("net")
 				if match_audio: match_audio.contact("block", ball_pos, 0.35)
+		var scenery: Dictionary=arena_contacts.resolve(old,ball_pos,ball_vel,flight_dt) if arena_contacts!=null else {}
+		if not scenery.is_empty() and phase!="POINT":
+			ball_pos=scenery.position;ball_vel=scenery.velocity;flight_spin*=.5
+			log_rally_event("scenery_contact",{"kind":scenery.kind})
+			award(1-last_touch,"FUORI")
 		if phase != "POINT" and ball_pos.y <= 0.105:
 			var inside := absf(ball_pos.x) <= 4.605 and absf(ball_pos.z) <= 9.105
 			var floor_team := 0 if ball_pos.z > 0 else 1
@@ -1912,9 +1922,12 @@ func step_dead_ball(dt: float) -> void:
 	while remaining > 0.000001:
 		var h := minf(remaining, 1.0 / 240.0)
 		remaining -= h
+		var previous:=ball_pos
 		var state := BallContact.floor_step(ball_pos,ball_vel,h)
 		ball_pos = state.position
 		ball_vel = state.velocity
+		var scenery: Dictionary=arena_contacts.resolve(previous,ball_pos,ball_vel,h) if arena_contacts!=null else {}
+		if not scenery.is_empty():ball_pos=scenery.position;ball_vel=scenery.velocity;flight_spin*=.75
 		for impact in state.impacts:
 			flight_spin *= 0.76
 			dead_ball_bounces += 1
@@ -1987,6 +2000,8 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
 			match_management.touch(contact_blocker,"block")
+			if response.kind=="stuff_block":set_meta("led_block82",{"team":defender,"rally":rally_serial})
+			elif has_meta("led_block82"):remove_meta("led_block82")
 			if replay!=null and response.kind=="stuff_block": replay.mark_shot("monster",defender)
 			TimingResult.put(self,defender,"MURO",block_quality*strength)
 			resume_deflection("block")

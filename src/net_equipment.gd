@@ -18,7 +18,7 @@ func rod(parent: Node3D, from: Vector3, to: Vector3, radius: float, mat: Materia
 func _ready() -> void:
 	name="NetEquipment"
 	var green:=material("254c37"); var steel:=material("c8cdd0"); var red:=material("a91f2b")
-	var ink:=Image.load_from_file("res://assets/art/sponsors/credem-original.png").get_region(Rect2i(80,982,1160,145))
+	var ink:=Image.load_from_file("res://assets/art/sponsors/credem-original.png").get_region(Rect2i(80,982,550,145))
 	ink.generate_mipmaps()
 	var print_mat:=StandardMaterial3D.new(); print_mat.albedo_texture=ImageTexture.create_from_image(ink)
 	print_mat.roughness=.8; print_mat.texture_filter=BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
@@ -29,7 +29,7 @@ func _ready() -> void:
 		box(post,Vector3(0,.075,0),Vector3(.36,.12,.36),green)
 		for face in 4:
 			var angle:=face*PI/2
-			var panel:=MeshInstance3D.new(); var quad:=QuadMesh.new(); quad.size=Vector2(2.10,.25)
+			var panel:=MeshInstance3D.new(); var quad:=QuadMesh.new(); quad.size=Vector2(1.04,.25)
 			panel.mesh=quad; panel.position=Vector3(sin(angle)*.147,1.23,cos(angle)*.147)
 			panel.rotation=Vector3(0,angle,PI/2); panel.material_override=print_mat
 			post.add_child(panel)
@@ -51,8 +51,9 @@ func _ready() -> void:
 	var badge:=MeshInstance3D.new(); var plate:=QuadMesh.new(); plate.size=Vector2(.65,1.50)
 	badge.mesh=plate; badge.position=Vector3(.431,1.15,0); badge.rotation.y=PI/2
 	var badge_material:=material("254c37"); badge.material_override=badge_material; stand.add_child(badge)
-	var label:=Label3D.new(); label.text="CREDEM\nBANCA"; label.font_size=45; label.pixel_size=.0026; label.modulate=Color("fff04b")
-	label.position=Vector3(.44,1.18,0); label.rotation.y=PI/2; label.outline_size=0; stand.add_child(label)
+	var label:=MeshInstance3D.new();var wordmark:=QuadMesh.new();wordmark.size=Vector2(.60,.60*145.0/550.0)
+	label.name="CredemStandWordmark";label.mesh=wordmark;label.material_override=print_mat
+	label.position=Vector3(.44,1.18,0);label.rotation.y=PI/2;stand.add_child(label)
 	official=preload("res://src/referee.gd").new(); official.position=Vector3(-6.07,2.045,0); official.rotation.y=PI/2; add_child(official)
 	# Fit the court-facing rail to the source referee's idle hands.
 	var rig: Skeleton3D=official.get_node("Rig")

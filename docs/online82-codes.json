@@ -1,0 +1,42 @@
+{
+  "cases": [
+    {
+      "code": "SF2-FW000-0800-00X6",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-FW000-08J6-HB96",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-FW000-0FZZ-ZZSW",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-R2M03-YG00-00JE",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-R2M03-YGJ6-HB6E",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-R2M03-YQZZ-ZZPM",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-ACDX6-RG00-00NC",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-ACDX6-RGJ6-HB1C",
+      "typed_characters": 13
+    },
+    {
+      "code": "SF2-ACDX6-RQZZ-ZZHP",
+      "typed_characters": 13
+    }
+  ],
+  "note": "Self-contained IPv4 invite, no directory/relay and no change to NAT requirements",
+  "pass": true
+}

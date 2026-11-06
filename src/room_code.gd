@@ -17,6 +17,22 @@ static func checksum(data: PackedByteArray) -> int:
 	return crc
 
 static func encode(ip: String, port: int, room: int) -> String:
+	if port!=26761:return encode_legacy(ip,port,room)
+	if not valid_ipv4(ip) or room<1 or room>0xffffff:return ""
+	var bytes:=PackedByteArray()
+	for part in ip.split("."):bytes.append(int(part))
+	bytes.append((room>>16)&255);bytes.append((room>>8)&255);bytes.append(room&255)
+	bytes.append(checksum(bytes)&255)
+	var bits:=0;var buffer:=0;var payload:=""
+	for byte in bytes:
+		buffer=(buffer<<8)|int(byte);bits+=8
+		while bits>=5:bits-=5;payload+=ALPHABET[(buffer>>bits)&31]
+		buffer&=(1<<bits)-1
+	if bits>0:payload+=ALPHABET[(buffer<<(5-bits))&31]
+	return "SF2-"+payload.substr(0,5)+"-"+payload.substr(5,4)+"-"+payload.substr(9,4)
+static func display(code: String) -> String:
+	return code.trim_prefix("SF2-").replace("-","") if code.begins_with("SF2-") else code
+static func encode_legacy(ip: String, port: int, room: int) -> String:
 	if not valid_ipv4(ip) or port<1 or port>65535 or room<1 or room>0xffffff:return ""
 	var bytes:=PackedByteArray([1])
 	for part in ip.split("."):bytes.append(int(part))
@@ -39,6 +55,20 @@ static func encode(ip: String, port: int, room: int) -> String:
 static func decode(code: String) -> Dictionary:
 	if code.length()>64:return {}
 	var value: String=code.strip_edges().to_upper().replace("-","").replace(" ","").replace("\n","").replace("\r","")
+	if value.length()==13:value="SF2"+value
+	if value.begins_with("SF2") and value.length()==16:
+		value=value.substr(3).replace("O","0").replace("I","1").replace("L","1")
+		var bytes:=PackedByteArray();var buffer:=0;var bits:=0
+		for letter in value:
+			var index:=ALPHABET.find(letter)
+			if index<0:return {}
+			buffer=(buffer<<5)|index;bits+=5
+			if bits>=8:bits-=8;bytes.append((buffer>>bits)&255)
+			buffer&=(1<<bits)-1
+		if bytes.size()!=8 or buffer!=0 or (checksum(bytes.slice(0,7))&255)!=int(bytes[7]):return {}
+		var ip: String="%d.%d.%d.%d"%[bytes[0],bytes[1],bytes[2],bytes[3]]
+		var room: int=(int(bytes[4])<<16)|(int(bytes[5])<<8)|int(bytes[6])
+		return {"host":ip,"port":26761,"room":room} if valid_ipv4(ip) and room>0 else {}
 	if not value.begins_with("SF") or value.length()!=22:return {}
 	value=value.substr(2).replace("O","0").replace("I","1").replace("L","1")
 	var bytes:=PackedByteArray()

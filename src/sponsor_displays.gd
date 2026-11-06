@@ -2,7 +2,7 @@ extends Node3D
 ## All marks are original images published on Lega Volley's sponsor page.
 ## Regions only remove document margins; no logo is redrawn or stretched.
 const SOURCES := [
-	{"name":"Credem Banca", "file":"credem-original.png", "region":Rect2i(43,726,1234,755), "background":Color.WHITE},
+	{"name":"Credem", "file":"credem-original.png", "region":Rect2i(80,982,550,145), "background":Color("254c37")},
 	{"name":"Del Monte", "file":"delmonte-original.jpg", "region":Rect2i(60,0,1108,850), "background":Color.WHITE},
 	{"name":"Mikasa", "file":"mikasa-original.jpg", "region":Rect2i(0,0,1664,533), "background":Color("fff000")},
 	{"name":"+Adrenalina", "file":"adrenalina-original.png", "region":Rect2i(14,20,382,86), "background":Color.WHITE}
@@ -18,6 +18,27 @@ var source_rows: Array = []
 var club_marks: Array[MeshInstance3D] = []
 var club_id := ""
 var artwork_cache: Dictionary = {}
+var event_left:=0.0
+var event_age:=0.0
+var event_kind:=""
+var event_cache: Dictionary={}
+var event_views: Array[SubViewport]=[]
+func celebrate(kind: String,side: int,game) -> bool:
+	if side!=game.home_team or kind not in ["ACE","MONSTER BLOCK"]:return false
+	var club: String=game.home_club_id
+	if club.is_empty() or club!=club_id:return false
+	var kit: Dictionary=preload("res://src/club_kits.gd").selection(club,"home")
+	var color:=Color(kit.get("primary_hex_approx","#17458a"))
+	if color.get_luminance()>.8 or color.v<.26:color=Color(kit.get("secondary_hex_approx","#17458a"))
+	var key: String=club+kind+color.to_html()
+	if not event_cache.has(key):
+		var view:=SubViewport.new();view.size=Vector2i(2048,256);view.disable_3d=true;view.render_target_update_mode=SubViewport.UPDATE_ONCE
+		add_child(view);event_views.append(view)
+		var graphic=preload("res://src/led_event82.gd").new();graphic.club=club;graphic.caption=kind;graphic.tint=color;view.add_child(graphic)
+		event_cache[key]=view.get_texture()
+	for material in panels:material.set_shader_parameter("event_logo",event_cache[key])
+	event_left=4.2;event_age=0;event_kind=kind
+	return true
 
 func original_region(file: String, region: Rect2i) -> Texture2D:
 	var image := Image.load_from_file("res://assets/art/sponsors/"+file)
@@ -40,6 +61,8 @@ uniform float ratio_a=2.0;
 uniform float ratio_b=2.0;
 uniform float aspect=6.0;
 uniform float transition=0.0;
+uniform sampler2D event_logo : source_color, filter_linear;
+uniform float event_gain=0.0;
 vec3 panel(sampler2D mark,vec4 bg,float ratio,vec2 uv){
 	float repeats=max(1.0,floor(aspect/(ratio*0.85+0.5)));
 	float cell=aspect/repeats;
@@ -52,6 +75,7 @@ void fragment(){
 	vec3 next=panel(logo_b,background_b,ratio_b,UV);
 	float wipe=smoothstep(UV.x-0.08,UV.x+0.08,transition*1.16-0.08);
 	vec3 color=mix(old,next,wipe);
+	if(event_gain>0.0){color=texture(event_logo,UV).rgb*event_gain;}
 	float pixels=0.97+0.03*sin(UV.y*1450.0);
 	ALBEDO=color*pixels;
 	EMISSION=color*0.25;
@@ -65,7 +89,7 @@ void fragment(){
 	for side in [-1,1]:
 		for segment in 4:
 			add_panel(Vector3(side*21.1,5.8,(segment-1.5)*7.3),Vector2(7.15,0.7),-side*PI/2)
-	var parquet_logo:=original_region("credem-original.png",Rect2i(43,726,1234,641))
+	var parquet_logo:=original_region("credem-original.png",Rect2i(80,982,550,145))
 	var parquet_shader:=Shader.new()
 	parquet_shader.code="""shader_type spatial;
 uniform sampler2D logo : source_color, filter_linear_mipmap_anisotropic;
@@ -77,7 +101,7 @@ void fragment(){
 	for side in [-1,1]:
 		var decal:=MeshInstance3D.new()
 		decal.name="CredemCourt"+str(side)
-		var plane:=PlaneMesh.new(); plane.size=Vector2(3.7,3.7*641.0/1234.0)
+		var plane:=PlaneMesh.new(); plane.size=Vector2(3.7,3.7*145.0/550.0)
 		decal.mesh=plane
 		decal.position=Vector3(3.0,0.030,side*5.7)
 		decal.rotation.y=PI/2
@@ -117,6 +141,8 @@ func club_texture(key: String) -> Texture2D:
 
 func set_club(club: String) -> void:
 	if club_id == club: return
+	event_left=0;event_kind=""
+	for material in panels:material.set_shader_parameter("event_gain",0.0)
 	var profile: Dictionary = preload("res://src/arena_profiles.gd").profile(club)
 	if profile.is_empty(): return
 	for mark in club_marks:
@@ -162,8 +188,12 @@ func apply_cycle() -> void:
 		material.set_shader_parameter("background_b",source_rows[b].background)
 
 func _process(dt: float) -> void:
+	event_left=maxf(0,event_left-dt);event_age+=dt
 	elapsed+=dt
 	if elapsed>=PERIOD:
 		elapsed=fmod(elapsed,PERIOD); cycle+=1; apply_cycle()
 	var transition:=clampf((elapsed-(PERIOD-0.55))/0.55,0.0,1.0)
-	for material in panels: material.set_shader_parameter("transition",transition)
+	var gain: float=(.4+.6*pow(absf(cos(event_age*TAU*1.8)),.7)) if event_left>0 else 0.0
+	for material in panels:
+		material.set_shader_parameter("transition",transition)
+		material.set_shader_parameter("event_gain",gain)

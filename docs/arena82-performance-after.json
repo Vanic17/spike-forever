@@ -1,0 +1,11 @@
+{
+  "crowd": 1280,
+  "draw_calls": 1382,
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "mean_frame_ms": 1.75666111111111,
+  "p95_frame_ms": 2.061,
+  "primitives": 4124334,
+  "resolution": "1280x720",
+  "samples": 360,
+  "scope": "Rendered static court, crowd and animated benches; not full rally FPS"
+}

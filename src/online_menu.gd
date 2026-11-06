@@ -16,6 +16,7 @@ var fatigue_pick: OptionButton
 var target: OptionButton
 var create: Button
 var join: Button
+var paste_join: Button
 var launch: Button
 var confirm: Button
 var formation: Button
@@ -37,11 +38,14 @@ func _ready() -> void:
 	info=Label.new(); info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; body.add_child(info)
 	var connection=HBoxContainer.new(); connection.add_theme_constant_override("separation",12); body.add_child(connection)
 	create=host.clubs.button(connection,"CREA PARTITA",func(): session.host_room())
-	code=LineEdit.new(); code.placeholder_text="Codice stanza SF-…"; code.size_flags_horizontal=SIZE_EXPAND_FILL; connection.add_child(code)
+	code=LineEdit.new(); code.placeholder_text="Codice breve · 13 caratteri"; code.size_flags_horizontal=SIZE_EXPAND_FILL; connection.add_child(code)
 	code.gui_input.connect(func(event):
 		if event.is_action_pressed("ui_accept") and code.editable: edit_code(); code.accept_event())
 	host.clubs.button(connection,"INSERISCI CODICE",edit_code)
 	join=host.clubs.button(connection,"UNISCITI",func(): session.join_room(code.text))
+	paste_join=host.clubs.button(connection,"INCOLLA E UNISCITI",func():
+		code.text=DisplayServer.clipboard_get().strip_edges()
+		session.join_room(code.text))
 	var invitation=HBoxContainer.new(); body.add_child(invitation)
 	scope=host.clubs.picker(invitation,["Internet","Stessa rete / VPN LAN"])
 	scope.item_selected.connect(func(_index): if session.authority(): session.update_code(lan_mode()))
@@ -123,7 +127,8 @@ func refresh() -> void:
 	if info==null: return
 	updating=true; info.text=session.info
 	create.disabled=session.active or session.closing; join.disabled=session.active or session.closing; code.editable=not session.active
-	if session.authority(): code.text=session.room_code
+	paste_join.disabled=session.active or session.closing
+	if session.authority(): code.text=preload("res://src/room_code.gd").display(session.room_code)
 	format.disabled=session.active and not session.authority(); target.disabled=format.disabled; stats_pick.disabled=format.disabled; fatigue_pick.disabled=format.disabled
 	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points)); stats_pick.select(1 if session.use_player_stats else 0); fatigue_pick.select(1 if session.use_fatigue else 0)
 	confirm.disabled=not session.active or (session.local_side==1 and session.guest==0)

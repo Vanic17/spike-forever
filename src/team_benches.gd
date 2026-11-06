@@ -84,6 +84,12 @@ func build() -> void:
 		official.model_bank={"body":staff_model}; official.visual_root=Node3D.new(); official.add_child(official.visual_root); official.setup_meshes(); official.jersey_number.hide()
 		official.set_process(false); official.set_physics_process(false); official.position=Vector3(-8.35,0,(slot-1)*1.22); official.rotation.y=PI/2
 		dress_staff(official,Color("849bb3") if slot!=1 else Color("c7d1d8"))
+		if slot!=1:
+			var hair:=MeshInstance3D.new();official.visual_root.add_child(hair)
+			hair.skin=official.skeleton.create_skin_from_rest_transforms();hair.skeleton=hair.get_path_to(official.skeleton)
+			hair.extra_cull_margin=1;official.body_parts.hair=hair
+			var appearance=preload("res://src/player_appearance.gd")
+			appearance.assign(hair,official,appearance.STYLES.corti if slot==0 else appearance.STYLES.riga,appearance.COLORS.grigio if slot==0 else appearance.COLORS.marrone)
 		officials.append(official)
 		Sideline.apply(official,staff_bank.sitrest0,staff_bank.sitrest0,0)
 	for entry in actors:
@@ -92,7 +98,7 @@ func build() -> void:
 		entry["motion"]=motion; entry["reacted"]=""; entry["advice_at"]=entry.team*4.7
 	for i in officials.size():
 		var motion=preload("res://src/sideline_animation.gd").new(); officials[i].add_child(motion)
-		motion.setup(officials[i],"official_work",i*.81); official_motions.append(motion)
+		motion.setup(officials[i],"official_work",i*1.71);motion.player.speed_scale=.90+i*.10; official_motions.append(motion)
 	sync_identity()
 
 func dress_staff(actor,color: Color) -> void:
@@ -167,4 +173,11 @@ func _process(dt: float) -> void:
 		elif entry.coach and game.phase in ["SET","CPU_SET","ATTACK","CPU_ATTACK"] and elapsed-entry.advice_at>12 and reaction_age>7:
 			entry.advice_at=elapsed; entry.motion.play("coach_point" if int(elapsed/12+entry.team)%2==0 else "coach_nod",.30,1.0)
 		entry.motion.advance(frame_dt)
-	for motion in official_motions: motion.advance(frame_dt)
+	for i in official_motions.size():
+		official_motions[i].advance(frame_dt)
+		var actor=officials[i];var bone: int=staff_model.names.find("Head")
+		var toward: Vector3=actor.global_basis.inverse()*(game.ball_pos-actor.global_position)
+		var yaw: float=clampf(atan2(toward.x,maxf(1,toward.z)),-.34,.34)
+		var pose: Transform3D=actor.skeleton.get_bone_pose(bone)
+		pose.basis*=Basis(Vector3.UP,yaw*.6+sin(elapsed*.6+i*2.4)*.045)
+		actor.skeleton.set_bone_pose(bone,pose)

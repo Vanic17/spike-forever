@@ -1,0 +1,26 @@
+{
+  "bench": {
+    "kind": "arredo",
+    "normal": "(1.0, 0.0, 0.0)",
+    "position": "(-7.3095, 0.95, 7.5)",
+    "velocity": "(12.6, 0.0, 0.0)"
+  },
+  "checks": 155,
+  "clubs": 12,
+  "colliders": 1401,
+  "crowd": {
+    "kind": "pubblico",
+    "normal": "(0.0, 1.0, 0.0)",
+    "position": "(-11.7, 1.7736, -10.23)",
+    "velocity": "(0.0, 3.199999, 0.0)"
+  },
+  "failures": [],
+  "pass": true,
+  "spatial_cells": 238,
+  "table": {
+    "kind": "arredo",
+    "normal": "(1.0, 0.0, 0.0)",
+    "position": "(-6.6883, 1.06, -1.2)",
+    "velocity": "(14.7, 0.0, 0.0)"
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "lod_levels": 13,
+    "variant": 0
+  },
+  {
+    "lod_levels": 13,
+    "variant": 1
+  },
+  {
+    "lod_levels": 13,
+    "variant": 2
+  },
+  {
+    "lod_levels": 13,
+    "variant": 3
+  },
+  {
+    "lod_levels": 14,
+    "variant": 4
+  },
+  {
+    "lod_levels": 14,
+    "variant": 5
+  },
+  {
+    "lod_levels": 14,
+    "variant": 6
+  },
+  {
+    "lod_levels": 14,
+    "variant": 7
+  },
+  {
+    "lod_levels": 13,
+    "variant": 8
+  },
+  {
+    "lod_levels": 14,
+    "variant": 9
+  },
+  {
+    "lod_levels": 13,
+    "variant": 10
+  },
+  {
+    "lod_levels": 14,
+    "variant": 11
+  }
+]

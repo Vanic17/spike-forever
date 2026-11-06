@@ -1,0 +1,52 @@
+{
+	"cap_fps": 0,
+	"contacts": 8,
+	"display": "Windows",
+	"engine_process_monitor": {
+		"max_ms": 35.509,
+		"mean_ms": 20.7577194444445,
+		"p50_ms": 18.068,
+		"p95_ms": 35.509,
+		"p99_ms": 35.509
+	},
+	"fixed_simulation_steps_cpu": {
+		"max_ms": 10.106,
+		"mean_ms": 3.46987222222222,
+		"p50_ms": 3.191,
+		"p95_ms": 5.903,
+		"p99_ms": 7.427
+	},
+	"frames_over_25_ms": 0,
+	"frames_over_50_ms": 0,
+	"gpu": "NVIDIA GeForce RTX 5080",
+	"gpu_vendor": "NVIDIA",
+	"limits": [
+		"One local hardware/driver sample, uncapped; not a guarantee for other systems",
+		"Whole rendered frame intervals include scheduling and renderer waits; no direct GPU timestamp query",
+		"Two fixed120-Hz simulation steps per real rendered frame; not movie-maker or fixed-fps rendering",
+		"Reproducible actual pipe constructions, not a complete competitive match or every recovery situation"
+	],
+	"measured_rendered_frames": 360,
+	"measurement_seconds": 3.763939,
+	"mode": "new",
+	"observed_mean_fps": 95.6444830800925,
+	"phase_at_end": "CPU_SET",
+	"players": 12,
+	"prototype_contacts_during_run": 4,
+	"prototype_contacts_in_measured_frames": 4,
+	"real_rendered_frame_intervals": {
+		"max_ms": 18.104,
+		"mean_ms": 10.4553861111111,
+		"p50_ms": 10.141,
+		"p95_ms": 13.296,
+		"p99_ms": 14.602
+	},
+	"rendered_frames_using_newclip": 157,
+	"renderer": "forward_plus",
+	"resolution": "(1280, 720)",
+	"scenario": "actual_receive_set_pipe_repeated_every240_frames",
+	"simulation_time": 8.00000000000018,
+	"viewport_resolution": "(1280.0, 720.0)",
+	"vsync": "disabled",
+	"warmup_frames": 120
+}
