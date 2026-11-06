@@ -1,0 +1,17 @@
+{
+  "checks": 1440526,
+  "contact_error_m": 0.000000353961382870693,
+  "distribution_note": "Deterministic eligible selection matrix, not measured match frequency",
+  "failures": [],
+  "limb_error_m": 0.00000137090682983398,
+  "maximum_frame_step_m": 0.666197896003723,
+  "pass": true,
+  "samples": 9862,
+  "selection_matrix_120": {
+    "receive_braced80": 20,
+    "receive_front75": 10,
+    "receive_knee80": 30,
+    "receive_platform80": 50,
+    "receive_slide77": 10
+  }
+}

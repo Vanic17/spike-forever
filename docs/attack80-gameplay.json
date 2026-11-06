@@ -1,0 +1,151 @@
+{
+  "cases": [
+    {
+      "contacts": 3,
+      "largest_step": 0.0418000668287277,
+      "left_handed": false,
+      "native": false,
+      "running": true,
+      "scenario": [
+        0,
+        0
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418001525104046,
+      "left_handed": false,
+      "native": false,
+      "running": true,
+      "scenario": [
+        4,
+        2
+      ],
+      "variant": "attack_middle_style_right80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0417366772890091,
+      "left_handed": false,
+      "native": false,
+      "running": true,
+      "scenario": [
+        2,
+        3
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418000668287277,
+      "left_handed": true,
+      "native": false,
+      "running": true,
+      "scenario": [
+        0,
+        0
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418001562356949,
+      "left_handed": true,
+      "native": false,
+      "running": true,
+      "scenario": [
+        4,
+        2
+      ],
+      "variant": "attack_middle_style_right80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418002158403397,
+      "left_handed": true,
+      "native": false,
+      "running": true,
+      "scenario": [
+        2,
+        3
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418000668287277,
+      "left_handed": false,
+      "native": true,
+      "running": true,
+      "scenario": [
+        0,
+        0
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418001525104046,
+      "left_handed": false,
+      "native": true,
+      "running": true,
+      "scenario": [
+        4,
+        2
+      ],
+      "variant": "attack_middle_style_right80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0417366772890091,
+      "left_handed": false,
+      "native": true,
+      "running": true,
+      "scenario": [
+        2,
+        3
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418000668287277,
+      "left_handed": true,
+      "native": true,
+      "running": true,
+      "scenario": [
+        0,
+        0
+      ],
+      "variant": "attack_middle_style80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418001562356949,
+      "left_handed": true,
+      "native": true,
+      "running": true,
+      "scenario": [
+        4,
+        2
+      ],
+      "variant": "attack_middle_style_right80"
+    },
+    {
+      "contacts": 3,
+      "largest_step": 0.0418002158403397,
+      "left_handed": true,
+      "native": true,
+      "running": true,
+      "scenario": [
+        2,
+        3
+      ],
+      "variant": "attack_middle_style80"
+    }
+  ],
+  "checks": 56,
+  "failures": [],
+  "pass": true
+}

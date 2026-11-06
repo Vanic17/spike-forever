@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78", "attack_middle79"]
-const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd"),preload("res://src/attack_middle79.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion79.res"
-const FORMAT := 7
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78", "attack_middle79", "receive_platform80", "receive_braced80", "receive_knee80", "receive_knee_right80", "dive_platform80", "dive_roll80", "dive_roll_right80", "dive_pancake80", "attack_middle_style80", "attack_middle_style_right80"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd"),preload("res://src/attack_middle79.gd"),preload("res://src/defense_platform80.gd"),preload("res://src/defense_braced80.gd"),preload("res://src/defense_knee80.gd"),preload("res://src/defense_knee_right80.gd"),preload("res://src/defense_dive_platform80.gd"),preload("res://src/defense_roll80.gd"),preload("res://src/defense_roll_right80.gd"),preload("res://src/defense_pancake80.gd"),preload("res://src/attack_middle_style80.gd"),preload("res://src/attack_middle_style_right80.gd")]
+const LIBRARY_PATH := "res://assets/active/native_motion80.res"
+const FORMAT := 8
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -38,6 +38,7 @@ static func author_clip(base, author, label: String):
 	var clip = PSA.new()
 	for property in ["names","parents","frames","fps","duration","contact_time","ground_y","contact_offset","jump_boost","travel_speed","body_center","recovery_end","takeoff_time","toss_release_time"]:
 		clip.set(property, base.get(property))
+	if label=="dive_pancake80":clip.contact_time=minf(base.duration-.70,base.contact_time+.72)
 	clip.source = "authored41/" + label + " from " + base.source
 	clip.positions.resize(base.positions.size())
 	clip.rotations.resize(base.rotations.size())
@@ -74,6 +75,13 @@ static func author_clip(base, author, label: String):
 	if label in ["receive_low76","receive_low_right76","receive_slide77","receive_slide_right77"]:
 		var contact_pose:=normalized(clip,clip.contact_time)
 		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
+	if label in ["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80"]:
+		var contact_pose:=normalized(clip,clip.contact_time)
+		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
+	if label in ["dive_platform80","dive_pancake80"]:
+		var contact_pose:=normalized(clip,clip.contact_time)
+		clip.contact_offset=contact_pose[clip.names.find("RightHand")].origin+Vector3(0,.105 if label=="dive_pancake80" else 0,.085)
+	if label in ["dive_roll80","dive_roll_right80"]:clip.recovery_end=minf(base.duration,clip.contact_time+1.47)
 	if label in ["dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77"]:
 		clip.recovery_end=minf(base.recovery_end,clip.contact_time+1.10)
 	return clip
@@ -123,6 +131,9 @@ static func attack_variant(original: String, direction: int, quality: float, ser
 	if direction in [0,2,3] and quality>=.66 and serial>=0 and posmod(serial,3)==1:
 		if original=="attack_pin_left":return "attack_reference78"
 		if original=="attack_pin_right":return "attack_reference_right78"
+	if direction in [0,2,3] and quality>=.66 and serial>=0 and posmod(serial,3)==2:
+		if original=="attack_pin_left":return "attack_middle_style80"
+		if original=="attack_pin_right":return "attack_middle_style_right80"
 	# Replace only the matching source performance. Its unchanged contact,
 	# root travel and recovery metadata preserve the planned ball trajectory
 	# and actor deadline. Other approaches, middle attacks and tips stay intact.

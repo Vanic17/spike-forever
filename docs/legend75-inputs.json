@@ -82,7 +82,7 @@
 		"normal_speed": 4.28365802764893,
 		"sprint_speed": 4.68390226364136
 	},
-	"native_clips": 152,
+	"native_clips": 162,
 	"native_events": 143,
 	"pause_replay_releases": true,
 	"timing_same_actor": [
@@ -117,5 +117,5 @@
 			"remaining": 0.8
 		}
 	],
-	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-freeze79-appdata/Godot/app_userdata/Spike Forever/"
+	"user_path": "C:/Users/kravi/Desktop/Spike Forever/.runtime/legend75-validation80-appdata/Godot/app_userdata/Spike Forever/"
 }

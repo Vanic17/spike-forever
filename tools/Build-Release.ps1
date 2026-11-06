@@ -16,6 +16,13 @@ $files+='docs/RELEASE_NOTES_76.md'
 $files+='docs/RELEASE_NOTES_77.md'
 $files+='docs/RELEASE_NOTES_78.md'
 $files+='docs/RELEASE_NOTES_79.md'
+$files+='docs/RELEASE_NOTES_80.md'
+foreach($pattern80 in @('defense80-*','attack80-*')){
+ foreach($report80 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern80){
+  if($report80.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report80.Name}
+ }
+}
+foreach($tool80 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*80.*'){$files+='tools/'+$tool80.Name}
 foreach($pattern79 in @('middle79-*','legend79-*','second79-*')){
  foreach($report79 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern79){
   if($report79.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report79.Name}

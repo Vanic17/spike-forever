@@ -1240,6 +1240,13 @@ func receive_ball() -> void:
 
 func queue_recovery(anticipate: bool = false) -> bool:
 	if legend_controls(receiver) and not legend_match.allow_requested_recovery: return false
+	if anticipate:
+		var extreme: Dictionary=preload("res://src/defense_context80.gd").plan(self,receiver)
+		if not extreme.is_empty():
+			preload("res://src/contact_rescue.gd").commit(self,extreme)
+			late_receive=true;recovery_action="dive";input_quality*=.78
+			log_rally_event("extreme_recovery",{"actor":receiver,"variant":extreme.variant,"seconds":extreme.seconds})
+			return true
 	var action := "dive" if anticipate else "recovery"
 	var recovery := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height(action),flight_gravity)
 	if recovery.is_empty() or recovery.seconds <= 0.005 or recovery.seconds > (0.45 if anticipate else 0.18): return false
@@ -1836,11 +1843,22 @@ func step(dt: float) -> void:
 			if match_finished: return_to_main_menu(); return
 			reset_rally()
 	elif airborne:
+		var flight_dt:=dt
+		# A palm on the floor must be sampled BEFORE floor contact, including
+		# at 30 Hz. Integrate the remaining fraction after the actual touch.
+		if preload("res://src/defense_context80.gd").pancake_active(self) and flight_left>0 and flight_left<dt:
+			var to_contact:=flight_left
+			var contact_state:=BallFlight.advance(ball_pos,ball_vel,flight_spin,to_contact,flight_gravity)
+			if contact_state[0].y>.105:
+				ball_pos=contact_state[0];ball_vel=contact_state[1];flight_left=0
+				if phase in ["RECEIVE","CPU_RECEIVE"]:receive_ball()
+				else:set_ball("dive")
+				flight_dt=dt-to_contact
 		var old := ball_pos
-		var state := BallFlight.advance(ball_pos, ball_vel, flight_spin, dt,flight_gravity)
+		var state := BallFlight.advance(ball_pos, ball_vel, flight_spin, flight_dt,flight_gravity)
 		ball_pos = state[0]
 		ball_vel = state[1]
-		flight_left -= dt
+		flight_left -= flight_dt
 		if phase in ["RECEIVE","CPU_RECEIVE"] and not block_checked and test_rallies>1 and incoming_kind in ["spike","soft","dump"] and minf(absf(old.z),absf(ball_pos.z))<1.35:
 			try_block(old,dt)
 		if old.z * ball_pos.z < 0:
@@ -2489,7 +2507,7 @@ func advance_dive_body(index: int, dt: float) -> void:
 	var motion: Dictionary = dive_motions[index]
 	var action: String = motion.action
 	var clip = player.clips[action]
-	var shortened: bool=player.variant_names.get(action,"") in ["dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77"]
+	var shortened: bool=player.variant_names.get(action,"") in ["dive_slide77","dive_slide_right77","defense_miss77","defense_miss_right77","dive_roll80","dive_roll_right80"]
 	var finish: float=minf(clip.duration,clip.recovery_end+.08) if shortened else clip.duration
 	motion.elapsed += dt
 	motion.source_time = minf(finish, motion.start_time + motion.elapsed * 1.15)

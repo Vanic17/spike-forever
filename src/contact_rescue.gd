@@ -9,6 +9,8 @@ static func proposal(game, index: int, maximum: float = .8) -> Dictionary:
 	if game.dive_motions.has(index): return {}
 	if game.player_recovery_seconds(index)>.10: return {}
 	var player=game.players[index]
+	var extreme: Dictionary=preload("res://src/defense_context80.gd").plan(game,index)
+	if not extreme.is_empty() and extreme.seconds<=maximum:return extreme
 	var best: Dictionary={}
 	var best_cost:=INF
 	var samples: Array[Vector3]=[]

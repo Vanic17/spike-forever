@@ -683,11 +683,17 @@ func apply_pose(_dt: float) -> void:
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
 			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
 		elif reach_action in ["receive", "set", "fast_set"]:
-			solve_arm(normalized, "Left", point + Vector3(0.105, -0.07, 0), clip.parents)
-			solve_arm(normalized, "Right", point + Vector3(-0.105, -0.07, 0), clip.parents)
+			var grip: float=.055 if native_clip_name(clip_name) in ["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80"] else .105
+			solve_arm(normalized, "Left", point + Vector3(grip, -0.07, 0), clip.parents)
+			solve_arm(normalized, "Right", point + Vector3(-grip, -0.07, 0), clip.parents)
 		else:
 			var left_arm: bool=(not left_handed) if reach_action=="dump" else (left_handed and reach_action in ["attack","power","float"])
+			var pancake: bool=native_clip_name(clip_name)=="dive_pancake80"
+			var palm: int=clip.names.find("RightHand")
+			var palm_basis: Basis=normalized[palm].basis if palm>=0 else Basis.IDENTITY
+			if pancake:point.y-=.105
 			solve_arm(normalized, "Left" if left_arm else "Right", point - Vector3(0, 0, 0.085), clip.parents)
+			if pancake and palm>=0:rotate_subtree(normalized,palm,palm_basis*normalized[palm].basis.inverse(),clip.parents)
 	if clip_name == "block" and absf(hand_adjust) > 0.01:
 		for side in ["Left", "Right"]:
 			var shoulder: int = clip.names.find(side + "Arm")

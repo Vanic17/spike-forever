@@ -1,0 +1,26 @@
+{
+  "contacts": {
+    "0": "res://docs/defense80-receive_platform80.png",
+    "1": "res://docs/defense80-receive_braced80.png",
+    "2": "res://docs/defense80-receive_knee80.png",
+    "3": "res://docs/defense80-receive_knee_right80.png",
+    "4": "res://docs/defense80-dive_platform80.png",
+    "5": "res://docs/defense80-dive_roll80.png",
+    "6": "res://docs/defense80-dive_roll_right80.png",
+    "7": "res://docs/defense80-dive_pancake80.png"
+  },
+  "fps": 60,
+  "frames": 1525,
+  "method": "production Avatar, native AnimationTree, source root travel and final IK",
+  "pass": true,
+  "variants": [
+    "receive_platform80",
+    "receive_braced80",
+    "receive_knee80",
+    "receive_knee_right80",
+    "dive_platform80",
+    "dive_roll80",
+    "dive_roll_right80",
+    "dive_pancake80"
+  ]
+}

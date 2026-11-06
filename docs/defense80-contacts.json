@@ -1,0 +1,382 @@
+{
+  "cases": [
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 1.024029, 5.5)",
+          "gap": 0.0132451187819242,
+          "hands": "(0.002473, 1.032377, 5.509981)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_platform80"
+        }
+      ],
+      "fps": 30,
+      "variant": "receive_platform80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(0.0, 0.984712, 5.5)",
+          "gap": 0.000000385901870458838,
+          "hands": "(0.0, 0.984712, 5.5)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_braced80"
+        }
+      ],
+      "fps": 30,
+      "variant": "receive_braced80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.443547, 5.5)",
+          "gap": 0.0110225444659591,
+          "hands": "(0.003596, 0.449727, 5.508389)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee80"
+        }
+      ],
+      "fps": 30,
+      "variant": "receive_knee80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.455588, 5.5)",
+          "gap": 0.00729972450062633,
+          "hands": "(0.002332, 0.459745, 5.505528)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee_right80"
+        }
+      ],
+      "fps": 30,
+      "variant": "receive_knee_right80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-0.0, 0.150083, 4.699996)",
+          "gap": 0.135134965181351,
+          "hands": "(0.006849, 0.045028, 4.784719)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.189985668125177,
+          "variant": "dive_pancake80"
+        }
+      ],
+      "fps": 30,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_pancake80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-1.4, 0.48331, 5.799997)",
+          "gap": 0.0850000455975533,
+          "hands": "(-1.320401, 0.48331, 5.829814)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985422740525,
+          "variant": "dive_roll80"
+        }
+      ],
+      "fps": 30,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(1.4, 0.477913, 5.799997)",
+          "gap": 0.0850001126527786,
+          "hands": "(1.360851, 0.477913, 5.875444)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985414761729,
+          "variant": "dive_roll_right80"
+        }
+      ],
+      "fps": 30,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll_right80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 1.024029, 5.5)",
+          "gap": 0.0132451187819242,
+          "hands": "(0.002473, 1.032377, 5.509981)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_platform80"
+        }
+      ],
+      "fps": 60,
+      "variant": "receive_platform80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(0.0, 0.984712, 5.5)",
+          "gap": 0.000000385901870458838,
+          "hands": "(0.0, 0.984712, 5.5)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_braced80"
+        }
+      ],
+      "fps": 60,
+      "variant": "receive_braced80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.443547, 5.5)",
+          "gap": 0.0110225444659591,
+          "hands": "(0.003596, 0.449727, 5.508389)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee80"
+        }
+      ],
+      "fps": 60,
+      "variant": "receive_knee80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.455588, 5.5)",
+          "gap": 0.00729972450062633,
+          "hands": "(0.002332, 0.459745, 5.505528)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee_right80"
+        }
+      ],
+      "fps": 60,
+      "variant": "receive_knee_right80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-0.0, 0.150083, 4.699996)",
+          "gap": 0.135134965181351,
+          "hands": "(0.006849, 0.045028, 4.784719)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.189985668125177,
+          "variant": "dive_pancake80"
+        }
+      ],
+      "fps": 60,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_pancake80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-1.4, 0.48331, 5.799997)",
+          "gap": 0.0850000455975533,
+          "hands": "(-1.320401, 0.48331, 5.829814)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985422740525,
+          "variant": "dive_roll80"
+        }
+      ],
+      "fps": 60,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(1.4, 0.477913, 5.799997)",
+          "gap": 0.0850001126527786,
+          "hands": "(1.360851, 0.477913, 5.875444)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985414761729,
+          "variant": "dive_roll_right80"
+        }
+      ],
+      "fps": 60,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll_right80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 1.024029, 5.5)",
+          "gap": 0.0132451187819242,
+          "hands": "(0.002473, 1.032377, 5.509981)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_platform80"
+        }
+      ],
+      "fps": 120,
+      "variant": "receive_platform80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(0.0, 0.984712, 5.5)",
+          "gap": 0.000000385901870458838,
+          "hands": "(0.0, 0.984712, 5.5)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_braced80"
+        }
+      ],
+      "fps": 120,
+      "variant": "receive_braced80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.443547, 5.5)",
+          "gap": 0.0110225444659591,
+          "hands": "(0.003596, 0.449727, 5.508389)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee80"
+        }
+      ],
+      "fps": 120,
+      "variant": "receive_knee80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "receive",
+          "ball": "(-0.0, 0.455588, 5.5)",
+          "gap": 0.00729972450062633,
+          "hands": "(0.002332, 0.459745, 5.505528)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.5,
+          "variant": "receive_knee_right80"
+        }
+      ],
+      "fps": 120,
+      "variant": "receive_knee_right80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-0.0, 0.150083, 4.699996)",
+          "gap": 0.135134965181351,
+          "hands": "(0.006849, 0.045028, 4.784719)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.189985668125177,
+          "variant": "dive_pancake80"
+        }
+      ],
+      "fps": 120,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_pancake80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(-1.4, 0.48331, 5.799997)",
+          "gap": 0.0850000455975533,
+          "hands": "(-1.320401, 0.48331, 5.829814)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985422740525,
+          "variant": "dive_roll80"
+        }
+      ],
+      "fps": 120,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll80"
+    },
+    {
+      "contacts": [
+        {
+          "action": "dive",
+          "ball": "(1.4, 0.477913, 5.799997)",
+          "gap": 0.0850001126527786,
+          "hands": "(1.360851, 0.477913, 5.875444)",
+          "player": 0,
+          "role": "OH1",
+          "rotation": 0,
+          "time": 0.239985414761729,
+          "variant": "dive_roll_right80"
+        }
+      ],
+      "fps": 120,
+      "phase": "SET",
+      "queued": true,
+      "variant": "dive_roll_right80"
+    }
+  ],
+  "checks": 78,
+  "failures": [],
+  "pass": true
+}

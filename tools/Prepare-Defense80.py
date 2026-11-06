@@ -1,0 +1,13 @@
+from pathlib import Path
+p=Path('tools/Preview-Defense76.gd').read_text(encoding='utf-8-sig')
+p=p.replace('defense76','defense80')
+p=p.replace('const VARIANTS:=["receive_low76","receive_low_right76"]','const VARIANTS:=["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80","dive_platform80","dive_roll80","dive_roll_right80","dive_pancake80"]')
+p=p.replace('const SOURCES:=["receive_left_step","receive_right_step"]','const SOURCES:=["receive_step","receive_squat","receive_left_step","receive_right_step","dive_v26_06","dive_v26_02","dive_v26_04","dive_v26_06"]')
+p=p.replace('stage>=2','stage>=8').replace('stage==3','stage>=4')
+p=p.replace('["DIFESA BASSA SINISTRA","DIFESA BASSA DESTRA"]','["PIATTAFORMA IN PASSO","DIFESA FRONTale BASSA","AFFONDO SINISTRO","AFFONDO DESTRO","RECUPERO A DUE BRACCIA","SIDE ROLL SINISTRO / ESTREMO","SIDE ROLL DESTRO / ESTREMO","PANCAKE / ESTREMO"]')
+p=p.replace('game.clips[SOURCES[stage]]','game.clips[VARIANTS[stage]]')
+p=p.replace('p.position=travel; p.animation_time=time','p.animation_time=maxf(0,time+p.clips[action].contact_time-source.contact_time);p.position=p.action_root_motion(action,p.animation_time)')
+p=p.replace('var own_goal: Vector3=source.root_motion(source.contact_time)+game.clips[SOURCES[stage] if side==0 else VARIANTS[stage]].contact_offset','var own_goal: Vector3=p.action_root_motion(action,p.clips[action].contact_time)+p.contact_local(action)')
+p=p.replace('cameras[side].position=travel+', 'cameras[side].position=p.position+').replace('look_at(travel+','look_at(p.position+')
+p=p.replace('Sinistra: gesto di base / Destra: appoggio basso dal riferimento. Stesso tempo del gesto; nuova altezza di contatto sincronizzata.','Sinistra: base originale / Destra: nuova difesa. Side roll e pancake sono esclusi dalle difese ordinarie.')
+Path('tools/Preview-Defense80.gd').write_text(p,encoding='utf-8')

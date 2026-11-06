@@ -59,6 +59,6 @@ func run():
 		else:old+=1
 		check(not Variety.receive(Vector3(1,1.1,.3),1,"serve",serial).ends_with("77"),"No new automatic fall on service reception")
 		check(not Variety.diving(Vector3(1,.5,.3),"spike",serial).begins_with("defense_miss"),"Failed gesture never in playable pool")
-	check(new_count==20 and old==80,"Original defence retained with occasional 20 percent variant")
+	check(new_count==8 and old==92,"Previous slide retained among expanded defence repertoire")
 	FileAccess.open("res://docs/defense77-tests.json",FileAccess.WRITE).store_string(JSON.stringify({"pass":errors.is_empty(),"checks":checks,"samples":samples,"maximum_limb_error_m":max_length,"maximum_contact_error_m":max_contact,"maximum_step_m":max_step,"new_variants":6,"new_eligible_per_100":new_count,"failures":errors},"  "))
 	print("DEFENSE77 ","PASS" if errors.is_empty() else "FAIL",errors);graph.free();quit(0 if errors.is_empty() else 1)
