@@ -600,7 +600,6 @@ func press_action(button: String = "action") -> void:
 		notice("PALLONETTO · COLPO DI POLSO",0.9)
 		return
 	if action_phase=="SET" and armed and button=="action":
-		if preload("res://src/setter_disguise81.gd").convert(self):return
 		attack_buffer_start=clock_time; attack_buffer_power=-1.0
 		return
 	if action_phase == "SERVE" and human_team(server) and not charging and not toss_active and not serve_adjusting and button != "dump":
@@ -631,9 +630,10 @@ func press_action(button: String = "action") -> void:
 		TimingResult.put(self,possession,"RICEZIONE" if incoming_kind=="serve" else "DIFESA",input_quality,preload("res://src/shot_variation.gd").reception_label(remaining))
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
+		if button in ["action","alternate"] and preload("res://src/setter_disguise81.gd").held(self):
+			if preload("res://src/setter_disguise81.gd").request(self,button=="alternate"):return
 		setter_dump = button == "dump" and preload("res://src/setter_dump.gd").can_request(self)
 		if button=="dump" and not setter_dump and preload("res://src/setter_spike79.gd").request(self):
-			preload("res://src/setter_disguise81.gd").offer(self)
 			return
 		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
@@ -647,7 +647,6 @@ func press_action(button: String = "action") -> void:
 			flight_left = maxf(0.001, contact.seconds)
 		armed = true
 		input_quality = pass_quality
-		if setter_dump:preload("res://src/setter_disguise81.gd").offer(self)
 		notice("COLPO DI SECONDA" if setter_dump else ("SECONDA NON DISPONIBILE · ALZATA NORMALE" if button=="dump" else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE")), 0.8)
 	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action": jump_manual_wall()
 
@@ -2487,7 +2486,7 @@ func move_players(dt: float) -> void:
 		var preparation_lead := (1.12 if fast_set else 1.55) if action == "attack" else 0.38
 		preparation_lead += p.intent.individuality * 0.055 + (0.04 if p.visual_context == "emergency" else 0.0)
 		preparation_lead = p.preparation_lead(action,preparation_lead)
-		if i == action_actor and flight_left < preparation_lead:
+		if i == action_actor and (flight_left < preparation_lead or (i==setter and setter_disguise and action=="dump")):
 			p.prepare_contact(action, maxf(0, flight_left - dt))
 			p.reach_action = action
 			p.reach_target = flight_target

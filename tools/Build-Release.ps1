@@ -19,6 +19,9 @@ $files+='docs/RELEASE_NOTES_79.md'
 $files+='docs/RELEASE_NOTES_80.md'
 $files+='docs/RELEASE_NOTES_81.md'
 $files+='docs/RELEASE_NOTES_82.md'
+$files+='docs/RELEASE_NOTES_83.md'
+$files+='docs/setter83-tests.json'
+$files+='tools/Validate-83.ps1'
 foreach($pattern82 in @('arena82-*','online82-*')){
  foreach($report82 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern82){
   if($report82.Extension -in @('.md','.json','.png','.mp4')){$files+='docs/'+$report82.Name}

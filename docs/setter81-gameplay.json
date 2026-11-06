@@ -4,1476 +4,1476 @@
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000110085238702595,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00790220871567726,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000110085238702595,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00790220871567726,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000110085238702595,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00790220871567726,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000110085238702595,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00790220871567726,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.000000242278275663921,
-          "hands": "(0.000085, 3.307599, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.0141882169991732,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.000000242278275663921,
-          "hands": "(0.000085, 3.307599, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.0141882169991732,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.000000242278275663921,
-          "hands": "(0.000085, 3.307599, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.0141882169991732,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.000000242278275663921,
-          "hands": "(0.000085, 3.307599, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000744603312341496,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.0141882169991732,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000761792762205005,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00790220499038696,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000761792762205005,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00790220499038696,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000761792762205005,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00790220499038696,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000761792762205005,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00790220499038696,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.0142089249566197,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.0142089249566197,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.0142089249566197,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.00000000000454747350886464,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.0142089249566197,
+      "maximum_step_m": 0.00910939741879702,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 30,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000209547579288483,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00353920040652156,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000209547579288483,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00353920040652156,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000209547579288483,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00353920040652156,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000209547579288483,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000260724846157245,
+          "hands": "(-0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": false,
-      "maximum_step_m": 0.00353920040652156,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.00000000728323357179761,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00196658447384834,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.0000162204487423878,
-          "hands": "(0.000089, 3.307612, 0.780474)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00354436668567359,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.0000162204487423878,
-          "hands": "(0.000089, 3.307612, 0.780474)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00354436668567359,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.0000162204487423878,
-          "hands": "(0.000089, 3.307612, 0.780474)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00354436668567359,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.0000162204487423878,
-          "hands": "(0.000089, 3.307612, 0.780474)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": false,
-      "maximum_step_m": 0.00354436668567359,
+      "maximum_step_m": 0.00242800405249,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000187937985174358,
-          "hands": "(-0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": false,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000582076609134674,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000149057086673565,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": true,
       "left_handed": false,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.0, 3.30758, 2.2)",
-          "gap": 0.0000000519867171533406,
-          "hands": "(0.0, 3.30758, 2.2)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.599999854012894,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": false,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": false,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 0,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 1,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 2,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     },
     {
       "contacts": [
         {
           "action": "dump",
-          "ball": "(0.000085, 3.3076, 0.780464)",
-          "gap": 0.00000000908039510250092,
-          "hands": "(0.000085, 3.3076, 0.780464)",
+          "ball": "(-0.0, 3.30758, 1.8)",
+          "gap": 0.0000000298068698612042,
+          "hands": "(0.0, 3.30758, 1.8)",
           "player": 5,
           "role": "S",
           "rotation": 3,
-          "time": 0.508836931211742,
+          "time": 0.6,
           "variant": "set_disguise81"
         }
       ],
       "direction": 3,
       "fps": 120,
-      "from_push": true,
       "left_handed": true,
       "manual": true,
       "maximum_step_m": 0.0,
       "phase": "ATTACK",
+      "quick": true,
       "rejects": []
     }
   ],
-  "checks": 2970,
+  "checks": 3662,
   "failures": [],
   "native": true,
   "pass": true

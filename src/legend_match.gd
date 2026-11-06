@@ -146,7 +146,7 @@ func handle_input(event: InputEvent) -> bool:
 			JOY_AXIS_RIGHT_Y: aim_input.y=event.axis_value
 			JOY_AXIS_TRIGGER_LEFT: sprint_input=maxf(0,event.axis_value)
 			JOY_AXIS_TRIGGER_RIGHT:
-				if event.axis_value>.55 and not buttons.get("dive_trigger",false): dive()
+				if event.axis_value>.55 and not buttons.get("dive_trigger",false) and not (game.phase=="SET" and game.setter==controlled_index): dive()
 				buttons.dive_trigger=event.axis_value>.55
 		return true
 	if event is InputEventJoypadButton:
@@ -299,7 +299,7 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	p.locomotion(p.velocity.length(),dt)
 	if owns(action_actor(0)) and game.armed and game.phase in ["RECEIVE","SET"]:
 		var action: String=(game.recovery_action if game.late_receive else "receive") if game.phase=="RECEIVE" else game.second_touch_contact_action()
-		if game.flight_left<p.preparation_lead(action,.38):
+		if game.flight_left<p.preparation_lead(action,.38) or (game.setter_disguise and action=="dump"):
 			p.prepare_contact(action,maxf(0,game.flight_left-dt)); p.reach_action=action; p.reach_target=game.flight_target; p.reach_weight=1.0-smoothstep(.04,.22,game.flight_left)
 
 func jump() -> bool:
