@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.79.0:** nuovo gesto del centrale ispirato al riferimento video, palleggio e battuta di Diventa un mito corretti, schiacciata di seconda con Cerchio / Xbox B disponibile solo su comando umano. [Novità e verifiche](docs/RELEASE_NOTES_79.md).
+
 **Versione 0.78.0:** risalita più rapida e sblocco delle nuove difese laterali; variante d'attacco con caricamento ampio già durante la rincorsa, per destri e mancini. [Novità e verifiche](docs/RELEASE_NOTES_78.md).
 
 **Versione 0.77.0:** sei varianti di difesa laterale, con bagher basso, recupero senza capriola e tentativo estremo soltanto dopo una mancata difesa. Le animazioni precedenti restano disponibili. [Novità e verifiche](docs/RELEASE_NOTES_77.md).

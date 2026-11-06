@@ -1,0 +1,18 @@
+{
+  "contacts": {
+    "0": "res://docs/middle79-contact-0.png",
+    "1": "res://docs/middle79-contact-1.png"
+  },
+  "fps": 60,
+  "frames": 498,
+  "hands": [
+    "right",
+    "left"
+  ],
+  "method": "production Avatar / native AnimationTree / real running feet / authored upper-body anticipation",
+  "pass": true,
+  "variants": [
+    "attack_middle79",
+    "attack_middle79"
+  ]
+}

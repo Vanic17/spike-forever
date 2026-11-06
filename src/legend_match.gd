@@ -129,7 +129,7 @@ func sync_identity() -> void:
 
 func action_actor(team: int=0) -> int:
 	match game.phase:
-		"SERVE": return game.server_index(team)
+		"SERVE": return game.server_index(team) if game.server==team else -1
 		"RECEIVE","CPU_RECEIVE": return game.receiver if game.possession==team else -1
 		"SET","CPU_SET": return game.setter if game.possession==team else -1
 		"ATTACK","CPU_ATTACK": return game.hitter if game.possession==team else -1
@@ -194,8 +194,9 @@ func press(kind: String) -> void:
 		contact_assist.unavailable("dump","USA BAGHER O PALLEGGIO SUL PRIMO TOCCO"); return
 	game.press_action(kind)
 	if game.phase=="SET" and game.armed:
+		preload("res://src/legend_set79.gd").sync(game,true)
 		var action: String=game.second_touch_contact_action()
-		contact_assist.put("set",{"fast_set":"quick","receive":"receive","dive":"dive"}.get(action,action),"armed","SECONDA NON DISPONIBILE · ALZATA NORMALE" if kind=="dump" and not game.setter_dump else "ALZATA PREPARATA",game.input_quality)
+		contact_assist.put("set","quick" if action=="fast_set" else action,"armed","SCHIACCIATA DI SECONDA" if game.setter_spike else ("SPINTA DI SECONDA" if game.setter_dump else ("ALZATA VELOCE" if action=="fast_set" else ("BAGHER DI EMERGENZA" if action=="receive" else "ALZATA NORMALE"))),game.input_quality)
 
 func release(kind: String) -> void:
 	buttons[kind]=false
@@ -208,7 +209,7 @@ func release(kind: String) -> void:
 	if owns(action_actor(0)) and kind==game.charge_button: game.input_team=0; game.release_action()
 
 func current_aim() -> Vector2:
-	var value:=aim_input
+	var value: Vector2=move_input if game.phase=="SERVE" else aim_input
 	var keyboard:=Vector2(float(keys.get(KEY_RIGHT,false))-float(keys.get(KEY_LEFT,false)),float(keys.get(KEY_DOWN,false))-float(keys.get(KEY_UP,false)))
 	if keyboard.length_squared()>0: value=keyboard
 	return value.limit_length() if value.length()>INPUT_DEADZONE else Vector2.ZERO
@@ -226,6 +227,11 @@ func movement_vector() -> Vector3:
 func apply_controls(dt: float) -> void:
 	if not enabled() or game.paused: return
 	if owns(action_actor(0)):
+		if game.phase=="SERVE":
+			var direction: Vector2=preload("res://src/view_controls.gd").court_direction(current_aim(),game.camera_mode)
+			if direction.length()>.3 and not game.toss_active:game.aim=direction.limit_length()
+			game.serve_move=Vector2.ZERO
+			return
 		game.apply_direction(preload("res://src/view_controls.gd").court_direction(current_aim(),game.camera_mode),dt)
 		game.serve_move=Vector2.ZERO
 
@@ -233,6 +239,7 @@ func before_step(dt: float) -> void:
 	if not enabled(): return
 	sync_identity()
 	contact_assist.tick()
+	preload("res://src/legend_set79.gd").sync(game)
 	if manual_available and game.phase not in ["SERVE","POINT"]: active_minutes+=dt/60
 	energy=100.0-game.match_management.fatigue_for(controlled_index) if manual_available else minf(100,energy+dt*2)
 	if requested_set: call_for_set()
@@ -252,6 +259,10 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	var p=game.players[controlled_index]
 	set_recommendation(target); p.target=target
 	if game.serve_motion_active and game.serve_motion_player==controlled_index: game.advance_serve_body(dt); return
+	if game.phase=="SERVE" and game.server_index(game.server)==controlled_index and not game.serve_adjusting:
+		p.velocity=Vector3.ZERO;p.acceleration=Vector3.ZERO;p.rotation.y=PI
+		if not game.toss_active and p.clip_name!="serve_idle":p.play("serve_idle",1,true)
+		return
 	if game.dive_motions.has(controlled_index): game.advance_dive_body(controlled_index,dt); return
 	var direction:=movement_vector()
 	var sprint: float=maxf(sprint_input,1.0 if keys.get(KEY_SHIFT,false) else 0.0)
@@ -260,12 +271,12 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	var acceleration: Vector3=((desired-p.velocity)/.12).limit_length(22.0)
 	p.acceleration=p.acceleration.move_toward(acceleration,150*dt)
 	p.velocity=(p.velocity+p.acceleration*dt).limit_length(game.Reference.run_speed()*1.10)
-	if direction.length()<.01 and p.velocity.length()<.08: p.velocity=Vector3.ZERO; p.acceleration=Vector3.ZERO
+	if desired.length()<.01 and p.velocity.length()<.08: p.velocity=Vector3.ZERO; p.acceleration=Vector3.ZERO
 	var displacement: Vector3=p.velocity*dt
 	if not source_motion.is_empty() and p.clips.has(source_motion.action):
 		var root: Vector3=p.action_root_motion(source_motion.action,p.animation_time)
 		var delta: Vector3=Basis(Vector3.UP,p.rotation.y)*(root-source_motion.last_root); delta.y=0; source_motion.last_root=root
-		if p.animation_time>=p.clips[source_motion.action].takeoff_time: displacement+=delta.limit_length(game.Reference.run_speed()*1.3*dt)
+		if p.animation_time>=p.clips[source_motion.action].takeoff_time and not source_motion.get("second_spike",false): displacement+=delta.limit_length(game.Reference.run_speed()*1.3*dt)
 	var endpoint: Vector3=p.position+displacement
 	endpoint.x=clampf(endpoint.x,-7,7); endpoint.z=clampf(endpoint.z,.25,13.5); endpoint.y=0
 	var safe: Vector3=game.collision_safe_step(controlled_index,endpoint-p.position)
@@ -282,7 +293,8 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	# rotated the contact offset ~90 degrees after a correctly timed command.
 	var serve_receive: bool=game.phase=="RECEIVE" and game.possession==0 and game.incoming_kind=="serve"
 	if p.velocity.length()>2.0 and source_motion.is_empty() and not serve_receive: facing=atan2(p.velocity.x,p.velocity.z)
-	if game.phase in ["SET","CPU_SET"] and game.setter==controlled_index and game.armed: facing=p.setting_yaw
+	if game.phase=="SERVE":facing=PI
+	if game.phase in ["SET","CPU_SET"] and game.setter==controlled_index: facing=PI if game.second_touch_contact_action() in ["attack","receive"] else p.setting_yaw
 	if p.clip_name in ["dive","recovery"] and not p.looping: facing=p.dive_yaw
 	p.rotation.y=rotate_toward(p.rotation.y,facing,7*dt); p.look_target=game.ball_pos
 	p.ready_stance=game.phase in ["RECEIVE","CPU_RECEIVE"] or game.possession!=0
@@ -320,7 +332,9 @@ func claim_contact(for_dive: bool=false) -> void:
 	var reach: float=.55+maxf(.2,game.flight_left)*7.2 if for_dive else maxf(.7,game.flight_left*game.Reference.run_speed())
 	if Vector2(p.position.x-stance.x,p.position.z-stance.z).length()>reach: return
 	if game.phase=="RECEIVE": game.receiver=controlled_index; game.select_receive_pose(controlled_index,game.flight_target)
-	else: game.setter=controlled_index
+	else:
+		game.setter=controlled_index
+		preload("res://src/legend_set79.gd").sync(game,true)
 	game.receive_deadline=game.clock_time+game.flight_left
 
 func dive() -> bool:

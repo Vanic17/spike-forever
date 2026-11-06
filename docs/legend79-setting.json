@@ -1,0 +1,1735 @@
+{
+  "cases": [
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.196517760333929,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set"
+        },
+        {
+          "direction": 0,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.3896609987766,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 0
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0798510936672621,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set"
+        },
+        {
+          "direction": 0,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.3896609987766,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 0
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193411568802019,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 0,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.39031920296926,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 0
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0767449021353521,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 0,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.39037093269559,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 0
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 1,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.196517760333929,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.99663451529977,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 1
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 1,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0798510936672621,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.99663451529977,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 1
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 1,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193411568802019,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.98028355035105,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 1
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 1,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0767449021353521,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.98028355035105,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 1
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.199395, 2.64191, 1.795997)",
+          "gap": 0.0,
+          "hands": "(0.199395, 2.64191, 1.795997)",
+          "player": 5,
+          "role": "S",
+          "rotation": 2,
+          "time": 0.552201348439267,
+          "variant": "set_back"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000387928443,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.543868015105934,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193868015105934,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set_back"
+        },
+        {
+          "direction": 2,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.57474025972915,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.552201348439267
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 2
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.199395, 2.64191, 1.795997)",
+          "gap": 0.0,
+          "hands": "(0.199395, 2.64191, 1.795997)",
+          "player": 5,
+          "role": "S",
+          "rotation": 2,
+          "time": 0.552201348439267,
+          "variant": "set_back"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000387928443,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.543868015105934,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0772013484392669,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set_back"
+        },
+        {
+          "direction": 2,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.57474025972915,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.552201348439267
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 2
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.201743, 2.683398, 1.811529)",
+          "gap": 0.0110555933788419,
+          "hands": "(0.20267, 2.6727, 1.814159)",
+          "player": 5,
+          "role": "S",
+          "rotation": 2,
+          "time": 0.543657224963808,
+          "variant": "fast_set_v26_05"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000387928443,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.543868015105934,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set_back"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.185323891630474,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_05"
+        },
+        {
+          "direction": 2,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.57335430636535,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.543657224963808
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 2
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.201743, 2.683398, 1.811529)",
+          "gap": 0.0110555933788419,
+          "hands": "(0.20267, 2.6727, 1.814159)",
+          "player": 5,
+          "role": "S",
+          "rotation": 2,
+          "time": 0.543657224963808,
+          "variant": "fast_set_v26_05"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000387928443,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_back"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.543868015105934,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set_back"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0686572249638071,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_05"
+        },
+        {
+          "direction": 2,
+          "hitter": 2,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.57335430636535,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.543657224963808
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 2
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.196517760333929,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set"
+        },
+        {
+          "direction": 3,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 0.92,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 3
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0798510936672621,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set"
+        },
+        {
+          "direction": 3,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 0.92,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 3
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193411568802019,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 3,
+          "hitter": 0,
+          "kind": "quick_set",
+          "rally": 1,
+          "seconds": 0.872029735748814,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 3
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0767449021353521,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 3,
+          "hitter": 0,
+          "kind": "quick_set",
+          "rally": 1,
+          "seconds": 0.871686288089217,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 3
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 4,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.196517760333929,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set"
+        },
+        {
+          "direction": 0,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.42537111871588,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 4
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 4,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0798510936672621,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set"
+        },
+        {
+          "direction": 0,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.42537111871588,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 4
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 4,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193411568802019,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 0,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.42461567255224,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 4
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 4,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0767449021353521,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 0,
+          "hitter": 0,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 2.42461567255224,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 4
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 5,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.196517760333929,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "set"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.99799397228999,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": false,
+      "rotation": 5
+    },
+    {
+      "contacts": [
+        {
+          "action": "set",
+          "ball": "(0.198667, 2.528871, 1.791181)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.198667, 2.528871, 1.791181)",
+          "player": 5,
+          "role": "S",
+          "rotation": 5,
+          "time": 0.554851093667263,
+          "variant": "set"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0798510936672621,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "set"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.99799397228999,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.554851093667263
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": false,
+      "rotation": 5
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 5,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.193411568802019,
+          "team": 0,
+          "time": 0.358333333333334,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.98271136967608,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.2,
+      "quick": true,
+      "rotation": 5
+    },
+    {
+      "contacts": [
+        {
+          "action": "fast_set",
+          "ball": "(0.19952, 2.544117, 1.796827)",
+          "gap": 0.0000000149011611938477,
+          "hands": "(0.19952, 2.544117, 1.796827)",
+          "player": 5,
+          "role": "S",
+          "rotation": 5,
+          "time": 0.551744902135353,
+          "variant": "fast_set_v26_06"
+        }
+      ],
+      "events": [
+        {
+          "kind": "formation",
+          "rally": 1,
+          "rotation": [
+            0,
+            0
+          ],
+          "server": 0,
+          "team": 0,
+          "time": 0.0
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.550000096982111,
+          "team": 0,
+          "time": 0.0,
+          "variant": "set_left_front"
+        },
+        {
+          "action": "set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.546517760333929,
+          "team": 0,
+          "time": 0.00833333333333333,
+          "variant": "set"
+        },
+        {
+          "action": "fast_set",
+          "actor": 5,
+          "kind": "legend_set_sync",
+          "rally": 1,
+          "seconds": 0.0767449021353521,
+          "team": 0,
+          "time": 0.475000000000001,
+          "variant": "fast_set_v26_06"
+        },
+        {
+          "direction": 1,
+          "hitter": 1,
+          "kind": "high_set",
+          "rally": 1,
+          "seconds": 1.98271136967608,
+          "setter": 5,
+          "system": 1,
+          "team": 0,
+          "time": 0.551744902135353
+        }
+      ],
+      "input_remaining": 0.08,
+      "quick": true,
+      "rotation": 5
+    }
+  ],
+  "checks": 97,
+  "failures": [],
+  "pass": true
+}

@@ -89,6 +89,7 @@ static func commit(game, plan: Dictionary, second_touch: bool = false) -> void:
 	game.log_rally_event("second_touch_one_hand" if second_touch else "low_save_plan",{"actor":index,"variant":plan.variant,"seconds":plan.seconds})
 
 static func try_second_touch(game) -> bool:
+	if game.setter_spike:return false
 	if game.setter_dump or game.phase not in ["SET","CPU_SET"] or not game.airborne: return false
 	if game.human_team(game.possession) and not game.armed: return false
 	if game.dive_motions.has(game.setter): return false

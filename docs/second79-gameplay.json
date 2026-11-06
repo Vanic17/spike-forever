@@ -1,0 +1,83 @@
+{
+  "cases": [
+    {
+      "contacts": [
+        {
+          "action": "attack",
+          "ball": "(0.0, 3.307581, 2.2)",
+          "gap": 0.0850000381469727,
+          "hands": "(0.0, 3.307581, 2.285)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.500000000000001,
+          "variant": "attack"
+        }
+      ],
+      "incoming": "spike",
+      "manual": false,
+      "push": false,
+      "rejects": []
+    },
+    {
+      "contacts": [
+        {
+          "action": "dump",
+          "ball": "(0.0, 2.897921, 0.75)",
+          "gap": 0.0850000381469727,
+          "hands": "(0.0, 2.897921, 0.835)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.499999950424565,
+          "variant": "dump_push54"
+        }
+      ],
+      "incoming": "dump",
+      "manual": false,
+      "push": true,
+      "rejects": []
+    },
+    {
+      "contacts": [
+        {
+          "action": "attack",
+          "ball": "(0.0, 3.307581, 2.2)",
+          "gap": 0.0850000381469727,
+          "hands": "(0.0, 3.307581, 2.285)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.500000000000001,
+          "variant": "attack"
+        }
+      ],
+      "incoming": "spike",
+      "manual": true,
+      "push": false,
+      "rejects": []
+    },
+    {
+      "contacts": [
+        {
+          "action": "dump",
+          "ball": "(0.0, 2.897921, 0.75)",
+          "gap": 0.0850000381469727,
+          "hands": "(0.0, 2.897921, 0.835)",
+          "player": 5,
+          "role": "S",
+          "rotation": 3,
+          "time": 0.499999950424565,
+          "variant": "dump_push54"
+        }
+      ],
+      "incoming": "dump",
+      "manual": true,
+      "push": true,
+      "rejects": []
+    }
+  ],
+  "checks": 26,
+  "failures": [],
+  "pass": true
+}

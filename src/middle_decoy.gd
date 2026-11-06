@@ -1,7 +1,7 @@
 extends RefCounted
 const Tactics=preload("res://src/tactics.gd")
 const AI=preload("res://src/rally_ai.gd")
-const PERFORMANCE:="attack_v26_01"
+const PERFORMANCE:="attack_middle79"
 const QUICK_DELAY:=0.16
 const NORMAL_DELAY:=0.17
 var index:=-1

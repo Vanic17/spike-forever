@@ -45,6 +45,11 @@ static func current_contact_reachable(game, action: String, known_route: float =
 	var player=game.players[game.setter]
 	var stance: Vector3=player.stance_for_contact(action,game.flight_target)
 	var yaw: float=player.setting_yaw if action in ["set","fast_set"] else (PI if game.possession==0 else 0.0)
+	# A manual setter already inside his playable contact radius must not
+	# be reclassified as recovering from the very set he is preparing now.
+	if game.legend_controls(game.setter) and player.position.distance_to(stance)<=.50:
+		var turn: float=absf(wrapf(yaw-player.rotation.y,-PI,PI))
+		if turn<=.08 or turn/7.0<=game.flight_left+.015:return true
 	# Low-pose selection and one-hand rescue share one perception read. Reuse
 	# its route/steering forecast at this exact state; any movement, pose or
 	# deadline change invalidates it, including the post-movement contact check.
@@ -124,6 +129,7 @@ static func clear_target(game, point: Vector3, contact_index: int = -1, action: 
 	return best
 
 static func try_low_contact(game) -> bool:
+	if game.setter_spike:return false
 	if game.setter_action=="dive" and game.dive_motions.has(game.setter): return false
 	if game.setter_dump or game.flight_left>0.70 or game.ball_pos.y<0.8: return false
 	if game.clock_time<game.next_second_touch_read: return false
@@ -180,6 +186,7 @@ static func sync_performance(game) -> void:
 	# launched. Its hands need not be at the previous performance's height.
 	# Intercept the existing flight; never rewrite its velocity or spin.
 	if game.phase not in ["SET","CPU_SET"] or not game.airborne: return
+	if game.setter_spike:return
 	if game.setter_action=="dive" and game.dive_motions.has(game.setter): return
 	var action: String="dump" if game.setter_dump else ("receive" if game.out_of_system<0 else ("fast_set" if game.fast_set else "set"))
 	var player=game.players[game.setter]

@@ -196,6 +196,7 @@ var camera_focus := Vector3(0, 1.25, -0.7)
 var travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 var charge_button := "action"
 var setter_dump := false
+var setter_spike := false
 var late_receive := false
 var recovery_action := "receive"
 var receive_deadline := 0.0
@@ -627,6 +628,7 @@ func press_action(button: String = "action") -> void:
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
 		setter_dump = button == "dump" and preload("res://src/setter_dump.gd").can_request(self)
+		if button=="dump" and not setter_dump and preload("res://src/setter_spike79.gd").request(self):return
 		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
@@ -707,6 +709,7 @@ func set_phase(value: String) -> void:
 	charging = false
 	charge = 0
 	setter_dump = false
+	setter_spike = false
 	late_receive = false
 	recovery_action = "receive"
 
@@ -1018,7 +1021,7 @@ func release_serve_toss() -> void:
 func validate_contact(index: int, action: String) -> bool:
 	if legend_controls(index) and not legend_match.contact_allowed(index,action): return false
 	var player = players[index]
-	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else (0.50 if legend_controls(index) and action in ["receive","attack"] else 0.35)):
+	if player.contact_world(action).distance_to(ball_pos) > (0.55 if action in ["recovery","dive"] else (0.50 if legend_controls(index) and action in ["receive","attack","set","fast_set"] else 0.35)):
 		log_rally_event("contact_rejected",{"actor":index,"action":action,"reason":"stance","expected":player.contact_world(action),"ball":ball_pos,"yaw":player.rotation.y,"stance":player.stance_for_contact(action,ball_pos)})
 		return false
 	player.reach_target = ball_pos
@@ -1323,7 +1326,7 @@ func plan_attack(direction: int, quick: bool) -> void:
 		planned_visual_key=visual_key
 		if planned_hitter>=0:
 			var variant := AnimationVariety.attack(planned_direction,pass_quality,shot_serial)
-			if planned_direction==1 and out_of_system>=0: variant="attack_v26_01"
+			if planned_direction==1 and out_of_system>=0: variant="attack_middle79"
 			if planned_direction in [0,2,3]:
 				# Use the complete original running L-R-L, rather than a short
 				# lateral adjustment as the main high-ball performance.
@@ -1345,12 +1348,16 @@ func select_receive_pose(index: int, point: Vector3) -> void:
 	player.select_variant("receive",variant)
 
 func second_touch_contact_action() -> String:
+	if setter_spike:return "attack"
 	if setter_action=="dive" and dive_motions.has(setter) and dive_motions[setter].get("second_touch",false): return "dive"
 	return "dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
 
 func set_ball(contact_override: String = "") -> void:
 	overpass_attack_team=-1
 	attack_tip=false
+	if setter_spike:
+		preload("res://src/setter_spike79.gd").strike(self)
+		return
 	if setter_dump:
 		dump_ball()
 		return
@@ -1446,6 +1453,7 @@ func set_ball(contact_override: String = "") -> void:
 		flight = maxf(1.18, flight)
 		fast_set = false
 		if not self_test: notice("ALTA DI SICUREZZA", 0.8)
+		if legend_controls(setter):legend_match.contact_assist.put("set","set","armed","ALTA DI SICUREZZA · ATTACCANTE NON PRONTO",q)
 	block_count = Timing.blockers(false, fast_set, q, destination == 3)
 	if possession == 0:
 		var cpu_correct := rng.randf() < 0.70

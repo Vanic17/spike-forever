@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "adjusting": false,
+      "aim": "(0.8, -0.5)",
+      "button": 0,
+      "contacts": [
+        {
+          "action": "power",
+          "ball": "(2.855685, 3.185179, 8.827866)",
+          "gap": 0.0850000381469727,
+          "hands": "(2.855685, 3.185179, 8.912866)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 2.59519738175216,
+          "variant": "power"
+        }
+      ],
+      "end_position": "(2.787481, 0.0, 8.820479)",
+      "motion": true,
+      "origin": "(2.8, 0.0, 11.9)",
+      "phase": "CPU_RECEIVE",
+      "target": "(0.0, 0.0, 0.0)"
+    },
+    {
+      "adjusting": false,
+      "aim": "(0.8, -0.5)",
+      "button": 2,
+      "contacts": [
+        {
+          "action": "float",
+          "ball": "(3.155448, 2.680342, 8.394396)",
+          "gap": 0.0850000381469727,
+          "hands": "(3.155448, 2.680342, 8.479396)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 1.56129231270337,
+          "variant": "float"
+        }
+      ],
+      "end_position": "(3.009012, 0.0, 8.479706)",
+      "motion": true,
+      "origin": "(2.8, 0.0, 11.9)",
+      "phase": "CPU_RECEIVE",
+      "target": "(0.0, 0.0, 0.0)"
+    },
+    {
+      "adjusting": false,
+      "aim": "(0.8, -0.5)",
+      "button": 0,
+      "contacts": [
+        {
+          "action": "power",
+          "ball": "(2.855685, 3.185179, 8.480292)",
+          "gap": 0.0850000381469727,
+          "hands": "(2.855685, 3.185179, 8.565292)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 3.75353071508549,
+          "variant": "power"
+        }
+      ],
+      "end_position": "(2.789979, 0.0, 8.484868)",
+      "motion": true,
+      "origin": "(2.8, 0.0, 9.2)",
+      "phase": "CPU_RECEIVE",
+      "target": "(2.8, 0.0, 11.58625)"
+    },
+    {
+      "adjusting": false,
+      "aim": "(0.8, -0.5)",
+      "button": 2,
+      "contacts": [
+        {
+          "action": "float",
+          "ball": "(3.155448, 2.680342, 8.132583)",
+          "gap": 0.0850000381469727,
+          "hands": "(3.155448, 2.680342, 8.217583)",
+          "player": 5,
+          "role": "S",
+          "rotation": 0,
+          "time": 2.75295897937003,
+          "variant": "float"
+        }
+      ],
+      "end_position": "(3.008739, 0.0, 8.239664)",
+      "motion": true,
+      "origin": "(2.8, 0.0, 9.2)",
+      "phase": "CPU_RECEIVE",
+      "target": "(2.8, 0.0, 11.67363)"
+    }
+  ],
+  "checks": 26,
+  "failures": [],
+  "pass": true
+}

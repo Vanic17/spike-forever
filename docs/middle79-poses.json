@@ -1,0 +1,8 @@
+{
+  "cases": [],
+  "checks": 161968,
+  "failures": [],
+  "limb_error_m": 0.000000923871994018555,
+  "palm_error_m": 0.000000628724819762283,
+  "pass": true
+}
