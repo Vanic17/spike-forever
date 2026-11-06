@@ -16,8 +16,8 @@ static func card(canvas: CanvasItem,bounds: Rect2):
 	canvas.draw_style_box(box,bounds)
 static func controls(pad: int,ps: bool,en: bool) -> Array:
 	if pad<0:
-		return ["WASD Move / Arrows Aim" if en else "WASD Muovi / Frecce Mira","R Jump / Shift Sprint" if en else "R Salta / Shift Scatto","Space Bagher / set / attack" if en else "Spazio Bagher / alzata / attacco","Q Overhead / quick / float / tip" if en else "Q Palleggio / veloce / float / pallonetto","C Dive / F Call / E Dump" if en else "C Tuffo / F Chiama / E Seconda","Esc Pause / V Camera" if en else "Esc Pausa / V Telecamera"]
-	return ["LS Move / RS Aim" if en else "LS Muovi / RS Mira",("R1 Jump / L2 Sprint" if ps else "RB Jump / LT Sprint") if en else ("R1 Salta / L2 Scatto" if ps else "RB Salta / LT Scatto"),("Cross Bagher / set / attack" if ps else "A Bagher / set / attack") if en else ("Croce Bagher / alzata / attacco" if ps else "A Bagher / alzata / attacco"),("Square Overhead / quick / float / tip" if ps else "X Overhead / quick / float / tip") if en else ("Quadrato Palleggio / veloce / float / pallonetto" if ps else "X Palleggio / veloce / float / pallonetto"),("R2 Dive / L1 Call / Circle Dump" if ps else "RT Dive / LB Call / B Dump") if en else ("R2 Tuffo / L1 Chiama / Cerchio Seconda" if ps else "RT Tuffo / LB Chiama / B Seconda"),("Options Pause / Triangle Camera" if ps else "Menu Pause / Y Camera") if en else ("Options Pausa / Triangolo Telecamera" if ps else "Menu Pausa / Y Telecamera")]
+		return ["WASD Move / Arrows Aim" if en else "WASD Muovi / Frecce Mira","R Jump / Shift Sprint" if en else "R Salta / Shift Scatto","Space Bagher / set / attack" if en else "Spazio Bagher / alzata / attacco","Q Overhead / quick / float / tip" if en else "Q Palleggio / veloce / float / pallonetto","C Dive / F Call / E Dump" if en else "C Tuffo / F Chiama / E Seconda","Esc Pause / V Camera" if en else "Esc Pausa / V Telecamera","E > Space: disguised set" if en else "E > Spazio: finta e alzata"]
+	return ["LS Move / Aim" if en else "LS Muovi / Mira",("R1 Jump / L2 Sprint" if ps else "RB Jump / LT Sprint") if en else ("R1 Salta / L2 Scatto" if ps else "RB Salta / LT Scatto"),("Cross Bagher / set / attack" if ps else "A Bagher / set / attack") if en else ("Croce Bagher / alzata / attacco" if ps else "A Bagher / alzata / attacco"),("Square Overhead / quick / float / tip" if ps else "X Overhead / quick / float / tip") if en else ("Quadrato Palleggio / veloce / float / pallonetto" if ps else "X Palleggio / veloce / float / pallonetto"),("R2 Dive / L1 Call / Circle Dump" if ps else "RT Dive / LB Call / B Dump") if en else ("R2 Tuffo / L1 Chiama / Cerchio Seconda" if ps else "RT Tuffo / LB Chiama / B Seconda"),("Options Pause / Triangle Camera" if ps else "Menu Pause / Y Camera") if en else ("Options Pausa / Triangolo Telecamera" if ps else "Menu Pausa / Y Telecamera"),("Circle > Cross: disguised set" if ps else "B > A: disguised set") if en else ("Cerchio > Croce: finta e alzata" if ps else "B > A: finta e alzata")]
 static func contact_button(action: String,pad: int,ps: bool,en: bool) -> String:
 	if action=="dive": return "C" if pad<0 else ("R2" if ps else "RT")
 	if action in ["overhead","quick"]: return "Q" if pad<0 else (("Square" if en else "Quadrato") if ps else "X")
@@ -82,8 +82,8 @@ static func draw(canvas: CanvasItem,game,viewport: Vector2,pad: int,ps: bool):
 	canvas.draw_rect(Rect2(58,990,366*energy/100,7),GREEN if energy>30 else Color("ed866a"))
 	var available:=bool(state.get("manual_available",true))
 	text(canvas,Vector2(58,1025),("Ground marker: AI position" if en else "Cerchietto a terra: posizione IA") if available else ("ON THE BENCH" if en else "IN PANCHINA"),17,MUTED,366)
-	card(canvas,Rect2(1410,822,474,222))
+	card(canvas,Rect2(1410,787,474,257))
 	var rows:=controls(pad,ps,en)
-	for i in rows.size():text(canvas,Vector2(1432,855+i*31),rows[i],20,WHITE if i==0 else MUTED,430)
+	for i in rows.size():text(canvas,Vector2(1432,820+i*31),rows[i],20,WHITE if i==0 else MUTED,430)
 	if game.legend_match.has_method("contact_cue"): draw_contact_cue(canvas,game.legend_match.contact_cue(),pad,ps,en)
 	canvas.draw_set_transform(Vector2.ZERO,0,Vector2.ONE)

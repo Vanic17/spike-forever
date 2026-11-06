@@ -196,7 +196,8 @@ func press(kind: String) -> void:
 	if game.phase=="SET" and game.armed:
 		preload("res://src/legend_set79.gd").sync(game,true)
 		var action: String=game.second_touch_contact_action()
-		contact_assist.put("set","quick" if action=="fast_set" else action,"armed","SCHIACCIATA DI SECONDA" if game.setter_spike else ("SPINTA DI SECONDA" if game.setter_dump else ("ALZATA VELOCE" if action=="fast_set" else ("BAGHER DI EMERGENZA" if action=="receive" else "ALZATA NORMALE"))),game.input_quality)
+		var label: String="FINTA DI SECONDA · ALZATA" if game.setter_disguise else ("SCHIACCIATA DI SECONDA" if game.setter_spike else ("SPINTA DI SECONDA" if game.setter_dump else ("ALZATA VELOCE" if action=="fast_set" else ("BAGHER DI EMERGENZA" if action=="receive" else "ALZATA NORMALE"))))
+		contact_assist.put("set","quick" if action=="fast_set" else action,"armed",label,game.input_quality)
 
 func release(kind: String) -> void:
 	buttons[kind]=false
@@ -209,7 +210,7 @@ func release(kind: String) -> void:
 	if owns(action_actor(0)) and kind==game.charge_button: game.input_team=0; game.release_action()
 
 func current_aim() -> Vector2:
-	var value: Vector2=move_input if game.phase=="SERVE" else aim_input
+	var value: Vector2=move_input
 	var keyboard:=Vector2(float(keys.get(KEY_RIGHT,false))-float(keys.get(KEY_LEFT,false)),float(keys.get(KEY_DOWN,false))-float(keys.get(KEY_UP,false)))
 	if keyboard.length_squared()>0: value=keyboard
 	return value.limit_length() if value.length()>INPUT_DEADZONE else Vector2.ZERO
@@ -227,13 +228,11 @@ func movement_vector() -> Vector3:
 func apply_controls(dt: float) -> void:
 	if not enabled() or game.paused: return
 	if owns(action_actor(0)):
-		if game.phase=="SERVE":
-			var direction: Vector2=preload("res://src/view_controls.gd").court_direction(current_aim(),game.camera_mode)
-			if direction.length()>.3 and not game.toss_active:game.aim=direction.limit_length()
-			game.serve_move=Vector2.ZERO
-			return
-		game.apply_direction(preload("res://src/view_controls.gd").court_direction(current_aim(),game.camera_mode),dt)
-		game.serve_move=Vector2.ZERO
+		var direction: Vector2=preload("res://src/view_controls.gd").court_direction(current_aim(),game.camera_mode)
+		if game.phase=="SERVE" and direction.length()>.3 and not game.charging and not game.toss_active and not game.serve_adjusting:
+			# Manual positioning takes over from the between-points return route.
+			return_positions.erase(controlled_index)
+		game.apply_direction(direction,dt)
 
 func before_step(dt: float) -> void:
 	if not enabled(): return
@@ -259,10 +258,6 @@ func move_controlled(dt: float, target: Vector3, blockers: Array) -> void:
 	var p=game.players[controlled_index]
 	set_recommendation(target); p.target=target
 	if game.serve_motion_active and game.serve_motion_player==controlled_index: game.advance_serve_body(dt); return
-	if game.phase=="SERVE" and game.server_index(game.server)==controlled_index and not game.serve_adjusting:
-		p.velocity=Vector3.ZERO;p.acceleration=Vector3.ZERO;p.rotation.y=PI
-		if not game.toss_active and p.clip_name!="serve_idle":p.play("serve_idle",1,true)
-		return
 	if game.dive_motions.has(controlled_index): game.advance_dive_body(controlled_index,dt); return
 	var direction:=movement_vector()
 	var sprint: float=maxf(sprint_input,1.0 if keys.get(KEY_SHIFT,false) else 0.0)

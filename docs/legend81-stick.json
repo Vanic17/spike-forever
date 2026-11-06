@@ -1,0 +1,513 @@
+{
+  "braking_distance_m": 0.62883472442627,
+  "cases": [
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 0,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 0,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 0,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 0,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 0,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 0,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 0,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 0,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "SET"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 0,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 0,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 0,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 0,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 0,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 2,
+      "movement": "(-0.261007, 0.0, -0.861322)",
+      "octant": 0,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(0.424487, 0.0, -0.793606)",
+      "octant": 1,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 2,
+      "movement": "(0.861322, 0.0, -0.261007)",
+      "octant": 2,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(0.793606, 0.0, 0.424487)",
+      "octant": 3,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 2,
+      "movement": "(0.261007, 0.0, 0.861322)",
+      "octant": 4,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(-0.424487, 0.0, 0.793606)",
+      "octant": 5,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 2,
+      "movement": "(-0.861322, 0.0, 0.261007)",
+      "octant": 6,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(-0.793606, 0.0, -0.424487)",
+      "octant": 7,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 2,
+      "movement": "(-0.261007, 0.0, -0.861322)",
+      "octant": 0,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(0.424487, 0.0, -0.793606)",
+      "octant": 1,
+      "phase": "SET"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 2,
+      "movement": "(0.861322, 0.0, -0.261007)",
+      "octant": 2,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(0.793606, 0.0, 0.424487)",
+      "octant": 3,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 2,
+      "movement": "(0.261007, 0.0, 0.861322)",
+      "octant": 4,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(-0.424487, 0.0, 0.793606)",
+      "octant": 5,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 2,
+      "movement": "(-0.861322, 0.0, 0.261007)",
+      "octant": 6,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(-0.793606, 0.0, -0.424487)",
+      "octant": 7,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 2,
+      "movement": "(-0.261007, 0.0, -0.861322)",
+      "octant": 0,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(0.424487, 0.0, -0.793606)",
+      "octant": 1,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 2,
+      "movement": "(0.861322, 0.0, -0.261007)",
+      "octant": 2,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(0.793606, 0.0, 0.424487)",
+      "octant": 3,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 2,
+      "movement": "(0.261007, 0.0, 0.861322)",
+      "octant": 4,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 2,
+      "movement": "(-0.424487, 0.0, 0.793606)",
+      "octant": 5,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 2,
+      "movement": "(-0.861322, 0.0, 0.261007)",
+      "octant": 6,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 2,
+      "movement": "(-0.793606, 0.0, -0.424487)",
+      "octant": 7,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 3,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 3,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 3,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 3,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "RECEIVE"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 3,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 3,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 3,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "SET"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 3,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "SET"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "SET"
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "camera": 3,
+      "movement": "(0.9, 0.0, 0.0)",
+      "octant": 0,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, 0.636396)",
+      "octant": 1,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, 1.0)",
+      "camera": 3,
+      "movement": "(-0.0, 0.0, 0.9)",
+      "octant": 2,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, 0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, 0.636396)",
+      "octant": 3,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "camera": 3,
+      "movement": "(-0.9, 0.0, -0.0)",
+      "octant": 4,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(-0.636396, 0.0, -0.636396)",
+      "octant": 5,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(-0.0, -1.0)",
+      "camera": 3,
+      "movement": "(0.0, 0.0, -0.9)",
+      "octant": 6,
+      "phase": "ATTACK"
+    },
+    {
+      "aim": "(0.707107, -0.707107)",
+      "camera": 3,
+      "movement": "(0.636396, 0.0, -0.636396)",
+      "octant": 7,
+      "phase": "ATTACK"
+    }
+  ],
+  "checks": 179,
+  "failures": [],
+  "final_charging_speed": 0.107881337404251,
+  "pass": true
+}

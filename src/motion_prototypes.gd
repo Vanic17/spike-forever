@@ -6,10 +6,10 @@ const PSK = preload("res://src/psk.gd")
 const Converter = preload("res://src/psa_animation_library.gd")
 const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
-const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78", "attack_middle79", "receive_platform80", "receive_braced80", "receive_knee80", "receive_knee_right80", "dive_platform80", "dive_roll80", "dive_roll_right80", "dive_pancake80", "attack_middle_style80", "attack_middle_style_right80"]
-const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd"),preload("res://src/attack_middle79.gd"),preload("res://src/defense_platform80.gd"),preload("res://src/defense_braced80.gd"),preload("res://src/defense_knee80.gd"),preload("res://src/defense_knee_right80.gd"),preload("res://src/defense_dive_platform80.gd"),preload("res://src/defense_roll80.gd"),preload("res://src/defense_roll_right80.gd"),preload("res://src/defense_pancake80.gd"),preload("res://src/attack_middle_style80.gd"),preload("res://src/attack_middle_style_right80.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion80.res"
-const FORMAT := 8
+const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78", "attack_middle79", "receive_platform80", "receive_braced80", "receive_knee80", "receive_knee_right80", "dive_platform80", "dive_roll80", "dive_roll_right80", "dive_pancake80", "attack_middle_style80", "attack_middle_style_right80", "set_disguise81"]
+const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd"),preload("res://src/attack_middle79.gd"),preload("res://src/defense_platform80.gd"),preload("res://src/defense_braced80.gd"),preload("res://src/defense_knee80.gd"),preload("res://src/defense_knee_right80.gd"),preload("res://src/defense_dive_platform80.gd"),preload("res://src/defense_roll80.gd"),preload("res://src/defense_roll_right80.gd"),preload("res://src/defense_pancake80.gd"),preload("res://src/attack_middle_style80.gd"),preload("res://src/attack_middle_style_right80.gd"),preload("res://src/set_disguise_motion81.gd")]
+const LIBRARY_PATH := "res://assets/active/native_motion81.res"
+const FORMAT := 9
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -69,6 +69,9 @@ static func author_clip(base, author, label: String):
 		# No visual root travel: preserve the exact physical displacement table.
 		clip.positions[frame * clip.names.size()].x = base.positions[frame * clip.names.size()].x
 		clip.positions[frame * clip.names.size()].y = base.positions[frame * clip.names.size()].y
+	if label=="set_disguise81":
+		var contact_pose:=normalized(clip,clip.contact_time)
+		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
 	if label=="dump_push54":
 		var contact_pose:=normalized(clip,clip.contact_time)
 		clip.contact_offset=contact_pose[clip.names.find("LeftHand")].origin

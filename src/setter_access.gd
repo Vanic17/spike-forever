@@ -129,7 +129,7 @@ static func clear_target(game, point: Vector3, contact_index: int = -1, action: 
 	return best
 
 static func try_low_contact(game) -> bool:
-	if game.setter_spike:return false
+	if game.setter_spike or game.setter_disguise:return false
 	if game.setter_action=="dive" and game.dive_motions.has(game.setter): return false
 	if game.setter_dump or game.flight_left>0.70 or game.ball_pos.y<0.8: return false
 	if game.clock_time<game.next_second_touch_read: return false
@@ -186,7 +186,7 @@ static func sync_performance(game) -> void:
 	# launched. Its hands need not be at the previous performance's height.
 	# Intercept the existing flight; never rewrite its velocity or spin.
 	if game.phase not in ["SET","CPU_SET"] or not game.airborne: return
-	if game.setter_spike:return
+	if game.setter_spike or game.setter_disguise:return
 	if game.setter_action=="dive" and game.dive_motions.has(game.setter): return
 	var action: String="dump" if game.setter_dump else ("receive" if game.out_of_system<0 else ("fast_set" if game.fast_set else "set"))
 	var player=game.players[game.setter]

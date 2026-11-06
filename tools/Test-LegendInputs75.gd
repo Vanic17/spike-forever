@@ -160,10 +160,13 @@ func test_movement_aim_and_sprint():
 	await axis(JOY_AXIS_LEFT_X,0); tick(30)
 	check(adapter.movement_vector()==Vector3.ZERO,"left stick release stops movement intent")
 	await axis(JOY_AXIS_RIGHT_X,.75); await axis(JOY_AXIS_RIGHT_Y,-.45)
-	check(adapter.current_aim().distance_to(Vector2(.75,-.45))<.001,"right stick controls separate actual aim")
+	check(adapter.current_aim()==Vector2.ZERO,"right stick does not override left-stick aim")
+	await axis(JOY_AXIS_LEFT_X,.75);await axis(JOY_AXIS_LEFT_Y,-.45)
+	check(adapter.current_aim().distance_to(Vector2(.75,-.45))<.001,"left stick controls movement and actual aim")
 	adapter.apply_controls(.1)
-	check(game.aim.length()>.1,"right stick reaches shared game aim")
+	check(game.aim.length()>.1,"left stick reaches shared game aim")
 	await axis(JOY_AXIS_RIGHT_X,0); await axis(JOY_AXIS_RIGHT_Y,0)
+	await axis(JOY_AXIS_LEFT_X,0); await axis(JOY_AXIS_LEFT_Y,0)
 	p.position=origin; p.velocity=Vector3.ZERO; p.acceleration=Vector3.ZERO
 	await axis(JOY_AXIS_LEFT_X,1); tick(50); var ordinary: float=p.velocity.length()
 	p.position=origin; p.velocity=Vector3.ZERO; p.acceleration=Vector3.ZERO

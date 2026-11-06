@@ -1,0 +1,22 @@
+{
+  "contacts": {
+    "0": "res://docs/setter81-contact-0.png",
+    "1": "res://docs/setter81-contact-1.png",
+    "2": "res://docs/setter81-contact-2.png",
+    "3": "res://docs/setter81-contact-3.png"
+  },
+  "fps": 60,
+  "frames": 860,
+  "hands": [
+    "right",
+    "left"
+  ],
+  "method": "production Avatar / native AnimationTree / real running feet / authored upper-body anticipation",
+  "pass": true,
+  "variants": [
+    "set_disguise81",
+    "set_disguise81",
+    "set_disguise81",
+    "set_disguise81"
+  ]
+}

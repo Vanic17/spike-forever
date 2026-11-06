@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "fps": 30,
+      "maximum_frame_step_m": 0.520769655704498,
+      "source_frame_step_m": 0.490719765424728
+    },
+    {
+      "fps": 60,
+      "maximum_frame_step_m": 0.324141770601273,
+      "source_frame_step_m": 0.252838134765625
+    },
+    {
+      "fps": 120,
+      "maximum_frame_step_m": 0.211657553911209,
+      "source_frame_step_m": 0.127958863973618
+    },
+    {
+      "fps": 144,
+      "maximum_frame_step_m": 0.168036907911301,
+      "source_frame_step_m": 0.107973344624043
+    }
+  ],
+  "checks": 133746,
+  "contact_offset": "(0.000063, 3.30758, 0.146985)",
+  "contact_time": 0.592405034685495,
+  "failures": [],
+  "feet_error_m": 0.00000147220157487027,
+  "limb_error_m": 0.000000864267349243164,
+  "pass": true,
+  "takeoff_time": 0.263291126526887
+}

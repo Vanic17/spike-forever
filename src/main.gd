@@ -197,6 +197,7 @@ var travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 var charge_button := "action"
 var setter_dump := false
 var setter_spike := false
+var setter_disguise := false
 var late_receive := false
 var recovery_action := "receive"
 var receive_deadline := 0.0
@@ -597,6 +598,7 @@ func press_action(button: String = "action") -> void:
 		notice("PALLONETTO · COLPO DI POLSO",0.9)
 		return
 	if action_phase=="SET" and armed and button=="action":
+		if preload("res://src/setter_disguise81.gd").convert(self):return
 		attack_buffer_start=clock_time; attack_buffer_power=-1.0
 		return
 	if action_phase == "SERVE" and human_team(server) and not charging and not toss_active and not serve_adjusting and button != "dump":
@@ -628,7 +630,9 @@ func press_action(button: String = "action") -> void:
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
 		setter_dump = button == "dump" and preload("res://src/setter_dump.gd").can_request(self)
-		if button=="dump" and not setter_dump and preload("res://src/setter_spike79.gd").request(self):return
+		if button=="dump" and not setter_dump and preload("res://src/setter_spike79.gd").request(self):
+			preload("res://src/setter_disguise81.gd").offer(self)
+			return
 		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
@@ -641,6 +645,7 @@ func press_action(button: String = "action") -> void:
 			flight_left = maxf(0.001, contact.seconds)
 		armed = true
 		input_quality = pass_quality
+		if setter_dump:preload("res://src/setter_disguise81.gd").offer(self)
 		notice("COLPO DI SECONDA" if setter_dump else ("SECONDA NON DISPONIBILE · ALZATA NORMALE" if button=="dump" else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE")), 0.8)
 	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action": jump_manual_wall()
 
@@ -710,6 +715,7 @@ func set_phase(value: String) -> void:
 	charge = 0
 	setter_dump = false
 	setter_spike = false
+	setter_disguise = false
 	late_receive = false
 	recovery_action = "receive"
 
@@ -1028,8 +1034,9 @@ func validate_contact(index: int, action: String) -> bool:
 	player.reach_weight = 1
 	player.reach_action = action
 	player.prepare_contact(action, 0)
-	var actual: Vector3 = player.current_hand(action=="dump")
-	if action in ["receive", "set", "fast_set", "block"]:
+	var disguised: bool=player.variant_names.get(action,"")=="set_disguise81"
+	var actual: Vector3 = player.current_hand(action=="dump" and not disguised)
+	if action in ["receive", "set", "fast_set", "block"] or disguised:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
 	var distance := actual.distance_to(ball_pos)
 	if not player.skeleton: distance = player.contact_world(action).distance_to(ball_pos)
@@ -1355,6 +1362,7 @@ func select_receive_pose(index: int, point: Vector3) -> void:
 	player.select_variant("receive",variant)
 
 func second_touch_contact_action() -> String:
+	if setter_disguise:return "dump"
 	if setter_spike:return "attack"
 	if setter_action=="dive" and dive_motions.has(setter) and dive_motions[setter].get("second_touch",false): return "dive"
 	return "dump" if setter_dump else ("receive" if out_of_system<0 else ("fast_set" if fast_set else "set"))
@@ -1385,7 +1393,7 @@ func set_ball(contact_override: String = "") -> void:
 		fast_set = false
 		notice("RICEZIONE DIFFICILE · ALTA DI EMERGENZA")
 	if use_player_stats:
-		var penalty: float=(PlayerStats.settings().emergency_penalty if out_of_system<0 else 0.0)+(PlayerStats.settings().forearm_penalty if contact_action not in ["set","fast_set"] else 0.0)
+		var penalty: float=(PlayerStats.settings().emergency_penalty if out_of_system<0 else 0.0)+(PlayerStats.settings().forearm_penalty if contact_action not in ["set","fast_set"] and not setter_disguise else 0.0)
 		stats_set_grade=PlayerStats.set_grade(pass_quality,PlayerStats.rating(self,setter,"palleggio"),penalty)
 		var graded: float=PlayerStats.settings().set_strength[stats_set_grade]
 		q=minf(q,graded) if stats_set_grade==0 else graded
@@ -2229,7 +2237,9 @@ func move_players(dt: float) -> void:
 		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
 		p.reach_weight = maxf(0, p.reach_weight - dt * 5)
 		p.motion_lock = maxf(0, p.motion_lock - dt)
-		if legend_controls(i):
+		# Serving uses exactly the exhibition positioning, bounds, braking,
+		# safety retreat and toss. The legend adapter still supplies LS input.
+		if legend_controls(i) and not (phase=="SERVE" and i==server_index(server)):
 			legend_match.move_controlled(dt,blocking_target(i,int(i/6)) if i in blockers else team_targets[i],blockers)
 			traffic_footprints[i]=compute_footprint_points(i)
 			continue

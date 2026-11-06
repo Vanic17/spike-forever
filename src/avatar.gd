@@ -682,7 +682,7 @@ func apply_pose(_dt: float) -> void:
 		if reach_action=="block":
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
 			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
-		elif reach_action in ["receive", "set", "fast_set"]:
+		elif reach_action in ["receive", "set", "fast_set"] or (reach_action=="dump" and native_clip_name(clip_name)=="set_disguise81"):
 			var grip: float=.055 if native_clip_name(clip_name) in ["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80"] else .105
 			solve_arm(normalized, "Left", point + Vector3(grip, -0.07, 0), clip.parents)
 			solve_arm(normalized, "Right", point + Vector3(-grip, -0.07, 0), clip.parents)

@@ -1,7 +1,7 @@
 extends RefCounted
 ## Match the manual setter's actual hands to the same existing ball flight.
 static func sync(game,force: bool=false):
-	if game.phase!="SET" or not game.airborne or not game.legend_controls(game.setter) or game.setter_dump or game.setter_spike:return
+	if game.phase!="SET" or not game.airborne or not game.legend_controls(game.setter) or game.setter_dump or game.setter_spike or game.setter_disguise:return
 	var p=game.players[game.setter];var action: String=game.second_touch_contact_action()
 	if action not in ["set","fast_set","receive"]:return
 	var key:=str([game.shot_serial,game.setter,action,p.variant_names.get(action,action)])
