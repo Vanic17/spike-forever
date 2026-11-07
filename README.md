@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.85.0:** upgrade grafico del palazzetto, campo, pubblico e materiali dei giocatori, con quattro preset configurabili. Corretto il WAV del pubblico a sei canali che causava errori d'importazione nell'editor Godot; gameplay e raccordo visivo a 120 Hz conservati. [Novità e verifiche](docs/RELEASE_NOTES_85.md).
+
 **Versione 0.84.0:** raccordo visivo a ogni frame per palla, rotazione, giocatori e pose; telecamera sullo stesso tempo della palla e clock online monotono. Qualit? grafica e simulazione a 120 Hz mantenute. [Novit? e verifiche](docs/RELEASE_NOTES_84.md).
 
 **Versione 0.83.0:** finta di seconda con R2 + Croce/Quadrato (Xbox RT + A/X), alzata normale o veloce e fallback al gesto ordinario se non eseguibile. [Novit? e verifiche](docs/RELEASE_NOTES_83.md).

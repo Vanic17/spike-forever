@@ -1,0 +1,95 @@
+{
+  "pass": true,
+  "offline_suites": 18,
+  "online_pairs": 3,
+  "isolated_profiles": true,
+  "cases": [
+    {
+      "test": "Test-Graphics85",
+      "pass": true
+    },
+    {
+      "test": "Test-Settings53",
+      "pass": true
+    },
+    {
+      "test": "Test-ControllerSettings53",
+      "pass": true
+    },
+    {
+      "test": "Test-Fluidity84",
+      "pass": true
+    },
+    {
+      "test": "Test-SetterPose81",
+      "pass": true
+    },
+    {
+      "test": "Test-Setter81",
+      "pass": true
+    },
+    {
+      "test": "Test-LegendInputs75",
+      "pass": true
+    },
+    {
+      "test": "Test-LegendServe81",
+      "pass": true
+    },
+    {
+      "test": "Test-Attack80",
+      "pass": true
+    },
+    {
+      "test": "Test-Defense80",
+      "pass": true
+    },
+    {
+      "test": "Test-Arena82",
+      "pass": true
+    },
+    {
+      "test": "Test-Arenas70",
+      "pass": true
+    },
+    {
+      "test": "Test-Kits45",
+      "pass": true
+    },
+    {
+      "test": "Test-Replay65",
+      "pass": true
+    },
+    {
+      "test": "Test-ReplayEvents65",
+      "pass": true
+    },
+    {
+      "test": "Test-Bench71",
+      "pass": true
+    },
+    {
+      "test": "Test-CareerPlayed66",
+      "pass": true
+    },
+    {
+      "test": "Test-CareerEngine66",
+      "pass": true
+    },
+    {
+      "test": "OnlineDB82",
+      "pass": true,
+      "clients": 2
+    },
+    {
+      "test": "OnlineSubstitution69",
+      "pass": true,
+      "clients": 2
+    },
+    {
+      "test": "OnlineReplay65",
+      "pass": true,
+      "clients": 2
+    }
+  ]
+}

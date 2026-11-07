@@ -95,6 +95,7 @@ void fragment(){
 	ALBEDO=vec3(0.116,0.150,0.198); ROUGHNESS=0.85;
 }"""
 		var shell_material:=ShaderMaterial.new(); shell_material.shader=shell_shader
+		if preload("res://src/visual_materials85.gd").enabled:shell_material.shader=preload("res://src/stadium_shell85.gdshader")
 		for node in descendants(stadium):
 			node.material_override = shell_material
 			node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -186,6 +187,7 @@ void fragment(){
 	camera.position = Vector3(0, 7.7, 20.2)
 	add_child(camera)
 	camera.look_at(Vector3(0, 1.25, -0.7))
+	add_child(preload("res://src/visual_graphics85.gd").new())
 
 func build_seating() -> void:
 	var seat_scene := Assets.scene("Furn_PublicChairA_LOD0.gltf")
@@ -314,6 +316,9 @@ void fragment(){
 	SPECULAR=mix(0.26,0.10,clothing);
 }"""
 	var palette: Array[Color]=[Color("e5ddcc"),Color("dbc34a"),Color("1c4a85"),Color("daebeb"),Color("ab2f36"),Color("2f765b"),Color("777a81"),Color("e9a251"),Color("383e51"),Color("c2d2df")]
+	if preload("res://src/visual_materials85.gd").enabled:
+		palette=[Color("56606c"),Color("a7a09a"),Color("33495f"),Color("919ca5"),Color("78756d"),Color("576b67"),Color("d0ccc3"),Color("45434a"),Color("717f8c"),Color("b5babd")]
+	preload("res://src/visual_palette85.gd").shader(shader)
 	const VARIANTS:=12
 	var groups: Array=[]
 	for variant in VARIANTS*4: groups.append([])
@@ -339,6 +344,7 @@ void fragment(){
 			material.shader = shader
 			material.set_shader_parameter("diffuse_map", original.albedo_texture)
 			material.set_shader_parameter("clothing",0.0 if surface==0 else 1.0)
+			if preload("res://src/visual_materials85.gd").enabled:material.set_shader_parameter("visitor_sector85",1.0 if group%4==1 else 0.0)
 			crowd_materials.append(material)
 			mesh.surface_set_material(surface, material)
 		var node := MultiMeshInstance3D.new()
@@ -359,7 +365,7 @@ void fragment(){
 			var size:=Vector3(0.91+diversity*0.15,0.92+phase*0.16,0.94+diversity*0.12)
 			instances.set_instance_transform(instance, Transform3D(orientation.scaled(size), p + orientation * Vector3(0, 0, 0.09)))
 			instances.set_instance_color(instance,palette[mini(palette.size()-1,int(diversity*palette.size()))])
-			instances.set_instance_custom_data(instance,Color(phase,diversity,0.45+phase*0.55,1))
+			instances.set_instance_custom_data(instance,Color(phase,diversity,0.45+phase*0.55,fposmod(sin(float(i)*12.71)*4375.1,1.0) if preload("res://src/visual_materials85.gd").enabled else 1.0))
 			instance += 1
 		crowd_instance_count+=instance
 		node.multimesh = instances

@@ -1,9 +1,9 @@
 {
-  "archive_digest": "sha256:2d060be07abb125516a7c018b4c29a3f1424ad3bc1c27a01aa6b94b7733d989f",
-  "index_digest": "sha256:55b6376937307888d0ced5858a1bbd40c81f0e4716883d936a1bb23f80e96cbd",
+  "archive_digest": "sha256:11452f6c56d1a1d27097b13684d7162ceb51bdeae04dd1c56861ef8f4bf16b11",
+  "index_digest": "sha256:2bc293c00780430308ab5a31babee6befe30fb7229bfa86817682cb6032dd336",
   "installed": false,
   "pass": true,
-  "progress_events": 65,
+  "progress_events": 110,
   "result": "current",
-  "tag": "v0.83.0"
+  "tag": "v0.84.0"
 }

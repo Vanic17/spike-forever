@@ -1,12 +1,12 @@
 extends Node
 const Textures=preload("res://src/texture_quality.gd")
 const Language=preload("res://src/localization.gd")
-const DEFAULTS={"language":"it","mode":1,"width":1920,"height":1080,"native_resolution":true,"hz":0,"fps":0,"vsync":1,"textures":0,"scale":1.0,"scaling_mode":0,"aa":2,"taa":false,"shadows":2,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"exposure":1.0,"glow":true,"crowd":2,"anisotropy":3,"preset":-1}
+const DEFAULTS={"language":"it","mode":1,"width":1920,"height":1080,"native_resolution":true,"hz":0,"fps":0,"vsync":1,"textures":0,"scale":1.0,"scaling_mode":0,"aa":2,"taa":false,"shadows":2,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"exposure":1.0,"glow":true,"crowd":2,"anisotropy":3,"preset":-1,"arena_lighting":2,"material_detail":2,"reflections":1}
 const PRESETS=[
-	{"textures":512,"scale":.67,"scaling_mode":1,"aa":0,"taa":false,"shadows":1,"shadow_distance":30.0,"ssao":false,"ssil":false,"ssr":false,"glow":false,"crowd":0,"anisotropy":1},
-	{"textures":1024,"scale":.85,"scaling_mode":1,"aa":1,"taa":false,"shadows":1,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"glow":false,"crowd":1,"anisotropy":2},
-	{"textures":2048,"scale":1.0,"scaling_mode":0,"aa":2,"taa":false,"shadows":2,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"glow":true,"crowd":2,"anisotropy":3},
-	{"textures":0,"scale":1.0,"scaling_mode":0,"aa":3,"taa":false,"shadows":3,"shadow_distance":80.0,"ssao":true,"ssil":true,"ssr":true,"glow":true,"crowd":2,"anisotropy":4}
+	{"textures":512,"scale":.67,"scaling_mode":1,"aa":0,"taa":false,"shadows":1,"shadow_distance":30.0,"ssao":false,"ssil":false,"ssr":false,"glow":false,"crowd":0,"anisotropy":1,"arena_lighting":0,"material_detail":0,"reflections":0},
+	{"textures":1024,"scale":.85,"scaling_mode":1,"aa":1,"taa":false,"shadows":1,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"glow":false,"crowd":1,"anisotropy":2,"arena_lighting":1,"material_detail":1,"reflections":0},
+	{"textures":2048,"scale":1.0,"scaling_mode":0,"aa":2,"taa":false,"shadows":2,"shadow_distance":55.0,"ssao":true,"ssil":false,"ssr":false,"glow":true,"crowd":2,"anisotropy":3,"arena_lighting":2,"material_detail":2,"reflections":1},
+	{"textures":0,"scale":1.0,"scaling_mode":0,"aa":3,"taa":false,"shadows":3,"shadow_distance":80.0,"ssao":true,"ssil":true,"ssr":true,"glow":true,"crowd":2,"anisotropy":4,"arena_lighting":3,"material_detail":3,"reflections":1}
 ]
 var data: Dictionary=DEFAULTS.duplicate()
 var config_path:="user://settings.cfg"
@@ -36,6 +36,9 @@ func load_config():
 	var proposed=DEFAULTS.duplicate()
 	if loaded:
 		for key in DEFAULTS: proposed[key]=config.get_value("settings",key,DEFAULTS[key])
+		if int(proposed.preset)>=0 and int(proposed.preset)<PRESETS.size():
+			for key in ["arena_lighting","material_detail","reflections"]:
+				if not config.has_section_key("settings",key):proposed[key]=PRESETS[int(proposed.preset)].get(key,DEFAULTS[key])
 	data=sanitize(proposed)
 func save_config() -> Error:
 	var config=ConfigFile.new()
@@ -55,6 +58,7 @@ static func sanitize(values: Dictionary) -> Dictionary:
 	if result.textures not in [0,512,1024,2048]: result.textures=0
 	result.scale=clampf(result.scale,.5,1.0); result.aa=clampi(result.aa,0,3); result.anisotropy=clampi(result.anisotropy,0,4); result.vsync=clampi(result.vsync,0,3)
 	result.scaling_mode=clampi(result.scaling_mode,0,1); result.shadow_distance=clampf(result.shadow_distance,20,100); result.exposure=clampf(result.exposure,.5,2.0); result.preset=clampi(result.preset,-1,3)
+	result.arena_lighting=clampi(result.arena_lighting,0,3);result.material_detail=clampi(result.material_detail,0,3);result.reflections=clampi(result.reflections,0,1)
 	return result
 func startup():
 	apply(data,loaded)
@@ -115,6 +119,7 @@ func apply(values: Dictionary,video: bool=true) -> bool:
 	RenderingServer.directional_shadow_atlas_set_size([512,1024,4096,8192][data.shadows],true)
 	apply_scene(game)
 	Textures.apply(data.textures)
+	for visuals in get_tree().get_nodes_in_group("visual_graphics85"):visuals.set_quality(data)
 	return true
 func apply_display(values: Dictionary) -> bool:
 	var window=get_window()

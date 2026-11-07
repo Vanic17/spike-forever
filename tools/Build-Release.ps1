@@ -1,6 +1,8 @@
 param([string]$OutputDirectory='dist',[switch]$SourceOnly)
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
+& (Join-Path $root 'tools/python311/python.exe') (Join-Path $root 'tools/Check-Audio85.py') --report .runtime/audio85-build-preflight.json
+if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
@@ -21,6 +23,16 @@ $files+='docs/RELEASE_NOTES_81.md'
 $files+='docs/RELEASE_NOTES_82.md'
 $files+='docs/RELEASE_NOTES_83.md'
 $files+='docs/RELEASE_NOTES_84.md'
+$files+='docs/RELEASE_NOTES_85.md'
+$files+='docs/GRAPHICS_UPGRADE_85.md'
+$files+='docs/AUDIO_EDITOR_85.md'
+foreach($pattern85 in @('graphics85-*','audio85-*')){
+ foreach($report85 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern85){
+  if($report85.Name -match '^graphics85-(noss|nosoft)-'){continue}
+  if($report85.Extension -in @('.json','.png','.html')){$files+='docs/'+$report85.Name}
+ }
+}
+foreach($tool85 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter '*85.*'){$files+='tools/'+$tool85.Name}
 foreach($report84 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'fluidity84-*'){
  if($report84.Extension -in @('.json','.png')){$files+='docs/'+$report84.Name}
 }

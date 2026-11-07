@@ -1,0 +1,146 @@
+{
+  "baseline": "0.84.0",
+  "production_files": [
+    {
+      "path": "src/app_settings.gd",
+      "status": "modified",
+      "sha256": "5e8a62757a798aad8764a76d1b65e18b6e06a38e025db522e2e8a86cc0b08df4"
+    },
+    {
+      "path": "src/arena.gd",
+      "status": "modified",
+      "sha256": "dc39e9086868ff1798abfb7daf1d10d11ae9eb2e696eccee07d31cf10e55af10"
+    },
+    {
+      "path": "src/club_kit.gdshader",
+      "status": "modified",
+      "sha256": "71575525094139d274e35e031f568223b48e139d69e06067ade3e3aa0aed7bff"
+    },
+    {
+      "path": "src/club_kits.gd",
+      "status": "modified",
+      "sha256": "4f4b0e612891bc4c479cd5a9eb425c8f9b0b7fe7bd8f1b99c967db2b505f5b9c"
+    },
+    {
+      "path": "src/eye_surface85.gdshader",
+      "status": "new",
+      "sha256": "813d575266b0fca52a1c82b02d9ecfe4cb5c6f0d6d4c1eb0c9d5c8730d62484c"
+    },
+    {
+      "path": "src/net_surface85.gdshader",
+      "status": "new",
+      "sha256": "9893634e596fb8e5f1902c25e7ec2c414fe0af4c608eff59f238956f250979b9"
+    },
+    {
+      "path": "src/player_appearance.gd",
+      "status": "modified",
+      "sha256": "a0a5effe54626337ad51bca11b1c82d8abcc16ce7a65c3bb22697793865e7d64"
+    },
+    {
+      "path": "src/settings_menu.gd",
+      "status": "modified",
+      "sha256": "9e1d9429c22aba63a64f61c1d2be75053678fc236b236f0ffbfc07988fd656f4"
+    },
+    {
+      "path": "src/source_assets.gd",
+      "status": "modified",
+      "sha256": "e9fa32a4d085b585187de7b6fdfd56870ac6b32d6ee1bcdc1894c3dcb1569960"
+    },
+    {
+      "path": "src/stadium_shell85.gdshader",
+      "status": "new",
+      "sha256": "7e9572794f302842ea3047025e27cb0f902dea2a4742db05e56e6c94143baae6"
+    },
+    {
+      "path": "src/visual_graphics85.gd",
+      "status": "new",
+      "sha256": "a7122339205bec98c47fffa036584c98c62558d0295909c1f08c97c23f555ec8"
+    },
+    {
+      "path": "src/visual_materials85.gd",
+      "status": "new",
+      "sha256": "c3f2c87c219dac73a98df8fe401bd3cf57fd9d09f9f3083a23192cc232e89dc7"
+    },
+    {
+      "path": "src/visual_palette85.gd",
+      "status": "new",
+      "sha256": "15c9cc1973382014dedbec87bc4308a28e869670c87987ca775b4a4f44dd2b61"
+    },
+    {
+      "path": "src/volleyball_v200.gdshader",
+      "status": "modified",
+      "sha256": "5dacc34b24407e999a5f0c831a8c811e98dff4ddda332e56ceaaea01ca8ddbbb"
+    },
+    {
+      "path": "assets/art/visual85/court_detail_albedo.png",
+      "status": "new",
+      "sha256": "2cb14d6ede3a777a44ba353a9f268f5490be0301fc3c143e771f49f74333217c"
+    },
+    {
+      "path": "assets/art/visual85/court_detail_normal.png",
+      "status": "new",
+      "sha256": "1261869c8ea3520d64dec210c289b3eb04b849c0db5730bcaa95407d043cd8ab"
+    },
+    {
+      "path": "assets/art/visual85/court_detail_roughness.png",
+      "status": "new",
+      "sha256": "98e4a86276eb9dc5031618f23d6ccc8c395c968243f01527508f379ea5e3f672"
+    },
+    {
+      "path": "assets/art/visual85/fabric_micro_normal.png",
+      "status": "new",
+      "sha256": "4bf7df37e0823d4ef6381348bd5de01262b780d87cf60ce2e695b4c99359304d"
+    },
+    {
+      "path": "assets/art/visual85/README.md",
+      "status": "new",
+      "sha256": "f4b49f99834d9e9adaf0ffd09e5ee8c1dbafb30da048982f250d596c35123233"
+    },
+    {
+      "path": "assets/art/visual85/vinyl_roughness.png",
+      "status": "new",
+      "sha256": "a9800f2ee8b35dcae17a978fb2ed99cb9eeb73e9353e65f07fd71bb284d4cadc"
+    },
+    {
+      "path": "assets/ui/en53.tsv",
+      "status": "modified",
+      "sha256": "890f5df72f48bc4edb318e86a28d06a0d232f3ffaa45be0979827db2706cec37"
+    },
+    {
+      "path": "assets/audio/crowd.wav",
+      "status": "modified",
+      "sha256": "8e711e407be3c52861c3bca0e70a0398a16161de3c45b78e4badd31acc1167a9"
+    },
+    {
+      "path": "version.json",
+      "status": "modified",
+      "sha256": "6537d8741807d279bf31d2d1dfb36f8adf0058f90742e19265dae9da3346eaaa"
+    },
+    {
+      "path": "tools/Build-Release.ps1",
+      "status": "modified",
+      "sha256": "a42002f5ae63ae170fcaab7f2e3ed7f5a37abe08de87b35177a8679c46359d86"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "sha256": "b80d3c364bb3eb21b6055b546befb47505d67de57eb7d2b2e73b10c7012e1210"
+    }
+  ],
+  "diagnostic_files": [
+    "tools/Audit-Graphics85.gd",
+    "tools/Benchmark-Graphics85.gd",
+    "tools/Build-GraphicsReview85.py",
+    "tools/Build-Visual85.py",
+    "tools/Capture-Graphics85.gd",
+    "tools/Check-Audio85.py",
+    "tools/Render-Graphics85.ps1",
+    "tools/Run-OnlineReplay85.ps1",
+    "tools/Stability-Graphics85.gd",
+    "tools/Test-Graphics85.gd",
+    "tools/Test-Imports85.gd",
+    "tools/Validate-Graphics85.ps1",
+    "tools/Validate-Startup85.ps1"
+  ],
+  "release": "0.85.0"
+}

@@ -43,4 +43,5 @@ static func material(base: String, normal: String = "", color: Color = Color.WHI
 		result.normal_texture = texture(normal)
 		result.normal_enabled = result.normal_texture != null
 		result.normal_scale = 0.55
+	load("res://src/visual_materials85.gd").register(result,base,normal)
 	return result

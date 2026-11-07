@@ -1,6 +1,7 @@
 shader_type spatial;
 render_mode specular_schlick_ggx;
 uniform sampler2D markings : source_color, filter_linear_mipmap_anisotropic;
+uniform float visual_detail85=0.0;
 varying vec3 local_point;
 void vertex(){local_point=VERTEX;}
 void fragment(){
@@ -34,4 +35,12 @@ void fragment(){
 	ALBEDO=mix(color,vec3(0.96),ink);
 	ROUGHNESS=0.57+0.10*pore;
 	SPECULAR=0.32;
+	if(visual_detail85>0.0){
+		vec2 emboss=UV*vec2(580.0,290.0);
+		float fade=1.0-smoothstep(.6,1.8,length(fwidth(emboss)));
+		vec2 bump=vec2(sin(emboss.x*6.283)*cos(emboss.y*6.283),cos(emboss.x*6.283)*sin(emboss.y*6.283));
+		NORMAL_MAP=vec3(vec2(.5)+bump*.028*fade,1.0);
+		NORMAL_MAP_DEPTH=.45;
+		ROUGHNESS=.52+.12*pore+.05*seam;SPECULAR=.36;
+	}
 }

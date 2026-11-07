@@ -107,5 +107,6 @@ static func material(owner: Node, person: Dictionary, kit: Dictionary) -> Shader
 	result.set_shader_parameter("fabric_normal",Assets.texture("T_Char_Cloth_MyTeam_Normal.png"))
 	result.set_shader_parameter("identity",identity_print(owner,person))
 	result.set_shader_parameter("ink",Color(kit.ink))
+	preload("res://src/visual_materials85.gd").fabric(result)
 	materials[key] = result
 	return result

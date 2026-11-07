@@ -23,6 +23,7 @@ static func material(key: String, color: Color) -> StandardMaterial3D:
 	var m:=Assets.material(data.get("Diffuse",""),"",color,.88)
 	m.cull_mode=BaseMaterial3D.CULL_DISABLED
 	m.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR; m.alpha_scissor_threshold=.32
+	preload("res://src/visual_materials85.gd").hair(m)
 	materials[cache_key]=m; return m
 static func apply(avatar, appearance: Dictionary) -> void:
 	var tone: Color=SKIN.get(appearance.get("skin_tone"),Color.WHITE)
