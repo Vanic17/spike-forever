@@ -35,6 +35,7 @@ func apply():
 	actor.body_parts.beard.layers=actor.body_parts.head.layers
 	nails.visible=detail>=2
 	if seam_node!=null:seam_node.visible=detail>=2
+	preload("res://src/player_wear90.gd").apply(actor)
 func quality(level: int):
 	detail=level
 	if full.is_empty():return

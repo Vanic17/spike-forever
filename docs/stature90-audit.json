@@ -1,0 +1,67 @@
+{
+  "pass": true,
+  "version": "0.90.0",
+  "height_sources": 169,
+  "source": "Official Lega Volley roster heights",
+  "height_only_database_migration": true,
+  "main_gameplay_source_unchanged": true,
+  "changed_source_files": [
+    "avatar.gd",
+    "character_quality89.gd",
+    "club_menu.gd",
+    "online_session.gd",
+    "pilot_quality89.gd",
+    "player_card.gd",
+    "player_stature90.gd",
+    "player_wear90.gd",
+    "render_smoother84.gd",
+    "sideline_animation.gd",
+    "view_controls.gd"
+  ],
+  "equipment_contacts_and_controller": {
+    "checks": 774,
+    "errors": [],
+    "pass": true,
+    "players": 169,
+    "protected": 158,
+    "shoe_models": 4
+  },
+  "graphics_presets": 55,
+  "regression_suites": [
+    "Test-Arena82",
+    "Test-Arenas70",
+    "Test-Attack80",
+    "Test-Bench71",
+    "Test-CareerEngine66",
+    "Test-CareerPlayed66",
+    "Test-Clubs",
+    "Test-ControllerSettings53",
+    "Test-Defense80",
+    "Test-Fluidity84",
+    "Test-Graphics85",
+    "Test-Graphics86",
+    "Test-Kits45",
+    "Test-LegendInputs75",
+    "Test-LegendServe81",
+    "Test-OnlineCommands89",
+    "Test-Replay65",
+    "Test-ReplayEvents65",
+    "Test-Setter81",
+    "Test-SetterPose81",
+    "Test-Settings53"
+  ],
+  "actual_enet_pairs": [
+    "separate host/guest database heights",
+    "physical contacts and disguised sets"
+  ],
+  "full_set": {
+    "points": 16,
+    "contacts": 85,
+    "seconds": 209.083122666667
+  },
+  "limits": [
+    "Local ENet clients, not a real WAN latency survey",
+    "Uniform proportional stature, not 169 new anatomical meshes",
+    "One full-set rendered soak and isolated graphics samples, not every PC configuration"
+  ]
+}

@@ -107,6 +107,9 @@ func _process(dt: float):
 			check(observed.has("1:power"),"guest jump serve physical contact")
 			check(observed.has("0:float"),"host float serve physical contact")
 			check(observed.has("0:receive") and observed.has("1:receive"),"both receptions are human")
-			check(observed.has("0:set") or observed.has("1:set"),"real set contact")
+			# This fixture deliberately holds both block triggers. R2 + X may
+			# therefore select a legal disguised set, physically logged as dump
+			# with the set_disguise81 variant rather than the plain set action.
+			check(g.contact_log.any(func(hit):return hit.action in ["set","fast_set"] or hit.get("variant","")=="set_disguise81"),"real set contact")
 			g.scores=[14,0]; g.sets=[0,0]; g.phase="SERVE"; g.award(0,"TEST MATCH END")
 	return false

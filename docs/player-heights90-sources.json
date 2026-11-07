@@ -1,0 +1,3725 @@
+{
+  "checked_at": "2026-11-07",
+  "source": "Official Lega Volley team roster height column, exact athlete ID match",
+  "players": [
+    {
+      "id": "allianz-milano-01",
+      "name": "Francesco Recine",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "REC-FRA-99",
+        "height_cm": 185,
+        "row": [
+          "",
+          "3",
+          "RECINE Francesco",
+          "Spiker",
+          "1999",
+          "185",
+          "RA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/REC-FRA-99",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-02",
+      "name": "Tommaso Ichino",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "ICH-TOM-04",
+        "height_cm": 202,
+        "row": [
+          "",
+          "4",
+          "ICHINO Tommaso",
+          "Spiker",
+          "2004",
+          "202",
+          "TO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/ICH-TOM-04",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-03",
+      "name": "Damiano Catania",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "CAT-DAM-01",
+        "height_cm": 180,
+        "row": [
+          "",
+          "5",
+          "CATANIA Damiano",
+          "Libero",
+          "2001",
+          "180",
+          "CT",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/CAT-DAM-01",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-04",
+      "name": "Simone Porro",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "POR-SIM-07",
+        "height_cm": 191,
+        "row": [
+          "",
+          "6",
+          "PORRO Simone",
+          "Setter",
+          "2007",
+          "191",
+          "GE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/POR-SIM-07",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-05",
+      "name": "Davi Tenorio",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "TEN-DAV-05",
+        "height_cm": 213,
+        "row": [
+          "",
+          "7",
+          "TENORIO Davi",
+          "Middleblocker",
+          "2005",
+          "213",
+          "BRA",
+          "ESP"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/TEN-DAV-05",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-06",
+      "name": "Filippo Bartolucci",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "BAR-FIL-03",
+        "height_cm": 197,
+        "row": [
+          "",
+          "8",
+          "BARTOLUCCI Filippo",
+          "Middleblocker",
+          "2003",
+          "197",
+          "PU",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/BAR-FIL-03",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-07",
+      "name": "Alessandro Benacchio",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "BEN-ALE-07",
+        "height_cm": 201,
+        "row": [
+          "",
+          "9",
+          "BENACCHIO Alessandro",
+          "Middleblocker",
+          "2007",
+          "201",
+          "VI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/BEN-ALE-07",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-08",
+      "name": "Basil Dermaux",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "DER-BAS-03",
+        "height_cm": 195,
+        "row": [
+          "",
+          "10",
+          "DERMAUX Basil",
+          "Diagonto",
+          "2003",
+          "195",
+          "BEL",
+          "BEL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/DER-BAS-03",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-09",
+      "name": "Seppe Rotty",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "ROT-SEP-01",
+        "height_cm": 190,
+        "row": [
+          "",
+          "12",
+          "ROTTY Seppe",
+          "Spiker",
+          "2001",
+          "190",
+          "BEL",
+          "BEL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/ROT-SEP-01",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-10",
+      "name": "Robertlandy Simon",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "SIM-ROB-87",
+        "height_cm": 208,
+        "row": [
+          "",
+          "13",
+          "SIMON Robertlandy",
+          "Middleblocker",
+          "1987",
+          "208",
+          "CUB",
+          "CUB"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/SIM-ROB-87",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-11",
+      "name": "Santiago Orduna",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "ORD-SAN-83",
+        "height_cm": 183,
+        "row": [
+          "",
+          "14",
+          "ORDUNA Santiago",
+          "Setter",
+          "1983",
+          "183",
+          "ARG",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/ORD-SAN-83",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-12",
+      "name": "Tatsunori Otsuka",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "OTS-TAT-00",
+        "height_cm": 195,
+        "row": [
+          "",
+          "15",
+          "OTSUKA Tatsunori",
+          "Spiker",
+          "2000",
+          "195",
+          "JPN",
+          "JPN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/OTS-TAT-00",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-13",
+      "name": "Federico Argano",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "ARG-FED-08",
+        "height_cm": 202,
+        "row": [
+          "",
+          "16",
+          "ARGANO Federico",
+          "Diagonto",
+          "2008",
+          "202",
+          "PA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/ARG-FED-08",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-14",
+      "name": "Jacopo Corbetta",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "COR-JAC-07",
+        "height_cm": 180,
+        "row": [
+          "",
+          "17",
+          "CORBETTA Jacopo",
+          "Libero",
+          "2007",
+          "180",
+          "LC",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/COR-JAC-07",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "allianz-milano-15",
+      "name": "Georgi Tatarov",
+      "team": "allianz-milano",
+      "evidence": {
+        "key": "TAT-GEO-03",
+        "height_cm": 200,
+        "row": [
+          "",
+          "21",
+          "TATAROV Georgi",
+          "Spiker",
+          "2003",
+          "200",
+          "BUL",
+          "BUL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6858?lang=en",
+        "player_url": "https://www.legavolley.it/player/TAT-GEO-03",
+        "page_sha256": "0c9edc9d06719fad0d6477394cbd51e0ffda0ae99adec0a3a8d5e3fb6e6a42d5"
+      }
+    },
+    {
+      "id": "cisterna-volley-01",
+      "name": "Vilmos Szabo",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "SZA-VIL-02",
+        "height_cm": 190,
+        "row": [
+          "",
+          "1",
+          "SZABO Vilmos",
+          "Setter",
+          "2002",
+          "190",
+          "HUN",
+          "HUN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/SZA-VIL-02",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-02",
+      "name": "Giulio Magalini",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "MAG-GIU-01",
+        "height_cm": 196,
+        "row": [
+          "",
+          "3",
+          "MAGALINI Giulio",
+          "Spiker",
+          "2001",
+          "196",
+          "VR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAG-GIU-01",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-03",
+      "name": "Lorenzo Magliano",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "MAG-LOR-05",
+        "height_cm": 201,
+        "row": [
+          "",
+          "5",
+          "MAGLIANO Lorenzo",
+          "Spiker",
+          "2005",
+          "201",
+          "TO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAG-LOR-05",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-04",
+      "name": "Shikun Peng",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "PEN-SHI-00",
+        "height_cm": 210,
+        "row": [
+          "",
+          "6",
+          "PENG Shikun",
+          "Middleblocker",
+          "2000",
+          "210",
+          "CHN",
+          "CHN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/PEN-SHI-00",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-05",
+      "name": "Tommaso Barotto",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "BAR-TOM-05",
+        "height_cm": 212,
+        "row": [
+          "",
+          "7",
+          "BAROTTO Tommaso",
+          "Diagonto",
+          "2005",
+          "212",
+          "RO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/BAR-TOM-05",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-19",
+      "name": "Milosz Jan Wrobel",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "WRO-MIL-06",
+        "height_cm": 207,
+        "row": [
+          "",
+          "9",
+          "WROBEL Milosz Jan from 09/10/2026",
+          "Middleblocker",
+          "2006",
+          "207",
+          "POL",
+          "POL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/WRO-MIL-06",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-06",
+      "name": "Filippo Lanza",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "LAN-FIL-91",
+        "height_cm": 198,
+        "row": [
+          "",
+          "10",
+          "LANZA Filippo",
+          "Spiker",
+          "1991",
+          "198",
+          "VR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/LAN-FIL-91",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-07",
+      "name": "Alessandro Fanizza",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "FAN-ALE-04",
+        "height_cm": 192,
+        "row": [
+          "",
+          "11",
+          "FANIZZA Alessandro",
+          "Setter",
+          "2004",
+          "192",
+          "BR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/FAN-ALE-04",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-08",
+      "name": "Francesco Pierri",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "PIE-FRA-99",
+        "height_cm": 180,
+        "row": [
+          "",
+          "14",
+          "PIERRI Francesco",
+          "Libero",
+          "1999",
+          "180",
+          "LE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/PIE-FRA-99",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-09",
+      "name": "Miguel Angel Martinez Palacios",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "MAR-MIG-03",
+        "height_cm": 202,
+        "row": [
+          "",
+          "17",
+          "MARTINEZ PALACIOS Miguel Angel",
+          "Diagonto",
+          "2003",
+          "202",
+          "COL",
+          "COL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAR-MIG-03",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-10",
+      "name": "Daniele Mazzone",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "MAZ-DAN-92",
+        "height_cm": 209,
+        "row": [
+          "",
+          "18",
+          "MAZZONE Daniele",
+          "Middleblocker",
+          "1992",
+          "209",
+          "TO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAZ-DAN-92",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-11",
+      "name": "Noa Duflos-Rossi",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "DUF-NOA-07",
+        "height_cm": 198,
+        "row": [
+          "",
+          "22",
+          "DUFLOS-ROSSI Noa",
+          "Spiker",
+          "2007",
+          "198",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/DUF-NOA-07",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-12",
+      "name": "Jacopo Tosti",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "TOS-JAC-08",
+        "height_cm": 202,
+        "row": [
+          "",
+          "24",
+          "TOSTI Jacopo",
+          "Middleblocker",
+          "2008",
+          "202",
+          "RM",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/TOS-JAC-08",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cisterna-volley-13",
+      "name": "Filippo Federici",
+      "team": "cisterna-volley",
+      "evidence": {
+        "key": "FED-FIL-00",
+        "height_cm": 182,
+        "row": [
+          "",
+          "77",
+          "FEDERICI Filippo",
+          "Libero",
+          "2000",
+          "182",
+          "AN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6859?lang=en",
+        "player_url": "https://www.legavolley.it/player/FED-FIL-00",
+        "page_sha256": "ed3f2e2db222739bd59689ff6b20f4154dc5edc493d6db9c7e77f52d9adb2acc"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-01",
+      "name": "Simeon Nikolov",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "NIK-SIM-06",
+        "height_cm": 208,
+        "row": [
+          "",
+          "1",
+          "NIKOLOV Simeon",
+          "Setter",
+          "2006",
+          "208",
+          "BUL",
+          "BUL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/NIK-SIM-06",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-02",
+      "name": "Giovanni Maria Gargiulo",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "GAR-GIO-99",
+        "height_cm": 208,
+        "row": [
+          "",
+          "3",
+          "GARGIULO Giovanni Maria",
+          "Middleblocker",
+          "1999",
+          "208",
+          "NA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/GAR-GIO-99",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-03",
+      "name": "Eric Loeppky",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "LOE-ERI-98",
+        "height_cm": 197,
+        "row": [
+          "",
+          "4",
+          "LOEPPKY Eric",
+          "Spiker",
+          "1998",
+          "197",
+          "CAN",
+          "CAN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/LOE-ERI-98",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-04",
+      "name": "Francesco Bisotto",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "BIS-FRA-02",
+        "height_cm": 180,
+        "row": [
+          "",
+          "6",
+          "BISOTTO Francesco",
+          "Libero",
+          "2002",
+          "180",
+          "CN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/BIS-FRA-02",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-05",
+      "name": "Fabio Balaso",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "BAL-FAB-95",
+        "height_cm": 185,
+        "row": [
+          "",
+          "7",
+          "BALASO Fabio",
+          "Libero",
+          "1995",
+          "185",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/BAL-FAB-95",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-06",
+      "name": "Alberto Polo",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "POL-ALB-95",
+        "height_cm": 202,
+        "row": [
+          "",
+          "8",
+          "POLO Alberto",
+          "Middleblocker",
+          "1995",
+          "202",
+          "VI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/POL-ALB-95",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-07",
+      "name": "Davide Gardini",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "GAR-DAV-99",
+        "height_cm": 205,
+        "row": [
+          "",
+          "9",
+          "GARDINI Davide",
+          "Spiker",
+          "1999",
+          "205",
+          "TV",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/GAR-DAV-99",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-21",
+      "name": "Miran Kujundzic",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "KUJ-MIR-97",
+        "height_cm": 196,
+        "row": [
+          "",
+          "10",
+          "KUJUNDZIC Miran",
+          "Spiker",
+          "1997",
+          "196",
+          "SRB",
+          "SRB"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/KUJ-MIR-97",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-08",
+      "name": "Aleksandar Nikolov",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "NIK-ALE-03",
+        "height_cm": 206,
+        "row": [
+          "",
+          "11",
+          "NIKOLOV Aleksandar",
+          "Spiker",
+          "2003",
+          "206",
+          "FRA",
+          "BUL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/NIK-ALE-03",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-09",
+      "name": "Francesco Zoppellari",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "ZOP-FRA-97",
+        "height_cm": 185,
+        "row": [
+          "",
+          "15",
+          "ZOPPELLARI Francesco",
+          "Setter",
+          "1997",
+          "185",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/ZOP-FRA-97",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-10",
+      "name": "Jackson Howe",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "HOW-JAC-98",
+        "height_cm": 200,
+        "row": [
+          "",
+          "17",
+          "HOWE Jackson",
+          "Middleblocker",
+          "1998",
+          "200",
+          "CAN",
+          "CAN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/HOW-JAC-98",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-11",
+      "name": "Maksym Tonkonoh",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "TON-MAK-07",
+        "height_cm": 214,
+        "row": [
+          "",
+          "18",
+          "TONKONOH Maksym",
+          "Diagonto",
+          "2007",
+          "214",
+          "UKR",
+          "UKR"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/TON-MAK-07",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-12",
+      "name": "Antonin Klimes",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "KLI-ANT-05",
+        "height_cm": 208,
+        "row": [
+          "",
+          "19",
+          "KLIMES Antonin",
+          "Middleblocker",
+          "2005",
+          "208",
+          "CZE",
+          "CZE"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/KLI-ANT-05",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "cucine-lube-civitanova-13",
+      "name": "Mattia Bottolo",
+      "team": "cucine-lube-civitanova",
+      "evidence": {
+        "key": "BOT-MAT-00",
+        "height_cm": 196,
+        "row": [
+          "",
+          "21",
+          "BOTTOLO Mattia",
+          "Spiker",
+          "2000",
+          "196",
+          "VI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6860?lang=en",
+        "player_url": "https://www.legavolley.it/player/BOT-MAT-00",
+        "page_sha256": "21e33ec410f66921eed5407a079f4a66b48db18ad388c49ddc516fa74954a384"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-01",
+      "name": "Manuel Coscione",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "COS-MAN-80",
+        "height_cm": 188,
+        "row": [
+          "",
+          "2",
+          "COSCIONE Manuel",
+          "Setter",
+          "1980",
+          "188",
+          "CN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/COS-MAN-80",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-02",
+      "name": "Domenico Cavaccini",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "CAV-DOM-87",
+        "height_cm": 178,
+        "row": [
+          "",
+          "3",
+          "CAVACCINI Domenico",
+          "Libero",
+          "1987",
+          "178",
+          "SA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/CAV-DOM-87",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-03",
+      "name": "Thibault Loubeyre",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "LOU-THI-01",
+        "height_cm": 181,
+        "row": [
+          "",
+          "4",
+          "LOUBEYRE Thibault",
+          "Libero",
+          "2001",
+          "181",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/LOU-THI-01",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-04",
+      "name": "Bryan Argilagos",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "ARG-BRY-07",
+        "height_cm": 200,
+        "row": [
+          "",
+          "9",
+          "ARGILAGOS Bryan",
+          "Setter",
+          "2007",
+          "200",
+          "VE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/ARG-BRY-07",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-05",
+      "name": "Lorenzo Sala",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "SAL-LOR-02",
+        "height_cm": 200,
+        "row": [
+          "",
+          "10",
+          "SALA Lorenzo",
+          "Diagonto",
+          "2002",
+          "200",
+          "TN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/SAL-LOR-02",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-06",
+      "name": "Nicolo Volpe",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "VOL-NIC-03",
+        "height_cm": 200,
+        "row": [
+          "",
+          "11",
+          "VOLPE Nicolò",
+          "Middleblocker",
+          "2003",
+          "200",
+          "TO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/VOL-NIC-03",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-07",
+      "name": "Emanuele Barberio",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "BAR-EMA-07",
+        "height_cm": 200,
+        "row": [
+          "",
+          "12",
+          "BARBERIO Emanuele",
+          "Middleblocker",
+          "2007",
+          "200",
+          "AO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/BAR-EMA-07",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-08",
+      "name": "Alexandre Strehlau",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "STR-ALE-04",
+        "height_cm": 200,
+        "row": [
+          "",
+          "14",
+          "STREHLAU Alexandre",
+          "Spiker",
+          "2004",
+          "200",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/STR-ALE-04",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-09",
+      "name": "Nathan Feral",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "FER-NAT-03",
+        "height_cm": 197,
+        "row": [
+          "",
+          "18",
+          "FERAL Nathan",
+          "Diagonto",
+          "2003",
+          "197",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/FER-NAT-03",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-10",
+      "name": "Poriya Hossein Khanzadeh",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "KHA-POR-04",
+        "height_cm": 202,
+        "row": [
+          "",
+          "19",
+          "HOSSEIN KHANZADEH Poriya",
+          "Spiker",
+          "2004",
+          "202",
+          "IRI",
+          "IRI"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/KHA-POR-04",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-11",
+      "name": "Ethan Champlin",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "CHA-ETH-01",
+        "height_cm": 190,
+        "row": [
+          "",
+          "20",
+          "CHAMPLIN Ethan",
+          "Spiker",
+          "2001",
+          "190",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/CHA-ETH-01",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-12",
+      "name": "Lorenzo Codarin",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "COD-LOR-96",
+        "height_cm": 200,
+        "row": [
+          "",
+          "22",
+          "CODARIN Lorenzo",
+          "Middleblocker",
+          "1996",
+          "200",
+          "UD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/COD-LOR-96",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-13",
+      "name": "Federico Giraudo",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "GIR-FED-07",
+        "height_cm": 198,
+        "row": [
+          "",
+          "23",
+          "GIRAUDO Federico",
+          "Spiker",
+          "2007",
+          "198",
+          "CN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/GIR-FED-07",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "acqua-santanna-cuneo-14",
+      "name": "Leandro Mosca",
+      "team": "acqua-santanna-cuneo",
+      "evidence": {
+        "key": "MOS-LEA-00",
+        "height_cm": 209,
+        "row": [
+          "",
+          "39",
+          "MOSCA Leandro",
+          "Middleblocker",
+          "2000",
+          "209",
+          "MC",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6863?lang=en",
+        "player_url": "https://www.legavolley.it/player/MOS-LEA-00",
+        "page_sha256": "46877e6682839d682c569e63a20bf0868e8c6fd724b0a8eb9afb6901782b5172"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-01",
+      "name": "Merrick McHenry",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "MCH-MER-00",
+        "height_cm": 201,
+        "row": [
+          "",
+          "1",
+          "MCHENRY Merrick",
+          "Middleblocker",
+          "2000",
+          "201",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/MCH-MER-00",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-02",
+      "name": "Cooper Robinson",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "ROB-COO-02",
+        "height_cm": 202,
+        "row": [
+          "",
+          "2",
+          "ROBINSON Cooper",
+          "Spiker",
+          "2002",
+          "202",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/ROB-COO-02",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-03",
+      "name": "Paolo Porro",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "POR-PAO-01",
+        "height_cm": 185,
+        "row": [
+          "",
+          "5",
+          "PORRO Paolo",
+          "Setter",
+          "2001",
+          "185",
+          "GE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/POR-PAO-01",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-04",
+      "name": "Henri Emmanuel Leon",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "LEO-HEN-03",
+        "height_cm": 204,
+        "row": [
+          "",
+          "6",
+          "LEON Henri Emmanuel",
+          "Diagonto",
+          "2003",
+          "204",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/LEO-HEN-03",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-05",
+      "name": "Domenico Pace",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "PAC-DOM-00",
+        "height_cm": 180,
+        "row": [
+          "",
+          "8",
+          "PACE Domenico",
+          "Libero",
+          "2000",
+          "180",
+          "BA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/PAC-DOM-00",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-06",
+      "name": "Nikola Brboric",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "BRB-NIK-06",
+        "height_cm": 196,
+        "row": [
+          "",
+          "9",
+          "BRBORIC Nikola",
+          "Spiker",
+          "2006",
+          "196",
+          "BIH",
+          "SRB"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/BRB-NIK-06",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-07",
+      "name": "Francesco Comparoni",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "COM-FRA-01",
+        "height_cm": 204,
+        "row": [
+          "",
+          "10",
+          "COMPARONI Francesco",
+          "Middleblocker",
+          "2001",
+          "204",
+          "PR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/COM-FRA-01",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-08",
+      "name": "Gianluca Galassi",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "GAL-GIA-97",
+        "height_cm": 201,
+        "row": [
+          "",
+          "12",
+          "GALASSI Gianluca",
+          "Middleblocker",
+          "1997",
+          "201",
+          "TN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/GAL-GIA-97",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-09",
+      "name": "Manuel Zlatanov",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "ZLA-MAN-08",
+        "height_cm": 201,
+        "row": [
+          "",
+          "13",
+          "ZLATANOV Manuel",
+          "Spiker",
+          "2008",
+          "201",
+          "PC",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/ZLA-MAN-08",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-10",
+      "name": "Dragan Travica",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "TRA-DRA-86",
+        "height_cm": 200,
+        "row": [
+          "",
+          "14",
+          "TRAVICA Dragan",
+          "Setter",
+          "1986",
+          "200",
+          "CRO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/TRA-DRA-86",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-11",
+      "name": "Francesco Rizzo",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "RIZ-FRA-08",
+        "height_cm": 183,
+        "row": [
+          "",
+          "15",
+          "RIZZO Francesco",
+          "Libero",
+          "2008",
+          "183",
+          "VT",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/RIZ-FRA-08",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-12",
+      "name": "Daniel Iyegbekedo",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "IYE-DAN-07",
+        "height_cm": 208,
+        "row": [
+          "",
+          "21",
+          "IYEGBEKEDO Daniel",
+          "Middleblocker",
+          "2007",
+          "208",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/IYE-DAN-07",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-13",
+      "name": "Jose Miguel Gutierrez",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "GUT-JOS-01",
+        "height_cm": 194,
+        "row": [
+          "",
+          "22",
+          "GUTIERREZ Josè Miguel",
+          "Spiker",
+          "2001",
+          "194",
+          "CUB",
+          "CUB"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/GUT-JOS-01",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "gas-sales-bluenergy-piacenza-14",
+      "name": "Alessandro Bovolenta",
+      "team": "gas-sales-bluenergy-piacenza",
+      "evidence": {
+        "key": "BOV-ALE-04",
+        "height_cm": 207,
+        "row": [
+          "",
+          "23",
+          "BOVOLENTA Alessandro",
+          "Diagonto",
+          "2004",
+          "207",
+          "RM",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6861?lang=en",
+        "player_url": "https://www.legavolley.it/player/BOV-ALE-04",
+        "page_sha256": "54d80099326cecaac3a34bd12cb1a829b52b657abc1fa7f7c57cc4646a63ae37"
+      }
+    },
+    {
+      "id": "itas-trentino-01",
+      "name": "Federico Roberti",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "ROB-FED-04",
+        "height_cm": 195,
+        "row": [
+          "",
+          "2",
+          "ROBERTI Federico",
+          "Spiker",
+          "2004",
+          "195",
+          "PU",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/ROB-FED-04",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-02",
+      "name": "Nicola Zonta",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "ZON-NIC-00",
+        "height_cm": 186,
+        "row": [
+          "",
+          "4",
+          "ZONTA Nicola",
+          "Setter",
+          "2000",
+          "186",
+          "UD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/ZON-NIC-00",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-03",
+      "name": "Alessandro Michieletto",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "MIC-ALE-01",
+        "height_cm": 211,
+        "row": [
+          "",
+          "5",
+          "MICHIELETTO Alessandro",
+          "Spiker",
+          "2001",
+          "211",
+          "BS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/MIC-ALE-01",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-04",
+      "name": "Riccardo Sbertoli",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "SBE-RIC-98",
+        "height_cm": 190,
+        "row": [
+          "",
+          "6",
+          "SBERTOLI Riccardo",
+          "Setter",
+          "1998",
+          "190",
+          "MI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/SBE-RIC-98",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-05",
+      "name": "Riccardo Gollini",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "GOL-RIC-00",
+        "height_cm": 194,
+        "row": [
+          "",
+          "7",
+          "GOLLINI Riccardo",
+          "Libero",
+          "2000",
+          "194",
+          "MO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/GOL-RIC-00",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-06",
+      "name": "Theo Faure",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "FAU-THE",
+        "height_cm": 202,
+        "row": [
+          "",
+          "11",
+          "FAURE Theo",
+          "Diagonto",
+          "1999",
+          "202",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/FAU-THE",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-07",
+      "name": "Elia Bossi",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "BOS-ELI-94",
+        "height_cm": 202,
+        "row": [
+          "",
+          "12",
+          "BOSSI Elia",
+          "Middleblocker",
+          "1994",
+          "202",
+          "TS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/BOS-ELI-94",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-08",
+      "name": "Gabriele Laurenzano",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "LAU-GAB-03",
+        "height_cm": 177,
+        "row": [
+          "",
+          "13",
+          "LAURENZANO Gabriele",
+          "Libero",
+          "2003",
+          "177",
+          "CS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/LAU-GAB-03",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-09",
+      "name": "Daniele Lavia",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "LAV-DAN-99",
+        "height_cm": 200,
+        "row": [
+          "",
+          "15",
+          "LAVIA Daniele",
+          "Spiker",
+          "1999",
+          "200",
+          "CS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/LAV-DAN-99",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-10",
+      "name": "Renars-Paul Jansons",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "JAN-REN-02",
+        "height_cm": 198,
+        "row": [
+          "",
+          "17",
+          "JANSONS Renars-Paul",
+          "Diagonto",
+          "2002",
+          "198",
+          "LAT",
+          "LAT"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/JAN-REN-02",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-11",
+      "name": "Adriano Xavier Cavalcante",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "CAV-ADR-02",
+        "height_cm": 201,
+        "row": [
+          "",
+          "18",
+          "CAVALCANTE Adriano Xavier",
+          "Spiker",
+          "2002",
+          "201",
+          "BRA",
+          "BRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/CAV-ADR-02",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-12",
+      "name": "Flavio Resende Gualberto",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "GUA-FLA-93",
+        "height_cm": 200,
+        "row": [
+          "",
+          "23",
+          "RESENDE GUALBERTO Flavio",
+          "Middleblocker",
+          "1993",
+          "200",
+          "BRA",
+          "BRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/GUA-FLA-93",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-13",
+      "name": "Aleksandar Nedeljkovic",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "NED-ALE-97",
+        "height_cm": 205,
+        "row": [
+          "",
+          "29",
+          "NEDELJKOVIC Aleksandar",
+          "Middleblocker",
+          "1997",
+          "205",
+          "SRB",
+          "SRB"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/NED-ALE-97",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "itas-trentino-14",
+      "name": "Simon Valentin Torwie",
+      "team": "itas-trentino",
+      "evidence": {
+        "key": "TOR-SIM-01",
+        "height_cm": 208,
+        "row": [
+          "",
+          "33",
+          "TORWIE Simon Valentin",
+          "Middleblocker",
+          "2001",
+          "208",
+          "ESP",
+          "GER"
+        ],
+        "source_url": "https://www.legavolley.it/team/6862?lang=en",
+        "player_url": "https://www.legavolley.it/player/TOR-SIM-01",
+        "page_sha256": "0aea7c4848f70e6fe53d7173ee40569ad26803a31e2862de7383fc1984a5e951"
+      }
+    },
+    {
+      "id": "pallavolo-padova-01",
+      "name": "Amir Mohammad Golzadeh",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "GOL-AMI-03",
+        "height_cm": 203,
+        "row": [
+          "",
+          "1",
+          "GOLZADEH Amir Mohammad",
+          "Diagonto",
+          "2003",
+          "203",
+          "IRI",
+          "IRI"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/GOL-AMI-03",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-02",
+      "name": "Alessandro Bristot",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "BIS-ALE-05",
+        "height_cm": 196,
+        "row": [
+          "",
+          "3",
+          "BRISTOT Alessandro",
+          "Spiker",
+          "2005",
+          "196",
+          "BL",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/BIS-ALE-05",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-03",
+      "name": "Andrea Ruzza",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "RUZ-AND-07",
+        "height_cm": 197,
+        "row": [
+          "",
+          "4",
+          "RUZZA Andrea",
+          "Middleblocker",
+          "2007",
+          "197",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/RUZ-AND-07",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-04",
+      "name": "Simone Rinaldi",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "RIN-SIM-07",
+        "height_cm": 192,
+        "row": [
+          "",
+          "5",
+          "RINALDI Simone",
+          "Setter",
+          "2007",
+          "192",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/RIN-SIM-07",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-05",
+      "name": "Francesco D'Amico",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "DAM-FRA-99",
+        "height_cm": 179,
+        "row": [
+          "",
+          "6",
+          "D'AMICO Francesco",
+          "Libero",
+          "1999",
+          "179",
+          "BR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/DAM-FRA-99",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-06",
+      "name": "Joscha Kunstmann",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "KUN-JOS-03",
+        "height_cm": 201,
+        "row": [
+          "",
+          "7",
+          "KUNSTMANN Joscha",
+          "Middleblocker",
+          "2003",
+          "201",
+          "GER",
+          "GER"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/KUN-JOS-03",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-07",
+      "name": "Marco Pellacani",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "PEL-MAR-04",
+        "height_cm": 210,
+        "row": [
+          "",
+          "8",
+          "PELLACANI Marco",
+          "Middleblocker",
+          "2004",
+          "210",
+          "UD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/PEL-MAR-04",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-08",
+      "name": "Mattia Uliana",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "ULI-MAT-07",
+        "height_cm": 185,
+        "row": [
+          "",
+          "9",
+          "ULIANA Mattia",
+          "Libero",
+          "2007",
+          "185",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/ULI-MAT-07",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-09",
+      "name": "Leonardo Lukas Leodolter",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "LEO-LEO-02",
+        "height_cm": 200,
+        "row": [
+          "",
+          "11",
+          "LEODOLTER Leonardo Lukas",
+          "Spiker",
+          "2002",
+          "200",
+          "AUT",
+          "BRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/LEO-LEO-02",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-10",
+      "name": "Francesco Bergamasco",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "BER-FRA-05",
+        "height_cm": 193,
+        "row": [
+          "",
+          "12",
+          "BERGAMASCO Francesco",
+          "Spiker",
+          "2005",
+          "193",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/BER-FRA-05",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-11",
+      "name": "Mattia Orioli",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "ORI-MAT-04",
+        "height_cm": 200,
+        "row": [
+          "",
+          "14",
+          "ORIOLI Mattia",
+          "Spiker",
+          "2004",
+          "200",
+          "FC",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/ORI-MAT-04",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-12",
+      "name": "Arshia Behnezhad",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "BEH-ARS-03",
+        "height_cm": 195,
+        "row": [
+          "",
+          "15",
+          "BEHNEZHAD Arshia",
+          "Setter",
+          "2003",
+          "195",
+          "IRI",
+          "IRI"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/BEH-ARS-03",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-13",
+      "name": "Brendan Robert Mills",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "MIL-BRE-03",
+        "height_cm": 203,
+        "row": [
+          "",
+          "17",
+          "MILLS Brendan Robert",
+          "Diagonto",
+          "2003",
+          "203",
+          "CAN",
+          "CAN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/MIL-BRE-03",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "pallavolo-padova-14",
+      "name": "Andrea Truocchio",
+      "team": "pallavolo-padova",
+      "evidence": {
+        "key": "TRU-AND-00",
+        "height_cm": 207,
+        "row": [
+          "",
+          "18",
+          "TRUOCCHIO Andrea",
+          "Middleblocker",
+          "2000",
+          "207",
+          "PT",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6866?lang=en",
+        "player_url": "https://www.legavolley.it/player/TRU-AND-00",
+        "page_sha256": "1b3e81f1d07d9dd7520b6fc0ed7975a0d8345f1b2fb6bf664093149de6dd0df0"
+      }
+    },
+    {
+      "id": "rana-verona-01",
+      "name": "Aidan Zingel",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "ZIN-AID-90",
+        "height_cm": 207,
+        "row": [
+          "",
+          "1",
+          "ZINGEL Aidan",
+          "Middleblocker",
+          "1990",
+          "207",
+          "AUS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/ZIN-AID-90",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-02",
+      "name": "Lorenzo Cortesia",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "COR-LOR-99",
+        "height_cm": 202,
+        "row": [
+          "",
+          "2",
+          "CORTESIA Lorenzo",
+          "Middleblocker",
+          "1999",
+          "202",
+          "TV",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/COR-LOR-99",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-03",
+      "name": "Leonardo Scanferla",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "SCA-LEO-98",
+        "height_cm": 184,
+        "row": [
+          "",
+          "4",
+          "SCANFERLA Leonardo",
+          "Libero",
+          "1998",
+          "184",
+          "PD",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/SCA-LEO-98",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-04",
+      "name": "Kellian Motta Paes",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "PAE-KEL-02",
+        "height_cm": 196,
+        "row": [
+          "",
+          "5",
+          "MOTTA PAES Kellian",
+          "Setter",
+          "2002",
+          "196",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/PAE-KEL-02",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-05",
+      "name": "Marco Vitelli",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "VIT-MAR-96",
+        "height_cm": 203,
+        "row": [
+          "",
+          "6",
+          "VITELLI Marco",
+          "Middleblocker",
+          "1996",
+          "203",
+          "CH",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/VIT-MAR-96",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-06",
+      "name": "Matteo Staforini",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "STA-MAT-03",
+        "height_cm": 193,
+        "row": [
+          "",
+          "7",
+          "STAFORINI Matteo",
+          "Libero",
+          "2003",
+          "193",
+          "BG",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/STA-MAT-03",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-08",
+      "name": "Noumory Keita",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "KEI-NOU-01",
+        "height_cm": 206,
+        "row": [
+          "",
+          "9",
+          "KEITA Noumory",
+          "Spiker",
+          "2001",
+          "206",
+          "MLI",
+          "MLI"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/KEI-NOU-01",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-09",
+      "name": "Francesco Sani",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "SAN-FRA-02",
+        "height_cm": 203,
+        "row": [
+          "",
+          "10",
+          "SANI Francesco",
+          "Spiker",
+          "2002",
+          "203",
+          "USA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/SAN-FRA-02",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-10",
+      "name": "Micah Christenson",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "CHR-MIC-93",
+        "height_cm": 198,
+        "row": [
+          "",
+          "11",
+          "CHRISTENSON Micah",
+          "Setter",
+          "1993",
+          "198",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/CHR-MIC-93",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-24",
+      "name": "Anders Mol",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "MOL-AND-97",
+        "height_cm": 202,
+        "row": [
+          "",
+          "12",
+          "MOL Anders from 03/08/2026",
+          "Diagonto",
+          "1997",
+          "202",
+          "NOR",
+          "NOR"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/MOL-AND-97",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-11",
+      "name": "Lukas Glatz",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "GLA-LUK-05",
+        "height_cm": 195,
+        "row": [
+          "",
+          "16",
+          "GLATZ Lukas",
+          "Spiker",
+          "2005",
+          "195",
+          "AUT",
+          "AUT"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/GLA-LUK-05",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-12",
+      "name": "Simone Anzani",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "ANZ-SIM-92",
+        "height_cm": 203,
+        "row": [
+          "",
+          "17",
+          "ANZANI Simone",
+          "Middleblocker",
+          "1992",
+          "203",
+          "CO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/ANZ-SIM-92",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-14",
+      "name": "Rok Mozic",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "MOZ-ROK-02",
+        "height_cm": 200,
+        "row": [
+          "",
+          "19",
+          "MOZIC Rok",
+          "Spiker",
+          "2002",
+          "200",
+          "SLO",
+          "SLO"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/MOZ-ROK-02",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "rana-verona-13",
+      "name": "Paul Buchegger",
+      "team": "rana-verona",
+      "evidence": {
+        "key": "BUC-PAU-96",
+        "height_cm": 204,
+        "row": [
+          "",
+          "20",
+          "BUCHEGGER Paul",
+          "Diagonto",
+          "1996",
+          "204",
+          "AUT",
+          "AUT"
+        ],
+        "source_url": "https://www.legavolley.it/team/6864?lang=en",
+        "player_url": "https://www.legavolley.it/player/BUC-PAU-96",
+        "page_sha256": "51bbbdc4755d2500171ac4d4e0d006d0b29df9359ef7c0415e77859872a9a45f"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-01",
+      "name": "Mathis Henno",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "HEN-MAT-05",
+        "height_cm": 195,
+        "row": [
+          "",
+          "4",
+          "HENNO Mathis",
+          "Spiker",
+          "2005",
+          "195",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/HEN-MAT-05",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-02",
+      "name": "Simone Giannelli",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "GIA-SIM-96",
+        "height_cm": 200,
+        "row": [
+          "",
+          "6",
+          "GIANNELLI Simone",
+          "Setter",
+          "1996",
+          "200",
+          "BZ",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/GIA-SIM-96",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-03",
+      "name": "Ferre Reggers",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "REG-FER-03",
+        "height_cm": 203,
+        "row": [
+          "",
+          "7",
+          "REGGERS Ferre",
+          "Diagonto",
+          "2003",
+          "203",
+          "BEL",
+          "BEL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/REG-FER-03",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-04",
+      "name": "Agustin Loser",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "LOS-AGU-97",
+        "height_cm": 201,
+        "row": [
+          "",
+          "8",
+          "LOSER Agustin",
+          "Middleblocker",
+          "1997",
+          "201",
+          "ARG",
+          "ARG"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/LOS-AGU-97",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-05",
+      "name": "Stefano Cappadona",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "CAP-STE-05",
+        "height_cm": 195,
+        "row": [
+          "",
+          "9",
+          "CAPPADONA Stefano",
+          "Setter",
+          "2005",
+          "195",
+          "CS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/CAP-STE-05",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-06",
+      "name": "Luca Loreti",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "LOR-LUC-05",
+        "height_cm": 185,
+        "row": [
+          "",
+          "10",
+          "LORETI Luca",
+          "Libero",
+          "2005",
+          "185",
+          "RM",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/LOR-LUC-05",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-07",
+      "name": "Sebastian Sole",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "SOL-SEB-91",
+        "height_cm": 202,
+        "row": [
+          "",
+          "11",
+          "SOLÉ Sebastian",
+          "Middleblocker",
+          "1991",
+          "202",
+          "ARG",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/SOL-SEB-91",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-08",
+      "name": "David Kollator",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "KOL-DAV-03",
+        "height_cm": 201,
+        "row": [
+          "",
+          "12",
+          "KOLLATOR David",
+          "Diagonto",
+          "2003",
+          "201",
+          "CZE",
+          "CZE"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/KOL-DAV-03",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-09",
+      "name": "Kamil Semeniuk",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "SEM-KAM-96",
+        "height_cm": 194,
+        "row": [
+          "",
+          "16",
+          "SEMENIUK Kamil",
+          "Spiker",
+          "1996",
+          "194",
+          "POL",
+          "POL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/SEM-KAM-96",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-10",
+      "name": "Oleh Plotnytskyi",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "PLO-OLE-97",
+        "height_cm": 194,
+        "row": [
+          "",
+          "17",
+          "PLOTNYTSKYI Oleh",
+          "Spiker",
+          "1997",
+          "194",
+          "UKR",
+          "UKR"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/PLO-OLE-97",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-11",
+      "name": "Giovanni Sanguinetti",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "SAN-GIO-00",
+        "height_cm": 202,
+        "row": [
+          "",
+          "18",
+          "SANGUINETTI Giovanni",
+          "Middleblocker",
+          "2000",
+          "202",
+          "BO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/SAN-GIO-00",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-12",
+      "name": "Marco Gaggini",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "GAG-MAR-02",
+        "height_cm": 184,
+        "row": [
+          "",
+          "20",
+          "GAGGINI Marco",
+          "Libero",
+          "2002",
+          "184",
+          "VA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/GAG-MAR-02",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-13",
+      "name": "Seyed Matin Hosseini",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "HOS-SAY-05",
+        "height_cm": 200,
+        "row": [
+          "",
+          "21",
+          "HOSSEINI Seyed Matin",
+          "Spiker",
+          "2005",
+          "200",
+          "IRI",
+          "IRI"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/HOS-SAY-05",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "sir-susa-scai-perugia-14",
+      "name": "Federico Crosato",
+      "team": "sir-susa-scai-perugia",
+      "evidence": {
+        "key": "CRO-FED-02",
+        "height_cm": 202,
+        "row": [
+          "",
+          "22",
+          "CROSATO Federico",
+          "Middleblocker",
+          "2002",
+          "202",
+          "TV",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6865?lang=en",
+        "player_url": "https://www.legavolley.it/player/CRO-FED-02",
+        "page_sha256": "63b9e1508835cdb2bfad9d77903d1745471a7f35626402c4153ed7594c9fb85c"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-01",
+      "name": "Wout D'Heer",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "DHE-WOU-01",
+        "height_cm": 203,
+        "row": [
+          "",
+          "1",
+          "D'HEER Wout",
+          "Middleblocker",
+          "2001",
+          "203",
+          "BEL",
+          "BEL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/DHE-WOU-01",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-02",
+      "name": "Nicolo Katalan",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "KAT-NIC-98",
+        "height_cm": 200,
+        "row": [
+          "",
+          "2",
+          "KATALAN Nicolò",
+          "Middleblocker",
+          "1998",
+          "200",
+          "TS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/KAT-NIC-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-03",
+      "name": "Alessio Alberini",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "ALB-ALE-98",
+        "height_cm": 185,
+        "row": [
+          "",
+          "3",
+          "ALBERINI Alessio",
+          "Setter",
+          "1998",
+          "185",
+          "VE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/ALB-ALE-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-04",
+      "name": "Federico Frassanella Midolo",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "FRA-FED-05",
+        "height_cm": 200,
+        "row": [
+          "",
+          "5",
+          "FRASSANELLA MIDOLO Federico",
+          "Middleblocker",
+          "2005",
+          "200",
+          "TN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/FRA-FED-05",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-05",
+      "name": "Alberto Pol",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "POL-ALB-01",
+        "height_cm": 201,
+        "row": [
+          "",
+          "6",
+          "POL Alberto",
+          "Spiker",
+          "2001",
+          "201",
+          "TV",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/POL-ALB-01",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-06",
+      "name": "Sebastiano Marsili",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "MAR-SEB-96",
+        "height_cm": 181,
+        "row": [
+          "",
+          "7",
+          "MARSILI Sebastiano",
+          "Setter",
+          "1996",
+          "181",
+          "TV",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAR-SEB-96",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-07",
+      "name": "Alessandro Toscani",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "TOS-ALE-98",
+        "height_cm": 183,
+        "row": [
+          "",
+          "8",
+          "TOSCANI Alessandro",
+          "Libero",
+          "1998",
+          "183",
+          "CH",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/TOS-ALE-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-08",
+      "name": "Kirill Klets",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "KLE-KIR-98",
+        "height_cm": 210,
+        "row": [
+          "",
+          "9",
+          "KLETS Kirill",
+          "Diagonto",
+          "1998",
+          "210",
+          "RUS",
+          "RUS"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/KLE-KIR-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-09",
+      "name": "Jacopo Larizza",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "LAR-JAC-98",
+        "height_cm": 204,
+        "row": [
+          "",
+          "10",
+          "LARIZZA Jacopo",
+          "Middleblocker",
+          "1998",
+          "204",
+          "MC",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/LAR-JAC-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-10",
+      "name": "Federico Guadagnini",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "GUA-FED-04",
+        "height_cm": 186,
+        "row": [
+          "",
+          "11",
+          "GUADAGNINI Federico",
+          "Libero",
+          "2004",
+          "186",
+          "BR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/GUA-FED-04",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-11",
+      "name": "Jernej Terpin",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "TER-JER-96",
+        "height_cm": 195,
+        "row": [
+          "",
+          "12",
+          "TERPIN Jernej",
+          "Spiker",
+          "1996",
+          "195",
+          "GO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/TER-JER-96",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-26",
+      "name": "Nooa Marttila",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "MAR-NOO-05",
+        "height_cm": 195,
+        "row": [
+          "",
+          "13",
+          "MARTTILA Nooa from 04/10/2026",
+          "Spiker",
+          "2005",
+          "195",
+          "FIN",
+          "FIN"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAR-NOO-05",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-12",
+      "name": "Lukas Felipe Bergmann",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "BER-LUK-04",
+        "height_cm": 204,
+        "row": [
+          "",
+          "14",
+          "BERGMANN Lukas Felipe",
+          "Spiker",
+          "2004",
+          "204",
+          "GER",
+          "BRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/BER-LUK-04",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "tinet-prata-di-pordenone-13",
+      "name": "David Umek",
+      "team": "tinet-prata-di-pordenone",
+      "evidence": {
+        "key": "UME-DAV-98",
+        "height_cm": 197,
+        "row": [
+          "",
+          "17",
+          "UMEK David",
+          "Spiker",
+          "1998",
+          "197",
+          "TS",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6897?lang=en",
+        "player_url": "https://www.legavolley.it/player/UME-DAV-98",
+        "page_sha256": "38d5bd53fb7aa63efcb74f1fcc769e63c938e97176ce98424e70f7961c7d1535"
+      }
+    },
+    {
+      "id": "valsa-group-modena-01",
+      "name": "Arthur Bento",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "BEN-ART-04",
+        "height_cm": 205,
+        "row": [
+          "",
+          "1",
+          "BENTO Arthur",
+          "Spiker",
+          "2004",
+          "205",
+          "BRA",
+          "BRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/BEN-ART-04",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-02",
+      "name": "Amir Tizi-Oualou",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "TIZ-AMI-05",
+        "height_cm": 202,
+        "row": [
+          "",
+          "3",
+          "TIZI-OUALOU Amir",
+          "Setter",
+          "2005",
+          "202",
+          "FRA",
+          "FRA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/TIZ-AMI-05",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-03",
+      "name": "Luke Perry",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "PER-LUK-95",
+        "height_cm": 180,
+        "row": [
+          "",
+          "4",
+          "PERRY Luke",
+          "Libero",
+          "1995",
+          "180",
+          "AUS",
+          "AUS"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/PER-LUK-95",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-04",
+      "name": "Pardo Mati",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "MAT-PAR-06",
+        "height_cm": 203,
+        "row": [
+          "",
+          "5",
+          "MATI Pardo",
+          "Middleblocker",
+          "2006",
+          "203",
+          "GR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAT-PAR-06",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-05",
+      "name": "Sil Meijs",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "MEI-SIL-03",
+        "height_cm": 204,
+        "row": [
+          "",
+          "6",
+          "MEIJS Sil",
+          "Diagonto",
+          "2002",
+          "204",
+          "NED",
+          "NED"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/MEI-SIL-03",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-06",
+      "name": "Thomas Jaeschke",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "JAE-THO-93",
+        "height_cm": 198,
+        "row": [
+          "",
+          "7",
+          "JAESCHKE Thomas",
+          "Spiker",
+          "1993",
+          "198",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/JAE-THO-93",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-07",
+      "name": "Nicolo Garello",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "GAR-NIC-07",
+        "height_cm": 194,
+        "row": [
+          "",
+          "8",
+          "GARELLO Nicolò",
+          "Spiker",
+          "2007",
+          "194",
+          "CN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/GAR-NIC-07",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-08",
+      "name": "Leonardo Barbanti",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "BAR-LEO-06",
+        "height_cm": 185,
+        "row": [
+          "",
+          "9",
+          "BARBANTI Leonardo",
+          "Setter",
+          "2006",
+          "185",
+          "MO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/BAR-LEO-06",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-09",
+      "name": "Luca Tauletta",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "TAU-LUC-03",
+        "height_cm": 201,
+        "row": [
+          "",
+          "10",
+          "TAULETTA Luca",
+          "Middleblocker",
+          "2003",
+          "201",
+          "MO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/TAU-LUC-03",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-10",
+      "name": "Federico Menchetti",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "MEN-FED-07",
+        "height_cm": 180,
+        "row": [
+          "",
+          "13",
+          "MENCHETTI Federico",
+          "Libero",
+          "2007",
+          "180",
+          "PO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/MEN-FED-07",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-11",
+      "name": "Luca Porro",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "POR-LUC-03",
+        "height_cm": 194,
+        "row": [
+          "",
+          "17",
+          "PORRO Luca",
+          "Spiker",
+          "2004",
+          "194",
+          "GE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/POR-LUC-03",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-12",
+      "name": "Gabriele Di Martino",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "DIM-GAB-97",
+        "height_cm": 199,
+        "row": [
+          "",
+          "18",
+          "DI MARTINO Gabriele",
+          "Middleblocker",
+          "1997",
+          "199",
+          "RM",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/DIM-GAB-97",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-13",
+      "name": "Roberto Russo",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "RUS-ROB-97",
+        "height_cm": 205,
+        "row": [
+          "",
+          "19",
+          "RUSSO Roberto",
+          "Middleblocker",
+          "1997",
+          "205",
+          "PA",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/RUS-ROB-97",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "valsa-group-modena-14",
+      "name": "Nik Mujanovic",
+      "team": "valsa-group-modena",
+      "evidence": {
+        "key": "MUJ-NIK-04",
+        "height_cm": 205,
+        "row": [
+          "",
+          "20",
+          "MUJANOVIC Nik",
+          "Diagonto",
+          "2004",
+          "205",
+          "SLO",
+          "SLO"
+        ],
+        "source_url": "https://www.legavolley.it/team/6867?lang=en",
+        "player_url": "https://www.legavolley.it/player/MUJ-NIK-04",
+        "page_sha256": "712110d1a7cfe7c055398b79c126775bbbcb42ed73ec52309aa128b6c3f0c769"
+      }
+    },
+    {
+      "id": "vero-volley-monza-01",
+      "name": "Zhasmin Velichkov",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "VEL-ZHA-07",
+        "height_cm": 203,
+        "row": [
+          "",
+          "1",
+          "VELICHKOV Zhasmin",
+          "Spiker",
+          "2007",
+          "203",
+          "BUL",
+          "BUL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/VEL-ZHA-07",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-02",
+      "name": "Diego Frascio",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "FRA-DIE-06",
+        "height_cm": 195,
+        "row": [
+          "",
+          "2",
+          "FRASCIO Diego",
+          "Diagonto",
+          "2006",
+          "195",
+          "RN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/FRA-DIE-06",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-03",
+      "name": "Leonardo Bonacchi",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "BON-LEO-07",
+        "height_cm": 182,
+        "row": [
+          "",
+          "3",
+          "BONACCHI Leonardo",
+          "Setter",
+          "2007",
+          "182",
+          "MI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/BON-LEO-07",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-04",
+      "name": "Flavio Morazzini",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "MOR-FLA-05",
+        "height_cm": 187,
+        "row": [
+          "",
+          "4",
+          "MORAZZINI Flavio",
+          "Libero",
+          "2005",
+          "187",
+          "RM",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/MOR-FLA-05",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-05",
+      "name": "Nicolo Mapelli",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "MAP-NIC-08",
+        "height_cm": 196,
+        "row": [
+          "",
+          "5",
+          "MAPELLI Nicolò",
+          "Diagonto",
+          "2008",
+          "196",
+          "TO",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAP-NIC-08",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-06",
+      "name": "Jacopo Massari",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "MAS-JAC-88",
+        "height_cm": 185,
+        "row": [
+          "",
+          "6",
+          "MASSARI Jacopo",
+          "Spiker",
+          "1988",
+          "185",
+          "PR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/MAS-JAC-88",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-07",
+      "name": "Andrew Rowan",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "ROW-AND-03",
+        "height_cm": 201,
+        "row": [
+          "",
+          "7",
+          "ROWAN Andrew",
+          "Setter",
+          "2003",
+          "201",
+          "USA",
+          "USA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/ROW-AND-03",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-08",
+      "name": "Iliya Petkov",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "PET-ILI-96",
+        "height_cm": 202,
+        "row": [
+          "",
+          "9",
+          "PETKOV Iliya",
+          "Middleblocker",
+          "1996",
+          "202",
+          "BUL",
+          "BUL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/PET-ILI-96",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-09",
+      "name": "Bara Fall",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "FAL-BAR-97",
+        "height_cm": 201,
+        "row": [
+          "",
+          "10",
+          "FALL Bara",
+          "Middleblocker",
+          "1997",
+          "201",
+          "SEN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/FAL-BAR-97",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-10",
+      "name": "Thomas Beretta",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "BER-THO-90",
+        "height_cm": 205,
+        "row": [
+          "",
+          "13",
+          "BERETTA Thomas",
+          "Middleblocker",
+          "1990",
+          "205",
+          "MI",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/BER-THO-90",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-11",
+      "name": "Hryhorii Khotsevitch",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "KHO-HRY-08",
+        "height_cm": 206,
+        "row": [
+          "",
+          "17",
+          "KHOTSEVITCH Hryhorii",
+          "Spiker",
+          "2008",
+          "206",
+          "UKR",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/KHO-HRY-08",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-12",
+      "name": "Nicola Pesaresi",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "PES-NIC-91",
+        "height_cm": 190,
+        "row": [
+          "",
+          "18",
+          "PESARESI Nicola",
+          "Libero",
+          "1991",
+          "190",
+          "AN",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/PES-NIC-91",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-13",
+      "name": "Pierre Perin",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "PER-PIE-04",
+        "height_cm": 191,
+        "row": [
+          "",
+          "19",
+          "PERIN Pierre",
+          "Spiker",
+          "2004",
+          "191",
+          "BEL",
+          "BEL"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/PER-PIE-04",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    },
+    {
+      "id": "vero-volley-monza-14",
+      "name": "Victorio Ceban",
+      "team": "vero-volley-monza",
+      "evidence": {
+        "key": "CEB-VIC-01",
+        "height_cm": 203,
+        "row": [
+          "",
+          "22",
+          "CEBAN Victorio",
+          "Middleblocker",
+          "2001",
+          "203",
+          "FE",
+          "ITA"
+        ],
+        "source_url": "https://www.legavolley.it/team/6868?lang=en",
+        "player_url": "https://www.legavolley.it/player/CEB-VIC-01",
+        "page_sha256": "e957e0f4b52de6f9f5fd260ed227087b70dfdea2e71847608eaaf1ff1f1bc693"
+      }
+    }
+  ],
+  "complete": true
+}

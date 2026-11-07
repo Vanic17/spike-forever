@@ -26,14 +26,15 @@ $files+='docs/RELEASE_NOTES_84.md'
 $files+='docs/RELEASE_NOTES_85.md'
 $files+='docs/GRAPHICS_UPGRADE_85.md'
 $files+='docs/AUDIO_EDITOR_85.md'
-$files+=@('docs/RELEASE_NOTES_89.md','docs/GRAPHICS_89.md','docs/ATHLETE_NEXT_88.md','docs/ATHLETE_PROTOTYPE_87.md','docs/GRAPHICS_UPGRADE_86.md','docs/GRAPHICS86_REQUIRED_ASSETS.md')
+$files+=@('docs/RELEASE_NOTES_90.md','docs/STATURE_90.md','docs/RELEASE_NOTES_89.md','docs/GRAPHICS_89.md','docs/ATHLETE_NEXT_88.md','docs/ATHLETE_PROTOTYPE_87.md','docs/GRAPHICS_UPGRADE_86.md','docs/GRAPHICS86_REQUIRED_ASSETS.md')
+foreach($report90 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File | Where-Object {$_.Name -like 'stature90-*' -or $_.Name -eq 'player-heights90-sources.json'}){$files+='docs/'+$report90.Name}
 $files+=@('tools/Athlete87MeshRefinement.gd','tools/Fetch-Athlete88Source.py')
 foreach($pattern89 in @('graphics89-*','quality89-*','crowd89-*','online89-*','athlete88-*','athlete87-*','graphics86-*')){
  foreach($item89 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern89){
   if($item89.Extension -in @('.json','.png','.html')){$files+='docs/'+$item89.Name}
  }
 }
-foreach($number89 in 86..89){
+foreach($number89 in 86..90){
  foreach($item89 in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File -Filter ('*'+$number89+'.*')){$files+='tools/'+$item89.Name}
 }
 foreach($pattern85 in @('graphics85-*','audio85-*')){

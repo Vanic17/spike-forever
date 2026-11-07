@@ -52,4 +52,5 @@ func draw(game,fraction: float=-1.0) -> void:
 		var first: Transform3D=previous.actors[i];var last: Transform3D=current.actors[i]
 		var shown: Transform3D=last if first.origin.distance_squared_to(last.origin)>1 else first.interpolate_with(last,alpha)
 		p.visual_root.transform=p.transform.affine_inverse()*shown
+		p.visual_root.position/=p.height_scale90
 		p.render_previous84=previous.poses[i];p.render_current84=current.poses[i];p.render_alpha84=alpha

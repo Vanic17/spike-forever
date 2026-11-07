@@ -1,0 +1,13 @@
+{
+  "compact_invite": true,
+  "database_modes": [
+    true,
+    false
+  ],
+  "different_session_ids": true,
+  "guest_defense": 91.0,
+  "host_defense": 23.0,
+  "local_overrides_unchanged": true,
+  "pass": true,
+  "same_club": true
+}

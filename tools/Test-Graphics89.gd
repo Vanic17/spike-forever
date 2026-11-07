@@ -63,8 +63,8 @@ func run():
 	check(p.body_parts.head.material_override.albedo_texture==load("res://src/source_assets.gd").texture("lambertian.jpg") and p.body_parts.head.material_override.albedo_texture.get_width()==512,"Low preset preserves correct scan atlas after edits")
 	check(fingerprint()==snapshot,"Appearance/preset changes preserve gameplay")
 	var view=load("res://src/view_controls.gd")
-	check(view.origin(3).y<view.origin(0).y and view.court_direction(Vector2(.4,-.7),3)==Vector2(.4,-.7),"Lower broadcast framing preserves aim axes")
-	game.camera_mode=3;game.set_camera();game.camera.force_update_transform()
+	check(view.origin(0).y<view.origin(3).y and view.court_direction(Vector2(.4,-.7),3)==Vector2(.4,-.7),"Lower broadcast framing preserves aim axes")
+	game.camera_mode=0;game.set_camera();game.camera.force_update_transform()
 	var bounds: Rect2=root.get_visible_rect()
 	for point in [Vector3(-4.5,.1,-9),Vector3(4.5,.1,-9),Vector3(-4.5,.1,9),Vector3(4.5,.1,9),Vector3(0,.1,12.4),Vector3(0,7,10.4)]:
 		check(not game.camera.is_position_behind(point) and bounds.has_point(game.camera.unproject_position(point)),"Low camera keeps court/server/toss framed "+str(point))

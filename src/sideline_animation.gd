@@ -12,7 +12,10 @@ static func bank() -> AnimationLibrary:
 	return library
 func setup(target,idle_clip: String,offset: float=0.0) -> void:
 	actor=target; idle=idle_clip; actor.visual_root.name="Visual"; actor.skeleton.name="Rig"
-	player=AnimationPlayer.new(); add_child(player); player.root_node=NodePath("../..")
+	player=AnimationPlayer.new(); add_child(player)
+	# Tracks are authored as Visual/Rig. Resolve against the stature parent
+	# rather than assuming Visual is a direct child of the actor.
+	player.root_node=player.get_path_to(actor.visual_root.get_parent())
 	player.callback_mode_process=AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	player.add_animation_library("",bank())
 	player.animation_finished.connect(func(_name): play(idle,.24))

@@ -1,5 +1,5 @@
 {
-  "contacts": 22,
+  "contacts": 16,
   "home": true,
   "observed": {
     "0:attack": true,
@@ -10,12 +10,11 @@
     "1:attack": true,
     "1:dive": true,
     "1:power": true,
-    "1:receive": true,
-    "1:set": true
+    "1:receive": true
   },
   "pause": true,
   "role": "host",
-  "snapshot_max": 2080,
+  "snapshot_max": 2072,
   "stats": true,
   "version": "0.65.0"
 }

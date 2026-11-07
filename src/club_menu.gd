@@ -261,6 +261,12 @@ func edit_player(index: int) -> void:
 	name_field.text_changed.connect(func(value): player_card.player=current.duplicate(true); player_card.player.name=value; player_card.queue_redraw())
 	label(fields,"Numero di maglia")
 	var number=SpinBox.new(); number.min_value=1; number.max_value=99; number.value=float(current.get("jersey_number",1) if current.get("jersey_number")!=null else 1); fields.add_child(number); inputs.number=number
+	# Same SpinBox navigation as jersey number: A/Cross enters details,
+	# left/right changes centimetres and B/Circle returns to the roster.
+	var height=SpinBox.new(); height.min_value=150; height.max_value=230; height.step=1; height.suffix=" cm"
+	height.value=preload("res://src/player_stature90.gd").centimetres(current)
+	label(fields,"Altezza"); fields.add_child(height); inputs.height=height
+	height.value_changed.connect(func(value): player_card.player=current.duplicate(true);player_card.player.height_cm=int(value);player_card.queue_redraw())
 	label(fields,"Ruolo")
 	inputs.role=picker(fields,["outside_hitter","middle_blocker","opposite","setter","libero"])
 	inputs.role.select(["outside_hitter","middle_blocker","opposite","setter","libero"].find(current.role))
@@ -287,6 +293,7 @@ func save_player() -> void:
 	if inputs.name.text.strip_edges().is_empty(): message.text="Inserisci un nome."; return
 	current.name=inputs.name.text.strip_edges(); current.jersey_number=int(inputs.number.value); current.role=inputs.role.get_item_text(inputs.role.selected)
 	current.dominant_hand="left" if inputs.dominant_hand.selected==1 else "right"
+	current.height_cm=int(inputs.height.value)
 	current.serve_preference="float" if inputs.serve_preference.selected==1 else "jump"
 	for key in ["hair_style","hair_color","beard","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
 	current.appearance.hair_length="pelato" if current.appearance.hair_style=="pelato" else ("lunghi" if current.appearance.hair_style=="lunghi" else "corti")

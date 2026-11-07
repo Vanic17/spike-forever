@@ -39,6 +39,8 @@ var power_transfer_from:=Vector3(0.2,1.2,0.4)
 var power_transfer_start:=0.0
 var skeleton: Skeleton3D
 var visual_root: Node3D
+var height_scale90:=1.0
+var stature_pivot90: Node3D
 var animation_bones: Array[int] = []
 var indicator: MeshInstance3D
 var jersey_number: Label3D
@@ -157,6 +159,7 @@ func setup(bank: Dictionary, side: int, jersey: int, models: Dictionary = {}) ->
 	apply_pose(0)
 
 func setup_meshes() -> void:
+	preload("res://src/player_stature90.gd").prepare(self)
 	var body = model_bank.body
 	skeleton = Skeleton3D.new()
 	visual_root.add_child(skeleton)
@@ -199,6 +202,7 @@ func setup_meshes() -> void:
 	jersey_number.outline_size = 0
 	jersey_number.rotation.y = PI
 	visual_root.add_child(jersey_number)
+	preload("res://src/player_wear90.gd").apply(self)
 
 func set_libero(value: bool) -> void:
 	if value == libero_active: return
@@ -211,6 +215,7 @@ func set_libero(value: bool) -> void:
 	if jersey_number:
 		jersey_number.text = "L" if value else ["OH1","MB1","OPP","OH2","MB2","S"][number-1]
 		jersey_number.modulate = Color("182d52") if (team == 0) == value else Color.WHITE
+	preload("res://src/player_wear90.gd").apply(self)
 
 func role_label() -> String:
 	return "L" if libero_active else str(get_meta("tactical_role",["OH1","MB1","OPP","OH2","MB2","S"][number-1]))
@@ -241,6 +246,8 @@ func apply_identity() -> void:
 		jersey_number.visible = not kit.has("texture")
 	var appearance: Dictionary=person.get("appearance",{})
 	preload("res://src/player_appearance.gd").apply(self,appearance)
+	preload("res://src/player_stature90.gd").apply(self,person)
+	preload("res://src/player_wear90.gd").apply(self)
 
 func play(action: String, speed: float = 1.0, loop: bool = false) -> void:
 	if not clips.has(action): return
@@ -328,10 +335,10 @@ func recovery_speed_scale() -> float:
 
 func contact_local(action: String) -> Vector3:
 	if not clips.has(action):
-		return Vector3(0, {"receive":1.15,"recovery":0.65,"dive":0.65,"dump":2.5,"set":2.4,"fast_set":2.4,"attack":3.25,"block":3.1,"float":2.8,"power":3.2}.get(action,1.2), 0.4)
+		return Vector3(0, {"receive":1.15,"recovery":0.65,"dive":0.65,"dump":2.5,"set":2.4,"fast_set":2.4,"attack":3.25,"block":3.1,"float":2.8,"power":3.2}.get(action,1.2), 0.4)*height_scale90
 	var result: Vector3=clips[action].contact_offset
 	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
-	return result
+	return result*height_scale90
 
 func select_variant(action: String, variant: String = "") -> void:
 	var selected := variant if source_clips.has(variant) else action
@@ -346,7 +353,7 @@ func select_variant(action: String, variant: String = "") -> void:
 func action_root_motion(action: String, time: float) -> Vector3:
 	var result: Vector3=clips[action].root_motion(time) if clips.has(action) else Vector3.ZERO
 	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
-	return result
+	return result*height_scale90
 
 func contact_recovery_remaining() -> float:
 	if not clips.has(clip_name) or looping: return 0.0
@@ -366,12 +373,12 @@ func current_hand(left: bool) -> Vector3:
 	if left_handed and clip_name in ["attack","power","float","dump","serve_idle"]: left=not left
 	if last_pose.is_empty(): return contact_world("serve_idle")
 	var idx: int = clips.idle.names.find("LeftHand" if left else "RightHand")
-	return global_transform * last_pose[idx].origin
+	return global_transform * (last_pose[idx].origin*height_scale90)
 
 func current_joint(name: String) -> Vector3:
 	if last_pose.is_empty(): return contact_world("block")
 	var index: int = clips.idle.names.find(name)
-	return global_transform*last_pose[index].origin if index>=0 else contact_world("block")
+	return global_transform*(last_pose[index].origin*height_scale90) if index>=0 else contact_world("block")
 
 func rotate_subtree(pose: Array[Transform3D], joint: int, rotation: Basis, hierarchy: Array[int]) -> void:
 	if joint < 0 or joint >= pose.size(): return
@@ -432,7 +439,7 @@ func locomotion(speed: float, dt: float) -> void:
 	else:
 		var action := choose_gait(speed,clip_name)
 		if gait_change_age<0.18 and looping and clip_name in ["walk","run","shuffle_left","shuffle_right","cross_left","cross_right","backwalk","backpedal"] and action!=clip_name: action=clip_name
-		var playback := clampf(speed / clips[action].travel_speed, 0.25, 2.2)
+		var playback := clampf(speed / (clips[action].travel_speed*height_scale90), 0.25, 2.2)
 		if clip_name != action:
 			var next_time := match_gait_time(action)
 			play(action, playback, true)
@@ -487,11 +494,11 @@ func update_travel_gait(speed: float, dt: float) -> void:
 		travel_blend_source_speed=travel_animation_speed
 		travel_animation_name=action
 		travel_animation_time=match_gait_time(action)
-		travel_animation_speed=clampf(speed/clips[action].travel_speed,0.25,2.2)
+		travel_animation_speed=clampf(speed/(clips[action].travel_speed*height_scale90),0.25,2.2)
 		travel_blend_left=travel_blend_duration
 		travel_change_age=0.0
 	else:
-		var playback := clampf(speed/clips[travel_animation_name].travel_speed,0.12,2.2)
+		var playback := clampf(speed/(clips[travel_animation_name].travel_speed*height_scale90),0.12,2.2)
 		travel_animation_speed=lerpf(travel_animation_speed,playback,1.0-exp(-dt*14.0))
 
 func travel_pose() -> Array[Transform3D]:
@@ -648,7 +655,7 @@ func draw_interpolated84(dt: float) -> void:
 	look_target=saved_look_target
 
 func pose_world84() -> Transform3D:
-	return visual_root.global_transform if render_pose_world84 else global_transform
+	return visual_root.global_transform if render_pose_world84 else global_transform*Transform3D(Basis.from_scale(Vector3.ONE*height_scale90),Vector3.ZERO)
 
 func ensure_native_tree() -> void:
 	if pose_tree != null: return
@@ -765,7 +772,7 @@ func apply_pose(_dt: float) -> void:
 		# into that palm once, then preserve the actual original throwing arc.
 		var saved_reach := reach_weight
 		reach_weight=1.0-smoothstep(power_transfer_start,power_transfer_start+0.35,animation_time)
-		solve_arm(normalized,"Left" if left_handed else "Right",power_transfer_from,clip.parents,1.5)
+		solve_arm(normalized,"Left" if left_handed else "Right",power_transfer_from/height_scale90,clip.parents,1.5)
 		reach_weight=saved_reach
 	if reach_weight > 0.001 and reach_action in ["receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "float", "power", "block"]:
 		var point := pose_world84().affine_inverse() * reach_target
@@ -951,7 +958,7 @@ func plant_feet(pose: Array[Transform3D], clip, _dt: float) -> void:
 		if not support or (foot_planted[side_index] and world.distance_to(foot_anchors[side_index])>0.22): foot_planted[side_index]=false
 		if support and not foot_planted[side_index] and foot_weights[side_index]<0.02:
 			foot_anchors[side_index] = world
-			foot_anchors[side_index].y += 0.055 - pose[toe].origin.y
+			foot_anchors[side_index].y += (0.055 - pose[toe].origin.y)*height_scale90
 			foot_planted[side_index] = true
 		foot_weights[side_index]=move_toward(foot_weights[side_index],1.0 if foot_planted[side_index] else 0.0,_dt*(9.0 if foot_planted[side_index] else 14.0))
 		if foot_weights[side_index]<0.001: continue

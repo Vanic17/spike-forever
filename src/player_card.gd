@@ -17,6 +17,7 @@ func _draw() -> void:
 	caption(Vector2(size.x/2,65),name,20,Color.WHITE,false)
 	var role: String={"setter":"S / PALLEGGIATORE","opposite":"OPP / OPPOSTO","outside_hitter":"OH / BANDA","middle_blocker":"MB / CENTRALE","libero":"L / LIBERO"}.get(player.get("role",""),"")
 	caption(Vector2(size.x/2,91),role,12,muted)
+	caption(Vector2(size.x/2,108),"%d cm"%int(preload("res://src/player_stature90.gd").centimetres(player)),11,muted,false)
 	draw_circle(Vector2(size.x/2,145),35,Color("26374b"))
 	draw_arc(Vector2(size.x/2,145),35,-PI/2,TAU-PI/2,64,gold,2,true)
 	caption(Vector2(size.x/2,155),str(preload("res://src/player_overall.gd").calculate(ratings,str(player.get("role","outside_hitter")))),30,gold)

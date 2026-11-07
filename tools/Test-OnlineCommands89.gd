@@ -62,7 +62,7 @@ func run():
 	net.applying_context89={}
 	check(is_equal_approx(net.receive_remaining89(.01),.01),"no timing adjustment outside receiving command")
 	for side in 2:
-		net.local_side=side;g.camera_mode=3;g.phase="SERVE";g.set_camera()
+		net.local_side=side;g.camera_mode=0;g.phase="SERVE";g.set_camera()
 		check(is_equal_approx(g.camera.position.z,20.5*(1 if side==0 else -1)) and is_equal_approx(g.camera.fov,48.0),"low serve camera mirrored for peer "+str(side))
 		g.phase="ATTACK";g.set_camera()
 		check(is_equal_approx(g.camera.position.z,18.4*(1 if side==0 else -1)) and is_equal_approx(g.camera.fov,42.0),"low rally camera mirrored for peer "+str(side))

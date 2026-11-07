@@ -3,7 +3,7 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF089"
+const PROTOCOL="SF090"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -174,7 +174,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			if not (raw is float or raw is int) or not is_finite(float(raw)): return {}
 			values[key]=clampf(float(raw),0,99)
 		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.role))
-		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
 	var bench: Array=[]
 	var provided=value.get("bench",club.roster)
 	if not provided is Array or provided.size()>32: return {}
@@ -193,7 +193,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			if not (rating is int or rating is float) or not is_finite(float(rating)): return {}
 			values[key]=clampf(float(rating),0,99)
 		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.get("role",original.role)))
-		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
 	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean,"bench":bench}
 
 func choose(value: Dictionary, confirmed: bool) -> void:

@@ -20,3 +20,4 @@ func apply():
 	var mesh: Mesh=original.cloth
 	if detail>0:mesh=load("res://assets/art/athlete88/cloth.res" if detail==3 else "res://assets/art/athlete87/cloth.res")
 	actor.body_parts.cloth.mesh=preload("res://src/club_kits.gd").mesh_with_print_uv(mesh)
+	preload("res://src/player_wear90.gd").apply(actor)
