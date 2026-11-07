@@ -1,0 +1,77 @@
+{
+  "published": false,
+  "baseline": "0.85.0",
+  "files": [
+    {
+      "path": "src/arena_branding.gd",
+      "sha256": "746cf424a69340539c3a665c940e8b8493254783a6c609efc34b5a4e8b0edb82",
+      "new": false
+    },
+    {
+      "path": "src/athlete_prototype86.gd",
+      "sha256": "3a4f80d45105740ecee99017192716cf302b199050765729aa302093387228e6",
+      "new": true
+    },
+    {
+      "path": "src/player_appearance.gd",
+      "sha256": "9a14166b76ddebe6ee14ce4de2293b0213ce40cece0338fa04aa49631a382a7e",
+      "new": false
+    },
+    {
+      "path": "src/spectator_variants86.gd",
+      "sha256": "9f04b70766e6e7e2cdbdb0144145d4196b6e95657b90f13fa876a288bedc9cb8",
+      "new": true
+    },
+    {
+      "path": "src/visual_graphics85.gd",
+      "sha256": "456c857515ac8b86c1cbd7ae62f2660fc77ada8759813b50e7596be582558362",
+      "new": false
+    },
+    {
+      "path": "src/visual_graphics86.gd",
+      "sha256": "da8f03af4daf90ff4ec197f3c51562df0ad7657a6b1bc364bb4565734aea51c1",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/maple_albedo86.png",
+      "sha256": "efe95ab12c5873c02ff3b73e99ab13597f763d0627c655044f2e15934aeedc68",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/maple_normal86.png",
+      "sha256": "863866cb0926bbd381a8e10561fc260ab1c5989da5f7f9a625aa8dc61454ffba",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/maple_roughness86.png",
+      "sha256": "285072096d5217632d88b147bbaea6a8c25e2094d7514660c050aadb562e0195",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/prototype_body.res",
+      "sha256": "48eb99dc8857e9b863d0ee5bafcad51dc7845c607dfaa12391e92387565f0481",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/prototype_eyes.res",
+      "sha256": "93a6922cb1ada02383b1b2df7c031fc5beef84c8285a31110c102b125926067c",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/prototype_head.res",
+      "sha256": "1a08aa1522fb43d49976ec959352754e3637fff9dd04a157bbcb6ea5bee68cba",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/prototype_shoes.res",
+      "sha256": "c29d81ce7aa8eaba07dac5f7111f6e91c555f767e582bba19e24afae6a11ae56",
+      "new": true
+    },
+    {
+      "path": "assets/art/visual86/README.md",
+      "sha256": "bb6f427776c1119fca404141b896740bd3215d9d05d84ae21252f6b8f3639225",
+      "new": true
+    }
+  ],
+  "protected_files_verified": 179
+}

@@ -1,0 +1,53 @@
+{
+  "levels": {
+    "beard0": {
+      "triangles": 8448,
+      "vertices": 7040
+    },
+    "beard1": {
+      "triangles": 16896,
+      "vertices": 14080
+    },
+    "beard2": {
+      "triangles": 50664,
+      "vertices": 42220
+    },
+    "eyes0": {
+      "triangles": 512,
+      "vertices": 260
+    },
+    "eyes1": {
+      "triangles": 1024,
+      "vertices": 516
+    },
+    "eyes2": {
+      "triangles": 2048,
+      "vertices": 1028
+    },
+    "hair0": {
+      "triangles": 22101,
+      "vertices": 16981
+    },
+    "hair1": {
+      "triangles": 45549,
+      "vertices": 36521
+    },
+    "hair2": {
+      "triangles": 105885,
+      "vertices": 86801
+    },
+    "head0": {
+      "triangles": 11356,
+      "vertices": 7754
+    },
+    "head1": {
+      "triangles": 22712,
+      "vertices": 13443
+    },
+    "head2": {
+      "triangles": 45424,
+      "vertices": 24812
+    }
+  },
+  "pass": true
+}

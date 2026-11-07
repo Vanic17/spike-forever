@@ -1,0 +1,35 @@
+{
+    "crash_reproduced":  false,
+    "pass":  true,
+    "driver":  "621.01",
+    "isolated_profiles":  true,
+    "cause_of_reported_crash":  "not established",
+    "cases":  [
+                  {
+                      "pass":  true,
+                      "name":  "import",
+                      "root_certificate_sandbox_warning":  true,
+                      "exit_code":  0
+                  },
+                  {
+                      "pass":  true,
+                      "name":  "resources",
+                      "root_certificate_sandbox_warning":  true,
+                      "exit_code":  0
+                  },
+                  {
+                      "pass":  true,
+                      "name":  "editor-vulkan-1",
+                      "root_certificate_sandbox_warning":  true,
+                      "exit_code":  0
+                  },
+                  {
+                      "pass":  true,
+                      "name":  "editor-vulkan-2",
+                      "root_certificate_sandbox_warning":  true,
+                      "exit_code":  0
+                  }
+              ],
+    "engine":  "4.5.1",
+    "gpu":  "RTX 5080"
+}

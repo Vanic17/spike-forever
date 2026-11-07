@@ -370,6 +370,7 @@ void fragment(){
 		crowd_instance_count+=instance
 		node.multimesh = instances
 		node.set_meta("spectators",true)
+		node.set_meta("crowd_variant89",variant)
 		node.lod_bias=.8
 		node.extra_cull_margin=.18
 		node.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF

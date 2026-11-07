@@ -1,0 +1,30 @@
+{
+  "method": "one PN-edge subdivision, bounded displacement, interpolated normalized skin weights",
+  "parts": {
+    "body": {
+      "bounds": "[P: (-0.643345, 0.121287, -0.121164), S: (1.28669, 1.413897, 0.372623)]",
+      "file": "res://assets/art/visual86/prototype_body.res",
+      "refined_triangles": 29888,
+      "source_triangles": 7472
+    },
+    "eyes": {
+      "bounds": "[P: (-0.049851, 1.75954, 0.053451), S: (0.099701, 0.032915, 0.028221)]",
+      "file": "res://assets/art/visual86/prototype_eyes.res",
+      "refined_triangles": 3200,
+      "source_triangles": 800
+    },
+    "head": {
+      "bounds": "[P: (-0.105954, 1.522448, -0.118897), S: (0.211909, 0.372333, 0.242516)]",
+      "file": "res://assets/art/visual86/prototype_head.res",
+      "refined_triangles": 30312,
+      "source_triangles": 7578
+    },
+    "shoes": {
+      "bounds": "[P: (-0.276009, -0.005441, -0.124478), S: (0.552018, 0.164343, 0.306086)]",
+      "file": "res://assets/art/visual86/prototype_shoes.res",
+      "refined_triangles": 17512,
+      "source_triangles": 4378
+    }
+  },
+  "source": "existing licensed athlete assets"
+}

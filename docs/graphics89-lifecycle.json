@@ -1,0 +1,43 @@
+{
+  "cycles": [
+    {
+      "cycle": 1,
+      "draw_calls": 1350.0,
+      "engine_video_memory": 1542196720.0,
+      "presets": [
+        0,
+        1,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "cycle": 2,
+      "draw_calls": 1350.0,
+      "engine_video_memory": 1677644592.0,
+      "presets": [
+        0,
+        1,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "cycle": 3,
+      "draw_calls": 1350.0,
+      "engine_video_memory": 1811692656.0,
+      "presets": [
+        0,
+        1,
+        2,
+        3,
+        2
+      ]
+    }
+  ],
+  "kind": "real rendered 3D scene create, modify presets, free; separate editor startup tests",
+  "pass": true,
+  "renderer": "forward_plus"
+}

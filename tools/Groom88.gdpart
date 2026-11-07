@@ -1,0 +1,21 @@
+
+func strand_mesh(st: SurfaceTool,p: Vector3,n: Vector3,flow: Vector3,length: float,radius: float,color: Color,bone: int):
+	var side:=flow.cross(n).normalized()
+	if side.length()<.5:side=Vector3.RIGHT
+	var up:=side.cross(flow).normalized()
+	var phase: float=sin(p.x*130+p.z*87)*1.8
+	var head: float=smoothstep(1.57,1.645,p.y)
+	for segment in 4:
+		var a:=float(segment)/4;var b:=float(segment+1)/4
+		var c0:=p+flow*length*a+n*sin(a*PI)*length*.12+side*(sin(phase+a*5)-sin(phase))*length*.07*a
+		var c1:=p+flow*length*b+n*sin(b*PI)*length*.12+side*(sin(phase+b*5)-sin(phase))*length*.07*b
+		for edge in 3:
+			var r0: float=radius*(1-a*.9);var r1: float=radius*(1-b*.9)
+			var q0: Vector3=side*cos(TAU*edge/3)+up*sin(TAU*edge/3)
+			var q1: Vector3=side*cos(TAU*(edge+1)/3)+up*sin(TAU*(edge+1)/3)
+			var positions=[c0+q0*r0,c1+q0*r1,c1+q1*r1,c0+q0*r0,c1+q1*r1,c0+q1*r0]
+			var u0:=float(edge)/3;var u1:=float(edge+1)/3
+			var uvs=[Vector2(u0,a),Vector2(u0,b),Vector2(u1,b),Vector2(u0,a),Vector2(u1,b),Vector2(u1,a)]
+			for k in 6:
+				st.set_color(color);st.set_normal(q0 if k in [0,1,3] else q1);st.set_uv(uvs[k])
+				st.set_bones(PackedInt32Array([bone,5,0,0]));st.set_weights(PackedFloat32Array([head,1-head,0,0]));st.add_vertex(positions[k])

@@ -1,0 +1,54 @@
+{
+  "head_source": "SK_Char_Head_Tier1_M_Perrin, local licensed archive",
+  "method": "different anatomical head, refined hand skin and garment folds, individually swept opaque hair and beard fibers",
+  "parts": {
+    "beard": {
+      "bounds": "[P: (-0.06944, 1.616441, 0.023702), S: (0.139734, 0.109521, 0.089328)]",
+      "surfaces": 1,
+      "triangles": 99810
+    },
+    "beard_strands": 5545,
+    "body": {
+      "bounds": "[P: (-0.643354, 0.121287, -0.121164), S: (1.286707, 1.413897, 0.372574)]",
+      "surfaces": 1,
+      "triangles": 29888
+    },
+    "cloth": {
+      "bounds": "[P: (-0.332523, 0.674809, -0.155412), S: (0.664092, 0.948966, 0.302286)]",
+      "surfaces": 1,
+      "triangles": 15496
+    },
+    "eyes": {
+      "bounds": "[P: (-0.049851, 1.75904, 0.054451), S: (0.099701, 0.032915, 0.028221)]",
+      "surfaces": 1,
+      "triangles": 3200
+    },
+    "hair": {
+      "bounds": "[P: (-0.085014, 1.727662, -0.122832), S: (0.17012, 0.178779, 0.211768)]",
+      "surfaces": 1,
+      "triangles": 211062
+    },
+    "hair_strands": 11442,
+    "head": {
+      "bounds": "[P: (-0.103261, 1.520968, -0.119242), S: (0.206354, 0.374159, 0.246155)]",
+      "surfaces": 1,
+      "triangles": 30292
+    },
+    "lashes": {
+      "bounds": "[P: (-0.051597, 1.765723, 0.071369), S: (0.104329, 0.01713, 0.014707)]",
+      "surfaces": 1,
+      "triangles": 1888
+    },
+    "nails": {
+      "bounds": "[P: (-0.646888, 0.939333, 0.156549), S: (1.290422, 0.073454, 0.098716)]",
+      "surfaces": 1,
+      "triangles": 240
+    },
+    "shoes": {
+      "bounds": "[P: (-0.273858, -0.005434, -0.122743), S: (0.547716, 0.163189, 0.303096)]",
+      "surfaces": 1,
+      "triangles": 2036
+    }
+  },
+  "seed": 87019
+}

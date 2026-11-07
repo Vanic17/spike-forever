@@ -1,0 +1,7 @@
+{
+    "profile":  "isolated",
+    "case":  "replay",
+    "pass":  true,
+    "clients":  2,
+    "transport":  "loopback ENet"
+}

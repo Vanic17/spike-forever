@@ -1,0 +1,23 @@
+{
+  "source_revision": "150b6c46ebb6a011b93ed2e0fee9b612df78281b",
+  "source": "https://github.com/keijiro/InfiniteScan",
+  "license": "CC BY 3.0",
+  "files": {
+    "ATTRIBUTION.md": "2d680d411c07937519e156482bcc089c42b81836d18f3a86fa652f3237bcd679",
+    "beard.res": "56bb159a530d98da8f993b18ee97f24e560cf17feae60e556a6af229eac24ef1",
+    "body.res": "13e79981352dc9ff7f3d962674d896009442c396aa7c925501136a89721d033a",
+    "body_albedo88.png": "c714ed6995b7d36ebc0a306449c7ad46c6dd7e40ea00db8464a3aa0974829e61",
+    "cloth.res": "db59afebe38b5111c2780ede863c320f9ef4d79144d3d4bd9d4d4684767b68fd",
+    "eyes.res": "9905ca39f8ce4a968fb3d99050372b75a75378de456351b57836f02ca5b6039e",
+    "hair.res": "a13910a2b5cbbff9ac9187b72b1f5c7c50849d6d0191553c1379f0e1a4bc20b3",
+    "head.res": "7adfe900b9975997552f62ae6bda14eddfd7112918869fb0c33fc6fc97bd70ee",
+    "scan_normal88.png": "53461ebace6d59798b7d6176d81191f9775bd996384f98b4eff3bfd8097e4336",
+    "scan_roughness88.png": "2bf1f67c7b0347b6981bd32ded6dd6b8fbac4a994dc7b5d649d0df16d8dd31fd",
+    "scan_sss88.png": "aad5cc3397cf6f2678141562e038532617e21d135c641430da8ccb112cbff8e6",
+    "seams.res": "df634c676082ad6f1c495bdb968434b7f542f94ea0d0b14088ee6ade9be805b9",
+    "source/bump-lowRes.png": "2fecadf6aef2ed13a58528a7e175a806f11f1364d6a879e3c354a505c97d8d83",
+    "source/Head.fbx": "88fb05d9917f020e41c629a4a06b4969d145dad50846b0e5319fc0755e7dbf8b",
+    "source/lambertian.jpg": "4fc7297835e2081cb914d1a8507fc837687102eed7bd3c6bed25b72960a09e08",
+    "source/License.txt": "19640b8bbcc488694b24798a8fb7de9e111007bcaef8512ff830a4270c9bc927"
+  }
+}

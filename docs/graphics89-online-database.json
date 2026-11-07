@@ -1,0 +1,7 @@
+{
+    "profile":  "isolated",
+    "case":  "database",
+    "pass":  true,
+    "clients":  2,
+    "transport":  "loopback ENet"
+}

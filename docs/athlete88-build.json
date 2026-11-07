@@ -1,0 +1,40 @@
+{
+  "groom": {
+    "beard_strands": 8443,
+    "hair_strands": 8380
+  },
+  "method": "scan anatomy, actual eyelid opening, existing Head/Neck skinning, resampled groom, anatomical body and cloth relief",
+  "parts": {
+    "beard": {
+      "bounds": "[P: (-0.086085, 1.622581, 0.024829), S: (0.171005, 0.103412, 0.090213)]",
+      "triangles": 202632
+    },
+    "body": {
+      "bounds": "[P: (-0.643366, 0.121287, -0.121975), S: (1.286731, 1.414012, 0.373427)]",
+      "triangles": 29888
+    },
+    "cloth": {
+      "bounds": "[P: (-0.332543, 0.674809, -0.155599), S: (0.664221, 0.949215, 0.303006)]",
+      "triangles": 61984
+    },
+    "eyes": {
+      "bounds": "[P: (-0.046476, 1.763, 0.072524), S: (0.092953, 0.024, 0.023953)]",
+      "triangles": 4000
+    },
+    "hair": {
+      "bounds": "[P: (-0.085932, 1.727725, -0.065887), S: (0.176282, 0.180557, 0.16686)]",
+      "triangles": 206445
+    },
+    "head": {
+      "bounds": "[P: (-0.095058, 1.535, -0.059981), S: (0.19187, 0.360349, 0.184393)]",
+      "triangles": 69194
+    },
+    "seams": {
+      "bounds": "[P: (0.182738, 1.323196, -0.082098), S: (0.089113, 0.196464, 0.125822)]",
+      "triangles": 96
+    }
+  },
+  "pass": true,
+  "source": "Infinite scan by Lee Perry-Smith, CC BY 3.0; converted by McGuire/Cardenas/Keijiro",
+  "unchanged_skeleton_bones": 115
+}

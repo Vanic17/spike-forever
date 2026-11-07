@@ -1,0 +1,213 @@
+{
+  "pass": true,
+  "published": false,
+  "one_athlete_only": true,
+  "lighting_identical": true,
+  "pose_identical": true,
+  "protected_files_unchanged": 179,
+  "changed_existing_source": [
+    "src/player_appearance.gd",
+    "src/visual_graphics86.gd"
+  ],
+  "views": [
+    "face",
+    "profile",
+    "body",
+    "wide",
+    "hands",
+    "clay"
+  ],
+  "resolution": [
+    1920,
+    1080
+  ],
+  "tests": {
+    "bone_count": 115,
+    "checks": 4177953,
+    "gameplay_state_unchanged": true,
+    "pass": true,
+    "pilot_count": 1,
+    "pose_samples": 133315,
+    "scope": "presentation only; skinned vertex samples across seven existing actions; other eleven athlete heads unchanged",
+    "shoe_color_variants": 7
+  },
+  "geometry": {
+    "groom": {
+      "beard_strands": 8443,
+      "hair_strands": 8380
+    },
+    "method": "scan anatomy, actual eyelid opening, existing Head/Neck skinning, resampled groom, anatomical body and cloth relief",
+    "parts": {
+      "beard": {
+        "bounds": "[P: (-0.086085, 1.622581, 0.024829), S: (0.171005, 0.103412, 0.090213)]",
+        "triangles": 202632
+      },
+      "body": {
+        "bounds": "[P: (-0.643366, 0.121287, -0.121975), S: (1.286731, 1.414012, 0.373427)]",
+        "triangles": 29888
+      },
+      "cloth": {
+        "bounds": "[P: (-0.332543, 0.674809, -0.155599), S: (0.664221, 0.949215, 0.303006)]",
+        "triangles": 61984
+      },
+      "eyes": {
+        "bounds": "[P: (-0.046476, 1.763, 0.072524), S: (0.092953, 0.024, 0.023953)]",
+        "triangles": 4000
+      },
+      "hair": {
+        "bounds": "[P: (-0.085932, 1.727725, -0.065887), S: (0.176282, 0.180557, 0.16686)]",
+        "triangles": 206445
+      },
+      "head": {
+        "bounds": "[P: (-0.095058, 1.535, -0.059981), S: (0.19187, 0.360349, 0.184393)]",
+        "triangles": 69194
+      },
+      "seams": {
+        "bounds": "[P: (0.182738, 1.323196, -0.082098), S: (0.089113, 0.196464, 0.125822)]",
+        "triangles": 96
+      }
+    },
+    "pass": true,
+    "source": "Infinite scan by Lee Perry-Smith, CC BY 3.0; converted by McGuire/Cardenas/Keijiro",
+    "unchanged_skeleton_bones": 115
+  },
+  "source_license": "CC BY 3.0, Lee Perry-Smith / Infinite-Realities; McGuire, Cardenas, Keijiro conversion",
+  "source_repository": "https://github.com/keijiro/InfiniteScan",
+  "lifecycle": {
+    "cycles": [
+      {
+        "cycle": 1,
+        "draw_calls": 1329.0,
+        "engine_video_memory": 1325298176.0,
+        "presets": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "cycle": 2,
+        "draw_calls": 1329.0,
+        "engine_video_memory": 1329412624.0,
+        "presets": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "cycle": 3,
+        "draw_calls": 1329.0,
+        "engine_video_memory": 1332127264.0,
+        "presets": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      }
+    ],
+    "kind": "real rendered 3D scene create, modify presets, free; separate editor startup tests",
+    "pass": true,
+    "renderer": "forward_plus"
+  },
+  "performance": {
+    "before": {
+      "fps": {
+        "mean": 100.60161944131544,
+        "min": 99.1826054196173,
+        "max": 102.198618801587,
+        "stddev": 1.515863867771576
+      },
+      "p99_ms": {
+        "mean": 17.127333333333333,
+        "min": 16.649,
+        "max": 17.542,
+        "stddev": 0.44989146839358213
+      },
+      "gpu_ms": {
+        "mean": 2.580980006610557,
+        "min": 2.52473976703847,
+        "max": 2.6345006286047,
+        "stddev": 0.054930946858469235
+      },
+      "memory_bytes": {
+        "mean": 1468700848.0,
+        "min": 1468700848.0,
+        "max": 1468700848.0,
+        "stddev": 0.0
+      },
+      "draw_calls": {
+        "mean": 1463.1045567886167,
+        "min": 1463.09005037783,
+        "max": 1463.11789859499,
+        "stddev": 0.013960588358924228
+      },
+      "primitives": {
+        "mean": 6966525.1780302,
+        "min": 6966469.50621891,
+        "max": 6966579.72938302,
+        "stddev": 55.12012379308917
+      }
+    },
+    "after": {
+      "fps": {
+        "mean": 102.806593975868,
+        "min": 101.570418596307,
+        "max": 104.194789785762,
+        "stddev": 1.3187735565438599
+      },
+      "p99_ms": {
+        "mean": 16.034333333333333,
+        "min": 14.937,
+        "max": 16.98,
+        "stddev": 1.029909866606459
+      },
+      "gpu_ms": {
+        "mean": 2.72971491906429,
+        "min": 2.7239555705994,
+        "max": 2.73898954409075,
+        "stddev": 0.008110053434651064
+      },
+      "memory_bytes": {
+        "mean": 1619176912.0,
+        "min": 1619176912.0,
+        "max": 1619176912.0,
+        "stddev": 0.0
+      },
+      "draw_calls": {
+        "mean": 1463.1473217874466,
+        "min": 1463.10611510791,
+        "max": 1463.17102860621,
+        "stddev": 0.03582072599347678
+      },
+      "primitives": {
+        "mean": 7697038.562899137,
+        "min": 7696988.7699877,
+        "max": 7697093.41631163,
+        "stddev": 52.50637848154063
+      }
+    }
+  },
+  "capture_quality": {
+    "msaa": 3,
+    "preset": "Ultra",
+    "textures": 0
+  },
+  "pilot_texture_resolution": {
+    "before": [
+      1024,
+      1024
+    ],
+    "after": [
+      4096,
+      4096
+    ],
+    "fallback_measurement": "source image dimensions with uncapped Ultra texture preset"
+  }
+}

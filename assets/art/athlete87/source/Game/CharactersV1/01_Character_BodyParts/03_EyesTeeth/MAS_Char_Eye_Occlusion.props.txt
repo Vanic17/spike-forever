@@ -1,0 +1,120 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[1] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/T_Char_Eyes_Occlusion.T_Char_Eyes_Occlusion'
+}
+Expressions[124] =
+{
+    Expressions[4] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_25'
+    Expressions[9] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_24'
+    Expressions[10] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_23'
+    Expressions[12] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_22'
+    Expressions[16] = MaterialExpressionVectorParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionVectorParameter_0'
+    Expressions[20] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_21'
+    Expressions[21] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_20'
+    Expressions[26] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_19'
+    Expressions[28] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_18'
+    Expressions[31] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_17'
+    Expressions[36] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_16'
+    Expressions[40] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_15'
+    Expressions[44] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_14'
+    Expressions[52] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_13'
+    Expressions[61] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_12'
+    Expressions[63] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_11'
+    Expressions[66] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_10'
+    Expressions[69] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_9'
+    Expressions[72] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_8'
+    Expressions[76] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_7'
+    Expressions[82] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_6'
+    Expressions[87] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_5'
+    Expressions[89] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_4'
+    Expressions[97] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_3'
+    Expressions[101] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_2'
+    Expressions[113] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_1'
+    Expressions[115] = MaterialExpressionTextureSample'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionTextureSample_0'
+    Expressions[119] = MaterialExpressionScalarParameter'/Game/CharactersV1/01_Character_BodyParts/03_EyesTeeth/MAS_Char_Eye_Occlusion.MaterialExpressionScalarParameter_0'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Translucent (2)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[0] = {}
+CollectedScalarParameters[26] =
+{
+    CollectedScalarParameters[0] =
+    {
+        Value = 5
+        Name = Blur outer corner exponent
+        Group = None
+    }
+    CollectedScalarParameters[1] = { Value=1, Name=Blur outer corner, Group=None }
+    CollectedScalarParameters[2] = { Value=1, Name=Shadow outer corner, Group=None }
+    CollectedScalarParameters[3] = { Value=1, Name=Shadow inner corner, Group=None }
+    CollectedScalarParameters[4] = { Value=5, Name=Blur bottom exponent, Group=None }
+    CollectedScalarParameters[5] = { Value=1, Name=Blur bottom, Group=None }
+    CollectedScalarParameters[6] = { Value=3, Name=Shadow bottom exponent, Group=None }
+    CollectedScalarParameters[7] = { Value=0.8, Name=Shadow bottom, Group=None }
+    CollectedScalarParameters[8] =
+    {
+        Value = 4
+        Name = Shadow inner corner exponent
+        Group = None
+    }
+    CollectedScalarParameters[9] = { Value=2.2, Name=Shadow top, Group=None }
+    CollectedScalarParameters[10] = { Value=0.07, Name=Bottom vert offset, Group=None }
+    CollectedScalarParameters[11] = { Value=20, Name=Perimeter blur, Group=None }
+    CollectedScalarParameters[12] = { Value=0, Name=Corner vert offset, Group=None }
+    CollectedScalarParameters[13] = { Value=0.2, Name=Top vert offset, Group=None }
+    CollectedScalarParameters[14] = { Value=0.4, Name=Fade distance, Group=None }
+    CollectedScalarParameters[15] = { Value=-0.1, Name=Duct vert offset, Group=None }
+    CollectedScalarParameters[16] = { Value=8, Name=Duct transition power, Group=None }
+    CollectedScalarParameters[17] = { Value=5, Name=Duct scale, Group=None }
+    CollectedScalarParameters[18] = { Value=0.78, Name=Duct shift, Group=None }
+    CollectedScalarParameters[19] =
+    {
+        Value = 5
+        Name = Shadow outer corner exponent
+        Group = None
+    }
+    CollectedScalarParameters[20] = { Value=12, Name=Opacity power, Group=None }
+    CollectedScalarParameters[21] = { Value=0.7, Name=Shadow amount, Group=None }
+    CollectedScalarParameters[22] = { Value=10, Name=Opacity, Group=None }
+    CollectedScalarParameters[23] = { Value=0.2, Name=Blur Size, Group=None }
+    CollectedScalarParameters[24] = { Value=1, Name=DepthOffset, Group=None }
+    CollectedScalarParameters[25] = { Value=4, Name=Shadow top exponent, Group=None }
+}
+CollectedVectorParameters[1] =
+{
+    CollectedVectorParameters[0] =
+    {
+        Value = { R=1, G=1, B=1, A=0 }
+        Name = Blur color
+        Group = None
+    }
+}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

@@ -49,6 +49,13 @@ static func apply(avatar, appearance: Dictionary) -> void:
 	if beard!=null:
 		beard.visible=BEARDS.has(beard_style)
 		if beard.visible: assign(beard,avatar,BEARDS[beard_style],COLORS.get(appearance.get("hair_color"),COLORS.marrone))
+	if avatar.has_meta("visual_prototype86"):
+		load("res://src/athlete_prototype86.gd").apply_skin(avatar,appearance)
+	if avatar.has_meta("visual_prototype87"):
+		if avatar.has_meta("visual_quality89"):avatar.set_meta("visual_appearance89",appearance.duplicate(true))
+		avatar.get_meta("visual_prototype87").apply()
+	if avatar.has_meta("visual_quality89") and not avatar.has_meta("visual_prototype87"):
+		avatar.get_meta("visual_quality89").apply()
 static func assign(node: MeshInstance3D, avatar, name: String, color: Color) -> void:
 	var source=model(name,avatar.model_bank.body.names)
 	if source==null: return

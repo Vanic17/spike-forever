@@ -1,0 +1,8186 @@
+{
+  "pass": true,
+  "version": "0.89.0",
+  "integrated_in_main_game": true,
+  "protected_files_checked": 179,
+  "unchanged": 178,
+  "intentional_metadata_change": [
+    "version.json"
+  ],
+  "pose_camera_lighting_identical_to_88": true,
+  "core_suites": [
+    "Graphics86",
+    "Graphics85",
+    "Settings53",
+    "ControllerSettings53",
+    "Fluidity84",
+    "SetterPose81",
+    "Setter81",
+    "LegendInputs75",
+    "LegendServe81",
+    "Attack80",
+    "Defense80",
+    "Arena82",
+    "Arenas70",
+    "Kits45",
+    "Replay65",
+    "ReplayEvents65",
+    "Bench71",
+    "CareerPlayed66",
+    "CareerEngine66"
+  ],
+  "reports": {
+    "presets": {
+      "checks": 40,
+      "errors": [],
+      "pass": true,
+      "presets": [
+        {
+          "body_triangles": 7472,
+          "cloth_triangles": 3874,
+          "crowd_triangles": 147846,
+          "crowd_visible": 325,
+          "decor_batches": 0,
+          "floor_normal": false,
+          "head_triangles": 11356,
+          "level": 0,
+          "reflections": 0,
+          "render_scale": 0.670000016689301,
+          "skin_scattering": false,
+          "ssao": false,
+          "texture_width": 512
+        },
+        {
+          "body_triangles": 7472,
+          "cloth_triangles": 15496,
+          "crowd_triangles": 1178304,
+          "crowd_visible": 707,
+          "decor_batches": 8,
+          "floor_normal": true,
+          "head_triangles": 22712,
+          "level": 1,
+          "reflections": 0,
+          "render_scale": 0.850000023841858,
+          "skin_scattering": false,
+          "ssao": true,
+          "texture_width": 1024
+        },
+        {
+          "body_triangles": 29888,
+          "cloth_triangles": 15496,
+          "crowd_triangles": 7716554,
+          "crowd_visible": 1280,
+          "decor_batches": 12,
+          "floor_normal": true,
+          "head_triangles": 45424,
+          "level": 2,
+          "reflections": 1,
+          "render_scale": 1.0,
+          "skin_scattering": true,
+          "ssao": true,
+          "texture_width": 2048
+        },
+        {
+          "body_triangles": 29888,
+          "cloth_triangles": 61984,
+          "crowd_triangles": 11991360,
+          "crowd_visible": 1280,
+          "decor_batches": 12,
+          "floor_normal": true,
+          "head_triangles": 69194,
+          "level": 3,
+          "reflections": 1,
+          "render_scale": 1.0,
+          "skin_scattering": true,
+          "ssao": true,
+          "texture_width": 4096
+        }
+      ],
+      "rendered": true,
+      "scenery_proxies": 1401
+    },
+    "lifecycle": {
+      "cycles": [
+        {
+          "cycle": 1,
+          "draw_calls": 1350.0,
+          "engine_video_memory": 1542196720.0,
+          "presets": [
+            0,
+            1,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "cycle": 2,
+          "draw_calls": 1350.0,
+          "engine_video_memory": 1677644592.0,
+          "presets": [
+            0,
+            1,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "cycle": 3,
+          "draw_calls": 1350.0,
+          "engine_video_memory": 1811692656.0,
+          "presets": [
+            0,
+            1,
+            2,
+            3,
+            2
+          ]
+        }
+      ],
+      "kind": "real rendered 3D scene create, modify presets, free; separate editor startup tests",
+      "pass": true,
+      "renderer": "forward_plus"
+    },
+    "editor-tests": {
+      "crash_reproduced": false,
+      "pass": true,
+      "driver": "621.01",
+      "isolated_profiles": true,
+      "cause_of_reported_crash": "not established",
+      "cases": [
+        {
+          "pass": true,
+          "name": "import",
+          "root_certificate_sandbox_warning": true,
+          "exit_code": 0
+        },
+        {
+          "pass": true,
+          "name": "resources",
+          "root_certificate_sandbox_warning": true,
+          "exit_code": 0
+        },
+        {
+          "pass": true,
+          "name": "editor-vulkan-1",
+          "root_certificate_sandbox_warning": true,
+          "exit_code": 0
+        },
+        {
+          "pass": true,
+          "name": "editor-vulkan-2",
+          "root_certificate_sandbox_warning": true,
+          "exit_code": 0
+        }
+      ],
+      "engine": "4.5.1",
+      "gpu": "RTX 5080"
+    },
+    "full-match": {
+      "contacts": 95,
+      "frames": 30701,
+      "frames_over_25ms": 1,
+      "frames_over_50ms": 0,
+      "game_seconds": 231.974999999954,
+      "mean_frame_ms": 7.42590417250255,
+      "p99_frame_ms": 12.367,
+      "pass": true,
+      "peak_video_memory_bytes": 1764446336,
+      "points": 17,
+      "preset": "high",
+      "real_seconds": 231.985978333332,
+      "replay": "validated separately; disabled for this full-match soak",
+      "resolution": "(1920, 1080)",
+      "result": {
+        "complete": true,
+        "conditions": {
+          "acqua-santanna-cuneo-01": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-02": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-03": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-04": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-05": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-06": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-07": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-08": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-09": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-10": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-11": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-12": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-13": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "acqua-santanna-cuneo-14": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-01": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-02": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-03": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-04": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-05": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-06": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-07": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-08": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-09": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-10": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-11": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-12": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-13": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          },
+          "cucine-lube-civitanova-21": {
+            "fatigue": 0.0,
+            "form": 0.0,
+            "injury_until": ""
+          }
+        },
+        "duration_minutes": 2.01492825334572,
+        "injuries": [],
+        "mvp": "acqua-santanna-cuneo-10",
+        "players": {
+          "acqua-santanna-cuneo-01": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 2,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 2,
+            "serve_errors": 0,
+            "sets": 11,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-02": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 6,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 2,
+            "receptions": 2,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 2,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-09": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 4,
+            "attack_kills": 4,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 4,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 1,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-10": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 4,
+            "attack_kills": 4,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 3,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 4,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 12,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-11": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 3,
+            "attack_kills": 3,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 2,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 3,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-12": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 2,
+            "attack_kills": 2,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 1,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 2,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 1,
+            "serve_errors": 0,
+            "sets": 1,
+            "sets_played": 1
+          },
+          "acqua-santanna-cuneo-14": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-01": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 2,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 13,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-02": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 4,
+            "attack_kills": 1,
+            "block_contacts": 3,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 1,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 1,
+            "serve_errors": 0,
+            "sets": 1,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-05": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 9,
+            "receptions": 14,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 2,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-08": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 1,
+            "attack_kills": 0,
+            "block_contacts": 0,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 1,
+            "serve_attempts": 1,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-10": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 0,
+            "attack_kills": 0,
+            "block_contacts": 1,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-11": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 7,
+            "attack_kills": 1,
+            "block_contacts": 1,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 1,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 0,
+            "sets_played": 1
+          },
+          "cucine-lube-civitanova-13": {
+            "aces": 0,
+            "appearances": 1,
+            "attack_attempts": 2,
+            "attack_kills": 0,
+            "block_contacts": 1,
+            "blocks": 0,
+            "digs": 0,
+            "fatigue_end": 0.0,
+            "form": 0.0,
+            "injury_until": "",
+            "points": 0,
+            "reception_perfect": 0,
+            "reception_positive": 0,
+            "receptions": 0,
+            "serve_attempts": 0,
+            "serve_errors": 0,
+            "sets": 1,
+            "sets_played": 1
+          }
+        },
+        "set_scores": [
+          [
+            15,
+            2
+          ]
+        ],
+        "sets": [
+          1,
+          0
+        ],
+        "source": "played",
+        "statistics_source": "measured",
+        "substitutions": [],
+        "team_stats": [
+          {
+            "aces": 0,
+            "attack_kills": 13,
+            "blocks": 0,
+            "serve_errors": 0
+          },
+          {
+            "aces": 0,
+            "attack_kills": 2,
+            "blocks": 0,
+            "serve_errors": 0
+          }
+        ]
+      },
+      "sets": [
+        1,
+        0
+      ],
+      "test_driver": "99% human attacks, normal CPU/serve/receive/set"
+    },
+    "online-database": {
+      "profile": "isolated",
+      "case": "database",
+      "pass": true,
+      "clients": 2,
+      "transport": "loopback ENet"
+    },
+    "online-substitutions": {
+      "profile": "isolated",
+      "case": "substitutions",
+      "pass": true,
+      "clients": 2,
+      "transport": "loopback ENet"
+    },
+    "online-replay": {
+      "profile": "isolated",
+      "case": "replay",
+      "pass": true,
+      "clients": 2,
+      "transport": "loopback ENet"
+    }
+  },
+  "collisions": [
+    [
+      "[P: (-5.38, -0.065, -0.18), S: (0.36, 2.73, 0.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.45, -0.085, -0.25), S: (0.5, 2.55, 0.5)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.485, -0.09, -0.285), S: (0.57, 0.33, 0.57)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.43, 0.605, 0.042), S: (0.46, 1.25, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.158, 0.605, -0.23), S: (0.21, 1.25, 0.46)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.43, 0.605, -0.252), S: (0.46, 1.25, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.452, 0.605, -0.23), S: (0.21, 1.25, 0.46)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (5.02, -0.065, -0.18), S: (0.36, 2.73, 0.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (4.95, -0.085, -0.25), S: (0.5, 2.55, 0.5)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (4.915, -0.09, -0.285), S: (0.57, 0.33, 0.57)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (4.97, 0.605, 0.042), S: (0.46, 1.25, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (5.242, 0.605, -0.23), S: (0.21, 1.25, 0.46)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (4.97, 0.605, -0.252), S: (0.46, 1.25, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (4.948, 0.605, -0.23), S: (0.21, 1.25, 0.46)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.795, -0.105, -0.855), S: (1.39, 0.31, 1.71)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.625, -0.065, -0.485), S: (1.05, 2.09, 0.97)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.64, 1.815, -0.685), S: (1.14, 0.33, 1.37)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.81, 0.015, -0.73), S: (0.26, 2.77, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.785, 2.55, -0.73), S: (1.190001, 0.26, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.83, 1.945, -0.73), S: (0.26, 0.84, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.81, 0.015, 0.47), S: (0.26, 2.77, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.785, 2.55, 0.47), S: (1.190001, 0.26, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.83, 1.945, 0.47), S: (0.26, 0.84, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.774, 0.295, -0.43), S: (0.21, 1.71, 0.86)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-5.765, 0.995909, -0.405), S: (0.21, 0.368182, 0.81)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.034179, 3.000594, -0.705), S: (0.274, 0.274, 1.41)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.027179, 1.945, -0.73), S: (0.26, 1.297594, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-6.027179, 1.945, 0.47), S: (0.26, 1.297594, 0.26)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-12.28, -0.26, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-13.18, 0.22, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-14.08, 0.7, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-14.98, 1.18, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-15.88, 1.66, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-16.78, 2.14, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-17.68, 2.62, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-18.58, 3.1, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-19.48, 3.58, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-20.38, 4.06, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, -17.1275), S: (0.255, 0.96, 0.254998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, -11.1275), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, -5.1275), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, 0.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, 6.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, 12.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-11.1775, 0.16, 16.8725), S: (0.255, 0.96, 0.254998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (11.12, -0.26, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (12.02, 0.22, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (12.92, 0.7, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (13.82, 1.18, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (14.72, 1.66, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (15.62, 2.14, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (16.52, 2.62, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (17.42, 3.1, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (18.32, 3.58, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (19.22, 4.06, -18.605), S: (1.160001, 0.66, 37.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, -17.1275), S: (0.255, 0.96, 0.254998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, -11.1275), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, -5.1275), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, 0.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, 6.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, 12.8725), S: (0.255, 0.96, 0.255)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (10.9225, 0.16, 16.8725), S: (0.255, 0.96, 0.254998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-12.105, -0.345, -19.065), S: (24.21, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-12.855, 0.175, -19.965), S: (25.71, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-13.605, 0.695, -20.865), S: (27.21, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-14.355, 1.215, -21.765), S: (28.71, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-15.105, 1.735, -22.665), S: (30.21, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-15.855, 2.255, -23.565), S: (31.71, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-16.605, 2.775, -24.465), S: (33.21, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-17.355, 3.295, -25.365), S: (34.71, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-18.105, 3.815, -26.265), S: (36.21, 0.69, 1.129998)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.535, -0.035, -12.105), S: (0.330001, 1.21, 24.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (9.205, -0.035, -12.105), S: (0.330001, 1.21, 24.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.254999, -0.035, -14.735), S: (18.51, 1.21, 0.330001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.254999, -0.035, 14.405), S: (18.51, 1.21, 0.330001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.405, 0.015, -12.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.405, 0.015, -6.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.405, 0.015, -0.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.405, 0.015, 5.935), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.214999, 0.015, -14.605), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-3.115, 0.015, -14.605), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (2.985, 0.015, -14.605), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (9.195001, 0.015, -12.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (9.195001, 0.015, -6.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (9.195001, 0.015, -0.065), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (9.195001, 0.015, 5.935), S: (0.21, 1.13, 6.13)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-9.214999, 0.015, 14.395), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-3.115, 0.015, 14.395), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (2.985, 0.015, 14.395), S: (6.23, 1.13, 0.21)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-21.205, 5.345, -14.63), S: (0.21, 0.91, 7.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-21.205, 5.345, -7.33), S: (0.21, 0.91, 7.360001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-21.205, 5.345, -0.03), S: (0.21, 0.91, 7.360001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-21.205, 5.345, 7.27), S: (0.21, 0.91, 7.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (20.995, 5.345, -14.63), S: (0.21, 0.91, 7.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (20.995, 5.345, -7.33), S: (0.21, 0.91, 7.360001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (20.995, 5.345, -0.03), S: (0.21, 0.91, 7.360001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (20.995, 5.345, 7.27), S: (0.21, 0.91, 7.36)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.83, 0.26, -10.455), S: (0.86, 0.32, 6.610001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.865, 0.39, -10.455), S: (0.29, 0.86, 6.610001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, -9.784999), S: (0.69, 0.63, 0.269999)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, -7.285), S: (0.69, 0.63, 0.27)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, -4.785), S: (0.69, 0.63, 0.27)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.83, 0.26, 3.845), S: (0.86, 0.32, 6.610001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.865, 0.39, 3.845), S: (0.29, 0.86, 6.610001)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, 4.515), S: (0.69, 0.63, 0.27)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, 7.015), S: (0.69, 0.63, 0.27)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.745, -0.105, 9.515), S: (0.69, 0.63, 0.269999)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.33, -0.105, -2.255), S: (1.06, 0.97, 4.51)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.429999, 0.665, -2.305), S: (1.26, 0.27, 4.61)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.585, 0.755, -1.545), S: (0.27, 0.53, 0.69)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.745, 0.275, -1.585), S: (0.73, 0.31, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.809999, 0.345, -1.585), S: (0.28, 0.89, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.535, -0.105, -1.505), S: (0.31, 0.63, 0.61)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.585, 0.755, -0.345), S: (0.27, 0.53, 0.69)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.745, 0.275, -0.385), S: (0.73, 0.31, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.809999, 0.345, -0.385), S: (0.28, 0.89, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.535, -0.105, -0.305), S: (0.31, 0.63, 0.61)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-7.585, 0.755, 0.855), S: (0.27, 0.53, 0.69)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.745, 0.275, 0.815), S: (0.73, 0.31, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.809999, 0.345, 0.815), S: (0.28, 0.89, 0.77)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-8.535, -0.105, 0.895), S: (0.31, 0.63, 0.61)]",
+      "arredo",
+      0.42
+    ],
+    [
+      "[P: (-12.065, 0.625, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.065, 0.625, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.965, 1.105, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.865, 1.585, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-14.765, 2.065, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-15.665, 2.545, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-16.565, 3.025, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-17.465, 3.505, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-18.365, 3.985, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-19.265, 4.465, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-20.165, 4.945, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.335, 0.625, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.235, 1.105, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (13.135, 1.585, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.035, 2.065, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (14.935, 2.545, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (15.835, 3.025, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (16.735, 3.505, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (17.635, 3.985, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -13.685), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -3.145), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 7.395), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (18.535, 4.465, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -16.785), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -16.165), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -15.545), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -14.925), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -14.305), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -13.065), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -12.445), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -11.825), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -11.205), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -10.585), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -9.964999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -9.344999), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -7.485), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -6.865), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -6.245), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -5.625), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -5.005), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -4.385), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -3.765), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -2.525), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -1.905), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -1.285), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -0.665), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, -0.045), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 1.815), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 2.435), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 3.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 3.675), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 4.295), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 4.915), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 5.535), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 6.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 6.775), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 8.015), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 8.635), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 9.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 11.115), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 11.735), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 12.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 12.975), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 13.595), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 14.215), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 14.835), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 15.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 16.075), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 16.695), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (19.435, 4.945, 17.315), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 0.525, -18.855), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 1.045, -19.755), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 1.565, -20.655), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 2.085, -21.555), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 2.605, -22.455), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 3.125, -23.355), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 3.645, -24.255), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-7.805, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.735, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 4.165, -25.155), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-13.385, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.765, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-12.145, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-11.525, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.905, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-10.285, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.665, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-9.045, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-8.425, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.945, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-5.325, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.705, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-4.085, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-3.465, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.845, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-2.225, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-1.605, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.985, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (-0.365, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.255, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (0.875, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (1.495, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (2.115, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.355, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (3.975, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (4.595, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (5.215, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.075, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (7.695, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.315001, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (8.935, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (9.555, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.175, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (10.795, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (11.415, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.035, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ],
+    [
+      "[P: (12.655, 4.685, -26.055), S: (0.73, 1.06, 0.71)]",
+      "pubblico",
+      0.16
+    ]
+  ],
+  "performance": {
+    "0": {
+      "runs": 1,
+      "raw": [
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1168.0,
+            "mean": 1160.54159495123,
+            "p95": 1168.0,
+            "p99": 1168.0
+          },
+          "frame": {
+            "max_ms": 19.037,
+            "mean_ms": 9.1857337923121,
+            "p95_ms": 12.035,
+            "p99_ms": 15.062
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 0.871999979019165,
+            "mean_ms": 0.610724039961398,
+            "p95_ms": 0.633000016212463,
+            "p99_ms": 0.796000003814697
+          },
+          "label": "p0-r1",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 108.864465551673,
+          "measured_s": 16.0022433333334,
+          "msaa": 0,
+          "physics_tick_cpu": {
+            "max_ms": 5.962,
+            "mean_ms": 1.80594444444444,
+            "p95_ms": 3.321,
+            "p99_ms": 4.385
+          },
+          "physics_warmup_s": 2,
+          "preset": "low",
+          "primitives": {
+            "max": 4920550.0,
+            "mean": 4862767.37923121,
+            "p95": 4883293.0,
+            "p99": 4894649.0
+          },
+          "render_scale": 0.670000016689301,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 1.52600002288818,
+            "mean_ms": 0.697519794217622,
+            "p95_ms": 0.742999970912933,
+            "p99_ms": 0.810999989509583
+          },
+          "samples": 1743,
+          "ssao": false,
+          "ssil": false,
+          "ssr": false,
+          "video_memory_bytes": {
+            "max": 383575696.0,
+            "mean": 383566281.877223,
+            "p95": 383575696.0,
+            "p99": 383575696.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        }
+      ],
+      "fps": {
+        "mean": 108.864465551673,
+        "min": 108.864465551673,
+        "max": 108.864465551673,
+        "stddev": null
+      },
+      "gpu_ms": {
+        "mean": 0.610724039961398,
+        "min": 0.610724039961398,
+        "max": 0.610724039961398,
+        "stddev": null
+      },
+      "p99_ms": {
+        "mean": 15.062,
+        "min": 15.062,
+        "max": 15.062,
+        "stddev": null
+      },
+      "engine_memory_bytes": {
+        "mean": 383575696.0,
+        "min": 383575696.0,
+        "max": 383575696.0,
+        "stddev": null
+      }
+    },
+    "1": {
+      "runs": 1,
+      "raw": [
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1470.0,
+            "mean": 1461.10164512338,
+            "p95": 1468.0,
+            "p99": 1469.0
+          },
+          "frame": {
+            "max_ms": 17.253,
+            "mean_ms": 9.40663160987074,
+            "p95_ms": 12.25,
+            "p99_ms": 14.419
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 2.17700004577637,
+            "mean_ms": 1.53395358452926,
+            "p95_ms": 1.59700000286102,
+            "p99_ms": 1.76499998569489
+          },
+          "label": "p1-r1",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 106.307979463197,
+          "measured_s": 16.003597,
+          "msaa": 1,
+          "physics_tick_cpu": {
+            "max_ms": 5.324,
+            "mean_ms": 1.79569768518519,
+            "p95_ms": 3.291,
+            "p99_ms": 4.369
+          },
+          "physics_warmup_s": 2,
+          "preset": "medium",
+          "primitives": {
+            "max": 7638437.0,
+            "mean": 7590873.15746181,
+            "p95": 7628833.0,
+            "p99": 7638437.0
+          },
+          "render_scale": 0.850000023841858,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 1.28600001335144,
+            "mean_ms": 0.819625735177837,
+            "p95_ms": 0.86599999666214,
+            "p99_ms": 0.957000017166138
+          },
+          "samples": 1702,
+          "ssao": true,
+          "ssil": false,
+          "ssr": false,
+          "video_memory_bytes": {
+            "max": 736692480.0,
+            "mean": 736683126.101058,
+            "p95": 736692480.0,
+            "p99": 736692480.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        }
+      ],
+      "fps": {
+        "mean": 106.307979463197,
+        "min": 106.307979463197,
+        "max": 106.307979463197,
+        "stddev": null
+      },
+      "gpu_ms": {
+        "mean": 1.53395358452926,
+        "min": 1.53395358452926,
+        "max": 1.53395358452926,
+        "stddev": null
+      },
+      "p99_ms": {
+        "mean": 14.419,
+        "min": 14.419,
+        "max": 14.419,
+        "stddev": null
+      },
+      "engine_memory_bytes": {
+        "mean": 736692480.0,
+        "min": 736692480.0,
+        "max": 736692480.0,
+        "stddev": null
+      }
+    },
+    "2": {
+      "runs": 3,
+      "raw": [
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1489.0,
+            "mean": 1480.10005991612,
+            "p95": 1487.0,
+            "p99": 1488.0
+          },
+          "frame": {
+            "max_ms": 20.329,
+            "mean_ms": 9.59237327741162,
+            "p95_ms": 12.826,
+            "p99_ms": 15.022
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 3.68799996376038,
+            "mean_ms": 3.255156979438,
+            "p95_ms": 3.42300009727478,
+            "p99_ms": 3.45600008964539
+          },
+          "label": "p2-r1",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 104.249487700278,
+          "measured_s": 16.0009913333334,
+          "msaa": 2,
+          "physics_tick_cpu": {
+            "max_ms": 4.9,
+            "mean_ms": 1.8056949074074,
+            "p95_ms": 3.298,
+            "p99_ms": 4.426
+          },
+          "physics_warmup_s": 2,
+          "preset": "high",
+          "primitives": {
+            "max": 17273490.0,
+            "mean": 17179104.1953265,
+            "p95": 17263874.0,
+            "p99": 17273490.0
+          },
+          "render_scale": 1.0,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 1.64999997615814,
+            "mean_ms": 0.859123427257915,
+            "p95_ms": 0.908999979496002,
+            "p99_ms": 1.02900004386902
+          },
+          "samples": 1669,
+          "ssao": true,
+          "ssil": false,
+          "ssr": false,
+          "video_memory_bytes": {
+            "max": 1764070960.0,
+            "mean": 1764061561.67286,
+            "p95": 1764070960.0,
+            "p99": 1764070960.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        },
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1489.0,
+            "mean": 1480.11442193087,
+            "p95": 1487.0,
+            "p99": 1488.0
+          },
+          "frame": {
+            "max_ms": 25.277,
+            "mean_ms": 9.54041656734208,
+            "p95_ms": 12.762,
+            "p99_ms": 15.875
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 3.67899990081787,
+            "mean_ms": 3.24098509898203,
+            "p95_ms": 3.40100002288818,
+            "p99_ms": 3.45199990272522
+          },
+          "label": "p2-r2",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 104.817226055214,
+          "measured_s": 16.0042966666667,
+          "msaa": 2,
+          "physics_tick_cpu": {
+            "max_ms": 5.75,
+            "mean_ms": 1.79738194444444,
+            "p95_ms": 3.253,
+            "p99_ms": 4.381
+          },
+          "physics_warmup_s": 2,
+          "preset": "high",
+          "primitives": {
+            "max": 17273490.0,
+            "mean": 17179276.9988081,
+            "p95": 17263886.0,
+            "p99": 17273490.0
+          },
+          "render_scale": 1.0,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 2.10599994659424,
+            "mean_ms": 0.854297972975812,
+            "p95_ms": 0.910000026226044,
+            "p99_ms": 1.15900003910065
+          },
+          "samples": 1678,
+          "ssao": true,
+          "ssil": false,
+          "ssr": false,
+          "video_memory_bytes": {
+            "max": 1764070960.0,
+            "mean": 1764061525.12038,
+            "p95": 1764070960.0,
+            "p99": 1764070960.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        },
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1489.0,
+            "mean": 1480.06175771971,
+            "p95": 1487.0,
+            "p99": 1488.0
+          },
+          "frame": {
+            "max_ms": 23.155,
+            "mean_ms": 9.5081526128266,
+            "p95_ms": 12.579,
+            "p99_ms": 15.29
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 3.69199991226196,
+            "mean_ms": 3.2430279090682,
+            "p95_ms": 3.40700006484985,
+            "p99_ms": 3.45600008964539
+          },
+          "label": "p2-r3",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 105.172901689755,
+          "measured_s": 16.0056533333333,
+          "msaa": 2,
+          "physics_tick_cpu": {
+            "max_ms": 5.589,
+            "mean_ms": 1.8009,
+            "p95_ms": 3.279,
+            "p99_ms": 4.438
+          },
+          "physics_warmup_s": 2,
+          "preset": "high",
+          "primitives": {
+            "max": 17273490.0,
+            "mean": 17178823.8824228,
+            "p95": 17263874.0,
+            "p99": 17273490.0
+          },
+          "render_scale": 1.0,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 2.08800005912781,
+            "mean_ms": 0.849052850112779,
+            "p95_ms": 0.898999989032745,
+            "p99_ms": 1.00999999046326
+          },
+          "samples": 1684,
+          "ssao": true,
+          "ssil": false,
+          "ssr": false,
+          "video_memory_bytes": {
+            "max": 1764070960.0,
+            "mean": 1764061540.72209,
+            "p95": 1764070960.0,
+            "p99": 1764070960.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        }
+      ],
+      "fps": {
+        "mean": 104.746538481749,
+        "min": 104.249487700278,
+        "max": 105.172901689755,
+        "stddev": 0.4657476771517316
+      },
+      "gpu_ms": {
+        "mean": 3.24638999582941,
+        "min": 3.24098509898203,
+        "max": 3.255156979438,
+        "stddev": 0.007660826943418333
+      },
+      "p99_ms": {
+        "mean": 15.395666666666667,
+        "min": 15.022,
+        "max": 15.875,
+        "stddev": 0.4362067552587114
+      },
+      "engine_memory_bytes": {
+        "mean": 1764070960.0,
+        "min": 1764070960.0,
+        "max": 1764070960.0,
+        "stddev": 0.0
+      }
+    },
+    "3": {
+      "runs": 1,
+      "raw": [
+        {
+          "contacts": 26,
+          "draw_calls": {
+            "max": 1656.0,
+            "mean": 1648.15680292862,
+            "p95": 1654.0,
+            "p99": 1655.0
+          },
+          "frame": {
+            "max_ms": 17.731,
+            "mean_ms": 9.76820256253813,
+            "p95_ms": 12.702,
+            "p99_ms": 14.472
+          },
+          "gpu": "NVIDIA GeForce RTX 5080",
+          "gpu_render_ms": {
+            "max_ms": 6.34800004959106,
+            "mean_ms": 5.91154362414944,
+            "p95_ms": 6.08699989318848,
+            "p99_ms": 6.18499994277954
+          },
+          "label": "p3-r1",
+          "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+          "mean_fps": 102.372979429715,
+          "measured_s": 16.0037466666667,
+          "msaa": 3,
+          "physics_tick_cpu": {
+            "max_ms": 4.846,
+            "mean_ms": 1.80036342592593,
+            "p95_ms": 3.291,
+            "p99_ms": 4.362
+          },
+          "physics_warmup_s": 2,
+          "preset": "ultra",
+          "primitives": {
+            "max": 28413225.0,
+            "mean": 28158525.0433191,
+            "p95": 28281194.0,
+            "p99": 28343318.0
+          },
+          "render_scale": 1.0,
+          "renderer": "forward_plus",
+          "renderer_cpu_ms": {
+            "max_ms": 1.19500005245209,
+            "mean_ms": 0.945760830536785,
+            "p95_ms": 0.999000012874603,
+            "p99_ms": 1.05999994277954
+          },
+          "samples": 1639,
+          "ssao": true,
+          "ssil": true,
+          "ssr": true,
+          "video_memory_bytes": {
+            "max": 2404283440.0,
+            "mean": 2404274025.17633,
+            "p95": 2404283440.0,
+            "p99": 2404283440.0
+          },
+          "warmup_s": 4,
+          "window_resolution": "(1920, 1080)"
+        }
+      ],
+      "fps": {
+        "mean": 102.372979429715,
+        "min": 102.372979429715,
+        "max": 102.372979429715,
+        "stddev": null
+      },
+      "gpu_ms": {
+        "mean": 5.91154362414944,
+        "min": 5.91154362414944,
+        "max": 5.91154362414944,
+        "stddev": null
+      },
+      "p99_ms": {
+        "mean": 14.472,
+        "min": 14.472,
+        "max": 14.472,
+        "stddev": null
+      },
+      "engine_memory_bytes": {
+        "mean": 2404283440.0,
+        "min": 2404283440.0,
+        "max": 2404283440.0,
+        "stddev": null
+      }
+    }
+  },
+  "limits": [
+    "Benchmarks on RTX 5080, not emulated low-end hardware.",
+    "High: three repeats; other presets: one descriptive run each.",
+    "Engine resource cache can retain allocations between scenes.",
+    "Online tests are loopback host/guest, not Internet latency tests.",
+    "Only the pilot slot and two male crowd variants use scan anatomy."
+  ],
+  "update_preservation": {
+    "selective_fixtures": 7,
+    "result": "PASS",
+    "logs": [
+      ".runtime/graphics89-selective-update.stdout.log",
+      ".runtime/graphics89-update-data.stdout.log"
+    ]
+  }
+}

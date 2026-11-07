@@ -51,7 +51,7 @@ func build():
 	# Respect club pigment and its optional differently coloured half.
 	if not arena.home_club_id.is_empty():
 		var profile: Dictionary=preload("res://src/arena_profiles.gd").profile(arena.home_club_id)
-		if profile.has("second_half"):arena.home_half.material_override.albedo_color=Color(profile.second_half).srgb_to_linear()
+		if profile.has("second_half"):arena.home_half.material_override.albedo_color=preload("res://src/arena_branding.gd").pigment(profile.second_half)
 	architecture()
 	probe=ReflectionProbe.new();probe.name="StaticArenaReflection85";probe.position=Vector3(0,3,0);probe.size=Vector3(24,10,32)
 	probe.origin_offset=Vector3(0,1,0);probe.interior=true;probe.box_projection=true;probe.intensity=.62;probe.cull_mask=1;probe.max_distance=36
@@ -79,6 +79,8 @@ func build():
 	built=true
 	set_quality(settings)
 	refresh_palette()
+	if not "--graphics-baseline85" in OS.get_cmdline_user_args():
+		var revision=load("res://src/visual_graphics86.gd").new();add_child(revision);revision.configure(self)
 func refresh_palette():
 	var game=arena.get_parent()
 	if game.players.size()!=12:return
@@ -152,3 +154,5 @@ func set_quality(values: Dictionary):
 	for light in court_lights:light.visible=level>0
 	for fill in bounce_lights:fill.shadow_enabled=false;fill.visible=level>0
 	world.environment.ambient_light_energy=.42 if level==0 else .38
+	var revision=get_node_or_null("VisualUpgrade86")
+	if revision!=null:revision.quality(values)

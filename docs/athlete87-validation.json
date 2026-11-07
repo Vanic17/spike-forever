@@ -1,0 +1,166 @@
+{
+  "pass": true,
+  "published": false,
+  "one_athlete_only": true,
+  "lighting_identical": true,
+  "pose_identical": true,
+  "protected_files_unchanged": 179,
+  "changed_existing_source": [
+    "src/player_appearance.gd",
+    "src/visual_graphics86.gd"
+  ],
+  "views": [
+    "face",
+    "profile",
+    "body",
+    "wide",
+    "hands",
+    "clay"
+  ],
+  "resolution": [
+    1920,
+    1080
+  ],
+  "tests": {
+    "bone_count": 115,
+    "checks": 6370603,
+    "gameplay_state_unchanged": true,
+    "pass": true,
+    "pilot_count": 1,
+    "pose_samples": 204365,
+    "scope": "presentation only; skinned vertex samples across seven existing actions; other eleven athlete heads unchanged",
+    "shoe_color_variants": 7
+  },
+  "geometry": {
+    "head_source": "SK_Char_Head_Tier1_M_Perrin, local licensed archive",
+    "method": "different anatomical head, refined hand skin and garment folds, individually swept opaque hair and beard fibers",
+    "parts": {
+      "beard": {
+        "bounds": "[P: (-0.06944, 1.616441, 0.023702), S: (0.139734, 0.109521, 0.089328)]",
+        "surfaces": 1,
+        "triangles": 99810
+      },
+      "beard_strands": 5545,
+      "body": {
+        "bounds": "[P: (-0.643354, 0.121287, -0.121164), S: (1.286707, 1.413897, 0.372574)]",
+        "surfaces": 1,
+        "triangles": 29888
+      },
+      "cloth": {
+        "bounds": "[P: (-0.332523, 0.674809, -0.155412), S: (0.664092, 0.948966, 0.302286)]",
+        "surfaces": 1,
+        "triangles": 15496
+      },
+      "eyes": {
+        "bounds": "[P: (-0.049851, 1.75904, 0.054451), S: (0.099701, 0.032915, 0.028221)]",
+        "surfaces": 1,
+        "triangles": 3200
+      },
+      "hair": {
+        "bounds": "[P: (-0.085014, 1.727662, -0.122832), S: (0.17012, 0.178779, 0.211768)]",
+        "surfaces": 1,
+        "triangles": 211062
+      },
+      "hair_strands": 11442,
+      "head": {
+        "bounds": "[P: (-0.103261, 1.520968, -0.119242), S: (0.206354, 0.374159, 0.246155)]",
+        "surfaces": 1,
+        "triangles": 30292
+      },
+      "lashes": {
+        "bounds": "[P: (-0.051597, 1.765723, 0.071369), S: (0.104329, 0.01713, 0.014707)]",
+        "surfaces": 1,
+        "triangles": 1888
+      },
+      "nails": {
+        "bounds": "[P: (-0.646888, 0.939333, 0.156549), S: (1.290422, 0.073454, 0.098716)]",
+        "surfaces": 1,
+        "triangles": 240
+      },
+      "shoes": {
+        "bounds": "[P: (-0.273858, -0.005434, -0.122743), S: (0.547716, 0.163189, 0.303096)]",
+        "surfaces": 1,
+        "triangles": 2036
+      }
+    },
+    "seed": 87019
+  },
+  "performance": {
+    "before": {
+      "fps": {
+        "mean": 105.75465457782467,
+        "min": 105.247430775923,
+        "max": 106.698917893059,
+        "stddev": 0.8185086224124283
+      },
+      "p99_ms": {
+        "mean": 14.793666666666667,
+        "min": 14.462,
+        "max": 15.019,
+        "stddev": 0.2933297348264125
+      },
+      "gpu_ms": {
+        "mean": 2.33217482330666,
+        "min": 2.32678410379064,
+        "max": 2.33567330317977,
+        "stddev": 0.004737076587366687
+      },
+      "memory_bytes": {
+        "mean": 1414584640.0,
+        "min": 1414584640.0,
+        "max": 1414584640.0,
+        "stddev": 0.0
+      },
+      "draw_calls": {
+        "mean": 1455.0931409207167,
+        "min": 1455.08540925267,
+        "max": 1455.10326409496,
+        "stddev": 0.009164514428879162
+      },
+      "primitives": {
+        "mean": 5652753.6776022995,
+        "min": 5652727.2004745,
+        "max": 5652795.24451039,
+        "stddev": 36.44549090017564
+      }
+    },
+    "after": {
+      "fps": {
+        "mean": 105.79181723669133,
+        "min": 105.000031543734,
+        "max": 106.39959514423,
+        "stddev": 0.7176968139676738
+      },
+      "p99_ms": {
+        "mean": 14.892333333333333,
+        "min": 14.836,
+        "max": 14.966,
+        "stddev": 0.06671081871280898
+      },
+      "gpu_ms": {
+        "mean": 2.50820190009782,
+        "min": 2.50509605003092,
+        "max": 2.51301232955068,
+        "stddev": 0.004224460145512369
+      },
+      "memory_bytes": {
+        "mean": 1468700848.0,
+        "min": 1468700848.0,
+        "max": 1468700848.0,
+        "stddev": 0.0
+      },
+      "draw_calls": {
+        "mean": 1463.0940598611833,
+        "min": 1463.08721272834,
+        "max": 1463.10275983558,
+        "stddev": 0.007937436755542829
+      },
+      "primitives": {
+        "mean": 6966538.032589553,
+        "min": 6966524.10901591,
+        "max": 6966556.13211979,
+        "stddev": 16.414894322681533
+      }
+    }
+  }
+}

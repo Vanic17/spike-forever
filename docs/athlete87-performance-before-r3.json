@@ -1,0 +1,61 @@
+{
+  "contacts": 26,
+  "draw_calls": {
+    "max": 1464.0,
+    "mean": 1455.09074941452,
+    "p95": 1462.0,
+    "p99": 1463.0
+  },
+  "frame": {
+    "max_ms": 17.441,
+    "mean_ms": 9.3721662763466,
+    "p95_ms": 12.408,
+    "p99_ms": 14.462
+  },
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "gpu_render_ms": {
+    "max_ms": 2.73399996757507,
+    "mean_ms": 2.33567330317977,
+    "p95_ms": 2.51699995994568,
+    "p99_ms": 2.54500007629395
+  },
+  "label": "before-r3",
+  "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
+  "mean_fps": 106.698917893059,
+  "measured_s": 16.0008693333333,
+  "msaa": 2,
+  "physics_tick_cpu": {
+    "max_ms": 4.949,
+    "mean_ms": 1.79501620370371,
+    "p95_ms": 3.28,
+    "p99_ms": 4.386
+  },
+  "physics_warmup_s": 2,
+  "preset": "high",
+  "primitives": {
+    "max": 5688949.0,
+    "mean": 5652738.58782201,
+    "p95": 5679333.0,
+    "p99": 5688949.0
+  },
+  "render_scale": 1.0,
+  "renderer": "forward_plus",
+  "renderer_cpu_ms": {
+    "max_ms": 1.65600001811981,
+    "mean_ms": 0.810271077782823,
+    "p95_ms": 0.855000019073486,
+    "p99_ms": 0.940999984741211
+  },
+  "samples": 1708,
+  "ssao": true,
+  "ssil": false,
+  "ssr": false,
+  "video_memory_bytes": {
+    "max": 1414584640.0,
+    "mean": 1414575256.27166,
+    "p95": 1414584640.0,
+    "p99": 1414584640.0
+  },
+  "warmup_s": 4,
+  "window_resolution": "(1920, 1080)"
+}

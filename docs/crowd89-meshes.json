@@ -1,0 +1,293 @@
+{
+  "levels": [
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 434,
+      "variant": 0
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1736,
+      "variant": 0
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3472,
+      "variant": 0
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 0
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 428,
+      "variant": 1
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1712,
+      "variant": 1
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3424,
+      "variant": 1
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 1
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 424,
+      "variant": 2
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1696,
+      "variant": 2
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3392,
+      "variant": 2
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 2
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 430,
+      "variant": 3
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1720,
+      "variant": 3
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3440,
+      "variant": 3
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 3
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 476,
+      "variant": 4
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1552,
+      "variant": 4
+    },
+    {
+      "level": 2,
+      "scan_head": true,
+      "triangles": 14977,
+      "variant": 4
+    },
+    {
+      "level": 3,
+      "scan_head": true,
+      "triangles": 17304,
+      "variant": 4
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 502,
+      "variant": 5
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1608,
+      "variant": 5
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 4016,
+      "variant": 5
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7114,
+      "variant": 5
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 456,
+      "variant": 6
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1824,
+      "variant": 6
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3648,
+      "variant": 6
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7114,
+      "variant": 6
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 480,
+      "variant": 7
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1560,
+      "variant": 7
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3840,
+      "variant": 7
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7114,
+      "variant": 7
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 436,
+      "variant": 8
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1744,
+      "variant": 8
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3488,
+      "variant": 8
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 8
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 478,
+      "variant": 9
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1552,
+      "variant": 9
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3824,
+      "variant": 9
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7114,
+      "variant": 9
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 434,
+      "variant": 10
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1736,
+      "variant": 10
+    },
+    {
+      "level": 2,
+      "scan_head": false,
+      "triangles": 3472,
+      "variant": 10
+    },
+    {
+      "level": 3,
+      "scan_head": false,
+      "triangles": 7254,
+      "variant": 10
+    },
+    {
+      "level": 0,
+      "scan_head": false,
+      "triangles": 478,
+      "variant": 11
+    },
+    {
+      "level": 1,
+      "scan_head": false,
+      "triangles": 1568,
+      "variant": 11
+    },
+    {
+      "level": 2,
+      "scan_head": true,
+      "triangles": 14969,
+      "variant": 11
+    },
+    {
+      "level": 3,
+      "scan_head": true,
+      "triangles": 17304,
+      "variant": 11
+    }
+  ],
+  "pass": true
+}

@@ -80,7 +80,7 @@ func show_page(index: int):
 		add_option("crowd","Densità pubblico",[["Ridotto",0],["Medio",1],["Completo",2]])
 		add_option("anisotropy","Filtro anisotropico",[["Disattivato",0],["2×",1],["4×",2],["8×",3],["16×",4]])
 		add_option("arena_lighting","Illuminazione del palazzetto",[["Essenziale",0],["Media",1],["Alta",2],["Ultra",3]])
-		add_option("material_detail","Dettaglio materiali",[["Essenziale",0],["Medio",1],["Alto",2],["Ultra",3]])
+		add_option("material_detail","Modelli e materiali",[["Essenziale",0],["Medio",1],["Alto",2],["Ultra",3]])
 		add_option("reflections","Riflessi ambientali statici",[["Disattivati",0],["Attivati",1]])
 		fields.preset.item_selected.connect(func(_i):
 			var selected: int=fields.preset.get_selected_metadata()

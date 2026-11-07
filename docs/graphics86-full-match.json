@@ -1,0 +1,478 @@
+{
+  "contacts": 95,
+  "frames": 31153,
+  "frames_over_25ms": 0,
+  "frames_over_50ms": 0,
+  "game_seconds": 231.983333333287,
+  "mean_frame_ms": 7.31822951240653,
+  "p99_frame_ms": 12.252,
+  "pass": true,
+  "peak_video_memory_bytes": 1414254208,
+  "points": 17,
+  "preset": "high",
+  "real_seconds": 231.991991666667,
+  "replay": "validated separately; disabled for this full-match soak",
+  "resolution": "(1920, 1080)",
+  "result": {
+    "complete": true,
+    "conditions": {
+      "acqua-santanna-cuneo-01": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-02": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-03": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-04": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-05": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-06": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-07": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-08": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-09": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-10": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-11": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-12": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-13": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "acqua-santanna-cuneo-14": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-01": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-02": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-03": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-04": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-05": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-06": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-07": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-08": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-09": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-10": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-11": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-12": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-13": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      },
+      "cucine-lube-civitanova-21": {
+        "fatigue": 0.0,
+        "form": 0.0,
+        "injury_until": ""
+      }
+    },
+    "duration_minutes": 2.01492825334572,
+    "injuries": [],
+    "mvp": "acqua-santanna-cuneo-10",
+    "players": {
+      "acqua-santanna-cuneo-01": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 2,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 2,
+        "serve_errors": 0,
+        "sets": 11,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-02": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 6,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 2,
+        "receptions": 2,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 2,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-09": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 4,
+        "attack_kills": 4,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 4,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 1,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-10": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 4,
+        "attack_kills": 4,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 3,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 4,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 12,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-11": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 3,
+        "attack_kills": 3,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 2,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 3,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-12": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 2,
+        "attack_kills": 2,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 1,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 2,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 1,
+        "serve_errors": 0,
+        "sets": 1,
+        "sets_played": 1
+      },
+      "acqua-santanna-cuneo-14": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-01": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 2,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 13,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-02": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 4,
+        "attack_kills": 1,
+        "block_contacts": 3,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 1,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 1,
+        "serve_errors": 0,
+        "sets": 1,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-05": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 9,
+        "receptions": 14,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 2,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-08": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 1,
+        "attack_kills": 0,
+        "block_contacts": 0,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 1,
+        "serve_attempts": 1,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-10": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 0,
+        "attack_kills": 0,
+        "block_contacts": 1,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-11": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 7,
+        "attack_kills": 1,
+        "block_contacts": 1,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 1,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 0,
+        "sets_played": 1
+      },
+      "cucine-lube-civitanova-13": {
+        "aces": 0,
+        "appearances": 1,
+        "attack_attempts": 2,
+        "attack_kills": 0,
+        "block_contacts": 1,
+        "blocks": 0,
+        "digs": 0,
+        "fatigue_end": 0.0,
+        "form": 0.0,
+        "injury_until": "",
+        "points": 0,
+        "reception_perfect": 0,
+        "reception_positive": 0,
+        "receptions": 0,
+        "serve_attempts": 0,
+        "serve_errors": 0,
+        "sets": 1,
+        "sets_played": 1
+      }
+    },
+    "set_scores": [
+      [
+        15,
+        2
+      ]
+    ],
+    "sets": [
+      1,
+      0
+    ],
+    "source": "played",
+    "statistics_source": "measured",
+    "substitutions": [],
+    "team_stats": [
+      {
+        "aces": 0,
+        "attack_kills": 13,
+        "blocks": 0,
+        "serve_errors": 0
+      },
+      {
+        "aces": 0,
+        "attack_kills": 2,
+        "blocks": 0,
+        "serve_errors": 0
+      }
+    ]
+  },
+  "sets": [
+    1,
+    0
+  ],
+  "test_driver": "99% human attacks, normal CPU/serve/receive/set"
+}

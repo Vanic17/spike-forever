@@ -1,0 +1,69 @@
+{
+  "checks": 40,
+  "errors": [],
+  "pass": true,
+  "presets": [
+    {
+      "body_triangles": 7472,
+      "cloth_triangles": 3874,
+      "crowd_triangles": 147846,
+      "crowd_visible": 325,
+      "decor_batches": 0,
+      "floor_normal": false,
+      "head_triangles": 11356,
+      "level": 0,
+      "reflections": 0,
+      "render_scale": 0.670000016689301,
+      "skin_scattering": false,
+      "ssao": false,
+      "texture_width": 512
+    },
+    {
+      "body_triangles": 7472,
+      "cloth_triangles": 15496,
+      "crowd_triangles": 1178304,
+      "crowd_visible": 707,
+      "decor_batches": 8,
+      "floor_normal": true,
+      "head_triangles": 22712,
+      "level": 1,
+      "reflections": 0,
+      "render_scale": 0.850000023841858,
+      "skin_scattering": false,
+      "ssao": true,
+      "texture_width": 1024
+    },
+    {
+      "body_triangles": 29888,
+      "cloth_triangles": 15496,
+      "crowd_triangles": 7716554,
+      "crowd_visible": 1280,
+      "decor_batches": 12,
+      "floor_normal": true,
+      "head_triangles": 45424,
+      "level": 2,
+      "reflections": 1,
+      "render_scale": 1.0,
+      "skin_scattering": true,
+      "ssao": true,
+      "texture_width": 2048
+    },
+    {
+      "body_triangles": 29888,
+      "cloth_triangles": 61984,
+      "crowd_triangles": 11991360,
+      "crowd_visible": 1280,
+      "decor_batches": 12,
+      "floor_normal": true,
+      "head_triangles": 69194,
+      "level": 3,
+      "reflections": 1,
+      "render_scale": 1.0,
+      "skin_scattering": true,
+      "ssao": true,
+      "texture_width": 4096
+    }
+  ],
+  "rendered": true,
+  "scenery_proxies": 1401
+}
