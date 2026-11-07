@@ -168,6 +168,12 @@
     "preset": "Ultra",
     "textures": 0
   },
+  "reference": {
+    "eye": "(0.0, 6.3, 18.4)",
+    "focus": "(0.0, 0.7, -0.5)",
+    "fov": 42.0,
+    "path": "res://docs/graphics89-after-reference.png"
+  },
   "replay": {
     "eye": "(2.247476, 3.548203, 5.312362)",
     "focus": "(-3.352524, 1.648203, 1.812362)",

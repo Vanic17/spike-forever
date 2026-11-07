@@ -3,7 +3,8 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF083"
+const PROTOCOL="SF089"
+const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
 var menu
@@ -49,6 +50,10 @@ var local_charge_button:=""
 var local_charge_kind:=""
 var local_charge_released:=-1.0
 var local_charge_expiry:=0.0
+var sent_contexts89: Dictionary={}
+var pending_set89: Dictionary={}
+var applying_context89: Dictionary={}
+var rejected_commands89:=0
 
 func _ready() -> void:
 	multiplayer.peer_disconnected.connect(peer_left)
@@ -227,6 +232,7 @@ func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=
 	if local_side==1 and active: begin_local(selected,format,target,stats_enabled,fatigue_enabled)
 
 func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
+	sent_contexts89.clear();pending_set89.clear();applying_context89.clear();rejected_commands89=0
 	render_clock84=-1.0
 	game.render_smoother.reset(game)
 	for athlete in game.players:athlete.render_at_draw=DisplayServer.get_name()!="headless";athlete.pending_pose_dt=0
@@ -370,8 +376,9 @@ func _process(dt: float) -> void:
 func _physics_process(dt: float) -> void:
 	if not playing or (game.replay!=null and game.replay.active): return
 	send_clock+=dt
-	if send_clock<1.0/30.0: return
-	send_clock=0
+	var interval: float=1.0/60.0 if authority() else 1.0/30.0
+	if send_clock<interval: return
+	send_clock=fmod(send_clock,interval)
 	if authority():
 		if guest!=0:
 			var packet:=State.encode(State.capture(game)); snapshot_max_bytes=maxi(snapshot_max_bytes,packet.size())
@@ -411,6 +418,7 @@ func snapshot_piece(seq: int, part: int, total: int, packet: PackedByteArray) ->
 
 func capture_input(event: InputEvent) -> void:
 	if not playing: return
+	if event.is_echo():get_viewport().set_input_as_handled();return
 	if (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_Y) or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_C):
 		game.camera_mode=0 if game.camera_mode==3 else 3; game.set_camera(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("start") or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_ESCAPE):
@@ -440,11 +448,17 @@ func accept_axes(side: int,value: Dictionary) -> void:
 func send_command(button: String, pressed: bool) -> void:
 	sequence+=1
 	var value:=axes(); inputs[local_side]=value
+	var context: Dictionary=Commands89.capture(game,local_side,button,pending_set89)
+	if pressed:
+		sent_contexts89[button]=context.duplicate()
+		if context.intent=="set":pending_set89=context.duplicate()
+	elif sent_contexts89.has(button):
+		context=sent_contexts89[button].duplicate();context.clock=game.clock_time;sent_contexts89.erase(button)
 	var held:=-1.0
 	if not authority():
 		var phase: String=game.phase.trim_prefix("CPU_")
 		var own: bool=(game.server if phase=="SERVE" else game.possession)==local_side
-		var chargeable: bool=own and button in ["action","alternate"] and (phase in ["SERVE","ATTACK"] or (phase=="SET" and game.armed and button=="action"))
+		var chargeable: bool=own and button in ["action","alternate"] and context.intent in ["serve","attack"]
 		if pressed and chargeable and local_charge_start<0:
 			local_charge_start=Time.get_ticks_usec()/1000000.0; local_charge_kind="serve" if phase=="SERVE" else "attack"; local_charge_button=button; local_charge_released=-1
 		elif not pressed and button==local_charge_button and local_charge_start>=0:
@@ -454,8 +468,8 @@ func send_command(button: String, pressed: bool) -> void:
 			if game.use_player_stats and local_charge_kind=="attack" and phase=="SET": held=0
 			local_charge_released=held/game.charge_seconds(local_charge_kind)
 			local_charge_expiry=Time.get_ticks_usec()/1000000.0+.25; local_charge_start=-1
-	if authority(): apply_command(0,sequence,button,pressed,value,held)
-	else: control_command.rpc_id(1,sequence,button,pressed,value,held)
+	if authority(): apply_command(0,sequence,button,pressed,value,held,context)
+	else: control_command.rpc_id(1,sequence,button,pressed,value,held,context)
 
 func sync_local_release() -> void:
 	if game.phase.trim_prefix("CPU_")!="ATTACK" or local_charge_release_seen==game.stats_release_clock: return
@@ -476,13 +490,19 @@ func predicted_charge() -> float:
 	return local_charge_released if Time.get_ticks_usec()/1000000.0<local_charge_expiry else -1
 
 @rpc("any_peer","call_remote","reliable",0)
-func control_command(seq: int, button: String, pressed: bool, value: Dictionary, held: float) -> void:
-	if authority() and multiplayer.get_remote_sender_id()==guest: apply_command(1,seq,button,pressed,value,held)
+func control_command(seq: int, button: String, pressed: bool, value: Dictionary, held: float,context: Dictionary) -> void:
+	if authority() and multiplayer.get_remote_sender_id()==guest: apply_command(1,seq,button,pressed,value,held,context)
 
-func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictionary,held: float=-1.0) -> void:
+func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictionary,held: float=-1.0,context: Dictionary={}) -> void:
 	if game.replay!=null and game.replay.active: return
-	if not playing or game.paused or seq<=last_sequence[side] or button not in ["action","alternate","dump"]: return
-	last_sequence[side]=seq; accept_axes(side,value)
+	if not playing or game.paused or side<0 or side>1 or seq<=last_sequence[side] or button not in ["action","alternate","dump"]: return
+	last_sequence[side]=seq
+	if context.is_empty():context=Commands89.capture(game,side,button)
+	# Set/reception releases do not commit a charge. A valid set request has
+	# already armed the setter, so its matching release is deliberately inert.
+	if not pressed and context.get("intent","") in ["set","receive","block","none"]:return
+	if not Commands89.valid(game,side,context):rejected_commands89+=1;return
+	accept_axes(side,value);applying_context89=context
 	game.input_team=side; game.apply_direction(inputs[side].get("direction",Vector2.ZERO),0)
 	if not pressed and side==1 and side==(game.server if game.phase=="SERVE" else game.possession) and is_finite(held) and held>=0:
 		# The local bar and released power use the same held duration. Network
@@ -492,7 +512,14 @@ func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictio
 		if game.attack_buffer_start>=0: game.attack_buffer_start=game.clock_time-clampf(held,0,30)
 	if pressed: game.press_action(button)
 	elif button==game.charge_button or game.attack_buffer_start>=0: game.release_action()
+	applying_context89={}
 	game.input_team=0
+
+func receive_remaining89(physical_remaining: float) -> float:
+	if applying_context89.get("intent","")!="receive":return physical_remaining
+	# Judge the guest's timing on the authoritative clock it was shown. This
+	# changes no ball position, collision, recovery reach or contact deadline.
+	return physical_remaining+clampf(game.clock_time-float(applying_context89.clock),0,.25)
 
 func apply_controls(dt: float) -> void:
 	if not authority(): return

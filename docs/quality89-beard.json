@@ -1,0 +1,23 @@
+{
+  "levels": [
+    {
+      "level": 0,
+      "triangles": 10104
+    },
+    {
+      "level": 1,
+      "triangles": 20208
+    },
+    {
+      "level": 2,
+      "triangles": 60624
+    },
+    {
+      "level": 3,
+      "triangles": 242472
+    }
+  ],
+  "method": "scan-fitted curved opaque fibres, 4-12 mm; same Head/Neck skinning",
+  "pass": true,
+  "strands": 10103
+}

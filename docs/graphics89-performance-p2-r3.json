@@ -2,59 +2,59 @@
   "contacts": 26,
   "draw_calls": {
     "max": 1489.0,
-    "mean": 1480.06175771971,
+    "mean": 1480.12996389892,
     "p95": 1487.0,
     "p99": 1488.0
   },
   "frame": {
-    "max_ms": 23.155,
-    "mean_ms": 9.5081526128266,
-    "p95_ms": 12.579,
-    "p99_ms": 15.29
+    "max_ms": 20.903,
+    "mean_ms": 9.63242418772562,
+    "p95_ms": 12.921,
+    "p99_ms": 15.416
   },
   "gpu": "NVIDIA GeForce RTX 5080",
   "gpu_render_ms": {
-    "max_ms": 3.69199991226196,
-    "mean_ms": 3.2430279090682,
-    "p95_ms": 3.40700006484985,
-    "p99_ms": 3.45600008964539
+    "max_ms": 3.73200011253357,
+    "mean_ms": 3.30481287761716,
+    "p95_ms": 3.63199996948242,
+    "p99_ms": 3.66799998283386
   },
   "label": "p2-r3",
   "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
-  "mean_fps": 105.172901689755,
-  "measured_s": 16.0056533333333,
+  "mean_fps": 103.816026008726,
+  "measured_s": 16.0039096666667,
   "msaa": 2,
   "physics_tick_cpu": {
-    "max_ms": 5.589,
-    "mean_ms": 1.8009,
-    "p95_ms": 3.279,
-    "p99_ms": 4.438
+    "max_ms": 5.079,
+    "mean_ms": 1.81745925925926,
+    "p95_ms": 3.373,
+    "p99_ms": 4.444
   },
   "physics_warmup_s": 2,
   "preset": "high",
   "primitives": {
-    "max": 17273490.0,
-    "mean": 17178823.8824228,
-    "p95": 17263874.0,
-    "p99": 17273490.0
+    "max": 17509410.0,
+    "mean": 17415223.0673887,
+    "p95": 17499806.0,
+    "p99": 17509410.0
   },
   "render_scale": 1.0,
   "renderer": "forward_plus",
   "renderer_cpu_ms": {
-    "max_ms": 2.08800005912781,
-    "mean_ms": 0.849052850112779,
-    "p95_ms": 0.898999989032745,
-    "p99_ms": 1.00999999046326
+    "max_ms": 2.46199989318848,
+    "mean_ms": 0.859900119502622,
+    "p95_ms": 0.906000018119812,
+    "p99_ms": 1.08399999141693
   },
-  "samples": 1684,
+  "samples": 1662,
   "ssao": true,
   "ssil": false,
   "ssr": false,
   "video_memory_bytes": {
-    "max": 1764070960.0,
-    "mean": 1764061540.72209,
-    "p95": 1764070960.0,
-    "p99": 1764070960.0
+    "max": 1767739664.0,
+    "mean": 1767730285.96871,
+    "p95": 1767739664.0,
+    "p99": 1767739664.0
   },
   "warmup_s": 4,
   "window_resolution": "(1920, 1080)"

@@ -2,59 +2,59 @@
   "contacts": 26,
   "draw_calls": {
     "max": 1656.0,
-    "mean": 1648.15680292862,
+    "mean": 1648.1987804878,
     "p95": 1654.0,
     "p99": 1655.0
   },
   "frame": {
-    "max_ms": 17.731,
-    "mean_ms": 9.76820256253813,
-    "p95_ms": 12.702,
-    "p99_ms": 14.472
+    "max_ms": 20.074,
+    "mean_ms": 9.76244512195121,
+    "p95_ms": 13.067,
+    "p99_ms": 15.118
   },
   "gpu": "NVIDIA GeForce RTX 5080",
   "gpu_render_ms": {
-    "max_ms": 6.34800004959106,
-    "mean_ms": 5.91154362414944,
-    "p95_ms": 6.08699989318848,
-    "p99_ms": 6.18499994277954
+    "max_ms": 6.63800001144409,
+    "mean_ms": 6.11850975635575,
+    "p95_ms": 6.42000007629395,
+    "p99_ms": 6.48199987411499
   },
   "label": "p3-r1",
   "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
-  "mean_fps": 102.372979429715,
-  "measured_s": 16.0037466666667,
+  "mean_fps": 102.433354298859,
+  "measured_s": 16.0072723333333,
   "msaa": 3,
   "physics_tick_cpu": {
-    "max_ms": 4.846,
-    "mean_ms": 1.80036342592593,
-    "p95_ms": 3.291,
-    "p99_ms": 4.362
+    "max_ms": 5.018,
+    "mean_ms": 1.81512731481481,
+    "p95_ms": 3.315,
+    "p99_ms": 4.407
   },
   "physics_warmup_s": 2,
   "preset": "ultra",
   "primitives": {
-    "max": 28413225.0,
-    "mean": 28158525.0433191,
-    "p95": 28281194.0,
-    "p99": 28343318.0
+    "max": 29617365.0,
+    "mean": 29354155.7439024,
+    "p95": 29485334.0,
+    "p99": 29547458.0
   },
   "render_scale": 1.0,
   "renderer": "forward_plus",
   "renderer_cpu_ms": {
-    "max_ms": 1.19500005245209,
-    "mean_ms": 0.945760830536785,
+    "max_ms": 2.37599992752075,
+    "mean_ms": 0.948668903003379,
     "p95_ms": 0.999000012874603,
-    "p99_ms": 1.05999994277954
+    "p99_ms": 1.08200001716614
   },
-  "samples": 1639,
+  "samples": 1640,
   "ssao": true,
   "ssil": true,
   "ssr": true,
   "video_memory_bytes": {
-    "max": 2404283440.0,
-    "mean": 2404274025.17633,
-    "p95": 2404283440.0,
-    "p99": 2404283440.0
+    "max": 2420802784.0,
+    "mean": 2420793451.46341,
+    "p95": 2420802784.0,
+    "p99": 2420802784.0
   },
   "warmup_s": 4,
   "window_resolution": "(1920, 1080)"

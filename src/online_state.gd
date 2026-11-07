@@ -1,10 +1,10 @@
 extends RefCounted
 ## Snapshots contain clocks/poses, never Skeleton3D resources or per-bone RPCs.
-const FIELDS=["match_condition","timing_results","use_player_stats","stats_set_grade","stats_release_flight","stats_release_clock","phase","phase_time","clock_time","server","possession","scores","sets","rotations","team_names","touches","receiver","setter","hitter","selected","planned_hitter","planned_direction","middle_wide","destination","set_dir","setter_action","setter_dump","setter_spike","setter_disguise","fast_set","pass_quality","set_quality","input_quality","charge","charge_start","charging","charge_button","armed","serve_type","toss_active","serve_adjusting","airborne","ball_pos","ball_vel","flight_target","flight_left","flight_spin","receive_deadline","receive_feedback","receive_feedback_left","hitter_action","attack_tip","block_count","block_commanded","block_time","block_quality","block_hand","feedback","feedback_left","point_reason","paused","match_finished","match_best_of","match_points","test_contacts","attack_serial","shot_serial","test_rallies"]
-const VISUAL=["clip_name","animation_time","animation_speed","looping","velocity","acceleration","ready_stance","relaxed_stance","block_ready_stance","middle_ready","middle_load","middle_load_age","travel_animation_name","travel_animation_time","travel_animation_speed","reach_action","reach_target","reach_weight","hand_adjust","look_target","visual_context","effort","setting_yaw","dive_yaw","wrist_tip_variant","post_point","power_transfer_from","power_transfer_start","body_lean","idle_time"]
+const FIELDS=["rally_serial","match_condition","timing_results","use_player_stats","stats_set_grade","stats_release_flight","stats_release_clock","phase","phase_time","clock_time","server","possession","scores","sets","rotations","team_names","touches","receiver","setter","hitter","selected","planned_hitter","planned_direction","middle_wide","destination","set_dir","setter_action","setter_dump","setter_spike","setter_disguise","fast_set","pass_quality","set_quality","input_quality","charge","charge_start","charging","charge_button","armed","serve_type","toss_active","serve_adjusting","airborne","ball_pos","ball_vel","flight_target","flight_left","flight_spin","receive_deadline","receive_feedback","receive_feedback_left","hitter_action","attack_tip","block_count","block_commanded","block_time","block_quality","block_hand","feedback","feedback_left","point_reason","paused","match_finished","match_best_of","match_points","test_contacts","attack_serial","shot_serial","test_rallies"]
+const VISUAL=["clip_name","animation_time","animation_speed","looping","velocity","acceleration","ready_stance","relaxed_stance","block_ready_stance","middle_ready","middle_load","middle_load_age","pin_reference_load","travel_animation_name","travel_animation_time","travel_animation_speed","reach_action","reach_target","reach_weight","hand_adjust","look_target","visual_context","effort","setting_yaw","dive_yaw","wrist_tip_variant","post_point","power_transfer_from","power_transfer_start","body_lean","idle_time"]
 const NAMED=["clip_name","travel_animation_name","reach_action","wrist_tip_variant"]
 const VECTOR_FIELDS=["ball_pos","ball_vel","flight_target","flight_spin","velocity","acceleration","reach_target","look_target","power_transfer_from"]
-const FLOAT_FIELDS=["stats_release_flight","stats_release_clock","phase_time","clock_time","pass_quality","set_quality","input_quality","charge","charge_start","flight_left","receive_deadline","receive_feedback_left","block_time","block_quality","block_hand","feedback_left","animation_time","animation_speed","middle_load","middle_load_age","travel_animation_time","travel_animation_speed","reach_weight","hand_adjust","effort","setting_yaw","dive_yaw","power_transfer_start","idle_time"]
+const FLOAT_FIELDS=["pin_reference_load","stats_release_flight","stats_release_clock","phase_time","clock_time","pass_quality","set_quality","input_quality","charge","charge_start","flight_left","receive_deadline","receive_feedback_left","block_time","block_quality","block_hand","feedback_left","animation_time","animation_speed","middle_load","middle_load_age","travel_animation_time","travel_animation_speed","reach_weight","hand_adjust","effort","setting_yaw","dive_yaw","power_transfer_start","idle_time"]
 static var names: Array=[]
 static var name_ids: Dictionary={}
 
@@ -82,7 +82,7 @@ static func valid(value: Dictionary) -> bool:
 
 static func presentation_time84(session,dt: float,now: float=-1.0) -> float:
 	var latest: Dictionary=session.buffered[-1]
-	var target: float=float(latest.clock_time)+maxf(0,(Time.get_ticks_msec()/1000.0 if now<0 else now)-float(latest.arrived))-.055
+	var target: float=float(latest.clock_time)+maxf(0,(Time.get_ticks_msec()/1000.0 if now<0 else now)-float(latest.arrived))-.025
 	if session.render_clock84<0 or absf(target-session.render_clock84)>2:
 		session.render_clock84=target
 	else:
@@ -102,24 +102,40 @@ static func render(session,dt: float) -> void:
 		if float(item.clock_time)>=time: b=item; break
 	var blend:=clampf((time-float(a.clock_time))/maxf(.001,float(b.clock_time)-float(a.clock_time)),0,1)
 	if latest.paused: a=latest; b=latest; blend=1
+	# Discrete events belong to the presentation time, never to a future
+	# bracket. Previously a SET ball could be drawn with ATTACK controls/pose.
+	var sample: Dictionary=b if blend>=.99999 else a
+	if a.rally_serial!=b.rally_serial:
+		if blend<.99999:b=a;blend=0
+		else:a=b;blend=1
 	var g=session.game
-	for key in FIELDS: g.set(key,b[key])
+	for key in FIELDS: g.set(key,sample[key])
 	g.clock_time=lerpf(float(a.clock_time),float(b.clock_time),blend)
+	g.phase_time=float(sample.phase_time)+maxf(0,g.clock_time-float(sample.clock_time))
 	g.ball_pos=a.ball_pos.lerp(b.ball_pos,blend); g.ball.position=g.ball_pos
 	g.ball.quaternion=a.rotation.slerp(b.rotation,blend)
 	g.shadow.position=Vector3(g.ball_pos.x,.034,g.ball_pos.z); g.shadow.scale=Vector3.ONE*(1+maxf(0,g.ball_pos.y)*.06)
-	g.marker.visible=b.marker_visible; g.marker.position=b.marker
+	g.marker.visible=sample.marker_visible; g.marker.position=sample.marker
 	for i in 12:
-		var p=g.players[i]; var before: Dictionary=a.players[i]; var shown: Dictionary=b.players[i]
+		var p=g.players[i]; var before: Dictionary=a.players[i]; var upcoming: Dictionary=b.players[i];var shown: Dictionary=sample.players[i]
 		for action in shown.variants:
 			if p.variant_names.get(action)!=shown.variants[action]: p.select_variant(action,shown.variants[action])
 		if p.clip_name!=shown.clip_name: p.play(shown.clip_name,shown.animation_speed,shown.looping)
 		for key in VISUAL: p.set(key,shown[key])
-		if before.clip_name==shown.clip_name and before.variants.get(shown.clip_name)==shown.variants.get(shown.clip_name) and absf(float(shown.animation_time)-float(before.animation_time))<.3:
-			p.animation_time=lerpf(before.animation_time,shown.animation_time,blend)
-		p.position=before.position.lerp(shown.position,blend); p.rotation.y=lerp_angle(before.yaw,shown.yaw,blend)
+		if before.clip_name==upcoming.clip_name and before.variants.get(before.clip_name)==upcoming.variants.get(upcoming.clip_name) and absf(float(upcoming.animation_time)-float(before.animation_time))<.3:
+			p.animation_time=lerpf(before.animation_time,upcoming.animation_time,blend)
+		if before.travel_animation_name==upcoming.travel_animation_name:p.travel_animation_time=lerpf(before.travel_animation_time,upcoming.travel_animation_time,blend)
+		for key in ["middle_load","middle_load_age","pin_reference_load","idle_time"]:p.set(key,lerpf(float(before[key]),float(upcoming[key]),blend))
+		p.body_lean=before.body_lean.lerp(upcoming.body_lean,blend)
+		p.position=before.position.lerp(upcoming.position,blend); p.rotation.y=lerp_angle(before.yaw,upcoming.yaw,blend)
 		if p.libero_active!=shown.libero: p.set_libero(shown.libero)
-		p.contact_scheduled=true; p.render_at_draw=false; p.tick(dt,i==g.display_selected(),true)
+		# Advance local transition blends, then draw the authoritative cursors.
+		# A second local movement/load tick must not lead the network ball.
+		var authored: Dictionary={}
+		for key in VISUAL:authored[key]=p.get(key)
+		p.contact_scheduled=true;p.render_at_draw=false;p.tick(dt,i==g.display_selected(),false)
+		for key in VISUAL:p.set(key,authored[key])
+		p.apply_pose(dt)
 	if g.test_contacts>session.last_contact:
 		if g.match_audio: g.match_audio.contact("attack" if g.phase in ["RECEIVE","CPU_RECEIVE"] else "receive",g.ball_pos,.7)
 		session.last_contact=g.test_contacts

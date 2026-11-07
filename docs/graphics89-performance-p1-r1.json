@@ -2,59 +2,59 @@
   "contacts": 26,
   "draw_calls": {
     "max": 1470.0,
-    "mean": 1461.10164512338,
+    "mean": 1461.05976586568,
     "p95": 1468.0,
     "p99": 1469.0
   },
   "frame": {
-    "max_ms": 17.253,
-    "mean_ms": 9.40663160987074,
-    "p95_ms": 12.25,
-    "p99_ms": 14.419
+    "max_ms": 18.968,
+    "mean_ms": 9.86571657424523,
+    "p95_ms": 13.29,
+    "p99_ms": 15.66
   },
   "gpu": "NVIDIA GeForce RTX 5080",
   "gpu_render_ms": {
-    "max_ms": 2.17700004577637,
-    "mean_ms": 1.53395358452926,
-    "p95_ms": 1.59700000286102,
-    "p99_ms": 1.76499998569489
+    "max_ms": 1.94200003147125,
+    "mean_ms": 1.48881762231931,
+    "p95_ms": 1.64800000190735,
+    "p99_ms": 1.78299999237061
   },
   "label": "p1-r1",
   "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
-  "mean_fps": 106.307979463197,
-  "measured_s": 16.003597,
+  "mean_fps": 101.361111732171,
+  "measured_s": 16.0053293333333,
   "msaa": 1,
   "physics_tick_cpu": {
-    "max_ms": 5.324,
-    "mean_ms": 1.79569768518519,
-    "p95_ms": 3.291,
-    "p99_ms": 4.369
+    "max_ms": 6.503,
+    "mean_ms": 1.83583148148148,
+    "p95_ms": 3.387,
+    "p99_ms": 4.555
   },
   "physics_warmup_s": 2,
   "preset": "medium",
   "primitives": {
-    "max": 7638437.0,
-    "mean": 7590873.15746181,
-    "p95": 7628833.0,
-    "p99": 7638437.0
+    "max": 7712693.0,
+    "mean": 7665036.2224276,
+    "p95": 7703077.0,
+    "p99": 7712693.0
   },
   "render_scale": 0.850000023841858,
   "renderer": "forward_plus",
   "renderer_cpu_ms": {
-    "max_ms": 1.28600001335144,
-    "mean_ms": 0.819625735177837,
-    "p95_ms": 0.86599999666214,
-    "p99_ms": 0.957000017166138
+    "max_ms": 1.76199996471405,
+    "mean_ms": 0.847942082549934,
+    "p95_ms": 0.944999992847443,
+    "p99_ms": 1.07700002193451
   },
-  "samples": 1702,
+  "samples": 1623,
   "ssao": true,
   "ssil": false,
   "ssr": false,
   "video_memory_bytes": {
-    "max": 736692480.0,
-    "mean": 736683126.101058,
-    "p95": 736692480.0,
-    "p99": 736692480.0
+    "max": 737828448.0,
+    "mean": 737818995.844732,
+    "p95": 737828448.0,
+    "p99": 737828448.0
   },
   "warmup_s": 4,
   "window_resolution": "(1920, 1080)"

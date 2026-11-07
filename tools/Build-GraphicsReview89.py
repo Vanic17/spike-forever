@@ -19,7 +19,8 @@ def digest(path):
 
 protected = read('.runtime/graphics86-baseline-protected.json')
 changes = [n for n, h in protected.items() if digest(ROOT / n).lower() != h.lower()]
-assert changes == ['version.json'], changes
+allowed_changes = {'version.json', 'src/main.gd', 'src/online_session.gd', 'src/online_state.gd'}
+assert set(changes) == allowed_changes, changes
 before = read('docs/athlete88-after-capture.json')
 after = read('docs/graphics89-after-capture.json')
 for key in ['teams', 'seed', 'phase', 'clock', 'ball', 'velocity', 'rng',
@@ -46,7 +47,7 @@ for suite in suites:
 
 reports = {}
 for name in ['presets', 'lifecycle', 'editor-tests', 'full-match',
-             'online-database', 'online-substitutions', 'online-replay']:
+             'online-database', 'online-substitutions', 'online-replay', 'online-contacts', 'online-jitter']:
     reports[name] = read(f'docs/graphics89-{name}.json')
     assert reports[name].get('pass', False), name
 collision = read('docs/graphics89-collisions-after.json')
@@ -71,10 +72,12 @@ for preset in range(4):
             'min': min(values), 'max': max(values),
             'stddev': statistics.stdev(values) if len(values) > 1 else None}
 report = {'pass': True, 'version': '0.89.0', 'integrated_in_main_game': True,
-          'protected_files_checked': len(protected), 'unchanged': len(protected) - 1,
-          'intentional_metadata_change': changes, 'pose_camera_lighting_identical_to_88': True,
+          'protected_files_checked': len(protected), 'unchanged': len(protected) - len(changes),
+          'intentional_changes': changes, 'simulation_change_scope': 'Online input envelopes, receive timing compensation and presentation; existing lower camera reframed; offline physics and contacts preserved', 'pose_camera_lighting_identical_to_88': True,
+          'additional_visual_camera_change': 'src/view_controls.gd, lower camera only; default and aiming axes unchanged',
           'core_suites': suites, 'reports': reports, 'collisions': collision,
           'performance': performance,
+          'online_command_tests': read('docs/online89-command-tests.json'),
           'limits': ['Benchmarks on RTX 5080, not emulated low-end hardware.',
                      'High: three repeats; other presets: one descriptive run each.',
                      'Engine resource cache can retain allocations between scenes.',
@@ -91,6 +94,7 @@ for name in report['update_preservation']['logs']:
         assert fixture_result['pass'] and len(fixture_result['cases']) == 7
     else:
         assert 'UPDATE75 PASS' in decoded
+assert report['online_command_tests']['pass']
 (DOCS / 'graphics89-validation.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
 
 page = '''<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Spike Forever 0.89 - confronto grafico</title>
@@ -99,6 +103,7 @@ page = '''<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewp
 <p>Immagini catturate dal gioco. Il confronto con il prototipo 0.88 mantiene identiche posa, camera, illuminazione, impostazioni Ultra e stato della simulazione. Il confronto storico con la 0.85 include anche le revisioni di illuminazione precedenti: non &egrave; una misura della sola geometria.</p>
 <select id="baseline" aria-label="Versione di confronto"><option value="88">Confronto controllato: prototipo 0.88</option><option value="85">Confronto storico: versione pubblicata 0.85</option></select><nav id="views"></nav>
 <div class="labels"><span id="oldLabel">PRIMA / PROTOTIPO 0.88</span><span>DOPO / GIOCO PRINCIPALE 0.89</span></div><div id="stage"><img id="old" alt="Prima"><img id="new" alt="Dopo"><div id="line"></div></div><input id="slider" type="range" min="0" max="100" value="50" aria-label="Divisore prima dopo">
+<h2>Visuale bassa, riferimento partita reale</h2><p>La visuale bassa esistente inquadra il parquet e i giocatori da una posizione pi&ugrave; vicina a quella televisiva da fondo campo. La visuale predefinita conserva la sua posizione.</p><img style="width:100%;border-radius:12px" src="graphics89-after-reference.png" alt="Visuale bassa e parquet a scala reale">
 <h2>Quattro preset, risorse realmente diverse</h2><p>Stessa scena, stesso stato di gioco. Basso riduce geometria, texture, densit&agrave; del pubblico, effetti e dettagli. Le impostazioni personalizzate restano disponibili.</p><nav id="presets"></nav><img id="quality" alt="Preset grafico"><p id="stats"></p>
 <table><thead><tr><th>Preset</th><th>Texture volto</th><th>Triangoli testa</th><th>Spettatori</th><th>GPU media</th><th>Memoria del motore</th></tr></thead><tbody>ROWS</tbody></table>
 <p>1920 &times; 1080, Forward+, RTX 5080. Alto: tre misure; gli altri: una misura descrittiva ciascuno. Non sono test di PC meno potenti. La memoria indicata &egrave; un'allocazione del motore, non la memoria totale del driver. La cache pu&ograve; trattenere risorse dopo un cambio di preset.</p>

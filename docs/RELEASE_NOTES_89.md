@@ -6,7 +6,10 @@ La nuova grafica è integrata nel gioco principale e si avvia dal normale esegui
 - Pubblico con mesh distinte per ogni preset, variazioni di carnagione e forma del viso. Nei livelli alti alcuni spettatori maschili usano la testa da scansione; gli altri mantengono i modelli originali, senza sostituire tutte le persone con lo stesso volto.
 - Modello da scansione integrato sul primo slot atleta; corpi e divise più dettagliati per gli altri giocatori e le riserve. Acconciature, barba, carnagione, nomi, numeri e maglie rimangono collegati al database. Scarpe differenziate.
 - Basso/Medio/Alto/Ultra modificano realmente mesh, capelli del pilota, vestiti, pubblico, texture, dettagli dell'ambiente, ombre, riflessi e scattering della pelle. I limiti di texture rimangono 512/1024/2048/native.
-- Nessuna modifica a fisica della palla, animazioni, controlli, IA, rotazioni o funzionamento del Campionato/Diventa un mito. L'aggiornamento conserva i dati personali e usa il sistema di download selettivo esistente.
+- Parquet con doghe da 18 cm, fibre e giunti a scala coerente fra le zone del campo; colori del pubblico corretti nello spazio lineare e sedute più scure. La visuale bassa esistente è stata riposizionata, mantenendo camera predefinita e assi dei comandi.
+- Barba piena del modello pilota ricostruita con fibre curve tridimensionali e quattro livelli di dettaglio. Il cambio squadra/aspetto preserva la texture corretta del volto e la carnagione del database.
+- Online: un comando di attacco non può più far saltare il muro avversario. I comandi trasportano azione, scambio e attacco di origine; quelli arrivati fuori contesto vengono scartati. Controlli, pose e contatti vengono presentati sullo stesso tempo della palla. Snapshot a 60 Hz, margine di presentazione di 25 ms e valutazione della ricezione sul clock mostrato al giocatore, con limiti fisici di contatto invariati.
+- Regole, rotazioni, fisica della palla, asset di animazione e mappature dei controlli conservati. L'aggiornamento conserva i dati personali e usa il download selettivo esistente. Nell'online entrambi i giocatori devono usare questa versione.
 
 [Rapporto e confronti](GRAPHICS_89.md) · [Attribuzione della scansione](../assets/art/athlete88/ATTRIBUTION.md).
 

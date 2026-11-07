@@ -1,6 +1,6 @@
 # Spike Forever
 
-**Versione 0.89.0:** nuova grafica integrata nell'avvio normale: ambiente, campo, attrezzature, pubblico e dettagli dei giocatori. I quattro preset scalano realmente geometria, densità del pubblico, texture, ombre ed effetti. [Novità e verifiche](docs/RELEASE_NOTES_89.md).
+**Versione 0.89.0:** grafica integrata, parquet a scala reale, pubblico e dettagli dei giocatori, visuale bassa rivista. I quattro preset scalano realmente geometria, pubblico, texture ed effetti. Corretti nell'online i comandi fuori fase, i salti del muro avversario e l'anticipo dei controlli/pose rispetto alla palla. [Novità e verifiche](docs/RELEASE_NOTES_89.md).
 
 La scansione della testa è di Lee Perry-Smith / Infinite-Realities, CC BY 3.0; conversioni McGuire, Cardenas e Keijiro. [Attribuzione e modifiche](assets/art/athlete88/ATTRIBUTION.md).
 

@@ -21,6 +21,7 @@ func configure(parent_revision):
 			if not entry.coach:attach_athlete(entry.actor)
 	pilot.shoes(arena.get_parent().players)
 	architecture();equipment();crowd_surfaces()
+	reference_finishes()
 	for node in arena.get_children():
 		if node is MultiMeshInstance3D and node.has_meta("spectators"):crowd_original[node]=node.multimesh.mesh
 	quality(base.settings)
@@ -94,13 +95,29 @@ func crowd_surfaces():
 	code=code.substr(0,end)+"\nif(eyes89>.5){vec2 p=(UV-vec2(.5))*1.9+vec2(.5);float iris=1.0-smoothstep(.465,.495,length(p-vec2(.5)));ALBEDO=mix(vec3(.78,.74,.69),texture(diffuse_map,clamp(p,vec2(.01),vec2(.99))).rgb,iris);ROUGHNESS=.18;SPECULAR=.45;}\n}"
 	shader.code=code
 	for material in arena.crowd_materials:material.shader=shader
+func reference_finishes():
+	# Material/wardrobe changes only: the court dimensions, club colours,
+	# spectator placement and existing response animations are preserved.
+	var palette: Array[Color]=[Color("20242b"),Color("253750"),Color("cfcec4"),Color("7c2730"),Color("183e38"),Color("636363"),Color("d9d5ca"),Color("bc8b48"),Color("465163"),Color("263e69"),Color("9aacae"),Color("423c37"),Color("e3dfd3"),Color("9b3334"),Color("314b58"),Color("595f53")]
+	var serial:=0
+	for node in arena.get_children():
+		if not node is MultiMeshInstance3D:continue
+		if node.has_meta("spectators"):
+			for i in node.multimesh.instance_count:
+				var choice:=posmod(serial*7+int(serial/13),palette.size())
+				# Instance colours are linear vertex data, unlike StandardMaterial
+				# source-colour uniforms. Convert explicitly to avoid washed-out shirts.
+				node.multimesh.set_instance_color(i,palette[choice].srgb_to_linear());serial+=1
+		elif node.material_override is StandardMaterial3D and node.material_override.albedo_texture==Assets.texture("T_Furn_PublicChairC_BaseColor.png"):
+			node.material_override.albedo_color=Color("39434b");node.material_override.roughness=.73;node.material_override.metallic_specular=.20
 func floor_material(material: StandardMaterial3D,level: int):
 	material.albedo_texture=Assets.texture("sport_floor89.png") if level>0 else null
 	material.normal_texture=Assets.texture("sport_normal89.png") if level>0 else null
-	material.normal_enabled=level>0;material.normal_scale=.15
+	material.normal_enabled=level>0;material.normal_scale=.12
+	material.uv1_scale=Vector3(5,9 if material==arena.court_material else 3,1)
 	material.roughness_texture=Assets.texture("sport_rough89.png") if level>0 else null
 	material.roughness_texture_channel=BaseMaterial3D.TEXTURE_CHANNEL_RED
-	material.roughness=.96 if level==0 else .98;material.metallic_specular=.30
+	material.roughness=.75 if level==0 else .83;material.metallic_specular=.28
 func quality(values: Dictionary):
 	quality_level=int(values.get("material_detail",2))
 	pilot.quality(quality_level)

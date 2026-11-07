@@ -11,11 +11,16 @@ func attach(player):
 func apply():
 	super.apply()
 	if not actor.has_meta("visual_quality89"):return
+	# The original appearance helper selects its own head atlas before this
+	# callback. Keep its skin tint, but restore the scan's different UV atlas
+	# whenever a roster, preset or edited identity is applied.
+	skin_material.albedo_texture=Assets.texture("lambertian.jpg")
 	var appearance: Dictionary=actor.libero_identity.get("appearance",{}) if actor.libero_active else actor.roster_identity.get("appearance",{})
 	appearance=actor.get_meta("visual_appearance89",appearance)
 	var source=load("res://src/player_appearance.gd")
 	var style: String=str(appearance.get("hair_style",appearance.get("hair_length","corti")))
 	var color: Color=source.COLORS.get(appearance.get("hair_color"),source.COLORS.marrone)
+	strand_material.vertex_color_use_as_albedo=false;strand_material.albedo_color=color.darkened(.10)
 	var hair=actor.body_parts.hair
 	if style=="pelato":hair.hide()
 	elif style not in ["corti","sfumati"]:
@@ -26,8 +31,8 @@ func apply():
 	var beard_style: String=str(appearance.get("beard","nessuna"))
 	if beard_style not in ["corta","piena"]:actor.body_parts.beard.hide()
 	elif beard_style=="piena":
-		var name: String=source.BEARDS.piena
-		source.assign(actor.body_parts.beard,actor,name,color);actor.body_parts.beard.mesh=load("res://assets/art/quality89/fit_"+name+".res")
+		actor.body_parts.beard.mesh=load("res://assets/art/quality89/beard_full%d.res"%detail)
+	actor.body_parts.beard.layers=actor.body_parts.head.layers
 	nails.visible=detail>=2
 	if seam_node!=null:seam_node.visible=detail>=2
 func quality(level: int):

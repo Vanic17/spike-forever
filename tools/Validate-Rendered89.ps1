@@ -1,3 +1,4 @@
+param([switch]$SkipCompletedPresetLifecycle)
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 Set-Location $root
@@ -13,8 +14,10 @@ function Run-Rendered89($name89,$arguments89,$timeout89=90000){
  if($p.ExitCode -ne 0 -or $errors89 -match 'ERROR:|SCRIPT ERROR|SHADER ERROR|Parse Error|remapped parameter not found' -or (Get-Content -Raw $out89) -notmatch 'PASS'){throw ('Failed '+$name89+'; inspect '+$err89)}
  Write-Output ('PASS '+$name89)
 }
-Run-Rendered89 'presets' @('--path','.','--script','tools/Test-Graphics89.gd')
-Run-Rendered89 'lifecycle' @('--path','.','--script','tools/Test-GraphicsLifecycle89.gd')
+if(!$SkipCompletedPresetLifecycle){
+ Run-Rendered89 'presets' @('--path','.','--script','tools/Test-Graphics89.gd')
+ Run-Rendered89 'lifecycle' @('--path','.','--script','tools/Test-GraphicsLifecycle89.gd')
+}
 Run-Rendered89 'capture' @('--path','.','--script','tools/Capture-Graphics89.gd','--','--label=after')
 foreach($preset89 in 0..3){
  $runs89=if($preset89 -eq 2){1..3}else{1..1}

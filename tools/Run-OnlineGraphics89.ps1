@@ -1,4 +1,4 @@
-param([ValidateSet('database','substitutions','replay')][string]$Case='database')
+param([ValidateSet('database','substitutions','replay','contacts','jitter')][string]$Case='database')
 $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot
 Set-Location $root
@@ -6,6 +6,8 @@ $definitions86=@{
  database=@{Script='Test-OnlineDB82.gd';Marker='ONLINE82 DATABASE PASS'}
  substitutions=@{Script='Test-OnlineSubstitution69.gd';Marker='ONLINE SUBSTITUTION69 PASS'}
  replay=@{Script='Test-OnlineReplay65.gd';Marker='ONLINE REPLAY66 PASS'}
+ contacts=@{Script='Test-OnlineContacts65.gd';Marker='ONLINE CONTACTS65 PASS'}
+ jitter=@{Script='Test-OnlineJitter89.gd';Marker='ONLINE CONTACTS65 PASS'}
 }
 $selected86=$definitions86[$Case]
 $processes86=@()

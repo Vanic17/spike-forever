@@ -2,59 +2,59 @@
   "contacts": 26,
   "draw_calls": {
     "max": 1489.0,
-    "mean": 1480.10005991612,
+    "mean": 1480.07822277847,
     "p95": 1487.0,
     "p99": 1488.0
   },
   "frame": {
-    "max_ms": 20.329,
-    "mean_ms": 9.59237327741162,
-    "p95_ms": 12.826,
-    "p99_ms": 15.022
+    "max_ms": 22.132,
+    "mean_ms": 10.0207071339174,
+    "p95_ms": 13.534,
+    "p99_ms": 16.59
   },
   "gpu": "NVIDIA GeForce RTX 5080",
   "gpu_render_ms": {
-    "max_ms": 3.68799996376038,
-    "mean_ms": 3.255156979438,
-    "p95_ms": 3.42300009727478,
-    "p99_ms": 3.45600008964539
+    "max_ms": 4.07200002670288,
+    "mean_ms": 3.47067584681123,
+    "p95_ms": 3.77600002288818,
+    "p99_ms": 3.86400008201599
   },
   "label": "p2-r1",
   "limits": "Real asynchronous 120Hz simulation and renderer. Fixed repeatable receive/set/pipe. One local run, not all match situations. VRAM is engine allocation, not driver-wide usage.",
-  "mean_fps": 104.249487700278,
-  "measured_s": 16.0009913333334,
+  "mean_fps": 99.7933565601642,
+  "measured_s": 16.0044116666667,
   "msaa": 2,
   "physics_tick_cpu": {
-    "max_ms": 4.9,
-    "mean_ms": 1.8056949074074,
-    "p95_ms": 3.298,
-    "p99_ms": 4.426
+    "max_ms": 5.931,
+    "mean_ms": 1.84054953703704,
+    "p95_ms": 3.407,
+    "p99_ms": 4.555
   },
   "physics_warmup_s": 2,
   "preset": "high",
   "primitives": {
-    "max": 17273490.0,
-    "mean": 17179104.1953265,
-    "p95": 17263874.0,
-    "p99": 17273490.0
+    "max": 17509410.0,
+    "mean": 17414763.9812265,
+    "p95": 17499794.0,
+    "p99": 17509410.0
   },
   "render_scale": 1.0,
   "renderer": "forward_plus",
   "renderer_cpu_ms": {
-    "max_ms": 1.64999997615814,
-    "mean_ms": 0.859123427257915,
-    "p95_ms": 0.908999979496002,
-    "p99_ms": 1.02900004386902
+    "max_ms": 2.03299999237061,
+    "mean_ms": 0.876788485632074,
+    "p95_ms": 0.962000012397766,
+    "p99_ms": 1.14900004863739
   },
-  "samples": 1669,
+  "samples": 1598,
   "ssao": true,
   "ssil": false,
   "ssr": false,
   "video_memory_bytes": {
-    "max": 1764070960.0,
-    "mean": 1764061561.67286,
-    "p95": 1764070960.0,
-    "p99": 1764070960.0
+    "max": 1767739664.0,
+    "mean": 1767730240.67084,
+    "p95": 1767739664.0,
+    "p99": 1767739664.0
   },
   "warmup_s": 4,
   "window_resolution": "(1920, 1080)"

@@ -3,7 +3,7 @@
     {
       "cycle": 1,
       "draw_calls": 1350.0,
-      "engine_video_memory": 1542196720.0,
+      "engine_video_memory": 1545865424.0,
       "presets": [
         0,
         1,
@@ -15,7 +15,7 @@
     {
       "cycle": 2,
       "draw_calls": 1350.0,
-      "engine_video_memory": 1677644592.0,
+      "engine_video_memory": 1681313296.0,
       "presets": [
         0,
         1,
@@ -27,7 +27,7 @@
     {
       "cycle": 3,
       "draw_calls": 1350.0,
-      "engine_video_memory": 1811692656.0,
+      "engine_video_memory": 1815361360.0,
       "presets": [
         0,
         1,

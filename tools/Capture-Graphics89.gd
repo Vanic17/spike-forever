@@ -68,6 +68,7 @@ func run():
 	for bone in game.players[0].skeleton.get_bone_count():bone_poses.append(game.players[0].skeleton.get_bone_pose(bone))
 	metadata.pose_hash=hash(var_to_bytes(bone_poses))
 	await shot("wide",Vector3(0,9.8,18.4),Vector3(0,.7,-.5),48)
+	await shot("reference",preload("res://src/view_controls.gd").origin(3),Vector3(0,.7,-.5),42)
 	var p=game.players[0];var head: Vector3=p.current_joint("Head")
 	await shot("face",head+p.global_basis*Vector3(.19,.0,1.04),head+Vector3(0,.01,0),30)
 	await shot("body",p.position+p.global_basis*Vector3(.8,1.1,4.3),p.position+Vector3(0,1.0,0),34)

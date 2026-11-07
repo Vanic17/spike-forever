@@ -1,0 +1,6 @@
+{
+  "cases": "stale receive/set/attack/block, wrong-team jump, first-tempo input buffering, receive clock, snapshot boundary and pose codec",
+  "checks": 29,
+  "failures": [],
+  "pass": true
+}

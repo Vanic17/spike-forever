@@ -417,23 +417,24 @@ func build_arena() -> void:
 
 func set_camera() -> void:
 	if network_match():
-		camera_mode=3 if camera_mode==3 else 0; camera.projection=Camera3D.PROJECTION_PERSPECTIVE; camera.fov=48
-		camera.position=Vector3(0,8.1 if camera_mode==3 else 9.8,18.4*(1 if local_team()==0 else -1)); camera_focus=Vector3(0,.7,0); camera.look_at(camera_focus); return
+		camera_mode=3 if camera_mode==3 else 0; camera.projection=Camera3D.PROJECTION_PERSPECTIVE; camera.fov=preload("res://src/view_controls.gd").field_of_view(camera_mode,phase)
+		camera.position=preload("res://src/view_controls.gd").framed_origin(camera_mode,phase);camera.position.z*=1 if local_team()==0 else -1; camera_focus=Vector3(0,.7,0); camera.look_at(camera_focus); return
 	camera.projection = Camera3D.PROJECTION_PERSPECTIVE
-	camera.fov = 48 if camera_mode in [0,3] else (40 if camera_mode==2 else 50)
-	camera.position = preload("res://src/view_controls.gd").origin(camera_mode)
+	camera.fov = preload("res://src/view_controls.gd").field_of_view(camera_mode,phase)
+	camera.position = preload("res://src/view_controls.gd").framed_origin(camera_mode,phase)
 	camera_focus = Vector3(0,0.7,0) if camera_mode==2 else Vector3(0, 0.7, -0.5)
 	camera.look_at(camera_focus)
 
 func update_camera(dt: float) -> void:
 	# Follow the sphere actually drawn on screen, on the same presentation clock.
 	var shown_ball: Vector3=ball.position
+	camera.fov=lerpf(camera.fov,preload("res://src/view_controls.gd").field_of_view(camera_mode,phase),1-exp(-4*dt))
 	if network_match():
 		var side:=1.0 if local_team()==0 else -1.0
-		var eye:=Vector3(0,8.1 if camera_mode==3 else 9.8,18.4*side)
+		var eye: Vector3=preload("res://src/view_controls.gd").framed_origin(camera_mode,phase);eye.z*=side
 		var focus:=Vector3(clampf(shown_ball.x*.09,-.4,.4),.7+maxf(0,shown_ball.y-3.2)*.04,0)
 		camera.position=camera.position.lerp(eye,1-exp(-3*dt)); camera_focus=camera_focus.lerp(focus,1-exp(-2.5*dt)); camera.look_at(camera_focus); return
-	var origin := preload("res://src/view_controls.gd").origin(camera_mode)
+	var origin := preload("res://src/view_controls.gd").framed_origin(camera_mode,phase)
 	if camera_mode==2:
 		var tv_focus:=Vector3(0,0.7+maxf(0,shown_ball.y-3.2)*0.04,clampf(shown_ball.z*0.06,-0.45,0.45))
 		if phase=="SERVE": tv_focus.z=clampf(shown_ball.z*0.15,-1.2,1.2)
@@ -617,9 +618,10 @@ func press_action(button: String = "action") -> void:
 		charge_start = clock_time
 	elif action_phase == "RECEIVE" and not armed and button == "action":
 		var remaining := receive_deadline - clock_time
-		receive_offset=remaining
+		var judged_remaining: float=online_session.receive_remaining89(remaining) if network_match() else remaining
+		receive_offset=judged_remaining
 		if remaining < -Timing.LATE_RECEIVE_SECONDS: return
-		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.825),timing.quality(remaining,difficulty_scale())) if remaining >= 0 else timing.quality(remaining, difficulty_scale())
+		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.825),timing.quality(judged_remaining,difficulty_scale())) if judged_remaining >= 0 else timing.quality(judged_remaining, difficulty_scale())
 		if remaining < 0:
 			var recovery := BallFlight.intercept(ball_pos, ball_vel, flight_spin, contact_height("recovery"), flight_gravity)
 			if recovery.is_empty() or recovery.seconds > 0.18 or recovery.seconds < 0: return
@@ -628,9 +630,9 @@ func press_action(button: String = "action") -> void:
 			flight_target = recovery.point
 			flight_left = maxf(0.001, recovery.seconds)
 		armed = true
-		receive_feedback=preload("res://src/shot_variation.gd").reception_label(remaining)+" · %d%%"%roundi(input_quality*100)
+		receive_feedback=preload("res://src/shot_variation.gd").reception_label(judged_remaining)+" · %d%%"%roundi(input_quality*100)
 		receive_feedback_left=2.4
-		TimingResult.put(self,possession,"RICEZIONE" if incoming_kind=="serve" else "DIFESA",input_quality,preload("res://src/shot_variation.gd").reception_label(remaining))
+		TimingResult.put(self,possession,"RICEZIONE" if incoming_kind=="serve" else "DIFESA",input_quality,preload("res://src/shot_variation.gd").reception_label(judged_remaining))
 		notice(receive_feedback,1.4)
 	elif action_phase == "SET" and not armed:
 		if button in ["action","alternate"] and preload("res://src/setter_disguise81.gd").held(self):
@@ -651,7 +653,7 @@ func press_action(button: String = "action") -> void:
 		armed = true
 		input_quality = pass_quality
 		notice("COLPO DI SECONDA" if setter_dump else ("SECONDA NON DISPONIBILE · ALZATA NORMALE" if button=="dump" else ("ALZATA VELOCE" if fast_set else "ALZATA NORMALE")), 0.8)
-	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action": jump_manual_wall()
+	elif (human_wall() or phase=="CPU_ATTACK") and not block_commanded and button == "action" and (not network_match() or input_team==wall_team()): jump_manual_wall()
 
 func jump_manual_wall() -> void:
 	if not block_commanded:

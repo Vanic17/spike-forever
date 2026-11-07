@@ -37,6 +37,8 @@ with zipfile.ZipFile(archive) as z, archive.open('rb') as raw:
         assert len(payload) == entry['size']
         assert hashlib.sha256(payload).hexdigest() == actual, name
     for required in ['src/stadium_fidelity89.gd', 'src/pilot_quality89.gd',
+                     'src/online_command89.gd', 'docs/online89-command-tests.json',
+                     'assets/art/quality89/beard_full3.res',
                      'src/character_quality89.gd', 'assets/art/athlete88/ATTRIBUTION.md',
                      'assets/art/athlete88/source/License.txt',
                      'assets/art/athlete88/head.res', 'assets/art/quality89/head0.res',
