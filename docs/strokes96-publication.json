@@ -1,0 +1,10 @@
+﻿{
+    "remote_digest":  "sha256:c0974870e823258b744dd315da4ccfb4ee582691629fadbe6497d257eab53222",
+    "archive_bytes":  1175042411,
+    "draft":  false,
+    "pass":  true,
+    "url":  "https://github.com/Vanic17/spike-forever/releases/tag/v0.91.0",
+    "version":  "v0.91.0",
+    "downloaded_index_matches":  true,
+    "commit":  "afa43190dbf4607c8baa325c60cecf92a86acf72"
+}

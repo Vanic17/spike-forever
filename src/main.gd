@@ -658,7 +658,7 @@ func press_action(button: String = "action") -> void:
 		plan_attack(set_dir, button == "alternate")
 		if not setter_dump and not setter_spike:
 			var first: bool=button=="action" and planned_direction==1 and absf(flight_target.z)<.85 and out_of_system>=0 and Tactics.role_for(self,setter)=="S"
-			if first:players[setter].select_variant("set","set_first96")
+			if first and pass_quality>.95 and rng.randf()<.25:players[setter].select_variant("set","set_first96")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
 		# Normal and quick are choices of delivery, not a new interception
 		# deadline. Only a genuinely different contact (dump/bump) changes height.
@@ -792,6 +792,7 @@ func reset_rally() -> void:
 		p.motion_lock = 0
 		p.middle_ready=false; p.middle_load=0; p.middle_load_age=0
 		p.setting_yaw = PI if i<6 else 0.0
+		p.second_contact97=Vector3.ZERO
 		p.play("idle", 1, true)
 		for action in ["receive","set","fast_set","attack","dive"]: p.select_variant(action)
 		var base: Vector3 = Tactics.serve_position_for(self,i, int(i / 6), rotations[int(i / 6)], int(i / 6) == server)
@@ -1240,6 +1241,9 @@ func receive_ball() -> void:
 	var dispersion := (1-q)*lerpf(2.6,6.0,clampf(inverse_lerp(0.65,0.1,q),0,1))
 	var target := Vector3(rng.randf_range(-dispersion,dispersion),contact_height("set"),side*(1.5+rng.randf_range(0,dispersion)))
 	target=preload("res://src/shot_variation.gd").pass_target(self,target,q)
+	# A truly perfect first ball gives the setter a tight, attackable contact.
+	# Reserve it before launch: never pull an already flying ball to the tape.
+	if q>.95:target.z=side*rng.randf_range(.68,.78)
 	target=preload("res://src/setter_access.gd").clear_target(self,target)
 	var seconds := Reference.receive_seconds(q,q<0.5)
 	seconds=preload("res://src/setter_access.gd").pass_seconds(self,target,seconds)
@@ -2487,6 +2491,7 @@ func move_players(dt: float) -> void:
 			facing=lerp_angle(facing,atan2(p.velocity.x,p.velocity.z),smoothstep(0.45,1.35,movement.length()))
 		if i==action_actor and action=="dive": facing = p.dive_yaw
 		if i==action_actor and action in ["set","fast_set"]: facing = p.setting_yaw
+		if i==action_actor and action=="dump" and setter_second96>0:facing=p.setting_yaw
 		if phase != "SERVE" and i != action_actor and not i in blockers:
 			var look: Vector3 = ball_pos - p.position
 			if phase == "POINT": look = Vector3(0, 0, side * 3.3) - p.position

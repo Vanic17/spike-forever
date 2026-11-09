@@ -1,5 +1,4 @@
 extends RefCounted
-const Flight=preload("res://src/ball_flight.gd")
 const Net=preload("res://src/net_spec94.gd")
 static func kind(game) -> int:
 	if game.aim.y>.3 and absf(game.aim.y)>=absf(game.aim.x):return 3
@@ -12,13 +11,15 @@ static func request(game) -> bool:
 	var name: String={2:"dump_back96",3:"dump_down96",7:"dump_forward96"}[choice]
 	var clip=p.source_clips.get(name)
 	if clip==null:return false
-	var hit:=Flight.intercept(game.ball_pos,game.ball_vel,game.flight_spin,clip.contact_offset.y*p.height_scale90,game.flight_gravity)
-	if hit.is_empty():
-		if game.flight_left<=0 or not game.airborne:return false
-		hit={"point":game.flight_target,"seconds":game.flight_left}
-	var offset: Vector3=clip.contact_offset*p.height_scale90
-	if p.left_handed:offset.x=-offset.x
-	var stance: Vector3=hit.point-Basis(Vector3.UP,PI if game.possession==0 else 0.0)*offset;stance.y=0
+	if game.flight_left<=0 or not game.airborne:return false
+	# All three gestures intercept the already planned second ball. Selecting
+	# a high palm must not advance its deadline or move its reserved footprint
+	# into a teammate. Native animation plus bounded arm IK adapts the release.
+	var hit: Dictionary={"point":game.flight_target,"seconds":game.flight_left}
+	p.second_contact97=p.contact_local("set")
+	p.second_contact97.y=hit.point.y
+	var offset: Vector3=p.second_contact97
+	var stance: Vector3=hit.point-Basis(Vector3.UP,p.setting_yaw)*offset;stance.y=0
 	p.select_variant("dump",name)
 	game.setter_second96=choice;game.setter_dump=true;game.setter_spike=false;game.setter_disguise=false;game.setter_action="dump"
 	game.flight_target=hit.point;game.flight_left=hit.seconds;p.target=stance;game.armed=true;game.input_quality=game.pass_quality

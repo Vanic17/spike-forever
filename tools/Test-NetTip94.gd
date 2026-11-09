@@ -60,7 +60,7 @@ func run():
 	player.left_handed=false;player.play("attack",1,false);player.animation_time=maxf(0,player.clips.attack.contact_time-.22)
 	var saved_time: float=player.animation_time;var saved_clip: String=player.clip_name
 	game.press_action("alternate")
-	check(game.attack_tip and player.wrist_tip_variant=="attack_wrist94","Square / Xbox X activates new hand gesture")
+	check(game.attack_tip and player.wrist_tip_variant=="attack_shorttip96","Square / Xbox X activates short tip gesture")
 	check(player.clip_name==saved_clip and player.animation_time==saved_time and game.flight_left==.22,"tip input preserves scheduled approach and contact")
 	game.charging=false;game.armed=true;game.input_quality=1;game.charge=.8;game.touches=[2,0]
 	player.position=Vector3(-2.8,0,1.2);player.rotation.y=PI;player.prepare_contact("attack",0);game.ball_pos=player.contact_world("attack")

@@ -20,6 +20,7 @@ var middle_load_age:=0.0
 var pin_reference_load:=0.0
 var pin_reference_poses: Dictionary={}
 var wrist_tip_variant:=""
+var second_contact97:=Vector3.ZERO
 var native_transition_influence := 0.35 if native_animation_enabled else 0.0
 var clips: Dictionary
 var source_clips: Dictionary
@@ -334,6 +335,7 @@ func recovery_speed_scale() -> float:
 	return lerpf(0.35, 1.0, smoothstep(0.0, 0.12, 0.12-motion_lock))
 
 func contact_local(action: String) -> Vector3:
+	if action=="dump" and variant_names.get("dump","") in ["dump_back96","dump_down96","dump_forward96"] and second_contact97!=Vector3.ZERO:return second_contact97
 	if not clips.has(action):
 		return Vector3(0, {"receive":1.15,"recovery":0.65,"dive":0.65,"dump":2.5,"set":2.4,"fast_set":2.4,"attack":3.25,"block":3.1,"float":2.8,"power":3.2}.get(action,1.2), 0.4)*height_scale90
 	var result: Vector3=clips[action].contact_offset
@@ -365,6 +367,7 @@ func stance_for_contact(action: String, contact: Vector3) -> Vector3:
 	var direction := Basis(Vector3.UP, PI if team == 0 else 0)
 	if action == "dive": direction = Basis(Vector3.UP,dive_yaw)
 	if action in ["set","fast_set"]: direction = Basis(Vector3.UP,setting_yaw)
+	if action=="dump" and variant_names.get("dump","") in ["dump_back96","dump_down96","dump_forward96"]:direction=Basis(Vector3.UP,setting_yaw)
 	var offset := direction * contact_local(action)
 	return Vector3(contact.x - offset.x, 0, contact.z - offset.z)
 
@@ -807,7 +810,7 @@ func apply_pose(_dt: float) -> void:
 			var palm: int=clip.names.find("RightHand")
 			var palm_basis: Basis=normalized[palm].basis if palm>=0 else Basis.IDENTITY
 			if pancake:point.y-=.105
-			solve_arm(normalized, "Left" if left_arm else "Right", point - Vector3(0, 0, 0.085), clip.parents)
+			solve_arm(normalized, "Left" if left_arm else "Right", point - Vector3(0, 0, 0.085), clip.parents,.65 if reach_action=="dump" and second_contact97!=Vector3.ZERO else .38)
 			if pancake and palm>=0:rotate_subtree(normalized,palm,palm_basis*normalized[palm].basis.inverse(),clip.parents)
 	if clip_name == "block" and absf(hand_adjust) > 0.01:
 		for side in ["Left", "Right"]:

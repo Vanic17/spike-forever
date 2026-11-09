@@ -1,0 +1,401 @@
+{
+  "errors": [],
+  "live": [
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "CPU_RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 0,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 1,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "POINT",
+      "requested": true,
+      "rotation": 2,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 3,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 4,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "contact": true,
+      "phase": "RECEIVE",
+      "requested": true,
+      "rotation": 5,
+      "team": 1
+    }
+  ],
+  "onehand_per_1000": 250,
+  "pancake": [
+    {
+      "hand": 0.48746794462204,
+      "head": 1.11664366722107,
+      "remaining": 0.8
+    },
+    {
+      "hand": 0.523511111736298,
+      "head": 1.10290336608887,
+      "remaining": 0.6
+    },
+    {
+      "hand": 0.49410691857338,
+      "head": 1.03787243366241,
+      "remaining": 0.4
+    },
+    {
+      "hand": 0.346431910991669,
+      "head": 0.878458976745605,
+      "remaining": 0.25
+    },
+    {
+      "hand": 0.0593836456537247,
+      "head": 0.212800249457359,
+      "remaining": 0.1
+    },
+    {
+      "hand": 0.0450571775436401,
+      "head": 0.323277235031128,
+      "remaining": 0.0
+    }
+  ],
+  "pass": true,
+  "passes": [
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 0,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 1,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 2,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 3,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 4,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 5,
+      "team": 0
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 0,
+      "team": 1
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 1,
+      "team": 1
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 2,
+      "team": 1
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 3,
+      "team": 1
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 4,
+      "team": 1
+    },
+    {
+      "depth": 0.71844357252121,
+      "q": 1.0,
+      "rotation": 5,
+      "team": 1
+    }
+  ]
+}

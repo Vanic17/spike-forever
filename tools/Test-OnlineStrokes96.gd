@@ -63,7 +63,7 @@ func _process(dt: float):
 	elif stage>=0 and g.setter_second96>0:
 		var expected: int=[2,3,7][stage]
 		if g.setter_second96!=expected:errors.append("wrong direction "+str(stage))
-		var p=g.players[11];p.position=p.target;p.rotation.y=0;p.blend_left=0;g.ball_pos=g.flight_target
+		var p=g.players[11];p.position=p.target;p.rotation.y=p.setting_yaw;p.blend_left=0;g.ball_pos=g.flight_target
 		g.dump_ball();contacts+=1
 		if g.last_touch!=1 or g.phase!="RECEIVE":errors.append("guest contact failed "+str(stage))
 		if stage==2:g.rally_serial=1999;done_at=age

@@ -45,7 +45,7 @@ func run():
 	p=g.players[5];p.position=Vector3(0,0,4);p.setting_yaw=-PI/2;p.play("set",1,false);p.motion_lock=0
 	g.ball_pos=Vector3(0,3.7,4);g.flight_target=Vector3(0,2.6,4);g.flight_left=.6;g.flight_spin=Vector3.ZERO;g.ball_vel=g.BallFlight.velocity_to(g.ball_pos,g.flight_target,.6,Vector3.ZERO)
 	check(Second.request(g),"far-net setter can still request triangle")
-	g.ball_pos=g.flight_target;p.position=p.target;p.rotation.y=PI;p.blend_left=0
+	g.ball_pos=g.flight_target;p.position=p.target;p.rotation.y=p.setting_yaw;p.blend_left=0
 	check(g.validate_contact(5,"dump"),"far-net gesture still meets the ball")
 	var shot:=Second.trajectory(g);var point: Vector3=g.ball_pos;var v: Vector3=g.BallFlight.velocity_to(point,shot.target,shot.seconds,shot.spin,g.flight_gravity);var hit_net:=false
 	for tick in 180:

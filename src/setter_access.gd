@@ -106,6 +106,7 @@ static func clear_target(game, point: Vector3, contact_index: int = -1, action: 
 	var footprint:=contact_offsets(player,action,contact_yaw)
 	var best:=point
 	var score:=INF
+	var tight: bool=game.pass_quality>.95 and absf(point.z)<.85
 	for radius in [0.0,0.65,1.1,1.5,2.0,2.5]:
 		for step in (1 if radius==0 else 12):
 			var candidate: Vector3=point+Vector3(cos(step*TAU/12),0,sin(step*TAU/12))*radius
@@ -125,6 +126,8 @@ static func clear_target(game, point: Vector3, contact_index: int = -1, action: 
 				for foot in footprint:
 					if not game.court_shape.clear_recovery_route(player.position+foot,stance+foot,bodies[body],1.05): blocked=true
 			var cost: float=radius*3.0+player.position.distance_to(stance)*0.1+(12.0 if blocked else 0.0)
+			# Clear teammates laterally first, preserving a perfect pass near the tape.
+			if tight:cost+=maxf(0,absf(candidate.z)-.80)*30.0
 			if cost<score: score=cost; best=candidate
 	return best
 

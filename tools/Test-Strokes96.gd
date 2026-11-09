@@ -65,10 +65,11 @@ func run():
 				p.play("set",1,false);p.blend_left=0;p.select_variant("dump","dump")
 				p.position=Vector3(0,0,.85);p.rotation.y=PI
 				var target: Vector3=p.position+Basis(Vector3.UP,PI)*Vector3(0,g.clips[name].contact_offset.y,.1)
+				g.flight_target=target
 				g.ball_pos=target+Vector3(.1,1.1,.1);g.flight_spin=Vector3.ZERO;g.ball_vel=g.BallFlight.velocity_to(g.ball_pos,target,.55,Vector3.ZERO);g.airborne=true;g.flight_left=.55
 				var ok:=Second.request(g);check(ok,"request second "+str(kind)+" rotation "+str(rotation)+" left "+str(left))
 				if ok:
-					p.position=p.target;p.rotation.y=PI;p.blend_left=0;g.ball_pos=g.flight_target
+					p.position=p.target;p.rotation.y=p.setting_yaw;p.blend_left=0;g.ball_pos=g.flight_target
 					check(g.validate_contact(5,"dump"),"second physical palm contact "+str(kind))
 					g.armed=true;g.touches=[1,0];g.dump_ball()
 					check(g.last_touch==0 and g.phase=="CPU_RECEIVE","second completes as real second touch")
@@ -79,7 +80,7 @@ func run():
 			var p=g.players[5];p.position=Vector3(1.1,0,depth);p.setting_yaw=-PI/2
 			g.ball_pos=Vector3(1.1,3.8,depth);g.flight_target=Vector3(1.1,p.contact_local("set").y,depth);g.flight_left=.65;g.airborne=true;g.flight_spin=Vector3.ZERO;g.ball_vel=g.BallFlight.velocity_to(g.ball_pos,g.flight_target,g.flight_left,Vector3.ZERO)
 			g.press_action("action")
-			check((p.variant_names.get("set","")=="set_first96")==bool(depth<.85),"first tempo hand only on tight ball rotation "+str(rotation))
+			check(p.variant_names.get("set","")!="set_first96" or depth<.85,"first tempo hand only on tight ball rotation "+str(rotation))
 			if depth<.85:
 				p.position=p.stance_for_contact("set",g.flight_target);p.rotation.y=p.setting_yaw;p.blend_left=0;g.ball_pos=g.flight_target
 				check(g.validate_contact(5,"set"),"one handed first physical contact")

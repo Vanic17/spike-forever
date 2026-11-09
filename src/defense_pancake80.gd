@@ -1,5 +1,13 @@
 extends "res://src/defense_motion75.gd"
 const SOURCE:="dive_v26_06"
+static func source_time(time: float, contact: float, duration: float) -> float:
+	# Preserve the contact/recovery frames, but compress the descent into the
+	# final 0.32 seconds. The long original prone wait is not a preparation.
+	var start: float=maxf(0,contact-.37)
+	if time>=contact:return minf(time,duration)
+	if time<=start:return time*.20
+	var t: float=(time-start)/maxf(.001,contact-start)
+	return lerpf(start*.20,contact,smoothstep(0,1,t))
 static func shape(pose: Array[Transform3D],names: Array[String],parents: Array[int],time: float,contact: float,duration: float) -> Array[Transform3D]:
 	var result:=pose.duplicate()
 	var weight:=smoothstep(contact-.30,contact-.045,time)*(1-smoothstep(contact+.08,minf(duration,contact+.38),time))
