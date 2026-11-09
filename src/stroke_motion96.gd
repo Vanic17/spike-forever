@@ -65,10 +65,13 @@ static func second(pose: Array[Transform3D],names: Array[String],parents: Array[
 static func first(pose: Array[Transform3D],names: Array[String],parents: Array[int],time: float,c: float,d: float) -> Array[Transform3D]:
 	var out: Array[Transform3D]=pose.duplicate();var h:=names.find("RightHand");var other:=names.find("LeftHand")
 	if h<0 or other<0:return out
-	var show:=smoothstep(c-.19,c-.025,time)*(1-smoothstep(c+.12,minf(d,c+.38),time))
-	var target: Vector3=(pose[h].origin+pose[other].origin)*.5+Vector3(0,.07,.015)
-	arm(out,names,parents,"Right",target,Vector3(-.26,.05,.20),show)
-	Ref.rotate(out,names,parents,"LeftArm",Vector3.RIGHT,.95*show)
+	var show:=smoothstep(c-.32,c-.055,time)*(1-smoothstep(c+.12,minf(d,c+.40),time))
+	var lift: float=.16*smoothstep(c-.31,c-.04,time)*(1-smoothstep(c+.04,minf(d,c+.34),time))
+	for bone in out.size():out[bone].origin.y+=lift
+	var target: Vector3=(out[h].origin+out[other].origin)*.5+Vector3(.045,.14,.025)
+	arm(out,names,parents,"Right",target,Vector3(.24,.10,.22),show)
+	var left_shoulder: int=names.find("LeftArm")
+	if left_shoulder>=0:arm(out,names,parents,"Left",out[left_shoulder].origin+Vector3(-.42,-.12,.20),Vector3(-.38,-.12,.10),show)
 	Ref.rotate(out,names,parents,"RightHand",out[h].basis.x.normalized(),-.24*show)
 	return out
 static func arm_layer(pose: Array[Transform3D],native: Array[Transform3D],names: Array[String],parents: Array[int],left: bool,weight: float) -> Array[Transform3D]:

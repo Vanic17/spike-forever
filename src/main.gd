@@ -244,6 +244,8 @@ var form99: Dictionary={}
 var preferences
 var tutorial
 var middle_decoy=MiddleDecoy.new()
+var first_set_cooldown102: Array=[0,0]
+var first_set_contact102: Array=["",""]
 var movement_snapshot: Array[Dictionary]=[]
 var traffic_blockers: Array = []
 var defensive_lanes=preload("res://src/defensive_lanes.gd").new()
@@ -662,8 +664,7 @@ func press_action(button: String = "action") -> void:
 		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
 		if not setter_dump and not setter_spike:
-			var first: bool=button=="action" and planned_direction==1 and absf(flight_target.z)<.85 and out_of_system>=0 and Tactics.role_for(self,setter)=="S"
-			if first and pass_quality>.95 and rng.randf()<.25:players[setter].select_variant("set","set_first96")
+			if button=="action":preload("res://src/first_set102.gd").choose(self)
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
 		# Normal and quick are choices of delivery, not a new interception
 		# deadline. Only a genuinely different contact (dump/bump) changes height.
@@ -1071,7 +1072,7 @@ func validate_contact(index: int, action: String) -> bool:
 	var disguised: bool=player.variant_names.get(action,"")=="set_disguise81"
 	var actual: Vector3 = player.current_hand(action=="dump" and not disguised)
 	if player.triangle_second98(action):actual=player.current_hand(player.variant_names.dump=="dump_down96")+player.global_basis*Vector3(-.08,0,0)
-	if player.variant_names.get(action,"")=="set_first96":actual=player.current_hand(player.left_handed)
+	if player.variant_names.get(action,"")=="set_first96":actual=player.current_hand(player.left_handed)+Vector3.UP*.13
 	if (action in ["receive", "set", "fast_set", "block"] and player.variant_names.get(action,"")!="set_first96") or disguised:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
 	var distance := actual.distance_to(ball_pos)
@@ -1357,6 +1358,7 @@ func choose_cpu_play() -> void:
 	var quick := pass_quality > 0.85 and absf(flight_target.z) < 2.8 and rng.randf() < 0.45
 	last_ai_direction = choice
 	plan_attack(choice, quick)
+	if not quick:preload("res://src/first_set102.gd").choose(self)
 
 func plan_attack(direction: int, quick: bool) -> void:
 	planned_direction = direction
@@ -1444,6 +1446,7 @@ func set_ball(contact_override: String = "") -> void:
 	register_touch(setter)
 	if phase=="POINT": return
 	match_management.touch(setter,"set")
+	preload("res://src/first_set102.gd").contact(self,contact_action)
 	if replay!=null: replay.clear_shot()
 	if replay!=null: replay.mark_set()
 	TimingResult.put(self,possession,"ALZATA",input_quality if human_team(possession) else q)
@@ -1637,6 +1640,12 @@ func attack_ball() -> void:
 	if attack_tip:
 		var tip: Dictionary=preload("res://src/tip_delivery94.gd").solve(self,target,power)
 		incoming_kind="soft";incoming_power=tip.pressure;target=tip.target;seconds=tip.seconds
+	else:
+		var central102: Dictionary=preload("res://src/middle_delivery102.gd").solve(self,target,seconds,requested_power,soft)
+		target=central102.target;seconds=central102.seconds
+		if central102.boost>0:
+			incoming_power*=1.0+central102.boost*.18
+			log_rally_event("middle_power102",{"power":requested_power,"boost":central102.boost,"seconds":seconds,"target":target})
 	if hitter_action == "receive":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
 		target=delivery.target; seconds=delivery.seconds

@@ -341,7 +341,7 @@ func contact_local(action: String) -> Vector3:
 	var result: Vector3=clips[action].contact_offset
 	if preload("res://src/player_pose95.gd").jumping(native_clip_name(action)):
 		result.y+=preload("res://src/player_pose95.gd").contact_correction(self,action)
-	if left_handed and action in ["attack","power","float","dump","serve_idle"] and not triangle_second98(action): result.x=-result.x
+	if left_handed and (action in ["attack","power","float","dump","serve_idle"] or native_clip_name(action)=="set_first96") and not triangle_second98(action): result.x=-result.x
 	return result*height_scale90
 
 func select_variant(action: String, variant: String = "") -> void:
@@ -804,7 +804,7 @@ func apply_pose(_dt: float) -> void:
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
 			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
 		elif native_clip_name(clip_name)=="set_first96" and reach_action in ["set","fast_set"]:
-			solve_arm(normalized,"Left" if left_handed else "Right",point-Vector3(0,0,.085),clip.parents)
+			solve_arm(normalized,"Left" if left_handed else "Right",point-Vector3(0,.13,0),clip.parents)
 		elif reach_action in ["receive", "set", "fast_set"] or (reach_action=="dump" and native_clip_name(clip_name)=="set_disguise81"):
 			var grip: float=.055 if native_clip_name(clip_name) in ["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80"] else .105
 			solve_arm(normalized, "Left", point + Vector3(grip, -0.07, 0), clip.parents)

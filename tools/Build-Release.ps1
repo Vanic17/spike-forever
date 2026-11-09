@@ -6,12 +6,13 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_96.md','docs/MIDDLE_102.md','tools/Test-Middle102.gd','tools/Audit-Middle102.gd','tools/Test-OnlineMiddle102.gd','tools/Run-OnlineMiddle102.ps1','tools/Capture-Middle102.gd','tools/Bake-Middle102.gd')
 $files+=@('docs/RELEASE_NOTES_95_1.md','tools/Test-ShortSeconds101.gd','docs/short101-tests.json')
 $files+=@('docs/RELEASE_NOTES_95.md','docs/MATCH_100.md','tools/Test-Match100.gd','tools/Test-MiddleRead100.gd','tools/Test-OnlineMatch100.gd','tools/Run-OnlineMatch100.ps1')
 $files+=@('docs/RELEASE_NOTES_94.md','docs/CONDITION_99.md','tools/Test-Condition99.gd','tools/Test-ConditionIntegration99.gd','tools/Test-ConditionUI99.gd','tools/Test-OnlineCondition99.gd','tools/Run-OnlineCondition99.ps1','tools/Test-ConditionUpdate99.py','tools/Test-ConditionUpdate99.ps1','tools/Research-Forms99.py')
 $files+=@('docs/RELEASE_NOTES_93.md','tools/Test-SetterSeconds98.gd','tools/Capture-SetterSeconds98.gd')
 $files+=@('docs/RELEASE_NOTES_92.md','docs/perfect-set97-tests.json','tools/Test-PerfectSet97.gd','docs/RELEASE_NOTES_91.md','docs/STROKES_96.md','docs/NET_TIP94.md','docs/PLAYER_POSE95.md','tools/Test-Strokes96.gd','tools/Test-ShortTipRecovery96.gd','tools/Test-OnlineStrokes96.gd','tools/Run-OnlineStrokes96.ps1','tools/Capture-Strokes96.gd','tools/Test-NetTip94.gd','tools/Test-PlayerPose95.gd','tools/Verify-Package96.py')
-foreach($pattern96 in @('match100-*','condition99-*','setter98-*','perfect-set97-*','strokes96-*','net-tip94-validation*','player-pose95-*')){
+foreach($pattern96 in @('middle102-*','match100-*','condition99-*','setter98-*','perfect-set97-*','strokes96-*','net-tip94-validation*','player-pose95-*')){
  foreach($item96 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern96){
   if($item96.Extension -in @('.json','.png','.mp4')){$files+='docs/'+$item96.Name}
  }

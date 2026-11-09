@@ -1,0 +1,68 @@
+{
+  "checks": 229,
+  "eligible_onehand_per_1000": 237,
+  "errors": [],
+  "pass": true,
+  "power_samples": [
+    {
+      "aim": "(0.0, 1.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 0
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 0
+    },
+    {
+      "aim": "(1.0, 1.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, -1.0)",
+      "boosted_seconds": 0.331636363636364,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 0
+    },
+    {
+      "aim": "(0.0, 1.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 1
+    },
+    {
+      "aim": "(-1.0, 0.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 0.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 1
+    },
+    {
+      "aim": "(1.0, 1.0)",
+      "boosted_seconds": 0.290181818181818,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 1
+    },
+    {
+      "aim": "(0.0, -1.0)",
+      "boosted_seconds": 0.331636363636364,
+      "ordinary_seconds": 0.414545454545454,
+      "team": 1
+    }
+  ]
+}

@@ -65,6 +65,8 @@ func configure_rosters(teams: Array,lineups: Array,initial_conditions: Dictionar
 	fatigue_enabled=bool(options.get("fatigue",true)); injuries_enabled=bool(options.get("injuries",false)); auto_subs=bool(options.get("auto_subs",false)); date=str(options.get("date","2026-10-18"))
 	career_form=bool(options.get("career_form",false))
 	game.form99=options.get("condition99",{}).duplicate(true)
+	game.first_set_cooldown102=[0,0];game.first_set_contact102=["",""]
+	if game.has_meta("first_set_roll102"):game.remove_meta("first_set_roll102")
 	if game.report100!=null:game.report100.reset()
 	injury_intensity=clampf(float(options.get("injury_intensity",1.0)),0,2)
 	for side in 2:
@@ -413,6 +415,8 @@ func auto_changes() -> void:
 func export_state() -> Dictionary:
 	var value: Dictionary=_export_legacy99()
 	value.condition99=game.form99.duplicate(true)
+	value.first_set_cooldown102=game.first_set_cooldown102.duplicate()
+	value.first_set_contact102=game.first_set_contact102.duplicate()
 	return value
 
 func _export_legacy99() -> Dictionary:
@@ -421,6 +425,8 @@ func _export_legacy99() -> Dictionary:
 func import_state(value: Dictionary) -> void:
 	if value.is_empty() or value.get("current",[]).size()!=2: return
 	game.form99=value.get("condition99",game.form99).duplicate(true)
+	game.first_set_cooldown102=value.get("first_set_cooldown102",game.first_set_cooldown102).duplicate()
+	game.first_set_contact102=value.get("first_set_contact102",game.first_set_contact102).duplicate()
 	active=bool(value.active); current=value.current.duplicate(true); starters=value.starters.duplicate(true); counts=value.counts.duplicate(); pairs=value.pairs.duplicate(true); left_once=value.left_once.duplicate(true); returned=value.returned.duplicate(true); used_subs=value.used_subs.duplicate(true); excluded=value.excluded.duplicate(); conditions=value.conditions.duplicate(true); libero_ids=value.libero.duplicate(); fatigue_enabled=bool(value.fatigue); injuries_enabled=bool(value.injuries)
 	between_sets=bool(value.get("between_sets",false))
 	queued_changes=value.get("queued_changes",[]).duplicate(true)
