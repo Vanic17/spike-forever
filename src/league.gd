@@ -25,6 +25,7 @@ func _init() -> void:
 				if not saved.get("appearance",{}).has("hair_style") and saved.get("appearance",{}).get("hair_length")!=null:
 					base_appearance.hair_style=saved.appearance.hair_length
 				p.appearance=base_appearance
+	preload("res://src/condition99.gd").migrate(teams)
 	preload("res://src/player_overall.gd").refresh_teams(teams)
 func save(p: Dictionary) -> Error:
 	preload("res://src/player_overall.gd").refresh(p)

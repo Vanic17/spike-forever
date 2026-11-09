@@ -20,7 +20,9 @@ static func rating(game,index: int,key: String) -> float:
 	if index<0 or index>=game.players.size(): return float(settings().baseline)
 	var p=game.players[index]
 	var identity: Dictionary=p.libero_identity if p.libero_active else p.roster_identity
-	return clampf(float(identity.get("ratings",{}).get(key,settings().baseline)),0,99)
+	var base: float=clampf(float(identity.get("ratings",{}).get(key,settings().baseline)),0,99)
+	if game.use_player_stats and not game.form99.is_empty():return float(preload("res://src/condition99.gd").effective(base,preload("res://src/condition99.gd").arrow(game.form99,str(identity.get("id","")))))
+	return base
 
 static func touch_quality(original: float,value: float) -> float:
 	var bonus: float=(value-float(settings().baseline))*float(settings().touch_bonus)

@@ -5,7 +5,7 @@ const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
 # New stroke names, commands and second-touch state require matching peers.
 # Reject incompatible dictionaries before decoding compact clip IDs.
-const PROTOCOL="SF093-SETTER98"
+const PROTOCOL="SF094-CONDITION99"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -18,6 +18,7 @@ var guest:=0
 var generation:=0
 var requested_generation:=0
 var choices: Array=[{},{}]
+var forms99: Array=[{},{}]
 var ready_flags: Array=[false,false]
 var best_of:=5
 var points:=25
@@ -88,6 +89,7 @@ func host_room() -> Error:
 	multiplayer.multiplayer_peer=peer
 	active=true; playing=false; local_side=0; guest=0; generation=randi_range(1,0xffffff)
 	ready_flags=[false,false]; choices=[{},{}]; inputs=[{},{}]; last_sequence=[-1,-1]; sequence=0
+	forms99=[{},{}]
 	local_ip="127.0.0.1" if test_mode else lan_address()
 	public_ip=""; info="Stanza aperta. Preparazione del codice Internet…"; update_code(is_instance_valid(menu) and menu.lan_mode())
 	if not test_mode:
@@ -132,7 +134,7 @@ func join_room(code: String) -> Error:
 	requested_generation=invitation.room; multiplayer.multiplayer_peer=peer
 	room_code=code.strip_edges()
 	active=true; local_side=1; playing=false; guest=0; join_elapsed=0; packet_age=0
-	inputs=[{},{}]; choices=[{},{}]; ready_flags=[false,false]; last_sequence=[-1,-1]; sequence=0; buffered.clear()
+	forms99=[{},{}]; inputs=[{},{}]; choices=[{},{}]; ready_flags=[false,false]; last_sequence=[-1,-1]; sequence=0; buffered.clear()
 	info="Connessione alla stanza…"; refresh(); return OK
 
 func connected() -> void:
@@ -176,7 +178,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			if not (raw is float or raw is int) or not is_finite(float(raw)): return {}
 			values[key]=clampf(float(raw),0,99)
 		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.role))
-		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+		clean.append({"id":p.id,"name":str(p.get("name","")).left(48),"jersey_number":clampi(int(p.get("jersey_number",1)),1,99),"role":p.role,"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump","condition_form":preload("res://src/condition99.gd").form(p)})
 	var bench: Array=[]
 	var provided=value.get("bench",club.roster)
 	if not provided is Array or provided.size()>32: return {}
@@ -195,7 +197,7 @@ static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 			if not (rating is int or rating is float) or not is_finite(float(rating)): return {}
 			values[key]=clampf(float(rating),0,99)
 		values.generale=preload("res://src/player_overall.gd").calculate(values,str(p.get("role",original.role)))
-		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump"})
+		bench.append({"id":id,"name":str(p.get("name",original.name)).left(48),"jersey_number":clampi(int(p.get("jersey_number",original.jersey_number)),1,99),"role":p.get("role",original.role),"height_cm":preload("res://src/player_stature90.gd").centimetres(p),"appearance":p.get("appearance",{}).duplicate(true),"ratings":values,"dominant_hand":"left" if p.get("dominant_hand")=="left" else "right","serve_preference":"float" if p.get("serve_preference")=="float" else "jump","condition_form":preload("res://src/condition99.gd").form(p)})
 	return {"club":club.id,"name":club.name,"kit":"away" if value.get("kit")=="away" else "home","rotation":clampi(int(value.get("rotation",0)),0,5),"roster":clean,"bench":bench}
 
 func choose(value: Dictionary, confirmed: bool) -> void:
@@ -211,6 +213,11 @@ func set_choice(side: int, value: Dictionary, confirmed: bool) -> void:
 	var db=load("res://src/league.gd").new()
 	var clean:=sanitize_choice(value,db)
 	if clean.is_empty(): info="Formazione non valida: scegli sette giocatori distinti e ruoli compatibili."; refresh(); return
+	if bool(value.get("open_formation99",false)) or confirmed:
+		var C=preload("res://src/condition99.gd")
+		if forms99[side].is_empty():forms99[side]=C.fresh()
+		C.ensure(forms99[side],clean.roster+clean.get("bench",[]))
+	clean.condition99=forms99[side].duplicate(true)
 	choices[side]=clean; ready_flags[side]=confirmed; broadcast_lobby()
 
 func broadcast_lobby() -> void:
@@ -244,14 +251,20 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 	game.match_best_of=format; game.match_points=target; game.camera_mode=0; game.demo=false; game.gallery=false
 	var kits=load("res://src/club_kits.gd")
 	var squads: Array=[];var management_teams: Array=[]
+	var merged99: Dictionary=preload("res://src/condition99.gd").fresh(0,"online:"+str(generation))
 	for side in 2:
 		var selection: Dictionary=selected[side]
+		var source99: Dictionary=selection.get("condition99",{})
+		for person99 in selection.roster+selection.get("bench",[]):
+			var raw99: String=str(person99.id);var scoped99: String="online%d|%s"%[side,raw99]
+			merged99.arrows[scoped99]=preload("res://src/condition99.gd").arrow(source99,raw99)
+			merged99.forms[scoped99]=source99.get("forms",{}).get(raw99,preload("res://src/condition99.gd").form(person99))
 		var squad: Array=preload("res://src/online_rosters82.gd").players(selection.roster,side)
 		squads.append(squad)
 		management_teams.append({"id":selection.club,"roster":squad+preload("res://src/online_rosters82.gd").players(selection.get("bench",[]),side)})
 		game.team_names[side]=selection.name
 		for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],kits.selection(selection.club,selection.kit),kits.selection(selection.club,selection.kit,true))
-	game.match_management.configure_rosters(management_teams,squads,{},{"fatigue":use_fatigue,"injuries":false})
+	game.match_management.configure_rosters(management_teams,squads,{},{"fatigue":use_fatigue,"injuries":false,"condition99":merged99})
 	game.set_home_club(str(selected[0].club),0)
 	game.rotations=[selected[0].rotation,selected[1].rotation]; game.scores=[0,0]; game.sets=[0,0]
 	game.server=0; game.paused=false; game.match_finished=false; game.started=true
@@ -325,7 +338,7 @@ func closed(reason: String) -> void:
 	if active: leave(reason,false)
 
 func leave(reason: String="Stanza chiusa", tell: bool=true) -> void:
-	if active and authority() and guest!=0 and tell: closed.rpc_id(guest,reason)
+	if active and authority() and guest!=0 and tell and guest in multiplayer.get_peers(): closed.rpc_id(guest,reason)
 	if active and local_side==1 and guest!=0 and tell and multiplayer.multiplayer_peer.get_connection_status()==MultiplayerPeer.CONNECTION_CONNECTED: leave_command.rpc_id(1)
 	var transport=multiplayer.multiplayer_peer
 	var was_playing:=playing

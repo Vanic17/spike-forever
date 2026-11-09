@@ -1,4 +1,5 @@
 extends Control
+var confirmed_forms99: String=""
 ## The created player's complete career flow, independent from Master League.
 const UI=preload("res://src/career_widgets.gd")
 const Legend=preload("res://src/legend_career.gd")
@@ -445,6 +446,7 @@ func home_screen():
 		var teams:=HBoxContainer.new(); center.add_child(teams); UI.badge(teams,str(manager.state.club_id),80); heading(teams,"VS",37); UI.badge(teams,opponent,80)
 		heading(center,club_name(opponent),43); label(center,"IN CASA" if next.home==manager.state.club_id else "IN TRASFERTA",22,UI.GOLD)
 		text_block(center,"Controlli solo il tuo atleta. Muoviti nello spazio del tuo ruolo, chiama l'alzata e cerca il contatto con il pallone.",24,UI.MUTED)
+		button(center,"FORMAZIONE / CONDIZIONE",func():show_forms99(false),"forms99")
 		button(center,"SCENDI IN CAMPO",launch_match,"launch")
 	var career:=UI.card(row,515); heading(career,"LA TUA ASCESA",35)
 	label(career,_t("LIVELLO %d")%int(manager.state.level),32,UI.GOLD); label(career,_t("PUNTI ABILITÀ: %d")%int(manager.state.skill_points),25)
@@ -616,6 +618,8 @@ func help_screen():
 	button(role,"TORNA ALLA CARRIERA",func(): show_page("home" if manager.active() else "entry"),"help-back")
 
 func launch_match():
+	var fixture99: Dictionary=manager.next_fixture()
+	if not fixture99.is_empty() and confirmed_forms99!=str(manager.state.get("career_id",manager.state.get("seed","")))+"|"+str(fixture99.id):show_forms99(true);return
 	var config: Dictionary=manager.launch_config()
 	if config.is_empty(): toast(manager.error); return
 	if game==null or game.get("legend_match")==null: manager.cancel_match(); toast("Motore partita non disponibile."); return
@@ -637,6 +641,24 @@ func launch_match():
 	if is_instance_valid(host) and is_instance_valid(host.get("clubs")):
 		var music=host.clubs.get("music")
 		if is_instance_valid(music): music.stop()
+
+func show_forms99(start_after: bool=false) -> void:
+	var fixture99: Dictionary=manager.next_fixture()
+	if fixture99.is_empty():return
+	var ledger99: Dictionary=manager.engine.match_forms99(str(fixture99.id))
+	var popup99:=ConfirmationDialog.new();popup99.title="FORMAZIONE / CONDIZIONE";popup99.ok_button_text="CONFERMA FORMAZIONE";popup99.exclusive=true;add_child(popup99)
+	var columns99:=HBoxContainer.new();columns99.add_theme_constant_override("separation",22);popup99.add_child(columns99)
+	for team_id99 in [str(manager.state.club_id),str(fixture99.away if fixture99.home==manager.state.club_id else fixture99.home)]:
+		var box99:=VBoxContainer.new();box99.size_flags_horizontal=SIZE_EXPAND_FILL;columns99.add_child(box99)
+		var title99:=Label.new();title99.text=manager.club_name(team_id99);title99.add_theme_font_size_override("font_size",22);box99.add_child(title99)
+		var roster99=preload("res://src/condition_ui99.gd").list(box99,manager.team(team_id99).roster,ledger99,true);roster99.columns=1
+	modal=popup99
+	popup99.confirmed.connect(func():
+		confirmed_forms99=str(manager.state.get("career_id",manager.state.get("seed","")))+"|"+str(fixture99.id)
+		popup99.queue_free();modal=null
+		if start_after:launch_match())
+	popup99.canceled.connect(func():popup99.queue_free();modal=null)
+	popup99.popup_centered(Vector2i(1140,620));popup99.get_ok_button().grab_focus();wire_dialog_focus(popup99)
 
 func on_match_finished(input: Dictionary):
 	if active_fixture.is_empty(): return

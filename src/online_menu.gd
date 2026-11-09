@@ -20,6 +20,7 @@ var paste_join: Button
 var launch: Button
 var confirm: Button
 var formation: Button
+var pending_formation99:=false
 var opponent: Label
 var preview
 var updating:=false
@@ -100,7 +101,24 @@ func back() -> void:
 	host.online.grab_focus()
 
 func open_formation() -> void:
-	host.clubs.show_match_formation(0,host.clubs.db.teams[own_team.selected],formation)
+	if not session.active:
+		session.info="Crea una stanza o unisciti prima di confermare la formazione.";session.refresh();return
+	pending_formation99=true
+	var value99: Dictionary=choice();value99.open_formation99=true
+	session.choose(value99,false)
+
+func has_forms99() -> bool:
+	var club: Dictionary=host.clubs.db.teams[own_team.selected]
+	var selected: Dictionary=session.choices[session.local_side]
+	if str(selected.get("club",""))!=str(club.id):return false
+	var arrows: Dictionary=selected.get("condition99",{}).get("arrows",{})
+	return club.roster.all(func(p):return arrows.has(str(p.id)))
+
+func show_forms99() -> void:
+	if not pending_formation99 or not has_forms99():return
+	pending_formation99=false
+	var selected: Dictionary=session.choices[session.local_side]
+	host.clubs.show_match_formation(0,host.clubs.db.teams[own_team.selected],formation,selected.condition99)
 	host.clubs.formation_dialog.confirmed.connect(changed_choice,CONNECT_ONE_SHOT)
 
 func choice() -> Dictionary:
@@ -121,9 +139,12 @@ func settings_changed(_index: int) -> void:
 	session.ready_flags=[false,false]
 	if session.authority(): session.broadcast_lobby()
 
-func confirm_choice() -> void: session.choose(choice(),not session.ready_flags[session.local_side])
+func confirm_choice() -> void:
+	if not has_forms99():open_formation();return
+	session.choose(choice(),not session.ready_flags[session.local_side])
 
 func refresh() -> void:
+	if pending_formation99 and has_forms99():call_deferred("show_forms99")
 	if info==null: return
 	updating=true; info.text=session.info
 	create.disabled=session.active or session.closing; join.disabled=session.active or session.closing; code.editable=not session.active
@@ -146,7 +167,7 @@ func refresh() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not visible: return
-	if host.clubs.formation_dialog!=null and host.clubs.formation_dialog.visible:
+	if is_instance_valid(host.clubs.formation_dialog) and host.clubs.formation_dialog.visible:
 		if event.is_action_pressed("ui_cancel"): host.clubs.formation_dialog.hide(); formation.grab_focus(); get_viewport().set_input_as_handled()
 		return
 	if host.clubs.keyboard!=null and host.clubs.keyboard.visible:

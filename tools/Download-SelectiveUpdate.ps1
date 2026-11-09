@@ -109,7 +109,7 @@ try{
   if($seen.ContainsKey($name.ToLowerInvariant())){throw 'Duplicate index path'};$seen[$name.ToLowerInvariant()]=$true
   if($data.sha256 -notmatch '^[a-f0-9]{64}$' -or [long]$data.size -lt 0 -or [long]$data.compressed_size -lt 0 -or [long]$data.compressed_size -gt 536870912 -or [long]$data.offset -lt 0 -or ([long]$data.offset+[long]$data.compressed_size) -gt [long]$index.archive.size -or $data.compression -notin @(0,8)){throw 'Invalid file metadata'}
   $manifest.files[$name]=$data.sha256
-  $preserved=$name -eq 'controls.cfg' -and (Test-Path -LiteralPath $target)
+  $preserved=$name -in @('controls.cfg','assets/gameplay/league.json') -and (Test-Path -LiteralPath $target)
   if(!$preserved -and (!(Test-Path -LiteralPath $target -PathType Leaf) -or (Hash $target) -ne $data.sha256)){
    $needed.Add(@{name=$name;data=$data});$status.total+=[long]$data.compressed_size
   }

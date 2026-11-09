@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "classes": {
+    "A": [38, 38, 18, 4, 2],
+    "B": [20, 38, 29, 10, 3],
+    "C": [10, 25, 30, 25, 10],
+    "D": [5, 10, 30, 35, 20]
+  },
+  "arrows": ["UP", "UP_RIGHT", "NEUTRAL", "DOWN_RIGHT", "DOWN"],
+  "modifiers": [0.05, 0.03, 0.0, -0.03, -0.05],
+  "colors": ["ef5350", "ffad42", "65c67e", "68c7ee", "367bea"],
+  "labels": ["Ottima", "Buona", "Normale", "Scarsa", "Pessima"],
+  "symbols": ["↑", "↗", "→", "↘", "↓"]
+}

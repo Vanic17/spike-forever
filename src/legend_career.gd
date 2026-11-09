@@ -176,8 +176,10 @@ func launch_config() -> Dictionary:
 	var own_lineup: Array=home_lineup if next.home==state.club_id else away_lineup
 	if not own_lineup.any(func(player): return player.id==state.profile.id): error="Il tuo giocatore non è nella formazione."; return {}
 	state.pending_fixture_id=next.id
+	var options99: Dictionary=state.options.duplicate(true)
+	options99.condition99=engine.match_forms99(str(next.id))
 	if bool(state.options.autosave) and not save(): return {}
-	return {"mode":"legend72","fixture_id":next.id,"fixture":next.duplicate(true),"player":state.profile.duplicate(true),"player_id":state.profile.id,"role":state.profile.role,"club":club.duplicate(true),"club_id":club.id,"opponent":team(opponent_id).duplicate(true),"home_club_id":next.home,"club_lineup":own_lineup,"opponent_lineup":away_lineup if next.home==state.club_id else home_lineup,"teams":[home_lineup,away_lineup],"home_team":team(str(next.home)).duplicate(true),"away_team":team(str(next.away)).duplicate(true),"best_of":engine.best_of(),"points":25,"options":state.options.duplicate(true)}
+	return {"mode":"legend72","fixture_id":next.id,"fixture":next.duplicate(true),"player":state.profile.duplicate(true),"player_id":state.profile.id,"role":state.profile.role,"club":club.duplicate(true),"club_id":club.id,"opponent":team(opponent_id).duplicate(true),"home_club_id":next.home,"club_lineup":own_lineup,"opponent_lineup":away_lineup if next.home==state.club_id else home_lineup,"teams":[home_lineup,away_lineup],"home_team":team(str(next.home)).duplicate(true),"away_team":team(str(next.away)).duplicate(true),"best_of":engine.best_of(),"points":25,"options":options99}
 
 func cancel_match() -> void:
 	if active(): state.pending_fixture_id=""; changed.emit()

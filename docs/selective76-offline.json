@@ -5,7 +5,7 @@
       "case": "changed-missing-only-and-personal-preservation",
       "pass": true,
       "downloaded_bytes": 161,
-      "full_bytes": 2099332
+      "full_bytes": 2099527
     },
     {
       "case": "up-to-date-no-download",
@@ -32,5 +32,5 @@
       "pass": true
     }
   ],
-  "fixture": "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\selective76-91a5ad6c81564eb69bb6bae55a5661a9"
+  "fixture": "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\selective76-3e541d35dcd04e19ac91846408bc9b76"
 }

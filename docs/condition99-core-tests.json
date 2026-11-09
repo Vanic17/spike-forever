@@ -1,0 +1,35 @@
+{
+  "distributions": {
+    "A": {
+      "DOWN": 2001,
+      "DOWN_RIGHT": 4076,
+      "NEUTRAL": 17934,
+      "UP": 37925,
+      "UP_RIGHT": 38064
+    },
+    "B": {
+      "DOWN": 2977,
+      "DOWN_RIGHT": 9995,
+      "NEUTRAL": 29070,
+      "UP": 19852,
+      "UP_RIGHT": 38106
+    },
+    "C": {
+      "DOWN": 9994,
+      "DOWN_RIGHT": 25007,
+      "NEUTRAL": 30148,
+      "UP": 9889,
+      "UP_RIGHT": 24962
+    },
+    "D": {
+      "DOWN": 19957,
+      "DOWN_RIGHT": 35066,
+      "NEUTRAL": 30101,
+      "UP": 4930,
+      "UP_RIGHT": 9946
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "players": 169
+}

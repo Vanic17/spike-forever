@@ -78,7 +78,7 @@ static func _descendant(index: int, ancestor: int, parents: Array[int]) -> bool:
 	return false
 
 static func _rotate_subtree(pose: Array[Transform3D], parents: Array[int], bone: int, axis: Vector3, angle: float) -> void:
-	if absf(angle) < 0.000001:
+	if absf(angle) < 0.000001 or axis.length_squared()<0.000001:
 		return
 	var pivot := pose[bone].origin
 	var turn := Basis(Quaternion(axis.normalized(), angle))

@@ -57,12 +57,12 @@ try {
   $from=Join-Path $stage $relative
   if(!$seen.ContainsKey($relative.ToLowerInvariant())){
    $from=Join-Path $root $relative
-   if($relative -eq 'controls.cfg' -and (Test-Path -LiteralPath $from)){continue}
    $probe=$from
    while($probe.Length -ge $root.Length){
     if((Test-Path -LiteralPath $probe) -and ((Get-Item -LiteralPath $probe).Attributes -band [IO.FileAttributes]::ReparsePoint)){throw 'Installation contains redirected file'}
     $probe=Split-Path $probe
    }
+   if($relative -in @('controls.cfg','assets/gameplay/league.json') -and (Test-Path -LiteralPath $from -PathType Leaf)){continue}
   }
   if((Get-FileHash -LiteralPath $from -Algorithm SHA256).Hash -ne $property.Value){throw ('File verification failed: '+$relative)}
  }
@@ -73,7 +73,7 @@ try {
   $relative=$property.Name
   if($selective -and !$seen.ContainsKey($relative.ToLowerInvariant())){continue}
   $target=Join-Path $root $relative
-  if($relative -eq 'controls.cfg' -and (Test-Path -LiteralPath $target)){continue}
+  if($relative -in @('controls.cfg','assets/gameplay/league.json') -and (Test-Path -LiteralPath $target)){continue}
   # Refuse junctions/symlinks in the existing installation as well.
   $parent=Split-Path $target
   while($parent.Length -gt $root.Length){

@@ -15,6 +15,9 @@ var last_track:=-1
 var music_queue: Array=[]
 var match_rosters: Array=[[],[]]
 var match_rotations: Array=[0,0]
+var formation_done99: Array=["",""]
+const Condition99=preload("res://src/condition99.gd")
+const ConditionUI99=preload("res://src/condition_ui99.gd")
 var formation_dialog: ConfirmationDialog
 var formation_return: Control
 var message: Label
@@ -46,7 +49,7 @@ func go_back() -> void:
 		for control in fields.find_children("*","Control",true,false):
 			if control is LineEdit or control is OptionButton or control is Button or control is SpinBox: control.focus_mode=Control.FOCUS_CLICK
 		player_pick.grab_focus(); return
-	if formation_dialog!=null and formation_dialog.visible:
+	if is_instance_valid(formation_dialog) and formation_dialog.visible:
 		formation_dialog.hide()
 		if is_instance_valid(formation_return): formation_return.grab_focus()
 		return
@@ -119,7 +122,7 @@ func _input(event: InputEvent) -> void:
 			enter_details(); get_viewport().set_input_as_handled(); return
 		if event.is_action_pressed("ui_right"):
 			get_viewport().set_input_as_handled(); return
-	if formation_dialog!=null and formation_dialog.visible:
+	if is_instance_valid(formation_dialog) and formation_dialog.visible:
 		if event.is_action_pressed("ui_cancel"): go_back(); get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("ui_cancel"):
@@ -271,6 +274,10 @@ func edit_player(index: int) -> void:
 	inputs.role=picker(fields,["outside_hitter","middle_blocker","opposite","setter","libero"])
 	inputs.role.select(["outside_hitter","middle_blocker","opposite","setter","libero"].find(current.role))
 	inputs.role.item_selected.connect(func(_i): player_card.player=player_card.player.duplicate(true); player_card.player.role=inputs.role.get_item_text(inputs.role.selected); player_card.queue_redraw())
+	label(fields,"FORMA / COSTANZA")
+	inputs.condition_form=picker(fields,["A","B","C","D"])
+	inputs.condition_form.select(["A","B","C","D"].find(preload("res://src/condition99.gd").form(current)))
+	inputs.condition_form.item_selected.connect(func(i):player_card.player=player_card.player.duplicate(true);player_card.player.condition_form=["A","B","C","D"][i];player_card.queue_redraw())
 	label(fields,"MANO DOMINANTE")
 	inputs.dominant_hand=picker(fields,["Destra","Mancino"]); inputs.dominant_hand.select(1 if current.get("dominant_hand","right")=="left" else 0)
 	label(fields,"BATTUTA PREFERITA / CPU")
@@ -294,6 +301,7 @@ func save_player() -> void:
 	current.name=inputs.name.text.strip_edges(); current.jersey_number=int(inputs.number.value); current.role=inputs.role.get_item_text(inputs.role.selected)
 	current.dominant_hand="left" if inputs.dominant_hand.selected==1 else "right"
 	current.height_cm=int(inputs.height.value)
+	current.condition_form=["A","B","C","D"][inputs.condition_form.selected]
 	current.serve_preference="float" if inputs.serve_preference.selected==1 else "jump"
 	for key in ["hair_style","hair_color","beard","skin_tone"]: current.appearance[key]=null if inputs[key].selected==0 else inputs[key].get_item_text(inputs[key].selected)
 	current.appearance.hair_length="pelato" if current.appearance.hair_style=="pelato" else ("lunghi" if current.appearance.hair_style=="lunghi" else "corti")
@@ -305,6 +313,7 @@ func match_setup() -> void:
 	if host.get("play_hub")!=null: host.play_hub.hide()
 	match_rosters=[[],[]]
 	match_rotations=[0,0]
+	formation_done99=["",""];game.form99=Condition99.fresh()
 	lineup_open=false
 	clear("GIOCA  /  PREPARA LA PARTITA")
 	body.add_theme_constant_override("separation",12)
@@ -322,7 +331,7 @@ func match_setup() -> void:
 		var kit_row=HBoxContainer.new(); kit_row.add_theme_constant_override("separation",14); card.add_child(kit_row)
 		label(kit_row,"DIVISA"); var kit_pick=picker(kit_row,["Casa","Trasferta"]); kit_pick.size_flags_horizontal=Control.SIZE_EXPAND_FILL; kits.append(kit_pick)
 		var team_side: int=side
-		var formation=button(card,"FORMAZIONI / SOSTITUZIONI",func(): show_match_formation(team_side,db.teams[p.selected],formation_buttons[team_side]))
+		var formation=button(card,"CONFERMA SQUADRA / FORMAZIONE",func(): show_match_formation(team_side,db.teams[p.selected],formation_buttons[team_side]))
 		formation_buttons.append(formation)
 		var swatch=preload("res://src/kit_preview.gd").new(); card.add_child(swatch)
 		# Only the artwork yields height. Selectors and formations remain
@@ -333,7 +342,7 @@ func match_setup() -> void:
 			var t=db.teams[p.selected]
 			emblem.texture=Branding.logo(t.id,true)
 			swatch.show_kit(t.id,"home" if kit_pick.selected==0 else "away")
-		p.item_selected.connect(func(index): match_rosters[team_side]=[]; refresh.call(index)); refresh.call(0)
+		p.item_selected.connect(func(index): match_rosters[team_side]=[];formation_done99[team_side]="";formation_buttons[team_side].text="CONFERMA SQUADRA / FORMAZIONE";refresh.call(index)); refresh.call(0)
 		kit_pick.item_selected.connect(refresh)
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",24); body.add_child(settings)
 	var format_box=VBoxContainer.new(); format_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL; settings.add_child(format_box)
@@ -346,6 +355,9 @@ func match_setup() -> void:
 	label(fatigue_box,"AFFATICAMENTO"); settings_fatigue=picker(fatigue_box,["Attivo","Disattivato"])
 	var error=Label.new(); body.add_child(error); error.hide()
 	setup_start=button(body,"SCENDI IN CAMPO",func():
+		for side in 2:
+			if formation_done99[side]!=str(db.teams[picks[side].selected].id):
+				show_match_formation(side,db.teams[picks[side].selected],setup_start);return
 		for side in 2:
 			if db.lineup(db.teams[picks[side].selected]).is_empty():
 				error.text="Roster incompleto: servono 2 OH, 2 MB, 1 OPP, 1 S e 1 L."; error.show(); return
@@ -362,7 +374,7 @@ func match_setup() -> void:
 			var chosen_libero: Dictionary = club_kits.selection(t.id,variant,true)
 			for i in 6: game.players[side*6+i].set_roster_identity(squad[i],squad[6],chosen_kit,chosen_libero)
 		if game.get("match_management")!=null:
-			if not game.match_management.configure_rosters(teams,squads,{}, {"fatigue":settings_fatigue.selected==0,"injuries":false}): error.text="Rosa non disponibile per iniziare la partita."; error.show(); return
+			if not game.match_management.configure_rosters(teams,squads,{}, {"fatigue":settings_fatigue.selected==0,"injuries":false,"condition99":game.form99}): error.text="Rosa non disponibile per iniziare la partita."; error.show(); return
 		game.set_home_club(str(teams[0].id),0)
 		game.scores=[0,0]; game.sets=[0,0]; game.rotations=match_rotations.duplicate(); game.server=0; game.paused=false; game.match_finished=false; game.reset_rally(); game.started=true; hide(); music.stop())
 	var back: Control=body.get_child(0).get_child(1)
@@ -390,11 +402,19 @@ func match_setup() -> void:
 	settings_fatigue.focus_neighbor_top=settings_fatigue.get_path_to(formation_buttons[1])
 	picks[0].grab_focus()
 
-func show_match_formation(side: int, team: Dictionary, return_to: Control) -> void:
+func show_match_formation(side: int, team: Dictionary, return_to: Control,context99: Dictionary={},stats_override99: int=-1) -> void:
+	var ledger99: Dictionary=game.form99 if context99.is_empty() else context99
+	var stats99: bool=game.online_session.use_player_stats if game.online_session.active else (is_instance_valid(settings_stats) and settings_stats.selected==1)
+	if stats_override99>=0:stats99=stats_override99==1
+	Condition99.ensure(ledger99,team.roster)
 	formation_return=return_to
-	if formation_dialog!=null: formation_dialog.queue_free()
+	if is_instance_valid(formation_dialog): formation_dialog.queue_free()
 	formation_dialog=ConfirmationDialog.new(); formation_dialog.title="FORMAZIONE / "+team.name; formation_dialog.ok_button_text="CONFERMA"; formation_dialog.cancel_button_text="ANNULLA"; add_child(formation_dialog)
-	var column=VBoxContainer.new(); column.add_theme_constant_override("separation",16); formation_dialog.add_child(column)
+	var backdrop99:=StyleBoxFlat.new();backdrop99.bg_color=Color("101f30");backdrop99.border_color=Color("d5b667");backdrop99.set_border_width_all(1);backdrop99.set_content_margin_all(14)
+	formation_dialog.add_theme_stylebox_override("panel",backdrop99)
+	var form_scroll99:=ScrollContainer.new();form_scroll99.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;formation_dialog.add_child(form_scroll99)
+	form_scroll99.custom_minimum_size=Vector2(1080,clampf(get_viewport_rect().size.y*.68,420,650))
+	var column=VBoxContainer.new(); column.size_flags_horizontal=SIZE_EXPAND_FILL;column.add_theme_constant_override("separation",12); form_scroll99.add_child(column)
 	label(column,"RETE — prima linea · bande e opposti sono intercambiabili")
 	label(column,"Sestetto base + libero · il libero entra al posto del centrale di seconda linea durante la partita")
 	label(column,"ROTAZIONE INIZIALE")
@@ -415,8 +435,10 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 		var cell=VBoxContainer.new(); cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL; grid.add_child(cell)
 		var zone_label=Label.new(); cell.add_child(zone_label); zone_labels[index]=zone_label
 		var candidates: Array=team.roster.filter(func(player): return db.fits_slot(player.role,index)); options[index]=candidates
-		var labels: Array=candidates.map(func(player): return "%s · %s · %s · GEN %d"%[str(int(player.jersey_number)) if player.get("jersey_number")!=null else "?",{"outside_hitter":"OH","opposite":"OPP","middle_blocker":"MB","setter":"S","libero":"L"}.get(player.role,player.role),player.name,int(player.ratings.get("generale",0))])
+		var labels: Array=candidates.map(func(player): return ConditionUI99.names(player,ledger99,stats99))
 		var pick=picker(cell,labels); pick.add_theme_font_size_override("font_size",13); pick.fit_to_longest_item=false; pick.clip_text=true; pick.custom_minimum_size=Vector2(320,48); controls[index]=pick
+		ConditionUI99.decorate(pick,candidates,ledger99)
+		pick.focus_entered.connect(func():form_scroll99.ensure_control_visible(pick))
 		for j in candidates.size():
 			if candidates[j].id==squad[index].id: pick.select(j)
 		pick.item_selected.connect(func(selected):
@@ -447,9 +469,23 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control) -> vo
 		ok.focus_neighbor_top=ok.get_path_to(controls[6]); ok.focus_neighbor_right=ok.get_path_to(cancel)
 		cancel.focus_neighbor_top=cancel.get_path_to(controls[6]); cancel.focus_neighbor_left=cancel.get_path_to(ok)
 	rotation_pick.item_selected.connect(refresh_rotation); refresh_rotation.call(0)
+	var roster_button99=button(column,"CONDIZIONE DELLA PARTITA / ROSA COMPLETA",func():pass)
+	var roster_grid99: GridContainer=ConditionUI99.list(column,team.roster,ledger99,stats99)
+	roster_button99.focus_entered.connect(func():form_scroll99.ensure_control_visible(roster_grid99))
+	roster_button99.focus_neighbor_bottom=roster_button99.get_path_to(formation_dialog.get_ok_button())
+	roster_button99.focus_neighbor_top=roster_button99.get_path_to(controls[6])
+	controls[6].focus_neighbor_bottom=controls[6].get_path_to(roster_button99)
+	controls[6].focus_next=controls[6].get_path_to(roster_button99)
+	formation_dialog.get_ok_button().focus_neighbor_top=formation_dialog.get_ok_button().get_path_to(roster_button99)
+	rotation_pick.item_selected.connect(func(_index):
+		controls[6].focus_neighbor_bottom=controls[6].get_path_to(roster_button99)
+		controls[6].focus_next=controls[6].get_path_to(roster_button99)
+		formation_dialog.get_ok_button().focus_neighbor_top=formation_dialog.get_ok_button().get_path_to(roster_button99))
 	label(column,"A / Croce: scegli · frecce / stick sinistro: naviga · B / Cerchio: annulla")
-	formation_dialog.confirmed.connect(func(): match_rosters[side]=squad.duplicate(); match_rotations[side]=rotation_pick.selected; formation_return.grab_focus())
+	formation_dialog.confirmed.connect(func():
+		match_rosters[side]=squad.duplicate();match_rotations[side]=rotation_pick.selected;formation_done99[side]=str(team.id)
+		if is_instance_valid(formation_return):formation_return.grab_focus())
 	formation_dialog.canceled.connect(func(): formation_return.grab_focus())
 	formation_dialog.window_input.connect(func(event):
 		if event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_RIGHT_STICK: next_track())
-	formation_dialog.popup_centered(Vector2i(1100,620)); rotation_pick.grab_focus()
+	formation_dialog.popup_centered(Vector2i(1120,clampi(int(get_viewport_rect().size.y*.88),540,800))); rotation_pick.grab_focus()

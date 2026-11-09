@@ -64,6 +64,7 @@ func configure_rosters(teams: Array,lineups: Array,initial_conditions: Dictionar
 	rosters=[[],[]]; identities.clear(); current=[[],[]]; libero_ids=["",""]; conditions=initial_conditions.duplicate(true)
 	fatigue_enabled=bool(options.get("fatigue",true)); injuries_enabled=bool(options.get("injuries",false)); auto_subs=bool(options.get("auto_subs",false)); date=str(options.get("date","2026-10-18"))
 	career_form=bool(options.get("career_form",false))
+	game.form99=options.get("condition99",{}).duplicate(true)
 	injury_intensity=clampf(float(options.get("injury_intensity",1.0)),0,2)
 	for side in 2:
 		if lineups[side].size()!=7: return false
@@ -405,10 +406,16 @@ func auto_changes() -> void:
 	game.phase=phase_before
 
 func export_state() -> Dictionary:
+	var value: Dictionary=_export_legacy99()
+	value.condition99=game.form99.duplicate(true)
+	return value
+
+func _export_legacy99() -> Dictionary:
 	return {"active":active,"current":current.duplicate(true),"starters":starters.duplicate(true),"counts":counts.duplicate(),"pairs":pairs.duplicate(true),"left_once":left_once.duplicate(true),"returned":returned.duplicate(true),"used_subs":used_subs.duplicate(true),"excluded":excluded.duplicate(),"conditions":conditions.duplicate(true),"libero":libero_ids.duplicate(),"fatigue":fatigue_enabled,"injuries":injuries_enabled,"between_sets":between_sets,"queued_changes":queued_changes.duplicate(true),"double_changes":double_changes.duplicate(true)}
 
 func import_state(value: Dictionary) -> void:
 	if value.is_empty() or value.get("current",[]).size()!=2: return
+	game.form99=value.get("condition99",game.form99).duplicate(true)
 	active=bool(value.active); current=value.current.duplicate(true); starters=value.starters.duplicate(true); counts=value.counts.duplicate(); pairs=value.pairs.duplicate(true); left_once=value.left_once.duplicate(true); returned=value.returned.duplicate(true); used_subs=value.used_subs.duplicate(true); excluded=value.excluded.duplicate(); conditions=value.conditions.duplicate(true); libero_ids=value.libero.duplicate(); fatigue_enabled=bool(value.fatigue); injuries_enabled=bool(value.injuries)
 	between_sets=bool(value.get("between_sets",false))
 	queued_changes=value.get("queued_changes",[]).duplicate(true)
@@ -437,6 +444,7 @@ func finish_match() -> void:
 		var value: float=float(row.points)+float(row.digs)*.1+float(row.sets)*.04
 		if value>best_score: best_score=value; best_id=str(id)
 	last_result={"source":"played","statistics_source":"measured","sets":game.sets.duplicate(),"set_scores":set_scores.duplicate(true),"players":players,"team_stats":team_stats,"duration_minutes":maxf(1,running_seconds/60.0),"mvp":best_id,"substitutions":substitutions.duplicate(true),"conditions":conditions.duplicate(true),"injuries":injury_events.duplicate(true),"complete":true}
+	last_result.condition99=game.form99.duplicate(true)
 	match_completed.emit(last_result)
 
 func open() -> void:

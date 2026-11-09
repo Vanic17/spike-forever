@@ -20,7 +20,7 @@ func setup():
 	if guest_mode:
 		net.menu.code.text=Code.encode("127.0.0.1",26779,0x123496);net.menu.join.pressed.emit()
 	else:
-		net.menu.stats_pick.select(1);net.menu.stats_pick.item_selected.emit(1);net.menu.create.pressed.emit();net.generation=0x123496;net.menu.host.clubs.match_rotations[0]=3;net.menu.confirm.pressed.emit()
+		net.menu.stats_pick.select(1);net.menu.stats_pick.item_selected.emit(1);net.menu.create.pressed.emit();net.generation=0x123496;net.menu.host.clubs.match_rotations[0]=3;net.choose(net.menu.choice(),true)
 func finish(ok: bool,message: String):
 	if not ok:errors.append(message)
 	FileAccess.open("res://docs/strokes96-online-"+("guest" if guest_mode else "host")+".json",FileAccess.WRITE).store_string(JSON.stringify({"pass":errors.is_empty(),"errors":errors,"transport":"ENet loopback","new_second_touches":contacts,"database":g.use_player_stats},"  "))
@@ -41,7 +41,7 @@ func _process(dt: float):
 		if age>done_at+.7:finish(errors.is_empty(),"three remote actions committed as second touches")
 		return false
 	if guest_mode and net.guest!=0 and not submitted:
-		submitted=true;net.menu.host.clubs.match_rotations[1]=3;net.menu.confirm.pressed.emit()
+		submitted=true;net.menu.host.clubs.match_rotations[1]=3;net.choose(net.menu.choice(),true)
 	if not guest_mode and not net.playing and net.ready_flags[0] and net.ready_flags[1]:
 		net.start_match();g.set_process(false);g.set_physics_process(false);next_at=age+.5
 	if not net.playing:return false

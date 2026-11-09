@@ -1,4 +1,4 @@
-﻿extends CanvasLayer
+extends CanvasLayer
 const UI=preload("res://src/career_widgets.gd")
 var manager
 var game
@@ -90,9 +90,12 @@ func role_label(person: Dictionary) -> String:
 	return {"outside_hitter":"OH","opposite":"OPP","middle_blocker":"MB","setter":"S","libero":"L"}.get(str(person.get("role","")),"–")
 func text_for(person: Dictionary) -> String:
 	var fitness=tr("RES %d%%")%roundi(100-manager.fatigue(str(person.id))) if manager.fatigue_enabled else tr("RES OFF")
-	return "%d · %s · %s\nGEN %d   ·   %s   ·   %s %+.0f"%[int(person.get("jersey_number",0)),role_label(person),str(person.get("name","")),int(person.get("ratings",{}).get("generale",50)),fitness,tr("FORMA"),float(manager.conditions.get(person.id,{}).get("form",0))]
+	var C=preload("res://src/condition99.gd")
+	var values: Dictionary=C.ratings(person,game.form99) if game.use_player_stats and not game.form99.is_empty() else person.get("ratings",{})
+	return "%d · %s · %s\nGEN %d · %s · %s %s · %s"%[int(person.get("jersey_number",0)),role_label(person),str(person.get("name","")),int(values.get("generale",50)),fitness,tr("FORMA"),C.form(person),C.label(C.arrow(game.form99,str(person.id)))]
 func player_row(parent: Node,person: Dictionary,callback: Callable) -> Button:
 	var row=UI.button(parent,text_for(person),callback); row.custom_minimum_size.y=76; row.add_theme_font_size_override("font_size",20)
+	if not game.form99.is_empty():row.icon=preload("res://src/condition99.gd").icon(preload("res://src/condition99.gd").arrow(game.form99,str(person.id)));row.expand_icon=true;row.add_theme_constant_override("icon_max_width",26)
 	if manager.fatigue_enabled:
 		var bar=ProgressBar.new(); bar.show_percentage=false; bar.value=100-manager.fatigue(str(person.id)); bar.mouse_filter=Control.MOUSE_FILTER_IGNORE
 		row.add_child(bar); bar.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE); bar.offset_left=14; bar.offset_right=-14; bar.offset_top=-7; bar.offset_bottom=-4
@@ -145,8 +148,11 @@ func update_detail() -> void:
 	step.text=tr("3  CONFERMA IL CAMBIO")
 	detail.text=tr("ESCE: %s (%s)     →     ENTRA: %s (%s)")%[old.name,role_label(old),next.name,role_label(next)]
 	detail.text+="\n"+tr("GEN %d → %d · RES %d%% → %d%% · FORMA %+.0f → %+.0f")%[int(old.ratings.get("generale",50)),int(next.ratings.get("generale",50)),roundi(100-manager.fatigue(str(old.id))),roundi(100-manager.fatigue(incoming)),float(manager.conditions.get(old.id,{}).get("form",0)),float(manager.conditions.get(incoming,{}).get("form",0))]
+	var C99=preload("res://src/condition99.gd")
+	var old99: Dictionary=C99.ratings(old,game.form99) if game.use_player_stats else old.ratings
+	var next99: Dictionary=C99.ratings(next,game.form99) if game.use_player_stats else next.ratings
 	var values: Array=[]
-	for key in ["battuta","ricezione","difesa","palleggio","schiacciata","muro"]: values.append(tr(key.capitalize())+" %d → %d"%[int(old.ratings.get(key,50)),int(next.ratings.get(key,50))])
+	for key in ["battuta","ricezione","difesa","palleggio","schiacciata","muro"]: values.append(tr(key.capitalize())+" %d → %d"%[int(old99.get(key,50)),int(next99.get(key,50))])
 	detail.text+="\n"+" · ".join(values)
 	var reason: String=manager.eligibility(side,selected_slot,incoming,false,false)
 	status.text=tr(reason) if not reason.is_empty() else (tr("Cambio consentito. L'ordine di rotazione resta invariato. Premi CONFERMA per applicarlo.") if manager.dead_ball() else tr("Cambio alla prossima palla ferma. Conferma per programmarlo e riprendere lo scambio."))

@@ -368,43 +368,26 @@ func squad_screen(team_id: String):
 		var player=p; var condition=manager.player_condition(p.id); var fatigue=float(condition.get("fatigue",0)); var injured=str(condition.get("injury_until",""))>=str(manager.state.date) and not str(condition.get("injury_until","")).is_empty()
 		var availability="Recupero fino al "+condition.injury_until if injured else "Disponibile"
 		var label="%2d   %-4s   %-31s   %3d       %3d%%                  %+d                 %s"%[int(p.get("jersey_number",0)),role(p.role),p.name,int(p.ratings.get("generale",0)),100-int(fatigue),int(condition.get("form",0)),availability]
-		var b=UI.table_row(list,[str(int(p.get("jersey_number",0))),p.name,role(p.role),str(int(p.ratings.get("generale",0))),str(100-int(fatigue))+"%","%+d"%int(condition.get("form",0)),availability],[50,475,64,82,145,100,390],func(): push("player",player.id),"player-"+p.id)
+		var b=UI.table_row(list,[str(int(p.get("jersey_number",0))),p.name,role(p.role),str(int(p.ratings.get("generale",0))),str(100-int(fatigue))+"%",preload("res://src/condition99.gd").form(p)+" / %+d"%int(condition.get("form",0)),availability],[50,475,64,82,145,100,390],func(): push("player",player.id),"player-"+p.id)
 		b.tooltip_text="Fatica %.0f/100. Recupero graduale nei giorni senza partite. Forma distinta dalla condizione."%fatigue
 func role(value: String) -> String: return {"outside_hitter":"OH","opposite":"OPP","middle_blocker":"MB","setter":"S","libero":"L"}.get(value,value)
 func formation_screen(team_id: String):
-	var team=manager.team(team_id); var squad=manager.lineup(team_id)
-	if squad.size()!=7: toast("Rosa non disponibile per una formazione regolare."); return
-	modal_previous_key=focus_key(); modal=AcceptDialog.new(); modal.title="FORMAZIONE / "+team.name; modal.ok_button_text="SALVA FORMAZIONE"; modal.exclusive=true; modal.theme=theme.duplicate(true); add_child(modal)
-	modal_dirty=false
-	var box=VBoxContainer.new(); box.add_theme_constant_override("separation",8); modal.add_child(box); UI.label(box,"SESTETTO + LIBERO   ·   confronta condizione e valori prima di scegliere",19,UI.MUTED)
-	var grid=GridContainer.new(); grid.columns=2; grid.add_theme_constant_override("h_separation",18); grid.add_theme_constant_override("v_separation",10); box.add_child(grid)
-	var picks=[]; var options=[]
-	for i in 7:
-		var slot=i; var col=VBoxContainer.new(); grid.add_child(col)
-		var candidates=team.roster.filter(func(p): return League.fits_slot(p.role,slot)); options.append(candidates)
-		var slot_name=["OH1","MB1","OPP","OH2","MB2","S","L"][i]
-		var labels=candidates.map(func(p): return "%s · %d · %s · GEN %d · COND %d%%"%[slot_name,int(p.jersey_number),p.name,int(p.ratings.get("generale",0)),100-int(manager.player_condition(p.id).fatigue)])
-		var selected=0
-		for j in candidates.size():
-			if candidates[j].id==squad[i].id: selected=j
-		var pick=UI.picker(col,labels,selected); pick.custom_minimum_size.x=470; pick.add_theme_font_size_override("font_size",19); picks.append(pick)
-		pick.item_selected.connect(func(_i): modal_dirty=true)
-	UI.label(box,"ROTAZIONE DI PARTENZA",20,UI.MUTED)
-	var rotation=UI.picker(box,["P1 · S in 1","P6 · S in 6","P5 · S in 5","P4 · S in 4","P3 · S in 3","P2 · S in 2"],int(manager.state.lineups[team_id].rotation))
-	rotation.item_selected.connect(func(_i): modal_dirty=true)
-	UI.button(box,"RIPRISTINA FORMAZIONE BASE",func():
-		var base=League.new().lineup(team)
-		for i in mini(7,base.size()):
-			for j in options[i].size():
-				if options[i][j].id==base[i].id: picks[i].select(j)
-		rotation.select(0))
-	UI.button(box,"ANNULLA / CERCHIO",close_modal)
+	var team=manager.team(team_id);var squad=manager.lineup(team_id)
+	if squad.size()!=7:toast("Rosa non disponibile per una formazione regolare.");return
+	var next99: Dictionary=manager.next_fixture()
+	var ledger99: Dictionary=manager.match_forms99(str(next99.id)) if not next99.is_empty() and team_id in [str(next99.home),str(next99.away)] else {}
+	var clubs99=host.clubs
+	clubs99.match_rosters[0]=squad.duplicate();clubs99.match_rotations[0]=int(manager.state.lineups[team_id].rotation)
+	var return99: Control=get_viewport().gui_get_focus_owner()
+	if return99==null:return99=self
+	modal_previous_key=focus_key();modal_dirty=false
+	clubs99.show_match_formation(0,team,return99,ledger99,1 if manager.state.options.use_player_stats else 0)
+	modal=clubs99.formation_dialog
 	modal.confirmed.connect(func():
-		var ids=[]
-		for i in 7: ids.append(options[i][picks[i].selected].id)
-		if manager.set_lineup(team_id,ids,rotation.selected): modal_dirty=false; close_modal(); show_page(view,argument)
-		else: toast(manager.error))
-	modal.window_input.connect(modal_input); modal.popup_centered(Vector2i(mini(1080,get_viewport_rect().size.x-40),mini(680,get_viewport_rect().size.y-40))); picks[0].grab_focus()
+		var ids99: Array=clubs99.match_rosters[0].map(func(p):return str(p.id))
+		if manager.set_lineup(team_id,ids99,clubs99.match_rotations[0]):modal=null;show_page(view,argument)
+		else:toast(manager.error))
+	modal.canceled.connect(func():modal=null;focus_restore(modal_previous_key))
 func close_modal():
 	if modal_dirty:
 		confirm("Annullare le modifiche alla formazione?",func(): modal_dirty=false; close_modal()); return
@@ -620,10 +603,15 @@ func prematch_screen():
 		var list=UI.scroll(card)
 		for p in manager.lineup(team_id):
 			var player=p; var c=manager.player_condition(p.id)
-			UI.button(list,"%s · %s  /  GEN %d  ·  COND %d%%  ·  FORMA %+d"%[role(p.role),p.name,int(p.ratings.get("generale",0)),100-int(c.fatigue),int(c.form)],func(): push("player",player.id),"prematch-"+p.id)
+			var ledger99: Dictionary=fixture.get("condition99",{})
+			var title99: String=preload("res://src/condition_ui99.gd").names(p,ledger99,manager.state.options.use_player_stats) if not ledger99.is_empty() else "%s · %s · GEN %d · FORMA %s"%[role(p.role),p.name,int(p.ratings.get("generale",0)),preload("res://src/condition99.gd").form(p)]
+			var entry99=UI.button(list,title99+" · RES %d%%"%(100-int(c.fatigue)),func(): push("player",player.id),"prematch-"+p.id)
+			if not ledger99.is_empty():entry99.icon=preload("res://src/condition99.gd").icon(preload("res://src/condition99.gd").arrow(ledger99,str(p.id)))
 	var buttons=HBoxContainer.new(); page.add_child(buttons); UI.button(buttons,"SCENDI IN CAMPO",launch_match,"launch"); UI.button(buttons,"SIMULA PARTITA",simulate_match,"simulate")
 func launch_match():
 	var fixture=manager.next_fixture(); if fixture.is_empty(): return
+	if not fixture.has("condition99"):
+		formation_screen(club());return
 	if not manager.prepare_match(str(fixture.id)): toast(manager.error); return
 	var away=fixture.home!=club(); var ids=[club(),fixture.home if away else fixture.away]; var squads=[]; var teams=[]
 	for side in 2:
@@ -634,6 +622,7 @@ func launch_match():
 	game.use_player_stats=bool(manager.state.options.get("use_player_stats",false)); game.match_best_of=manager.best_of(); game.match_points=25; game.difficulty=int(manager.state.options.get("difficulty",1))
 	if game.get("match_management")!=null:
 		var options=manager.state.options.duplicate(true); options.date=manager.state.date; options.career_form=true
+		options.condition99=manager.match_forms99(str(fixture.id))
 		if not game.match_management.configure_rosters(teams,squads,manager.state.conditions,options): toast("Rosa insufficiente o giocatori indisponibili: correggi la formazione."); return
 		if not game.match_management.match_completed.is_connected(match_completed): game.match_management.match_completed.connect(match_completed)
 	game.set_home_club(str(fixture.home),1 if away else 0)

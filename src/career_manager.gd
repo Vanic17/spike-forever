@@ -31,6 +31,22 @@ func player(id: String) -> Dictionary:
 	return {}
 func player_condition(id: String) -> Dictionary:
 	return state.get("conditions",{}).get(id,{"fatigue":0.0,"form":0.0,"injury_until":"","injury_kind":"","history":[]})
+
+func match_forms99(fixture_id: String) -> Dictionary:
+	var f: Dictionary=fixture(fixture_id)
+	if f.is_empty() or not f.get("result",{}).is_empty():return f.get("condition99",{})
+	var C=preload("res://src/condition99.gd")
+	var key: String="career:"+str(state.get("career_id",str(state.get("seed",0))+str(state.get("club_id",""))))+":"+fixture_id
+	var ledger: Dictionary=f.get("condition99",{})
+	if ledger.is_empty():ledger=C.read(key)
+	if ledger.is_empty():ledger=C.fresh((str(state.get("seed",0))+key).sha256_text().substr(0,12).hex_to_int(),key)
+	var people: Array=team(str(f.home)).get("roster",[])+team(str(f.away)).get("roster",[])
+	var generated: int=C.ensure(ledger,people)
+	f.condition99=ledger
+	# Opening formation writes only a separate match ledger. Existing career
+	# and database files are never migrated or autosaved by this operation.
+	if generated>0 or not FileAccess.file_exists(C.path(key)):C.store(ledger)
+	return ledger
 func club_name(id: String) -> String: return str(team(id).get("name",id))
 static func add_days(date: String,days: int) -> String:
 	return Time.get_datetime_string_from_unix_time(int(Time.get_unix_time_from_datetime_string(date+"T12:00:00"))+days*86400).left(10)
@@ -83,6 +99,7 @@ func load_career(slot: int) -> bool:
 	if value.is_empty(): error=repository.error; return false
 	state=value; state.slot=slot; rng.seed=int(state.seed); rng.state=int(str(state.rng_state)); error=""
 	preload("res://src/player_overall.gd").refresh_teams(state.get("teams",[]))
+	preload("res://src/condition99.gd").migrate(state.get("teams",[]))
 	state["schema"]=1
 	for key in ["news_ids","stats_by_comp","records"]:
 		if not state.has(key): state[key]={}

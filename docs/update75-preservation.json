@@ -1,13 +1,15 @@
 ﻿{
     "personal_files":  [
-                           "roster-overrides.json",
                            "legend72/legend-01.json",
-                           "settings.cfg",
+                           "roster-overrides.json",
                            "careers/slot.json",
-                           "controls.cfg"
+                           "assets/gameplay/league.json",
+                           "condition99/matches/test.json",
+                           "controls.cfg",
+                           "settings.cfg"
                        ],
     "pass":  true,
-    "fixture":  "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\update75-b46d4025cc8d47d6bf0d3bf036f2d9aa",
+    "fixture":  "C:\\Users\\kravi\\Desktop\\Spike Forever\\.runtime\\update75-0069f54b7002444eb104eaf0c0a81324",
     "cases":  [
                   {
                       "case":  "skip-versions",

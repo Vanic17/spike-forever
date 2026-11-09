@@ -238,6 +238,7 @@ var attack_run = preload("res://src/attack_run.gd").new()
 var pause_menu
 var match_management
 var match_condition: Array=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+var form99: Dictionary={}
 var preferences
 var tutorial
 var middle_decoy=MiddleDecoy.new()
