@@ -5,7 +5,7 @@ const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
 # New stroke names, commands and second-touch state require matching peers.
 # Reject incompatible dictionaries before decoding compact clip IDs.
-const PROTOCOL="SF092-PERFECTSET97"
+const PROTOCOL="SF093-SETTER98"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game

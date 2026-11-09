@@ -6,8 +6,9 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_93.md','tools/Test-SetterSeconds98.gd','tools/Capture-SetterSeconds98.gd')
 $files+=@('docs/RELEASE_NOTES_92.md','docs/perfect-set97-tests.json','tools/Test-PerfectSet97.gd','docs/RELEASE_NOTES_91.md','docs/STROKES_96.md','docs/NET_TIP94.md','docs/PLAYER_POSE95.md','tools/Test-Strokes96.gd','tools/Test-ShortTipRecovery96.gd','tools/Test-OnlineStrokes96.gd','tools/Run-OnlineStrokes96.ps1','tools/Capture-Strokes96.gd','tools/Test-NetTip94.gd','tools/Test-PlayerPose95.gd','tools/Verify-Package96.py')
-foreach($pattern96 in @('perfect-set97-*','strokes96-*','net-tip94-validation*','player-pose95-*')){
+foreach($pattern96 in @('setter98-*','perfect-set97-*','strokes96-*','net-tip94-validation*','player-pose95-*')){
  foreach($item96 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern96){
   if($item96.Extension -in @('.json','.png','.mp4')){$files+='docs/'+$item96.Name}
  }

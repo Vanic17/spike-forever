@@ -341,7 +341,7 @@ func contact_local(action: String) -> Vector3:
 	var result: Vector3=clips[action].contact_offset
 	if preload("res://src/player_pose95.gd").jumping(native_clip_name(action)):
 		result.y+=preload("res://src/player_pose95.gd").contact_correction(self,action)
-	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
+	if left_handed and action in ["attack","power","float","dump","serve_idle"] and not triangle_second98(action): result.x=-result.x
 	return result*height_scale90
 
 func select_variant(action: String, variant: String = "") -> void:
@@ -356,7 +356,7 @@ func select_variant(action: String, variant: String = "") -> void:
 
 func action_root_motion(action: String, time: float) -> Vector3:
 	var result: Vector3=clips[action].root_motion(time) if clips.has(action) else Vector3.ZERO
-	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
+	if left_handed and action in ["attack","power","float","dump","serve_idle"] and not triangle_second98(action): result.x=-result.x
 	return result*height_scale90
 
 func contact_recovery_remaining() -> float:
@@ -374,8 +374,11 @@ func stance_for_contact(action: String, contact: Vector3) -> Vector3:
 func contact_world(action: String) -> Vector3:
 	return global_transform * contact_local(action)
 
+func triangle_second98(action: String) -> bool:
+	return action=="dump" and variant_names.get("dump","") in ["dump_back96","dump_down96","dump_forward96"]
+
 func current_hand(left: bool) -> Vector3:
-	if left_handed and clip_name in ["attack","power","float","dump","serve_idle"]: left=not left
+	if left_handed and clip_name in ["attack","power","float","dump","serve_idle"] and not triangle_second98(clip_name): left=not left
 	if last_pose.is_empty(): return contact_world("serve_idle")
 	var idx: int = clips.idle.names.find("LeftHand" if left else "RightHand")
 	return global_transform * (last_pose[idx].origin*height_scale90)
@@ -794,6 +797,8 @@ func apply_pose(_dt: float) -> void:
 		solve_arm(normalized,"Left" if left_handed else "Right",power_transfer_from/height_scale90,clip.parents,1.5)
 		reach_weight=saved_reach
 	if reach_weight > 0.001 and reach_action in ["receive", "recovery", "dive", "dump", "set", "fast_set", "attack", "float", "power", "block"]:
+		var saved_reach98: float=reach_weight
+		if triangle_second98(reach_action):reach_weight*=1-smoothstep(clip.contact_time+.01,clip.contact_time+.10,animation_time)
 		var point := pose_world84().affine_inverse() * reach_target
 		if reach_action=="block":
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
@@ -806,12 +811,17 @@ func apply_pose(_dt: float) -> void:
 			solve_arm(normalized, "Right", point + Vector3(-grip, -0.07, 0), clip.parents)
 		else:
 			var left_arm: bool=(not left_handed) if reach_action=="dump" else (left_handed and reach_action in ["attack","power","float"])
+			if triangle_second98(reach_action):left_arm=variant_names.dump=="dump_down96"
 			var pancake: bool=native_clip_name(clip_name)=="dive_pancake80"
 			var palm: int=clip.names.find("RightHand")
 			var palm_basis: Basis=normalized[palm].basis if palm>=0 else Basis.IDENTITY
+			var second_hand98: int=clip.names.find("LeftHand" if left_arm else "RightHand") if triangle_second98(reach_action) else -1
+			var second_basis98: Basis=normalized[second_hand98].basis if second_hand98>=0 else Basis.IDENTITY
 			if pancake:point.y-=.105
-			solve_arm(normalized, "Left" if left_arm else "Right", point - Vector3(0, 0, 0.085), clip.parents,.65 if reach_action=="dump" and second_contact97!=Vector3.ZERO else .38)
+			solve_arm(normalized, "Left" if left_arm else "Right", point - (Vector3(-.08,0,0) if second_hand98>=0 else Vector3(0, 0, 0.085)), clip.parents,.65 if reach_action=="dump" and second_contact97!=Vector3.ZERO else .38)
 			if pancake and palm>=0:rotate_subtree(normalized,palm,palm_basis*normalized[palm].basis.inverse(),clip.parents)
+			if second_hand98>=0:rotate_subtree(normalized,second_hand98,second_basis98*normalized[second_hand98].basis.inverse(),clip.parents)
+		reach_weight=saved_reach98
 	if clip_name == "block" and absf(hand_adjust) > 0.01:
 		for side in ["Left", "Right"]:
 			var shoulder: int = clip.names.find(side + "Arm")
@@ -862,7 +872,7 @@ func raw_normalized_pose(name: String, time: float, loop: bool) -> Array[Transfo
 	if native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_name):
 		result=pose_tree.sample(native_name, time, loop)
 	else: result=psa_normalized_pose(name, time, loop)
-	if left_handed and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle","set_first96"]):
+	if left_handed and native_name not in ["dump_back96","dump_down96","dump_forward96"] and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle","set_first96"]):
 		if mirror_bones.is_empty():
 			for bone in clips.idle.names:
 				var opposite: String=bone.replace("Left","@SIDE@").replace("Right","Left").replace("@SIDE@","Right")

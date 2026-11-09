@@ -4,7 +4,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 0
@@ -12,7 +12,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 0
@@ -20,7 +20,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 0
@@ -28,7 +28,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 0
@@ -36,7 +36,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 0
@@ -44,7 +44,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 0
@@ -52,7 +52,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 0
@@ -60,7 +60,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 0
@@ -68,7 +68,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "CPU_RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 0
@@ -148,7 +148,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 1
@@ -156,7 +156,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 1
@@ -164,7 +164,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 0,
       "team": 1
@@ -172,7 +172,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 1
@@ -180,7 +180,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 1
@@ -188,7 +188,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 1,
       "team": 1
@@ -196,7 +196,7 @@
     {
       "aim": "(0.0, 1.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 1
@@ -204,7 +204,7 @@
     {
       "aim": "(-1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 1
@@ -212,7 +212,7 @@
     {
       "aim": "(1.0, 0.0)",
       "contact": true,
-      "phase": "POINT",
+      "phase": "RECEIVE",
       "requested": true,
       "rotation": 2,
       "team": 1

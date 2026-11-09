@@ -1064,6 +1064,7 @@ func validate_contact(index: int, action: String) -> bool:
 	player.prepare_contact(action, 0)
 	var disguised: bool=player.variant_names.get(action,"")=="set_disguise81"
 	var actual: Vector3 = player.current_hand(action=="dump" and not disguised)
+	if player.triangle_second98(action):actual=player.current_hand(player.variant_names.dump=="dump_down96")+player.global_basis*Vector3(-.08,0,0)
 	if player.variant_names.get(action,"")=="set_first96":actual=player.current_hand(player.left_handed)
 	if (action in ["receive", "set", "fast_set", "block"] and player.variant_names.get(action,"")!="set_first96") or disguised:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
@@ -1546,7 +1547,7 @@ func dump_ball() -> void:
 	if phase=="POINT": return
 	match_management.touch(setter,"attack")
 	# Back-row setters may dump only below the top of the net in the front zone.
-	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > preload("res://src/net_spec94.gd").TOP:
+	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y-preload("res://src/net_spec94.gd").BALL_RADIUS > preload("res://src/net_spec94.gd").TOP:
 		award(1 - attacker, "ATTACCO IRREGOLARE DI SECONDA LINEA")
 		return
 	var delivery: Dictionary=preload("res://src/setter_second96.gd").trajectory(self) if setter_second96>0 else preload("res://src/setter_dump.gd").trajectory(ball_pos,aim,attacker,flight_spin)

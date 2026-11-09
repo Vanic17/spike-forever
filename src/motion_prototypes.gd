@@ -74,7 +74,8 @@ static func author_clip(base, author, label: String):
 		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)
 	if label in ["dump_push54","dump_back96","dump_down96","dump_forward96"]:
 		var contact_pose:=normalized(clip,clip.contact_time)
-		clip.contact_offset=contact_pose[clip.names.find("LeftHand")].origin
+		clip.contact_offset=contact_pose[clip.names.find("RightHand" if label in ["dump_back96","dump_forward96"] else "LeftHand")].origin
+		if label in ["dump_back96","dump_down96","dump_forward96"]:clip.contact_offset+=Vector3(-.08,0,0)
 	if label in ["receive_low76","receive_low_right76","receive_slide77","receive_slide_right77"]:
 		var contact_pose:=normalized(clip,clip.contact_time)
 		clip.contact_offset=(contact_pose[clip.names.find("LeftHand")].origin+contact_pose[clip.names.find("RightHand")].origin)*.5+Vector3(0,.07,0)

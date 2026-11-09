@@ -36,19 +36,31 @@ static func cut(pose: Array[Transform3D],names: Array[String],parents: Array[int
 		Ref.rotate(out,names,parents,"RightHand",out[h].basis.z.normalized(),-.30*prep-.35*follow)
 	return out
 static func second(pose: Array[Transform3D],names: Array[String],parents: Array[int],time: float,c: float,d: float,kind: int) -> Array[Transform3D]:
-	var out: Array[Transform3D]=pose.duplicate();var a:=names.find("LeftArm");var h:=names.find("LeftHand")
+	var side: String="Left" if kind==3 else "Right"
+	var other: String="Right" if kind==3 else "Left"
+	var out: Array[Transform3D]=pose.duplicate();var a:=names.find(side+"Arm");var h:=names.find(side+"Hand")
 	if a<0 or h<0:return out
-	if kind==3:
-		var lift:=.20*Shape._bell(time,c-.31,c,minf(d,c+.34))
-		for bone in out.size():out[bone].origin.y+=lift
+	var lift: float=(.43 if kind==3 else .30)*Shape._bell(time,c-.34,c,minf(d,c+.36))
+	for bone in out.size():out[bone].origin.y+=lift
 	var show:=smoothstep(c-.25,c-.035,time)*(1-smoothstep(c+.20,minf(d,c+.55),time))
-	var release:=smoothstep(c-.01,c+.18,time)
-	var direction: Vector3=Vector3(-.08,.67,-.26) if kind==2 else (Vector3(-.14,.70,.23) if kind==3 else Vector3(-.12,.64,.42))
-	var follow: Vector3=Vector3(0,.02,-.25) if kind==2 else (Vector3(.02,-.40,.19) if kind==3 else Vector3(-.04,-.10,.28))
-	arm(out,names,parents,"Left",out[a].origin+direction+follow*release,Vector3(-.32,.08,.12),show)
-	# Both hands prepare the set; the right arm withdraws only at release.
-	Ref.rotate(out,names,parents,"RightArm",Vector3.RIGHT,.80*show*smoothstep(c-.10,c+.08,time))
-	Ref.rotate(out,names,parents,"LeftHand",out[h].basis.x.normalized(),(.62 if kind==3 else -.48 if kind==2 else .42)*show*release)
+	var release:=smoothstep(c,c+(.14 if kind==3 else .22),time)
+	var direction: Vector3=Vector3(.08,.70,-.20) if kind==2 else (Vector3(-.12,.72,.16) if kind==3 else Vector3(.08,.70,.30))
+	# Setter faces along the net. Local -X always points across it on either team.
+	var follow: Vector3=Vector3(-.30,-.08,-.28) if kind==2 else (Vector3(-.42,-.42,.06) if kind==3 else Vector3(-.30,-.10,.32))
+	arm(out,names,parents,side,out[a].origin+direction+follow*release,Vector3(-.26 if kind==3 else .26,.06,.12),show)
+	var other_shoulder: int=names.find(other+"Arm")
+	if other_shoulder>=0:
+		var withdraw: float=show*smoothstep(c-.15,c-.025,time)
+		arm(out,names,parents,other,out[other_shoulder].origin+Vector3(.18 if other=="Right" else -.18,-.22,.20),Vector3(.35 if other=="Right" else -.35,-.10,.1),withdraw)
+	Ref.rotate(out,names,parents,side+"Hand",out[h].basis.z.normalized(),(-.72 if kind==3 else -.42)*show*release)
+	# Fingers lead the release, not the underside of the wrist. Keep them
+	# upright at contact, then fold them toward the opponent after the push.
+	var digit: int=names.find(side+"HandMiddle1")
+	if digit>=0:
+		var finger: Vector3=(out[digit].origin-out[h].origin).normalized()
+		var wanted:=Vector3(-.75*release,1.0-(1.55 if kind==3 else .65)*release,-.30 if kind==2 else .25).normalized()
+		var turn:=Quaternion.IDENTITY.slerp(Quaternion(finger,wanted),show)
+		Shape._rotate_subtree(out,parents,h,turn.get_axis(),turn.get_angle())
 	return out
 static func first(pose: Array[Transform3D],names: Array[String],parents: Array[int],time: float,c: float,d: float) -> Array[Transform3D]:
 	var out: Array[Transform3D]=pose.duplicate();var h:=names.find("RightHand");var other:=names.find("LeftHand")
