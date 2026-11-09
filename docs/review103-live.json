@@ -1,0 +1,222 @@
+{
+	"cases": [
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 2,
+				"seconds": 0.48114219190826,
+				"target": "(-0.19924, 0.105, -3.251295)",
+				"team": 1,
+				"time": 2.726669185
+			},
+			"direction": 0,
+			"hitter": 0,
+			"phase": "CPU_RECEIVE",
+			"rotation": 0,
+			"seconds": 0.361368011562433,
+			"speed": 11.8392372131348,
+			"target": "(-0.950604, 1.024029, -2.265074)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 3,
+				"seconds": 0.485725918515341,
+				"target": "(-0.19924, 0.105, -3.251295)",
+				"team": 1,
+				"time": 5.53081072489323
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 0,
+			"seconds": 0.443342847770624,
+			"speed": 12.1854438781738,
+			"target": "(0.095274, 0.443546, -2.909299)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 4,
+				"seconds": 0.532305565596211,
+				"target": "(-0.164751, 0.105, -2.861055)",
+				"team": 1,
+				"time": 8.25819061396697
+			},
+			"direction": 0,
+			"hitter": 3,
+			"phase": "CPU_RECEIVE",
+			"rotation": 1,
+			"seconds": 0.473389457038083,
+			"speed": 10.0406827926636,
+			"target": "(-0.52141, 0.579467, -2.444841)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 5,
+				"seconds": 0.536077284725733,
+				"target": "(-0.164751, 0.105, -2.861055)",
+				"team": 1,
+				"time": 11.0552336291553
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 1,
+			"seconds": 0.475482852351867,
+			"speed": 10.3525114059448,
+			"target": "(0.216505, 0.568149, -2.456956)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 6,
+				"seconds": 0.409119797413662,
+				"target": "(0.638309, 0.105, -3.78275)",
+				"team": 1,
+				"time": 14.0221660894786
+			},
+			"direction": 0,
+			"hitter": 3,
+			"phase": "CPU_RECEIVE",
+			"rotation": 2,
+			"seconds": 0.303147614704498,
+			"speed": 16.3111667633057,
+			"target": "(-0.377904, 1.024029, -2.587058)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 7,
+				"seconds": 0.415162545523005,
+				"target": "(0.638309, 0.105, -3.78275)",
+				"team": 1,
+				"time": 16.8217620785299
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 2,
+			"seconds": 0.375192086004922,
+			"speed": 14.3870286941528,
+			"target": "(0.881954, 0.443546, -3.365171)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 8,
+				"seconds": 0.434212808512811,
+				"target": "(0.260899, 0.105, -3.601832)",
+				"team": 1,
+				"time": 19.1596950019553
+			},
+			"direction": 0,
+			"hitter": 3,
+			"phase": "CPU_RECEIVE",
+			"rotation": 3,
+			"seconds": 0.373944051892642,
+			"speed": 14.48122215271,
+			"target": "(-0.187584, 0.579467, -3.044797)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 9,
+				"seconds": 0.435516138570074,
+				"target": "(0.260899, 0.105, -8.65)",
+				"team": 1,
+				"time": 21.3066265642262
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 3,
+			"seconds": 0.394335001380623,
+			"speed": 27.9407119750977,
+			"target": "(0.641452, 0.477858, -7.65383)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 10,
+				"seconds": 0.453069614801383,
+				"target": "(0.885277, 0.105, -3.462542)",
+				"team": 1,
+				"time": 23.5671766202855
+			},
+			"direction": 0,
+			"hitter": 0,
+			"phase": "CPU_RECEIVE",
+			"rotation": 4,
+			"seconds": 0.33568359299401,
+			"speed": 14.4672079086304,
+			"target": "(-0.149138, 1.024029, -2.395516)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 11,
+				"seconds": 0.435519964744199,
+				"target": "(0.885277, 0.105, -8.65)",
+				"team": 1,
+				"time": 25.7148884477521
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 4,
+			"seconds": 0.394266493320353,
+			"speed": 27.469539642334,
+			"target": "(1.209519, 0.477858, -7.653743)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 12,
+				"seconds": 0.540328186228354,
+				"target": "(-0.056817, 0.105, -2.8)",
+				"team": 1,
+				"time": 27.97570882657
+			},
+			"direction": 0,
+			"hitter": 0,
+			"phase": "CPU_RECEIVE",
+			"rotation": 5,
+			"seconds": 0.47357617802905,
+			"speed": 9.92999458312988,
+			"target": "(-0.422082, 0.579467, -2.394454)"
+		},
+		{
+			"delivery": {
+				"kind": "spike",
+				"power": 0.96,
+				"rally": 13,
+				"seconds": 0.435518630764144,
+				"target": "(-0.056817, 0.105, -8.65)",
+				"team": 1,
+				"time": 30.1234191513055
+			},
+			"direction": 2,
+			"hitter": 2,
+			"phase": "CPU_RECEIVE",
+			"rotation": 5,
+			"seconds": 0.39446339992467,
+			"speed": 28.2055549621582,
+			"target": "(0.352386, 0.477858, -7.653877)"
+		}
+	],
+	"errors": [],
+	"pass": true
+}

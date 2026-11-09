@@ -27,6 +27,7 @@
       "roster": [
         {
           "id": "allianz-milano-01",
+          "dominant_hand": "right",
           "name": "Francesco Recine",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -270,6 +271,7 @@
         },
         {
           "id": "allianz-milano-04",
+          "dominant_hand": "right",
           "name": "Simone Porro",
           "role": "setter",
           "source_role_code": "P",
@@ -342,6 +344,7 @@
         },
         {
           "id": "allianz-milano-05",
+          "dominant_hand": "right",
           "name": "Davi Tenorio",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -558,6 +561,7 @@
         },
         {
           "id": "allianz-milano-08",
+          "dominant_hand": "right",
           "name": "Basil Dermaux",
           "role": "opposite",
           "source_role_code": "O",
@@ -637,6 +641,7 @@
         },
         {
           "id": "allianz-milano-09",
+          "dominant_hand": "right",
           "name": "Seppe Rotty",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -726,6 +731,7 @@
         },
         {
           "id": "allianz-milano-10",
+          "dominant_hand": "right",
           "name": "Robertlandy Simon",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -900,6 +906,7 @@
         },
         {
           "id": "allianz-milano-12",
+          "dominant_hand": "right",
           "name": "Tatsunori Otsuka",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -1142,6 +1149,7 @@
         },
         {
           "id": "allianz-milano-15",
+          "dominant_hand": "right",
           "name": "Georgi Tatarov",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -1270,6 +1278,7 @@
       "roster": [
         {
           "id": "cisterna-volley-01",
+          "dominant_hand": "left",
           "name": "Vilmos Szabo",
           "role": "setter",
           "source_role_code": "P",
@@ -1423,6 +1432,7 @@
         },
         {
           "id": "cisterna-volley-03",
+          "dominant_hand": "right",
           "name": "Lorenzo Magliano",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -1495,6 +1505,7 @@
         },
         {
           "id": "cisterna-volley-04",
+          "dominant_hand": "right",
           "name": "Shikun Peng",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -1567,6 +1578,7 @@
         },
         {
           "id": "cisterna-volley-05",
+          "dominant_hand": "right",
           "name": "Tommaso Barotto",
           "role": "opposite",
           "source_role_code": "O",
@@ -1863,6 +1875,7 @@
         },
         {
           "id": "cisterna-volley-08",
+          "dominant_hand": "right",
           "name": "Francesco Pierri",
           "role": "libero",
           "source_role_code": "L",
@@ -1935,6 +1948,7 @@
         },
         {
           "id": "cisterna-volley-09",
+          "dominant_hand": "left",
           "name": "Miguel Angel Martinez Palacios",
           "role": "opposite",
           "source_role_code": "O",
@@ -2088,6 +2102,7 @@
         },
         {
           "id": "cisterna-volley-11",
+          "dominant_hand": "right",
           "name": "Noa Duflos-Rossi",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -2177,6 +2192,7 @@
         },
         {
           "id": "cisterna-volley-12",
+          "dominant_hand": "right",
           "name": "Jacopo Tosti",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -2386,6 +2402,7 @@
       "roster": [
         {
           "id": "cucine-lube-civitanova-01",
+          "dominant_hand": "right",
           "name": "Simeon Nikolov",
           "role": "setter",
           "source_role_code": "P",
@@ -2726,6 +2743,7 @@
         },
         {
           "id": "cucine-lube-civitanova-05",
+          "dominant_hand": "right",
           "name": "Fabio Balaso",
           "role": "libero",
           "source_role_code": "L",
@@ -2896,6 +2914,7 @@
         },
         {
           "id": "cucine-lube-civitanova-07",
+          "dominant_hand": "right",
           "name": "Davide Gardini",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -2977,6 +2996,7 @@
         },
         {
           "id": "cucine-lube-civitanova-21",
+          "dominant_hand": "right",
           "name": "Miran Kujundzic",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -3039,6 +3059,7 @@
         },
         {
           "id": "cucine-lube-civitanova-08",
+          "dominant_hand": "right",
           "name": "Aleksandar Nikolov",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -3132,6 +3153,7 @@
         },
         {
           "id": "cucine-lube-civitanova-09",
+          "dominant_hand": "right",
           "name": "Francesco Zoppellari",
           "role": "setter",
           "source_role_code": "P",
@@ -3213,6 +3235,7 @@
         },
         {
           "id": "cucine-lube-civitanova-10",
+          "dominant_hand": "right",
           "name": "Jackson Howe",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -3298,6 +3321,7 @@
         },
         {
           "id": "cucine-lube-civitanova-11",
+          "dominant_hand": "right",
           "name": "Maksym Tonkonoh",
           "role": "opposite",
           "source_role_code": "O",
@@ -3451,6 +3475,7 @@
         },
         {
           "id": "cucine-lube-civitanova-13",
+          "dominant_hand": "right",
           "name": "Mattia Bottolo",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -3744,6 +3769,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-03",
+          "dominant_hand": "right",
           "name": "Thibault Loubeyre",
           "role": "libero",
           "source_role_code": "L",
@@ -3816,6 +3842,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-04",
+          "dominant_hand": "right",
           "name": "Bryan Argilagos",
           "role": "setter",
           "source_role_code": "P",
@@ -4050,6 +4077,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-07",
+          "dominant_hand": "right",
           "name": "Emanuele Barberio",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -4122,6 +4150,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-08",
+          "dominant_hand": "right",
           "name": "Alexandre Strehlau",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -4203,6 +4232,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-09",
+          "dominant_hand": "right",
           "name": "Nathan Feral",
           "role": "opposite",
           "source_role_code": "O",
@@ -4284,6 +4314,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-10",
+          "dominant_hand": "right",
           "name": "Poriya Hossein Khanzadeh",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -4377,6 +4408,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-11",
+          "dominant_hand": "right",
           "name": "Ethan Champlin",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -4458,6 +4490,7 @@
         },
         {
           "id": "acqua-santanna-cuneo-12",
+          "dominant_hand": "right",
           "name": "Lorenzo Codarin",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -4756,6 +4789,7 @@
       "roster": [
         {
           "id": "gas-sales-bluenergy-piacenza-01",
+          "dominant_hand": "right",
           "name": "Merrick McHenry",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -4918,6 +4952,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-03",
+          "dominant_hand": "right",
           "name": "Paolo Porro",
           "role": "setter",
           "source_role_code": "P",
@@ -5007,6 +5042,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-04",
+          "dominant_hand": "right",
           "name": "Henri Emmanuel Leon",
           "role": "opposite",
           "source_role_code": "O",
@@ -5169,6 +5205,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-06",
+          "dominant_hand": "right",
           "name": "Nikola Brboric",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -5250,6 +5287,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-07",
+          "dominant_hand": "right",
           "name": "Francesco Comparoni",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -5492,6 +5530,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-10",
+          "dominant_hand": "right",
           "name": "Dragan Travica",
           "role": "setter",
           "source_role_code": "P",
@@ -5815,6 +5854,7 @@
         },
         {
           "id": "gas-sales-bluenergy-piacenza-14",
+          "dominant_hand": "right",
           "name": "Alessandro Bovolenta",
           "role": "opposite",
           "source_role_code": "O",
@@ -6023,6 +6063,7 @@
         },
         {
           "id": "itas-trentino-02",
+          "dominant_hand": "right",
           "name": "Nicola Zonta",
           "role": "setter",
           "source_role_code": "P",
@@ -6095,6 +6136,7 @@
         },
         {
           "id": "itas-trentino-03",
+          "dominant_hand": "left",
           "name": "Alessandro Michieletto",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -6176,6 +6218,7 @@
         },
         {
           "id": "itas-trentino-04",
+          "dominant_hand": "right",
           "name": "Riccardo Sbertoli",
           "role": "setter",
           "source_role_code": "P",
@@ -6680,6 +6723,7 @@
         },
         {
           "id": "itas-trentino-10",
+          "dominant_hand": "right",
           "name": "Renars-Paul Jansons",
           "role": "opposite",
           "source_role_code": "O",
@@ -6752,6 +6796,7 @@
         },
         {
           "id": "itas-trentino-11",
+          "dominant_hand": "right",
           "name": "Adriano Xavier Cavalcante",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -6824,6 +6869,7 @@
         },
         {
           "id": "itas-trentino-12",
+          "dominant_hand": "right",
           "name": "Flavio Resende Gualberto",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -6913,6 +6959,7 @@
         },
         {
           "id": "itas-trentino-13",
+          "dominant_hand": "right",
           "name": "Aleksandar Nedeljkovic",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -7002,6 +7049,7 @@
         },
         {
           "id": "itas-trentino-14",
+          "dominant_hand": "right",
           "name": "Simon Valentin Torwie",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -7138,6 +7186,7 @@
       "roster": [
         {
           "id": "pallavolo-padova-01",
+          "dominant_hand": "right",
           "name": "Amir Mohammad Golzadeh",
           "role": "opposite",
           "source_role_code": "O",
@@ -7300,6 +7349,7 @@
         },
         {
           "id": "pallavolo-padova-03",
+          "dominant_hand": "right",
           "name": "Andrea Ruzza",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -7525,6 +7575,7 @@
         },
         {
           "id": "pallavolo-padova-06",
+          "dominant_hand": "right",
           "name": "Joscha Kunstmann",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -7759,6 +7810,7 @@
         },
         {
           "id": "pallavolo-padova-09",
+          "dominant_hand": "right",
           "name": "Leonardo Lukas Leodolter",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -7992,6 +8044,7 @@
         },
         {
           "id": "pallavolo-padova-12",
+          "dominant_hand": "right",
           "name": "Arshia Behnezhad",
           "role": "setter",
           "source_role_code": "P",
@@ -8064,6 +8117,7 @@
         },
         {
           "id": "pallavolo-padova-13",
+          "dominant_hand": "right",
           "name": "Brendan Robert Mills",
           "role": "opposite",
           "source_role_code": "O",
@@ -8264,6 +8318,7 @@
       "roster": [
         {
           "id": "rana-verona-01",
+          "dominant_hand": "right",
           "name": "Aidan Zingel",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -8515,6 +8570,7 @@
         },
         {
           "id": "rana-verona-04",
+          "dominant_hand": "right",
           "name": "Kellian Motta Paes",
           "role": "setter",
           "source_role_code": "P",
@@ -8749,6 +8805,7 @@
         },
         {
           "id": "rana-verona-08",
+          "dominant_hand": "right",
           "name": "Noumory Keita",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -8830,6 +8887,7 @@
         },
         {
           "id": "rana-verona-09",
+          "dominant_hand": "right",
           "name": "Francesco Sani",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -9008,6 +9066,7 @@
         },
         {
           "id": "rana-verona-24",
+          "dominant_hand": "right",
           "name": "Anders Mol",
           "role": "opposite",
           "source_role_code": "O",
@@ -9061,6 +9120,7 @@
         },
         {
           "id": "rana-verona-11",
+          "dominant_hand": "right",
           "name": "Lukas Glatz",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -9133,6 +9193,7 @@
         },
         {
           "id": "rana-verona-12",
+          "dominant_hand": "right",
           "name": "Simone Anzani",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -9214,6 +9275,7 @@
         },
         {
           "id": "rana-verona-14",
+          "dominant_hand": "right",
           "name": "Rok Mozic",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -9307,6 +9369,7 @@
         },
         {
           "id": "rana-verona-13",
+          "dominant_hand": "right",
           "name": "Paul Buchegger",
           "role": "opposite",
           "source_role_code": "O",
@@ -9494,6 +9557,7 @@
       "roster": [
         {
           "id": "sir-susa-scai-perugia-01",
+          "dominant_hand": "right",
           "name": "Mathis Henno",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -9570,6 +9634,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-02",
+          "dominant_hand": "right",
           "name": "Simone Giannelli",
           "role": "setter",
           "source_role_code": "P",
@@ -9752,6 +9817,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-04",
+          "dominant_hand": "right",
           "name": "Agustin Loser",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -9824,6 +9890,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-05",
+          "dominant_hand": "right",
           "name": "Stefano Cappadona",
           "role": "setter",
           "source_role_code": "P",
@@ -9896,6 +9963,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-06",
+          "dominant_hand": "right",
           "name": "Luca Loreti",
           "role": "libero",
           "source_role_code": "L",
@@ -9977,6 +10045,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-07",
+          "dominant_hand": "right",
           "name": "Sebastian Sole",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -10058,6 +10127,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-08",
+          "dominant_hand": "left",
           "name": "David Kollator",
           "role": "opposite",
           "source_role_code": "O",
@@ -10130,6 +10200,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-09",
+          "dominant_hand": "right",
           "name": "Kamil Semeniuk",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -10211,6 +10282,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-10",
+          "dominant_hand": "left",
           "name": "Oleh Plotnytskyi",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -10300,6 +10372,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-11",
+          "dominant_hand": "right",
           "name": "Giovanni Sanguinetti",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -10478,6 +10551,7 @@
         },
         {
           "id": "sir-susa-scai-perugia-13",
+          "dominant_hand": "right",
           "name": "Seyed Matin Hosseini",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -10678,6 +10752,7 @@
       "roster": [
         {
           "id": "tinet-prata-di-pordenone-01",
+          "dominant_hand": "right",
           "name": "Wout D'Heer",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -10839,6 +10914,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-03",
+          "dominant_hand": "right",
           "name": "Alessio Alberini",
           "role": "setter",
           "source_role_code": "P",
@@ -10983,6 +11059,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-05",
+          "dominant_hand": "right",
           "name": "Alberto Pol",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -11055,6 +11132,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-06",
+          "dominant_hand": "right",
           "name": "Sebastiano Marsili",
           "role": "setter",
           "source_role_code": "P",
@@ -11127,6 +11205,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-07",
+          "dominant_hand": "right",
           "name": "Alessandro Toscani",
           "role": "libero",
           "source_role_code": "L",
@@ -11208,6 +11287,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-08",
+          "dominant_hand": "right",
           "name": "Kirill Klets",
           "role": "opposite",
           "source_role_code": "O",
@@ -11361,6 +11441,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-10",
+          "dominant_hand": "right",
           "name": "Federico Guadagnini",
           "role": "libero",
           "source_role_code": "L",
@@ -11505,6 +11586,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-26",
+          "dominant_hand": "right",
           "name": "Nooa Marttila",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -11565,6 +11647,7 @@
         },
         {
           "id": "tinet-prata-di-pordenone-12",
+          "dominant_hand": "right",
           "name": "Lukas Felipe Bergmann",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -11824,6 +11907,7 @@
       "roster": [
         {
           "id": "valsa-group-modena-01",
+          "dominant_hand": "right",
           "name": "Arthur Bento",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -12083,6 +12167,7 @@
         },
         {
           "id": "valsa-group-modena-04",
+          "dominant_hand": "right",
           "name": "Pardo Mati",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -12172,6 +12257,7 @@
         },
         {
           "id": "valsa-group-modena-05",
+          "dominant_hand": "right",
           "name": "Sil Meijs",
           "role": "opposite",
           "source_role_code": "O",
@@ -12244,6 +12330,7 @@
         },
         {
           "id": "valsa-group-modena-06",
+          "dominant_hand": "right",
           "name": "Thomas Jaeschke",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -12469,6 +12556,7 @@
         },
         {
           "id": "valsa-group-modena-09",
+          "dominant_hand": "right",
           "name": "Luca Tauletta",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -12622,6 +12710,7 @@
         },
         {
           "id": "valsa-group-modena-11",
+          "dominant_hand": "right",
           "name": "Luca Porro",
           "role": "outside_hitter",
           "source_role_code": "S",
@@ -12715,6 +12804,7 @@
         },
         {
           "id": "valsa-group-modena-12",
+          "dominant_hand": "right",
           "name": "Gabriele Di Martino",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -12868,6 +12958,7 @@
         },
         {
           "id": "valsa-group-modena-14",
+          "dominant_hand": "right",
           "name": "Nik Mujanovic",
           "role": "opposite",
           "source_role_code": "O",
@@ -13476,6 +13567,7 @@
         },
         {
           "id": "vero-volley-monza-07",
+          "dominant_hand": "right",
           "name": "Andrew Rowan",
           "role": "setter",
           "source_role_code": "P",
@@ -13646,6 +13738,7 @@
         },
         {
           "id": "vero-volley-monza-09",
+          "dominant_hand": "right",
           "name": "Bara Fall",
           "role": "middle_blocker",
           "source_role_code": "C",
@@ -13956,6 +14049,7 @@
         },
         {
           "id": "vero-volley-monza-13",
+          "dominant_hand": "right",
           "name": "Pierre Perin",
           "role": "outside_hitter",
           "source_role_code": "S",

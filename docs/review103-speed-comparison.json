@@ -1,0 +1,115 @@
+{
+  "pass": true,
+  "actual_native_attacks": [
+    {
+      "rotation": 0,
+      "direction": 0,
+      "before_seconds": 0.50906512585213,
+      "after_seconds": 0.48114219190826,
+      "speed_ratio": 1.05803,
+      "before_hitter": 2,
+      "after_hitter": 0
+    },
+    {
+      "rotation": 0,
+      "direction": 2,
+      "before_seconds": 0.51391751937754,
+      "after_seconds": 0.485725918515341,
+      "speed_ratio": 1.05804,
+      "before_hitter": 0,
+      "after_hitter": 2
+    },
+    {
+      "rotation": 1,
+      "direction": 0,
+      "before_seconds": 0.563198182383178,
+      "after_seconds": 0.532305565596211,
+      "speed_ratio": 1.05804,
+      "before_hitter": 3,
+      "after_hitter": 3
+    },
+    {
+      "rotation": 1,
+      "direction": 2,
+      "before_seconds": 0.567188795097939,
+      "after_seconds": 0.536077284725733,
+      "speed_ratio": 1.05804,
+      "before_hitter": 2,
+      "after_hitter": 2
+    },
+    {
+      "rotation": 2,
+      "direction": 0,
+      "before_seconds": 0.432863267214331,
+      "after_seconds": 0.409119797413662,
+      "speed_ratio": 1.05804,
+      "before_hitter": 3,
+      "after_hitter": 3
+    },
+    {
+      "rotation": 2,
+      "direction": 2,
+      "before_seconds": 0.439256709199048,
+      "after_seconds": 0.415162545523005,
+      "speed_ratio": 1.05804,
+      "before_hitter": 2,
+      "after_hitter": 2
+    },
+    {
+      "rotation": 3,
+      "direction": 0,
+      "before_seconds": 0.459412563624059,
+      "after_seconds": 0.434212808512811,
+      "speed_ratio": 1.05804,
+      "before_hitter": 3,
+      "after_hitter": 3
+    },
+    {
+      "rotation": 3,
+      "direction": 2,
+      "before_seconds": 0.460791533085846,
+      "after_seconds": 0.435516138570074,
+      "speed_ratio": 1.05804,
+      "before_hitter": 2,
+      "after_hitter": 2
+    },
+    {
+      "rotation": 4,
+      "direction": 0,
+      "before_seconds": 0.479363733992493,
+      "after_seconds": 0.453069614801383,
+      "speed_ratio": 1.05804,
+      "before_hitter": 0,
+      "after_hitter": 0
+    },
+    {
+      "rotation": 4,
+      "direction": 2,
+      "before_seconds": 0.460795581313878,
+      "after_seconds": 0.435519964744199,
+      "speed_ratio": 1.05804,
+      "before_hitter": 2,
+      "after_hitter": 2
+    },
+    {
+      "rotation": 5,
+      "direction": 0,
+      "before_seconds": 0.571686399771835,
+      "after_seconds": 0.540328186228354,
+      "speed_ratio": 1.05804,
+      "before_hitter": 0,
+      "after_hitter": 0
+    },
+    {
+      "rotation": 5,
+      "direction": 2,
+      "before_seconds": 0.460794169915631,
+      "after_seconds": 0.435518630764144,
+      "speed_ratio": 1.05804,
+      "before_hitter": 2,
+      "after_hitter": 2
+    }
+  ],
+  "P1_recipient_corrected": true,
+  "clearance_limited_cases_unchanged": true
+}

@@ -1,0 +1,30 @@
+{
+  "reviewed_at": "2026-11-09",
+  "method": "Editorial review of setting continuity, separate from overall. Complements the Italian service/block proxy; explicit user choices take precedence.",
+  "players": {
+    "sir-susa-scai-perugia-02": {
+      "condition_form": "A",
+      "confidence": "medium",
+      "basis": "Season-long continuity explicitly described in the captain's season review; service/block variability alone is not setting consistency.",
+      "sources": ["https://www.pianetavolley.net/2026/05/simone-giannelli-a-perugia-decisiva-la-costanza/"]
+    },
+    "rana-verona-10": {
+      "condition_form": "A",
+      "confidence": "medium",
+      "basis": "Club's full-season review describes precise, consistent distribution across 34 matches / 121 sets. Current injury is not treated as a permanent consistency class.",
+      "sources": ["https://www.veronavolley.it/it-it/la-stagione-in-numeri-di-micah-christenson.aspx"]
+    },
+    "vero-volley-monza-07": {
+      "condition_form": "A",
+      "confidence": "medium",
+      "basis": "Repeated setting performance over four collegiate seasons, 31 appearances in 2026 and sustained team attack efficiency. Editorial estimate; college-to-SuperLega adaptation remains uncertain.",
+      "sources": ["https://uclabruins.com/sports/mens-volleyball/roster/season/2026/player/andrew-rowan", "https://uclabruins.com/news/2025/05/05/four-bruins-earn-avca-all-america-honors"]
+    },
+    "cucine-lube-civitanova-01": {
+      "condition_form": "B",
+      "confidence": "low",
+      "basis": "International setting output across the World Championship and VNL supplements missing Italian match history. Shorter senior history warrants B rather than an automatic A based on talent.",
+      "sources": ["https://en.volleyballworld.com/volleyball/competitions/men-world-cup/2025/news/aleks-nikolov-67-points-clear-on-top-of-the-best-scorers-ranking", "https://www.fivb.com/bulgaria-peep-into-the-future-with-volleyball-empowerment/"]
+    }
+  }
+}

@@ -64,6 +64,7 @@ func build() -> void:
 			actors.append({"actor":actor,"base":base,"team":team,"slot":slot,"coach":coach})
 			if coach:
 				dress_staff(actor,Color("426486") if team==0 else Color("68788c"))
+				preload("res://src/coach_suit103.gd").dress(actor,staff_model,team)
 	for seated in [true,false]:
 		var prefix: String="sit" if seated else "stand"
 		for gesture in ["rest","clap","point","talk","highfive"]:

@@ -1,0 +1,105 @@
+{
+	"boosted_trajectories": 6,
+	"checks": 276,
+	"errors": [],
+	"maximum_extra_planning_us": 145,
+	"pass": true,
+	"setters": [
+		{
+			"form": "D",
+			"name": "Simone Porro"
+		},
+		{
+			"form": "C",
+			"name": "Santiago Orduna"
+		},
+		{
+			"form": "C",
+			"name": "Vilmos Szabo"
+		},
+		{
+			"form": "A",
+			"name": "Alessandro Fanizza"
+		},
+		{
+			"form": "B",
+			"name": "Simeon Nikolov"
+		},
+		{
+			"form": "C",
+			"name": "Francesco Zoppellari"
+		},
+		{
+			"form": "B",
+			"name": "Manuel Coscione"
+		},
+		{
+			"form": "C",
+			"name": "Bryan Argilagos"
+		},
+		{
+			"form": "D",
+			"name": "Paolo Porro"
+		},
+		{
+			"form": "C",
+			"name": "Dragan Travica"
+		},
+		{
+			"form": "A",
+			"name": "Nicola Zonta"
+		},
+		{
+			"form": "B",
+			"name": "Riccardo Sbertoli"
+		},
+		{
+			"form": "C",
+			"name": "Simone Rinaldi"
+		},
+		{
+			"form": "C",
+			"name": "Arshia Behnezhad"
+		},
+		{
+			"form": "C",
+			"name": "Kellian Motta Paes"
+		},
+		{
+			"form": "A",
+			"name": "Micah Christenson"
+		},
+		{
+			"form": "A",
+			"name": "Simone Giannelli"
+		},
+		{
+			"form": "C",
+			"name": "Stefano Cappadona"
+		},
+		{
+			"form": "B",
+			"name": "Alessio Alberini"
+		},
+		{
+			"form": "C",
+			"name": "Sebastiano Marsili"
+		},
+		{
+			"form": "B",
+			"name": "Amir Tizi-Oualou"
+		},
+		{
+			"form": "C",
+			"name": "Leonardo Barbanti"
+		},
+		{
+			"form": "C",
+			"name": "Leonardo Bonacchi"
+		},
+		{
+			"form": "A",
+			"name": "Andrew Rowan"
+		}
+	]
+}

@@ -22,6 +22,10 @@ static func defaults() -> Dictionary:
 	if researched.is_empty():
 		var value=JSON.parse_string(FileAccess.get_file_as_string("res://assets/gameplay/player_forms99.json"))
 		if value is Dictionary:researched=value
+		var setters=JSON.parse_string(FileAccess.get_file_as_string("res://assets/gameplay/setter_forms103.json"))
+		if setters is Dictionary:
+			for id in setters.get("players",{}):
+				if researched.get("players",{}).has(id):researched.players[id].merge(setters.players[id],true)
 	return researched.get("players",{})
 static func form(person: Dictionary) -> String:
 	if person.has("condition_form"):

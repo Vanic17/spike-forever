@@ -215,6 +215,7 @@ var last_precision := 1.0
 var last_serve_fault := ""
 var block_rosters: Dictionary = {}
 var terminal_cpu_block:=false
+var short_spin103=null
 var dead_ball_bounces := 0
 var point_formation: Array[Vector3] = []
 var block_orders: Dictionary = {}
@@ -768,7 +769,7 @@ func reset_rally() -> void:
 	attack_buffer_start=-1.0; attack_buffer_power=-1.0; winner_team=-1
 	contact_navigation.reset()
 	next_second_touch_read=0.0
-	rally_lanes.reset(rotations,server)
+	rally_lanes.reset(rotations,server,Tactics.designated_setter(self,server)==server_index(server))
 	planned_visual_key=""
 	rotation_context.reset()
 	defensive_lanes.reset()
@@ -993,6 +994,8 @@ func launch(target: Vector3, seconds: float) -> void:
 		flight_spin = Vector3(direction * (0.3 if test_rallies == 0 and serve_type == 0 else 20.0), aim.x * 2.0, 0.5)
 	else:
 		flight_spin = Vector3(0.3, 0.6, -0.2)
+	if short_spin103 is Vector3:flight_spin=short_spin103
+	short_spin103=null
 	if attack_tip and incoming_kind=="soft":flight_spin=Vector3(direction*lerpf(2.0,5.0,incoming_power),aim.x*.6,.2)
 	ball_vel = BallFlight.velocity_to(ball_pos, target, seconds, flight_spin, flight_gravity)
 	airborne = true
@@ -1636,7 +1639,7 @@ func attack_ball() -> void:
 		target=delivery.target; seconds=delivery.seconds
 		if close_down:
 			seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,seconds*.90,preload("res://src/net_spec94.gd").TOP+preload("res://src/net_spec94.gd").BALL_RADIUS+.018)
-			incoming_power*=1.07
+			incoming_power*=1.10
 	if attack_tip:
 		var tip: Dictionary=preload("res://src/tip_delivery94.gd").solve(self,target,power)
 		incoming_kind="soft";incoming_power=tip.pressure;target=tip.target;seconds=tip.seconds
@@ -1646,6 +1649,10 @@ func attack_ball() -> void:
 		if central102.boost>0:
 			incoming_power*=1.0+central102.boost*.18
 			log_rally_event("middle_power102",{"power":requested_power,"boost":central102.boost,"seconds":seconds,"target":target})
+	short_spin103=null
+	if close_down:
+		var short_delivery: Dictionary=preload("res://src/short_attack103.gd").solve(self,target,seconds,power)
+		seconds=short_delivery.seconds;short_spin103=short_delivery.get("spin")
 	if hitter_action == "receive":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
 		target=delivery.target; seconds=delivery.seconds

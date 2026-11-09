@@ -51,16 +51,21 @@ static func role_for(game, index: int) -> String:
 static func serve_position_for(game, index: int, team: int, rotation: int, serving: bool=true) -> Vector3:
 	# A substitute inherits the same legal service-order slot. Never swap
 	# receiving diagram columns to make the new specialist look like S.
+	if serving and posmod(rotation,6)==0 and double_active(game,team) and slot(index,rotation)!=3:return home(index,team,rotation,true,false)
 	return serve_position(index,team,rotation,serving)
 
 static func home_for(game, index: int, team: int, rotation: int, serving: bool, attack: bool) -> Vector3:
 	if double_active(game,team) and attack:
 		if role_for(game,index)=="S": return setter_position(team)
 		return world(team,Layout.defense(index,rotation).x,Layout.defense(index,rotation).z)
-	return home(index,team,rotation,serving,attack)
+	var point:=home(index,team,rotation,serving,attack)
+	if serving and posmod(rotation,6)==0 and not double_active(game,team) and index%6 in [0,2]:point.x=-point.x
+	return point
 
 static func attack_wing_for(game, index: int, rotation: int, service_reception: bool=false) -> float:
-	if not double_active(game,int(index/6)): return attack_wing(index,rotation,service_reception)
+	if not double_active(game,int(index/6)):
+		var value:=attack_wing(index,rotation,service_reception)
+		return -value if posmod(rotation,6)==0 and int(index/6)==game.server else value
 	if not front(index,rotation): return 0.0
 	var r:=role_for(game,index)
 	if not r.begins_with("OH") and r!="OPP": return 0.0
@@ -72,7 +77,9 @@ static func serve_position(index: int, team: int, rotation: int, serving: bool =
 	# starts in its defensive roles, except the actual Z1 server outside court.
 	if serving:
 		if slot(index,rotation)==3: return world(team,2.8,11.9)
-		return home(index,team,rotation,true,false)
+		var point:=home(index,team,rotation,true,false)
+		if posmod(rotation,6)==0 and index%6 in [0,2]:point.x=-point.x
+		return point
 	var p:=ServeLayout.receive(index,rotation)
 	return world(team, p.x, p.z)
 
@@ -101,7 +108,7 @@ static func attacker_for(game, team: int, direction: int, exclude: int) -> int:
 	var lanes=game.get("rally_lanes")
 	var mirrored: bool=lanes.mirrored(team) if lanes!=null else (first_ball(game) and team==game.possession)
 	var primary:=-1
-	if not double_active(game,team): primary=attacker(team,game.rotations[team],direction,exclude,mirrored)
+	if not double_active(game,team) and not (posmod(game.rotations[team],6)==0 and team==game.server): primary=attacker(team,game.rotations[team],direction,exclude,mirrored)
 	else:
 		for i in range(team*6,team*6+6):
 			if i==exclude: continue

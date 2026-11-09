@@ -1,0 +1,476 @@
+{
+  "id": "dominant-hand-103-once",
+  "schema": 1,
+  "players": {
+    "allianz-milano-01": {
+      "name": "Francesco Recine",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/francesco-recine-p24216"
+    },
+    "allianz-milano-04": {
+      "name": "Simone Porro",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/simone-porro-p127617"
+    },
+    "allianz-milano-05": {
+      "name": "Davi Tenorio",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/davi-tenorio-p73325"
+    },
+    "allianz-milano-08": {
+      "name": "Basil Dermaux",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/basil-dermaux-p71599"
+    },
+    "allianz-milano-09": {
+      "name": "Seppe Rotty",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/seppe-rotty-p23133"
+    },
+    "allianz-milano-10": {
+      "name": "Robertlandy Simon",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/robertlandy-simon-aties-p315"
+    },
+    "allianz-milano-12": {
+      "name": "Tatsunori Otsuka",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/tatsunori-otsuka-p28796"
+    },
+    "allianz-milano-15": {
+      "name": "Georgi Tatarov",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/georgi-tatarov-p28903"
+    },
+    "cisterna-volley-01": {
+      "name": "Vilmos Szabo",
+      "dominant_hand": "left",
+      "source": "https://volleybox.net/vilmos-szabo-p68833"
+    },
+    "cisterna-volley-03": {
+      "name": "Lorenzo Magliano",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/lorenzo-magliano-p71901"
+    },
+    "cisterna-volley-04": {
+      "name": "Shikun Peng",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/shikun-peng-p24496"
+    },
+    "cisterna-volley-05": {
+      "name": "Tommaso Barotto",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/tommaso-barotto-p72080"
+    },
+    "cisterna-volley-08": {
+      "name": "Francesco Pierri",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/francesco-pierri-p62987"
+    },
+    "cisterna-volley-09": {
+      "name": "Miguel Angel Martinez Palacios",
+      "dominant_hand": "left",
+      "source": "https://volleybox.net/miguel-angel-martinez-p72148"
+    },
+    "cisterna-volley-11": {
+      "name": "Noa Duflos-Rossi",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/noa-duflos-rossi-p62099"
+    },
+    "cisterna-volley-12": {
+      "name": "Jacopo Tosti",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/jacopo-tosti-p154503"
+    },
+    "cucine-lube-civitanova-01": {
+      "name": "Simeon Nikolov",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/simeon-nikolov-p79734"
+    },
+    "cucine-lube-civitanova-05": {
+      "name": "Fabio Balaso",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/fabio-balaso-p634"
+    },
+    "cucine-lube-civitanova-07": {
+      "name": "Davide Gardini",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/davide-gardini-p7141"
+    },
+    "cucine-lube-civitanova-21": {
+      "name": "Miran Kujundzic",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/miran-kujundzic-p24486"
+    },
+    "cucine-lube-civitanova-08": {
+      "name": "Aleksandar Nikolov",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/aleksandar-nikolov-p33775"
+    },
+    "cucine-lube-civitanova-09": {
+      "name": "Francesco Zoppellari",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/francesco-zoppellari-p4249"
+    },
+    "cucine-lube-civitanova-10": {
+      "name": "Jackson Howe",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/jackson-howe-p63523"
+    },
+    "cucine-lube-civitanova-11": {
+      "name": "Maksym Tonkonoh",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/maksym-tonkonoh-p146046"
+    },
+    "cucine-lube-civitanova-13": {
+      "name": "Mattia Bottolo",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/mattia-bottolo-p27041"
+    },
+    "acqua-santanna-cuneo-03": {
+      "name": "Thibault Loubeyre",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/thibault-loubeyre-p32916"
+    },
+    "acqua-santanna-cuneo-04": {
+      "name": "Bryan Argilagos",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/bryan-argilagos-p127616"
+    },
+    "acqua-santanna-cuneo-07": {
+      "name": "Emanuele Barberio",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/emanuele-barberio-p234682"
+    },
+    "acqua-santanna-cuneo-08": {
+      "name": "Alexandre Strehlau",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/alexandre-strehlau-p138487"
+    },
+    "acqua-santanna-cuneo-09": {
+      "name": "Nathan Feral",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/nathan-feral-p71641"
+    },
+    "acqua-santanna-cuneo-10": {
+      "name": "Poriya Hossein Khanzadeh",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/poriya-hossein-khanzadeh-p72382"
+    },
+    "acqua-santanna-cuneo-11": {
+      "name": "Ethan Champlin",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/ethan-champlin-p72826"
+    },
+    "acqua-santanna-cuneo-12": {
+      "name": "Lorenzo Codarin",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/lorenzo-codarin-p4214"
+    },
+    "gas-sales-bluenergy-piacenza-01": {
+      "name": "Merrick McHenry",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/merrick-mchenry-p71582"
+    },
+    "gas-sales-bluenergy-piacenza-03": {
+      "name": "Paolo Porro",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/paolo-porro-p28911"
+    },
+    "gas-sales-bluenergy-piacenza-04": {
+      "name": "Henri Emmanuel Leon",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/henri-leon-p91503"
+    },
+    "gas-sales-bluenergy-piacenza-06": {
+      "name": "Nikola Brboric",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/nikola-brboric-p77889"
+    },
+    "gas-sales-bluenergy-piacenza-07": {
+      "name": "Francesco Comparoni",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/francesco-comparoni-p68094"
+    },
+    "gas-sales-bluenergy-piacenza-10": {
+      "name": "Dragan Travica",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/dragan-travica-p628"
+    },
+    "gas-sales-bluenergy-piacenza-14": {
+      "name": "Alessandro Bovolenta",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/alessandro-bovolenta-p72170"
+    },
+    "itas-trentino-02": {
+      "name": "Nicola Zonta",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/nicola-zonta-p24837"
+    },
+    "itas-trentino-03": {
+      "name": "Alessandro Michieletto",
+      "dominant_hand": "left",
+      "source": "https://volleybox.net/alessandro-michieletto-p28908"
+    },
+    "itas-trentino-04": {
+      "name": "Riccardo Sbertoli",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/riccardo-sbertoli-p3592"
+    },
+    "itas-trentino-10": {
+      "name": "Renars-Paul Jansons",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/renars-pauls-jansons-p31701"
+    },
+    "itas-trentino-11": {
+      "name": "Adriano Xavier Cavalcante",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/adriano-xavier-p29045"
+    },
+    "itas-trentino-12": {
+      "name": "Flavio Resende Gualberto",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/flavio-gualberto-p2822"
+    },
+    "itas-trentino-13": {
+      "name": "Aleksandar Nedeljkovic",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/aleksandar-nedeljkovic-p6180"
+    },
+    "itas-trentino-14": {
+      "name": "Simon Valentin Torwie",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/simon-torwie-p28938"
+    },
+    "pallavolo-padova-01": {
+      "name": "Amir Mohammad Golzadeh",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/amir-mohammad-golzadeh-p72380"
+    },
+    "pallavolo-padova-03": {
+      "name": "Andrea Ruzza",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/andrea-ruzza-p157476"
+    },
+    "pallavolo-padova-06": {
+      "name": "Joscha Kunstmann",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/joscha-kunstmann-p72314"
+    },
+    "pallavolo-padova-09": {
+      "name": "Leonardo Lukas Leodolter",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/leonardo-lukas-p87092"
+    },
+    "pallavolo-padova-12": {
+      "name": "Arshia Behnezhad",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/arshia-behnezhad-p72387"
+    },
+    "pallavolo-padova-13": {
+      "name": "Brendan Robert Mills",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/brendan-mills-p114935"
+    },
+    "rana-verona-01": {
+      "name": "Aidan Zingel",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/aidan-zingel-p2322"
+    },
+    "rana-verona-04": {
+      "name": "Kellian Motta Paes",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/kellian-motta-paes-p32910"
+    },
+    "rana-verona-08": {
+      "name": "Noumory Keita",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/noumory-keita-p32828"
+    },
+    "rana-verona-09": {
+      "name": "Francesco Sani",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/francesco-sani-p28988"
+    },
+    "rana-verona-24": {
+      "name": "Anders Mol",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/anders-berntsen-mol-p4203"
+    },
+    "rana-verona-11": {
+      "name": "Lukas Glatz",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/lukas-glatz-p34201"
+    },
+    "rana-verona-12": {
+      "name": "Simone Anzani",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/simone-anzani-p694"
+    },
+    "rana-verona-14": {
+      "name": "Rok Mozic",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/rok-mozic-p32231"
+    },
+    "rana-verona-13": {
+      "name": "Paul Buchegger",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/paul-buchegger-p50"
+    },
+    "sir-susa-scai-perugia-01": {
+      "name": "Mathis Henno",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/mathis-henno-p76735"
+    },
+    "sir-susa-scai-perugia-02": {
+      "name": "Simone Giannelli",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/simone-giannelli-p1926"
+    },
+    "sir-susa-scai-perugia-04": {
+      "name": "Agustin Loser",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/agustin-loser-p4551"
+    },
+    "sir-susa-scai-perugia-05": {
+      "name": "Stefano Cappadona",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/stefano-cappadona-p72660"
+    },
+    "sir-susa-scai-perugia-06": {
+      "name": "Luca Loreti",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/luca-loreti-p99861"
+    },
+    "sir-susa-scai-perugia-07": {
+      "name": "Sebastian Sole",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/sebastian-sole-p46"
+    },
+    "sir-susa-scai-perugia-08": {
+      "name": "David Kollator",
+      "dominant_hand": "left",
+      "source": "https://volleybox.net/david-kollator-p33904"
+    },
+    "sir-susa-scai-perugia-09": {
+      "name": "Kamil Semeniuk",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/kamil-semeniuk-p4478"
+    },
+    "sir-susa-scai-perugia-10": {
+      "name": "Oleh Plotnytskyi",
+      "dominant_hand": "left",
+      "source": "https://volleybox.net/oleh-plotnytskyi-p10543"
+    },
+    "sir-susa-scai-perugia-11": {
+      "name": "Giovanni Sanguinetti",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/giovanni-sanguinetti-p27058"
+    },
+    "sir-susa-scai-perugia-13": {
+      "name": "Seyed Matin Hosseini",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/seyed-matin-hosseini-p105551"
+    },
+    "tinet-prata-di-pordenone-01": {
+      "name": "Wout D'Heer",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/wout-dheer-p34524"
+    },
+    "tinet-prata-di-pordenone-03": {
+      "name": "Alessio Alberini",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/alessio-alberini-p21685"
+    },
+    "tinet-prata-di-pordenone-05": {
+      "name": "Alberto Pol",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/alberto-pol-p28909"
+    },
+    "tinet-prata-di-pordenone-06": {
+      "name": "Sebastiano Marsili",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/sebastiano-marsili-p14015"
+    },
+    "tinet-prata-di-pordenone-07": {
+      "name": "Alessandro Toscani",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/alessandro-toscani-p21687"
+    },
+    "tinet-prata-di-pordenone-08": {
+      "name": "Kirill Klets",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/kirill-klets-p7145"
+    },
+    "tinet-prata-di-pordenone-10": {
+      "name": "Federico Guadagnini",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/federico-guadagnini-p97545"
+    },
+    "tinet-prata-di-pordenone-26": {
+      "name": "Nooa Marttila",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/nooa-marttila-p91499"
+    },
+    "tinet-prata-di-pordenone-12": {
+      "name": "Lukas Felipe Bergmann",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/lukas-bergmann-p58572"
+    },
+    "valsa-group-modena-01": {
+      "name": "Arthur Bento",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/arthur-bento-p61891"
+    },
+    "valsa-group-modena-04": {
+      "name": "Pardo Mati",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/pardo-mati-p98515"
+    },
+    "valsa-group-modena-05": {
+      "name": "Sil Meijs",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/sil-meijs-p55243"
+    },
+    "valsa-group-modena-06": {
+      "name": "Thomas Jaeschke",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/thomas-jaeschke-p3094"
+    },
+    "valsa-group-modena-09": {
+      "name": "Luca Tauletta",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/luca-tauletta-p98410"
+    },
+    "valsa-group-modena-11": {
+      "name": "Luca Porro",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/luca-porro-p33929"
+    },
+    "valsa-group-modena-12": {
+      "name": "Gabriele Di Martino",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/gabriele-di-martino-p11658"
+    },
+    "valsa-group-modena-14": {
+      "name": "Nik Mujanovic",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/nik-mujanovic-p34183"
+    },
+    "vero-volley-monza-07": {
+      "name": "Andrew Rowan",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/andrew-rowan-p113820"
+    },
+    "vero-volley-monza-09": {
+      "name": "Bara Fall",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/bara-fall-p21668"
+    },
+    "vero-volley-monza-13": {
+      "name": "Pierre Perin",
+      "dominant_hand": "right",
+      "source": "https://volleybox.net/pierre-perin-p89363"
+    }
+  }
+}

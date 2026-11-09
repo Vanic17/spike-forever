@@ -8,6 +8,8 @@ func _init() -> void:
 	if FileAccess.file_exists(PATH):
 		var data=JSON.parse_string(FileAccess.get_file_as_string(PATH))
 		if data is Dictionary: overrides=data
+	var hand_error:=preload("res://src/dominant_hand103.gd").apply(overrides,PATH)
+	if hand_error!=OK:push_warning("One-off dominant hand correction pending: "+str(hand_error))
 	for team in teams:
 		for p in team.roster:
 			if not p.has("dominant_hand"): p.dominant_hand="right"
