@@ -28,6 +28,8 @@ func run():
 				g.players[g.receiver].position=g.Tactics.world(team,0,5.5);g.ball_pos=g.players[g.receiver].contact_world("receive")
 				g.phase="RECEIVE" if team==0 else "CPU_RECEIVE";g.armed=true;g.input_quality=1;g.incoming_kind="free";g.incoming_power=0
 				g.receive_ball();g.aim=direction
+				if not g.Tactics.front(g.setter,rotation):
+					check(not Second.request(g) and not g.armed,"back-row setter cannot use triangle");continue
 				var old: int=g.contact_log.size();var requested:=false
 				for frame in 480:
 					if not requested and g.flight_left<(.12 if "--late" in OS.get_cmdline_user_args() else .45):requested=Second.request(g)

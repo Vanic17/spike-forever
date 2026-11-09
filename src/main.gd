@@ -1547,7 +1547,7 @@ func dump_ball() -> void:
 	if phase=="POINT": return
 	match_management.touch(setter,"attack")
 	# Back-row setters may dump only below the top of the net in the front zone.
-	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y-preload("res://src/net_spec94.gd").BALL_RADIUS > preload("res://src/net_spec94.gd").TOP:
+	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > preload("res://src/net_spec94.gd").TOP:
 		award(1 - attacker, "ATTACCO IRREGOLARE DI SECONDA LINEA")
 		return
 	var delivery: Dictionary=preload("res://src/setter_second96.gd").trajectory(self) if setter_second96>0 else preload("res://src/setter_dump.gd").trajectory(ball_pos,aim,attacker,flight_spin)

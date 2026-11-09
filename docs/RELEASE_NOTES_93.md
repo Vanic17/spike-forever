@@ -6,10 +6,10 @@
 - Contatto alto sulla traiettoria esistente per il colpo preparato, adattamento raccolto per il comando tardivo. Nessun riavvio della palla o contatto a tempo zero.
 - Numero 3: spinta discendente e topspin; se l'altezza non consente il passaggio sopra il nastro, la palla incontra fisicamente la rete invece di diventare un pallonetto verso l'alto.
 - Numero 2 e 7: uscite rispettivamente dietro e davanti al palleggiatore, traiettorie tese con controllo numerico del passaggio sopra la rete usando spin e resistenza reali.
-- Corretto il controllo del fallo del palleggiatore di seconda linea: considera la palla interamente sopra il nastro. Quando possibile il contatto viene pianificato più basso per restare regolare.
+- Triangolo/Y disponibile esclusivamente per il palleggiatore in prima linea. In seconda linea la richiesta viene rifiutata prima di cambiare posa, tempo o traiettoria, anche sull'autorità online e in Diventa un mito. Le seconde su Cerchio/B mantengono il comportamento precedente.
 - IK rilasciata subito dopo il tocco per lasciare visibile il seguito del polso; libreria AnimationTree rigenerata, fallback PSA conservato.
 
-Verifiche: 144 sequenze reali a 60/120 Hz, due lati, sei rotazioni, tre direzioni e input anticipato/tardivo, con controllo mano, orientamento, traiettoria e assenza di punto automatico. Eseguite anche nel fallback PSA, oltre alle regressioni e al controllo online.
+Verifiche: 144 casi a 60/120 Hz, due lati, sei rotazioni, tre direzioni e input anticipato/tardivo: contatti reali in prima linea e rifiuto senza effetti in seconda linea. Controllati mano, orientamento e traiettoria. Eseguiti anche nel fallback PSA, oltre alle regressioni e al controllo online.
 
 Riferimenti per la ricostruzione dei gesti: [classica](https://www.youtube.com/shorts/3dCAFN8rQrg), [dietro la testa](https://www.youtube.com/shorts/K946bfJAJPI), [tipologie 2, 3 e 7](https://www.youtube.com/shorts/OYnemJcvpD0). Sono animazioni ricostruite, non motion capture estratto dai video.
 

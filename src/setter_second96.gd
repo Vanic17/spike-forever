@@ -8,6 +8,7 @@ static func kind(game) -> int:
 static func request(game) -> bool:
 	if not game.human_team(game.possession) or game.touches[game.possession]!=1 or game.armed:return false
 	if game.Tactics.role_for(game,game.setter)!="S":return false
+	if not game.Tactics.front(game.setter,game.rotations[game.possession]):return false
 	var p=game.players[game.setter]
 	p.setting_yaw=-PI/2 if game.possession==0 else PI/2
 	var choice:=kind(game)
@@ -16,17 +17,16 @@ static func request(game) -> bool:
 	if clip==null:return false
 	if game.flight_left<=0 or not game.airborne:return false
 	var hit: Dictionary={"point":game.flight_target,"seconds":game.flight_left}
-	var front: bool=game.Tactics.front(game.setter,game.rotations[game.possession])
 	# The fingers meet the ball inside the anatomical reach envelope, rather
 	# than demanding the authored maximum extension plus the set's forward reach.
-	var height: float=(clip.contact_offset.y-.12)*p.height_scale90 if front else Net.TOP+Net.BALL_RADIUS-.025
+	var height: float=(clip.contact_offset.y-.12)*p.height_scale90
 	var higher: Dictionary=Flight.intercept(game.ball_pos,game.ball_vel,game.flight_spin,height,game.flight_gravity)
 	# A prepared jump meets the SAME flight higher. Late inputs retain the
 	# existing contact, never rewind the ball or fire a zero-time interception.
-	if not higher.is_empty() and higher.seconds>=(.16 if front else .005) and higher.seconds<=game.flight_left+.12 and higher.point.z*(1 if game.possession==0 else -1)>.25:hit=higher
+	if not higher.is_empty() and higher.seconds>=.16 and higher.seconds<=game.flight_left+.12 and higher.point.z*(1 if game.possession==0 else -1)>.25:hit=higher
 	p.second_contact97=p.contact_local("set")
 	p.second_contact97.y=hit.point.y
-	if front and hit.seconds>.28:
+	if hit.seconds>.28:
 		p.second_contact97.x=clip.contact_offset.x*p.height_scale90
 		p.second_contact97.z=clip.contact_offset.z*p.height_scale90
 	var offset: Vector3=p.second_contact97

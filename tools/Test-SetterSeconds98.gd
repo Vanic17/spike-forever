@@ -29,6 +29,13 @@ func run():
 						g.players[g.receiver].position=g.Tactics.world(team,0,5.5);g.ball_pos=g.players[g.receiver].contact_world("receive")
 						g.phase="RECEIVE" if team==0 else "CPU_RECEIVE";g.armed=true;g.input_quality=1;g.incoming_kind="free";g.incoming_power=0
 						g.receive_ball();g.aim=direction
+						if not g.Tactics.front(g.setter,rotation):
+							var before: Array=[g.ball_pos,g.ball_vel,g.flight_target,g.flight_left,g.players[g.setter].clip_name,g.players[g.setter].animation_time]
+							check(not Second.request(g),"back-row setter rejects triangle")
+							check(not g.armed and not g.setter_dump and g.setter_second96==0,"back-row command cannot arm a stroke")
+							check(before==[g.ball_pos,g.ball_vel,g.flight_target,g.flight_left,g.players[g.setter].clip_name,g.players[g.setter].animation_time],"back-row rejection preserves ball and pose")
+							rows.append({"hz":hz,"team":team,"rotation":rotation,"lead":lead,"direction":str(direction),"back_row_rejected":true})
+							continue
 						var old: int=g.contact_log.size();var requested:=false;var choice:=0
 						for frame in 500:
 							if not requested and g.flight_left<lead:requested=Second.request(g);choice=g.setter_second96
