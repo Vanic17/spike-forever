@@ -42,6 +42,7 @@ static func trajectory(game) -> Dictionary:
 	var choice: int=game.setter_second96;var side: float=-1 if game.possession==0 else 1
 	var facing: Vector3=Basis(Vector3.UP,game.players[game.setter].setting_yaw)*Vector3.BACK
 	var target:=Vector3(clampf(game.ball_pos.x+facing.x*(2.2 if choice==7 else -2.1),-4.0,4.0),Net.BALL_RADIUS,side*3.8)
+	if choice in [2,7]:target=Vector3(signf(facing.x*(1 if choice==7 else -1))*3.75,Net.BALL_RADIUS,side*5.2)
 	if choice==3:target=Vector3(clampf(game.ball_pos.x*.80,-3.4,3.4),Net.BALL_RADIUS,side*3.6)
 	var spin:=Vector3(side*(8.0 if choice==3 else 1.4),0,0)
 	if absf(game.ball_pos.z)>1.65 or game.ball_pos.y<Net.TOP-.15:
@@ -51,7 +52,7 @@ static func trajectory(game) -> Dictionary:
 		return {"target":target,"seconds":.42+absf(game.ball_pos.z)*.035,"spin":spin,"pressure":.18}
 	# Solve clearance with the real spin/drag integrator, not a gravity-only
 	# parabola. The classic starts downward when the high contact permits it.
-	var seconds: float=.54 if choice==3 else (.70 if choice==2 else .76)
+	var seconds: float=.50 if choice==3 else (.88 if choice==2 else .94)
 	seconds=preload("res://src/winning_shot.gd").flight_seconds(game,target,seconds,Net.TOP+Net.BALL_RADIUS+.035)
 	for attempt in 16:
 		if crosses_cleanly(game,target,seconds,spin):break

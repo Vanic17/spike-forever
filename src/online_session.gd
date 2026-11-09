@@ -5,7 +5,7 @@ const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
 # New stroke names, commands and second-touch state require matching peers.
 # Reject incompatible dictionaries before decoding compact clip IDs.
-const PROTOCOL="SF094-CONDITION99"
+const PROTOCOL="SF095-MATCH100"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -19,6 +19,8 @@ var generation:=0
 var requested_generation:=0
 var choices: Array=[{},{}]
 var forms99: Array=[{},{}]
+var report_token100:=0
+var report_votes100: Array=["",""]
 var ready_flags: Array=[false,false]
 var best_of:=5
 var points:=25
@@ -241,6 +243,7 @@ func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=
 	if local_side==1 and active: begin_local(selected,format,target,stats_enabled,fatigue_enabled)
 
 func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
+	inputs=[{},{}];local_charge_start=-1;local_charge_released=-1
 	sent_contexts89.clear();pending_set89.clear();applying_context89.clear();rejected_commands89=0
 	render_clock84=-1.0
 	game.render_smoother.reset(game)
@@ -273,6 +276,61 @@ func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=
 	if is_instance_valid(menu): menu.hide(); menu.host.clubs.hide(); menu.host.clubs.music.stop()
 	info="Partita online · "+("host" if authority() else "ospite")
 	refresh()
+
+func open_report100(value: Dictionary) -> void:
+	if not authority() or not playing or game.report100.opened:return
+	report_token100+=1;report_votes100=["",""]
+	show_report100.rpc_id(guest,report_token100,value)
+	game.report100.show_report(value)
+
+@rpc("authority","call_remote","reliable",0)
+func show_report100(token: int,value: Dictionary) -> void:
+	if local_side!=1 or not playing:return
+	report_token100=token;packet_age=0;game.report100.show_report(value)
+
+func vote_report100(action: String) -> void:
+	if not playing or not game.report100.opened:return
+	if authority():accept_report_vote100(0,report_token100,action)
+	else:report_vote100.rpc_id(1,report_token100,action)
+
+@rpc("any_peer","call_remote","reliable",0)
+func report_vote100(token: int,action: String) -> void:
+	if authority() and multiplayer.get_remote_sender_id()==guest:accept_report_vote100(1,token,action)
+
+func accept_report_vote100(side: int,token: int,action: String) -> void:
+	if not playing or token!=report_token100 or not game.report100.opened:return
+	var allowed: Array=["rematch","lobby"] if game.report100.payload.final else ["continue"]
+	if action not in allowed:return
+	report_votes100[side]=action;game.report100.update_votes(report_votes100)
+	report_votes_state100.rpc_id(guest,token,report_votes100)
+	if report_votes100[0]!=action or report_votes100[1]!=action:return
+	if action=="rematch":
+		var C=preload("res://src/condition99.gd")
+		for team in 2:
+			forms99[team]=C.fresh();C.ensure(forms99[team],choices[team].roster+choices[team].bench);choices[team].condition99=forms99[team].duplicate(true)
+		ready_flags=[true,true];start_match()
+	elif action=="lobby":
+		return_lobby100.rpc_id(guest);return_lobby_local100()
+	else:
+		finish_report100.rpc_id(guest,token);game.report100.resolve("continue")
+
+@rpc("authority","call_remote","reliable",0)
+func report_votes_state100(token: int,value: Array) -> void:
+	if token==report_token100 and value.size()==2:game.report100.update_votes(value)
+
+@rpc("authority","call_remote","reliable",0)
+func finish_report100(token: int) -> void:
+	if token==report_token100 and game.report100.opened:game.report100.resolve("continue")
+
+@rpc("authority","call_remote","reliable",0)
+func return_lobby100() -> void:
+	if local_side==1 and active:return_lobby_local100()
+
+func return_lobby_local100() -> void:
+	game.report100.reset();game.replay.reset();game.match_management.suspend()
+	playing=false;game.started=false;game.paused=false;game.match_finished=false;game.charging=false;game.armed=false
+	ready_flags=[false,false];forms99=[{},{}];choices=[{},{}];buffered.clear();inputs=[{},{}]
+	packet_age=0;menu.open();refresh()
 
 func broadcast_management() -> void:
 	if authority() and playing and guest!=0: management_state.rpc_id(guest,game.match_management.export_state())
@@ -338,6 +396,7 @@ func closed(reason: String) -> void:
 	if active: leave(reason,false)
 
 func leave(reason: String="Stanza chiusa", tell: bool=true) -> void:
+	if game.report100!=null:game.report100.reset()
 	if active and authority() and guest!=0 and tell and guest in multiplayer.get_peers(): closed.rpc_id(guest,reason)
 	if active and local_side==1 and guest!=0 and tell and multiplayer.multiplayer_peer.get_connection_status()==MultiplayerPeer.CONNECTION_CONNECTED: leave_command.rpc_id(1)
 	var transport=multiplayer.multiplayer_peer

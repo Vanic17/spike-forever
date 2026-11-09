@@ -177,7 +177,8 @@ func add_panel(at: Vector3,size: Vector2,angle: float) -> void:
 
 func apply_cycle() -> void:
 	for i in panels.size():
-		var a: int=(cycle+int(i/4))%logos.size()
+		# Each complete fascia shares one feed, including the corner/end panel.
+		var a: int=cycle%logos.size()
 		var b: int=(a+1)%logos.size()
 		var material:=panels[i]
 		material.set_shader_parameter("logo_a",logos[a])

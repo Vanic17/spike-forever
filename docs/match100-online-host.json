@@ -1,0 +1,6 @@
+{
+  "checks": "set report, match report, unilateral vote rejected, rematch, lobby and second launch without reconnect",
+  "errors": [],
+  "pass": true,
+  "transport": "ENet"
+}

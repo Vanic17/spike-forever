@@ -1,8 +1,16 @@
 extends RefCounted
 ## Response depends on the actual contact position and the block's seal.
-static func solve(incoming: Vector3, defender: int, strength: float, quality: float, edge: float, variation: Vector3=Vector3.ZERO) -> Dictionary:
+static func solve(incoming: Vector3, defender: int, strength: float, quality: float, edge: float, variation: Vector3=Vector3.ZERO,soft: bool=false) -> Dictionary:
 	var outward: float=-1.0 if defender==0 else 1.0
 	var seal:=clampf(strength*(0.55+quality*0.45),0,1)
+	if soft:
+		# Same ball mass, less incoming energy: hands must not manufacture
+		# the minimum rebound speed used for a powerful spike.
+		var edge_amount:=smoothstep(.55,1.15,absf(edge))
+		var velocity:=Vector3(incoming.x*.30+signf(edge)*edge_amount*1.3+variation.x*.25,lerpf(1.6,-3.4,seal)*(1-edge_amount*.65),outward*lerpf(.55,1.8,seal))
+		if edge_amount>.6:velocity.z=incoming.z*.45;velocity.y+=.65
+		velocity=velocity.limit_length(maxf(1.2,incoming.length()*.78))
+		return {"kind":"stuff_block" if seal>.80 and edge_amount<.25 else "block_touch","detail":"soft_press" if seal>.80 else "soft_cushion","velocity":velocity,"seal":seal}
 	# Hitting an outside fingertip is not a sealed wall, even with a good
 	# jump: retain the tool/deflection instead of turning it into a stuff.
 	seal*=1.0-.28*smoothstep(.45,1.10,absf(edge))

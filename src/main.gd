@@ -236,6 +236,8 @@ var set_origin := Vector3.ZERO
 var court_shape = CourtShape.new()
 var attack_run = preload("res://src/attack_run.gd").new()
 var pause_menu
+var report100
+var middle_read100=preload("res://src/middle_read100.gd").new()
 var match_management
 var match_condition: Array=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 var form99: Dictionary={}
@@ -316,6 +318,7 @@ func _ready() -> void:
 	pause_menu=preload("res://src/pause_menu.gd").new()
 	pause_menu.game=self
 	add_child(pause_menu)
+	report100=preload("res://src/match_report100.gd").new();report100.game=self;add_child(report100)
 	var rotation_overlay=preload("res://src/rotation_overlay.gd").new()
 	rotation_overlay.game=self
 	canvas.add_child(rotation_overlay)
@@ -455,6 +458,7 @@ func update_camera(dt: float) -> void:
 	camera.look_at(camera_focus)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if report100!=null and report100.opened:return
 	if substitution_scene!=null and substitution_scene.handle_input(event): get_viewport().set_input_as_handled(); return
 	if replay!=null and replay.handle_input(event): get_viewport().set_input_as_handled(); return
 	if network_match():
@@ -924,6 +928,7 @@ func choose_setter(team: int, point: Vector3, available: float) -> int:
 	return backup
 
 func return_to_main_menu() -> void:
+	if report100!=null:report100.reset()
 	var from_legend: bool=legend_match!=null and legend_match.active
 	if from_legend:legend_match.stop()
 	if substitution_scene!=null: substitution_scene.cancel()
@@ -1781,6 +1786,7 @@ func award(team: int, reason: String) -> void:
 	var target_points:=15 if match_best_of>1 and sets[0]+sets[1]==match_best_of-1 else match_points
 	if scores[team] >= target_points and scores[team] - scores[1 - team] >= 2:
 		match_management.finish_set(scores)
+		if report100!=null:report100.capture(scores)
 		sets[team] += 1
 		scores = [0, 0]
 		point_reason = "SET " + team_names[team]
@@ -1899,6 +1905,7 @@ func step(dt: float) -> void:
 	elif phase == "POINT":
 		step_dead_ball(dt)
 		if phase_time > 4.5:
+			if report100!=null and (report100.opened or not report100.pending.is_empty()):return
 			if match_finished: return_to_main_menu(); return
 			reset_rally()
 	elif airborne:
@@ -2023,6 +2030,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 				contact_blocker=i
 			strength = maxf(strength,seal_alignment)
 	if good_jump and near:
+		var soft_contact100: bool=incoming_kind in ["soft","dump"]
 		block_checked=true
 		var tail: float=seconds*(1.0-clampf(previous.distance_to(contact_point)/maxf(0.00001,previous.distance_to(ball_pos)),0,1))
 		ball_pos=contact_point
@@ -2030,18 +2038,18 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			match_management.touch(contact_blocker,"block")
 			var side:=1.0 if defender==0 else -1.0
 			var landing:=Vector3(clampf(ball_pos.x,-3.9,3.9),0.105,side*2.0)
-			ball_vel=BallFlight.velocity_to(ball_pos,landing,0.26,flight_spin,flight_gravity)
+			ball_vel=BallFlight.velocity_to(ball_pos,landing,0.48 if soft_contact100 else 0.26,flight_spin,flight_gravity)
 			last_touch=defender; phase="LOOSE"; flight_left=100
 			log_rally_event("winning_shot_block_break",{"defender":defender})
-			if match_audio: match_audio.contact("block",ball_pos,0.9)
+			if match_audio: match_audio.contact("block",ball_pos,0.3 if soft_contact100 else 0.9)
 			advance_block_tail(tail)
 			return
 		if true:
-			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)))
-			if use_player_stats: response=PlayerStats.block(ball_vel,defender,strength,block_quality,contact_side+block_hand*.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)),PlayerStats.rating(self,contact_blocker,"muro"),rng.randf())
+			var response:=preload("res://src/block_response.gd").solve(ball_vel,defender,strength,block_quality,contact_side+block_hand*0.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)),soft_contact100)
+			if use_player_stats: response=PlayerStats.block(ball_vel,defender,strength,block_quality,contact_side+block_hand*.22,Vector3(rng.randf_range(-1,1),rng.randf_range(-1,1),rng.randf_range(-1,1)),PlayerStats.rating(self,contact_blocker,"muro"),rng.randf(),soft_contact100)
 			var incoming := ball_vel
 			ball_vel=response.velocity
-			if response.kind=="stuff_block": ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
+			if response.kind=="stuff_block" and not soft_contact100: ball_vel=preload("res://src/block_contact.gd").pressed_velocity(ball_vel,ball_pos,defender,flight_gravity)
 			flight_spin = flight_spin * 0.45 + Vector3(contact_side,0,-1 if defender==0 else 1).normalized().cross(incoming) * 0.35
 			last_touch = defender
 			match_management.touch(contact_blocker,"block")
@@ -2052,7 +2060,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			resume_deflection("block")
 			# A sealed monster block is terminal for CPU attack coverage.
 			# Keep its real flight and floor scoring; soft touches remain recoverable.
-			if not use_player_stats and response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession):
+			if not use_player_stats and not soft_contact100 and response.kind=="stuff_block" and phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession):
 				terminal_cpu_block=true
 				phase="LOOSE"; flight_left=100; marker.visible=false
 				log_rally_event("monster_block_no_cpu_cover",{"team":possession})
@@ -2063,7 +2071,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 				scramble_ready[receiver]=maxf(scramble_ready[receiver],clock_time+minf(.32,recovery))
 			log_rally_event(response.kind,{"strength":strength,"seal":response.seal,"edge":contact_side,"blocking_team":defender,"trajectory":response.get("detail",response.kind),"outgoing":ball_vel})
 			notice("MONSTER BLOCK" if response.kind=="stuff_block" else ("TOCCO DI MANI" if response.kind=="block_tool" else "MURO · PALLA GIOCABILE"), 1.0)
-			if match_audio: match_audio.contact("block", ball_pos, 0.85)
+			if match_audio: match_audio.contact("block", ball_pos, 0.32 if soft_contact100 else 0.85)
 			advance_block_tail(tail)
 
 func advance_block_tail(seconds: float) -> void:
@@ -2187,7 +2195,7 @@ func waiting_wall_target(index: int) -> Vector3:
 	return manual_wall.waiting(self,index)
 
 func request_block_jump(index: int, contact_in: float) -> bool:
-	if phase not in (["ATTACK","CPU_ATTACK","SET","CPU_SET","RECEIVE","CPU_RECEIVE"] if network_match() or legend_controls_enabled() else ["ATTACK", "CPU_ATTACK","CPU_SET","CPU_RECEIVE"]): return false
+	if phase not in (["ATTACK","CPU_ATTACK","SET","CPU_SET","RECEIVE","CPU_RECEIVE"] if network_match() or legend_controls_enabled() else ["ATTACK", "CPU_ATTACK","SET","CPU_SET","CPU_RECEIVE"]): return false
 	var jump_id := wall_attack_id() if index<6 else attack_serial
 	if block_jumps.get(index, -1) == jump_id: return false
 	var p = players[index]
@@ -2370,6 +2378,7 @@ func move_players(dt: float) -> void:
 				p.target = p.steering_target
 		# Each athlete perceives the same cue on an individual schedule. Direct
 		# contact assistance remains immediate; support and reading are staggered.
+		p.target=middle_read100.route(self,i,p.target)
 		p.steering_target = p.intent.perceive(p.target, clock_time, dt)
 		var movement: Vector3 = p.steering_target - p.position
 		movement.y = 0
@@ -2546,6 +2555,7 @@ func move_players(dt: float) -> void:
 	if not legend_controls(middle_decoy.index):
 		middle_decoy.prepare_real(self,dt)
 		middle_decoy.try_jump(self)
+	middle_read100.update(self)
 	for team in 2:
 		for a in range(team * 6, team * 6 + 6):
 			for b in range(a + 1, team * 6 + 6):

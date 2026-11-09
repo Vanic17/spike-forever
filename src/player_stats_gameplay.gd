@@ -61,8 +61,9 @@ static func ai_power(game,index: int,key: String) -> float:
 	var sigma:=lerpf(float(settings().ai_sigma_low),float(settings().ai_sigma_high),value/99.0)
 	return clampf(game.rng.randfn(.97,sigma),.35,1.18)
 
-static func block(incoming: Vector3,defender: int,strength: float,quality: float,edge: float,variation: Vector3,value: float,roll: float) -> Dictionary:
+static func block(incoming: Vector3,defender: int,strength: float,quality: float,edge: float,variation: Vector3,value: float,roll: float,soft: bool=false) -> Dictionary:
 	var original=preload("res://src/block_response.gd")
+	if soft:return original.solve(incoming,defender,strength,quality,edge,variation,true)
 	# Physical contact is validated by main before entering this function.
 	# Glancing fingertips and poor seals cannot become a monster by rating.
 	if absf(edge)>.91 or strength<.55 or quality<.35: return original.solve(incoming,defender,strength,quality,edge,variation)

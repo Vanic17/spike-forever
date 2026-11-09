@@ -65,6 +65,7 @@ func configure_rosters(teams: Array,lineups: Array,initial_conditions: Dictionar
 	fatigue_enabled=bool(options.get("fatigue",true)); injuries_enabled=bool(options.get("injuries",false)); auto_subs=bool(options.get("auto_subs",false)); date=str(options.get("date","2026-10-18"))
 	career_form=bool(options.get("career_form",false))
 	game.form99=options.get("condition99",{}).duplicate(true)
+	if game.report100!=null:game.report100.reset()
 	injury_intensity=clampf(float(options.get("injury_intensity",1.0)),0,2)
 	for side in 2:
 		if lineups[side].size()!=7: return false
@@ -208,6 +209,10 @@ func touch(index: int,kind: String,value: float=1.0) -> void:
 
 func point(side: int,reason: String) -> void:
 	if not active or completed: return
+	if not last_attack.is_empty() and int(last_attack.side)!=side:
+		var attack_row:=stat(last_attack.id)
+		if not last_block.is_empty() and int(last_block.side)==side:attack_row.attacks_blocked=int(attack_row.get("attacks_blocked",0))+1
+		elif reason in ["RETE","FUORI"]:attack_row.attack_errors=int(attack_row.get("attack_errors",0))+1
 	if not last_block.is_empty() and int(last_block.side)==side:
 		var row:=stat(last_block.id); row.blocks+=1; row.points+=1
 	elif not last_attack.is_empty() and int(last_attack.side)==side:

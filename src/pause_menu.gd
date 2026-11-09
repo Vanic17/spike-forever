@@ -44,11 +44,12 @@ func _process(_dt: float) -> void:
 	for i in order99.size():
 		order99[i].focus_neighbor_top=order99[i].get_path_to(order99[maxi(0,i-1)])
 		order99[i].focus_neighbor_bottom=order99[i].get_path_to(order99[mini(order99.size()-1,i+1)])
-	var wanted: bool=game.started and game.paused and not game.match_finished and (game.tutorial==null or not game.tutorial.active) and not (game.substitution_scene!=null and game.substitution_scene.active)
+	var wanted: bool=game.started and game.paused and not game.match_finished and (game.report100==null or not game.report100.opened) and (game.tutorial==null or not game.tutorial.active) and not (game.substitution_scene!=null and game.substitution_scene.active)
 	if surface.visible==wanted: return
 	surface.visible=wanted
 	if wanted and not game.match_management.menu.opened: resume_button.grab_focus()
 func _input(event: InputEvent) -> void:
+	if game.report100!=null and game.report100.opened:return
 	if is_instance_valid(condition_dialog99) and condition_dialog99.visible:return
 	if game.match_management!=null and game.match_management.menu.opened: return
 	if surface!=null and surface.visible and event.is_action_pressed("ui_cancel"):
