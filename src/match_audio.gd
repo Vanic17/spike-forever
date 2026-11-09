@@ -58,6 +58,7 @@ func _ready() -> void:
 			if FileAccess.file_exists(path):
 				var stream := AudioStreamWAV.load_from_file(path)
 				if stream: banks[action].append(stream)
+	banks["tip"]=banks["set"]
 	_load_manifest(ARENA_MANIFEST, "res://assets/audio/arena/")
 	_load_manifest(LONG_MANIFEST, "res://assets/audio/arena39/")
 	# Exact replacement supplied by the user; never shuffle older whistles in.
@@ -442,6 +443,7 @@ func _spatial(action: String, point: Vector3, intensity: float, source_banks: Di
 	voice.global_position = point
 	voice.pitch_scale = random.randf_range(0.97, 1.03)
 	voice.volume_db = lerpf(-7, 3, intensity)
+	if action=="tip":voice.volume_db-=11.0;voice.pitch_scale*=.95
 	if action == "step": voice.volume_db -= 8
 	if action == "sneaker": voice.volume_db -= 2
 	voice.play()

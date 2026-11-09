@@ -1,5 +1,6 @@
 [
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -7,6 +8,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -14,6 +16,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -21,6 +24,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -28,6 +32,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -35,6 +40,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -42,6 +48,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -49,6 +56,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -56,6 +64,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -63,6 +72,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -70,6 +80,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -77,6 +88,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -84,6 +96,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -91,6 +104,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -98,6 +112,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -105,6 +120,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -112,6 +128,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -119,6 +136,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -126,6 +144,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -133,6 +152,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -140,6 +160,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -147,6 +168,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -154,6 +176,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -161,6 +184,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -168,6 +192,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -175,6 +200,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -182,6 +208,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -189,6 +216,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -196,6 +224,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -203,6 +232,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -210,6 +240,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -217,6 +248,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -224,6 +256,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -231,6 +264,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -238,6 +272,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -245,6 +280,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -252,6 +288,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -259,6 +296,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -266,6 +304,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -273,6 +312,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 0,
     "phase": "CPU_RECEIVE",
@@ -280,6 +320,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -287,6 +328,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -294,6 +336,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -301,6 +344,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -308,6 +352,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -315,6 +360,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -322,6 +368,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -329,6 +376,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 1,
     "phase": "CPU_RECEIVE",
@@ -336,6 +384,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -343,6 +392,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": false,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -350,6 +400,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -357,6 +408,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": false,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -364,6 +416,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": false,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -371,6 +424,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -378,6 +432,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": false,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -385,6 +440,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 2,
     "phase": "CPU_RECEIVE",
@@ -392,6 +448,7 @@
     "sector": 7
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -399,6 +456,7 @@
     "sector": 0
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -406,6 +464,7 @@
     "sector": 1
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -413,6 +472,7 @@
     "sector": 2
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -420,6 +480,7 @@
     "sector": 3
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -427,6 +488,7 @@
     "sector": 4
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -434,6 +496,7 @@
     "sector": 5
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",
@@ -441,6 +504,7 @@
     "sector": 6
   },
   {
+    "attempted_tip": true,
     "contact": true,
     "direction": 3,
     "phase": "CPU_RECEIVE",

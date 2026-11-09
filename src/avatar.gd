@@ -337,6 +337,8 @@ func contact_local(action: String) -> Vector3:
 	if not clips.has(action):
 		return Vector3(0, {"receive":1.15,"recovery":0.65,"dive":0.65,"dump":2.5,"set":2.4,"fast_set":2.4,"attack":3.25,"block":3.1,"float":2.8,"power":3.2}.get(action,1.2), 0.4)*height_scale90
 	var result: Vector3=clips[action].contact_offset
+	if preload("res://src/player_pose95.gd").jumping(native_clip_name(action)):
+		result.y+=preload("res://src/player_pose95.gd").contact_correction(self,action)
 	if left_handed and action in ["attack","power","float","dump","serve_idle"]: result.x=-result.x
 	return result*height_scale90
 
@@ -740,7 +742,21 @@ func apply_pose(_dt: float) -> void:
 		var remaining: float=attack_clock_seconds(maxf(0,clip.contact_time-animation_time))
 		var wrist_time: float=wrist.contact_time-remaining*1.15+maxf(0,animation_time-clip.contact_time)
 		var wrist_pose:=normalized_pose("source:"+wrist_tip_variant,maxf(0,wrist_time),false)
-		normalized=mix_upper_pose(normalized,wrist_pose,.85*(1.0-smoothstep(clip.contact_time+.03,clip.contact_time+.20,animation_time)))
+		if wrist_tip_variant in ["attack_shorttip96","attack_cut96"]:
+			var side: String="Left" if left_handed else "Right"
+			var hand: int=clip.names.find(side+"Hand")
+			var old_hand: Vector3=normalized[hand].origin
+			var weight: float=smoothstep(clip.contact_time-.29,clip.contact_time-.06,animation_time)*(1-smoothstep(clip.contact_time+.20,minf(clip.duration,clip.contact_time+.50),animation_time))
+			normalized=preload("res://src/stroke_motion96.gd").arm_layer(normalized,wrist_pose,clip.names,clip.parents,left_handed,weight)
+			if wrist_tip_variant=="attack_cut96":
+				var inward: float=signf((pose_world84().basis.inverse()*Vector3(-signf(global_position.x),0,0)).x)
+				preload("res://src/stroke_motion96.gd").orient_cut(normalized,clip.names,clip.parents,left_handed,inward,animation_time,clip.contact_time,clip.duration)
+			var lock: float=1-smoothstep(.012,.065,absf(animation_time-clip.contact_time))
+			preload("res://src/stroke_motion96.gd").arm(normalized,clip.names,clip.parents,side,old_hand,normalized[clip.names.find(side+"ForeArm")].origin-normalized[clip.names.find(side+"Arm")].origin,lock)
+		elif wrist_tip_variant=="attack_wrist94":
+			normalized=preload("res://src/tip_motion94.gd").hand_layer(normalized,wrist_pose,clip.names,clip.parents,left_handed,.92*(1.0-smoothstep(clip.contact_time+.08,clip.contact_time+.30,animation_time)))
+			normalized=preload("res://src/tip_motion94.gd").restrained_follow(normalized,clip.names,clip.parents,left_handed,animation_time,clip.contact_time,clip.duration)
+		else:normalized=mix_upper_pose(normalized,wrist_pose,.85*(1.0-smoothstep(clip.contact_time+.03,clip.contact_time+.20,animation_time)))
 	# The new performance follows the real contact target before the existing
 	# bounded arm IK. It never moves the actor, legs, ball or action clock.
 	if clip_name == "attack" and native_clip_name(clip_name) == "attack_adaptive41" and reach_action == "attack" and reach_weight > 0.001:
@@ -779,6 +795,8 @@ func apply_pose(_dt: float) -> void:
 		if reach_action=="block":
 			solve_arm(normalized,"Left",point+Vector3(0.22,0,0),clip.parents)
 			solve_arm(normalized,"Right",point-Vector3(0.22,0,0),clip.parents)
+		elif native_clip_name(clip_name)=="set_first96" and reach_action in ["set","fast_set"]:
+			solve_arm(normalized,"Left" if left_handed else "Right",point-Vector3(0,0,.085),clip.parents)
 		elif reach_action in ["receive", "set", "fast_set"] or (reach_action=="dump" and native_clip_name(clip_name)=="set_disguise81"):
 			var grip: float=.055 if native_clip_name(clip_name) in ["receive_platform80","receive_braced80","receive_knee80","receive_knee_right80"] else .105
 			solve_arm(normalized, "Left", point + Vector3(grip, -0.07, 0), clip.parents)
@@ -811,6 +829,7 @@ func apply_pose(_dt: float) -> void:
 				if descendant:
 					normalized[j].origin = pivot + turn * (normalized[j].origin - pivot)
 					normalized[j].basis = turn * normalized[j].basis
+	preload("res://src/player_pose95.gd").neutral_face(self,normalized)
 	last_pose = normalized
 	native_pose_pass = false
 	var body = model_bank.body
@@ -828,12 +847,19 @@ func apply_pose(_dt: float) -> void:
 		jersey_number.position = normalized[spine].origin + Vector3(0, -0.05, -0.17)
 
 func normalized_pose(name: String, time: float, loop: bool) -> Array[Transform3D]:
+	var result:=raw_normalized_pose(name,time,loop)
+	var shift: float=preload("res://src/player_pose95.gd").correction(self,name,result)
+	if absf(shift)>.00001:
+		for bone in result.size():result[bone].origin.y+=shift
+	return result
+
+func raw_normalized_pose(name: String, time: float, loop: bool) -> Array[Transform3D]:
 	var native_name := native_clip_name(name)
 	var result: Array[Transform3D]
 	if native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_name):
 		result=pose_tree.sample(native_name, time, loop)
 	else: result=psa_normalized_pose(name, time, loop)
-	if left_handed and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle"]):
+	if left_handed and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle","set_first96"]):
 		if mirror_bones.is_empty():
 			for bone in clips.idle.names:
 				var opposite: String=bone.replace("Left","@SIDE@").replace("Right","Left").replace("@SIDE@","Right")

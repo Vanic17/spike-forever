@@ -5,7 +5,14 @@ static func shape(pose: Array[Transform3D],names: Array[String],parents: Array[i
 	var weight:=smoothstep(contact-.30,contact-.045,time)*(1-smoothstep(contact+.08,minf(duration,contact+.38),time))
 	var hips:=names.find("Hips");var hand:=names.find("RightHand");var finger:=names.find("RightHandMiddle1")
 	if mini(hips,mini(hand,finger))<0:return result
-	preload("res://src/defense_platform80.gd").arm(result,names,parents,"Right",Vector3(result[hips].origin.x-.08,.045,result[hips].origin.z+.85),weight,false)
+	var shoulder:=names.find("RightArm");var elbow:=names.find("RightForeArm")
+	if shoulder<0 or elbow<0:return result
+	var s: Vector3=result[shoulder].origin
+	var length: float=s.distance_to(result[elbow].origin)+result[elbow].origin.distance_to(result[hand].origin)
+	# Reach almost full anatomical extension, with a small safe elbow bend.
+	var forward: float=sqrt(maxf(.01,pow(length*.987,2)-pow(s.y-.045,2)))
+	var extended:=Vector3(s.x-.025,.045,s.z+forward)
+	preload("res://src/defense_platform80.gd").arm(result,names,parents,"Right",extended,weight,false)
 	if weight>.00001:
 		var direction: Vector3=(result[finger].origin-result[hand].origin).normalized()
 		var turn:=Quaternion.IDENTITY.slerp(Quaternion(direction,Vector3(0,0,1)),weight)

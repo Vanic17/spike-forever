@@ -1,5 +1,5 @@
 {
-  "contacts": 16,
+  "contacts": 15,
   "home": true,
   "observed": {
     "0:attack": true,
@@ -14,7 +14,7 @@
   },
   "pause": true,
   "role": "host",
-  "snapshot_max": 2072,
+  "snapshot_max": 2082,
   "stats": true,
   "version": "0.65.0"
 }

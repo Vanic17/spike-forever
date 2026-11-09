@@ -2,6 +2,8 @@ extends "res://src/athlete_next88.gd"
 var detail:=2
 var full: Dictionary={}
 var saved_original: Dictionary={}
+var neutral_head95: StandardMaterial3D
+var neutral_eyes95: StandardMaterial3D
 func attach(player):
 	super.attach(player)
 	full=meshes.duplicate();saved_original=original.duplicate()
@@ -36,6 +38,27 @@ func apply():
 	nails.visible=detail>=2
 	if seam_node!=null:seam_node.visible=detail>=2
 	preload("res://src/player_wear90.gd").apply(actor)
+	restore_face95(appearance)
+func restore_face95(appearance: Dictionary):
+	# The old single-athlete scan has a compressed profile and a neck bound
+	# rigidly to Head. Use the compatible anatomical bind mesh, including its
+	# matching eyes/hair atlas, rather than stretching that defective scan.
+	if neutral_head95==null:
+		neutral_head95=Assets.material("T_Char_Head_Caucasian_M_02_Base.png","T_Char_Head_Caucasian_M_02_Normal.png",Color.WHITE,.60)
+		neutral_eyes95=Assets.material("T_Char_Eye_Brown_Base.png","",Color.WHITE,.22)
+	var source=load("res://src/player_appearance.gd")
+	var style: String=str(appearance.get("hair_style",appearance.get("hair_length","corti")))
+	neutral_head95.albedo_color=source.SKIN.get(appearance.get("skin_tone"),Color.WHITE)
+	neutral_head95.albedo_texture=Assets.texture("T_Char_Head_M_Coach02_Base.png" if style=="pelato" else "T_Char_Head_Caucasian_M_02_Base.png")
+	actor.body_parts.head.mesh=load("res://assets/art/visual86/prototype_head.res") if detail>=2 else saved_original.head
+	actor.body_parts.head.material_override=neutral_head95
+	actor.body_parts.eyes.mesh=saved_original.eyes;actor.body_parts.eyes.material_override=neutral_eyes95
+	var color: Color=source.COLORS.get(appearance.get("hair_color"),source.COLORS.marrone)
+	actor.body_parts.hair.visible=style!="pelato"
+	if style!="pelato":source.assign(actor.body_parts.hair,actor,source.STYLES.get(style,source.STYLES.corti),color)
+	var beard: String=str(appearance.get("beard","nessuna"))
+	actor.body_parts.beard.visible=source.BEARDS.has(beard)
+	if source.BEARDS.has(beard):source.assign(actor.body_parts.beard,actor,source.BEARDS[beard],color)
 func quality(level: int):
 	detail=level
 	if full.is_empty():return

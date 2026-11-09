@@ -1,5 +1,7 @@
 # Spike Forever
 
+
+**Versione 0.91.0:** nuovi gesti contestuali, tre seconde del palleggiatore su Triangolo/Y, camera su L1/LB, battute più rapide e salti intermedi. Include le correzioni locali di rete e volto. [Novità e comandi](docs/RELEASE_NOTES_91.md).
 **Versione 0.89.0:** grafica integrata, parquet a scala reale, pubblico e dettagli dei giocatori, visuale bassa rivista. I quattro preset scalano realmente geometria, pubblico, texture ed effetti. Corretti nell'online i comandi fuori fase, i salti del muro avversario e l'anticipo dei controlli/pose rispetto alla palla. [Novità e verifiche](docs/RELEASE_NOTES_89.md).
 
 La scansione della testa è di Lee Perry-Smith / Infinite-Realities, CC BY 3.0; conversioni McGuire, Cardenas e Keijiro. [Attribuzione e modifiche](assets/art/athlete88/ATTRIBUTION.md).
@@ -167,7 +169,8 @@ Gioco Windows 3D di pallavolo indoor 6 contro 6, contro la CPU, con controller P
 | Muro a tre, tenendo premuti entrambi | L2 + R2 | LT + RT | Z + B |
 | Salto a muro | Croce / X | A | Spazio |
 | Inizio / pausa | Options | Start | Invio / Esc |
-| Camera dietro / distante / TV | Triangolo | Y | C |
+| Camera principale / TV / alta | L1 | LB | C |
+| Seconde speciali del palleggiatore | Triangolo + direzione | Y + direzione | T + direzione |
 
 Croce PlayStation corrisponde ad **A Xbox**. Quadrato PlayStation corrisponde a **X Xbox**. Le assegnazioni dei pulsanti sono modificabili in `controls.cfg`. Lo stick sinistro controlla le scelte di gioco e lo spostamento del muro; negli altri colpi posizionamento e spostamenti degli atleti sono automatici. L'interfaccia adatta i nomi al controller riconosciuto; F1 apre l'aiuto.
 

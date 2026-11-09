@@ -1,0 +1,80 @@
+{
+  "both_hands": true,
+  "checks": 1571,
+  "jump_variants": 34,
+  "jumps": [
+    {
+      "action": "attack",
+      "crown_peak_m": 2.4279086989286,
+      "height_cm": 170,
+      "lowest_toe_m": 0.0502170063555241
+    },
+    {
+      "action": "block",
+      "crown_peak_m": 2.42821506680275,
+      "height_cm": 170,
+      "lowest_toe_m": 0.0488226041197777
+    },
+    {
+      "action": "power",
+      "crown_peak_m": 2.42024449528481,
+      "height_cm": 170,
+      "lowest_toe_m": 0.048297181725502
+    },
+    {
+      "action": "attack",
+      "crown_peak_m": 2.42837417849258,
+      "height_cm": 180,
+      "lowest_toe_m": 0.0531709492206573
+    },
+    {
+      "action": "block",
+      "crown_peak_m": 2.42869866617874,
+      "height_cm": 180,
+      "lowest_toe_m": 0.0516945235431194
+    },
+    {
+      "action": "power",
+      "crown_peak_m": 2.4202591253157,
+      "height_cm": 180,
+      "lowest_toe_m": 0.0511381924152374
+    },
+    {
+      "action": "attack",
+      "crown_peak_m": 2.4290719210014,
+      "height_cm": 195,
+      "lowest_toe_m": 0.0576018616557121
+    },
+    {
+      "action": "block",
+      "crown_peak_m": 2.42942334998699,
+      "height_cm": 195,
+      "lowest_toe_m": 0.0560024008154869
+    },
+    {
+      "action": "power",
+      "crown_peak_m": 2.42028047431561,
+      "height_cm": 195,
+      "lowest_toe_m": 0.0553997084498405
+    },
+    {
+      "action": "attack",
+      "crown_peak_m": 2.42976990192879,
+      "height_cm": 210,
+      "lowest_toe_m": 0.0620327740907669
+    },
+    {
+      "action": "block",
+      "crown_peak_m": 2.4301485106324,
+      "height_cm": 210,
+      "lowest_toe_m": 0.0603102743625641
+    },
+    {
+      "action": "power",
+      "crown_peak_m": 2.42030206173408,
+      "height_cm": 210,
+      "lowest_toe_m": 0.0596612244844437
+    }
+  ],
+  "pass": true
+}

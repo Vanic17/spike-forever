@@ -1,0 +1,43 @@
+{
+  "checks": 27100,
+  "failures": [],
+  "pass": true,
+  "second_deliveries": [
+    {
+      "kind": 3,
+      "seconds": 0.680513633409788,
+      "target": "(0.0, 0.105, -1.75)",
+      "team": 0
+    },
+    {
+      "kind": 7,
+      "seconds": 0.76,
+      "target": "(-2.2, 0.105, -3.3)",
+      "team": 0
+    },
+    {
+      "kind": 2,
+      "seconds": 0.76,
+      "target": "(2.1, 0.105, -3.3)",
+      "team": 0
+    },
+    {
+      "kind": 3,
+      "seconds": 0.680513633409788,
+      "target": "(0.0, 0.105, 1.75)",
+      "team": 1
+    },
+    {
+      "kind": 2,
+      "seconds": 0.76,
+      "target": "(-2.1, 0.105, 3.3)",
+      "team": 1
+    },
+    {
+      "kind": 7,
+      "seconds": 0.76,
+      "target": "(2.2, 0.105, 3.3)",
+      "team": 1
+    }
+  ]
+}

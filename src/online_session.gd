@@ -3,7 +3,9 @@ extends Node
 ## format follow Volley Rivals; a code is an endpoint, not a hosted relay.
 const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
-const PROTOCOL="SF090"
+# New stroke names, commands and second-touch state require matching peers.
+# Reject incompatible dictionaries before decoding compact clip IDs.
+const PROTOCOL="SF091-STROKES96"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -419,12 +421,12 @@ func snapshot_piece(seq: int, part: int, total: int, packet: PackedByteArray) ->
 func capture_input(event: InputEvent) -> void:
 	if not playing: return
 	if event.is_echo():get_viewport().set_input_as_handled();return
-	if (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_Y) or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_C):
+	if (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_LEFT_SHOULDER) or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_C):
 		game.camera_mode=0 if game.camera_mode==3 else 3; game.set_camera(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("start") or (event is InputEventKey and event.pressed and event.physical_keycode==KEY_ESCAPE):
 		pause_request(not game.paused); get_viewport().set_input_as_handled(); return
 	if game.paused: return
-	for button in ["action","alternate","dump"]:
+	for button in ["action","alternate","dump","second"]:
 		if event.is_action_pressed(button): send_command(button,true)
 		if event.is_action_released(button): send_command(button,false)
 	get_viewport().set_input_as_handled()
@@ -495,7 +497,7 @@ func control_command(seq: int, button: String, pressed: bool, value: Dictionary,
 
 func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictionary,held: float=-1.0,context: Dictionary={}) -> void:
 	if game.replay!=null and game.replay.active: return
-	if not playing or game.paused or side<0 or side>1 or seq<=last_sequence[side] or button not in ["action","alternate","dump"]: return
+	if not playing or game.paused or side<0 or side>1 or seq<=last_sequence[side] or button not in ["action","alternate","dump","second"]: return
 	last_sequence[side]=seq
 	if context.is_empty():context=Commands89.capture(game,side,button)
 	# Set/reception releases do not commit a charge. A valid set request has

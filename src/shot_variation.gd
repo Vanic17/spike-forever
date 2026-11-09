@@ -35,6 +35,7 @@ static func pass_target(game, target: Vector3, quality: float) -> Vector3:
 	return target
 
 static func tip_variant(aim: Vector2, serial: int) -> String:
+	if preload("res://src/motion_prototypes.gd").enabled:return "attack_shorttip96" if aim.y>.3 else "attack_wrist94"
 	if absf(aim.x)>0.3: return "attack_tip_0" if aim.x<0 else "attack_tip_1"
 	var choices: Array=[2,3,4,5,6]
 	return "attack_tip_"+str(choices[posmod(serial,choices.size())])

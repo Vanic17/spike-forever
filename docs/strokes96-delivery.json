@@ -1,0 +1,16 @@
+﻿{
+    "private_profiles_touched":  false,
+    "version":  "0.91.0",
+    "running_attack_cases":  72,
+    "legend_input_checks":  208,
+    "pass":  true,
+    "unapproved_graphics_prototypes_shipped":  false,
+    "net_checks":  218,
+    "online_two_clients":  true,
+    "native_checks":  27106,
+    "short_recovery_checks":  18,
+    "psa_fallback_checks":  27100,
+    "online_command_checks":  29,
+    "selective_update_tests":  true,
+    "tip_and_emergency_cases":  64
+}

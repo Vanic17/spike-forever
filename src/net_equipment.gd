@@ -1,4 +1,5 @@
 extends Node3D
+const Net=preload("res://src/net_spec94.gd")
 ## Visual equipment only; ball and player collision remain owned by the match.
 const Assets=preload("res://src/source_assets.gd")
 var posts: Array[Node3D]=[]
@@ -33,10 +34,10 @@ func _ready() -> void:
 			panel.mesh=quad; panel.position=Vector3(sin(angle)*.147,1.23,cos(angle)*.147)
 			panel.rotation=Vector3(0,angle,PI/2); panel.material_override=print_mat
 			post.add_child(panel)
-		rod(post,Vector3(-side*.10,2.43,0),Vector3(-side*.62,2.43,0),.017,steel)
-		box(self,Vector3(side*4.5,1.93,.008),Vector3(.045,1.0,.016),material("eeeade"))
+		rod(post,Vector3(-side*.10,Net.TOP-.015,0),Vector3(-side*.62,Net.TOP-.015,0),.017,steel)
+		box(self,Vector3(side*4.5,Net.TOP-.5,.008),Vector3(.045,1.0,.016),material("eeeade"))
 		for stripe in 8:
-			rod(self,Vector3(side*4.5,2.43+stripe*.10,0),Vector3(side*4.5,2.53+stripe*.10,0),.012,red if stripe%2==0 else steel)
+			rod(self,Vector3(side*4.5,Net.TOP+stripe*.10,0),Vector3(side*4.5,Net.TOP+.10+stripe*.10,0),.012,red if stripe%2==0 else steel)
 	# Left in the default behind-court view (negative court X), outside free play.
 	stand=Node3D.new(); stand.name="RefereeStandLeft"; stand.position=Vector3(-6.10,0,0); add_child(stand)
 	box(stand,Vector3(0,.05,0),Vector3(1.18,.10,1.50),red)

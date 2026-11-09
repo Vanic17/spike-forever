@@ -37,7 +37,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 Remove-Item -LiteralPath (Join-Path $stage 'tools/godot/Godot_v4.5.1-stable_win64.exe')
 foreach($name in @('Build-Release.ps1','Publish-Release.ps1','Bootstrap-Engine.ps1','Convert-PsaAnimations.gd','Pack-NativeLibrary.gd','Capture-Shot31.gd','Capture-Coverage36.gd','Capture-TV37.gd','Capture-Arena38.gd','Build-ArenaAudio38.py','Render-ArenaAudio38.gd','Capture-Arena39.gd','Build-ArenaAudio39.py','Render-ArenaAudio39.gd','Capture-Movement40.gd','Audit-PointPoses40.gd')){Copy-Item (Join-Path $root ('tools/'+$name)) (Join-Path $stage ('tools/'+$name))}
 foreach($file in Get-ChildItem -LiteralPath (Join-Path $root 'tools') -File){
- if($file.Name -like 'Test-*' -or $file.Name -like 'Check-*'){
+ if(($file.Name -like 'Test-*' -or $file.Name -like 'Check-*') -and $file.Name -notin @('Test-PlayerStudy93.gd')){
   Copy-Item -LiteralPath $file.FullName -Destination (Join-Path $stage ('tools/'+$file.Name))
  }
 }

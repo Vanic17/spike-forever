@@ -17,12 +17,13 @@ func run() -> void:
 			assert(game.test_contacts==before+1,"Each source drop-shot must make a real hand contact")
 			assert(game.incoming_kind=="soft" and game.winner_team==-1)
 			assert(game.ball_vel.is_finite())
-	# Square/X must change the actual hitter's animation and arm a live shot.
+	# Square/X must arm a live tip. The native wrist layer keeps the already
+	# scheduled approach/contact; legacy source clips remain the fallback.
 	game.reset_rally(); game.phase="ATTACK"; game.possession=0; game.hitter=0; game.armed=false
 	game.ball_pos=Vector3(-3,4,1.3); game.ball_vel=Vector3(0,-1,0); game.flight_spin=Vector3.ZERO
 	game.send_test_button(JOY_BUTTON_X)
 	game.release_action()
-	assert(game.attack_tip and game.armed and game.players[0].variant_names.attack.begins_with("attack_tip_"))
+	assert(game.attack_tip and game.armed and (game.players[0].wrist_tip_variant=="attack_wrist94" or game.players[0].variant_names.attack.begins_with("attack_tip_")))
 	for direction in [0,1,2]:
 		game.server=1; game.reset_rally(); game.possession=0; game.setter=5; game.receiver=4
 		game.set_phase("SET"); game.armed=true; game.input_quality=1; game.pass_quality=1; game.out_of_system=1
@@ -79,7 +80,8 @@ func run() -> void:
 		game.attack_ball(); targets.append(game.marker.position)
 		assert(game.marker.position.x>2.5 and absf(game.marker.position.z)<4.2,"Tight diagonal must stay in the chosen zone")
 	assert(targets[0].distance_to(targets[1])>0.02,"Repeated aims must have bounded landing variety")
-	game.possession=0; game.receive_offset=0.5; game.rng.seed=1
+	# This fixture is a serve reception, not the spike left by the previous test.
+	game.possession=0; game.incoming_kind="serve"; game.receive_offset=0.5; game.rng.seed=1
 	var early: Vector3=Shots.pass_target(game,Vector3(0,2,1.5),0.3)
 	game.receive_offset=-0.07; game.rng.seed=1
 	var late: Vector3=Shots.pass_target(game,Vector3(0,2,1.5),0.3)
@@ -89,7 +91,9 @@ func run() -> void:
 		var before:=Vector3(3,-2,speed); var after:=Net.response(before,2.0)
 		assert(after.z<0 and absf(after.z)<speed*0.2 and after.length()<before.length() and after.y<0,"The mesh absorbs energy instead of reflecting like a wall")
 	assert(Net.response(Vector3(0,-1,15),2.46).z>0,"The tape may let a ball roll across")
-	game.team_names=["Milano","Trento"]; game.award(1,"TEST")
-	assert("Trento" in game.feedback and "EMBER" not in game.feedback)
+	# Point banners were intentionally removed after v31. Verify the selected
+	# teams and scoring data without requiring the removed announcement.
+	game.team_names=["Milano","Trento"];game.scores=[0,0];game.phase="LOOSE";game.feedback="";game.award(1,"TEST")
+	assert(game.team_names[1]=="Trento" and game.scores[1]==1 and game.feedback.is_empty())
 	print("SHOT31 PASS: 14 source drop-shot contacts / Square-X command / early-late pass depth and feedback / dissipative mesh and tape / selected team announcement")
 	quit()

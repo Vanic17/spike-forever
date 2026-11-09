@@ -14,18 +14,21 @@ func run() -> void:
 				g.ball_pos=g.players[4].contact_world("receive"); g.phase="RECEIVE"; g.armed=true; g.input_quality=1; g.incoming_kind="spike"; g.incoming_power=.3
 				var before: int=g.test_contacts
 				g.receive_ball(); g.press_action("action")
-				var pressed:=false
+				var pressed:=false;var attempted_tip:=false
 				for frame in 900:
 					if g.test_contacts>=before+3 or g.phase in ["POINT","LOOSE"]: break
 					if g.phase=="ATTACK" and not pressed and g.flight_left<(.36 if sector%2==0 else .18):
-						g.aim=Vector2.from_angle(sector*PI/4); g.press_action("alternate"); pressed=true
+						# A low emergency third touch is a bagher, not a tip. Use its
+						# actual primary command rather than pretending Square arms it.
+						g.aim=Vector2.from_angle(sector*PI/4);attempted_tip=g.hitter_action=="attack"
+						g.press_action("alternate" if attempted_tip else "action"); pressed=true
 					if pressed and g.charging:
 						g.charge_start=g.clock_time-g.Timing.ATTACK_CHARGE_SECONDS*.75; g.release_action()
 					g.step(1.0/120)
 					if frame%8==0:
 						for p in g.players: p.apply_pose(1.0/15)
 				var ok: bool=pressed and g.test_contacts==before+3
-				rows.append({"rotation":rotation,"direction":direction,"sector":sector,"contact":ok,"phase":g.phase})
+				rows.append({"rotation":rotation,"direction":direction,"sector":sector,"contact":ok,"phase":g.phase,"attempted_tip":attempted_tip})
 				if not ok:
 					failures+=1; print("TIP47 FAIL ",rows[-1]," hitter=",g.hitter," pos=",g.players[g.hitter].position," ball=",g.ball_pos," local=",g.players[g.hitter].contact_local("attack"))
 	FileAccess.open("res://docs/tips47-report.json",FileAccess.WRITE).store_string(JSON.stringify(rows,"  "))

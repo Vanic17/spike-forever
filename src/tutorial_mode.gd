@@ -295,7 +295,7 @@ func _input(event: InputEvent):
 	if not modal.visible and event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_R:
 		prepare_attempt(); get_viewport().set_input_as_handled(); return
 	# Keep lesson directions consistent with their front-camera diagrams.
-	if (event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y) or (event is InputEventKey and event.physical_keycode in [KEY_C,KEY_F2,KEY_F3]): get_viewport().set_input_as_handled()
+	if (event is InputEventJoypadButton and event.button_index==JOY_BUTTON_LEFT_SHOULDER) or (event is InputEventKey and event.physical_keycode in [KEY_C,KEY_F2,KEY_F3]): get_viewport().set_input_as_handled()
 
 func prepare_attempt():
 	pending=""; pending_ok=false; performed.clear(); max_move=0; jump_members=0; jump_left=false; jump_right=false; feed_ready_at=-1; staged_hitter=-1

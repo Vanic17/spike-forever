@@ -1,0 +1,27 @@
+﻿{
+    "unexpected_changes":  [
+
+                           ],
+    "protected_files":  337,
+    "personal_differences_from_old_baseline":  [
+                                                   {
+                                                       "modified":  "2026-11-08T10:41:47",
+                                                       "file":  "settings.cfg"
+                                                   }
+                                               ],
+    "personal_note":  "settings.cfg modification at 10:41:47 predates this task; not restored",
+    "authorized_changes":  [
+                               "src/arena.gd",
+                               "src/avatar.gd",
+                               "src/main.gd",
+                               "src/motion_prototypes.gd",
+                               "src/net_dynamics.gd",
+                               "src/net_equipment.gd",
+                               "src/net_surface85.gdshader",
+                               "src/online_session.gd",
+                               "src/pilot_quality89.gd",
+                               "src/shot_variation.gd"
+                           ],
+    "source_only":  true,
+    "published":  false
+}

@@ -88,6 +88,8 @@ var stats_release_flight:=0.0
 var stats_release_clock:=-1.0
 var winner_team:=-1
 var attack_tip:=false
+var incoming_short_tip96:=false
+var short_tip_next96:=0.0
 var overpass_attack_team:=-1
 var receive_offset:=0.0
 var replay
@@ -198,6 +200,7 @@ var camera_focus := Vector3(0, 1.25, -0.7)
 var travel := PackedFloat32Array([0,0,0,0,0,0,0,0,0,0,0,0])
 var charge_button := "action"
 var setter_dump := false
+var setter_second96:=0
 var setter_spike := false
 var setter_disguise := false
 var late_receive := false
@@ -369,7 +372,7 @@ func _ready() -> void:
 		demo = true
 
 func setup_inputs() -> void:
-	var bindings := {"action": [KEY_SPACE, JOY_BUTTON_A], "alternate": [KEY_Q, JOY_BUTTON_X], "dump": [KEY_E, JOY_BUTTON_B], "start": [KEY_ENTER, JOY_BUTTON_START]}
+	var bindings := {"action": [KEY_SPACE, JOY_BUTTON_A], "alternate": [KEY_Q, JOY_BUTTON_X], "dump": [KEY_E, JOY_BUTTON_B], "second":[KEY_T,JOY_BUTTON_Y], "start": [KEY_ENTER, JOY_BUTTON_START]}
 	var config := ConfigFile.new()
 	config.load("res://controls.cfg")
 	for action in bindings:
@@ -462,7 +465,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed("start") or (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_ESCAPE):
 			if started and not match_finished:request_pause(not paused)
 			get_viewport().set_input_as_handled();return
-		if (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_V) or (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_Y):
+		if (event is InputEventKey and event.pressed and not event.echo and event.physical_keycode==KEY_V) or (event is InputEventJoypadButton and event.pressed and event.button_index==JOY_BUTTON_LEFT_SHOULDER):
 			camera_mode=preload("res://src/view_controls.gd").next_camera(camera_mode);set_camera()
 			get_viewport().set_input_as_handled();return
 		if legend_match.handle_input(event):get_viewport().set_input_as_handled()
@@ -510,12 +513,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		else:
 			paused = not paused
-	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_Y and event.pressed and started:
+	if event is InputEventJoypadButton and event.button_index==JOY_BUTTON_LEFT_SHOULDER and event.pressed and started:
 		camera_mode=preload("res://src/view_controls.gd").next_camera(camera_mode)
 		set_camera()
 	if not started or paused or gallery:
 		return
-	if event.is_action_pressed("action") or event.is_action_pressed("alternate") or event.is_action_pressed("dump"):
+	if event.is_action_pressed("action") or event.is_action_pressed("alternate") or event.is_action_pressed("dump") or event.is_action_pressed("second"):
 		read_controls(0) # Sample triggers without integrating movement twice.
 	if event.is_action_pressed("action"):
 		press_action()
@@ -523,6 +526,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		press_action("alternate")
 	if event.is_action_pressed("dump"):
 		press_action("dump")
+	if event.is_action_pressed("second"):press_action("second")
 	if phase=="SET" and attack_buffer_start>=0 and event.is_action_released("action"):
 		attack_buffer_power=maxf(0,(clock_time-attack_buffer_start)/Timing.ATTACK_CHARGE_SECONDS)
 	if event.is_action_released(charge_button):
@@ -579,6 +583,7 @@ func apply_direction(direction: Vector2,dt: float) -> void:
 		else:
 			set_dir = 1 if direction.y < 0 else 3
 		if not network_match() and clock_time - block_time < 0.65: block_hand = direction.x
+	preload("res://src/stroke_selection96.gd").update(self)
 	if phase in ["SET","CPU_SET"] and (phase=="SET" or network_match()) and not armed and not demo:
 		plan_attack(set_dir, fast_set)
 
@@ -588,9 +593,18 @@ func press_action(button: String = "action") -> void:
 		if human_wall() and input_team==wall_team() and button=="action": jump_manual_wall()
 		return
 	var action_phase:=phase.trim_prefix("CPU_") if network_match() else phase
+	if button=="second":
+		if action_phase=="SET" and not preload("res://src/setter_second96.gd").request(self):notice("SECONDA NON DISPONIBILE",.7)
+		return
 	if action_phase=="ATTACK" and hitter_action=="attack" and button=="alternate" and not armed:
 		if charging: return
 		attack_tip=true; charging=true; charge_button="alternate"; charge_start=clock_time; charge=0; input_quality=1.0
+		if preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial) in ["attack_wrist94","attack_shorttip96"]:
+			# Keep the exact approach, jump and contact target already scheduled.
+			# The native hand layer changes the gesture without rescheduling flight.
+			players[hitter].wrist_tip_variant=preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial)
+			notice("PALLONETTO · COLPO DI POLSO",.9)
+			return
 		if destination==1 and middle_decoy.real_started and middle_decoy.index==hitter:
 			# The first tempo is already airborne. A wrist tip must not wait
 			# for a lower contact beyond the net or restart the source jump.
@@ -642,6 +656,9 @@ func press_action(button: String = "action") -> void:
 			return
 		if setter_dump: players[setter].select_variant("dump","dump_push54")
 		plan_attack(set_dir, button == "alternate")
+		if not setter_dump and not setter_spike:
+			var first: bool=button=="action" and planned_direction==1 and absf(flight_target.z)<.85 and out_of_system>=0 and Tactics.role_for(self,setter)=="S"
+			if first:players[setter].select_variant("set","set_first96")
 		setter_action = "dump" if setter_dump else ("receive" if out_of_system < 0 else ("fast_set" if fast_set else "set"))
 		# Normal and quick are choices of delivery, not a new interception
 		# deadline. Only a genuinely different contact (dump/bump) changes height.
@@ -720,12 +737,14 @@ func set_phase(value: String) -> void:
 	charging = false
 	charge = 0
 	setter_dump = false
+	setter_second96=0
 	setter_spike = false
 	setter_disguise = false
 	late_receive = false
 	recovery_action = "receive"
 
 func reset_rally() -> void:
+	incoming_short_tip96=false;short_tip_next96=0.0
 	var continuous: bool=legend_controls_enabled() and not legend_match.initial_placement
 	var previous_roots: Array[Vector3]=[]
 	var previous_movement: Array[Dictionary]=[]
@@ -966,6 +985,7 @@ func launch(target: Vector3, seconds: float) -> void:
 		flight_spin = Vector3(direction * (0.3 if test_rallies == 0 and serve_type == 0 else 20.0), aim.x * 2.0, 0.5)
 	else:
 		flight_spin = Vector3(0.3, 0.6, -0.2)
+	if attack_tip and incoming_kind=="soft":flight_spin=Vector3(direction*lerpf(2.0,5.0,incoming_power),aim.x*.6,.2)
 	ball_vel = BallFlight.velocity_to(ball_pos, target, seconds, flight_spin, flight_gravity)
 	airborne = true
 	if phase in ["RECEIVE","CPU_RECEIVE"] and human_team(possession): receive_deadline = clock_time + seconds
@@ -973,6 +993,7 @@ func launch(target: Vector3, seconds: float) -> void:
 	marker.visible = true
 
 func contact_height(action: String) -> float:
+	if action in ["attack","block","power"]:return players[0].contact_local(action).y
 	return clips[action].contact_offset.y if clips.has(action) else players[0].contact_local(action).y
 
 func begin_serve_toss() -> void:
@@ -1042,7 +1063,8 @@ func validate_contact(index: int, action: String) -> bool:
 	player.prepare_contact(action, 0)
 	var disguised: bool=player.variant_names.get(action,"")=="set_disguise81"
 	var actual: Vector3 = player.current_hand(action=="dump" and not disguised)
-	if action in ["receive", "set", "fast_set", "block"] or disguised:
+	if player.variant_names.get(action,"")=="set_first96":actual=player.current_hand(player.left_handed)
+	if (action in ["receive", "set", "fast_set", "block"] and player.variant_names.get(action,"")!="set_first96") or disguised:
 		actual = (actual + player.current_hand(true)) * 0.5 + Vector3(0, 0.07 if action != "block" else 0.0, 0)
 	var distance := actual.distance_to(ball_pos)
 	if not player.skeleton: distance = player.contact_world(action).distance_to(ball_pos)
@@ -1054,6 +1076,7 @@ func validate_contact(index: int, action: String) -> bool:
 	if contact_log.size() > 2048: contact_log.pop_front()
 	if match_audio:
 		var sound := "serve" if action in ["float","power"] else ("receive" if action in ["receive","recovery","dive"] else ("set" if action in ["set","fast_set","dump"] else action))
+		if action=="attack" and attack_tip:sound="tip"
 		match_audio.contact(sound,ball_pos,0.7)
 	return true
 
@@ -1430,7 +1453,9 @@ func set_ball(contact_override: String = "") -> void:
 	if late_middle: hitter_action="receive"
 	if cpu_team(possession) and not legend_controls(hitter) and hitter_action=="attack" and destination!=1 and absf(target.z)<3.0 and q>.55 and rng.randf()<.09:
 		attack_tip=true
-		players[hitter].select_variant("attack",preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial))
+		var tip_pose: String=preload("res://src/shot_variation.gd").tip_variant(aim,shot_serial)
+		if tip_pose in ["attack_wrist94","attack_shorttip96"]:players[hitter].wrist_tip_variant=tip_pose
+		else:players[hitter].select_variant("attack",tip_pose)
 	if hitter_action == "receive": target.z = s*4.6
 	if late_middle:
 		# Keep the completed fake and its landing. A late central command gets
@@ -1517,17 +1542,18 @@ func dump_ball() -> void:
 	if phase=="POINT": return
 	match_management.touch(setter,"attack")
 	# Back-row setters may dump only below the top of the net in the front zone.
-	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > 2.43:
+	if not Tactics.front(setter, rotations[attacker]) and absf(players[setter].position.z) < 3.0 and ball_pos.y > preload("res://src/net_spec94.gd").TOP:
 		award(1 - attacker, "ATTACCO IRREGOLARE DI SECONDA LINEA")
 		return
-	var delivery: Dictionary=preload("res://src/setter_dump.gd").trajectory(ball_pos,aim,attacker,flight_spin)
+	var delivery: Dictionary=preload("res://src/setter_second96.gd").trajectory(self) if setter_second96>0 else preload("res://src/setter_dump.gd").trajectory(ball_pos,aim,attacker,flight_spin)
+	if setter_second96>0:flight_spin=delivery.spin
 	if delivery.is_empty():
 		# A touched ball must remain live; never replay the same second touch
 		# through receive->set and accidentally count a fourth team contact.
 		phase="LOOSE"; flight_left=100; ball_vel=Vector3(0,1.0,-1 if attacker==0 else 1)*2.0
 		return
 	incoming_kind = "dump"
-	incoming_power = 0.35
+	incoming_power = delivery.get("pressure",.35)
 	send_to_court(attacker, delivery.target, delivery.seconds)
 	log_rally_event("setter_dump")
 	notice("COLPO DI SECONDA", 0.9)
@@ -1590,12 +1616,16 @@ func attack_ball() -> void:
 	var back_row := not Tactics.front(hitter,rotations[attacker])
 	var angle := clampf((9.0-absf(target.z))/8.0,0,1)
 	var seconds := Reference.attack_seconds(power,angle,back_row,soft)
+	var close_down: bool=not attack_tip and not soft and hitter_action=="attack" and ((human_team(attacker) and aim.y>.3) or (cpu_team(attacker) and absf(target.z)<3.9))
 	if not attack_tip and hitter_action=="attack":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").spike(self,target,seconds,power)
 		target=delivery.target; seconds=delivery.seconds
+		if close_down:
+			seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,seconds*.90,preload("res://src/net_spec94.gd").TOP+preload("res://src/net_spec94.gd").BALL_RADIUS+.018)
+			incoming_power*=1.07
 	if attack_tip:
-		incoming_kind="soft"; incoming_power=lerpf(0.12,0.65,power)
-		seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,0.70)*(1.35-0.35*power)
+		var tip: Dictionary=preload("res://src/tip_delivery94.gd").solve(self,target,power)
+		incoming_kind="soft";incoming_power=tip.pressure;target=tip.target;seconds=tip.seconds
 	if hitter_action == "receive":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
 		target=delivery.target; seconds=delivery.seconds
@@ -1610,6 +1640,8 @@ func attack_ball() -> void:
 		replay.mark_shot("attack" if hitter_action=="attack" and not attack_tip else "other",attacker,perfect)
 
 func send_to_court(attacker: int, landing: Vector3, seconds: float) -> void:
+	incoming_short_tip96=attack_tip and incoming_kind=="soft" and absf(landing.z)<=3.0
+	short_tip_next96=0.0
 	if attacker==0 and not network_match():
 		manual_wall.reset()
 		block_commanded=false
@@ -1828,6 +1860,7 @@ func step(dt: float) -> void:
 		var low_contact: bool=preload("res://src/setter_access.gd").try_low_contact(self)
 		if read_second_touch and not low_contact: preload("res://src/contact_rescue.gd").try_second_touch(self)
 	if phase in ["RECEIVE","CPU_RECEIVE"]:
+		preload("res://src/short_tip_recovery96.gd").try_save(self)
 		preload("res://src/receive_access.gd").sync_performance(self)
 	if phase in ["RECEIVE","CPU_RECEIVE"] and not late_receive and not (incoming_out and cpu_team(possession)) and flight_left>0.001 and flight_left<0.42 and (cpu_team(possession) or armed):
 		var stance: Vector3 = players[receiver].stance_for_contact("receive",flight_target)
@@ -1882,23 +1915,22 @@ func step(dt: float) -> void:
 		if phase in ["RECEIVE","CPU_RECEIVE"] and not block_checked and test_rallies>1 and incoming_kind in ["spike","soft","dump"] and minf(absf(old.z),absf(ball_pos.z))<1.35:
 			try_block(old,dt)
 		if old.z * ball_pos.z < 0:
-			var fraction := absf(old.z) / maxf(absf(old.z - ball_pos.z), 0.001)
-			var net_y := lerpf(old.y, ball_pos.y, fraction)
-			if net_y < 2.535 and absf(ball_pos.x) < 4.65:
-				ball_pos = old.lerp(ball_pos, fraction)
-				var tape_over := net_y >= 2.43 and absf(ball_vel.z)>4.0
-				ball_pos.z = -signf(old.z)*0.106 if tape_over else signf(old.z)*0.106
-				if is_instance_valid(dynamic_net): dynamic_net.impact(ball_pos,ball_vel)
-				ball_vel=preload("res://src/net_dynamics.gd").response(ball_vel,net_y)
-				flight_spin *= 0.45
-				net_contacts += 1
-				log_rally_event("net_tape_over" if tape_over else "net_rebound")
-				if incoming_kind=="serve" and not tape_over:
-					phase = "LOOSE"
-					flight_left = 100
-					marker.visible = false
-				else: resume_deflection("net")
-				if match_audio: match_audio.contact("block", ball_pos, 0.35)
+			var net_contact: Dictionary=preload("res://src/net_spec94.gd").crossing(old,ball_pos,ball_vel)
+			if not net_contact.is_empty():
+				ball_pos=net_contact.point
+				if net_contact.under:
+					award(1-last_touch,"SOTTO RETE")
+				else:
+					var tape_over: bool=net_contact.over
+					ball_pos.z=-signf(old.z)*.106 if tape_over else signf(old.z)*.106
+					if is_instance_valid(dynamic_net):dynamic_net.impact(ball_pos,ball_vel)
+					ball_vel=preload("res://src/net_dynamics.gd").response(ball_vel,ball_pos.y,ball_pos);flight_spin*=.45
+					net_contacts+=1
+					log_rally_event("net_tape_over" if tape_over else "net_rebound")
+					if incoming_kind=="serve" and not tape_over:
+						phase="LOOSE";flight_left=100;marker.visible=false
+					else:resume_deflection("net")
+					if match_audio:match_audio.contact("block",ball_pos,.35)
 		var scenery: Dictionary=arena_contacts.resolve(old,ball_pos,ball_vel,flight_dt) if arena_contacts!=null else {}
 		if not scenery.is_empty() and phase!="POINT":
 			ball_pos=scenery.position;ball_vel=scenery.velocity;flight_spin*=.5
@@ -1970,7 +2002,7 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			var hand: Vector3 = player.current_joint(arm+"Hand")
 			var elbow: Vector3 = player.current_joint(arm+"ForeArm")
 			var arm_pair:=Geometry3D.get_closest_points_between_segments(previous,ball_pos,hand,elbow)
-			if arm_pair[1].y>2.53 and arm_pair[0].distance_to(arm_pair[1])<gap:
+			if arm_pair[1].y>preload("res://src/net_spec94.gd").TOP+.10 and arm_pair[0].distance_to(arm_pair[1])<gap:
 				gap=arm_pair[0].distance_to(arm_pair[1]); hit=arm_pair[0]
 				forearm=true
 		if "--trace-block" in OS.get_cmdline_user_args(): print("BLOCK a=",attack_serial," dt=",clock_time-block_time," ball=",ball_pos," player=",i," root=",player.position," left=",left," right=",right," elbow=",player.current_joint("RightForeArm")," gap=",gap)

@@ -55,11 +55,11 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and not event.pressed:
 		var code: int=event.physical_keycode if event.physical_keycode!=0 else event.keycode
 		keys[code]=false
-		var kind: String={KEY_SPACE:"action",KEY_Q:"alternate",KEY_E:"dump"}.get(code,"")
+		var kind: String={KEY_SPACE:"action",KEY_Q:"alternate",KEY_E:"dump",KEY_T:"second"}.get(code,"")
 		if not kind.is_empty(): buttons[kind]=false
 		if game.paused: game.charging=false
 	if event is InputEventJoypadButton and not event.pressed:
-		var kind: String={JOY_BUTTON_A:"action",JOY_BUTTON_X:"alternate",JOY_BUTTON_B:"dump"}.get(event.button_index,"")
+		var kind: String={JOY_BUTTON_A:"action",JOY_BUTTON_X:"alternate",JOY_BUTTON_B:"dump",JOY_BUTTON_Y:"second"}.get(event.button_index,"")
 		if not kind.is_empty(): buttons[kind]=false
 		if game.paused: game.charging=false
 
@@ -150,7 +150,7 @@ func handle_input(event: InputEvent) -> bool:
 				buttons.dive_trigger=event.axis_value>.55
 		return true
 	if event is InputEventJoypadButton:
-		var command: String={JOY_BUTTON_A:"action",JOY_BUTTON_X:"alternate",JOY_BUTTON_B:"dump",JOY_BUTTON_RIGHT_SHOULDER:"jump",JOY_BUTTON_LEFT_SHOULDER:"request"}.get(event.button_index,"")
+		var command: String={JOY_BUTTON_A:"action",JOY_BUTTON_X:"alternate",JOY_BUTTON_B:"dump",JOY_BUTTON_RIGHT_SHOULDER:"jump",JOY_BUTTON_DPAD_UP:"request",JOY_BUTTON_Y:"second"}.get(event.button_index,"")
 		if not command.is_empty():
 			if event.pressed: press(command)
 			else: release(command)
@@ -159,7 +159,7 @@ func handle_input(event: InputEvent) -> bool:
 		var code: int=event.physical_keycode if event.physical_keycode!=0 else event.keycode
 		if event.echo: return true
 		keys[code]=event.pressed
-		var command: String={KEY_SPACE:"action",KEY_Q:"alternate",KEY_E:"dump",KEY_R:"jump",KEY_C:"dive",KEY_F:"request"}.get(code,"")
+		var command: String={KEY_SPACE:"action",KEY_Q:"alternate",KEY_E:"dump",KEY_R:"jump",KEY_C:"dive",KEY_F:"request",KEY_T:"second"}.get(code,"")
 		if not command.is_empty():
 			if event.pressed: press(command)
 			else: release(command)
@@ -179,7 +179,7 @@ func press(kind: String) -> void:
 	if kind=="request":
 		if role in ["S","L"]: contact_assist.unavailable("request","CHIAMATA RISERVATA AGLI ATTACCANTI"); return
 		requested_set=true; call_for_set(); contact_assist.put("command","request","armed","ALZATA CHIAMATA"); return
-	if kind not in ["action","alternate","dump"] or buttons.get(kind,false): return
+	if kind not in ["action","alternate","dump","second"] or buttons.get(kind,false): return
 	buttons[kind]=true
 	if game.phase=="SET" and game.setter!=controlled_index and game.planned_hitter==controlled_index and kind in ["action","alternate"]:
 		buffered_stroke=kind; game.attack_buffer_start=game.clock_time; game.attack_buffer_power=-1.0

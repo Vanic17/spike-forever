@@ -1,0 +1,13 @@
+﻿{
+    "net_tip_checks":  218,
+    "attack_rotation_cases":  72,
+    "fluidity_pass":  true,
+    "attack_rotation_failures":  0,
+    "online_protocol":  "SF090-POSE95",
+    "pass":  true,
+    "local_source_only":  true,
+    "fallback_checks":  1571,
+    "github_published":  false,
+    "native_checks":  1571,
+    "launch":  "Avvia Spike Forever.cmd"
+}

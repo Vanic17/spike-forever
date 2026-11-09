@@ -195,9 +195,9 @@ func test_jump_call_set_dump():
 	p=restart(); var index: int=adapter.controlled_index
 	game.set_phase("SET"); game.possession=0; game.setter=5; game.receiver=4; game.last_touch=0; game.touches=[1,0]; game.pass_quality=1; game.out_of_system=1
 	game.airborne=false; game.flight_left=100; game.set_dir=0; game.planned_hitter=-1
-	await button(JOY_BUTTON_LEFT_SHOULDER)
-	check(game.planned_hitter==index,"LB/L1 requests actual manual hitter from AI setter")
-	await button(JOY_BUTTON_LEFT_SHOULDER,false)
+	await button(JOY_BUTTON_DPAD_UP)
+	check(game.planned_hitter==index,"D-pad up requests actual manual hitter from AI setter")
+	await button(JOY_BUTTON_DPAD_UP,false)
 	game.planned_hitter=-1; await key(KEY_F)
 	check(game.planned_hitter==index,"F requests actual manual hitter from AI setter")
 	await key(KEY_F,false)
@@ -314,8 +314,8 @@ func test_pause_replay_and_keyboard():
 	check(adapter.current_aim()==Vector2.ZERO and adapter.movement_vector()==Vector3.ZERO,"keyboard releases clear aim and motion")
 	var camera: int=game.camera_mode; await key(KEY_V); await key(KEY_V,false)
 	check(game.camera_mode!=camera,"V cycles actual camera")
-	camera=game.camera_mode; await button(JOY_BUTTON_Y); await button(JOY_BUTTON_Y,false)
-	check(game.camera_mode!=camera,"Y/Triangle cycles actual camera")
+	camera=game.camera_mode; await button(JOY_BUTTON_LEFT_SHOULDER); await button(JOY_BUTTON_LEFT_SHOULDER,false)
+	check(game.camera_mode!=camera,"LB/L1 cycles actual camera")
 	report.pause_replay_releases=true
 
 func test_unavailable_feedback():

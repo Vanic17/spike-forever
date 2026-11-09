@@ -6,6 +6,12 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_91.md','docs/STROKES_96.md','docs/NET_TIP94.md','docs/PLAYER_POSE95.md','tools/Test-Strokes96.gd','tools/Test-ShortTipRecovery96.gd','tools/Test-OnlineStrokes96.gd','tools/Run-OnlineStrokes96.ps1','tools/Capture-Strokes96.gd','tools/Test-NetTip94.gd','tools/Test-PlayerPose95.gd','tools/Verify-Package96.py')
+foreach($pattern96 in @('strokes96-*','net-tip94-validation*','player-pose95-*')){
+ foreach($item96 in Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter $pattern96){
+  if($item96.Extension -in @('.json','.png','.mp4')){$files+='docs/'+$item96.Name}
+ }
+}
 $files+='docs/RELEASE_NOTES_69.md'
 $files+='docs/RELEASE_NOTES_70.md'
 $files+='docs/RELEASE_NOTES_71.md'
@@ -246,6 +252,9 @@ foreach($name in @('ROLES_ROTATIONS_19.md','UPDATES_19.md','REVISION_18.md','ANI
 foreach($folder in @('src','data','licenses','assets/ui','assets/active','assets/art','assets/arena_source','assets/mesh_source','assets/audio','assets/gameplay')){
  foreach($file in Get-ChildItem -LiteralPath (Join-Path $root $folder) -File -Recurse){
   if($file.Extension -in @('.import','.uid') -or $file.Name -eq 'native_stage1.res'){continue}
+  # Rejected/offline art studies are deliberately outside the main game.
+  $relative96=$file.FullName.Substring($root.Length+1).Replace('\','/')
+  if($relative96 -match '^assets/art/(blender91|athlete92|player93)/' -or $relative96 -match '^src/(player_visual91|anatomical_player92|player_study93)\.gd$' -or $relative96 -match '^src/study93_' -or $file.Extension -in @('.blend','.blend1')){continue}
   $files+=$file.FullName.Substring($root.Length+1).Replace('\','/')
  }
 }
