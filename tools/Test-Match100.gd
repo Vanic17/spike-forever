@@ -60,7 +60,7 @@ func run():
 		g.possession=team;g.setter=team*6+5;g.players[g.setter].setting_yaw=-PI/2 if team==0 else PI/2;g.ball_pos=Vector3(0,3.1,.55 if team==0 else -.55)
 		for kind in [2,7]:
 			g.setter_second96=kind;var shot: Dictionary=Second.trajectory(g)
-			check(absf(shot.target.x)>=3.6 and absf(shot.target.z)>=5,"triangle lateral reaches corner")
+			check(absf(shot.target.x)>=3.6 and absf(shot.target.z)<3,"triangle lateral finishes wide inside three metres")
 			check(Second.crosses_cleanly(g,shot.target,shot.seconds,shot.spin),"corner trajectory clears net")
 	FileAccess.open("res://docs/match100-tests.json",FileAccess.WRITE).store_string(JSON.stringify({"pass":errors.is_empty(),"checks":checks,"errors":errors},"  "))
 	print("MATCH100 ","PASS" if errors.is_empty() else "FAIL"," checks=",checks," errors=",errors);quit(0 if errors.is_empty() else 1)

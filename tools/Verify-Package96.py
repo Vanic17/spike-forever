@@ -27,7 +27,7 @@ with zipfile.ZipFile(archive) as z, archive.open('rb') as raw:
         assert decoded==data,name
     for required in ['src/setter_second96.gd','src/stroke_motion96.gd','src/player_pose95.gd','src/net_spec94.gd','assets/active/native_motion96.res','docs/strokes96-tests.json','docs/strokes96-online-host.json','docs/strokes96-online-guest.json','tools/godot/Godot_v4.5.1-stable_win64.exe']:
         assert required in manifest['files'],required
-    assert b'SF095-MATCH100' in z.read('src/online_session.gd')
+    assert b'SF0951-SHORT101' in z.read('src/online_session.gd')
     assert b'banks["tip"]' in z.read('src/match_audio.gd')
 report={'pass':True,'version':index['version'],'files':len(index['files']),'archive_bytes':archive.stat().st_size,'every_hash_and_selective_range_verified':True,'personal_files_included':False,'unapproved_prototypes_included':False}
 Path('docs/strokes96-package-verification.json').write_text(json.dumps(report,indent=2),encoding='utf8')
