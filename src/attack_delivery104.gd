@@ -20,8 +20,12 @@ static func solve(game,target: Vector3,seconds: float,power: float,soft: bool) -
 	var near:=1.0-smoothstep(.65,2.8,absf(origin.z))
 	var spin:=Vector3(signf(target.z-origin.z)*lerpf(12,7,near),game.aim.x*.7,.25)
 	var horizontal:=Vector2(target.x-origin.x,target.z-origin.z).length()
-	var speed:=lerpf(19,27,gain)
-	var desired:=lerpf(seconds,minf(seconds,maxf(.18,horizontal/speed)),gain)
+	var closed: bool=(game.human_team(game.possession) and game.aim.y>.3) or (game.cpu_team(game.possession) and absf(target.z)<3.9)
+	var speed:=lerpf(19,31 if closed else 28,gain)
+	# Fixed power and geometry select the same speed, independent of which
+	# source performance or older duration clamp preceded this planner.
+	var desired:=maxf(.145,horizontal/speed)
+	if gain<1:desired=lerpf(seconds,desired,gain)
 	if game.out_of_system<0:desired=lerpf(seconds,desired,.45)
 	var clearance: float=Net.TOP+Net.BALL_RADIUS+.018
 	var low:=desired;var high:=maxf(seconds,desired)

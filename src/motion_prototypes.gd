@@ -8,8 +8,9 @@ const Dive = preload("res://src/dive_motion41.gd")
 const Attack = preload("res://src/attack_motion41.gd")
 const NAMES := ["dive_authored41", "attack_adaptive41", "dump_push54", "receive_front75", "receive_left75", "receive_right75", "dive_hand75", "receive_low76", "receive_low_right76", "receive_slide77", "receive_slide_right77", "dive_slide77", "dive_slide_right77", "defense_miss77", "defense_miss_right77", "attack_reference78", "attack_reference_right78", "attack_middle79", "receive_platform80", "receive_braced80", "receive_knee80", "receive_knee_right80", "dive_platform80", "dive_roll80", "dive_roll_right80", "dive_pancake80", "attack_middle_style80", "attack_middle_style_right80", "set_disguise81", "attack_wrist94", "attack_shorttip96", "attack_cut96", "set_first96", "dump_back96", "dump_down96", "dump_forward96"]
 const AUTHORS := [Dive, Attack, preload("res://src/dump_motion54.gd"),preload("res://src/defense_front75.gd"),preload("res://src/defense_left75.gd"),preload("res://src/defense_right75.gd"),preload("res://src/defense_hand75.gd"),preload("res://src/defense_low76.gd"),preload("res://src/defense_low_right76.gd"),preload("res://src/defense_slide77.gd"),preload("res://src/defense_slide_right77.gd"),preload("res://src/defense_dive77.gd"),preload("res://src/defense_dive_right77.gd"),preload("res://src/defense_miss77.gd"),preload("res://src/defense_miss_right77.gd"),preload("res://src/attack_reference78.gd"),preload("res://src/attack_reference_right78.gd"),preload("res://src/attack_middle79.gd"),preload("res://src/defense_platform80.gd"),preload("res://src/defense_braced80.gd"),preload("res://src/defense_knee80.gd"),preload("res://src/defense_knee_right80.gd"),preload("res://src/defense_dive_platform80.gd"),preload("res://src/defense_roll80.gd"),preload("res://src/defense_roll_right80.gd"),preload("res://src/defense_pancake80.gd"),preload("res://src/attack_middle_style80.gd"),preload("res://src/attack_middle_style_right80.gd"),preload("res://src/set_disguise_motion81.gd"),preload("res://src/tip_motion94.gd"), preload("res://src/tip_short96.gd"), preload("res://src/attack_cut96.gd"), preload("res://src/set_first96.gd"), preload("res://src/dump_back96.gd"), preload("res://src/dump_down96.gd"), preload("res://src/dump_forward96.gd")]
-const LIBRARY_PATH := "res://assets/active/native_motion96.res"
-const FORMAT := 13
+const APPROACH_NAME := "approach105"
+const LIBRARY_PATH := "res://assets/active/native_motion105.res"
+const FORMAT := 14
 static var enabled := not "--motion-original" in OS.get_cmdline_user_args()
 static var generated: Dictionary = {}
 static var combined: AnimationLibrary
@@ -22,6 +23,9 @@ static func register(bank: Dictionary) -> void:
 		if not bank.has(author.SOURCE): continue
 		if not generated.has(name): generated[name] = author_clip(bank[author.SOURCE], author, name)
 		bank[name] = generated[name]
+	if bank.has("run"):
+		if not generated.has(APPROACH_NAME):generated[APPROACH_NAME]=author_clip(bank.run,preload("res://src/approach105.gd"),APPROACH_NAME)
+		bank[APPROACH_NAME]=generated[APPROACH_NAME]
 
 static func normalized(clip, time: float, loop: bool = false) -> Array[Transform3D]:
 	var pose: Array[Transform3D] = clip.pose(time, loop)
@@ -95,7 +99,7 @@ static func author_clip(base, author, label: String):
 
 static func signature(bank: Dictionary) -> String:
 	var parts: Array = [FORMAT]
-	for name in NAMES:
+	for name in NAMES+[APPROACH_NAME]:
 		if bank.has(name):
 			var clip = bank[name]
 			parts.append([name, clip.source, hash(clip.positions), hash(clip.rotations), clip.contact_time, clip.jump_boost,clip.contact_offset])
@@ -107,7 +111,7 @@ static func supplement(bank: Dictionary) -> AnimationLibrary:
 		var saved = ResourceLoader.load(LIBRARY_PATH, "AnimationLibrary")
 		if saved is AnimationLibrary and saved.get_meta("motion_signature", "") == stamp: return saved
 	var library := AnimationLibrary.new()
-	for name in NAMES:
+	for name in NAMES+[APPROACH_NAME]:
 		if bank.has(name):
 			library.add_animation(name, Converter.make_animation(bank[name], func(time: float): return normalized(bank[name], time)))
 	library.set_meta("motion_signature", stamp)

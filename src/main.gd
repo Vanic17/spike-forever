@@ -1144,7 +1144,9 @@ func serve_ball(team: int, power: float) -> void:
 	# Calibrate the full-power arc once, then retain the charge curve on
 	# either side of gold. A clearance minimum must not flatten all powers.
 	var full_seconds:=Reference.serve_seconds(1.0,serve_type==0)
-	seconds=preload("res://src/winning_shot.gd").flight_seconds(self,target,full_seconds,2.60 if serve_type==0 else 2.54)*seconds/full_seconds
+	var full_delivery: Dictionary=preload("res://src/serve_delivery105.gd").full(self,target,serve_type==0)
+	seconds=full_delivery.seconds*seconds/full_seconds
+	short_spin103=preload("res://src/serve_delivery105.gd").charged_spin(self,target,seconds,full_delivery.spin,power)
 	launch(target,seconds)
 	var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
 	if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
@@ -1657,6 +1659,7 @@ func attack_ball() -> void:
 	short_spin103=null
 	var driven_delivery: Dictionary=preload("res://src/attack_delivery104.gd").solve(self,target,seconds,power,soft)
 	seconds=driven_delivery.seconds;short_spin103=driven_delivery.get("spin")
+	if driven_delivery.has("spin"):log_rally_event("attack_delivery105",{"hitter":hitter,"variant":players[hitter].variant_names.get("attack","attack"),"origin":ball_pos,"target":target,"seconds":seconds,"power":power,"winning":winning_attack})
 	if hitter_action == "receive":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
 		target=delivery.target; seconds=delivery.seconds
@@ -2058,7 +2061,8 @@ func try_block(previous: Vector3=Vector3(INF,0,0), seconds: float=0.0) -> void:
 			match_management.touch(contact_blocker,"block")
 			var side:=1.0 if defender==0 else -1.0
 			var landing:=Vector3(clampf(ball_pos.x,-3.9,3.9),0.105,side*2.0)
-			ball_vel=BallFlight.velocity_to(ball_pos,landing,0.48 if soft_contact100 else 0.26,flight_spin,flight_gravity)
+			if soft_contact100:ball_vel=BallFlight.velocity_to(ball_pos,landing,0.48,flight_spin,flight_gravity)
+			else:ball_vel=(landing-ball_pos).normalized()*maxf(1.0,ball_vel.length()*.88)
 			last_touch=defender; phase="LOOSE"; flight_left=100
 			log_rally_event("winning_shot_block_break",{"defender":defender})
 			if match_audio: match_audio.contact("block",ball_pos,0.3 if soft_contact100 else 0.9)

@@ -135,7 +135,7 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 			var spacing := lerpf(float(Tactics.positioning.middle_offset_near),float(Tactics.positioning.middle_offset_far),off_net)
 			var wide_choice=game.get("middle_wide")
 			var committed: bool=game.armed or game.cpu_team(team) or game.phase in ["ATTACK","CPU_ATTACK"]
-			if game.planned_direction==1 and wide_choice==false and committed: spacing=lerpf(1.30,1.45,off_net)
+			if game.planned_direction==1 and wide_choice==false and committed: spacing=lerpf(1.05,1.20,off_net)
 			width = clampf(setter_x+away*spacing,-3.0,3.0)
 		2: width = float(Tactics.positioning.d_width) if back else 3.4
 		3: width = float(Tactics.positioning.pipe_width)

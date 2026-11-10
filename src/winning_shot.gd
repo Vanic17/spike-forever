@@ -7,6 +7,13 @@ static func flight_seconds(game, landing: Vector3, requested: float, clearance: 
 	return maxf(requested,sqrt(2.0*required/maxf(0.01,game.flight_gravity*fraction*(1-fraction))))
 
 static func failed_save(game) -> void:
+	if game.incoming_kind=="spike" and not game.attack_tip:
+		# Preserve the original hard shot right to the floor. An attempted
+		# reception may miss, but must never replace it with a slower lob.
+		game.finish_contact_attempt(game.receiver)
+		game.log_rally_event("winning_shot_floor",{"defender":game.receiver,"winner":game.winner_team})
+		game.phase="LOOSE";game.flight_left=100;game.marker.visible=false
+		return
 	var action: String=game.recovery_action if game.late_receive else "receive"
 	var player=game.players[game.receiver]
 	var touched: bool=game.validate_contact(game.receiver,action)

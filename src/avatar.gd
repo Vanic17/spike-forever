@@ -734,19 +734,12 @@ func apply_pose(_dt: float) -> void:
 	# During the new pin approach, layer its backswing over the real running
 	# feet. The contact clip then continues through the existing crossfade.
 	if pin_reference_load>.001 and pin_approach104():
-		# Sample the backswing progressively through the final running strides.
-		# Cached poses keep native/PSA paths identical without per-frame baking.
 		var remaining: float=position.distance_to(target)/maxf(1.25,velocity.length()) if looping else attack_clock_seconds(maxf(0,clips.attack.contact_time-animation_time))
-		var loading: float=1.0-smoothstep(.40,.95,remaining)
-		var sample_index:=clampi(floori(loading*8),0,8)
-		var keys: Array[String]=[]
-		for index in [sample_index,mini(8,sample_index+1)]:
-			var prefix_key:=str([variant_names.get("attack","attack"),left_handed,native_animation_enabled,index])
-			if not pin_reference_poses.has(prefix_key):pin_reference_poses[prefix_key]=normalized_pose("source:"+str(variant_names.get("attack","attack")),clips.attack.contact_time*lerpf(.08,.30,float(index)/8),false)
-			keys.append(prefix_key)
-		var loading_pose:=blend_hierarchy(pin_reference_poses[keys[0]],pin_reference_poses[keys[1]],loading*8-sample_index,clip.parents)
-		var plant: float=1.0 if looping else smoothstep(clips.attack.takeoff_time,clips.attack.takeoff_time+.10,animation_time)
-		var weight: float=pin_reference_load*.70*(1.0-plant) if not looping else pin_reference_load*.70
+		var loading: float=1.0-smoothstep(.28,.95,remaining)
+		if looping and intent.task!="contact":loading=0.0
+		var loading_pose:=normalized_pose("source:approach105",source_clips.approach105.duration*loading,false)
+		var plant: float=0.0 if looping else smoothstep(clips.attack.takeoff_time-.025,clips.attack.takeoff_time+.035,animation_time)
+		var weight: float=pin_reference_load*.90*(1.0-plant)
 		normalized=mix_upper_pose(normalized,loading_pose,weight)
 	# A middle threatens the quick even before a high set can start its jump
 	# clip. Layer the original grounded backswing over the travelling feet.
@@ -887,7 +880,7 @@ func raw_normalized_pose(name: String, time: float, loop: bool) -> Array[Transfo
 	if native_animation_enabled and pose_tree != null and pose_tree.initialized and pose_tree.library.has_animation(native_name):
 		result=pose_tree.sample(native_name, time, loop)
 	else: result=psa_normalized_pose(name, time, loop)
-	if left_handed and native_name not in ["dump_back96","dump_down96","dump_forward96"] and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle","set_first96"]):
+	if left_handed and native_name not in ["dump_back96","dump_down96","dump_forward96"] and (native_name.begins_with("attack") or native_name.begins_with("dump") or native_name in ["power","float","serve_idle","set_first96","approach105"]):
 		if mirror_bones.is_empty():
 			for bone in clips.idle.names:
 				var opposite: String=bone.replace("Left","@SIDE@").replace("Right","Left").replace("@SIDE@","Right")
