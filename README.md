@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.100.0:** mirino di battuta con stick destro, bloccato scegliendo salto/float; dispersione fisica legata a potenza, Battuta e freccia di condizione. Difesa CPU moderatamente meno efficace e ricezioni fallite più varie. [Comandi e dettagli](docs/RELEASE_NOTES_100.md).
+
 
 **Versione 0.91.0:** nuovi gesti contestuali, tre seconde del palleggiatore su Triangolo/Y, camera su L1/LB, battute più rapide e salti intermedi. Include le correzioni locali di rete e volto. [Novità e comandi](docs/RELEASE_NOTES_91.md).
 **Versione 0.89.0:** grafica integrata, parquet a scala reale, pubblico e dettagli dei giocatori, visuale bassa rivista. I quattro preset scalano realmente geometria, pubblico, texture ed effetti. Corretti nell'online i comandi fuori fase, i salti del muro avversario e l'anticipo dei controlli/pose rispetto alla palla. [Novità e verifiche](docs/RELEASE_NOTES_89.md).

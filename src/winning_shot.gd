@@ -16,15 +16,10 @@ static func failed_save(game) -> void:
 		return
 	var action: String=game.recovery_action if game.late_receive else "receive"
 	var player=game.players[game.receiver]
-	var touched: bool=game.validate_contact(game.receiver,action)
+	var clean_miss: bool=game.cpu_defense.frozen or player.current_hand(false).distance_to(game.ball_pos)>1.25
+	var touched: bool=not clean_miss and game.validate_contact(game.receiver,action)
 	if touched:
-		# The hard ball breaks the platform: visible touch, then floor nearby.
-		var side:=1.0 if game.possession==0 else -1.0
-		var mishit: int=game.rng.randi_range(0,2)
-		var lateral: float=game.rng.randf_range(0.35,1.8)*(-1 if game.rng.randf()<0.5 else 1)
-		var landing:=Vector3(clampf(game.ball_pos.x+lateral,-4.25,4.25),0.105,side*clampf(absf(game.ball_pos.z)+game.rng.randf_range(-1.0,1.8),1.0,8.6))
-		game.ball_vel=game.BallFlight.velocity_to(game.ball_pos,landing,[0.19,0.34,0.48][mishit],game.flight_spin,game.flight_gravity)
-		game.last_touch=game.possession
+		preload("res://src/defense_failure106.gd").shank(game)
 	# Do not restart a forearm pass after the missed contact. The previous
 	# attempt already owns its follow-through; a restart looked like a second
 	# backward bagher while the root continued chasing the obsolete marker.

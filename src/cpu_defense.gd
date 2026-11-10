@@ -8,6 +8,10 @@ func prepare(game) -> void:
 	reset()
 	if not game.cpu_team(game.possession): return
 	if game.incoming_out: return
+	if game.winner_team>=0 and game.incoming_kind=="serve" and game.rng.randf()<float(preload("res://src/serve_target106.gd").settings().failure.untouched_chance):
+		frozen=true;outcome="hesitation"
+		game.scramble_ready[game.receiver]=game.clock_time+game.flight_left+.1
+		return
 	var pressure:=clampf(game.incoming_power,0,1)
 	if game.incoming_kind=="block":
 		# Attack coverage reacts to the actual rebound after landing. Keep
@@ -19,9 +23,10 @@ func prepare(game) -> void:
 		game.scramble_ready[game.receiver]=maxf(game.scramble_ready[game.receiver],game.clock_time)+.025+pressure*.025
 		return
 	var offset: float=game.rng.randf_range(-0.065,0.13)*(0.6+pressure)
-	timing_quality=clampf(1.0-absf(offset)*0.85,0.65,0.995)
+	var tuning: Dictionary=preload("res://src/serve_target106.gd").settings().cpu
+	timing_quality=clampf((1.0-absf(offset)*0.85)*float(tuning.timing_scale),0.65,0.995)
 	var roll: float=game.rng.randf()
-	if pressure>0.88 and roll<0.035:
+	if pressure>0.88 and roll<float(tuning.hesitation_chance):
 		frozen=true; outcome="hesitation"
 	elif roll<0.045+pressure*0.08: outcome="shank"
 	elif roll<0.063+pressure*0.088: outcome="overpass"
@@ -30,6 +35,7 @@ func prepare(game) -> void:
 	elif pressure>0.8 and roll>0.93: outcome="reflex"
 	var delay: float=game.flight_left+0.02 if frozen else game.rng.randf_range(0.012,0.05)+pressure*0.018
 	if outcome=="reflex": delay*=0.65
+	if not frozen:delay+=float(tuning.extra_reaction_seconds)
 	game.scramble_ready[game.receiver]=game.clock_time+delay
 func quality(value: float, pressure: float) -> float:
 	if outcome=="shank": return 0.05

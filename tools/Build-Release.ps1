@@ -6,6 +6,8 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_100.md','docs/SERVE_106.md','tools/Test-Serve106.gd','tools/Test-OnlineServe106.gd','tools/Run-OnlineServe106.ps1','tools/Capture-Serve106.gd','tools/Verify-Serve106.py')
+$files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'serve106-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_99.md','docs/APPROACH_105.md','tools/Test-Attack105.gd','tools/Inspect-Attack105.gd','tools/Bake-Approach105.gd','tools/Capture-Approach105.gd','tools/Verify-Approach105.py')
 $files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'attack105-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_98.md','docs/ATTACK_104.md','tools/Test-Attack104.gd','tools/Audit-Attack104.gd','tools/Capture-Attack104.gd','tools/Verify-Attack104.py')

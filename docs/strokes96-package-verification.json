@@ -1,8 +1,8 @@
 {
   "pass": true,
-  "version": "0.98.0",
-  "files": 2622,
-  "archive_bytes": 1185698698,
+  "version": "0.99.0",
+  "files": 2639,
+  "archive_bytes": 1198035380,
   "every_hash_and_selective_range_verified": true,
   "personal_files_included": false,
   "unapproved_prototypes_included": false

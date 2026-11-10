@@ -190,6 +190,9 @@ var serve_motion_start_time := 0.0
 var serve_toss_duration := TOSS_TIME
 var serve_motion_yaw := 0.0
 var serve_move:=Vector2.ZERO
+var serve_target106=preload("res://src/serve_target106.gd").new()
+var serve_aim106:=Vector3(0,.105,-4.5)
+var serve_locked106:=false
 var serve_adjusting:=false
 var serve_adjust_target:=Vector3.ZERO
 var serve_windup_left := 0.0
@@ -565,6 +568,7 @@ func stick(_right: bool = false) -> Vector2:
 	return result.limit_length()
 
 func read_controls(dt: float = 1.0/120.0) -> void:
+	if not network_match():serve_target106.input_tick(self,dt)
 	if legend_controls_enabled(): legend_match.apply_controls(dt); return
 	if network_match():
 		online_session.apply_controls(dt)
@@ -581,6 +585,7 @@ func apply_direction(direction: Vector2,dt: float) -> void:
 	serve_move=direction if phase=="SERVE" and server==0 and not demo and not charging and not toss_active and not serve_adjusting else Vector2.ZERO
 	if network_match() and phase=="SERVE" and not charging and not toss_active and not serve_adjusting: serve_move=direction*(1 if server==0 else -1)
 	if phase=="SERVE" and not charging and not demo: return
+	if phase=="SERVE" and serve_target106.enabled():return
 	if human_wall() and not network_match(): manual_wall.read(self,direction,dt)
 	if direction.length() > 0.3:
 		var angle := roundf(direction.angle() / (PI / 4)) * PI / 4
@@ -629,6 +634,7 @@ func press_action(button: String = "action") -> void:
 		attack_buffer_start=clock_time; attack_buffer_power=-1.0
 		return
 	if action_phase == "SERVE" and human_team(server) and not charging and not toss_active and not serve_adjusting and button != "dump":
+		serve_locked106=serve_target106.enabled()
 		serve_type = 0 if button == "alternate" else 1
 		charge_button = button
 		charging = true
@@ -705,6 +711,7 @@ func release_action() -> void:
 	if phase == "SERVE" and human_team(server):
 		input_quality = 1.0
 		serve_power = charge
+		serve_target106.freeze(self,charge)
 		begin_serve_toss()
 	elif phase in ["ATTACK","CPU_ATTACK"] and not armed:
 		armed = true
@@ -776,6 +783,7 @@ func reset_rally() -> void:
 	defensive_coverage.reset()
 	for wall in manual_walls: wall.reset()
 	rally_serial += 1
+	serve_target106.reset(self)
 	test_rallies = 0
 	incoming_kind = "serve"
 	incoming_out = false
@@ -1099,16 +1107,21 @@ func serve_ball(team: int, power: float) -> void:
 	possession = 1 - team
 	var s := 1.0 if possession == 0 else -1.0
 	var target := serve_aim_target(team,aim)
+	var reticle: bool=serve_target106.enabled()
+	if reticle:
+		serve_target106.freeze(self,power)
+		target=serve_target106.sample.sampled
 	target.y = contact_height("receive")
-	if cpu_team(team):
+	if cpu_team(team) and not reticle:
 		target.x = rng.randf_range(-3.3, 3.3)
 		target.z = s*rng.randf_range(5.2,8.0)
 	var contact_quality := input_quality if human_team(team) and not demo else 0.92
 	if use_player_stats: contact_quality=1.0 if PlayerStats.perfect(power,PlayerStats.green_low(self,true)) else clampf(1.0-absf(1.0-power)*.65,.35,.92)
 	contact_quality=match_management.quality(server_index(team),contact_quality)
 	var dispersion := 2.2 * (1.0 - contact_quality)
-	target.x += rng.randf_range(-dispersion, dispersion)
-	target.z += rng.randf_range(-dispersion, dispersion)
+	if not reticle:
+		target.x += rng.randf_range(-dispersion, dispersion)
+		target.z += rng.randf_range(-dispersion, dispersion)
 	if not validate_contact(server_index(team), "float" if serve_type == 0 else "power"):
 		award(1 - team, "SERVIZIO · CONTATTO MANCATO")
 		return
@@ -1122,7 +1135,7 @@ func serve_ball(team: int, power: float) -> void:
 	incoming_kind = "serve"
 	last_serve_fault = ""
 	var tired_serve: float=match_management.risk(server_index(team))*(1.0-smoothstep(.90,1.0,power))
-	if (power > 1.0 and rng.randf() < Timing.serve_risk(power)) or (tired_serve>0 and rng.randf()<tired_serve):
+	if not reticle and ((power > 1.0 and rng.randf() < Timing.serve_risk(power)) or (tired_serve>0 and rng.randf()<tired_serve)):
 		last_serve_fault = "NET" if serve_fault_sequence%2==0 else "OUT"
 		serve_fault_sequence+=1
 		if last_serve_fault == "NET":
@@ -1140,14 +1153,23 @@ func serve_ball(team: int, power: float) -> void:
 	winner_team=team if not use_player_stats and Timing.ace_power(power) else -1
 	# Every power band uses the same legal floor trajectory. Gold changes
 	# the defensive outcome, never the flight model or its speed profile.
-	target.y=0.105; target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.85 if serve_type==0 else 1.4),4.5,8.8)
+	target.y=0.105
+	if not reticle:target.x=clampf(target.x,-3.8,3.8); target.z=s*clampf(absf(target.z)+minf(power,1.0)*(0.85 if serve_type==0 else 1.4),4.5,8.8)
 	# Calibrate the full-power arc once, then retain the charge curve on
 	# either side of gold. A clearance minimum must not flatten all powers.
 	var full_seconds:=Reference.serve_seconds(1.0,serve_type==0)
-	var full_delivery: Dictionary=preload("res://src/serve_delivery105.gd").full(self,target,serve_type==0)
+	var nominal: Vector3=serve_target106.sample.desired if reticle else target
+	var clearance: float=serve_target106.settings().nominal_clearance if reticle else 2.543
+	var full_delivery: Dictionary=preload("res://src/serve_delivery105.gd").full(self,nominal,serve_type==0,clearance)
 	seconds=full_delivery.seconds*seconds/full_seconds
-	short_spin103=preload("res://src/serve_delivery105.gd").charged_spin(self,target,seconds,full_delivery.spin,power)
+	short_spin103=preload("res://src/serve_delivery105.gd").charged_spin(self,nominal,seconds,full_delivery.spin,power,clearance)
+	if reticle:
+		# Calibrate only the desired trajectory. Never rescue the dispersed one
+		# from the net or clamp its endpoint into the court.
+		if absf(target.x)>4.5 or target.z*s<0 or target.z*s>9:winner_team=-1
+		log_rally_event("serve_target106",serve_target106.sample.duplicate(true))
 	launch(target,seconds)
+	if reticle:incoming_out=absf(target.x)>4.605 or absf(target.z)>9.105
 	var contact:=BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height("receive"),flight_gravity)
 	if not contact.is_empty(): flight_target=contact.point; flight_left=contact.seconds; receive_deadline=clock_time+flight_left
 	preload("res://src/receive_access.gd").sync_performance(self,true)
@@ -1234,10 +1256,10 @@ func receive_ball() -> void:
 	log_rally_event("dig" if incoming_kind=="spike" else "reception",{"quality":q,"receiver":receiver,"incoming":incoming_kind,"recovery":late_receive})
 	var side := 1.0 if possession == 0 else -1.0
 	if q < 0.08:
-		if touches[possession]==1 and rng.randf()<0.60:
+		if touches[possession]==1 and rng.randf()<0.30:
 			preload("res://src/scramble_recovery.gd").start(self,receiver)
 			return
-		fault_flight(Vector3(ball_pos.x+signf(rng.randf_range(-1,1))*rng.randf_range(4,7),0.105,side*rng.randf_range(10,13)),0.9)
+		preload("res://src/defense_failure106.gd").shank(self)
 		log_rally_event("shank")
 		return
 	if q<0.38 and touches[possession]==1 and incoming_kind=="spike" and rng.randf()<0.25:
@@ -1795,6 +1817,8 @@ func miss_contact() -> void:
 
 func award(team: int, reason: String) -> void:
 	if phase == "POINT": return
+	if incoming_kind=="serve" and not serve_target106.sample.is_empty():
+		log_rally_event("serve_target106_result",{"winner":team,"reason":reason,"ball":ball_pos,"last_touch":last_touch,"seed":serve_target106.sample.seed})
 	var led_kind: String=preload("res://src/arena_events82.gd").point_kind(self,team)
 	if legend_controls_enabled(): legend_match.on_point(team,reason)
 	if tutorial!=null and tutorial.active:
@@ -1848,6 +1872,7 @@ func _physics_process(dt: float) -> void:
 		render_smoother.after_tick(self)
 
 func _process(_dt: float) -> void:
+	if not self_test and camera!=null:serve_target106.visual(self)
 	if not self_test:render_smoother.draw(self)
 	if match_audio and match_audio.has_method("update_match_state"): match_audio.update_match_state(started,phase,paused and phase!="POINT")
 	if camera and not self_test and not (replay!=null and replay.active) and not (substitution_scene!=null and substitution_scene.active): update_camera(_dt)
@@ -1924,6 +1949,7 @@ func step(dt: float) -> void:
 		if cpu_team(server) and phase_time > 0.65 and not toss_active and not serve_adjusting and (not legend_controls_enabled() or legend_match.cpu_serve_ready()):
 			serve_type = 0 if serving.roster_identity.get("serve_preference","jump")=="float" else 1
 			serve_power = PlayerStats.ai_power(self,server_index(server),"battuta") if use_player_stats else rng.randf_range(0.55,1.08)
+			serve_target106.cpu_lock(self,serve_power)
 			begin_serve_toss()
 	elif phase == "POINT":
 		step_dead_ball(dt)

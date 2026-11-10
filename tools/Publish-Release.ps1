@@ -147,7 +147,11 @@ if($script:LastNativeExit -eq 0){
 }else{
  $notesArguments=@('--notes',('Versione '+$version+'. Pacchetto Windows completo. Installazione e versioni precedenti dal menu iniziale.'))
  if($NotesFile){$notesArguments=@('--notes-file',[IO.Path]::GetFullPath($NotesFile))}
- Native $gh (@('release','create',$tag)+$releaseAssets+@('--repo',$Repository,'--title',('Spike Forever '+$tag))+$notesArguments)
+ # Keep a persistent draft: a timeout on the final publish request must
+ # not delete a successfully uploaded large package and force a re-upload.
+ Native $gh (@('release','create',$tag,'--draft','--target','main','--repo',$Repository,'--title',('Spike Forever '+$tag))+$notesArguments)
+ Native $gh (@('release','upload',$tag)+$releaseAssets+@('--repo',$Repository,'--clobber'))
+ Native $gh @('release','edit',$tag,'--repo',$Repository,'--draft=false','--latest')
 }
 [IO.File]::WriteAllText((Join-Path $root 'dist/published-package.txt'),$package)
 Write-Output ('PUBLISHED https://github.com/'+$Repository+'/releases/tag/'+$tag)

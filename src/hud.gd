@@ -71,11 +71,12 @@ func draw_timing_result() -> void:
 
 func draw_power_bar() -> void:
 	var scale:=clampf(minf(size.x/1920.0,size.y/1080.0),.5,2.5)
-	var origin:=Vector2(size.x*.5,size.y-92*scale)
+	var origin:=Vector2(size.x*.5,size.y-(132 if game.display_phase()=="SERVE" and game.serve_target106.enabled() else 92)*scale)
 	draw_set_transform(origin,0,Vector2.ONE*scale)
 	var serve: bool=game.display_phase()=="SERVE"
 	var power: float=game.current_charge()
-	panel(Rect2(-282,-22,564,78),Color("102039"))
+	var reticle: bool=serve and game.serve_target106.enabled()
+	panel(Rect2(-282,-22,564,118 if reticle else 78),Color("102039"))
 	text(Vector2(-258,2),"BATTUTA" if serve else ("PALLONETTO" if game.attack_tip else "ATTACCO"),20,GOLD)
 	text(Vector2(174,2),("%.2f%%" if game.use_player_stats else "%.0f%%")%(power*100),22,RED if power>1 else GREEN)
 	draw_rect(Rect2(-258,18,516,16),Color("43536c"))
@@ -84,6 +85,13 @@ func draw_power_bar() -> void:
 	draw_rect(Rect2(-258+416*low,15,416*(1-low),22),GOLD,false,2)
 	draw_line(Vector2(158,13),Vector2(158,38),WHITE,2)
 	if power>1: draw_rect(Rect2(158,18,minf(1,(power-1)/.4)*100,16),RED)
+	if reticle:
+		var locked: bool=game.serve_locked106 or (game.network_match() and game.serve_target106.local_locked)
+		var english:=TranslationServer.get_locale().begins_with("en")
+		var hint: String=("TARGET LOCKED · hold, release" if english else "MIRINO BLOCCATO · tieni, rilascia") if locked else ("RS / IJKL: aim · choose jump / float to lock" if english else "RS / IJKL: mira · scegli salto / float per bloccare")
+		var r: float=game.serve_target106.parameters(game,power if game.charging else 0).r90
+		text(Vector2(-258,60),hint,16,MUTED,false)
+		text(Vector2(-258,83),("90%% radius: %.2f m" if english else "Raggio 90%%: %.2f m")%r,16,RED if power>1 else GOLD,false)
 	draw_set_transform(Vector2.ZERO,0,Vector2.ONE)
 
 func draw_contact(cx: float, y: float) -> void:
@@ -105,7 +113,14 @@ func draw_contact(cx: float, y: float) -> void:
 		draw_rect(Rect2(cx-228+364*low,y+6,364*(1.0-low),20),GOLD,false,2)
 		if power > 1:
 			draw_rect(Rect2(cx + 136, y + 9, minf(1, (power - 1) / 0.4) * 92, 14), RED)
-		if game.use_player_stats:
+		if serve and game.serve_target106.enabled():
+			var locked: bool=game.serve_locked106 or (game.network_match() and game.serve_target106.local_locked)
+			var english: bool=TranslationServer.get_locale().begins_with("en")
+			var hint: String=("Target locked · hold and release" if english else "Mirino bloccato · tieni e rilascia") if locked else ("RS / IJKL: target · LS: move · A/Cross jump, X/Square float" if english else "RS / IJKL: mirino · LS: sposta · X/A salto, Quadrato/X float")
+			text(Vector2(cx-229,y+44),hint,12)
+			var r: float=game.serve_target106.parameters(game,power).r90
+			text(Vector2(cx-229,y+64),("90%% dispersion radius %.2f m" if english else "Raggio dispersione 90%%: %.2f m")%r,12,RED if power>1 else MUTED)
+		elif game.use_player_stats:
 			text(Vector2(cx-229,y+44),primary+" / "+alternate+" · tieni e rilascia · LS: mira",13)
 			text(Vector2(cx-229,y+64),("Battuta" if serve else "Alzata "+game.PlayerStats.GRADE_NAMES[game.stats_set_grade])+" · verde %.2f–100%% · nessun punto automatico"%(low*100),11,GOLD)
 		elif serve:

@@ -5,7 +5,7 @@ const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
 # New stroke names, commands and second-touch state require matching peers.
 # Reject incompatible dictionaries before decoding compact clip IDs.
-const PROTOCOL="SF099-APPROACH105"
+const PROTOCOL="SF0100-SERVE106"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -448,6 +448,7 @@ func _process(dt: float) -> void:
 			else: State.render(self,dt)
 
 func _physics_process(dt: float) -> void:
+	if playing and not authority():game.serve_target106.input_tick(game,dt)
 	if not playing or (game.replay!=null and game.replay.active): return
 	send_clock+=dt
 	var interval: float=1.0/60.0 if authority() else 1.0/30.0
@@ -504,7 +505,7 @@ func capture_input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 func axes() -> Dictionary:
-	return {"direction":game.stick(),"left":Input.get_action_strength("block_left"),"right":Input.get_action_strength("block_right")}
+	return {"direction":game.stick(),"left":Input.get_action_strength("block_left"),"right":Input.get_action_strength("block_right"),"serve106":game.serve_target106.desired(game)}
 
 func send_axes() -> void:
 	var value:=axes(); inputs[local_side]=value
@@ -518,6 +519,7 @@ func accept_axes(side: int,value: Dictionary) -> void:
 	var direction=value.get("direction",Vector2.ZERO)
 	if not direction is Vector2 or not direction.is_finite(): return
 	inputs[side]={"direction":direction.limit_length(),"left":clampf(float(value.get("left",0)),0,1),"right":clampf(float(value.get("right",0)),0,1)}
+	game.serve_target106.accept(game,value.get("serve106"),side)
 
 func send_command(button: String, pressed: bool) -> void:
 	sequence+=1
@@ -534,6 +536,7 @@ func send_command(button: String, pressed: bool) -> void:
 		var own: bool=(game.server if phase=="SERVE" else game.possession)==local_side
 		var chargeable: bool=own and button in ["action","alternate"] and context.intent in ["serve","attack"]
 		if pressed and chargeable and local_charge_start<0:
+			if phase=="SERVE":game.serve_target106.local_locked=true
 			local_charge_start=Time.get_ticks_usec()/1000000.0; local_charge_kind="serve" if phase=="SERVE" else "attack"; local_charge_button=button; local_charge_released=-1
 		elif not pressed and button==local_charge_button and local_charge_start>=0:
 			if game.use_player_stats and local_charge_kind=="attack":
@@ -597,6 +600,7 @@ func receive_remaining89(physical_remaining: float) -> float:
 
 func apply_controls(dt: float) -> void:
 	if not authority(): return
+	if not test_mode:game.serve_target106.input_tick(game,dt)
 	if not test_mode: inputs[0]=axes()
 	for side in 2:
 		game.input_team=side; game.apply_direction(inputs[side].get("direction",Vector2.ZERO),dt)

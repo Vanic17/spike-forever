@@ -22,6 +22,15 @@ const SOURCES := {
 const CLIPS := ["receive_low", "receive_squat", "receive_step", "receive_left_step", "receive_right_step", "set_short_front", "set_short_back", "set_left_front", "set_left_back", "set_running_front", "attack_angle_left", "attack_angle_right", "attack_turn", "attack_pin_left", "attack_pin_right"]
 
 static func receive(local: Vector3, speed: float, incoming: String, serial: int) -> String:
+	if incoming=="serve" and local.y<1.75:
+		# Use the same stable native platform/footwork family for pressured
+		# service passes too, rather than repeating the upright source pass.
+		var slot:=posmod(serial,7)
+		if absf(local.x)>.55:return "receive_left_step" if local.x>0 else "receive_right_step"
+		if slot==1:return "receive_braced80"
+		if slot==2:return "receive_platform80"
+		if slot==3 and local.y<1.4:return "receive_knee80" if local.x>=0 else "receive_knee_right80"
+		if slot==4:return "receive_step" if speed>1.3 else "receive_front75"
 	if incoming in ["spike","soft","block","tip","net","shank"] and local.y<1.75:
 		var slot:=posmod(serial,12)
 		var left:=local.x>.15 or (absf(local.x)<=.15 and posmod(serial/12,2)==0)
