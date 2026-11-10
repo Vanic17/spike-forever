@@ -1,0 +1,105 @@
+{
+	"checks": 1791,
+	"errors": [],
+	"pass": true,
+	"samples": [
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.335132598877,
+			"variant": "attack_pin_left",
+			"vertical": -16.7560920715332
+		},
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.3134117126465,
+			"variant": "attack_pin_right",
+			"vertical": -16.7104949951172
+		},
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.3351440429688,
+			"variant": "attack_reference78",
+			"vertical": -16.7561149597168
+		},
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.3180084228516,
+			"variant": "attack_reference_right78",
+			"vertical": -16.7201519012451
+		},
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.3353691101074,
+			"variant": "attack_middle_style80",
+			"vertical": -16.7565841674805
+		},
+		{
+			"left": false,
+			"seconds": 0.165689991366479,
+			"speed": 35.3197326660156,
+			"variant": "attack_middle_style_right80",
+			"vertical": -16.7237758636475
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.335132598877,
+			"variant": "attack_pin_left",
+			"vertical": -16.7560920715332
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.3134117126465,
+			"variant": "attack_pin_right",
+			"vertical": -16.7104949951172
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.3351440429688,
+			"variant": "attack_reference78",
+			"vertical": -16.7561149597168
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.3180084228516,
+			"variant": "attack_reference_right78",
+			"vertical": -16.7201519012451
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.3353691101074,
+			"variant": "attack_middle_style80",
+			"vertical": -16.7565841674805
+		},
+		{
+			"left": true,
+			"seconds": 0.165689991366479,
+			"speed": 35.3197326660156,
+			"variant": "attack_middle_style_right80",
+			"vertical": -16.7237758636475
+		}
+	],
+	"serves": [
+		{
+			"float": true,
+			"gain": 1.02222146387667,
+			"old_seconds": 1.07626288880019,
+			"seconds": 1.05286665055787
+		},
+		{
+			"float": false,
+			"gain": 1.32650484308943,
+			"old_seconds": 0.964366826283046,
+			"seconds": 0.726998345544701
+		}
+	]
+}

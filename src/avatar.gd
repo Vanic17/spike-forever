@@ -735,7 +735,7 @@ func apply_pose(_dt: float) -> void:
 	# feet. The contact clip then continues through the existing crossfade.
 	if pin_reference_load>.001 and pin_approach104():
 		var remaining: float=position.distance_to(target)/maxf(1.25,velocity.length()) if looping else attack_clock_seconds(maxf(0,clips.attack.contact_time-animation_time))
-		var loading: float=1.0-smoothstep(.28,.95,remaining)
+		var loading: float=1.0-smoothstep(.20,.80,remaining)
 		if looping and intent.task!="contact":loading=0.0
 		var loading_pose:=normalized_pose("source:approach105",source_clips.approach105.duration*loading,false)
 		var plant: float=0.0 if looping else smoothstep(clips.attack.takeoff_time-.025,clips.attack.takeoff_time+.035,animation_time)

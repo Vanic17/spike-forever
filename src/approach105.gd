@@ -8,7 +8,7 @@ static func source_time(time: float,_contact: float,_duration: float) -> float:r
 static func shape(pose: Array[Transform3D],names: Array[String],parents: Array[int],time: float,_contact: float,duration: float) -> Array[Transform3D]:
 	var out:=pose.duplicate()
 	var u:=clampf(time/maxf(.001,duration),0,1)
-	var load:=smoothstep(.30,.85,u)
+	var load:=smoothstep(.55,.95,u)
 	Ref.rotate(out,names,parents,"Spine1",Vector3.RIGHT,.12*load)
 	Ref.rotate(out,names,parents,"Spine2",Vector3.RIGHT,.05*load)
 	for side in ["Left","Right"]:

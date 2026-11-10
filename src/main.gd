@@ -651,12 +651,7 @@ func press_action(button: String = "action") -> void:
 		if remaining < -Timing.LATE_RECEIVE_SECONDS: return
 		input_quality = minf(lerpf(1.0,Reference.receive_quality(ball_pos.distance_to(players[receiver].contact_world("receive")), difficulty_scale()),0.825),timing.quality(judged_remaining,difficulty_scale())) if judged_remaining >= 0 else timing.quality(judged_remaining, difficulty_scale())
 		if remaining < 0:
-			var recovery := BallFlight.intercept(ball_pos, ball_vel, flight_spin, contact_height("recovery"), flight_gravity)
-			if recovery.is_empty() or recovery.seconds > 0.18 or recovery.seconds < 0: return
-			late_receive = true
-			recovery_action = "recovery"
-			flight_target = recovery.point
-			flight_left = maxf(0.001, recovery.seconds)
+			if not queue_recovery(false):return
 		armed = true
 		receive_feedback=preload("res://src/shot_variation.gd").reception_label(judged_remaining)+" · %d%%"%roundi(input_quality*100)
 		receive_feedback_left=2.4
@@ -1197,6 +1192,8 @@ func reachable(index: int, point: Vector3, reach: float = 1.4) -> bool:
 	return Vector2(players[index].position.x - point.x, players[index].position.z - point.z).length() < reach
 
 func receive_ball() -> void:
+	if cpu_team(possession) and cpu_defense.physical_miss:
+		log_rally_event("cpu_unreachable_drive107");miss_contact();return
 	if winner_team>=0:
 		preload("res://src/winning_shot.gd").failed_save(self)
 		return
@@ -1314,6 +1311,7 @@ func receive_ball() -> void:
 	players[setter].target=players[setter].stance_for_contact(actual_action,actual_target)
 
 func queue_recovery(anticipate: bool = false) -> bool:
+	if cpu_team(possession) and cpu_defense.physical_miss:return false
 	if legend_controls(receiver) and not legend_match.allow_requested_recovery: return false
 	if anticipate:
 		var extreme: Dictionary=preload("res://src/defense_context80.gd").plan(self,receiver)
@@ -1322,7 +1320,15 @@ func queue_recovery(anticipate: bool = false) -> bool:
 			late_receive=true;recovery_action="dive";input_quality*=.78
 			log_rally_event("extreme_recovery",{"actor":receiver,"variant":extreme.variant,"seconds":extreme.seconds})
 			return true
-	var action := "dive" if anticipate else "recovery"
+	# Remove the upright backward bagher entirely. Late saves now require a
+	# feasible source-driven dive, with the same route/rotation validation.
+	if not anticipate:
+		var plan: Dictionary=preload("res://src/contact_rescue.gd").proposal(self,receiver,.4)
+		if plan.is_empty():return false
+		preload("res://src/contact_rescue.gd").commit(self,plan)
+		late_receive=true;recovery_action="dive";input_quality*=.78
+		return true
+	var action := "dive"
 	var recovery := BallFlight.intercept(ball_pos,ball_vel,flight_spin,contact_height(action),flight_gravity)
 	if recovery.is_empty() or recovery.seconds <= 0.005 or recovery.seconds > (0.45 if anticipate else 0.18): return false
 	var player = players[receiver]
@@ -2164,6 +2170,8 @@ func resume_deflection(kind: String) -> void:
 	var reaction: Array = Reference.data.reaction.tape if kind=="net" else Reference.data.reaction.block
 	scramble_ready[receiver] = clock_time+rng.randf_range(reaction[0],reaction[1])
 	cpu_defense.prepare(self)
+	if preload("res://src/defense_read107.gd").chase(self,receiver):
+		scramble_ready[receiver]=minf(scramble_ready[receiver],clock_time+.035+players[receiver].intent.individuality*.025)
 
 func human_wall() -> bool:
 	if legend_controls_enabled(): return false
@@ -2394,6 +2402,7 @@ func move_players(dt: float) -> void:
 		var preparing_decoy: bool=i==middle_decoy.index and not middle_decoy.real_attack
 		var landing_active: bool=i!=action_actor and not i in blockers and attack_run.landing(i,clock_time)
 		var urgent: bool = i == action_actor or i in blockers or preparing_hitter or preparing_front or preparing_decoy or preparing_setter or landing_active or court_shape.setter_yields.has(i)
+		var chasing_rebound: bool=preload("res://src/defense_read107.gd").chase(self,i)
 		if legend_controls_enabled() and phase=="POINT" and phase_time>1.8: urgent=true
 		if team!=possession and phase in ["ATTACK","CPU_ATTACK"] and defensive_coverage.assignments.get(i,"")=="short": urgent=true
 		var assignment := "contact" if i == action_actor else ("approach" if preparing_hitter else ("block" if i in blockers else ("recover" if phase == "POINT" else "cover")))
@@ -2408,6 +2417,8 @@ func move_players(dt: float) -> void:
 			p.intent.reset(p.position)
 			p.steering_ready = true
 		p.intent.observe(phase + ":" + str(shot_serial), Tactics.role_for(self,i), assignment, clock_time)
+		if chasing_rebound:
+			p.intent.delay=minf(p.intent.delay,.025)
 		if assignment=="approach" and preparing_middle and not p.intent.reacted:
 			p.intent.delay=minf(p.intent.delay,0.008+p.intent.individuality*0.025)
 			p.intent.react_at=clock_time+maxf(0,p.intent.delay-p.intent.cue_age)
@@ -2442,6 +2453,7 @@ func move_players(dt: float) -> void:
 			# Pace against the whole remaining route, retaining the same deadline.
 			arrival_distance += p.steering_target.distance_to(p.stance_for_contact(action,flight_target))
 		if urgent: arrival_speed = arrival_distance / maxf(0.055, flight_left - 0.12)
+		if chasing_rebound:arrival_speed=maxf(arrival_speed,arrival_distance/maxf(.08,flight_left-.07))
 		if i==action_actor and phase in ["ATTACK","CPU_ATTACK"]:
 			arrival_distance=attack_run.remaining(i,p.position,arrival_distance)
 			arrival_speed=arrival_distance/maxf(0.055,flight_left-0.12)
@@ -2508,9 +2520,10 @@ func move_players(dt: float) -> void:
 				p.target=p.position+desired*.15
 		desired *= p.recovery_speed_scale()
 		if middle_decoy.holds(i): desired=Vector3.ZERO
+		if chasing_rebound and clock_time>=scramble_ready[i]-.04:scramble_ready[i]=clock_time
 		if clock_time < scramble_ready[i]: desired = Vector3.ZERO
 		if block_pose_locked(i): desired = Vector3.ZERO
-		var wanted_accel: Vector3 = ((desired.limit_length(max_speed) - p.velocity) / (0.055 if urgent else p.intent.response_time())).limit_length(28.0 if urgent else 9.5 + p.intent.individuality * 3.5)
+		var wanted_accel: Vector3 = ((desired.limit_length(max_speed) - p.velocity) / (.045 if chasing_rebound else (0.055 if urgent else p.intent.response_time()))).limit_length(32.0 if chasing_rebound else (28.0 if urgent else 9.5 + p.intent.individuality * 3.5))
 		p.acceleration = wanted_accel if i == action_actor or (human_wall() and i in blockers) else p.acceleration.move_toward(wanted_accel, (150.0 if urgent else 50.0 + p.intent.individuality * 35.0) * dt)
 		# Limit the requested speed, not existing momentum. A player changing
 		# from contact to cover used to lose several m/s in a single tick here.
@@ -2593,7 +2606,8 @@ func move_players(dt: float) -> void:
 		var preparation_lead := (1.12 if fast_set else 1.55) if action == "attack" else 0.38
 		preparation_lead += p.intent.individuality * 0.055 + (0.04 if p.visual_context == "emergency" else 0.0)
 		preparation_lead = p.preparation_lead(action,preparation_lead)
-		if i == action_actor and (flight_left < preparation_lead or (i==setter and setter_disguise and action=="dump")):
+		var impossible_read: bool=phase in ["RECEIVE","CPU_RECEIVE"] and cpu_team(possession) and cpu_defense.physical_miss
+		if i == action_actor and not impossible_read and (flight_left < preparation_lead or (i==setter and setter_disguise and action=="dump")):
 			p.prepare_contact(action, maxf(0, flight_left - dt))
 			p.reach_action = action
 			p.reach_target = flight_target

@@ -2,12 +2,20 @@ extends RefCounted
 var timing_quality:=1.0
 var outcome:="clean"
 var frozen:=false
+var physical_miss:=false
 func reset() -> void:
-	timing_quality=1.0; outcome="clean"; frozen=false
+	timing_quality=1.0; outcome="clean"; frozen=false;physical_miss=false
 func prepare(game) -> void:
 	reset()
 	if not game.cpu_team(game.possession): return
 	if game.incoming_out: return
+	var physical: Dictionary=preload("res://src/defense_read107.gd").assess(game)
+	physical_miss=physical.miss
+	if physical.has("speed"):game.log_rally_event("cpu_physical_read107",physical)
+	if physical_miss:
+		outcome="unreachable"
+		game.scramble_ready[game.receiver]=game.clock_time+physical.reaction
+		return
 	if game.winner_team>=0 and game.incoming_kind=="serve" and game.rng.randf()<float(preload("res://src/serve_target106.gd").settings().failure.untouched_chance):
 		frozen=true;outcome="hesitation"
 		game.scramble_ready[game.receiver]=game.clock_time+game.flight_left+.1

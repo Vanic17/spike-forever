@@ -27,7 +27,8 @@ with zipfile.ZipFile(archive) as z, archive.open('rb') as raw:
         assert decoded==data,name
     for required in ['src/setter_second96.gd','src/stroke_motion96.gd','src/player_pose95.gd','src/net_spec94.gd','assets/active/native_motion96.res','docs/strokes96-tests.json','docs/strokes96-online-host.json','docs/strokes96-online-guest.json','tools/godot/Godot_v4.5.1-stable_win64.exe']:
         assert required in manifest['files'],required
-    assert b'SF0100-SERVE106' in z.read('src/online_session.gd')
+    assert b'SF0101-REACT107' in z.read('src/online_session.gd')
+    assert 'assets/active/native_motion107.res' in manifest['files']
     assert 'assets/active/native_motion105.res' in manifest['files']
     assert b'banks["tip"]' in z.read('src/match_audio.gd')
 report={'pass':True,'version':index['version'],'files':len(index['files']),'archive_bytes':archive.stat().st_size,'every_hash_and_selective_range_verified':True,'personal_files_included':False,'unapproved_prototypes_included':False}

@@ -36,5 +36,6 @@ func run():
 	if "--psa-original" in OS.get_cmdline_user_args():suffix+="-fallback"
 	var report_name:="attack105" if "--attack105" in OS.get_cmdline_user_args() else "attack104"
 	if "--serve106" in OS.get_cmdline_user_args():report_name="serve106-attack"
+	if "--review107" in OS.get_cmdline_user_args():report_name="reactivity107-attack"
 	var f:=FileAccess.open("res://docs/"+report_name+"-"+suffix+".json",FileAccess.WRITE);f.store_string(JSON.stringify({"pass":errors.is_empty(),"cases":rows,"errors":errors},"\t"));f.close()
 	print("ATTACK104 ",suffix," ","PASS" if errors.is_empty() else "FAIL"," ",errors);quit(0 if errors.is_empty() else 1)

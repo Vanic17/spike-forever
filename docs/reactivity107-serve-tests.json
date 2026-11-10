@@ -1,0 +1,1349 @@
+{
+  "checks": 206,
+  "cpu_average_quality": {
+    "after": 0.598198467038588,
+    "before": 0.639489507252353
+  },
+  "dispersion": [
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.90375,
+      "power": 0.7,
+      "r90": 0.4831194,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.9125,
+      "power": 1.0,
+      "r90": 0.715016712,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.89875,
+      "power": 1.1,
+      "r90": 1.07940818278696,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.894,
+      "power": 1.2,
+      "r90": 1.745671432,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.904,
+      "power": 1.5,
+      "r90": 4.78903720750387,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.899,
+      "power": 0.7,
+      "r90": 0.5420364,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.8955,
+      "power": 1.0,
+      "r90": 0.802213872,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.8995,
+      "power": 1.1,
+      "r90": 1.21104332702927,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.90575,
+      "power": 1.2,
+      "r90": 1.958558192,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.90075,
+      "power": 1.5,
+      "r90": 5.37306613524825,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90475,
+      "power": 0.7,
+      "r90": 0.58917,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.8965,
+      "power": 1.0,
+      "r90": 0.8719716,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90375,
+      "power": 1.1,
+      "r90": 1.31635144242312,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.9045,
+      "power": 1.2,
+      "r90": 2.1288676,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.89525,
+      "power": 1.5,
+      "r90": 5.84028927744374,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.8975,
+      "power": 0.7,
+      "r90": 0.648087,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.90375,
+      "power": 1.0,
+      "r90": 0.95916876,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.9045,
+      "power": 1.1,
+      "r90": 1.44798658666544,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.8995,
+      "power": 1.2,
+      "r90": 2.34175436,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.90225,
+      "power": 1.5,
+      "r90": 6.42431820518812,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.90475,
+      "power": 0.7,
+      "r90": 0.7187874,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.9015,
+      "power": 1.0,
+      "r90": 1.063805352,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.8985,
+      "power": 1.1,
+      "r90": 1.60594875975621,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.9015,
+      "power": 1.2,
+      "r90": 2.597218472,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.90475,
+      "power": 1.5,
+      "r90": 7.12515291848137,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.90375,
+      "power": 0.7,
+      "r90": 0.6598704,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.897,
+      "power": 1.0,
+      "r90": 0.976608192,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.9005,
+      "power": 1.1,
+      "r90": 1.4743136155139,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.902,
+      "power": 1.2,
+      "r90": 2.384331712,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.8995,
+      "power": 1.5,
+      "r90": 6.54112399073699,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.90575,
+      "power": 0.7,
+      "r90": 0.7403424,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.91,
+      "power": 1.0,
+      "r90": 1.095706752,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89725,
+      "power": 1.1,
+      "r90": 1.65410795886925,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.901,
+      "power": 1.2,
+      "r90": 2.675103872,
+      "skill": 40
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.902,
+      "power": 1.5,
+      "r90": 7.33882203838785,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.9045,
+      "power": 0.7,
+      "r90": 0.80472,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.89825,
+      "power": 1.0,
+      "r90": 1.1909856,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.897,
+      "power": 1.1,
+      "r90": 1.79794343355354,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.9025,
+      "power": 1.2,
+      "r90": 2.9077216,
+      "skill": 40
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.89825,
+      "power": 1.5,
+      "r90": 7.97698047650853,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89725,
+      "power": 0.7,
+      "r90": 0.885192,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89975,
+      "power": 1.0,
+      "r90": 1.31008416,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.88875,
+      "power": 1.1,
+      "r90": 1.97773777690889,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.90325,
+      "power": 1.2,
+      "r90": 3.19849376,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89375,
+      "power": 1.5,
+      "r90": 8.77467852415938,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.9045,
+      "power": 0.7,
+      "r90": 0.9817584,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90225,
+      "power": 1.0,
+      "r90": 1.453002432,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90525,
+      "power": 1.1,
+      "r90": 2.19349098893531,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90475,
+      "power": 1.2,
+      "r90": 3.547420352,
+      "skill": 40
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.91,
+      "power": 1.5,
+      "r90": 9.73191618134041,
+      "skill": 40
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.9025,
+      "power": 0.7,
+      "r90": 0.3015714,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.89775,
+      "power": 1.0,
+      "r90": 0.446325672,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.89825,
+      "power": 1.1,
+      "r90": 0.673785066082049,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.903,
+      "power": 1.2,
+      "r90": 1.089677992,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.89925,
+      "power": 1.5,
+      "r90": 2.98939900844187,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.90775,
+      "power": 0.7,
+      "r90": 0.3383484,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.89425,
+      "power": 1.0,
+      "r90": 0.500755632,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.89325,
+      "power": 1.1,
+      "r90": 0.75595397657986,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.8985,
+      "power": 1.2,
+      "r90": 1.222565552,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.896,
+      "power": 1.5,
+      "r90": 3.35395986312991,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90425,
+      "power": 0.7,
+      "r90": 0.36777,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.8945,
+      "power": 1.0,
+      "r90": 0.5442996,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.9045,
+      "power": 1.1,
+      "r90": 0.821689104978109,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.89625,
+      "power": 1.2,
+      "r90": 1.3288756,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90275,
+      "power": 1.5,
+      "r90": 3.64560854688033,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.89375,
+      "power": 0.7,
+      "r90": 0.404547,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.8875,
+      "power": 1.0,
+      "r90": 0.59872956,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.90075,
+      "power": 1.1,
+      "r90": 0.90385801547592,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.90075,
+      "power": 1.2,
+      "r90": 1.46176316,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.901,
+      "power": 1.5,
+      "r90": 4.01016940156837,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.89925,
+      "power": 0.7,
+      "r90": 0.4486794,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.90675,
+      "power": 1.0,
+      "r90": 0.664045512,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.89775,
+      "power": 1.1,
+      "r90": 1.00246070807329,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.90275,
+      "power": 1.2,
+      "r90": 1.621228232,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.897,
+      "power": 1.5,
+      "r90": 4.44764242719401,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.8945,
+      "power": 0.7,
+      "r90": 0.4119024,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.89,
+      "power": 1.0,
+      "r90": 0.609615552,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.90875,
+      "power": 1.1,
+      "r90": 0.920291797575482,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.90475,
+      "power": 1.2,
+      "r90": 1.488340672,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.89225,
+      "power": 1.5,
+      "r90": 4.08308157250597,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89825,
+      "power": 0.7,
+      "r90": 0.4621344,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89825,
+      "power": 1.0,
+      "r90": 0.683958912,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89725,
+      "power": 1.1,
+      "r90": 1.03252250459688,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.901,
+      "power": 1.2,
+      "r90": 1.669845632,
+      "skill": 70
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.896,
+      "power": 1.5,
+      "r90": 4.58101834964085,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.89625,
+      "power": 0.7,
+      "r90": 0.50232,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.90825,
+      "power": 1.0,
+      "r90": 0.7434336,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.904,
+      "power": 1.1,
+      "r90": 1.122307070214,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.9005,
+      "power": 1.2,
+      "r90": 1.8150496,
+      "skill": 70
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.90275,
+      "power": 1.5,
+      "r90": 4.97936777134875,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.898,
+      "power": 0.7,
+      "r90": 0.552552,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.904,
+      "power": 1.0,
+      "r90": 0.81777696,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89725,
+      "power": 1.1,
+      "r90": 1.2345377772354,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89325,
+      "power": 1.2,
+      "r90": 1.99655456,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89925,
+      "power": 1.5,
+      "r90": 5.47730454848362,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.898,
+      "power": 0.7,
+      "r90": 0.6128304,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.905,
+      "power": 1.0,
+      "r90": 0.906988992,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90125,
+      "power": 1.1,
+      "r90": 1.36921462566108,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.9015,
+      "power": 1.2,
+      "r90": 2.214360512,
+      "skill": 70
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90275,
+      "power": 1.5,
+      "r90": 6.07482868104547,
+      "skill": 70
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.8965,
+      "power": 0.7,
+      "r90": 0.126075,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.90025,
+      "power": 1.0,
+      "r90": 0.186591,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.8935,
+      "power": 1.1,
+      "r90": 0.281682719933967,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.8895,
+      "power": 1.2,
+      "r90": 0.455551,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": true,
+      "observed_inside": 0.8965,
+      "power": 1.5,
+      "r90": 1.24974874934861,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.89775,
+      "power": 0.7,
+      "r90": 0.14145,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.898,
+      "power": 1.0,
+      "r90": 0.209346,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.89425,
+      "power": 1.1,
+      "r90": 0.316034271145426,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.90675,
+      "power": 1.2,
+      "r90": 0.511106,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": true,
+      "observed_inside": 0.9,
+      "power": 1.5,
+      "r90": 1.40215713341551,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.897,
+      "power": 0.7,
+      "r90": 0.15375,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90375,
+      "power": 1.0,
+      "r90": 0.22755,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.89875,
+      "power": 1.1,
+      "r90": 0.343515512114594,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.90025,
+      "power": 1.2,
+      "r90": 0.55555,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": true,
+      "observed_inside": 0.8905,
+      "power": 1.5,
+      "r90": 1.52408384066904,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.89825,
+      "power": 0.7,
+      "r90": 0.169125,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.89675,
+      "power": 1.0,
+      "r90": 0.250305,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.8925,
+      "power": 1.1,
+      "r90": 0.377867063326053,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.9005,
+      "power": 1.2,
+      "r90": 0.611105,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": true,
+      "observed_inside": 0.899,
+      "power": 1.5,
+      "r90": 1.67649222473594,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.906,
+      "power": 0.7,
+      "r90": 0.187575,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.89275,
+      "power": 1.0,
+      "r90": 0.277611,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.90075,
+      "power": 1.1,
+      "r90": 0.419088924779805,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.894,
+      "power": 1.2,
+      "r90": 0.677771,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": true,
+      "observed_inside": 0.908,
+      "power": 1.5,
+      "r90": 1.85938228561622,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.90525,
+      "power": 0.7,
+      "r90": 0.1722,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.89925,
+      "power": 1.0,
+      "r90": 0.254856,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.8945,
+      "power": 1.1,
+      "r90": 0.384737373568345,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.9055,
+      "power": 1.2,
+      "r90": 0.622216,
+      "skill": 99
+    },
+    {
+      "arrow": "UP",
+      "float": false,
+      "observed_inside": 0.907,
+      "power": 1.5,
+      "r90": 1.70697390154932,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89075,
+      "power": 0.7,
+      "r90": 0.1932,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89975,
+      "power": 1.0,
+      "r90": 0.285936,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.904,
+      "power": 1.1,
+      "r90": 0.431656565466924,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.9045,
+      "power": 1.2,
+      "r90": 0.698096,
+      "skill": 99
+    },
+    {
+      "arrow": "UP_RIGHT",
+      "float": false,
+      "observed_inside": 0.89925,
+      "power": 1.5,
+      "r90": 1.91514145051875,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.90025,
+      "power": 0.7,
+      "r90": 0.21,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.90325,
+      "power": 1.0,
+      "r90": 0.3108,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.89325,
+      "power": 1.1,
+      "r90": 0.469191918985787,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.9015,
+      "power": 1.2,
+      "r90": 0.7588,
+      "skill": 99
+    },
+    {
+      "arrow": "NEUTRAL",
+      "float": false,
+      "observed_inside": 0.8915,
+      "power": 1.5,
+      "r90": 2.08167548969429,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.90275,
+      "power": 0.7,
+      "r90": 0.231,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.89725,
+      "power": 1.0,
+      "r90": 0.34188,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.8985,
+      "power": 1.1,
+      "r90": 0.516111110884366,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.90775,
+      "power": 1.2,
+      "r90": 0.83468,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN_RIGHT",
+      "float": false,
+      "observed_inside": 0.90175,
+      "power": 1.5,
+      "r90": 2.28984303866372,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.889,
+      "power": 0.7,
+      "r90": 0.2562,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.89675,
+      "power": 1.0,
+      "r90": 0.379176,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.89525,
+      "power": 1.1,
+      "r90": 0.57241414116266,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.90425,
+      "power": 1.2,
+      "r90": 0.925736,
+      "skill": 99
+    },
+    {
+      "arrow": "DOWN",
+      "float": false,
+      "observed_inside": 0.9005,
+      "power": 1.5,
+      "r90": 2.53964409742704,
+      "skill": 99
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "real_serves": [
+    {
+      "power": 0.7,
+      "sample": {
+
+      },
+      "speed": 12.6617040634155,
+      "spin": "(-0.3, 0.0, 0.5)",
+      "target": "(1.03906, 0.105, -6.131981)",
+      "team": 0,
+      "type": 0
+    },
+    {
+      "power": 1.0,
+      "sample": {
+
+      },
+      "speed": 13.9142112731934,
+      "spin": "(-0.3, 0.0, 0.5)",
+      "target": "(1.057808, 0.105, -6.195333)",
+      "team": 0,
+      "type": 0
+    },
+    {
+      "power": 1.1,
+      "sample": {
+
+      },
+      "speed": 15.463888168335,
+      "spin": "(-30.3, 0.0, 0.5)",
+      "target": "(1.087269, 0.105, -6.294879)",
+      "team": 0,
+      "type": 0
+    },
+    {
+      "power": 0.7,
+      "sample": {
+
+      },
+      "speed": 15.8375673294067,
+      "spin": "(-60.0, 0.0, 0.5)",
+      "target": "(1.037501, 0.105, -5.95523)",
+      "team": 0,
+      "type": 1
+    },
+    {
+      "power": 1.0,
+      "sample": {
+
+      },
+      "speed": 18.1205043792725,
+      "spin": "(-60.0, 0.0, 0.5)",
+      "target": "(1.055501, 0.105, -5.93374)",
+      "team": 0,
+      "type": 1
+    },
+    {
+      "power": 1.1,
+      "sample": {
+
+      },
+      "speed": 19.9641189575195,
+      "spin": "(-90.0, 0.0, 0.5)",
+      "target": "(1.083786, 0.105, -5.899972)",
+      "team": 0,
+      "type": 1
+    },
+    {
+      "power": 0.7,
+      "sample": {
+
+      },
+      "speed": 12.8420829772949,
+      "spin": "(0.3, 0.0, 0.5)",
+      "target": "(0.900582, 0.105, 5.972351)",
+      "team": 1,
+      "type": 0
+    },
+    {
+      "power": 1.0,
+      "sample": {
+
+      },
+      "speed": 14.0435085296631,
+      "spin": "(0.3, 0.0, 0.5)",
+      "target": "(0.852861, 0.105, 5.959079)",
+      "team": 1,
+      "type": 0
+    },
+    {
+      "power": 1.1,
+      "sample": {
+
+      },
+      "speed": 15.4654169082642,
+      "spin": "(30.3, 0.0, 0.5)",
+      "target": "(0.777875, 0.105, 5.938225)",
+      "team": 1,
+      "type": 0
+    },
+    {
+      "power": 0.7,
+      "sample": {
+
+      },
+      "speed": 16.4679336547852,
+      "spin": "(60.0, 0.0, 0.5)",
+      "target": "(1.197753, 0.105, 6.159857)",
+      "team": 1,
+      "type": 1
+    },
+    {
+      "power": 1.0,
+      "sample": {
+
+      },
+      "speed": 19.01291847229,
+      "spin": "(60.0, 0.0, 0.5)",
+      "target": "(1.292674, 0.105, 6.236589)",
+      "team": 1,
+      "type": 1
+    },
+    {
+      "power": 1.1,
+      "sample": {
+
+      },
+      "speed": 21.1996421813965,
+      "spin": "(90.0, 0.0, 0.5)",
+      "target": "(1.441829, 0.105, 6.357161)",
+      "team": 1,
+      "type": 1
+    }
+  ],
+  "shanks": {
+    "far": 105,
+    "short": 15
+  }
+}

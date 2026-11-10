@@ -77,11 +77,12 @@ func receive(overhead: bool=false) -> bool:
 	if remaining< -LATE_WINDOW:
 		unavailable("receive","TROPPO TARDI · PREPARA PRIMA IL TOCCO"); return false
 	if remaining<0:
-		var recovery: Dictionary=g.BallFlight.intercept(g.ball_pos,g.ball_vel,g.flight_spin,g.contact_height("recovery"),g.flight_gravity)
-		if recovery.is_empty() or recovery.seconds>.30 or recovery.seconds<=.001:
+		adapter.allow_requested_recovery=true
+		var accepted: bool=g.queue_recovery(false)
+		adapter.allow_requested_recovery=false
+		if not accepted:
 			unavailable("receive","PALLA TROPPO BASSA · SERVE IL TUFFO"); return false
-		g.late_receive=true; g.recovery_action="recovery"; gesture="receive"
-		g.flight_target=recovery.point; g.flight_left=recovery.seconds
+		gesture="receive"
 	g.receive_offset=remaining; g.input_quality=quality(remaining,g.difficulty_scale()); g.armed=true
 	var detail:=label(remaining,g.difficulty_scale())
 	g.receive_feedback=detail+" · %d%%"%roundi(g.input_quality*100); g.receive_feedback_left=2.4
