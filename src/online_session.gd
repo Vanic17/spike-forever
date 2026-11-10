@@ -5,7 +5,7 @@ const Code=preload("res://src/room_code.gd")
 const State=preload("res://src/online_state.gd")
 # New stroke names, commands and second-touch state require matching peers.
 # Reject incompatible dictionaries before decoding compact clip IDs.
-const PROTOCOL="SF0101-REACT107"
+const PROTOCOL="SF0102-DB108"
 const Commands89=preload("res://src/online_command89.gd")
 const PORT=26761
 var game
@@ -59,6 +59,11 @@ var sent_contexts89: Dictionary={}
 var pending_set89: Dictionary={}
 var applying_context89: Dictionary={}
 var rejected_commands89:=0
+var catalog108=preload("res://src/online_catalog108.gd").new()
+var connections108=preload("res://src/online_connections108.gd").new()
+var catalog_hash108:=""
+var catalog_ready108:=false
+var catalog_ack108:=false
 
 func _ready() -> void:
 	multiplayer.peer_disconnected.connect(peer_left)
@@ -89,9 +94,13 @@ func host_room() -> Error:
 	var error:=peer.create_server(port,1)
 	if error!=OK: info="Porta UDP %d non disponibile: %s"%[port,error_string(error)]; refresh(); return error
 	multiplayer.multiplayer_peer=peer
-	active=true; playing=false; local_side=0; guest=0; generation=randi_range(1,0xffffff)
+	active=true; playing=false; local_side=0; guest=0; generation=connections108.host_id()
+	var catalogue: Dictionary=catalog108.capture(menu.host.clubs.db)
+	catalog_hash108=preload("res://src/online_catalog108.gd").digest(catalogue)
+	catalog_ready108=true;catalog_ack108=false
 	ready_flags=[false,false]; choices=[{},{}]; inputs=[{},{}]; last_sequence=[-1,-1]; sequence=0
 	forms99=[{},{}]
+	menu.catalog_changed108()
 	local_ip="127.0.0.1" if test_mode else lan_address()
 	public_ip=""; info="Stanza aperta. Preparazione del codice Internet…"; update_code(is_instance_valid(menu) and menu.lan_mode())
 	if not test_mode:
@@ -136,6 +145,7 @@ func join_room(code: String) -> Error:
 	requested_generation=invitation.room; multiplayer.multiplayer_peer=peer
 	room_code=code.strip_edges()
 	active=true; local_side=1; playing=false; guest=0; join_elapsed=0; packet_age=0
+	catalog_ready108=false;catalog_ack108=false;catalog108.teams=[]
 	forms99=[{},{}]; inputs=[{},{}]; choices=[{},{}]; ready_flags=[false,false]; last_sequence=[-1,-1]; sequence=0; buffered.clear()
 	info="Connessione alla stanza…"; refresh(); return OK
 
@@ -149,15 +159,24 @@ func hello(protocol: String, room: int) -> void:
 	if protocol!=PROTOCOL or room!=generation or (guest!=0 and guest!=sender):
 		refused.rpc_id(sender,"Versione o codice stanza non corrispondente."); return
 	guest=sender; packet_age=0; info="Avversario collegato. Scegliete squadra, divisa e formazione."
-	welcome.rpc_id(sender,PROTOCOL,generation); broadcast_lobby()
+	welcome.rpc_id(sender,PROTOCOL,generation,catalog108.payload(),catalog_hash108); broadcast_lobby()
 
 @rpc("authority","call_remote","reliable",0)
 func refused(reason: String) -> void: leave(reason)
 
 @rpc("authority","call_remote","reliable",0)
-func welcome(protocol: String, room: int) -> void:
+func welcome(protocol: String, room: int,catalogue: Dictionary,stamp: String) -> void:
 	if local_side!=1 or protocol!=PROTOCOL or room!=requested_generation: return
+	if not catalog108.install(catalogue,stamp):leave("Database host non valido: connessione interrotta.");return
+	catalog_hash108=stamp;catalog_ready108=true
+	menu.catalog_changed108()
+	connections108.remember(room_code)
+	confirm_catalog108.rpc_id(1,stamp)
 	guest=multiplayer.get_unique_id(); info="Collegato. Scegli squadra, divisa e formazione."; refresh()
+
+@rpc("any_peer","call_remote","reliable",0)
+func confirm_catalog108(stamp: String) -> void:
+	if authority() and multiplayer.get_remote_sender_id()==guest and stamp==catalog_hash108:catalog_ack108=true;broadcast_lobby()
 
 static func sanitize_choice(value: Dictionary, db) -> Dictionary:
 	var matches: Array=db.teams.filter(func(t): return t.id==value.get("club",""))
@@ -212,8 +231,8 @@ func submit_choice(value: Dictionary, confirmed: bool) -> void:
 	if authority() and multiplayer.get_remote_sender_id()==guest and not playing: set_choice(1,value,confirmed)
 
 func set_choice(side: int, value: Dictionary, confirmed: bool) -> void:
-	var db=load("res://src/league.gd").new()
-	var clean:=sanitize_choice(value,db)
+	if not catalog_ready108:return
+	var clean:=sanitize_choice(catalog108.canonical(value),catalog108)
 	if clean.is_empty(): info="Formazione non valida: scegli sette giocatori distinti e ruoli compatibili."; refresh(); return
 	if bool(value.get("open_formation99",false)) or confirmed:
 		var C=preload("res://src/condition99.gd")
@@ -231,9 +250,10 @@ func broadcast_lobby() -> void:
 func lobby_state(selected: Array, flags: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
 	if local_side!=1 or selected.size()!=2 or flags.size()!=2: return
 	choices=selected; ready_flags=flags; best_of=format; points=target; use_player_stats=stats_enabled; use_fatigue=fatigue_enabled; packet_age=0; refresh()
+	if not selected[0].is_empty():connections108.remember(room_code,str(selected[0].name))
 
 func start_match() -> bool:
-	if not authority() or guest==0 or not ready_flags[0] or not ready_flags[1] or choices[0].is_empty() or choices[1].is_empty(): return false
+	if not authority() or not catalog_ack108 or guest==0 or not ready_flags[0] or not ready_flags[1] or choices[0].is_empty() or choices[1].is_empty(): return false
 	begin_match.rpc_id(guest,choices,best_of,points,use_player_stats,use_fatigue)
 	begin_local(choices,best_of,points,use_player_stats,use_fatigue)
 	return true
@@ -243,6 +263,7 @@ func begin_match(selected: Array, format: int, target: int, stats_enabled: bool=
 	if local_side==1 and active: begin_local(selected,format,target,stats_enabled,fatigue_enabled)
 
 func begin_local(selected: Array, format: int, target: int, stats_enabled: bool=false,fatigue_enabled: bool=true) -> void:
+	game.charge_attack108=0;game.charge_serve108=0
 	inputs=[{},{}];local_charge_start=-1;local_charge_released=-1
 	sent_contexts89.clear();pending_set89.clear();applying_context89.clear();rejected_commands89=0
 	render_clock84=-1.0
@@ -396,6 +417,8 @@ func closed(reason: String) -> void:
 	if active: leave(reason,false)
 
 func leave(reason: String="Stanza chiusa", tell: bool=true) -> void:
+	if is_instance_valid(menu):menu.finish_formation108(false)
+	catalog_ready108=false;catalog_ack108=false
 	if game.report100!=null:game.report100.reset()
 	if active and authority() and guest!=0 and tell and guest in multiplayer.get_peers(): closed.rpc_id(guest,reason)
 	if active and local_side==1 and guest!=0 and tell and multiplayer.multiplayer_peer.get_connection_status()==MultiplayerPeer.CONNECTION_CONNECTED: leave_command.rpc_id(1)
@@ -589,6 +612,9 @@ func apply_command(side: int,seq: int,button: String,pressed: bool,value: Dictio
 		if game.attack_buffer_start>=0: game.attack_buffer_start=game.clock_time-clampf(held,0,30)
 	if pressed: game.press_action(button)
 	elif button==game.charge_button or game.attack_buffer_start>=0: game.release_action()
+	if button in ["action","alternate"] and game.phase in ["SERVE","ATTACK","CPU_ATTACK"]:
+		var kind: String="serve" if game.phase=="SERVE" else "attack"
+		game.log_rally_event("online_charge108",{"side":side,"pressed":pressed,"kind":kind,"duration":game.charge_seconds(kind),"destination":game.destination,"hitter":game.hitter,"stats":game.use_player_stats,"database":catalog_hash108,"held":held})
 	applying_context89={}
 	game.input_team=0
 

@@ -1,0 +1,11 @@
+{
+  "attack_seconds": 0.55,
+  "catalog_hash": "70d97ec4ae597b3838c092d570c705d05e7ecc28888a7279763890e14e64a0df",
+  "durations": [],
+  "errors": [],
+  "local_database_unchanged": true,
+  "observed": true,
+  "pass": true,
+  "serve_seconds": 0.46,
+  "stages": []
+}

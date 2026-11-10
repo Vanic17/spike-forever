@@ -1,5 +1,7 @@
 # Spike Forever
 
+**Versione 0.102.0:** online con database autorevole dell'host per entrambe le squadre, barre sincronizzate, identificativo stanza persistente e cronologia locale per riconnettersi dal controller. [Dettagli e limiti del codice stabile](docs/RELEASE_NOTES_102.md).
+
 **Versione 0.101.0:** difese CPU dei colpi corti e discendenti vincolate al tempo fisico di arrivo; eliminato il recupero con bagher arretrato, maggiore reattività sulle deviazioni recuperabili, sovraccarica della battuta più rischiosa e caricamento delle braccia più breve in rincorsa. [Dettagli](docs/RELEASE_NOTES_101.md).
 
 **Versione 0.100.0:** mirino di battuta con stick destro, bloccato scegliendo salto/float; dispersione fisica legata a potenza, Battuta e freccia di condizione. Difesa CPU moderatamente meno efficace e ricezioni fallite più varie. [Comandi e dettagli](docs/RELEASE_NOTES_100.md).

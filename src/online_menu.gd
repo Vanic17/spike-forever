@@ -25,6 +25,37 @@ var opponent: Label
 var preview
 var updating:=false
 var focus_controls: Array[Control]=[]
+var recent_pick108: OptionButton
+var reconnect108: Button
+var online_roster108: Array=[]
+var online_rotation108:=0
+var formation_backup108: Dictionary={}
+var scroll108: ScrollContainer
+
+func selection_db108():
+	return session.catalog108 if session.catalog_ready108 else host.clubs.db
+
+func catalog_changed108() -> void:
+	if own_team==null:return
+	updating=true;online_roster108=[]
+	own_team.clear()
+	for team in selection_db108().teams:own_team.add_item(str(team.name))
+	own_team.select(0);updating=false;changed_choice()
+
+func finish_formation108(accepted: bool) -> void:
+	if formation_backup108.is_empty():return
+	if accepted:online_roster108=host.clubs.match_rosters[0].duplicate(true);online_rotation108=host.clubs.match_rotations[0]
+	host.clubs.match_rosters[0]=formation_backup108.roster
+	host.clubs.match_rotations[0]=formation_backup108.rotation
+	formation_backup108={}
+	if accepted:changed_choice()
+
+func refresh_recent108() -> void:
+	if recent_pick108==null:return
+	recent_pick108.clear()
+	for entry in session.connections108.recent:recent_pick108.add_item(str(entry.label)+" · "+preload("res://src/room_code.gd").display(entry.code).right(5))
+	if recent_pick108.item_count==0:recent_pick108.add_item("Nessuna stanza recente")
+	reconnect108.disabled=session.active or session.closing or session.connections108.recent.is_empty()
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); theme=host.clubs.theme.duplicate(true); theme.default_font_size=18
@@ -32,7 +63,8 @@ func _ready() -> void:
 		var style: StyleBox=theme.get_stylebox("normal",type).duplicate(); style.content_margin_top=8; style.content_margin_bottom=8; theme.set_stylebox("normal",type,style)
 	var panel=PanelContainer.new(); add_child(panel); panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var surface=StyleBoxFlat.new(); surface.bg_color=Color("081322"); surface.content_margin_left=38; surface.content_margin_right=38; surface.content_margin_top=22; surface.content_margin_bottom=22; panel.add_theme_stylebox_override("panel",surface)
-	body=VBoxContainer.new(); body.add_theme_constant_override("separation",12); panel.add_child(body)
+	scroll108=ScrollContainer.new();scroll108.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;panel.add_child(scroll108)
+	body=VBoxContainer.new();body.size_flags_horizontal=SIZE_EXPAND_FILL;body.size_flags_vertical=SIZE_EXPAND_FILL; body.add_theme_constant_override("separation",10); scroll108.add_child(body)
 	var top=HBoxContainer.new(); body.add_child(top)
 	var heading=Label.new(); heading.text="ONLINE / SPIKE FOREVER"; heading.add_theme_font_size_override("font_size",30); heading.size_flags_horizontal=SIZE_EXPAND_FILL; top.add_child(heading)
 	host.clubs.button(top,"INDIETRO · B / CERCHIO",back)
@@ -51,6 +83,12 @@ func _ready() -> void:
 	scope=host.clubs.picker(invitation,["Internet","Stessa rete / VPN LAN"])
 	scope.item_selected.connect(func(_index): if session.authority(): session.update_code(lan_mode()))
 	host.clubs.button(invitation,"COPIA CODICE",func(): if not session.room_code.is_empty(): DisplayServer.clipboard_set(session.room_code))
+	var saved108=HBoxContainer.new();body.add_child(saved108)
+	recent_pick108=host.clubs.picker(saved108,[]);recent_pick108.size_flags_horizontal=SIZE_EXPAND_FILL
+	reconnect108=host.clubs.button(saved108,"RICONNETTI ALLA STANZA",func():
+		if recent_pick108.selected>=0 and recent_pick108.selected<session.connections108.recent.size():
+			code.text=session.connections108.recent[recent_pick108.selected].code;session.join_room(code.text))
+	refresh_recent108()
 	var settings=HBoxContainer.new(); settings.add_theme_constant_override("separation",16); body.add_child(settings)
 	var columns=[]
 	for title in ["FORMATO (HOST)","PUNTI","VALORI GIOCATORI","AFFATICAMENTO"]:
@@ -77,13 +115,18 @@ func _ready() -> void:
 	var buttons=HBoxContainer.new(); body.add_child(buttons)
 	confirm=host.clubs.button(buttons,"CONFERMA / PRONTO",confirm_choice); confirm.size_flags_horizontal=SIZE_EXPAND_FILL
 	launch=host.clubs.button(buttons,"INIZIA PARTITA (HOST)",func(): session.start_match()); launch.size_flags_horizontal=SIZE_EXPAND_FILL
-	own_team.item_selected.connect(func(_value): host.clubs.match_rosters[0]=[]; changed_choice())
+	own_team.item_selected.connect(func(_value): online_roster108=[]; changed_choice())
 	own_kit.item_selected.connect(func(_value): changed_choice())
 	for control in body.find_children("*","Control",true,false):
-		if control is Button or control is LineEdit: focus_controls.append(control)
+		if control is Button or control is LineEdit:
+			focus_controls.append(control)
+			control.focus_entered.connect(func():scroll108.ensure_control_visible(control))
 	changed_choice(); hide()
 
 func open() -> void:
+	if not session.active:catalog_changed108()
+	refresh_recent108()
+	if not session.active and not session.connections108.recent.is_empty():code.text=preload("res://src/room_code.gd").display(session.connections108.recent[0].code)
 	if host.get("play_hub")!=null: host.play_hub.hide()
 	if host.get("career_menu")!=null: host.career_menu.hide()
 	host.clubs.hide(); host.overlay.hide(); show(); refresh(); create.grab_focus() if not session.active else own_team.grab_focus()
@@ -95,6 +138,7 @@ func edit_code() -> void:
 	host.clubs.open_keyboard(code); host.clubs.keyboard.title="CODICE STANZA"
 
 func back() -> void:
+	finish_formation108(false)
 	if session.active: session.leave("Stanza chiusa")
 	hide()
 	if host.get("play_hub")!=null: host.play_hub.show()
@@ -108,7 +152,7 @@ func open_formation() -> void:
 	session.choose(value99,false)
 
 func has_forms99() -> bool:
-	var club: Dictionary=host.clubs.db.teams[own_team.selected]
+	var club: Dictionary=selection_db108().teams[own_team.selected]
 	var selected: Dictionary=session.choices[session.local_side]
 	if str(selected.get("club",""))!=str(club.id):return false
 	var arrows: Dictionary=selected.get("condition99",{}).get("arrows",{})
@@ -118,19 +162,22 @@ func show_forms99() -> void:
 	if not pending_formation99 or not has_forms99():return
 	pending_formation99=false
 	var selected: Dictionary=session.choices[session.local_side]
-	host.clubs.show_match_formation(0,host.clubs.db.teams[own_team.selected],formation,selected.condition99)
-	host.clubs.formation_dialog.confirmed.connect(changed_choice,CONNECT_ONE_SHOT)
+	formation_backup108={"roster":host.clubs.match_rosters[0],"rotation":host.clubs.match_rotations[0]}
+	host.clubs.match_rosters[0]=online_roster108;host.clubs.match_rotations[0]=online_rotation108
+	host.clubs.show_match_formation(0,selection_db108().teams[own_team.selected],formation,selected.condition99,-1,selection_db108())
+	host.clubs.formation_dialog.confirmed.connect(func():finish_formation108(true),CONNECT_ONE_SHOT)
+	host.clubs.formation_dialog.canceled.connect(func():finish_formation108(false),CONNECT_ONE_SHOT)
 
 func choice() -> Dictionary:
-	var club: Dictionary=host.clubs.db.teams[own_team.selected]
-	var roster: Array=host.clubs.match_rosters[0] if not host.clubs.match_rosters[0].is_empty() else host.clubs.db.lineup(club)
+	var club: Dictionary=selection_db108().teams[own_team.selected]
+	var roster: Array=online_roster108 if not online_roster108.is_empty() else selection_db108().lineup(club)
 	var ids: Array=roster.map(func(p): return str(p.id))
-	return {"club":club.id,"kit":"home" if own_kit.selected==0 else "away","roster":roster,"bench":club.roster.filter(func(p): return not str(p.id) in ids),"rotation":host.clubs.match_rotations[0]}
+	return {"club":club.id,"kit":"home" if own_kit.selected==0 else "away","roster":roster,"bench":club.roster.filter(func(p): return not str(p.id) in ids),"rotation":online_rotation108}
 
 func changed_choice() -> void:
 	if updating: return
-	team_emblem.texture=host.clubs.Branding.logo(host.clubs.db.teams[own_team.selected].id,true)
-	preview.show_kit(host.clubs.db.teams[own_team.selected].id,"home" if own_kit.selected==0 else "away")
+	team_emblem.texture=host.clubs.Branding.logo(selection_db108().teams[own_team.selected].id,true)
+	preview.show_kit(selection_db108().teams[own_team.selected].id,"home" if own_kit.selected==0 else "away")
 	if session.active: session.choose(choice(),false)
 
 func settings_changed(_index: int) -> void:
@@ -144,19 +191,21 @@ func confirm_choice() -> void:
 	session.choose(choice(),not session.ready_flags[session.local_side])
 
 func refresh() -> void:
+	if recent_pick108!=null:reconnect108.disabled=session.active or session.closing or session.connections108.recent.is_empty()
 	if pending_formation99 and has_forms99():call_deferred("show_forms99")
 	if info==null: return
 	updating=true; info.text=session.info
+	if session.active and session.catalog_ready108:info.text+=" · Database host: "+session.catalog_hash108.left(8)
 	create.disabled=session.active or session.closing; join.disabled=session.active or session.closing; code.editable=not session.active
 	paste_join.disabled=session.active or session.closing
 	if session.authority(): code.text=preload("res://src/room_code.gd").display(session.room_code)
 	format.disabled=session.active and not session.authority(); target.disabled=format.disabled; stats_pick.disabled=format.disabled; fatigue_pick.disabled=format.disabled
 	format.select([1,3,5].find(session.best_of)); target.select([25,15].find(session.points)); stats_pick.select(1 if session.use_player_stats else 0); fatigue_pick.select(1 if session.use_fatigue else 0)
-	confirm.disabled=not session.active or (session.local_side==1 and session.guest==0)
+	confirm.disabled=not session.active or not session.catalog_ready108 or (session.local_side==1 and session.guest==0)
 	confirm.text="ANNULLA PRONTO" if session.ready_flags[session.local_side] else "CONFERMA / PRONTO"
 	var locked: bool=session.active and session.ready_flags[session.local_side]
 	own_team.disabled=locked; own_kit.disabled=locked; formation.disabled=locked
-	launch.disabled=not session.authority() or session.guest==0 or not session.ready_flags[0] or not session.ready_flags[1]
+	launch.disabled=not session.authority() or not session.catalog_ack108 or session.guest==0 or not session.ready_flags[0] or not session.ready_flags[1]
 	var remote: Dictionary=session.choices[1-session.local_side]
 	opponent_emblem.texture=host.clubs.Branding.logo(remote.get("club",""),true)
 	opponent_emblem.visible=not remote.is_empty()
@@ -168,7 +217,7 @@ func refresh() -> void:
 func _input(event: InputEvent) -> void:
 	if not visible: return
 	if is_instance_valid(host.clubs.formation_dialog) and host.clubs.formation_dialog.visible:
-		if event.is_action_pressed("ui_cancel"): host.clubs.formation_dialog.hide(); formation.grab_focus(); get_viewport().set_input_as_handled()
+		if event.is_action_pressed("ui_cancel"):finish_formation108(false);host.clubs.formation_dialog.hide(); formation.grab_focus(); get_viewport().set_input_as_handled()
 		return
 	if host.clubs.keyboard!=null and host.clubs.keyboard.visible:
 		if event.is_action_pressed("ui_cancel"): host.clubs.keyboard.hide(); code.grab_focus(); get_viewport().set_input_as_handled()

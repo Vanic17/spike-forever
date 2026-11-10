@@ -193,6 +193,8 @@ var serve_move:=Vector2.ZERO
 var serve_target106=preload("res://src/serve_target106.gd").new()
 var serve_aim106:=Vector3(0,.105,-4.5)
 var serve_locked106:=false
+var charge_attack108:=0.0
+var charge_serve108:=0.0
 var serve_adjusting:=false
 var serve_adjust_target:=Vector3.ZERO
 var serve_windup_left := 0.0
@@ -713,6 +715,9 @@ func release_action() -> void:
 		input_quality = 1.0
 
 func charge_seconds(kind: String) -> float:
+	if network_match() and not online_session.authority():
+		var authoritative: float=charge_serve108 if kind=="serve" else charge_attack108
+		if authoritative>0:return authoritative
 	if use_player_stats: return PlayerStats.charge_seconds(self,kind)
 	return Timing.SERVE_CHARGE_SECONDS if kind=="serve" else Timing.ATTACK_CHARGE_SECONDS
 

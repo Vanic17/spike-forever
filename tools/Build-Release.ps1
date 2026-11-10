@@ -6,6 +6,8 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_102.md','docs/ONLINE_DATABASE_108.md','tools/Test-OnlineDatabase108.gd','tools/Run-OnlineDatabase108.ps1','tools/Test-CatalogConnections108.gd','tools/Capture-Online108.gd','tools/Verify-Online108.py')
+$files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'online108-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_101.md','docs/REACTIVITY_107.md','tools/Test-Reactivity107.gd','tools/Capture-Reactivity107.gd','tools/Verify-Reactivity107.py')
 $files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'reactivity107-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_100.md','docs/SERVE_106.md','tools/Test-Serve106.gd','tools/Test-OnlineServe106.gd','tools/Run-OnlineServe106.ps1','tools/Capture-Serve106.gd','tools/Verify-Serve106.py')

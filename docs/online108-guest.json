@@ -1,0 +1,55 @@
+{
+  "attack_seconds": 0.55,
+  "catalog_hash": "70d97ec4ae597b3838c092d570c705d05e7ecc28888a7279763890e14e64a0df",
+  "durations": [
+    {
+      "expected": 0.16552716804606,
+      "seconds": 0.16552716804606,
+      "stats": true,
+      "zone": 1
+    },
+    {
+      "expected": 0.440705128205128,
+      "seconds": 0.440705128205128,
+      "stats": true,
+      "zone": 0
+    },
+    {
+      "expected": 0.440705128205128,
+      "seconds": 0.440705128205128,
+      "stats": true,
+      "zone": 2
+    },
+    {
+      "expected": 0.440705128205128,
+      "seconds": 0.440705128205128,
+      "stats": true,
+      "zone": 3
+    },
+    {
+      "expected": 0.16552716804606,
+      "seconds": 0.16552716804606,
+      "stats": true,
+      "zone": 1
+    },
+    {
+      "expected": 0.55,
+      "seconds": 0.55,
+      "stats": false,
+      "zone": 0
+    }
+  ],
+  "errors": [],
+  "local_database_unchanged": true,
+  "observed": true,
+  "pass": true,
+  "serve_seconds": 0.46,
+  "stages": [
+    1108,
+    1109,
+    1110,
+    1111,
+    1112,
+    1113
+  ]
+}

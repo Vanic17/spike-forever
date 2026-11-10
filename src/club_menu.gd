@@ -402,7 +402,8 @@ func match_setup() -> void:
 	settings_fatigue.focus_neighbor_top=settings_fatigue.get_path_to(formation_buttons[1])
 	picks[0].grab_focus()
 
-func show_match_formation(side: int, team: Dictionary, return_to: Control,context99: Dictionary={},stats_override99: int=-1) -> void:
+func show_match_formation(side: int, team: Dictionary, return_to: Control,context99: Dictionary={},stats_override99: int=-1,catalogue108=null) -> void:
+	var formation_db108=db if catalogue108==null else catalogue108
 	var ledger99: Dictionary=game.form99 if context99.is_empty() else context99
 	var stats99: bool=game.online_session.use_player_stats if game.online_session.active else (is_instance_valid(settings_stats) and settings_stats.selected==1)
 	if stats_override99>=0:stats99=stats_override99==1
@@ -424,7 +425,7 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control,contex
 	for edge in ["left","right","top","bottom"]: surface.set("content_margin_"+edge,12)
 	court.add_theme_stylebox_override("panel",surface)
 	var grid=GridContainer.new(); grid.columns=3; grid.add_theme_constant_override("h_separation",12); grid.add_theme_constant_override("v_separation",18); court.add_child(grid)
-	var squad: Array=match_rosters[side].duplicate() if not match_rosters[side].is_empty() else db.lineup(team)
+	var squad: Array=match_rosters[side].duplicate() if not match_rosters[side].is_empty() else formation_db108.lineup(team)
 	if squad.size()!=7: label(column,"Roster incompleto: completa i ruoli nel menu Modifica."); formation_dialog.popup_centered(); return
 	var controls: Dictionary={}; var options: Dictionary={}
 	var zone_labels: Dictionary={}
@@ -434,7 +435,7 @@ func show_match_formation(side: int, team: Dictionary, return_to: Control,contex
 		var index: int=slot
 		var cell=VBoxContainer.new(); cell.size_flags_horizontal=Control.SIZE_EXPAND_FILL; grid.add_child(cell)
 		var zone_label=Label.new(); cell.add_child(zone_label); zone_labels[index]=zone_label
-		var candidates: Array=team.roster.filter(func(player): return db.fits_slot(player.role,index)); options[index]=candidates
+		var candidates: Array=team.roster.filter(func(player): return formation_db108.fits_slot(player.role,index)); options[index]=candidates
 		var labels: Array=candidates.map(func(player): return ConditionUI99.names(player,ledger99,stats99))
 		var pick=picker(cell,labels); pick.add_theme_font_size_override("font_size",13); pick.fit_to_longest_item=false; pick.clip_text=true; pick.custom_minimum_size=Vector2(320,48); controls[index]=pick
 		ConditionUI99.decorate(pick,candidates,ledger99)
