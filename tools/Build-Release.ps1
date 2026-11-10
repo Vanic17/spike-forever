@@ -6,6 +6,8 @@ if($LASTEXITCODE -ne 0){throw 'Audio compatibility validation failed'}
 $destination=[IO.Path]::GetFullPath((Join-Path $root $OutputDirectory))
 New-Item -ItemType Directory -Force $destination | Out-Null
 $files=@('project.godot','version.json','README.md','controls.cfg','Avvia Spike Forever.cmd','Spike Forever.exe','tools/Install-Update.ps1')
+$files+=@('docs/RELEASE_NOTES_98.md','docs/ATTACK_104.md','tools/Test-Attack104.gd','tools/Audit-Attack104.gd','tools/Capture-Attack104.gd','tools/Verify-Attack104.py')
+$files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'attack104-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_97.md','docs/REVIEW_103.md','tools/Test-Review103.gd','tools/Audit-Review103.gd','tools/Capture-Review103.gd','tools/Prepare-Review103.py','tools/Verify-Review103.py')
 $files+=@(Get-ChildItem -LiteralPath (Join-Path $root 'docs') -File -Filter 'review103-*' | ForEach-Object {'docs/'+$_.Name})
 $files+=@('docs/RELEASE_NOTES_96.md','docs/MIDDLE_102.md','tools/Test-Middle102.gd','tools/Audit-Middle102.gd','tools/Test-OnlineMiddle102.gd','tools/Run-OnlineMiddle102.ps1','tools/Capture-Middle102.gd','tools/Bake-Middle102.gd')

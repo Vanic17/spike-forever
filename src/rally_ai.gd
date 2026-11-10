@@ -142,6 +142,11 @@ static func attack_contact(game, direction: int, attacker: int, set_contact: Vec
 	# Back-row legality is measured at takeoff, not at hand contact. D/pipe
 	# contact inside the attack line after a forward running jump.
 	var depth:=1.05
+	if direction in [0,2] and not back and game.out_of_system>=0:
+		# A tight, accurate set lets the pin meet the ball in front of the body.
+		# Detached/broken sets keep their original one-metre safety corridor.
+		var tight: float=(1.0-smoothstep(.7,2.0,absf(set_contact.z)))*smoothstep(.80,.97,game.pass_quality)
+		depth=lerpf(1.05,.55,tight)
 	if direction==1 and game.out_of_system>=0 and game.pass_quality>.85 and Tactics.role_for(game,attacker).begins_with("MB"):
 		depth=lerpf(.50,1.05,smoothstep(.9,2.5,absf(set_contact.z)))
 	if back: depth=(2.45 if game.fast_set else 2.65) if direction==3 else 2.50

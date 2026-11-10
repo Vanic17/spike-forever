@@ -1496,10 +1496,15 @@ func set_ball(contact_override: String = "") -> void:
 		var takeoff:=attack_run.takeoff_stance(self,hitter,players[hitter].target)
 		approach_time=attack_run.run_seconds(players[hitter],takeoff,Reference.run_speed()*1.10)+attack_run.air_seconds(players[hitter])
 		if Tactics.front(hitter,rotations[possession]):
-			# A pin may still be circling the passer outside the sideline.
-			# Keep its existing collision/route allowance instead of assuming
-			# the direct free runway used by D and pipe.
-			approach_time=preload("res://src/approach_planner.gd").seconds(players[hitter],takeoff,Reference.run_speed()*1.10)+attack_run.air_seconds(players[hitter])
+			var bodies: Array[Vector3]=[]
+			for other in range(possession*6,possession*6+6):
+				if other!=hitter:bodies.append(players[other].position)
+			if contact_navigation.segment_clear(players[hitter].position,takeoff,bodies,1.0):
+				# A clear running takeoff needs neither a full standing stop nor
+				# the generic .38s stance wait. Crowded routes keep that allowance.
+				approach_time+=.10
+			else:
+				approach_time=preload("res://src/approach_planner.gd").seconds(players[hitter],takeoff,Reference.run_speed()*1.10)+attack_run.air_seconds(players[hitter])
 	if destination==1 and fast_set and approach_distance<0.65:
 		# A middle already planted in his quick lane does not need a second
 		# generic .38s plant after preparing during reception and the first pass.
@@ -1650,9 +1655,8 @@ func attack_ball() -> void:
 			incoming_power*=1.0+central102.boost*.18
 			log_rally_event("middle_power102",{"power":requested_power,"boost":central102.boost,"seconds":seconds,"target":target})
 	short_spin103=null
-	if close_down:
-		var short_delivery: Dictionary=preload("res://src/short_attack103.gd").solve(self,target,seconds,power)
-		seconds=short_delivery.seconds;short_spin103=short_delivery.get("spin")
+	var driven_delivery: Dictionary=preload("res://src/attack_delivery104.gd").solve(self,target,seconds,power,soft)
+	seconds=driven_delivery.seconds;short_spin103=driven_delivery.get("spin")
 	if hitter_action == "receive":
 		var delivery: Dictionary=preload("res://src/recovery_delivery.gd").free_ball(self,attacker)
 		target=delivery.target; seconds=delivery.seconds
@@ -2318,6 +2322,7 @@ func move_players(dt: float) -> void:
 		team_targets[middle_decoy.index]=middle_decoy.preparation_route(self,team_targets[middle_decoy.index])
 	for i in 12:
 		var p = players[i]
+		p.pin_run104=(phase in ["ATTACK","CPU_ATTACK"] and i==action_actor and action=="attack" and destination in [0,2,3]) or (phase in ["SET","CPU_SET"] and i==planned_hitter and planned_direction in [0,2,3])
 		p.middle_ready=i==middle_decoy.index and not middle_decoy.jumped and (phase in ["SET","CPU_SET"] or (phase in ["RECEIVE","CPU_RECEIVE"] and flight_left<.45))
 		p.reach_weight = maxf(0, p.reach_weight - dt * 5)
 		p.motion_lock = maxf(0, p.motion_lock - dt)

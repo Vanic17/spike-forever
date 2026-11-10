@@ -190,7 +190,13 @@ func arrange(game, nominal: Array[Vector3], actor: int, action: String, blockers
 				# Open immediately, then start running into the legal takeoff
 				# before S releases the set. Do not wait wide until ATTACK.
 				var takeoff:=preload("res://src/attack_run.gd").takeoff_stance(game,runner,stance)
-				result[runner]=result[runner].lerp(takeoff,1.0-smoothstep(0.08,0.55,game.flight_left))
+				var commitment: float=1.0-smoothstep(0.08,0.55,game.flight_left)
+				# High-ball pins used to consume their whole runway before S's
+				# release, leaving only a walking adjustment and a standing jump.
+				# Keep most of the opening for the set's flight; fast combinations
+				# and back-row first steps retain their established early schedule.
+				if not game.planned_fast and Tactics.front(runner,game.rotations[game.possession]):commitment*=.15
+				result[runner]=result[runner].lerp(takeoff,commitment)
 	# Assign destinations in priority order. Separation is solved for all six
 	# targets together, before any athlete has moved in this physics tick.
 	if game.phase in ["SET","CPU_SET"] and game.planned_direction==1 and game.planned_hitter>=0:

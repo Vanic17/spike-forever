@@ -1,0 +1,224 @@
+{
+	"checks": 764,
+	"errors": [],
+	"maximum_planning_us": 2124,
+	"pass": true,
+	"samples": [
+		{
+			"depth": 0.55,
+			"seconds": 0.19130309109003,
+			"speed": 30.543004989624,
+			"spin": "(-7.0, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 0,
+			"vertical_velocity": -14.3738479614258
+		},
+		{
+			"depth": 0.55,
+			"seconds": 0.25472218920888,
+			"speed": 28.8876190185547,
+			"spin": "(-7.0, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 0,
+			"vertical_velocity": -10.2036933898926
+		},
+		{
+			"depth": 0.55,
+			"seconds": 0.341482841013692,
+			"speed": 27.93359375,
+			"spin": "(-7.0, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 0,
+			"vertical_velocity": -6.80290651321411
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.476464196409736,
+			"speed": 12.2432460784912,
+			"spin": "(-7.454803, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 0,
+			"vertical_velocity": -3.75695013999939
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.270917223834938,
+			"speed": 28.636417388916,
+			"spin": "(-7.454803, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 0,
+			"vertical_velocity": -9.41887664794922
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.358713701083715,
+			"speed": 27.8254375457764,
+			"spin": "(-7.454803, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 0,
+			"vertical_velocity": -6.28606462478638
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.800176600999048,
+			"speed": 8.64698505401611,
+			"spin": "(-11.93038, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 0,
+			"vertical_velocity": 0.426048189401627
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.637339602075423,
+			"speed": 13.8782920837402,
+			"spin": "(-11.93038, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 0,
+			"vertical_velocity": -1.25299298763275
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.472236420251457,
+			"speed": 24.1253223419189,
+			"spin": "(-11.93038, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 0,
+			"vertical_velocity": -3.60705089569092
+		},
+		{
+			"depth": 5.0,
+			"seconds": 1.01812774393716,
+			"speed": 9.18193531036377,
+			"spin": "(-12.0, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 0,
+			"vertical_velocity": 2.35448431968689
+		},
+		{
+			"depth": 5.0,
+			"seconds": 0.835463296539432,
+			"speed": 13.2338428497314,
+			"spin": "(-12.0, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 0,
+			"vertical_velocity": 0.886507749557495
+		},
+		{
+			"depth": 5.0,
+			"seconds": 0.700435439077727,
+			"speed": 19.3524360656738,
+			"spin": "(-12.0, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 0,
+			"vertical_velocity": -0.381578892469406
+		},
+		{
+			"depth": 0.55,
+			"seconds": 0.19130309109003,
+			"speed": 30.5430126190186,
+			"spin": "(7.0, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 1,
+			"vertical_velocity": -14.3738374710083
+		},
+		{
+			"depth": 0.55,
+			"seconds": 0.25472218920888,
+			"speed": 28.8876285552979,
+			"spin": "(7.0, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 1,
+			"vertical_velocity": -10.2036743164063
+		},
+		{
+			"depth": 0.55,
+			"seconds": 0.341482841013692,
+			"speed": 27.9336013793945,
+			"spin": "(7.0, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 1,
+			"vertical_velocity": -6.80288028717041
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.476464196409736,
+			"speed": 12.2432641983032,
+			"spin": "(7.454803, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 1,
+			"vertical_velocity": -3.75691342353821
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.270917223834938,
+			"speed": 28.6364269256592,
+			"spin": "(7.454803, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 1,
+			"vertical_velocity": -9.41885852813721
+		},
+		{
+			"depth": 1.05,
+			"seconds": 0.358713701083715,
+			"speed": 27.8254432678223,
+			"spin": "(7.454803, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 1,
+			"vertical_velocity": -6.28603315353394
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.800176600999048,
+			"speed": 8.64702606201172,
+			"spin": "(11.93038, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 1,
+			"vertical_velocity": 0.426147997379303
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.637339602075423,
+			"speed": 13.8783197402954,
+			"spin": "(11.93038, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 1,
+			"vertical_velocity": -1.25291287899017
+		},
+		{
+			"depth": 2.65,
+			"seconds": 0.472236420251457,
+			"speed": 24.125337600708,
+			"spin": "(11.93038, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 1,
+			"vertical_velocity": -3.60699248313904
+		},
+		{
+			"depth": 5.0,
+			"seconds": 1.01812774393716,
+			"speed": 9.18196868896484,
+			"spin": "(12.0, 0.7, 0.25)",
+			"target_depth": 3.3,
+			"team": 1,
+			"vertical_velocity": 2.35461115837097
+		},
+		{
+			"depth": 5.0,
+			"seconds": 0.835463296539432,
+			"speed": 13.2338676452637,
+			"spin": "(12.0, 0.7, 0.25)",
+			"target_depth": 5.4,
+			"team": 1,
+			"vertical_velocity": 0.886612057685852
+		},
+		{
+			"depth": 5.0,
+			"seconds": 0.700435439077727,
+			"speed": 19.3524551391602,
+			"spin": "(12.0, 0.7, 0.25)",
+			"target_depth": 8.0,
+			"team": 1,
+			"vertical_velocity": -0.381489306688309
+		}
+	]
+}
